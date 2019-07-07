@@ -418,3 +418,10 @@ Inicio de estilos de los registros
 /* 
 Fin de estilos de los registros
 */
+
+
+.nav-landingpage{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
