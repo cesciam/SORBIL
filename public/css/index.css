@@ -1,0 +1,28 @@
+/*
+Inicio de definicion de variables
+*/
+
+:root {
+    --color-primary: #E3920E;
+    --color-secondary: #1F3C88;
+    --color-black: #333333;
+    --color-white: #ffffff;
+    --color-alternative-blue: #5190FB;
+    --color-alternative-green: #13B79E;
+    --color-alternative-red: #F65E5F;
+    --color-alternative-grey: #BFC5D2;
+    --color-alternative-black: #5c5c5c;
+    --color-alternative-bg: #F5F6FA;
+    --shadow-light: 0 1rem 4rem rgba(0, 0, 0, .06);
+    --shadow-dark: 0 2rem 6rem 0 rgba(0, 0, 0, 0.16);
+    --line: 1px solid var(--color-alternative-grey);
+    --font-semibold: 600;
+    --box-padding: 1.3rem 3.8rem;
+    --box-radius: 0.4rem;
+}
+
+/*
+Fin de definicion de variables
+*/
+
+
