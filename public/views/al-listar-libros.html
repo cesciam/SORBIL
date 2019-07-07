@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
+    <title>Sorbil -- Librería -- Listar libros</title>
+</head>
+
+<body id="grid-admin">
+
+    <!--Header-->
+    <header id="header-admin">
+
+    </header>
+
+    <!--Main-->
+    <main id="main-admin">
+        <div class="main-admin-titulo">
+            <h1>Listados de libros</h1>
+            <p>Busca la información que te interesa</p>
+        </div>
+
+        <div id="barra-busqueda">
+            <input type="text" placeholder="Buscar libros por / título / autor / categoría / género / ISBN"
+                aria-label="Buscar libros por / título / autor / categoría / género / ISBN" name="searchTerm" value=""
+                data-selected="true" data-label-id="0">
+
+            <button aria-label="Search" class="form-btn" type="submit">
+                <spans>Filtrar</spans>
+            </button>
+        </div>
+
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Categoría</th>
+                    <th>Género</th>
+                    <th>ISBN</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hola</td>
+                    <td>Hola</td>
+                    <td>Hola</td>
+                    <td>Hola</td>
+                    <td>Hola</td>
+                    <td>Hola</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+
+    <!--Aside-->
+    <aside id="sidenav-admin">
+
+        <a class="logo" href="al-listar-libros.html"><img src="../imgs/logo.png" alt="logo de Sorbil"></a>
+
+        <ul class="sidenav-list">
+            <li class="sidenav-list-item"><a href="al-inicio.html"><i class='bx bx-home sidenav-i'></i>Inicio</a></li>
+            <li class="sidenav-list-item"><a href="al-solicitudes.html"><i
+                        class='bx bx-user-plus sidenav-i'></i>Solicitudes</a></li>
+
+            <li class="sidenav-list-item" id="registros">
+                <a href="#registros" class="sidenav-btn">
+                    <i class='bx bx-plus'></i>
+                    Registros
+                </a>
+                <div class="sidenav-small-menu">
+                    <a href="al-registrar-libro.html">Libro</a>
+                    <a href="al-registrar-categorias.html">Categorías</a>
+                    <a href="al-registrar-generos.html">Géneros</a>
+                    <a href="al-registrar-clubes-de-lectura.html">Club de lectura</a>
+                    <a href="al-registrar-ofertas.html">Ofertas</a>
+                </div>
+            </li>
+
+            <li class="sidenav-list-item" id="listados">
+                <a href="#listados" class="sidenav-btn">
+                    <i class='bx bx-list-ul'></i>
+                    Listados
+                </a>
+                <div class="sidenav-small-menu">
+                    <a href="al-listar-libros.html">Libros</a>
+                    <a href="al-listar-usuarios.html">Usuarios</a>
+                    <a href="al-listar-sucursales.html">Sucursales</a>
+                    <a href="al-listar-autores.html">Autores</a>
+                    <a href="al-listar-intercambios.html">Intercambios</a>
+                    <a href="al-listar-ofertas.html">Ofertas</a>
+                    <a href="al-listar-categorias.html">Categorías</a>
+                    <a href="al-listar-generos.html">Géneros</a>
+                    <a href="al-listar-usuarios-de-clubes.html">Usuarios de Clubes</a>
+                    <a href="al-listar-clubes-de-lectura.html">Clubes de lectura</a>
+                </div>
+            </li>
+
+            <li class="sidenav-list-item"><a href="al-reportes.html"><i class='bx bxs-report sidenav-i'></i>Reportes</a>
+            </li>
+            <li class="sidenav-list-item"><a href="al-facturas.html"><i
+                        class='bx bx-dollar-circle sidenav-i'></i>Facturas</a></li>
+            <li class="sidenav-list-item"><a href="al-bitactoras.html"><i
+                        class='bx bx-loader-alt sidenav-i'></i>Bitácora</a></li>
+        </ul>
+
+    </aside>
+
+    <!--Footer-->
+    <footer id="footer-admin">
+        <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+            <span>FÉNIX</span></a>
+    </footer>
+
+    <!--Scripts-->
+    <script src="js/controlador-plataforma.js"></script>
+</body>
+
+</html>
