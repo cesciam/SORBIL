@@ -120,7 +120,7 @@ button::before {
     transition: opacity 0.2s;
 }
 
-button::after {
+/* button::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -131,7 +131,7 @@ button::after {
     opacity: 0;
     transform: translate(-50%, -50%) scale(1);
     transition: opacity 1s, transform 0.5s;
-}
+} */
 
 button:hover::before {
     opacity: 0.08;
@@ -149,6 +149,11 @@ button:active::after {
     opacity: 0.32;
     transform: translate(-50%, -50%) scale(0);
     transition: transform 0s;
+}
+
+.btn-white {
+    background-color: var(--color-white);
+    color: var(--color-primary);
 }
 
 label {
@@ -419,9 +424,7 @@ Inicio de estilos de los registros
 Fin de estilos de los registros
 */
 
-
-.nav-landingpage{
+.nav-landingpage {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
 }
-
