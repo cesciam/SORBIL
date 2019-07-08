@@ -424,7 +424,11 @@ Inicio de estilos de los registros
 Fin de estilos de los registros
 */
 
+<<<<<<< Updated upstream
 .nav-landingpage {
+=======
+.nav-landingpage{
+>>>>>>> Stashed changes
     display: grid;
     grid-template-columns: repeat(7, 1fr);
 }

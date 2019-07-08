@@ -84,6 +84,44 @@ Fin de definicion de variables
     margin-left: 2.5rem;
 }
 
+#main-user {
+
+    display: grid;
+    
+}
+
+#main-user-section-banner {
+
+    text-align: center;
+    padding: 6rem;
+    background: var( --color-alternative-bg);
+}
+
+#main-user-section-banner div button {
+
+    margin: 4rem;
+
+}
+
+#main-user-section-banner div h1 {
+
+    margin: 2rem;
+
+}
+
+.carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
+
+#imagen-carrusel-banner {
+
+    width: 100%;
+    height: 40%;
+    background-size: cover;
+}
+
 #header-nav-2 a:hover {
     color: var(--color-alternative-bg);
 }
