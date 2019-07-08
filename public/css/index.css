@@ -25,4 +25,65 @@ Inicio de definicion de variables
 Fin de definicion de variables
 */
 
+#header-nav-1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    width: 85%;
+    margin: 3rem auto;
+}
 
+#header-nav-1 .logo {
+    display: grid;
+}
+
+#header-nav-1 .logo img {
+    width: 95%;
+    align-self: center;
+}
+
+#header-nav-1 nav {
+    display: grid;
+    grid-template-columns: repeat(4, 15rem);
+    grid-gap: 1rem;
+    text-align: center;
+}
+
+#header-nav-1 a:hover {
+    transition: .1s;
+}
+
+#header-nav-1 a:hover {
+    color: var(--color-primary);
+}
+
+#header-nav-1 .header-btn button {
+    box-shadow: var(--shadow-light);
+    display: inline-block;
+}
+
+#header-nav-2 {
+    background-color: var(--color-secondary);
+}
+
+#header-nav-2 ul {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 1rem 0;
+    margin: 0 auto;
+    width: 85%;
+}
+
+#header-nav-2 a {
+    color: var(--color-white);
+}
+
+#header-nav-2 a i {
+    color: var(--color-white);
+    margin-left: 2.5rem;
+}
+
+#header-nav-2 a:hover {
+    color: var(--color-alternative-bg);
+}
