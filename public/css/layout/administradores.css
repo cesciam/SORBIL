@@ -56,6 +56,12 @@ Inicio de estilos generales de administradores
     border: 1px solid var(--color-alternative-blue);
 }
 
+/*Sólo en casos específicos*/
+#main-admin .centrar-input {
+    justify-items: center;
+    margin: 0 30rem;
+}
+
 /*Estilos del sidenav del admin*/
 
 #sidenav-admin {

@@ -39,8 +39,6 @@ Inicio de estilos de formularios
     text-align: center;
     text-transform: initial;
     padding: 1rem;
-    border-bottom: var(--line);
-    margin: 0 5rem;
 }
 
 #main-form #form-container a {
