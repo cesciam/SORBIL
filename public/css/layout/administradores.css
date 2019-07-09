@@ -1,6 +1,7 @@
 /*
 Inicio de estilos generales de administradores 
 */
+
 #grid-admin {
     display: grid;
     grid-template-columns: 22rem 1fr auto auto;
@@ -37,6 +38,13 @@ Inicio de estilos generales de administradores
 
 #main-admin .main-admin-titulo h1 {
     margin-bottom: 2rem;
+}
+
+#main-admin #form #form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 2rem;
+    grid-gap: 3rem;
 }
 
 /*Estilos del sidenav del admin*/

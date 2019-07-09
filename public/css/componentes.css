@@ -42,13 +42,6 @@ Inicio de estilos de formularios
     margin-right: auto;
 }
 
-#main-admin #form #form-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 2rem;
-    grid-gap: 3rem;
-}
-
 #form input, select, input {
     width: 100%;
 }

@@ -2,6 +2,8 @@
 Inicio de estilos del header
 */
 
+/*Estilos de la navegación principal*/
+
 #header-nav-1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -39,6 +41,8 @@ Inicio de estilos del header
     display: inline-block;
 }
 
+/*Estilos de la navegación secundaria*/
+
 #header-nav-2 {
     background-color: var(--color-secondary);
 }
@@ -71,6 +75,8 @@ Fin de estilos del header
 /*
 Inicio de estilos del footer
 */
+
+
 
 /*
 Fin de estilos del footer

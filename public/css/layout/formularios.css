@@ -38,9 +38,9 @@ Inicio de estilos de formularios
     font-size: 2.6rem;
     text-align: center;
     text-transform: capitalize;
-    padding: 2rem;
+    padding: 1rem;
     border-bottom: var(--line);
-    margin: 0 15rem;
+    margin: 0 5rem;
 }
 
 #main-form #form-container a {
