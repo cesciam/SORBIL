@@ -14,7 +14,7 @@ Inicio de estilos de formularios
     background-image: url(../../imgs/iniciar-sesion-usuario.png);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
 }
 
 #main-form #form-container {
@@ -29,9 +29,16 @@ Inicio de estilos de formularios
 }
 
 #main-form #form-container a {
-    margin-bottom: 3rem;
     text-align: center;
-    margin-bottom: 1rem;
+}
+
+#main-form #form-container h1 {
+    font-size: 2.6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+    border-bottom: var(--line);
+    padding-bottom: 1rem;
 }
 
 #main-form #form-container a img {
