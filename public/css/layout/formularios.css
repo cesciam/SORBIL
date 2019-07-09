@@ -57,7 +57,7 @@ Inicio de estilos de formularios
 }
 
 #main-form #form-container input {
-    transition: all .2s;
+    transition: all .1s;
     border: 1px solid var(--color-alternative-bg);
     margin-bottom: 2rem;
 }

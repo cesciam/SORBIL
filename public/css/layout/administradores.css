@@ -47,6 +47,15 @@ Inicio de estilos generales de administradores
     grid-gap: 3rem;
 }
 
+#main-admin #form input {
+    border: 1px solid var(--color-alternative-bg);
+    transition: .1s;
+}
+
+#main-admin #form input:focus {
+    border: 1px solid var(--color-alternative-blue);
+}
+
 /*Estilos del sidenav del admin*/
 
 #sidenav-admin {
