@@ -1,0 +1,201 @@
+/* 
+Inicio de estilos de los copyright
+*/
+
+.copyright {
+    color: var(--color-black);
+    font-size: 1.4rem;
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+}
+
+.copyright i {
+    font-size: 2.5rem;
+    color: var(--color-alternative-red);
+    position: relative;
+    top: 5px;
+}
+
+.copyright span {
+    color: var(--color-black);
+    transition: .1s;
+}
+
+.copyright span:hover {
+    color: var(--color-alternative-red);
+}
+
+/* 
+Inicio de estilos de formularios
+*/
+
+#form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#form button {
+    margin-top: 5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#form #form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 2rem;
+    grid-gap: 3rem;
+}
+
+#form input, select, input {
+    width: 100%;
+}
+
+/*
+Fin de estilos formularios
+*/
+
+button {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: var(--shadow-dark-1);
+}
+
+button:hover {
+    opacity: .9;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-dark-2);
+}
+
+button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+}
+
+button:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+
+/*Estilos del botón blanco*/
+
+.btn-white {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+.btn-white:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    opacity: 1;
+}
+
+/* 
+Inicio de estilos de los filtros y listados administradores
+*/
+
+/*Estilos de la barra de búsqueda*/
+
+#barra-busqueda {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-items: center;
+}
+
+#barra-busqueda input {
+    width: 100%;
+    box-shadow: var(--shadow-light);
+    border-radius: .4rem 0 0 .4rem;
+    transition: all .2s;
+}
+
+#barra-busqueda input:focus {
+    width: 105%;
+}
+
+#barra-busqueda button {
+    background-color: var(--color-alternative-blue);
+    color: var(--color-white);
+    border-radius: 0 .4rem .4rem 0;
+}
+
+#barra-busqueda button:hover {
+    box-shadow: var(--shadow-dark-1);
+    transform: translateY(0);
+}
+
+/*
+Fin de estilos de la barra de búsqueda
+*/
+
+/*
+Inicio de estilos de las tablas 
+*/
+
+#tabla-filtrado th {
+    text-align: justify;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: var(--color-alternative-grey);
+    font-weight: var(--font-semibold);
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+#tabla-filtrado td {
+    text-align: justify;
+    vertical-align: middle;
+    font-size: 1.4rem;
+    font-weight: var(--font-semibold);
+    padding: 1rem;
+}
+
+#tabla-filtrado tbody tr {
+    width: 100%;
+    height: 5rem;
+    background-color: var(--color-white);
+    border-radius: var(--box-radius);
+    border: 1rem solid var(--color-alternative-bg);
+    transition: all .3s;
+}
+
+#tabla-filtrado tbody tr:hover {
+    transform: translateY(-3px);
+}
+
+/*
+Fin de estilos de las tablas 
+*/
+
+/*
+Inicio de estilos del carousel 
+*/
+
+.carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
+
+/*
+Fin de estilos del carousel 
+*/
