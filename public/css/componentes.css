@@ -42,7 +42,7 @@ Inicio de estilos de formularios
     margin-right: auto;
 }
 
-#form #form-container {
+#main-admin #form #form-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 2rem;

@@ -2,7 +2,62 @@
 Inicio de estilos de formularios
 */
 
+#body-form {
+    background-color: var(--color-alternative-bg);
+}
 
+#main-form {
+    height: 60rem;
+}
+
+#main-form #form-image {
+    background-image: url(../../imgs/iniciar-sesion-usuario.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#main-form #form-container {
+    display: grid;
+    background-color: var(--color-white);
+    border-radius: var(--box-radius);
+    margin: 2rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-dark-2);
+}
+
+#main-form #form-container a {
+    margin-bottom: 3rem;
+    text-align: center;
+    margin-bottom: 8rem;
+}
+
+#main-form #form-container a img {
+    width: 50%;
+}
+
+#main-form #form-container button {
+    margin-bottom: 8rem;
+}
+
+#main-form #form-container label {
+    margin-bottom: 2rem;
+    display: block;
+}
+
+#main-form #form-container input {
+    transition: all .2s;
+    border: 1px solid var(--color-alternative-bg);
+    margin-bottom: 2rem;
+}
+
+#main-form #form-container input:focus {
+    border: 1px solid var(--color-alternative-blue);
+}
+
+#main-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 
 /*
 Fin de estilos de formularios
