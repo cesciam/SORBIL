@@ -37,7 +37,7 @@ Inicio de estilos de formularios
 #main-form #form-container h1 {
     font-size: 2.6rem;
     text-align: center;
-    text-transform: capitalize;
+    text-transform: initial;
     padding: 1rem;
     border-bottom: var(--line);
     margin: 0 5rem;
