@@ -7,12 +7,13 @@ Inicio de estilos de formularios
 }
 
 #main-form {
-    height: 60rem;
+    display: grid;
 }
 
 #main-form #form-image {
     background-image: url(../../imgs/iniciar-sesion-usuario.png);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
 }
 
@@ -21,14 +22,16 @@ Inicio de estilos de formularios
     background-color: var(--color-white);
     border-radius: var(--box-radius);
     margin: 2rem;
-    padding: 2rem;
+    padding: 4rem;
     box-shadow: var(--shadow-dark-2);
+    align-items: center;
+    height: 100vh;
 }
 
 #main-form #form-container a {
     margin-bottom: 3rem;
     text-align: center;
-    margin-bottom: 8rem;
+    margin-bottom: 1rem;
 }
 
 #main-form #form-container a img {
@@ -36,18 +39,18 @@ Inicio de estilos de formularios
 }
 
 #main-form #form-container button {
-    margin-bottom: 8rem;
+    margin-bottom: 1rem;
 }
 
 #main-form #form-container label {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     display: block;
 }
 
 #main-form #form-container input {
     transition: all .2s;
     border: 1px solid var(--color-alternative-bg);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 #main-form #form-container input:focus {
