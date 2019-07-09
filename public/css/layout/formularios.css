@@ -11,10 +11,13 @@ Inicio de estilos de formularios
 }
 
 #main-form #form-image {
-    background-image: url(../../imgs/iniciar-sesion-usuario.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
+}
+
+#main-form .form-bg-iniciar-sesion-usuario {
+    background-image: url(../../imgs/iniciar-sesion-usuario.png);
 }
 
 #main-form #form-container {
