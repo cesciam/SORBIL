@@ -25,13 +25,12 @@ let saludar = () => {
     if (error == false) {
         // registrarGenero(genero);
         Swal.fire({ //formato json
-            title: 'Se ha enviado su mensaje exitosamente',
+            title: 'Se ha registrado la información exitosamente',
             type: 'success',
-            text: 'Nos pondremos en contacto con usted, tan pronto nos sea posible'
         })
     } else {
         Swal.fire({ //formato json
-            title: 'No se ha enviado su mensaje',
+            title: 'No se ha registrado la información',
             type: 'warning',
             text: 'Revise los campos resaltados e inténtelo de nuevo'
         })
