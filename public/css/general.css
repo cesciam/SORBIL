@@ -108,6 +108,12 @@ label {
     font-weight: var(--font-semibold);
 }
 
+/*Estilos de Sweet Alert*/
+
+.swal2-popup {
+    font-size: 1.6rem !important;
+}
+
 /*
 Inicio de estilos generales de keyframes
 */
