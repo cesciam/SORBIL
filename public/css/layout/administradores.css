@@ -59,7 +59,7 @@ Inicio de estilos generales de administradores
 /*Sólo en casos específicos*/
 #main-admin .centrar-input {
     justify-items: center;
-    margin: 0 30rem;
+    margin: 0 10rem;
 }
 
 /*Estilos del sidenav del admin*/
