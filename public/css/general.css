@@ -4,6 +4,7 @@ Inicio de definicion de variables
 
 :root {
     --color-primary: #E3920E;
+    --color-primary-light: rgba(227, 145, 14, 0.5);
     --color-secondary: #1F3C88;
     --color-black: #333333;
     --color-white: #ffffff;
@@ -19,7 +20,7 @@ Inicio de definicion de variables
     --line: 1px solid var(--color-alternative-bg);
     --font-semibold: 600;
     --box-padding: 1.3rem 3.8rem;
-    --box-radius: 0.4rem;
+    --box-radius: .4rem;
 }
 
 /*
@@ -52,7 +53,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     color: var(--color-secondary);
     font-weight: var(--font-semibold);
-    letter-spacing: 0.1rem;
+    letter-spacing: .1rem;
 }
 
 h1 {
@@ -108,10 +109,14 @@ label {
     font-weight: var(--font-semibold);
 }
 
-/*Estilos de Sweet Alert*/
+/*Estilos importantes*/
 
 .swal2-popup {
     font-size: 1.6rem !important;
+}
+
+.input_error {
+    border: 2px solid var(--color-alternative-red) !important;
 }
 
 /*
