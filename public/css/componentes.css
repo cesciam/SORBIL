@@ -113,6 +113,7 @@ Inicio de estilos de los filtros y listados administradores
     display: grid;
     grid-template-columns: 1fr auto;
     justify-items: center;
+    height: .1rem;
 }
 
 #barra-busqueda input {
@@ -123,7 +124,7 @@ Inicio de estilos de los filtros y listados administradores
 }
 
 #barra-busqueda input:focus {
-    width: 106%;
+    width: 105%;
 }
 
 #barra-busqueda button {
@@ -151,7 +152,7 @@ Inicio de estilos de las tablas
     font-size: 1.2rem;
     color: var(--color-alternative-grey);
     font-weight: var(--font-semibold);
-    padding-left: 1.5rem;
+    padding-left: 1.4rem;
     padding-bottom: 1rem;
 }
 

@@ -5,7 +5,7 @@ Inicio de estilos generales de administradores
 #grid-admin {
     display: grid;
     grid-template-columns: 22rem 1fr auto auto;
-    grid-template-rows: 10rem 1fr auto auto;
+    grid-template-rows: 10rem 100vh auto auto;
     grid-template-areas: "sidenav header" "sidenav main" "sidenav footer";
     background-color: var(--color-alternative-bg);
 }
@@ -17,7 +17,7 @@ Inicio de estilos generales de administradores
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    padding: 0 1.6rem;
+    padding: 1.5rem 1.6rem;
     background-color: var(--color-white);
     margin-bottom: 3rem;
 }
@@ -69,14 +69,14 @@ Inicio de estilos generales de administradores
 #header-admin a .header-user-photo img {
     height: 3.75rem;
     border-radius: 20%;
-    margin-right: .2rem;
+    margin-right: .1rem;
 }
 
 #header-admin a .header-user-photo i {
     color: var(--color-black);
     font-size: 1.6rem;
     position: relative;
-    top: -.6rem;
+    top: -.7rem;
 }
 
 /*Estilos del main del admin*/
@@ -151,25 +151,28 @@ Inicio de estilos generales de administradores
 
 #sidenav-admin .sidenav-list {
     overflow: hidden;
-    margin-left: 2rem;
+    cursor: pointer;
 }
 
-#sidenav-admin .sidenav-list a {
+#sidenav-admin .sidenav-list-item a {
     transition: .1s;
-}
-
-#sidenav-admin .sidenav-list a:hover {
-    color: var(--color-primary);
+    line-height: 100%;
+    width: 100%;
+    display: block;
+    padding: 1.5rem 1rem;
+    border-left: .4rem solid var(--color-white);
 }
 
 #sidenav-admin .sidenav-list-item {
     list-style: none;
-    padding: 1.2rem 0;
+    transition: .2s;
+    border-bottom: var(--line);
 }
 
-#sidenav-admin .sidenav-btn {
-    display: block;
-    position: relative;
+#sidenav-admin .sidenav-list-item a:hover {
+    border-left: .4rem solid var(--color-primary);
+    background-color: var(--color-alternative-bg);
+    color: var(--color-black-light);
 }
 
 #sidenav-admin .sidenav-list-item i {
@@ -187,28 +190,43 @@ Inicio de estilos generales de administradores
     margin-right: 1rem;
 }
 
-#sidenav-admin .sidenav-btn::before {
+#sidenav-admin .sidenav-btn {
+    border-bottom: var(--line);
+}
+
+#sidenav-admin .sidenav-btn .bx-chevron-down {
+    margin-left: 5rem;
+    color: var(--color-black);
+}
+
+#sidenav-admin .sidenav-small-menu a {
+    display: block;
+    /* position: relative; */
+    transition: 0.1s;
+    padding: 2rem 2rem;
+    border-bottom: var(--line);
+}
+
+/* #sidenav-admin .sidenav-btn {
+    display: block;
+    position: relative;
+} */
+
+/* #sidenav-admin .sidenav-btn::before {
     content: "";
     width: 1.4rem;
     height: 1.4rem;
     left: 2rem;
     transform: rotate(45deg);
-}
+} */
 
-#sidenav-admin .sidenav-small-menu {
+/* #sidenav-admin .sidenav-small-menu {
     overflow: hidden;
     transition: max-height 0.3s;
     max-height: 0;
-}
+} */
 
-#sidenav-admin .sidenav-small-menu a {
-    display: block;
-    position: relative;
-    transition: 0.1s;
-    padding: 1rem 0;
-}
-
-#sidenav-admin .sidenav-small-menu a::before {
+/* #sidenav-admin .sidenav-small-menu a::before {
     display: "";
     position: absolute;
     width: 6px;
@@ -232,11 +250,11 @@ Inicio de estilos generales de administradores
 
 #sidenav-admin .sidenav-small-menu a:hover::before {
     opacity: 1;
-}
-/* 
-#sidenav-admin .sidenav-list-item:target .sidenav-small-menu {
-    max-height: 60rem;
 } */
+
+/* #sidenav-admin .sidenav-list-item:target .sidenav-small-menu {
+    max-height: 60rem;
+}  */
 
 /*Estilos del footer del admin*/
 
@@ -245,6 +263,7 @@ Inicio de estilos generales de administradores
     display: grid;
     padding: 2rem 0;
     justify-items: center;
+    align-items: end;
 }
 
 /*
