@@ -10,7 +10,7 @@ Inicio de estilos generales de administradores
     background-color: var(--color-alternative-bg);
 }
 
-/*Estilos del header del admin*/
+/*Estilos del header del admin FIXME:*/
 
 #header-admin {
     grid-area: header;
@@ -24,7 +24,7 @@ Inicio de estilos generales de administradores
 
 #header-admin .header-text {
     justify-self: start;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 #header-admin .header-user-icons {
@@ -32,6 +32,8 @@ Inicio de estilos generales de administradores
     grid-template-columns: repeat(3, auto);
     grid-gap: 5rem;
     justify-self: end;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 #header-admin .header-user-icons .header-icon {
@@ -74,7 +76,7 @@ Inicio de estilos generales de administradores
     color: var(--color-black);
     font-size: 1.6rem;
     position: relative;
-    top: -.5rem;
+    top: -.6rem;
 }
 
 /*Estilos del main del admin*/
@@ -137,6 +139,7 @@ Inicio de estilos generales de administradores
     display: grid;
     justify-items: center;
     border-bottom: var(--line);
+    margin-bottom: 2rem;
 }
 
 #sidenav-admin .logo img {
@@ -144,11 +147,19 @@ Inicio de estilos generales de administradores
     margin: 3rem 0;
 }
 
-/*Estilos de la navegación del sidenav TODO:*/
+/*Estilos de la navegación del sidenav FIXME:*/
 
-/* #sidenav-admin .sidenav-list {
+#sidenav-admin .sidenav-list {
     overflow: hidden;
     margin-left: 2rem;
+}
+
+#sidenav-admin .sidenav-list a {
+    transition: .1s;
+}
+
+#sidenav-admin .sidenav-list a:hover {
+    color: var(--color-primary);
 }
 
 #sidenav-admin .sidenav-list-item {
@@ -194,6 +205,7 @@ Inicio de estilos generales de administradores
     display: block;
     position: relative;
     transition: 0.1s;
+    padding: 1rem 0;
 }
 
 #sidenav-admin .sidenav-small-menu a::before {
@@ -221,7 +233,7 @@ Inicio de estilos generales de administradores
 #sidenav-admin .sidenav-small-menu a:hover::before {
     opacity: 1;
 }
-
+/* 
 #sidenav-admin .sidenav-list-item:target .sidenav-small-menu {
     max-height: 60rem;
 } */

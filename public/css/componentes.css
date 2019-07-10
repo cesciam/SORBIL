@@ -7,6 +7,7 @@ Inicio de estilos de los copyright
     font-size: 1.4rem;
     font-weight: var(--font-semibold);
     text-decoration: none;
+    text-align: center;
 }
 
 .copyright i {
@@ -122,7 +123,7 @@ Inicio de estilos de los filtros y listados administradores
 }
 
 #barra-busqueda input:focus {
-    width: 105%;
+    width: 106%;
 }
 
 #barra-busqueda button {

@@ -76,7 +76,42 @@ Fin de estilos del header
 Inicio de estilos del footer
 */
 
+#footer-user #footer-links {
+    display: grid;
+    justify-items: center;
+    padding: 5rem 0;
+    background-color: var(--color-secondary);
+}
 
+#footer-user #footer-links img {
+    width: 20rem;
+}
+
+#footer-user #footer-links a img {
+    margin-bottom: 2rem;
+}
+
+#footer-user #footer-links nav a {
+    color: var(--color-white);
+    transition: .1s;
+}
+
+#footer-user #footer-links nav a:hover {
+    color: var(--color-alternative-bg);
+}
+
+#footer-user #footer-links nav {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 2rem;
+}
+
+#footer-user #footer-copyright {
+    text-align: center;
+    background-color: var(--color-alternative-bg);
+    width: 100%;
+    padding: 1rem 0;
+}
 
 /*
 Fin de estilos del footer
