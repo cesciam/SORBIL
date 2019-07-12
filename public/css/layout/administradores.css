@@ -5,7 +5,7 @@ Inicio de estilos generales de administradores
 #grid-admin {
     display: grid;
     grid-template-columns: 22rem 1fr auto auto;
-    grid-template-rows: 10rem 100vh auto auto;
+    grid-template-rows: 10rem auto 1fr auto; 
     grid-template-areas: "sidenav header" "sidenav main" "sidenav footer";
     background-color: var(--color-alternative-bg);
 }
@@ -20,6 +20,7 @@ Inicio de estilos generales de administradores
     padding: 1.5rem 1.6rem;
     background-color: var(--color-white);
     margin-bottom: 3rem;
+    height: 8rem;
 }
 
 #header-admin .header-text {
@@ -41,7 +42,7 @@ Inicio de estilos generales de administradores
     margin: 1rem 0;
 }
 
-#header-admin .header-user-icons a .user-notification {
+#header-admin .header-user-icons .user-notification {
     display: grid;
     justify-items: center;
     align-items: center;
@@ -127,134 +128,19 @@ Inicio de estilos generales de administradores
 
 #sidenav-admin {
     grid-area: sidenav;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    background-color: var(--color-white);
-    font-weight: var(--font-semibold);
-    box-shadow: var(--shadow-light);
-    font-weight: var(--font-semibold);
 }
 
 #sidenav-admin .logo {
     display: grid;
-    justify-items: center;
-    border-bottom: var(--line);
-    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 
 #sidenav-admin .logo img {
-    width: 60%;
-    margin: 3rem 0;
-}
-
-/*Estilos de la navegación del sidenav FIXME:*/
-
-#sidenav-admin .sidenav-list {
-    overflow: hidden;
-    cursor: pointer;
-}
-
-#sidenav-admin .sidenav-list-item a {
-    transition: .1s;
-    line-height: 100%;
     width: 100%;
-    display: block;
-    padding: 1.5rem 1rem;
-    border-left: .4rem solid var(--color-white);
+    margin: 2rem 0;
 }
-
-#sidenav-admin .sidenav-list-item {
-    list-style: none;
-    transition: .2s;
-    border-bottom: var(--line);
-}
-
-#sidenav-admin .sidenav-list-item a:hover {
-    border-left: .4rem solid var(--color-primary);
-    background-color: var(--color-alternative-bg);
-    color: var(--color-black-light);
-}
-
-#sidenav-admin .sidenav-list-item i {
-    font-size: 2rem;
-    color: var(--color-primary);
-    position: relative;
-    top: 3px;
-}
-
-#sidenav-admin .sidenav-btn i {
-    margin-right: 0.5rem;
-}
-
-#sidenav-admin .sidenav-i {
-    margin-right: 1rem;
-}
-
-#sidenav-admin .sidenav-btn {
-    border-bottom: var(--line);
-}
-
-#sidenav-admin .sidenav-btn .bx-chevron-down {
-    margin-left: 5rem;
-    color: var(--color-black);
-}
-
-#sidenav-admin .sidenav-small-menu a {
-    display: block;
-    /* position: relative; */
-    transition: 0.1s;
-    padding: 2rem 2rem;
-    border-bottom: var(--line);
-}
-
-/* #sidenav-admin .sidenav-btn {
-    display: block;
-    position: relative;
-} */
-
-/* #sidenav-admin .sidenav-btn::before {
-    content: "";
-    width: 1.4rem;
-    height: 1.4rem;
-    left: 2rem;
-    transform: rotate(45deg);
-} */
-
-/* #sidenav-admin .sidenav-small-menu {
-    overflow: hidden;
-    transition: max-height 0.3s;
-    max-height: 0;
-} */
-
-/* #sidenav-admin .sidenav-small-menu a::before {
-    display: "";
-    position: absolute;
-    width: 6px;
-    height: 100%;
-    left: 0;
-    top: 0;
-    transition: 0.3s;
-    opacity: 0;
-}
-
-#sidenav-admin .sidenav-small-menu a::before {
-    display: "";
-    position: absolute;
-    width: 6rem;
-    height: 100%;
-    left: 0;
-    top: 0;
-    transition: 0.3s;
-    opacity: 0;
-}
-
-#sidenav-admin .sidenav-small-menu a:hover::before {
-    opacity: 1;
-} */
-
-/* #sidenav-admin .sidenav-list-item:target .sidenav-small-menu {
-    max-height: 60rem;
-}  */
 
 /*Estilos del footer del admin*/
 
@@ -269,3 +155,11 @@ Inicio de estilos generales de administradores
 /*
 Fin de estilos generales de administradores
 */
+
+@media (max-width: 768px) {
+    #grid-admin {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "sidenav header" "sidenav main" "sidenav footer";
+    }
+}

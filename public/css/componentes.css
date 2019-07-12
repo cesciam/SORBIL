@@ -10,6 +10,10 @@ Inicio de estilos de los copyright
     text-align: center;
 }
 
+.copyright:hover {
+    color: var(--color-black-light);
+}
+
 .copyright i {
     font-size: 2.5rem;
     color: var(--color-alternative-red);
@@ -114,6 +118,9 @@ Inicio de estilos de los filtros y listados administradores
     grid-template-columns: 1fr auto;
     justify-items: center;
     height: .1rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #barra-busqueda input {
@@ -124,7 +131,7 @@ Inicio de estilos de los filtros y listados administradores
 }
 
 #barra-busqueda input:focus {
-    width: 105%;
+    width: 110%;
 }
 
 #barra-busqueda button {
@@ -182,15 +189,129 @@ Fin de estilos de las tablas
 */
 
 /*
+Inicio de estilos del header de usuario
+*/
+
+/*
+Inicio de estilos del header de usuario
+*/
+
+/*
+Inicio de estilos de la navegación del sidenav
+*/
+
+.sidebar {
+    display: grid;
+    grid-template-rows: auto auto 100vh;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-light);
+}
+
+.sidebar-open {
+    transform: translateX(.1rem);
+}
+
+.sidenav-list-item {
+    border-bottom: var(--line);
+}
+
+.sidenav-list-item a {
+    width: 100%;
+    display: block;
+    padding: 1.5rem 1rem;
+    border-left: .4rem solid var(--color-white);
+    transition: .1s;
+}
+
+.sidenav-list-item a:hover {
+    border-left: .4rem solid var(--color-primary);
+    background-color: var(--color-alternative-bg);
+    color: var(--color-black-light);
+}
+
+.sidenav-list-item i {
+    font-size: 2rem;
+    color: var(--color-primary);
+    position: relative;
+    top: 3px;
+}
+
+.sidenav-list-item .chevron {
+    float: right;
+}
+
+.sidenav-list-item .chevron i {
+    color: var(--color-black);
+}
+
+.sidenav-list-item .chevron::after {
+    content: '';
+    clear: both;
+}
+
+.sidenav-i {
+    /*los íconos de aquellos que no tienen dropdown*/
+    margin-right: 1.4rem;
+}
+
+.sidenav-btn {
+    border-bottom: var(--line);
+}
+
+.sidenav-btn i {
+    /*los íconos de aquellos que tienen dropdown*/
+    margin-right: 1.2rem;
+}
+
+/*Estilos de submenu*/
+
+.sidenav-small-menu a {
+    transition: 0.1s;
+    padding: 2rem 2rem;
+    border-bottom: var(--line);
+    transition: height 350ms ease-in-out;
+}
+
+.dropdown-menu1, .dropdown-menu2 {
+    max-height: 0;
+    transition: max-height 0.30s ease-out;
+    overflow: hidden;
+}
+
+.dropdown-mostrar1, .dropdown-mostrar2 {
+    max-height: 500px;
+    transition: max-height 0.30s ease-in;
+}
+
+/*
+Fin de estilos de la navegación del sidenav
+*/
+
+/*
 Inicio de estilos del carousel 
 */
 
 .carousel {
     max-width: 800px;
     margin: 0 auto;
-    /* display: flex; */
+    /* display: flex; No utilizar flexbox */
 }
 
 /*
 Fin de estilos del carousel 
 */
+
+@media (max-width: 76.8rem) {
+    #barra-busqueda {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        display: block;
+    }
+    #barra-busqueda input:focus {
+        width: 100%;
+    }
+    #barra-busqueda button {
+        display: block;
+        width: 100%;
+    }
+}
