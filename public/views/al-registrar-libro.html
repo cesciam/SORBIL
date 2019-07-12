@@ -16,31 +16,36 @@
 
 <body id="grid-admin">
 
-    <!--Header  FIXME:-->
+    <!--Header-->
     <header id="header-admin">
-
+    
         <h4 class="header-text">Área del administrador de librería</h3>
-
+    
             <div class="header-user-icons">
-                <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
-                    <span class="user-notification">1</span>
-                </a>
-                <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification">6</span>
-                </a>
-                <a href="#">
-                    <div class="header-user-photo">
-                        <img class="user-picture" src="../imgs/user.png" alt="Foto del administrador">
-                        <i class='bx bx-chevron-down'></i>
-                        <!--<div class="user-sm-nav">
-                                <a href="#">Datos del perfil</a>
-                                <a href="#">Cerrar sesión</a>
-                            </div> -->
+                <div class="header-user-container">
+                    <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
+                        <span class="user-notification">1</span>
+                    </a>
+                </div>
+                <div class="header-user-container">
+                    <a class="header-icon" href="#"><i class='bx bx-bell'></i>
+                        <span class="user-notification">6</span>
+                    </a>
+                </div>
+    
+                <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
+                            class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
+                            class='bx bx-chevron-down'></i></a>
+                    <div class="menu-user-container">
+                        <ul class="user-menu">
+                            <a class="user-menu-link" href="#">Perfil</a>
+                            <a class="user-menu-link" href="#">Cerrar sesión</a>
+                        </ul>
                     </div>
-                </a>
-
+                </div>
+    
             </div>
-
+    
     </header>
 
     <!--Main-->

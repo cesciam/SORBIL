@@ -17,3 +17,9 @@ click_menu('.dropdown-toggle2').addEventListener('click', (fixed) => {
     click_menu('.dropdown-menu2').classList.toggle('dropdown-mostrar2');
 });
 
+//Dropdown de usuarios
+click_menu('.mini-photo-wrapper').addEventListener('click', (fixed) => {
+    fixed.preventDefault();
+    click_menu('.menu-user-container').classList.toggle('active');
+});
+

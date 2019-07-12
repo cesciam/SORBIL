@@ -107,6 +107,14 @@ button:active:after {
     opacity: 1;
 }
 
+/*
+Inicio de estilos de selects
+*/
+
+/*
+Fin de estilos de selects
+*/
+
 /* 
 Inicio de estilos de los filtros y listados administradores
 */
@@ -191,6 +199,123 @@ Fin de estilos de las tablas
 /*
 Inicio de estilos del header de usuario
 */
+
+.header-user-icons {
+    display: grid;
+    position: relative;
+    top: -3.3rem;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    grid-gap: 5rem;
+    justify-self: end;
+}
+
+.header-user-icons .header-user-container {
+    display: grid;
+    align-items: center;
+}
+
+.header-user-icons .header-icon {
+    position: relative;
+}
+
+.header-user-icons .user-notification {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    position: absolute;
+    font-size: .8rem;
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 50%;
+    background-color: var(--color-alternative-red);
+    color: #fff;
+    top: -.8rem;
+    right: -.8rem;
+}
+
+.header-icon i {
+    font-size: 2.4rem;
+    color: var(--color-primary-light);
+    transition: .2s;
+}
+
+.header-icon i:hover {
+    color: var(--color-primary);
+}
+
+.mini-photo-wrapper i {
+    color: var(--color-black);
+    font-size: 1.6rem;
+    position: relative;
+    top: -.6rem;
+}
+
+.user-menu-wrap {
+    position: relative;
+}
+
+.mini-photo {
+    border-radius: 50%;
+}
+
+.menu-user-container {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.menu-user-container.active {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.user-menu {
+    position: absolute;
+    right: -2rem;
+    background-color: #fff;
+    width: 12.0rem;
+    border-radius: var(--box-radius);
+    box-shadow: var(--shadow-light);
+    border: var(--color-alternative-grey);
+    padding: .5rem 0;
+    margin-top: 1rem;
+}
+
+.user-menu:before {
+    position: absolute;
+    top: -16px;
+    left: 72px;
+    display: inline-block;
+    content: "";
+    border: 8px solid transparent;
+    border-bottom-color: #ccc;
+    border-bottom-color: rgba(0, 0, 0, 0.15);
+}
+
+.user-menu:after {
+    position: absolute;
+    top: -14px;
+    left: 73px;
+    display: inline-block;
+    content: "";
+    border: 7px solid transparent;
+    border-bottom-color: #fff;
+}
+
+.user-menu .user-menu-link {
+    display: block;
+    text-decoration: none;
+    color: var(--color-black);
+    font-size: 1.4rem;
+    padding: .5rem 1rem;
+    border-bottom: var(--line);
+    text-align: center;
+}
+
+.user-menu .user-menu-link:hover {
+    color: var(--color-primary);
+}
 
 /*
 Inicio de estilos del header de usuario

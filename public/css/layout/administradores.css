@@ -10,74 +10,19 @@ Inicio de estilos generales de administradores
     background-color: var(--color-alternative-bg);
 }
 
-/*Estilos del header del admin FIXME:*/
+/*Estilos del header del admin*/
 
 #header-admin {
     grid-area: header;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    padding: 1.5rem 1.6rem;
+    padding: 3rem 3rem;
     background-color: var(--color-white);
     margin-bottom: 3rem;
-    height: 8rem;
 }
 
 #header-admin .header-text {
     justify-self: start;
     font-size: 1.4rem;
-}
-
-#header-admin .header-user-icons {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-gap: 5rem;
-    justify-self: end;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-#header-admin .header-user-icons .header-icon {
-    position: relative;
-    margin: 1rem 0;
-}
-
-#header-admin .header-user-icons .user-notification {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    position: absolute;
-    font-size: .8rem;
-    height: 1.7rem;
-    width: 1.7rem;
-    border-radius: 50%;
-    background-color: var(--color-alternative-red);
-    color: #fff;
-    top: -.8rem;
-    right: -.8rem;
-}
-
-#header-admin .header-user-icons a i {
-    font-size: 2.4rem;
-    color: var(--color-primary-light);
-    transition: .2s;
-}
-
-#header-admin .header-user-icons a i:hover {
-    color: var(--color-primary);
-}
-
-#header-admin a .header-user-photo img {
-    height: 3.75rem;
-    border-radius: 20%;
-    margin-right: .1rem;
-}
-
-#header-admin a .header-user-photo i {
-    color: var(--color-black);
-    font-size: 1.6rem;
-    position: relative;
-    top: -.7rem;
 }
 
 /*Estilos del main del admin*/
