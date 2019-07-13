@@ -23,3 +23,10 @@ click_menu('.mini-photo-wrapper').addEventListener('click', (fixed) => {
     click_menu('.menu-user-container').classList.toggle('active');
 });
 
+//Javascript general de los usuarios
+
+//Código para utiliza el carousel: https://github.com/glidejs/glide
+
+
+
+

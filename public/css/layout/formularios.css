@@ -11,27 +11,27 @@ Inicio de estilos de formularios
 }
 
 #main-form #form-image {
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
+    height: 100vh;
 }
 
 #main-form .form-bg-iniciar-sesion-usuario {
     background-image: url(../../imgs/iniciar-sesion-usuario.png);
 }
 
-#main-form #form-container {
-    display: grid;
-    background-color: var(--color-white);
-    border-radius: var(--box-radius);
-    margin: 3rem;
-    padding: 4rem;
+#main-form #seccion-form {
     box-shadow: var(--shadow-dark-2);
-    align-items: center;
+    background-color: var(--color-white);
+    margin: 2rem 6rem;
 }
 
-#main-form .form-height {
-    height: 100vh;
+#main-form #form-container {
+    display: grid;
+    border-radius: var(--box-radius);
+    padding: 4rem;
+    align-items: center;
 }
 
 #main-form #form-container h1 {
@@ -46,7 +46,7 @@ Inicio de estilos de formularios
 }
 
 #main-form #form-container a img {
-    width: 50%;
+    width: 45%;
 }
 
 #main-form #form-container label {
