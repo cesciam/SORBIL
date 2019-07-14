@@ -1,31 +1,35 @@
-#main-user {
+/* #main-user {
     display: grid;
-}
+} */
 
 #main-user-section-banner {
     text-align: center;
-    padding: 6rem;
     background: var( --color-alternative-bg);
-    clip-path: circle(70.7% at 50% 16%);
-    background-size: cover;
+    clip-path: circle(73% at 50% 5%);
     width: 100%;
+    height: 110rem;
+    margin-bottom: .5rem;
 }
 
 #main-user-section-banner .main-user-call-banner {
     animation-name: moveInUp;
     animation-duration: 1s;
+    padding: 5rem;
+    margin-bottom: .5rem;
 }
 
 #main-user-section-banner div button {
     margin: 4rem;
 }
 
-#main-user-section-banner div h1 {
-    margin: 2rem;
-}
-
 #imagen-carrusel-banner {
     width: 100%;
     height: 40%;
     background-size: cover;
+}
+
+@media (max-width: 76.8rem) {
+    #main-user-section-banner {
+        clip-path: none;
+    }
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-const tbody = document.querySelector('#btl_generos tbody');
+const tbody = document.querySelector('#tabla-filtrado tbody');
 let lista_generos = [];
 
 let mostrar_tabla = async () => {

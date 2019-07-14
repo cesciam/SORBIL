@@ -8,7 +8,7 @@ const click_menu = (click) => document.querySelector(click);
 //Dropdown de usuarios
 click_menu('.mini-photo-wrapper').addEventListener('click', (fixed) => {
     fixed.preventDefault();
-    
+
     click_menu('.menu-user-container').classList.toggle('active');
 });
 
@@ -43,9 +43,4 @@ let handleClick = click => {
 };
 
 document.addEventListener('click', handleClick);
-
-
-//Código para utiliza el carousel: https://github.com/glidejs/glide
-
-
 

@@ -40,6 +40,13 @@ Inicio de estilos de formularios
     margin-right: auto;
 }
 
+#form p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--color-black);
+    font-weight: var(--font-semibold);
+}
+
 #form button {
     margin-top: 5rem;
     display: block;
@@ -47,8 +54,76 @@ Inicio de estilos de formularios
     margin-right: auto;
 }
 
-#form input, select, input {
+#form select, input {
     width: 100%;
+}
+
+#form input[type="date"] {
+    cursor: pointer;
+    border: 0;
+    font-family: inherit;
+}
+
+#form .upload-img {
+    display: grid;
+    justify-items: center;
+    padding: 2rem;
+    background-color: var(--color-alternative-bg);
+}
+
+#form .upload-img i {
+    font-size: 10rem;
+    color: var(--color-alternative-grey);
+    opacity: .4;
+}
+
+#form .upload-img label {
+    font-size: 1.4rem;
+    color: var(--color-alternative-grey);
+    font-weight: var(--font-semibold);
+    margin-bottom: 1rem;
+}
+
+#form .upload-img input {
+    color: transparent;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+#form .upload-img input:hover {
+    opacity: .9;
+}
+
+#form .upload-img input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+#form .upload-img input::before {
+    color: var(--color-white);
+    display: inline-block;
+    background: var(--color-alternative-blue);
+    border-radius: var(--box-radius);
+    padding: var(--box-padding);
+    font-weight: var(--font-semibold);
+    outline: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+#form .upload-img .upload-msg::before {
+    content: 'Subir una imagen';
+}
+
+#form .upload-img .avatar-msg::before {
+    content: 'Escoger un avatar';
+}
+
+#form .upload-img input:active, input:focus {
+    outline: 0;
+    border: none;
 }
 
 /*
@@ -328,8 +403,6 @@ Inicio de estilos de la navegación del sidenav
 .sidebar {
     display: grid;
     grid-template-rows: auto auto 100vh;
-    background-color: var(--color-white);
-    box-shadow: var(--shadow-light);
 }
 
 .sidebar-open {
@@ -416,10 +489,16 @@ Fin de estilos de la navegación del sidenav
 Inicio de estilos del carousel 
 */
 
-/* .carousel {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex; No utilizar flexbox 
+.slider {
+    height: 100%;
+    margin-bottom: 10rem;
+}
+
+/* Cuando el cuadro obtiene el foco cambia el color
+
+.slider[class*=active] {
+    box-shadow: none;
+    background: var(--color-primary);
 } */
 
 /*
@@ -438,5 +517,8 @@ Fin de estilos del carousel
     #barra-busqueda button {
         display: block;
         width: 100%;
+    }
+    .header-user-icons {
+        justify-self: center;
     }
 }

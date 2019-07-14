@@ -4,13 +4,25 @@ Inicio de estilos del header
 
 /*Estilos de la navegación principal*/
 
+#header-user {
+    background-color: var(--color-alternative-bg);
+}
+
+#header-user a i {
+    margin-right: 1rem;
+    font-size: 1.8rem;
+    position: relative;
+    top: .3rem;
+}
+
 #header-nav-1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     align-items: center;
     width: 85%;
-    margin: 3rem auto;
+    margin: 0 auto;
+    padding: 2rem 0;
 }
 
 #header-nav-1 .logo {
@@ -24,9 +36,9 @@ Inicio de estilos del header
 
 #header-nav-1 nav {
     display: grid;
-    grid-template-columns: repeat(4, 15rem);
-    grid-gap: 1rem;
-    text-align: center;
+    justify-items: start;
+    grid-template-columns: 8rem repeat(2, 14rem) 10rem;
+    grid-column-gap: 2rem;
 }
 
 #header-nav-1 a:hover {
@@ -35,10 +47,6 @@ Inicio de estilos del header
 
 #header-nav-1 a:hover {
     color: var(--color-primary);
-}
-
-#header-nav-1 .header-btn button {
-    display: inline-block;
 }
 
 /*Estilos de la navegación secundaria*/
