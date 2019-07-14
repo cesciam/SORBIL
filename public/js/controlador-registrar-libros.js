@@ -1,4 +1,4 @@
-// Aqui empieza todo el proceso para subir las fotos a cloudinary
+// Aqui empiezan todas las variables para subir las fotos a cloudinary
 const imgpreview = document.getElementById('img_preview');
 const uploader_portada = document.getElementById('img_uploader_portada');
 const uploader_contraportada = document.getElementById('img_uploader_contraportada');
@@ -6,52 +6,7 @@ const progress_bar = document.getElementById('progress_bar');
 const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/fenixsorbil/image/upload';
 const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
 
-uploader_portada.addEventListener('change', async (e)=> {
-    let file = e.target.files[0];
-    let formData = new FormData();
-    formData.append('file', file);
-    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
-
-    const res = await axios.post(CLOUDINARY_URL, formData, {
-        headers: {
-            'Content-Type': 'multipart/form-data'
-        },
-        /*onUploadProgress(e) {
-            console.log(Math.round((e.loaded * 100) / e.total));
-            const progress = (e.loaded * 100) / e.total;
-            progress_bar.setAttribute('value', progress);
-        }*/
-    });
-
-    /*let img = res.data.url;
-    imgpreview-portada.src = img;
-    */
-});
-
-uploader_contraportada.addEventListener('change', async (e)=> {
-    let file = e.target.files[0];
-    let formData = new FormData();
-    formData.append('file', file);
-    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
-
-    const res = await axios.post(CLOUDINARY_URL, formData, {
-        headers: {
-            'Content-Type': 'multipart/form-data'
-        },
-        /*onUploadProgress(e) {
-            console.log(Math.round((e.loaded * 100) / e.total));
-            const progress = (e.loaded * 100) / e.total;
-            progress_bar.setAttribute('value', progress);
-        }*/
-    });
-    
-
-    /*let img = res.data.url;
-    imgpreview-contraportada.src = img;
-    */
-});
-
-// Aqui termina todo el proceso para subir las fotos a cloudinary
+// Aqui terminan las variables para subir las fotos a cloudinary
 
 const img_uploader_portada = document.querySelector('#img_uploader_portada');
 const img_uploader_contraportada = document.querySelector('#img_uploader_contraportada');
@@ -174,10 +129,59 @@ let validar = (pportada, pcontraportada, ptitulo, pautor, pedicion, peditorial, 
         input_isbn.classList.remove('input_error');
     }
 
+    return error;
+
 };
 
 let llamar = () =>{
-    validar(img_uploader_portada, img_uploader_contraportada, input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn);
+    let resultado_validaciones = validar(img_uploader_portada, img_uploader_contraportada, input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn);
+
+    if(!resultado_validaciones){
+        uploader_portada.addEventListener('change', async (e)=> {
+            let file = e.target.files[0];
+            let formData = new FormData();
+            formData.append('file', file);
+            formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+        
+            const res = await axios.post(CLOUDINARY_URL, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                },
+                /*onUploadProgress(e) {
+                    console.log(Math.round((e.loaded * 100) / e.total));
+                    const progress = (e.loaded * 100) / e.total;
+                    progress_bar.setAttribute('value', progress);
+                }*/
+            });
+        
+            /*let img = res.data.url;
+            imgpreview-portada.src = img;
+            */
+        });
+        
+        uploader_contraportada.addEventListener('change', async (e)=> {
+            let file = e.target.files[0];
+            let formData = new FormData();
+            formData.append('file', file);
+            formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+        
+            const res = await axios.post(CLOUDINARY_URL, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                },
+                /*onUploadProgress(e) {
+                    console.log(Math.round((e.loaded * 100) / e.total));
+                    const progress = (e.loaded * 100) / e.total;
+                    progress_bar.setAttribute('value', progress);
+                }*/
+            });
+            
+        
+            /*let img = res.data.url;
+            imgpreview-contraportada.src = img;
+            */
+        });
+    }
 }
 
 
