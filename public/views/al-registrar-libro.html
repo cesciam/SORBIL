@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/paginas/registrar-libro.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
     <title>Sorbil -- Librería -- Registrar Géneros</title>
 </head>
@@ -58,6 +59,20 @@
         <form id="form" action="#">
 
             <div id="form-container">
+                 <div>
+                    <label for="">Portada</label>
+                    <div class="upload-img">
+                        <!--<img id="imgpreview-portada" alt="">  Esto se puede utilizar para mostrar la imagen que el usuario acaba de subir-->
+                        <input type="file" id="img-uploader-portada">
+                    </div>
+                </div>
+                <div>
+                    <label for="">Contraportada</label>
+                    <div class="upload-img">
+                    <!--<img id="imgpreview-contraportada" alt="">  Esto se puede utilizar para mostrar la imagen que el usuario acaba de subir-->
+                    <input type="file" id="img-uploader-contraportada">
+                    </div>
+                </div>   
                 <div>
                     <label for="#">Título</label>
                     <input id="" type="text" placeholder="Ingresar título de libro"
@@ -65,8 +80,19 @@
                 </div>
                 <div>
                     <label for="#">Autor</label>
-                    <input id="" type="text" placeholder="Ingresar el Autor de libro"
-                        aria-label="Ingresar el Autor de libro">
+                    <input id="" type="text" placeholder="Ingresar el Autor de libro" aria-label="Ingresar el Autor de libro">
+                </div>
+                <div>
+                    <label for="#">Edición</label>
+                    <input id="" type="text" placeholder="Ingresar la edición del libro" aria-label="Ingresar la edición del libro">
+                </div>
+                <div>
+                    <label for="#">Editorial</label>
+                    <input id="" type="text" placeholder="Ingresar la editorial del libro" aria-label="Ingresar la editorial del libro">
+                </div>
+                <div>
+                    <label for="#">Fecha de publicación></label>
+                    <input id="" type="date" placeholder="Ingresar la fecha de publicación del libro" aria-label="Ingresar la fecha de publicación del libro">
                 </div>
                 <div>
                     <label for="#">Categoría</label>
@@ -88,6 +114,24 @@
                         <option value="">
                             Género 1
                         </option>
+                    </select>
+                </div>
+                <div>
+                    <label for="#">Idioma</label>
+                    <input id="" type="text" placeholder="Ingresar el idioma del libro" aria-label="Ingresar el idioma del libro">
+                </div>
+                <div>
+                    <label for="#">Precio</label>
+                    <input id="" type="number" placeholder="Ingresar el precio del libro" aria-label="Ingresar el precio del libro">
+                </div>
+                <div>
+                    <label for="#">Tipo de libro</label>
+                    <select id="" name="">
+                        <option value="0" disabled="disabled" selected="true">Escoger una opción</option>
+                        <option value="1">Pasta dura</option>
+                        <option value="2">Pasta suave</option>
+                        <option value="3">De bolsillo</option>
+                        <option value="4">Digital</option>
                     </select>
                 </div>
             </div>
@@ -176,9 +220,10 @@
     </footer>
 
     <!--Scripts-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="../js/controlador-general.js"></script>
-    <script src="../js/controlador-registrar-generos.js"></script>
+    <script src="../js/controlador-registrar-libros.js"></script>
 </body>
 
 </html>
