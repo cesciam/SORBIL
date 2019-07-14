@@ -388,8 +388,6 @@ Inicio de estilos de la navegación del sidenav
     margin-right: 1.2rem;
 }
 
-/*Estilos de submenu*/
-
 .sidenav-small-menu a {
     transition: 0.1s;
     padding: 2rem 2rem;
@@ -397,13 +395,15 @@ Inicio de estilos de la navegación del sidenav
     transition: height 350ms ease-in-out;
 }
 
-.dropdown-menu1, .dropdown-menu2 {
+/*Estilos de submenu*/
+
+.dropdown-menu {
     max-height: 0;
     transition: max-height 0.30s ease-out;
     overflow: hidden;
 }
 
-.dropdown-mostrar1, .dropdown-mostrar2 {
+.dropdown-mostrar {
     max-height: 500px;
     transition: max-height 0.30s ease-in;
 }
@@ -416,11 +416,11 @@ Fin de estilos de la navegación del sidenav
 Inicio de estilos del carousel 
 */
 
-.carousel {
+/* .carousel {
     max-width: 800px;
     margin: 0 auto;
-    /* display: flex; No utilizar flexbox */
-}
+    display: flex; No utilizar flexbox 
+} */
 
 /*
 Fin de estilos del carousel 
