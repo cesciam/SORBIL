@@ -22,7 +22,7 @@ Inicio de estilos del header
     align-items: center;
     width: 85%;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 1.8rem 0;
 }
 
 #header-nav-1 .logo {
@@ -30,7 +30,7 @@ Inicio de estilos del header
 }
 
 #header-nav-1 .logo img {
-    width: 70%;
+    max-width: 55%;
     align-self: center;
 }
 
@@ -112,6 +112,13 @@ Inicio de estilos del footer
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: 2rem;
+}
+
+#footer-user a i {
+    margin-right: 1rem;
+    font-size: 1.8rem;
+    position: relative;
+    top: .3rem;
 }
 
 #footer-user #footer-copyright {
