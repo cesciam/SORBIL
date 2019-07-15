@@ -494,6 +494,10 @@ Inicio de estilos del carousel
     margin-bottom: 10rem;
 }
 
+.slider a img {
+    width: 80%;
+}
+
 /* Cuando el cuadro obtiene el foco cambia el color
 
 .slider[class*=active] {
