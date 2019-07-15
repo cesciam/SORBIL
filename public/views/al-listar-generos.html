@@ -21,30 +21,30 @@
 
         <h3 class="header-text">Área del administrador de librería</h3>
 
-            <div class="header-user-icons">
-                <div class="header-user-container">
-                    <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
-                        <span class="user-notification">1</span>
-                    </a>
-                </div>
-                <div class="header-user-container">
-                    <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                        <span class="user-notification">6</span>
-                    </a>
-                </div>
-
-                <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                            class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
-                            class='bx bx-chevron-down'></i></a>
-                    <div class="menu-user-container">
-                        <ul class="user-menu">
-                            <a class="user-menu-link" href="#">Perfil</a>
-                            <a class="user-menu-link" href="#">Cerrar sesión</a>
-                        </ul>
-                    </div>
-                </div>
-
+        <div class="header-user-icons">
+            <div class="header-user-container">
+                <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
+                    <span class="user-notification">1</span>
+                </a>
             </div>
+            <div class="header-user-container">
+                <a class="header-icon" href="#"><i class='bx bx-bell'></i>
+                    <span class="user-notification">6</span>
+                </a>
+            </div>
+
+            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
+                        class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
+                        class='bx bx-chevron-down'></i></a>
+                <div class="menu-user-container">
+                    <ul class="user-menu">
+                        <a class="user-menu-link" href="#">Perfil</a>
+                        <a class="user-menu-link" href="#">Cerrar sesión</a>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
 
     </header>
 
@@ -56,7 +56,7 @@
         </div>
 
         <div id="barra-busqueda">
-            <input type="text" placeholder="Buscar por / género" aria-label="Buscar por / género">
+            <input type="text" id="txt-filtro" placeholder="Buscar por / género" aria-label="Buscar por / género">
 
             <button aria-label="Search" type="button">
                 <spans>Filtrar</spans>
@@ -151,7 +151,10 @@
     <!--Scripts-->
     <script src="../js/controlador-dropdowns-nav.js"></script>
     <script src="../js/controlador-dropdowns-user.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/servicio-genero.js"></script>
     <script src="../js/controlador-listar-generos.js"></script>
+    <script src="../js/controlador-filtrar.js"></script>
 </body>
 
 </html>

@@ -49,13 +49,13 @@ Inicio de estilos del header
     grid-template-columns: repeat(2, 16rem);
     grid-gap: 3rem;
     margin-left: auto;
-    margin-right: auto;
 }
 
 /*Estilos de la navegación secundaria*/
 
 #header-nav-2 {
     background-color: var(--color-secondary);
+    z-index: 9999;
 }
 
 #header-nav-2 ul {

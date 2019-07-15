@@ -4,33 +4,53 @@
 
 #main-user-section-banner {
     text-align: center;
-    background: var( --color-alternative-bg);
+    background: var(--color-white);
     width: 100%;
-    /* clip-path: circle(73% at 50% 10%); */
-    height: 110rem;
-    margin-bottom: .5rem;
+    /* clip-path: circle(73% at 50% 15%); */
+    margin-bottom: 5rem;
 }
 
 #main-user-section-banner .main-user-call-banner {
     animation-name: moveInUp;
-    animation-duration: 1s;
-    padding: 5rem;
-    margin-bottom: .5rem;
+    animation-duration: 2s;
+    padding: 6rem;
 }
 
-#main-user-section-banner div button {
+#main-user-section-banner {
+    background-image: url(../../imgs/landing-bgr.jpg);
+    background-repeat: no-repeat;
+}
+
+#main-user-section-banner button {
     margin: 4rem;
+    font-size: 1.6rem;
+    padding: 1.6rem 4.5rem;
+    animation-name: moveInUp;
+    animation-duration: 3s;
 }
 
-#imagen-carrusel-banner {
-    width: 100%;
-    height: 40%;
-    background-size: cover;
+#main-user-section-banner button:hover {
+    opacity: 1;
+}
+
+#main-user-section-banner button i {
+    position: relative;
+    top: .28rem;
+    left: .6rem;
+    font-size: 1.8rem;
+}
+
+#main-user-section-banner h1 {
+    font-size: 4.5rem;
+}
+
+#main-user-section-banner p {
+    font-size: 2rem;
+    font-weight: var(--font-semibold);
 }
 
 .slider {
     margin-bottom: 10rem;
-    position: relative;
 }
 
 .slider a img {
