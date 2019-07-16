@@ -1,7 +1,7 @@
 'use strict';
 
 const input_genero = document.querySelector('#txt-genero');
-const boton_enviar = document.querySelector('#btn-enviar');
+const btn_enviar = document.querySelector('#btn-enviar');
 
 let validar = (pgenero) => {
 
@@ -23,7 +23,7 @@ let saludar = () => {
     let error = validar(genero);
 
     if (error == false) {
-        // registrarGenero(genero);
+        registrarGenero(genero);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
@@ -39,4 +39,4 @@ let saludar = () => {
 };
 
 
-boton_enviar.addEventListener('click', saludar);
+btn_enviar.addEventListener('click', saludar);
