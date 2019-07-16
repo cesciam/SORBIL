@@ -7,7 +7,7 @@ const Registro_libro = require('../models/registro-libro.model');
 //Definicion de la ruta para registrar los libros
 
 router.post('/registrar-libro', function(req, res){
-    let body = res.body;
+    let body = req.body;
 
     let nuevo_libro = new Registro_libro ({
         titulo: body.titulo,
