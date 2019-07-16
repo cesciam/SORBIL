@@ -1,7 +1,5 @@
 'use strict';
-
 // Función que permite mostrar y ocultar los links de listados y registros (No borrar el código comentado)
-
 let opened = null
 
 const toggleVisibility = click => click.classList.toggle('dropdown-mostrar');

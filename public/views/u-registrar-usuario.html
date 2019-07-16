@@ -13,10 +13,11 @@
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
     <title>Sorbil -- Registro de usuario</title>
 </head>
+
 <body id="body-form">
     <!--Main-->
     <main id="main-form">
-        <div id="form-image" class ="form-bg-registrar-usuario"></div>
+        <div id="form-image" class="form-bg-registrar-usuario"></div>
         <section id="seccion-form">
             <div>
                 <form id="form" action="#">
@@ -28,14 +29,13 @@
                             <div class="upload-img">
                                 <!--<img id="imgpreview-portada" alt="">  Esto se puede utilizar para mostrar la imagen que el usuario acaba de subir-->
                                 <i class='bx bx-image-add'></i>
-                                <label for="file">Selecciona un avatar</label>
-                                <input type="file" id="img-uploader-portada" class="upload-msg">
+                                <label for="file">Arrastra o sube una imagen</label>
+                                <input type="file" id="img-uploader-portada" class="avatar-msg">
                             </div>
                         </div>
                         <div>
                             <label for="#">Usuario</label>
-                            <input type="text" placeholder="Usuario"
-                                aria-label="Usuario">
+                            <input type="text" placeholder="Usuario" aria-label="Usuario">
                         </div>
 
                         <div>
@@ -45,18 +45,20 @@
                                 data-selected="true" data-label-id="0">
                         </div>
 
-                        <div>
-                            <label for="#">Contraseña</label>
-                            <input type="password" placeholder="Ingresar la contaseña"
-                                aria-label="Ingresar título de libro" name="searchTerm" value="" data-selected="true"
-                                data-label-id="0">
-                        </div>
+                        <div class="input-dos-columnas">
+                            <div>
+                                <label for="#">Contraseña</label>
+                                <input type="password" placeholder="Ingresar la contaseña"
+                                    aria-label="Ingresar título de libro" name="searchTerm" value=""
+                                    data-selected="true" data-label-id="0">
+                            </div>
 
-                        <div>
-                            <label for="#">Verificación de contraseña</label>
-                            <input type="password" placeholder="Ingresar la contaseña"
-                                aria-label="Ingresar título de libro" name="searchTerm" value="" data-selected="true"
-                                data-label-id="0">
+                            <div>
+                                <label for="#">Verificación de contraseña</label>
+                                <input type="password" placeholder="Ingresar la contaseña"
+                                    aria-label="Ingresar título de libro" name="searchTerm" value=""
+                                    data-selected="true" data-label-id="0">
+                            </div>
                         </div>
 
                         <div>
@@ -90,6 +92,6 @@
     </main>
     <!--Scripts-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="../js/controlador-contacto.js"></script>
 </body>
+
 </html>
