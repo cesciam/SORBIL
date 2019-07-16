@@ -27,7 +27,7 @@ router.post('/registrar-libro', function(req, res){
     nuevo_libro.save(
         function(err, libroDB){
             if (err) {
-                return.res.status(400).json({
+                return res.status(400).json({
                     success: false,
                     msj: 'El libro no se pudo guardar',
                     err

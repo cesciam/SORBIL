@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 
 //Se declaran todos los accesos de los archivos routes.
 const contacto_route = require('./routes/contacto');
+const libro_route = require('./routes/registrar-libro');
 
 
 const app = express();
@@ -54,5 +55,6 @@ function handleError(res, reason, message, code) {
 
 // Conexion a todas la rutas.
 app.use('/api', contacto_route);
+app.use('/api', libro_route);
 
 //localhost:3000/api/registrar-contacto
