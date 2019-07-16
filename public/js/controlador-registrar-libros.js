@@ -134,8 +134,22 @@ let validar = (pportada, pcontraportada, ptitulo, pautor, pedicion, peditorial, 
 };
 
 let llamar = () =>{
-    let resultado_validaciones = validar(img_uploader_portada, img_uploader_contraportada, input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn);
+let titulo = input_titulo.value;
+let autor = input_autor.value;
+let edicion = input_edicion.value;
+let editorial = input_editorial.value;
+let fecha = input_fecha.value;
+let categorias = input_categorias.value;
+let generos = input_generos.value;
+let precio = input_precio.value;
+let idioma = input_idioma.value;
+let tipo_libro = input_tipo_libro.value;
+let isbn = input_isbn.value;
 
+
+
+    let resultado_validaciones = validar(img_uploader_portada, img_uploader_contraportada, input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn);
+    registrarLibro(titulo, autor, edicion, editorial, fecha, categorias, generos, precio, idioma, tipo_libro, isbn);
     
 }
 
