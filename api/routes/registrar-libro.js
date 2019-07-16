@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const router = express.router;
+const router = express.Router();
 const Registro_libro = require('../models/registro-libro.model');
 
 //Definicion de la ruta para registrar los libros
