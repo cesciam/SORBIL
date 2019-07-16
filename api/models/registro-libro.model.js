@@ -18,4 +18,4 @@ let registro_libro_schema = new mongoose.Schema({
     isbn: {type: String, required: true, unique: false}
 });
 
-module.exports =  mongoose.model('Registro_libro', registro_libro_schema);
+module.exports =  mongoose.model('Libro', registro_libro_schema);

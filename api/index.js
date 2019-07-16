@@ -61,3 +61,4 @@ app.use('/api', genero_route);
 
 //localhost:4000/api/registrar-contacto
 //localhost:4000/api/registrar-genero
+//localhost:4000/api/registrar-libro
