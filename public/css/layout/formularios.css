@@ -22,6 +22,10 @@ Inicio de estilos de formularios
     background-image: url(../../imgs/iniciar-sesion-usuario.png);
 }
 
+#main-form .form-bg-registrar-usuario {
+    background-image: url(../../imgs/registro-usuario.png);
+}
+
 #main-form #seccion-form {
     box-shadow: var(--shadow-dark-2);
     background-color: var(--color-white);
