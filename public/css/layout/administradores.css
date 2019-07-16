@@ -46,6 +46,10 @@ Inicio de estilos generales de administradores
     margin-bottom: 2rem;
 }
 
+#main-admin #form div {
+    margin-bottom: 3rem;
+}
+
 #main-admin #form #form-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
