@@ -29,14 +29,18 @@ Inicio de estilos de formularios
 #main-form #seccion-form {
     box-shadow: var(--shadow-dark-2);
     background-color: var(--color-white);
-    margin: 2rem 6rem;
+    margin: 2rem 2rem 2rem 6rem;
 }
 
 #main-form #form-container {
     display: grid;
     border-radius: var(--box-radius);
-    padding: 4rem;
+    padding: 1rem;
     align-items: center;
+}
+
+#main-form #form #form-container>*, select {
+    margin-bottom: 3rem;
 }
 
 #main-form #form-container h1 {
@@ -44,6 +48,7 @@ Inicio de estilos de formularios
     text-align: center;
     text-transform: initial;
     padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 #main-form #form-container a {
@@ -51,7 +56,8 @@ Inicio de estilos de formularios
 }
 
 #main-form #form-container a img {
-    width: 45%;
+    width: 50%;
+    padding: 2rem;
 }
 
 #main-form #form-container label {
@@ -77,6 +83,10 @@ Inicio de estilos de formularios
     margin-bottom: 2rem;
 }
 
+#main-form #form-container select {
+    border: .2rem solid var(--color-alternative-bg);
+}
+
 #main-form #form-container .form-container-inputs {
     border: .1rem solid var(--color-alternative-bg);
     padding: 3rem;
@@ -90,9 +100,15 @@ Inicio de estilos de formularios
     border: .2rem solid var(--color-alternative-blue);
 }
 
-#main-form #form-container input:hover, select:hover {
-    transform: translateY(-.1rem);
+/* #main-form #form-container input:hover::not('input[type="file"]'), select:hover {
+    transform: translateX(-.1rem);
     box-shadow: var(--shadow-light);
+} */
+
+#main-form #form-container .input-dos-columnas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 3rem;
 }
 
 /*
