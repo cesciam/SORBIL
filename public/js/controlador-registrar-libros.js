@@ -8,8 +8,8 @@ const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
 
 // Aqui terminan las variables para subir las fotos a cloudinary
 
-const img_uploader_portada = document.querySelector('#img_uploader_portada');
-const img_uploader_contraportada = document.querySelector('#img_uploader_contraportada');
+const img_uploader_portada = document.querySelector('#img-uploader-portada');
+const img_uploader_contraportada = document.querySelector('#img-uploader-contraportada');
 const input_titulo = document.querySelector('#input_titulo');
 const input_autor = document.querySelector('#input_autor');
 const input_edicion = document.querySelector('#input_edicion');
@@ -136,52 +136,7 @@ let validar = (pportada, pcontraportada, ptitulo, pautor, pedicion, peditorial, 
 let llamar = () =>{
     let resultado_validaciones = validar(img_uploader_portada, img_uploader_contraportada, input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn);
 
-    if(!resultado_validaciones){
-        uploader_portada.addEventListener('change', async (e)=> {
-            let file = e.target.files[0];
-            let formData = new FormData();
-            formData.append('file', file);
-            formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
-        
-            const res = await axios.post(CLOUDINARY_URL, formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                },
-                /*onUploadProgress(e) {
-                    console.log(Math.round((e.loaded * 100) / e.total));
-                    const progress = (e.loaded * 100) / e.total;
-                    progress_bar.setAttribute('value', progress);
-                }*/
-            });
-        
-            /*let img = res.data.url;
-            imgpreview-portada.src = img;
-            */
-        });
-        
-        uploader_contraportada.addEventListener('change', async (e)=> {
-            let file = e.target.files[0];
-            let formData = new FormData();
-            formData.append('file', file);
-            formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
-        
-            const res = await axios.post(CLOUDINARY_URL, formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                },
-                /*onUploadProgress(e) {
-                    console.log(Math.round((e.loaded * 100) / e.total));
-                    const progress = (e.loaded * 100) / e.total;
-                    progress_bar.setAttribute('value', progress);
-                }*/
-            });
-            
-        
-            /*let img = res.data.url;
-            imgpreview-contraportada.src = img;
-            */
-        });
-    }
+    
 }
 
 
