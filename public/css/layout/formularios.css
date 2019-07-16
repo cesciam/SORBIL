@@ -82,6 +82,10 @@ Inicio de estilos de formularios
     padding: 3rem;
 }
 
+#main-form #form-container .form-container-inputs div {
+    margin-bottom: 2rem;
+}
+
 #main-form #form-container input:focus {
     border: .2rem solid var(--color-alternative-blue);
 }
@@ -100,7 +104,6 @@ Fin de estilos de formularios
         display: grid;
         grid-template-columns: 1fr;
     }
-
     #main-form #form-image {
         display: none;
     }
