@@ -54,8 +54,13 @@ Inicio de estilos de formularios
     margin-right: auto;
 }
 
-#form select, input {
+#form select, input, textarea {
     width: 100%;
+}
+
+#form textarea {
+    border: 2px solid var(--color-alternative-bg);
+    resize: vertical;
 }
 
 #form input[type="date"] {
@@ -492,6 +497,10 @@ Inicio de estilos del carousel
 .slider {
     height: 100%;
     margin-bottom: 10rem;
+}
+
+.slider a img {
+    width: 80%;
 }
 
 /* Cuando el cuadro obtiene el foco cambia el color
