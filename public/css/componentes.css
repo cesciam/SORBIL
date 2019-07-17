@@ -94,7 +94,7 @@ Inicio de estilos de formularios
     display: grid;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 70%;
 }
 
 #form .upload-img input:hover {
@@ -119,7 +119,7 @@ Inicio de estilos de formularios
 }
 
 #form .upload-img .upload-msg::before {
-    content: 'Subir una imagen';
+    content: 'Subir';
 }
 
 #form .upload-img .avatar-msg::before {
@@ -512,6 +512,21 @@ Inicio de estilos del carousel
 
 /*
 Fin de estilos del carousel 
+*/
+
+/*
+Inicio de estilos del mapa
+*/
+
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+}
+
+/*
+Fin de estilos del mapa
 */
 
 @media (max-width: 76.8rem) {

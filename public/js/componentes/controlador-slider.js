@@ -1,3 +1,4 @@
+'use strict';
 //Slider
 let glide = new Glide('.glide', {
     type: 'carrousel', //hay dos tipos slider y carrousel
