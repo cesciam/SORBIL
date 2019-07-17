@@ -24,7 +24,7 @@
                     <div id="form-container">
                         <a href="#"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
                         <h1>Crear Cuenta</h1>
-                        
+
                         <div>
                             <div class="upload-img">
                                 <!--<img id="imgpreview-portada" alt="">  Esto se puede utilizar para mostrar la imagen que el usuario acaba de subir-->
@@ -35,12 +35,12 @@
                         </div>
                         <div>
                             <label for="#">Usuario</label>
-                            <input type="text" placeholder="Usuario" aria-label="Usuario">
+                            <input id="txt-usuario" type="text" placeholder="Usuario" aria-label="Usuario">
                         </div>
 
                         <div>
                             <label for="#">Correo electrónico</label>
-                            <input type="email" placeholder="Ingresar el correo electrónico"
+                            <input id="txt-correo" type="email" placeholder="Ingresar el correo electrónico"
                                 aria-label="Ingresar el correo electrónico" name="searchTerm" value=""
                                 data-selected="true" data-label-id="0">
                         </div>
@@ -48,14 +48,14 @@
                         <div class="input-dos-columnas">
                             <div>
                                 <label for="#">Contraseña</label>
-                                <input type="password" placeholder="Ingresar la contaseña"
+                                <input id="txt-contrasena" type="password" placeholder="Ingresar la contaseña"
                                     aria-label="Ingresar título de libro" name="searchTerm" value=""
                                     data-selected="true" data-label-id="0">
                             </div>
 
                             <div>
                                 <label for="#">Verificación de contraseña</label>
-                                <input type="password" placeholder="Ingresar la contaseña"
+                                <input id="txt-verf-contrasena" type="password" placeholder="Ingresar la contaseña"
                                     aria-label="Ingresar título de libro" name="searchTerm" value=""
                                     data-selected="true" data-label-id="0">
                             </div>
@@ -63,7 +63,7 @@
 
                         <div>
                             <label for="#">Ingresa a una librería</label>
-                            <select id="input_librerias" name="">
+                            <select id="txt-libreria" name="">
                                 <option value="0" disabled="disabled" selected="true">
                                     Escoger una opción
                                 </option>
@@ -75,7 +75,7 @@
 
                         <div>
                             <label for="#">Ingresa a un club de lectura (opcional)</label>
-                            <select id="input_club_lectura" name="">
+                            <select id="txt-club-lectura" name="">
                                 <option value="0" disabled="disabled" selected="true">
                                     Escoger una opción
                                 </option>
@@ -84,14 +84,98 @@
                                 </option>
                             </select>
                         </div>
+                        <button id="txt-btn-siguiente" type="submit">Siguiente</button>
+                </form>
 
-                        <button id="txt-btn" type="submit">Siguiente</button>
+                <form id="form" action="#">
+                    <div id="form-container">
+                        <a href="#"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
+                        <h1>Crear Cuenta</h1>
+                        <h3>Datos personales</h3>
+
+                        <div>
+                            <label for="#">Nombre</label>
+                            <input id="txt-nombre" type="text" placeholder="Nombre" aria-label="Nombre">
+                        </div>
+
+                        <div>
+                            <label for="#">Identificación</label>
+                            <input id="txt-id" type="number" placeholder="Identificación" aria-label="Identificación"
+                                name="searchTerm" value="" data-selected="true" data-label-id="0">
+                        </div>
+
+                        <div>
+                            <label for="#">Sexo</label>
+                            <select id="txt-sexo" name="">
+                                <option value="0" disabled="disabled" selected="true">Escoger una opción</option>
+                                <option value="1">Femenino</option>
+                                <option value="2">Masculino</option>
+                                <option value="3">Otro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="#">Primer apellido</label>
+                            <input id="txt-primer-apellido" type="text" placeholder="Primer apellido"
+                                aria-label="Primer apellido" name="searchTerm" value="" data-selected="true"
+                                data-label-id="0">
+                        </div>
+
+                        <div>
+                            <label for="#">Segundo apellido</label>
+                            <input id="txt-segundo-apellido" type="text" placeholder="Segundo apellido"
+                                aria-label="Segundo apellido" name="searchTerm" value="" data-selected="true"
+                                data-label-id="0">
+                        </div>
+                        <div>
+                            <label for="#">Provincia</label>
+                            <select id="txt-provincia" name="">
+                                <option value="0" disabled="disabled" selected="true">Escoger una opción</option>
+                                <option value="1">San José</option>
+                                <option value="2">Alajuela</option>
+                                <option value="3">Cartago</option>
+                                <option value="4">Heredia</option>
+                                <option value="5">Guanacaste</option>
+                                <option value="6">Puntarenas</option>
+                                <option value="7">Limón</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="#">Cantón</label>
+                            <select id="txt-canton" name="">
+                                <option value="0" disabled="disabled" selected="true">
+                                    Escoger una opción
+                                </option>
+                                <option value="1">
+                                    Cantón 1
+                                </option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="#">Distrito</label>
+                            <select id="txt-distrito" name="">
+                                <option value="0" disabled="disabled" selected="true">
+                                    Escoger una opción
+                                </option>
+                                <option value="1">
+                                    Distrito 1
+                                </option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="#">Dirección exacta</label>
+                            <textarea id="txt-direccion-exacta"></textarea>
+                        </div>
+                        <button id="btn-crear-cuenta" type="submit">Crear Cuenta</button>
                 </form>
             </div>
         </section>
     </main>
     <!--Scripts-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="../js/controlador-registrar-usuario.js "></script>
 </body>
-
 </html>
