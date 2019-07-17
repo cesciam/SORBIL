@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/layout/formularios.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
+    <title>Sorbil -- Registro de usuario</title>
+</head>
+
+<body id="body-form">
+    <!--Main-->
+    <main id="main-form">
+        <div id="form-image" class="form-bg-cuenta-administrador"></div>
+        <section id="seccion-form">
+            <div>
+                <form id="form" action="#">
+
+                    <div id="form-container">
+
+                        <div class="form-title">
+                            <a href="#"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
+                            <h1>Registrar librería</h1>
+                        </div>
+                        <!--Barra de progreso-->
+                        <div>
+                            <ul class="progress-bar">
+                                <li class="progress-bar__dot full"></li>
+                                <li class="progress-bar__connector"></li>
+                                <li class="progress-bar__dot"></li>
+                                <li class="progress-bar__connector"></li>
+                                <li class="progress-bar__dot"></li>
+                            </ul>
+                        </div>
+                        <!--Paso 1 del formulario-->
+                        <div class="step step1">
+                            <div class="input-group">
+                                <div class="upload-img">
+                                    <i class='bx bx-image-add'></i>
+                                    <label for="file">Arrastra o sube una imagen</label>
+                                    <input type="file" id="img-uploader-portada" class="avatar-msg">
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="#">Usuario</label>
+                                <input type="text" placeholder="Ingrese su nombre de usuario"
+                                    aria-label="Ingrese su nombre de usuario">
+                            </div>
+
+                            <div class="input-dos-columnas">
+                                <div class="input-group">
+                                    <label for="#">Contraseña</label>
+                                    <input type="password" placeholder="Ingresar la contaseña"
+                                        aria-label="Ingresar la contaseña">
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="#">Verificación de contraseña</label>
+                                    <input type="password" placeholder="Ingresar la contaseña"
+                                        aria-label="Ingresar la contaseña">
+                                </div>
+                            </div>
+                        </div>
+                        <!--Paso 2 del formulario-->
+                        <div class="step step2 hidden">
+                            <div class="input-dos-columnas">
+                                <div class="input-group">
+                                    <label for="#">Nombre comercial</label>
+                                    <input type="text" placeholder="Ingresar la empresa"
+                                        aria-label="Ingresar la empresa">
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="#">Teléfono</label>
+                                    <input type="tel" placeholder="Ingresar el teléfono"
+                                        aria-label="Ingresar el teléfono">
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div>
+                                    <label for="#">Correo electrónico</label>
+                                    <input type="email" placeholder="Ingresar el correo electrónico"
+                                        aria-label="Ingresar el correo electrónico">
+                                </div>
+
+                                <div>
+                                    <label for="#">Teléfono</label>
+                                    <input type="password" placeholder="Ingresar el teléfono"
+                                        aria-label="Ingresar el teléfono">
+                                </div>
+                            </div>
+                            <div>
+                                <h2>Dirección de la Empresa</h2>
+                            </div>
+                            <div class="input-group">
+                                <div>
+                                    <label for="#">Provincia</label>
+                                    <select id="input_club_lectura" name="">
+                                        <option value="0" disabled="disabled" selected="true">
+                                            Escoger una opción
+                                        </option>
+                                        <option value="1">
+                                            San José
+                                        </option>
+                                        <option value="2">
+                                            Heredia
+                                        </option>
+                                        <option value="3">
+                                            Cartago
+                                        </option>
+                                        <option value="4">
+                                            Alajuela
+                                        </option>
+                                        <option value="5">
+                                            Limón
+                                        </option>
+                                        <option value="5">
+                                            Gunacaste
+                                        </option>
+                                        <option value="5">
+                                            Puntarenas
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-dos-columnas">
+                                <div class="input-group">
+                                    <label for="#">Cantón</label>
+                                    <select id="input_club_lectura" name="">
+                                        <option value="0" disabled="disabled" selected="true">
+                                            Escoger una opción
+                                        </option>
+                                        <option value="1">
+                                            Montes de Oca
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="#">Distrito</label>
+                                    <select id="input_club_lectura" name="">
+                                        <option value="0" disabled="disabled" selected="true">
+                                            Escoger una opción
+                                        </option>
+                                        <option value="1">
+                                            Sabanilla
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Paso 3 del formulario-->
+                        <div class="step step3 hidden">
+                            <div id="map">
+
+                            </div>
+                        </div>
+                        <!--Botones del formulario-->
+                        <div class="form-btns">
+
+                            <div class="center-btns">
+                                <div>
+                                    <button id="previous" class="disabled button" disabled>
+                                        Anterior
+                                    </button>
+                                </div>
+
+                                <div>
+                                    <button id="next" class="button">
+                                        Siguiente
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="submit-btn">
+                                <button id="txt-btn" type="button" class="hidden button">
+                                    Registrar
+                                    <i class='bx bx-plus'></i>
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </section>
+    </main>
+    <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="../js/componentes/controlador-form.js"></script>
+    <!--Google Maps Api de Sorbil-->
+    <script src="../js/componentes/controlador-map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPRMwouoSWe78jq9B3RFvBx8bDOKIwrns&callback=initMap"></script>
+</body>
+
+</html>
