@@ -1,8 +1,8 @@
 'use strict';
 
-const express = require('express');
-const router = express.Router();
-const Registro_libro = require('../models/registro-libro.model');
+const express = require('express'),
+ router = express.Router(),
+ Registro_libro = require('../models/registro-libro.model');
 
 //Definicion de la ruta para registrar los libros
 

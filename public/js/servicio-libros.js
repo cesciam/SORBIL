@@ -20,3 +20,18 @@ let registrarLibro = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategoria,
         }
     });
 };
+
+let obtenerLibros = async() => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: 'http://localhost:4000/api/listar-libros',
+            responseType: 'json'
+        });
+
+        return response.data.lista_libros;
+    } catch (error) {
+        console.log(error);
+    }
+};
