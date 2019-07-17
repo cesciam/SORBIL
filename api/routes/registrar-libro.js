@@ -1,8 +1,8 @@
 'use strict';
 
-const express = require('express');
-const router = express.Router();
-const Registro_libro = require('../models/registro-libro.model');
+const express = require('express'),
+ router = express.Router(),
+ Registro_libro = require('../models/registro-libro.model');
 
 //Definicion de la ruta para registrar los libros
 
@@ -40,6 +40,24 @@ router.post('/registrar-libro', function(req, res){
             }
         }
     );
+});
+
+
+router.get('/listar-libros', function(req, res) {
+    Registro_libro.find(function(err, libroDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se pueden listar los contactos',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                lista_libros: libroDB
+            });
+        }
+    })
 });
 
 module.exports = router;
