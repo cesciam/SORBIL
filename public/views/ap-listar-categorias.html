@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Registrar Géneros</title>
+    <title>Sorbil -- Librería -- Listar Géneros</title>
 </head>
 
 <body id="grid-admin">
@@ -19,7 +19,7 @@
     <!--Header-->
     <header id="header-admin">
 
-        <h3 class="header-text">Área del administrador de librería</h3>
+        <h3 class="header-text">Área del administrador de plataforma</h3>
 
         <div class="header-user-icons">
             <div class="header-user-container">
@@ -51,22 +51,30 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de Género</h1>
-            <p>Registra la información que te interesa</p>
+            <h1>Listados de Categorías</h1>
+            <p>Listá la información que te interesa</p>
         </div>
 
-        <form id="form" action="#">
+        <div id="barra-busqueda">
+            <input type="text" placeholder="Buscar por / categoría" aria-label="Buscar por / categoría">
 
-            <div class="centrar-input">
-                <div>
-                    <label for="#">Género</label>
-                    <input id="txt-genero" type="text" placeholder="Ingresar el género" aria-label="Ingresar el género">
-                </div>
-            </div>
+            <button aria-label="Search" type="button">
+                <spans>Listar</spans>
+            </button>
+        </div>
 
-            <button id="btn-enviar" type="button">Registrar</button>
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                    <th>Libro físico</th>
+                    <th>Audiolibro</th>
+                    <th>Libro electrónico</th>
+                </tr>
+            </thead>
+            <tbody>
 
-        </form>
+            </tbody>
+        </table>
 
     </main>
 
@@ -143,12 +151,8 @@
     </footer>
 
     <!--Scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/servicio-genero.js"></script>
-    <script src="../js/controlador-registrar-generos.js"></script>
 </body>
 
 </html>

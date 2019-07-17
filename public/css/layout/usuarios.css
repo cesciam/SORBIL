@@ -17,27 +17,22 @@ Inicio de estilos del header
 
 #header-nav-1 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     width: 85%;
-    margin: 0 auto;
-    padding: 2rem 0;
-}
-
-#header-nav-1 .logo {
-    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.8rem 0;
 }
 
 #header-nav-1 .logo img {
-    width: 70%;
-    align-self: center;
+    width: 16rem;
+    margin: 0 auto;
 }
 
 #header-nav-1 nav {
     display: grid;
-    justify-items: start;
-    grid-template-columns: 8rem repeat(2, 14rem) 10rem;
+    grid-template-columns: 10rem repeat(3, 15rem);
     grid-column-gap: 2rem;
 }
 
@@ -49,17 +44,26 @@ Inicio de estilos del header
     color: var(--color-primary);
 }
 
+#header-nav-1 .header-nav-1-btns {
+    display: grid;
+    grid-template-columns: repeat(2, 16rem);
+    grid-gap: 3rem;
+    margin-left: auto;
+}
+
 /*Estilos de la navegación secundaria*/
 
 #header-nav-2 {
     background-color: var(--color-secondary);
+    z-index: 9999;
 }
 
 #header-nav-2 ul {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     padding: 1rem 0;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 85%;
 }
 
@@ -112,6 +116,13 @@ Inicio de estilos del footer
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: 2rem;
+}
+
+#footer-user a i {
+    margin-right: 1rem;
+    font-size: 1.8rem;
+    position: relative;
+    top: .3rem;
 }
 
 #footer-user #footer-copyright {

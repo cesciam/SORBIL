@@ -19,7 +19,7 @@
     <!--Header-->
     <header id="header-admin">
 
-        <h3 class="header-text">Área del administrador de librería</h3>
+        <h3 class="header-text">Área del administrador de plataforma</h3>
 
         <div class="header-user-icons">
             <div class="header-user-container">
@@ -51,17 +51,30 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de Género</h1>
-            <p>Registra la información que te interesa</p>
+            <h1>Registro de Autor</h1>
+            <p>Registra la información del autor</p>
         </div>
 
         <form id="form" action="#">
 
             <div class="centrar-input">
+
+                <div>
+                    <label for="#">Nombre del Autor</label>
+                    <input id="txt-nombre" type="text" placeholder="Ingresar el nombre del autor"
+                        aria-label="Ingresar el género">
+                </div>
+
                 <div>
                     <label for="#">Género</label>
                     <input id="txt-genero" type="text" placeholder="Ingresar el género" aria-label="Ingresar el género">
                 </div>
+
+                <div>
+                    <label for="#">Categoría</label>
+                    <input id="txt-genero" type="text" placeholder="Ingresar categoría" aria-label="Ingresar el género">
+                </div>
+
             </div>
 
             <button id="btn-enviar" type="button">Registrar</button>
@@ -144,10 +157,8 @@
 
     <!--Scripts-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/servicio-genero.js"></script>
     <script src="../js/controlador-registrar-generos.js"></script>
 </body>
 
