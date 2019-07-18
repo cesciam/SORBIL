@@ -1,8 +1,9 @@
+'use strict';
 //Multistep form
 const previousButton = document.getElementById("previous")
 const nextButton = document.getElementById("next")
-const submitButton = document.getElementById('validate')
-const form = document.getElementById('stepByStepForm')
+const submitButton = document.getElementById('txt-btn')
+const form = document.getElementById('form-container')
 const dots = document.getElementsByClassName('progress-bar__dot')
 const numberOfSteps = 3
 
