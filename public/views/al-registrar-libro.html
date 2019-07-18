@@ -65,7 +65,7 @@
                         <!--<img id="imgpreview-portada" alt="">  Esto se puede utilizar para mostrar la imagen que el usuario acaba de subir-->
                         <i class='bx bx-image-add'></i>
                         <label for="file">Arrastra o sube la portada</label>
-                        <input type="file" id="img-uploader-portada" class="upload-msg">
+                        <button id="btnSeleccionarImagen"  type="file" id="img-uploader-portada" class="upload-msg"></button>
                     </div>
                 </div>
                 <div>
@@ -74,7 +74,7 @@
                         <!--<img id="imgpreview-contraportada" alt="">  Esto se puede utilizar para mostrar la imagen que el usuario acaba de subir-->
                         <i class='bx bx-image-add'></i>
                         <label for="file">Arrastra o sube la contraportada</label>
-                        <input type="file" id="img-uploader-contraportada" class="upload-msg">
+                        <button id="btnSeleccionarImagen2"  type="file" id="img-uploader-portada" class="upload-msg"></button>
                     </div>
                 </div>
                 <div>
@@ -230,6 +230,10 @@
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <script src="../js/controlador-registrar-libros.js"></script>
     <script src="../js/servicio-libros.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js" type="text/javascript"></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="../js/servicio-imagen.js" ></script>
 </body>
 
 </html>
