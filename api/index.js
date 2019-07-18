@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const contacto_route = require('./routes/contacto');
 const libro_route = require('./routes/registrar-libro');
 const genero_route = require('./routes/genero');
+const libreria_route = require('./routes/libreria');
 
 
 const app = express();
@@ -58,7 +59,9 @@ function handleError(res, reason, message, code) {
 app.use('/api', contacto_route);
 app.use('/api', libro_route);
 app.use('/api', genero_route);
+app.use('/api', libreria_route);
 
 //localhost:4000/api/registrar-contacto
 //localhost:4000/api/registrar-genero
 //localhost:4000/api/registrar-libro
+//localhost:4000/api/registrar-libreria

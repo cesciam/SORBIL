@@ -1,4 +1,5 @@
-// Función que permite mostrar y ocultar los links de listados y registros (No borrar el código comentado)
+'use strict';
+// Función que permite mostrar y ocultar los links de listados y registros
 const click_menu = (click) => document.querySelector(click);
 
 //Dropdown de usuarios

@@ -4,7 +4,7 @@
 
 #main-user-section-banner {
     text-align: center;
-    background: var(--color-white);
+    background: var(--color-alternative-bg);
     width: 100%;
     /* clip-path: circle(73% at 50% 15%); */
     margin-bottom: 5rem;
