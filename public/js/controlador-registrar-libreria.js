@@ -43,6 +43,13 @@ let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempr
         input_verificacion_contrasenna.classList.remove('input_error');
     }
 
+    if (pverificacion_contrasenna != pcontrasenna) {
+        error = true;
+        input_contrasenna.classList.add('input_error');
+    } else {
+        input_contrasenna.classList.remove('input_error');
+    }
+
     if (pempresa == '') {
         error = true;
         input_empresa.classList.add('input_error');
@@ -57,21 +64,21 @@ let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempr
         input_telefono.classList.remove('input_error');
     }
 
-    if (pprovincia == '') {
+    if (pprovincia == 0) {
         error = true;
         input_provincia.classList.add('input_error');
     } else {
         input_provincia.classList.remove('input_error');
     }
 
-    if (pcanton == '') {
+    if (pcanton == 0) {
         error = true;
         input_canton.classList.add('input_error');
     } else {
         input_canton.classList.remove('input_error');
     }
 
-    if (pdistrito == '') {
+    if (pdistrito == 0) {
         error = true;
         input_distrito.classList.add('input_error');
     } else {
