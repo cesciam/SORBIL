@@ -17,7 +17,7 @@ function initMap() {
     });
 
 
-    // // Add marker
+    // Add marker
     // var marker = new google.maps.Marker({
     //     position: { lat: 42.4668, lng: -70.9495 },
     //     map: map,
@@ -35,11 +35,11 @@ function initMap() {
 
     // Array de marcadores
     var markers = [
-        {
-            coords: { lat: 42.4668, lng: -70.9495 },
-            iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-            content: '<h1>Lynn MA</h1>'
-        },
+        // {
+        //     coords: { lat: 42.4668, lng: -70.9495 },
+        //     iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+        //     content: '<h1>Lynn MA</h1>'
+        // },
         {
             coords: { lat: 42.8584, lng: -70.9300 },
             content: '<h1>Amesbury MA</h1>'
