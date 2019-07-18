@@ -2,7 +2,7 @@
 //Multistep form
 const previousButton = document.getElementById("previous")
 const nextButton = document.getElementById("next")
-const submitButton = document.getElementById('txt-btn')
+const submitButton = document.getElementById('btn-enviar')
 const form = document.getElementById('form-container')
 const dots = document.getElementsByClassName('progress-bar__dot')
 const numberOfSteps = 3

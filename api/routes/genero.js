@@ -31,14 +31,36 @@ router.post('/registrar-genero', function (req, res) {
     );
 });
 
+// router.get('/listar-generos', async function (req, res) {
+//     Genero.find()
+//         .then(lista_generos => {
+//             return res.json({
+//                 success: true,
+//                 lista_generos: lista_generos
+//             });
+//         })
+//         .catch(err => { throw new Error(err) });
+// });
+
+// module.exports = router; 
+
 router.get('/listar-generos', async function (req, res) {
-    Genero.find()
-        .then(lista_generos => {
+    Genero.find(function (err, generosDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se pueden listar los contactos',
+                err
+            });
+        } else {
             return res.json({
                 success: true,
-                lista_generos: lista_generos
+                lista_generos: generosDB
             });
-        })
-        .catch(err => { throw new Error(err) });
+        }
+    })
 });
+
 module.exports = router; 
+
+
