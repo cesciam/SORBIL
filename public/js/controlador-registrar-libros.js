@@ -149,7 +149,20 @@ let isbn = input_isbn.value;
 
 
     let resultado_validaciones = validar(img_uploader_portada, img_uploader_contraportada, input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn);
-    registrarLibro(titulo, autor, edicion, editorial, fecha, categorias, generos, precio, idioma, tipo_libro, isbn);
+    if(!resultado_validaciones){
+        registrarLibro(titulo, autor, edicion, editorial, fecha, categorias, generos, precio, idioma, tipo_libro, isbn);
+        Swal.fire({ //formato json
+            title: 'Se ha registrado la información exitosamente',
+            type: 'success',
+        }) 
+    }else{
+        Swal.fire({ //formato json
+            title: 'No se ha registrado la información',
+            type: 'warning',
+            text: 'Revise los campos resaltados e inténtelo de nuevo'
+        })
+    }
+    
     
 }
 
