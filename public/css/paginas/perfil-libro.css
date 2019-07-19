@@ -1,0 +1,34 @@
+#main-user {
+    display: grid;
+}
+
+#libro-info {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    padding: 6rem;
+    background: var( --color-alternative-bg);
+    background-size: cover;
+    width: 100%;
+}
+
+#info-libro-descrip{
+    display: grid;
+    grid-template-columns: 10rem  12rem 1fr;
+    grid-gap: 1rem;
+}
+
+#info-libro-descrip h1{
+    display: grid;
+    text-align: start;
+    grid-column: span 3;
+}
+
+
+#info-libro-descrip div i {
+    font-size: 2rem;
+}
+
+#descrip {
+    display: grid;
+    grid-column: span 3;
+}

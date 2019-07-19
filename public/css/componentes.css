@@ -533,6 +533,10 @@ Inicio de estilos del mapa
 }
 
 /*
+Fin de estilos del mapa
+*/
+
+/*
 Inicio de estilos del header de las cartas
 */
 
@@ -610,10 +614,6 @@ Inicio de estilos del header de las cartas
 
 /*
 Fin de estilos del header de las cartas
-*/
-
-/*
-Fin de estilos del mapa
 */
 
 @media (max-width: 76.8rem) {

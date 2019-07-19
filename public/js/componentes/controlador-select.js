@@ -1,4 +1,7 @@
 'use strict';
+//Select TODO:
+
+'use strict';
 //Select de las ubicaciones
 let provincia = document.getElementById("txt-provincia");
 let canton = document.getElementById("txt-canton");
