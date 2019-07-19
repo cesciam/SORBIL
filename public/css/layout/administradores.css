@@ -37,6 +37,10 @@ Inicio de estilos generales de administradores
     margin-bottom: 10rem;
 }
 
+#main-admin .card {
+    background-color: var(--color-white);
+}
+
 #main-admin .main-admin-titulo {
     text-align: center;
     font-weight: var(--font-semibold);
