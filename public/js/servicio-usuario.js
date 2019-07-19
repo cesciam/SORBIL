@@ -1,19 +1,17 @@
 'use strict';
 
-let registrarUsuario = (pusuario, pcorreo, pcontrasena, pverfContrasena, plibreria, pclub, pnombre, pid, psexo, pprimerApellido, psegundoApellido, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
+let registrarUsuario = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/registrar-contacto',
+        url: 'http://localhost:4000/api/registrar-usuario',
         responseType: 'json',
         data: {
             usuario: pusuario,
             correo: pcorreo,
             contrasena: pcontrasena,
             verfContrasena: pverfContrasena,
-            libreria: plibreria,
-            club: pclub,
             nombre: pnombre,
-            identificacion: pidentificacion,
+            id: pid,
             sexo: psexo,
             primer_apellido: pprimerApellido,
             segundo_apellido: psegundoApellido,
@@ -30,7 +28,7 @@ let obtenerUsuarios = async() => {
         // fetch data from an url endpoint
         const response = await axios({
             method: 'get',
-            url: 'http://localhost:4000/api/listar-contactos',
+            url: 'http://localhost:4000/api/listar-usuarios',
             responseType: 'json'
         });
 

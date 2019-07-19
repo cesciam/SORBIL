@@ -4,7 +4,7 @@ const express = require('express'),
     router = express.Router(),
     Usuario = require('../models/usuario.model');
 
-//Definición de la ruta para registrar usuarios
+//Definición de la ruta para registrar contactos
 
 router.post('/registrar-usuario', function (req, res) {
     let body = req.body;
@@ -14,13 +14,11 @@ router.post('/registrar-usuario', function (req, res) {
         correo: body.correo,
         contrasena: body.contrasena,
         verfContrasena: body.verfContrasena,
-        libreria: body.libreria,
-        club: body.club,
         nombre: body.nombre,
-        identificacion: body.identificacion,
-        sexo: body.sexo,
+        id: body.id,
         primer_apellido: body.primer_apellido,
         segundo_apellido: body.segundo_apellido,
+        sexo: body.sexo,
         provincia: body.provincia,
         canton: body.canton,
         distrito: body.distrito,
@@ -28,7 +26,7 @@ router.post('/registrar-usuario', function (req, res) {
     });
 
     nuevo_usuario.save(
-        function (err, usuarioDB) {
+        function (err, usuariosBD) {
             if (err) {
                 return res.status(400).json({
                     success: false,
@@ -45,14 +43,21 @@ router.post('/registrar-usuario', function (req, res) {
     );
 });
 
-router.get('/listar-usuarios', async function (req, res) {
-    Usuario.find()
-        .then(lista_usuarios => {
+router.get('/listar-usuarios', function (req, res) {
+    Usuario.find(function (err, usuariosBD) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se pueden listar los usuarios',
+                err
+            });
+        } else {
             return res.json({
                 success: true,
-                lista_usuarios: lista_usuarios
+                lista_usuarios: usuariosBD
             });
-        })
-        .catch(err => { throw new Error(err) });
+        }
+    })
 });
-module.exports = router; 
+
+module.exports = router;

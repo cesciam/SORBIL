@@ -1,25 +1,22 @@
 'use strict';
-// Constantes form 1
+// Constantes 
 const input_usuario = document.querySelector('#txt-usuario');
 const input_correo = document.querySelector('#txt-correo');
 const input_contrasena = document.querySelector('#txt-contrasena');
 const input_verf_contrasena = document.querySelector('#txt-verf-contrasena');
-const input_libreria = document.querySelector('#txt-libreria');
-const input_club = document.querySelector('#txt-club-lectura');
-// Constantes form 2 
 const input_nombre = document.querySelector('#txt-nombre');
 const input_id = document.querySelector('#txt-id');
-const input_sexo = document.querySelector('#txt-sexo');
 const input_primer_apellido = document.querySelector('#txt-primer-apellido');
 const input_segundo_apellido = document.querySelector('#txt-segundo-apellido');
+const input_sexo = document.querySelector('#txt-sexo');
 const input_provincia = document.querySelector('#txt-provincia');
 const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
 const input_direccion_exacta= document.querySelector('#txt-direccion-exacta');
 
-const btn_crear_cuenta = document.querySelector('#btn-crear-cuenta');
+const btn_crear_cuenta = document.querySelector('#txt-btn');
 
-let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, plibreria, pclub, pnombre, pid, psexo, pprimerApellido, psegundoApellido, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
+let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
 
     let error = false;
 
@@ -50,20 +47,6 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, plibreria, pclub
     } else {
         input_verf_contrasena.classList.remove('input_error');
     }
-
-    if (plibreria == '') {
-        error = true;
-        input_libreria.classList.add('input_error');
-    } else {
-        input_libreria.classList.remove('input_error');
-    }
-
-    if (pclub == '') {
-        error = true;
-        input_club.classList.add('input_error');
-    } else {
-        input_club.classList.remove('input_error');
-    }
     
     if (pnombre == '') {
         error = true;
@@ -79,13 +62,6 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, plibreria, pclub
         input_id.classList.remove('input_error');
     }
 
-    if (psexo == '') {
-        error = true;
-        input_sexo.classList.add('input_error');
-    } else {
-        input_sexo.classList.remove('input_error');
-    }
-
     if (pprimerApellido == '') {
         error = true;
         input_primer_apellido.classList.add('input_error');
@@ -98,6 +74,13 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, plibreria, pclub
         input_segundo_apellido.classList.add('input_error');
     } else {
         input_segundo_apellido.classList.remove('input_error');
+    }
+
+    if (psexo == '') {
+        error = true;
+        input_sexo.classList.add('input_error');
+    } else {
+        input_sexo.classList.remove('input_error');
     }
 
     if (pprovincia == '') {
@@ -136,22 +119,20 @@ let llamar = () => {
     let correo = input_correo.value;
     let contrasena = input_contrasena.value;
     let verfContrasena = input_verf_contrasena.value;
-    let libreria = input_libreria.value;
-    let club = input_club.value;
     let nombre = input_nombre.value;
     let id = input_id.value;
-    let sexo = input_sexo.value;
     let primer_apellido = input_primer_apellido.value;
     let segundo_apellido  = input_segundo_apellido.value;
+    let sexo = input_sexo.value;
     let provincia = input_provincia.value;
     let canton = input_canton.value;
     let distrito = input_distrito.value;
     let direccion_exacta = input_direccion_exacta.value;
 
-    let error = validar(usuario,correo,contrasena,verfContrasena,libreria,club,nombre,id,sexo,primer_apellido,segundo_apellido,provincia,canton,distrito,direccion_exacta);
+    let error = validar(usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
 
     if (error == false) {
-        registrarUsuario(usuario,correo,contrasena,verfContrasena,libreria,club,nombre,id,sexo,primer_apellido,segundo_apellido,provincia,canton,distrito,direccion_exacta);
+        registrarUsuario(usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
@@ -160,7 +141,7 @@ let llamar = () => {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',
-            text: 'Revise los campos resaltados e inténtelo de nuevo'
+            text: 'Revisá los campos resaltados e intentalo de nuevo'
         })
     }
 };
