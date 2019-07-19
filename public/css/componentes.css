@@ -58,6 +58,12 @@ Inicio de estilos de formularios
     width: 100%;
 }
 
+#form select option {
+    font-size: 1.4rem;
+    display: block;
+    padding: 2rem;
+}
+
 #form textarea {
     border: 2px solid var(--color-alternative-bg);
     resize: vertical;
@@ -94,7 +100,7 @@ Inicio de estilos de formularios
     display: grid;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 50%;
 }
 
 #form .upload-img input:hover {
@@ -123,7 +129,7 @@ Inicio de estilos de formularios
 }
 
 #form .upload-img .avatar-msg::before {
-    content: 'Escoger un avatar';
+    content: 'Avatars';
 }
 
 #form .upload-img input:active, input:focus {

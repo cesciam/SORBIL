@@ -56,13 +56,13 @@
         </div>
 
         <div id="barra-busqueda">
-            <input type="text" placeholder="Buscar por / título / autor / categoría / género / ISBN"
+            <input id="txt_filtro" type="text" placeholder="Buscar por / título / autor / categoría / género / ISBN"
                 aria-label="Buscar por / título / autor / categoría / género / ISBN">
 
-            <button aria-label="Search" type="button">
+            <!--<button aria-label="Search" type="button">
                 <spans>Filtrar</spans>
-            </button>
-        </div>
+            </button>-->
+            </div>
 
         <table id="tabla-filtrado">
             <thead>
@@ -72,7 +72,7 @@
                     <th>Categoría</th>
                     <th>Género</th>
                     <th>ISBN</th>
-                    <th>Opciones</th>
+                    <th>Tipo</th>
                 </tr>
             </thead>
             <tbody>
@@ -155,8 +155,11 @@
     </footer>
 
     <!--Scripts-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+    <script src="../js/servicio-libros.js"></script>
+    <script src="../js/controlador-listar-libros.js"></script>
 </body>
 
 </html>

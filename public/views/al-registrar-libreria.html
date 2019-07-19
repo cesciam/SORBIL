@@ -40,126 +40,112 @@
                         </div>
                         <!--Paso 1 del formulario-->
                         <div class="step step1">
-                            <div class="input-group">
+                            <div>
+                                <h2>Información de inicio de sesión</h2>
+                            </div>
+                            <div>
+                                <p for="">Portada</p>
                                 <div class="upload-img">
+                                    <!--<img id="imgpreview-portada" alt="">  Esto se puede utilizar para mostrar la imagen que el usuario acaba de subir-->
                                     <i class='bx bx-image-add'></i>
-                                    <label for="file">Arrastra o sube una imagen</label>
-                                    <input type="file" id="img-uploader-portada" class="avatar-msg">
+                                    <label for="file">Arrastra o sube la portada</label>
+                                    <input id="btnSeleccionarImagen" type="file" id="img-uploader-portada" class="upload-msg"></input>
                                 </div>
                             </div>
+
                             <div class="input-group">
-                                <label for="#">Usuario</label>
-                                <input type="text" placeholder="Ingrese su nombre de usuario"
-                                    aria-label="Ingrese su nombre de usuario">
+                                <label for="#">Nombre de usuario</label>
+                                <input id="txt-usuario" type="text" placeholder="Ingrese el nombre de usuario"
+                                    aria-label="Ingrese el nombre de usuario">
                             </div>
 
                             <div class="input-dos-columnas">
                                 <div class="input-group">
                                     <label for="#">Contraseña</label>
-                                    <input type="password" placeholder="Ingresar la contaseña"
-                                        aria-label="Ingresar la contaseña">
+                                    <input id="txt-contrasenna" type="password" placeholder="Ingrese la contaseña"
+                                        aria-label="Ingrese la contaseña">
                                 </div>
 
                                 <div class="input-group">
                                     <label for="#">Verificación de contraseña</label>
-                                    <input type="password" placeholder="Ingresar la contaseña"
-                                        aria-label="Ingresar la contaseña">
+                                    <input id="txt-verificacion-contrasenna" type="password"
+                                        placeholder="Ingrese la contaseña" aria-label="Ingrese la contaseña">
                                 </div>
                             </div>
                         </div>
                         <!--Paso 2 del formulario-->
                         <div class="step step2 hidden">
-                            <div class="input-dos-columnas">
-                                <div class="input-group">
-                                    <label for="#">Nombre comercial</label>
-                                    <input type="text" placeholder="Ingresar la empresa"
-                                        aria-label="Ingresar la empresa">
-                                </div>
-
-                                <div class="input-group">
-                                    <label for="#">Teléfono</label>
-                                    <input type="tel" placeholder="Ingresar el teléfono"
-                                        aria-label="Ingresar el teléfono">
-                                </div>
+                            <div>
+                                <h2>Información de la librería</h2>
                             </div>
                             <div class="input-group">
-                                <div>
-                                    <label for="#">Correo electrónico</label>
-                                    <input type="email" placeholder="Ingresar el correo electrónico"
-                                        aria-label="Ingresar el correo electrónico">
+                                <label for="#">Nombre comercial</label>
+                                <input id="txt-empresa" type="text" placeholder="Ingresar el nombre"
+                                    aria-label="Ingresar el nombre">
+                            </div>
+                            <div class="input-dos-columnas">
+                                <div class="input-group">
+                                    <div>
+                                        <label for="#">Correo electrónico</label>
+                                        <input id="txt-correo" type="email" placeholder="Ingresar el correo electrónico"
+                                            aria-label="Ingresar el correo electrónico">
+                                    </div>
                                 </div>
-
-                                <div>
+                                <div class="input-group">
                                     <label for="#">Teléfono</label>
-                                    <input type="password" placeholder="Ingresar el teléfono"
+                                    <input id="txt-telefono" type="tel" placeholder="Ingresar el teléfono"
                                         aria-label="Ingresar el teléfono">
                                 </div>
                             </div>
+
+                        </div>
+                        <!--Paso 3 del formulario-->
+                        <div class="step step3 hidden">
                             <div>
                                 <h2>Dirección de la Empresa</h2>
                             </div>
                             <div class="input-group">
+
                                 <div>
                                     <label for="#">Provincia</label>
-                                    <select id="input_club_lectura" name="">
+                                    <select id="txt-provincia" name="">
                                         <option value="0" disabled="disabled" selected="true">
                                             Escoger una opción
                                         </option>
-                                        <option value="1">
-                                            San José
+                                        <option value="">
                                         </option>
-                                        <option value="2">
-                                            Heredia
-                                        </option>
-                                        <option value="3">
-                                            Cartago
-                                        </option>
-                                        <option value="4">
-                                            Alajuela
-                                        </option>
-                                        <option value="5">
-                                            Limón
-                                        </option>
-                                        <option value="5">
-                                            Gunacaste
-                                        </option>
-                                        <option value="5">
-                                            Puntarenas
-                                        </option>
+
                                     </select>
                                 </div>
                             </div>
                             <div class="input-dos-columnas">
                                 <div class="input-group">
                                     <label for="#">Cantón</label>
-                                    <select id="input_club_lectura" name="">
+                                    <select id="txt-canton" name="">
                                         <option value="0" disabled="disabled" selected="true">
                                             Escoger una opción
                                         </option>
-                                        <option value="1">
-                                            Montes de Oca
+                                        <option value="">
                                         </option>
                                     </select>
                                 </div>
 
                                 <div class="input-group">
                                     <label for="#">Distrito</label>
-                                    <select id="input_club_lectura" name="">
+                                    <select id="txt-distrito" name="">
                                         <option value="0" disabled="disabled" selected="true">
                                             Escoger una opción
                                         </option>
-                                        <option value="1">
-                                            Sabanilla
+                                        <option value="">
                                         </option>
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <!--Paso 3 del formulario-->
-                        <div class="step step3 hidden">
-                            <div id="map">
-
+                            
+                            <div>
+                                <h3>Selecciona las sucursales en el mapa</h3>
                             </div>
+                            <!-- <div id="map"></div> -->
                         </div>
                         <!--Botones del formulario-->
                         <div class="form-btns">
@@ -179,7 +165,7 @@
                             </div>
 
                             <div class="submit-btn">
-                                <button id="txt-btn" type="button" class="hidden button">
+                                <button id="btn-enviar" type="button" class="hidden button">
                                     Registrar
                                     <i class='bx bx-plus'></i>
                                 </button>
@@ -196,10 +182,18 @@
     </main>
     <!--Scripts-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="../js/componentes/controlador-form.js"></script>
-    <!--Google Maps Api de Sorbil-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnj4Pk6sSOX5m4uxn8jO9VN2YjMUR7iO4&callback=initMap"></script> -->
     <script src="../js/componentes/controlador-map.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPRMwouoSWe78jq9B3RFvBx8bDOKIwrns&callback=initMap"></script>
+    <script src="../js/componentes/controlador-form.js"></script>
+    <script src="../js/servicio-libreria.js"></script>
+    <script src="../js/controlador-registrar-libreria.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js" type="text/javascript"></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="../js/servicio-imagen.js"></script>
+
 </body>
 
 </html>
