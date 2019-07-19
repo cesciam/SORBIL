@@ -2,7 +2,7 @@
 
 const tbody = document.querySelector('#tabla-usuario tbody');
 let lista_usuarios = [];
-let txt_filtro = document.querySelector('#txt_filtro');
+let txt_filtro = document.querySelector('#txt-filtro');
 
 
 let mostrar_tabla = async() => {
