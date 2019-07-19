@@ -14,7 +14,7 @@ const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
 const input_direccion_exacta= document.querySelector('#txt-direccion-exacta');
 
-const btn_crear_cuenta = document.querySelector('#txt-btn');
+const btn_crear_cuenta = document.querySelector('#btn-enviar');
 
 let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
 
