@@ -46,3 +46,5 @@ $(function() {
         };
         return $.cloudinary.url(id, options);
     };
+
+    
