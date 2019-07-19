@@ -130,15 +130,6 @@ html {
     border-bottom: var(--line);
 }
 
-#main-form #form-container p {
-    font-size: 1.8rem;
-    text-align: center;
-    text-transform: initial;
-    padding: .5rem;
-    margin-bottom: 3rem;
-    border-bottom: var(--line);
-}
-
 #main-form #form-container .form-title a {
     text-align: center;
 }
@@ -146,14 +137,6 @@ html {
 #main-form #form-container .form-title a img {
     width: 50%;
     padding: 2rem;
-}
-
-#main-form #form-container .form-nav {
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(2, 1fr);
-    color: var(--color-secondary);
-    grid-gap: 3rem;
 }
 
 #main-form #form-container label {
@@ -250,16 +233,6 @@ html {
 Fin de estilos de formularios
 */
 
-@media (max-width: 100rem) {
-    #main-form #form-container .form-nav {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        width: 70%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
 @media (max-width: 76.8rem) {
     #main-form {
         display: grid;
@@ -271,8 +244,5 @@ Fin de estilos de formularios
     }
     #main-form #form-image {
         display: none;
-    }
-    #main-form #form-container .form-nav {
-        grid-template-columns: 1fr;
     }
 }
