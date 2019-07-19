@@ -32,6 +32,9 @@ let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempr
     if (pcontrasenna == '') {
         error = true;
         input_contrasenna.classList.add('input_error');
+    } else if (pcontrasenna != pverificacion_contrasenna) {
+        error = true;
+        input_contrasenna.classList.add('input_error');
     } else {
         input_contrasenna.classList.remove('input_error');
     }
@@ -39,15 +42,11 @@ let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempr
     if (pverificacion_contrasenna == '') {
         error = true;
         input_verificacion_contrasenna.classList.add('input_error');
+    } else if (pverificacion_contrasenna != pcontrasenna) {
+        error = true;
+        input_verificacion_contrasenna.classList.add('input_error');
     } else {
         input_verificacion_contrasenna.classList.remove('input_error');
-    }
-
-    if (pverificacion_contrasenna != pcontrasenna) {
-        error = true;
-        input_contrasenna.classList.add('input_error');
-    } else {
-        input_contrasenna.classList.remove('input_error');
     }
 
     if (pempresa == '') {
@@ -99,7 +98,7 @@ let saludar = () => {
     let canton = input_canton.value;
     let distrito = input_distrito.value;
 
-    let error = validar(usuario,correo,contrasenna,verificacion_contrasenna,empresa,telefono,provincia,canton,distrito);
+    let error = validar(usuario, correo, contrasenna, verificacion_contrasenna, empresa, telefono, provincia, canton, distrito);
 
     if (error == false) {
         registrarLibreria(usuario, correo, contrasenna, verificacion_contrasenna, empresa, telefono, provincia, canton, distrito);
