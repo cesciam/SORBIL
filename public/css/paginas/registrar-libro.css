@@ -8,3 +8,7 @@
 .input_error {
     border: 2px #e74c3c solid !important;
 }
+
+.img_registro_libro {
+    height: 20rem;
+}
