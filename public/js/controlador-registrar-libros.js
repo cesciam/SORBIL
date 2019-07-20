@@ -153,7 +153,7 @@ let llamar = () =>{
 
     let resultado_validaciones = validar(input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn);
     if(!resultado_validaciones){
-        registrarLibro(titulo, autor, edicion, editorial, fecha, categorias, generos, precio, idioma, tipo_libro, isbn, src_portada, src_contraportada);
+        registrarLibro(titulo, autor, edicion, editorial, fecha, categorias, generos, idioma, precio, tipo_libro, isbn, src_portada, src_contraportada);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
