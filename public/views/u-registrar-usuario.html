@@ -40,13 +40,13 @@
                         </div>
                         <!--Paso 1 del formulario-->
                         <div class="step step1">
-                            <div class="input-group">
+                            <div>
+                                <p for="">Portada</p>
                                 <div class="upload-img">
-                                    <i class='bx bx-image-add'></i>
-                                    <label for="file">Arrastra o sube una imagen</label>
-                                    <input type="file" id="img-uploader-portada" class="avatar-msg">
+                                    <img src="../imgs/book-placeholder.png" alt="" class="img_registro_libro" id="portada">
+                                    <label for="file">Arrastra o sube la imagen</label>
+                                    <button id="btnSeleccionarImagen"  type="file" id="img-uploader-portada" class="upload-msg"></button>
                                 </div>
-                            </div>
                             <div class="input-group">
                                 <label for="#">Usuario</label>
                                 <input id="txt-usuario" type="text" placeholder="Ingrese su nombre de usuario"
