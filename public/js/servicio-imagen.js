@@ -20,7 +20,7 @@ $(function() {
                 let id = result[0].public_id;
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/fenixsorbil/image/upload/' + id;
-                document.querySelector('#img_preview').src = imagenUrl;
+                document.querySelector('#portada').src = imagenUrl;
                 console.log(imagenUrl);
             });    
         });
@@ -34,7 +34,7 @@ $(function() {
                 let id = result[0].public_id;
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/fenixsorbil/image/upload/' + id;
-                document.querySelector('#img_preview').src = imagenUrl;
+                document.querySelector('#contraportada').src = imagenUrl;
                 console.log(imagenUrl);
             });    
         });    

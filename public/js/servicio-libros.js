@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarLibro = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategoria, pgenero, pidioma, pprecio, ptipo, pisbn) => {
+let registrarLibro = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategoria, pgenero, pidioma, pprecio, ptipo, pisbn, pportada, pcontraportada) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libro',
@@ -16,7 +16,9 @@ let registrarLibro = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategoria,
             idioma: pidioma,
             precio: pprecio,
             tipo: ptipo,
-            isbn: pisbn
+            isbn: pisbn,
+            portada: pportada,
+            contraportada: pcontraportada
         }
     });
 };
