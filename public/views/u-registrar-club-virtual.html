@@ -17,21 +17,17 @@
 <body id="body-form">
     <!--Main-->
     <main id="main-form">
-        <div id="form-image" class="form-bg-cuenta-administrador"><a href="../index.html"><img src="../imgs/logo.png"
+        <div id="form-image" class="form-bg-crear-club-usuario"><a href="../index.html"><img src="../imgs/logo.png"
                     alt="Logo de Sorbil"></a>
         </div>
         <section id="seccion-form">
             <div>
                 <div class="form-title">
-                    <h1>Registrar librería</h1>
+                    <h1>Registrar club de lectura virtual</h1>
                     <!--Barra de progreso-->
                     <div class="progress-container">
-                        <ul class="progress-bar progress-bar-4">
+                        <ul class="progress-bar progress-bar-2">
                             <li class="progress-bar__dot full"></li>
-                            <li class="progress-bar__connector"></li>
-                            <li class="progress-bar__dot"></li>
-                            <li class="progress-bar__connector"></li>
-                            <li class="progress-bar__dot"></li>
                             <li class="progress-bar__connector"></li>
                             <li class="progress-bar__dot"></li>
                         </ul>
@@ -45,7 +41,7 @@
                         <div class="step step1">
                             <div>
                                 <div class="upload-img">
-                                    <img src="../imgs/avatar-placeholder.png" alt="" class="img_registro_libro"
+                                    <img src="../imgs/book-placeholder.png" alt="" class="img_registro_libro"
                                         id="portada">
                                     <label for="file">Subir imagen</label>
                                     <button id="btnSeleccionarImagen" type="file" id="img-uploader-portada"
@@ -53,90 +49,74 @@
                                 </div>
                             </div>
 
-                            <div class="input-group">
-                                <label for="#">Nombre de usuario</label>
-                                <input id="txt-usuario" type="text" placeholder="Ingrese el nombre de usuario"
-                                    aria-label="Ingrese el nombre de usuario">
-                            </div>
+
 
                             <div class="input-dos-columnas">
                                 <div class="input-group">
-                                    <label for="#">Contraseña</label>
-                                    <input id="txt-contrasenna" type="password" placeholder="Ingrese la contaseña"
-                                        aria-label="Ingrese la contaseña">
+                                    <label for="#">Nombre del administrador</label>
+                                    <input id="txt-administrador-club" type="text" placeholder="Ingrese su nombre"
+                                        aria-label="Ingrese su nombre">
                                 </div>
 
                                 <div class="input-group">
-                                    <label for="#">Verificación de contraseña</label>
-                                    <input id="txt-verificacion-contrasenna" type="password"
-                                        placeholder="Ingrese la contaseña" aria-label="Ingrese la contaseña">
+                                    <label for="#">Nombre del tema</label>
+                                    <input id="txt-tema-club" type="text" placeholder="Ingrese el tema"
+                                        aria-label="Ingrese el tema">
                                 </div>
                             </div>
-                        </div>
-                        <!--Paso 2 del formulario-->
-                        <div class="step step2 hidden">
-                            <div>
-                                <h2>Información de la librería</h2>
-                            </div>
-                            <div class="input-group">
-                                <label for="#">Nombre comercial</label>
-                                <input id="txt-empresa" type="text" placeholder="Ingresar el nombre"
-                                    aria-label="Ingresar el nombre">
-                            </div>
+
                             <div class="input-dos-columnas">
                                 <div class="input-group">
                                     <div>
                                         <label for="#">Correo electrónico</label>
-                                        <input id="txt-correo" type="email" placeholder="Ingresar el correo electrónico"
+                                        <input id="txt-correo-club" type="email"
+                                            placeholder="Ingresar su correo electrónico"
                                             aria-label="Ingresar el correo electrónico">
                                     </div>
                                 </div>
                                 <div class="input-group">
                                     <label for="#">Teléfono</label>
-                                    <input id="txt-telefono" type="tel" placeholder="Ingresar el teléfono"
-                                        aria-label="Ingresar el teléfono">
+                                    <input id="txt-telefono-club" type="tel" placeholder="Ingresar el teléfono"
+                                        aria-label="Ingresar su teléfono">
                                 </div>
                             </div>
-
                         </div>
-                        <!--Paso 3 del formulario-->
-                        <div class="step step3 hidden">
-                            <div>
-                                <h2>Dirección de la Empresa</h2>
-                            </div>
-                            <div class="input-group">
-                                <div>
-                                    <label for="#">Provincia</label>
-                                    <select id="txt-provincia">
-                                        <option value="" selected="selected" disabled="disabled">Seleccionar Provincia
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
+                        <!--Paso 2 del formulario-->
+                        <div class="step step2 hidden">
                             <div class="input-dos-columnas">
-                                <div class="input-group">
-                                    <label for="#">Cantón</label>
-                                    <select id="txt-canton">
-                                        <option value="" selected="selected" disabled="disabled">Seleccionar Provincia
+                                <div>
+                                    <label for="#">Categoría</label>
+                                    <select id="input_categorias" name="">
+                                        <option value="0" disabled="disabled" selected="true">
+                                            Escoger una opción
+                                        </option>
+                                        <option value="Categorías">
+                                            Categoría 1
                                         </option>
                                     </select>
                                 </div>
-
-                                <div class="input-group">
-                                    <label for="#">Distrito</label>
-                                    <select id="txt-distrito">
-                                        <option value="" selected="selected" disabled="disabled">Seleccionar Provincia
+                                <div>
+                                    <label for="#">Género</label>
+                                    <select id="input_generos" name="">
+                                        <option value="" disabled="disabled" selected="true">
+                                            Escoger una opción
+                                        </option>
+                                        <option value="genero">
+                                            Género 1
                                         </option>
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <!--Paso 4 del formulario-->
-                        <div class="step step4 hidden">
                             <div>
-                                <h2>Selecciona la ubicación en el mapa</h2>
+                                <div class="input-group">
+                                    <div>
+                                        <label for="#">fecha</label>
+                                        <input id="txt-fecha-club" type="date"
+                                            placeholder="Ingresar su correo electrónico"
+                                            aria-label="Ingresar el correo electrónico">
+                                    </div>
+                                </div>
                             </div>
-                            <div id="map"></div>
                         </div>
                         <!--Botones del formulario-->
                         <div class="form-btns">
@@ -177,9 +157,9 @@
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnj4Pk6sSOX5m4uxn8jO9VN2YjMUR7iO4&callback=initMap"></script>
     <script src="../js/componentes/controlador-map.js"></script>
-    <script src="../js/componentes/controlador-form-step4.js"></script>
-    <script src="../js/servicio-libreria.js"></script>
-    <script src="../js/controlador-registrar-libreria.js"></script>
+    <script src="../js/componentes/controlador-form-step2.js"></script>
+    <script src="../js/servicio-club.js"></script>
+    <script src="../js/controlador-registrar-club.js"></script>
     <script src="../js/componentes/controlador-select.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js"

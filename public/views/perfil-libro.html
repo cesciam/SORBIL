@@ -19,27 +19,32 @@
 <body>
     <!--Header-->
     <header id="header-user">
-
+    
         <div id="header-nav-1">
-            <a class="logo" href="../index.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
-
+            <a class="logo" href="index.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
+    
             <nav>
-                <a href="#">Inicio</a>
-                <a href="#">Intercambios</a>
-                <a href="#">Quiénes somos</a>
-                <a href="#">Contacto</a>
+                <a href="index.html"><i class='bx bx-home-circle'></i>Inicio</a>
+                <a href="u-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
+                <a href="u-contacto.html"><i class='bx bx-mail-send'></i>Contacto</a>
             </nav>
-
-            <div class="header-btn">
-                <button class="btn-white" href="#">Iniciar sesión</button>
+    
+            <div class="header-nav-1-btns">
+                <div class="header-btn">
+                    <button role="link" onclick="window.location='views/u-iniciar-sesion.html'" class="btn-white"
+                        href="#">Iniciar sesión</button>
+                </div>
+    
+                <div class="header-btn">
+                    <button role="link" onclick="window.location='views/u-registrar-usuario.html'"
+                        class="dropdown-toggle">Crear cuenta</button>
+                </div>
             </div>
-
-            <div class="header-btn">
-                <button href="#">Crear cuenta</button>
-            </div>
+    
         </div>
-
-        <div id="header-nav-2">
+    
+        <div id="header-nav-2" class="sticky">
             <nav>
                 <ul>
                     <li><a href="#">Categorías<i class='bx bx-chevron-down'></i></a></li>
@@ -49,7 +54,7 @@
                 </ul>
             </nav>
         </div>
-
+    
     </header>
 
 
