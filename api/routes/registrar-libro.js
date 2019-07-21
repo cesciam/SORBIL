@@ -28,7 +28,8 @@ router.post('/registrar-libro', function (req, res) {
         tipo: body.tipo,
         isbn: body.isbn,
         portada: body.portada,
-        contraportada: body.contraportada
+        contraportada: body.contraportada,
+        sinopsis: body.sinopsis
     });
 
 

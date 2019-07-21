@@ -12,3 +12,11 @@
 .img_registro_libro {
     height: 20rem;
 }
+
+#input_sinopsis{
+    font-family: inherit;
+    font-size: 1.4rem;
+    outline: none;
+    padding: var(--box-padding);
+    border-radius: var(--box-radius);
+}

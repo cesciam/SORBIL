@@ -22,9 +22,10 @@ const input_precio = document.querySelector('#input_precio');
 const input_tipo_libro = document.querySelector('#input_tipo_libro');
 const input_isbn = document.querySelector('#input_isbn');
 const btn_enviar = document.querySelector('#btn_enviar');
+const input_psinopsis = document.querySelector('#input_sinopsis');
 
 
-let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgeneros, pidioma, pprecio, plibro, pisbn) => {
+let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgeneros, pidioma, pprecio, plibro, pisbn, psinopsis) => {
     let error = false;
 
     let fecha_formateada = new Date(pfecha.value);
@@ -130,6 +131,13 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
         input_isbn.classList.remove('input_error');
     }
 
+    if(psinopsis.value == ''){
+        error = true;
+        input_psinopsis.classList.add('input_error');
+    }else{
+        input_psinopsis.classList.remove('input_error');
+    }
+
     return error;
 
 };
@@ -148,19 +156,17 @@ let llamar = () =>{
     let isbn = input_isbn.value;
     let src_portada = img_uploader_portada.src;
     let src_contraportada = img_uploader_contraportada.src;
+    let sinopsis = input_psinopsis.value;
 
 
 
-    let resultado_validaciones = validar(input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn);
+    let resultado_validaciones = validar(input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn, sinopsis);
     if(!resultado_validaciones){
-        registrarLibro(titulo, autor, edicion, editorial, fecha, categorias, generos, idioma, precio, tipo_libro, isbn, src_portada, src_contraportada);
+        registrarLibro(titulo, autor, edicion, editorial, fecha, categorias, generos, idioma, precio, tipo_libro, isbn, src_portada, src_contraportada, sinopsis);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
         })
-        function actualizar(){location.reload(true);}
-        //Función para actualizar cada 4 segundos(4000 milisegundos)
-        setInterval("actualizar()",4000);
     }else{
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',

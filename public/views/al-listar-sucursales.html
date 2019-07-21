@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Registrar Sucursales</title>
+    <title>Sorbil -- Librería -- Listar Sucursales</title>
 </head>
 
 <body id="grid-admin">
@@ -29,7 +29,7 @@
             </div>
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification">6</span>
+                    <span class="user-notification">1</span>
                 </a>
             </div>
 
@@ -51,54 +51,30 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de Sucursal</h1>
-            <p>Registra la información que te interesa</p>
+            <h1>Listado de sucursales</h1>
+            <p>Busca la información que te interesa</p>
         </div>
 
-        <form id="form" action="#">
+        <div id="barra-busqueda">
+            <input id = "txt-filtro" type="text" placeholder="Buscar por / nombre / correo electrónico"
+                aria-label="Buscar por / nombre / correo electrónico">
 
-            <div id="form-container">
-                <div>
-                    <label for="#">Nombre</label>
-                    <input id="txt-nombre-sucursal" type="text" placeholder="Ingresar nombre de la sucursal"
-                        aria-label="Ingresar nombre de la sucursal">
-                </div>
-                <div>
-                    <label for="#">Teléfono</label>
-                    <input id="txt-telefono" type="tel" placeholder="Formato: 00-00-00-00"
-                        aria-label="Ingresar el número de teléfono">
-                </div>
-                <div>
-                    <label for="#">Correo Electrónico</label>
-                    <input id="txt-correo" type="email" placeholder="Ingresar el correo electrónico"
-                        aria-label="Ingresar el correo electrónico">
-                </div>
-                <div>
-                    <label for="#">Provincia</label>
-                    <select id="txt-provincia" name="">
-                        <option value="" selected="selected" disabled="disabled">Seleccionar Provincia
-                        </option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="#">Cantón</label>
-                    <select id="txt-canton" name="">
-                        <option value="" selected="selected" disabled="disabled">Seleccionar Provincia
-                        </option>
-                    </select>
-                </div>
+        </div>
 
-                <div class="input-group">
-                    <label for="#">Distrito</label>
-                    <select id="txt-distrito" name="">
-                        <option value="" selected="selected" disabled="disabled">Seleccionar Provincia
-                        </option>
-                    </select>
-                </div>
-            </div>
-            </div>
-            <button id="btn-enviar" type="button">Registrar</button>
-        </form>
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Correo electrónico</th>
+                    <th>Provincia</th>
+                    <th>Cantón</th>
+                    <th>Distrito</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
 
     </main>
 
@@ -163,9 +139,7 @@
                 <li class="sidenav-list-item"><a href="al-bitactoras.html"><i
                             class='bx bx-loader-alt sidenav-i'></i>Bitácora</a></li>
             </ul>
-
         </div>
-
     </aside>
 
     <!--Footer-->
@@ -175,13 +149,12 @@
     </footer>
 
     <!--Scripts-->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/componentes/controlador-select.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/servicio-sucursal.js"></script>
-    <script src="../js/controlador-registrar-sucursal.js"></script>
+    <script src="../js/controlador-listar-sucursales.js"></script>
+
 </body>
 
 </html>
