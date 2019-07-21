@@ -50,8 +50,8 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
         input_correo.classList.add('input_error');
     } else {
         input_correo.classList.remove('input_error');
-    }
-
+    }   
+    
     if (pcontrasena == '') {
         error = true;
         input_contrasena.classList.add('input_error');
@@ -132,6 +132,36 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
     return error;
 };
 
+let validarCedula = (pidentificacion) => {
+    
+    let errorCedula = false;
+    let cedulaValida = /^[1-9]-?\d{4}-?\d{4}$/;
+
+    if(!cedulaValida.test(pidentificacion)){
+        errorCedula = true;
+        input_id.classList.add('input_error');        
+    }
+    else {
+        input_id.classList.remove('input_error');
+    }
+    return errorCedula;
+};
+
+let validarCorreo = (pcorreo) => {
+    
+    let errorCorreo = false;
+    let correoValido = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+    if(!correoValido.test(pcorreo)){
+        errorCorreo = true;
+        input_correo.classList.add('input_error');        
+    }
+    else {
+        input_correo.classList.remove('input_error');
+    }
+    return errorCorreo;
+};
+
 let llamar = () => {
 
     let src_avatar= img_uploader_avatar.src;
@@ -150,20 +180,23 @@ let llamar = () => {
     let direccion_exacta = input_direccion_exacta.value;
 
     let error = validar(usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
+    let errorCedula = validarCedula(id);
+    let errorCorreo = validarCorreo(correo);
 
-    if (error == false) {
+    if (error == false && errorCedula == false && errorCorreo == false) {
         registrarUsuario(src_avatar, usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
-        })
-    } else {
+        })    
+    }         
+    else {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',
             text: 'Revisá los campos resaltados e intentalo de nuevo'
         })
-    }
+    }    
 };
 
 btn_crear_cuenta.addEventListener('click', llamar);
