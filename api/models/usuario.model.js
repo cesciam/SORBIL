@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 // VERIFICAR LOS TIPOS DE DATOS MAS ADELANTE
 
 let usuario_schema = new mongoose.Schema({
+    avatar: {type: String, required: true, unique: false},
     usuario: { type: String, required: true, unique: false },
     correo: { type: String, required: true, unique: true },
     contrasena: { type: String, required: true, unique: false },

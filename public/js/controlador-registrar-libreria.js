@@ -1,5 +1,15 @@
 'use strict';
+// Aqui empiezan todas las variables para subir las fotos a cloudinary
+// const imgpreview = document.getElementById('img_preview');
+// const uploader_portada = document.getElementById('img_uploader_portada');
+// const uploader_contraportada = document.getElementById('img_uploader_contraportada');
+// const progress_bar = document.getElementById('progress_bar');
+// const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/fenixsorbil/image/upload';
+// const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
 
+// Aqui terminan las variables para subir las fotos a cloudinary
+
+const img_uploader_portada = document.querySelector('#portada');
 const input_usuario = document.querySelector('#txt-usuario');
 const input_correo = document.querySelector('#txt-correo');
 const input_contrasenna = document.querySelector('#txt-contrasenna');
@@ -9,11 +19,20 @@ const input_telefono = document.querySelector('#txt-telefono');
 const input_provincia = document.querySelector('#txt-provincia');
 const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
+
 const btn_enviar = document.querySelector('#btn-enviar');
 
 let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempresa, ptelefono, pprovincia, pcanton, pdistrito) => {
 
     let error = false;
+
+    // if (img_uploader_portada.src == 'http://localhost:3000/public/imgs/book-placeholder.png') {
+    //     error = true;
+    //     img_uploader_portada.classList.add('input_error');
+    //     console.log('Todo mal');
+    // } else {
+    //     img_uploader_portada.classList.remove('input_error');
+    // }
 
     if (pusuario == '') {
         error = true;
@@ -63,21 +82,21 @@ let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempr
         input_telefono.classList.remove('input_error');
     }
 
-    if (pprovincia == 0) {
+    if (pprovincia == '') {
         error = true;
         input_provincia.classList.add('input_error');
     } else {
         input_provincia.classList.remove('input_error');
     }
 
-    if (pcanton == 0) {
+    if (pcanton == '') {
         error = true;
         input_canton.classList.add('input_error');
     } else {
         input_canton.classList.remove('input_error');
     }
 
-    if (pdistrito == 0) {
+    if (pdistrito == '') {
         error = true;
         input_distrito.classList.add('input_error');
     } else {

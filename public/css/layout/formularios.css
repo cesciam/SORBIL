@@ -7,20 +7,27 @@ html {
     overflow-x: hidden;
 }
 
-#body-form {
+/* #body-form {
     background-color: var(--color-alternative-bg);
-}
+} */
 
 #main-form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 20% 80%;
 }
 
 #main-form #form-image {
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     height: 100vh;
+    display: grid;
+    justify-items: start;
+}
+
+#main-form #form-image a img {
+    width: 20rem;
+    padding: 2rem;
 }
 
 #main-form .form-bg-iniciar-sesion-usuario {
@@ -47,70 +54,119 @@ html {
     background-image: url(../../imgs/crear-club-usuario.png);
 }
 
-#main-form #seccion-form {
-    box-shadow: var(--shadow-dark-2);
-    background-color: var(--color-white);
-    margin: 2rem 2rem 2rem 6rem;
-}
-
 #main-form #form-container {
     display: grid;
-    border-radius: var(--box-radius);
-    padding: 5rem 0;
+    /* border-radius: var(--box-radius); */
     align-items: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#main-form #form-container .progress-bar {
+#main-form #form-container #txt-btn {
+    animation-name: moveInUp;
+    animation-duration: 1s;
+}
+
+#main-form .form-nav {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
     justify-items: center;
-    width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main-form .form-nav .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10rem;
+}
+
+#main-form p {
+    padding: .5rem;
+    margin-bottom: 8rem;
+    border-bottom: var(--line);
+}
+
+#main-form #seccion-form {
+    display: grid;
+    align-items: center;
+    box-shadow: var(--shadow-dark-2);
+    padding: 2rem 0;
+    /* margin: 1rem 1rem 1rem 0; */
+    height: 1fr;
+}
+
+#main-form #seccion-form .form-title .progress-container {
+    display: grid;
+    justify-items: center;
+}
+
+#main-form #seccion-form .form-title .progress-bar {
+    display: grid;
+    justify-items: center;
+    width: 80%;
     padding: 0;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     opacity: .6;
 }
 
-#main-form #form-container .progress-bar li.progress-bar__dot {
-    width: 0.9em;
+#main-form #seccion-form .form-title .progress-bar-2 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#main-form #seccion-form .form-title .progress-bar-4 {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+#main-form #seccion-form .form-title .progress-bar li.progress-bar__dot {
+    width: 0.8em;
+    height: 0.8em;
     border-radius: 50%;
-    height: 0.9em;
-    border: 0.2em solid var(--color-alternative-grey);
+    border: 0.2em solid var(--color-alternative-blue);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-#main-form #form-container .progress-bar li.progress-bar__dot.full {
+#main-form #seccion-form .form-title .progress-bar li.progress-bar__dot.full {
     background-color: var(--color-alternative-blue);
+    padding: .4rem;
 }
 
-#main-form #form-container .progress-bar li.progress-bar__dot.full:hover {
+#main-form #seccion-form .form-title .progress-bar li.progress-bar__dot.full:hover {
     background-color: var(--color-alternative-blue);
     opacity: .8;
 }
 
-#main-form #form-container .progress-bar li.progress-bar__connector {
+#main-form #seccion-form .form-title .progress-bar li.progress-bar__connector {
     width: 10em;
     border-radius: var(--box-radius);
     height: 0.12em;
     background-color: var(--color-alternative-grey);
     margin-top: 0.45em;
+    opacity: .4;
 }
 
-#main-form #form #form-container>*, select {
-    margin-bottom: 3rem;
-}
-
-#main-form #form-container .form-title {
+#main-form .form-title {
     display: grid;
     justify-items: center;
 }
 
-#main-form #form-container .form-title h1 {
-    font-size: 3rem;
+#main-form .form-title h1 {
+    font-size: 2.8rem;
     text-align: center;
     text-transform: initial;
     padding: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+#main-form #form-container {
+    display: grid;
+    width: 65%;
+}
+
+#main-form #form-container>*, select {
+    margin-bottom: 3rem;
 }
 
 #main-form #form-container h2 {
@@ -130,35 +186,13 @@ html {
     border-bottom: var(--line);
 }
 
-#main-form #form-container p {
-    font-size: 1.8rem;
-    text-align: center;
-    text-transform: initial;
-    padding: .5rem;
-    margin-bottom: 3rem;
-    border-bottom: var(--line);
-}
-
-#main-form #form-container .form-title a {
-    text-align: center;
-}
-
-#main-form #form-container .form-title a img {
-    width: 50%;
-    padding: 2rem;
-}
-
-#main-form #form-container .form-nav {
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(2, 1fr);
-    color: var(--color-secondary);
-    grid-gap: 3rem;
-}
-
 #main-form #form-container label {
     margin-bottom: 1rem;
     display: block;
+}
+
+#main-form #form-container textarea {
+    box-shadow: none;
 }
 
 #main-form #form-container label a {
@@ -177,20 +211,22 @@ html {
     transition: all 0.3s;
     border: .2rem solid var(--color-alternative-bg);
     margin-bottom: 5rem;
+    box-shadow: none;
 }
 
 #main-form #form-container select {
     border: .2rem solid var(--color-alternative-bg);
+    box-shadow: none;
 }
 
-#main-form #form-container .form-container-inputs {
+/* #main-form #form-container .form-container-inputs {
     border: .1rem solid var(--color-alternative-bg);
     padding: 3rem;
 }
 
 #main-form #form-container .form-container-inputs div {
     margin-bottom: 3rem;
-}
+} */
 
 #main-form #form-container input:focus {
     border: .2rem solid var(--color-alternative-blue);
@@ -201,9 +237,8 @@ html {
 }
 
 #main-form #form-container .upload-img {
-    margin-bottom: 5rem;
-    padding-top: 6rem;
-    padding-bottom: .1rem;
+    padding-top: 2rem;
+    height: 18rem;
 }
 
 #main-form #form-container .input-dos-columnas {
@@ -217,21 +252,37 @@ html {
 }
 
 #main-form #form-container .button.disabled {
-    opacity: 0.6;
+    opacity: 0.4;
+}
+
+#main-form #form-container .form-btns {
+    display: grid;
+    justify-items: center;
 }
 
 #main-form #form-container .form-btns .center-btns {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 20rem);
+    animation-name: moveInUp;
+    animation-duration: 2s;
 }
 
 #main-form #form-container .form-btns .center-btns button {
-    background-color: var(--color-alternative-blue);
-    margin-top: .1rem;
+    /* background-color: var(--color-alternative-blue); */
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: none;
+}
+
+#main-form #form-container .form-btns .center-btns button i {
+    font-size: 6rem;
+    color: var(--color-alternative-blue);
 }
 
 #main-form #form-container .form-btns #btn-enviar {
-    margin-top: 6rem;
+    margin-top: 3rem;
+    animation-name: moveInUp;
+    animation-duration: 1s;
 }
 
 #main-form #form-container .form-btns #btn-enviar i {
@@ -251,12 +302,11 @@ Fin de estilos de formularios
 */
 
 @media (max-width: 100rem) {
-    #main-form #form-container .form-nav {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        width: 70%;
-        margin-left: auto;
-        margin-right: auto;
+    #main-form #form-image {
+        height: 120vh;
+    }
+    #main-form #form-image a img {
+        width: 18rem;
     }
 }
 

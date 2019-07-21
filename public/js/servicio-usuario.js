@@ -1,11 +1,12 @@
 'use strict';
 
-let registrarUsuario = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
+let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-usuario',
         responseType: 'json',
         data: {
+            avatar: pavatar,
             usuario: pusuario,
             correo: pcorreo,
             contrasena: pcontrasena,
