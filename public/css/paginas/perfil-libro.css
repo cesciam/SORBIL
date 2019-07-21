@@ -41,7 +41,9 @@
     justify-self: center;
     border: solid 2px var(--color-secondary);
     grid-gap: 2rem;
-    padding: 3%;
+    padding: 4%;
+    padding-left: 7%;
+    padding-right: 7%;
     background: white;
 }
 

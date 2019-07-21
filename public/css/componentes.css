@@ -66,7 +66,7 @@ Inicio de estilos de formularios
 
 #form textarea {
     border: 2px solid var(--color-alternative-bg);
-    resize: vertical;
+    resize: none;
     height: 10rem;
 }
 

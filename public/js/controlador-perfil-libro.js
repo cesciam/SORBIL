@@ -16,6 +16,7 @@ let tipo = document.querySelector('#tipo');
 let isbn = document.querySelector('#isbn');
 let portada = document.querySelector('#portada');
 let fecha = document.querySelector('#fecha');
+let sinopsis = document.querySelector('#descrip');
 
 let llenar_perfil = async() => {
 
@@ -33,7 +34,11 @@ let llenar_perfil = async() => {
         tipo.innerHTML = libroid['tipo'];
         isbn.innerHTML = libroid['isbn'];
         portada.src = libroid['portada'];
-        fecha.innerHTML = libroid['fecha'];
+        sinopsis.innerHTML = libroid['sinopsis'];
+
+        let fecha_new = new Date(libroid['fecha']);
+        let fecha_formateada = fecha_new.getUTCDate() + '-' + Number(fecha_new.getUTCMonth() + 1)  + '-' +  fecha_new.getFullYear();
+        fecha.innerHTML = fecha_formateada;
     }
 
     
