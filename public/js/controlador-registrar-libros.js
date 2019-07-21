@@ -109,7 +109,7 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
         input_idioma.classList.remove('input_error');
     }
 
-    if (pprecio.value < 0) {
+    if (pprecio.value < 0 || pprecio.value == '') {
         error = true;
         input_precio.classList.add('input_error');
     } else {
@@ -157,7 +157,10 @@ let llamar = () =>{
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
-        }) 
+        })
+        function actualizar(){location.reload(true);}
+        //Función para actualizar cada 4 segundos(4000 milisegundos)
+        setInterval("actualizar()",4000);
     }else{
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
@@ -165,7 +168,6 @@ let llamar = () =>{
             text: 'Revise los campos resaltados e inténtelo de nuevo'
         })
     }
-    
     
 };
 

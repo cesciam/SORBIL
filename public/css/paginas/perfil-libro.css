@@ -5,6 +5,7 @@
 #libro-info {
     display: grid;
     grid-template-columns: 60% 40%;
+    grid-template-rows: repeat(2, ifr);
     padding: 6rem;
     background: var( --color-alternative-bg);
     background-size: cover;
@@ -13,7 +14,7 @@
 
 #info-libro-descrip{
     display: grid;
-    grid-template-columns: 10rem  12rem 1fr;
+    grid-template-columns: 20rem  15rem 1fr;
     grid-gap: 1rem;
 }
 
@@ -31,4 +32,27 @@
 #descrip {
     display: grid;
     grid-column: span 3;
+}
+
+
+#info-libro-precio{
+    display: grid;
+    grid-row: span 2;
+    justify-self: center;
+    border: solid 2px var(--color-secondary);
+    grid-gap: 2rem;
+    padding: 3%;
+    background: white;
+}
+
+#info-libro-precio #div-img-portada{
+    justify-self: center;
+}
+
+.conten-div-precio{
+    justify-self: center;
+}
+
+#portada{
+    width: 20rem;
 }
