@@ -63,6 +63,11 @@ html {
     margin-right: auto;
 }
 
+#main-form #form-container #txt-btn {
+    animation-name: moveInUp;
+    animation-duration: 1s;
+}
+
 #main-form .form-nav {
     display: grid;
     justify-items: center;
@@ -258,6 +263,8 @@ html {
 #main-form #form-container .form-btns .center-btns {
     display: grid;
     grid-template-columns: repeat(2, 20rem);
+    animation-name: moveInUp;
+    animation-duration: 2s;
 }
 
 #main-form #form-container .form-btns .center-btns button {
@@ -273,7 +280,9 @@ html {
 }
 
 #main-form #form-container .form-btns #btn-enviar {
-    margin-top: 6rem;
+    margin-top: 3rem;
+    animation-name: moveInUp;
+    animation-duration: 1s;
 }
 
 #main-form #form-container .form-btns #btn-enviar i {

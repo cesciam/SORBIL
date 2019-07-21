@@ -12,6 +12,7 @@ const genero_route = require('./routes/genero');
 const libreria_route = require('./routes/libreria');
 const usuario_route = require('./routes/usuario');
 const sucursal_route = require('./routes/sucursal');
+const club_route = require('./routes/club');
 
 
 const app = express();
@@ -64,6 +65,7 @@ app.use('/api', genero_route);
 app.use('/api', libreria_route);
 app.use('/api', usuario_route);
 app.use('/api', sucursal_route);
+app.use('/api', club_route);
 
 //localhost:4000/api/registrar-contacto
 //localhost:4000/api/registrar-genero

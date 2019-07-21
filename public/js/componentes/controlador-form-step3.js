@@ -5,7 +5,7 @@ const nextButton = document.getElementById("next")
 const submitButton = document.getElementById('btn-enviar')
 const form = document.getElementById('form-container')
 const dots = document.getElementsByClassName('progress-bar__dot')
-const numberOfSteps = 3
+const numberOfSteps = 3;
 
 let currentStep = 1
 

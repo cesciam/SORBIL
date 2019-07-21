@@ -63,21 +63,21 @@ let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempr
         input_telefono.classList.remove('input_error');
     }
 
-    if (pprovincia == 0) {
+    if (pprovincia == '') {
         error = true;
         input_provincia.classList.add('input_error');
     } else {
         input_provincia.classList.remove('input_error');
     }
 
-    if (pcanton == 0) {
+    if (pcanton == '') {
         error = true;
         input_canton.classList.add('input_error');
     } else {
         input_canton.classList.remove('input_error');
     }
 
-    if (pdistrito == 0) {
+    if (pdistrito == '') {
         error = true;
         input_distrito.classList.add('input_error');
     } else {

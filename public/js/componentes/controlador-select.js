@@ -93,24 +93,24 @@ window.onload = function () {
         canton = document.getElementById("txt-canton"),
         distrito = document.getElementById("txt-distrito");
 
-    for (let state in ubicaciones) {
-        provincia.options[provincia.options.length] = new Option(state, state);
+    for (let opt_provincia in ubicaciones) {
+        provincia.options[provincia.options.length] = new Option(opt_provincia, opt_provincia);
     }
     provincia.onchange = function () {
-        canton.length = 1; // remove all options bar first
-        distrito.length = 1; // remove all options bar first
-        if (this.selectedIndex < 1) return; // done   
-        for (let county in ubicaciones[this.value]) {
-            canton.options[canton.options.length] = new Option(county, county);
+        canton.length = 1; 
+        distrito.length = 1; 
+        if (this.selectedIndex < 1) return;   
+        for (let opt_canton in ubicaciones[this.value]) {
+            canton.options[canton.options.length] = new Option(opt_canton, opt_canton);
         }
     }
-    provincia.onchange(); // reset in case page is reloaded
+    provincia.onchange(); 
     canton.onchange = function () {
-        distrito.length = 1; // remove all options bar first
-        if (this.selectedIndex < 1) return; // done   
-        let cities = ubicaciones[provincia.value][this.value];
-        for (let i = 0; i < cities.length; i++) {
-            distrito.options[distrito.options.length] = new Option(cities[i], cities[i]);
+        distrito.length = 1; 
+        if (this.selectedIndex < 1) return;    
+        let opt_distritos = ubicaciones[provincia.value][this.value];
+        for (let i = 0; i < opt_distritos.length; i++) {
+            distrito.options[distrito.options.length] = new Option(opt_distritos[i], opt_distritos[i]);
         }
     }
 }
