@@ -57,9 +57,9 @@ let ubicaciones = {
         "Mora": ["Ciudad Colón"],
         "Moravia": ["San Jerónimo"]
     },
-    "Heredia": {
-        "Heredia": ["Mercedes"],
-        "Barva": ["Barva"]
+    "Alajuela": {
+        "Alajuela": ["Alajuela"],
+        "San Ramón": ["Santiago"]
 
     },
     "Cartago": {
@@ -67,9 +67,9 @@ let ubicaciones = {
         "Paraíso": ["Paraíso"]
 
     },
-    "Alajuela": {
-        "Alajuela": ["Alajuela"],
-        "San Ramón": ["Santiago"]
+    "Heredia": {
+        "Heredia": ["Mercedes"],
+        "Barva": ["Barva"]
 
     },
     "Guanacaste": {
