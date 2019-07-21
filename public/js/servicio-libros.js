@@ -37,3 +37,18 @@ let obtenerLibros = async() => {
         console.log(error);
     }
 };
+
+let obtenerLibroid = async(_id) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-libro-id/${_id}`,
+            responseType: 'json'
+        });
+
+        return response.data.libro;
+    } catch (error) {
+        console.log(error);
+    }
+};
