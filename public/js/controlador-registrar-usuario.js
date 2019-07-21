@@ -1,5 +1,15 @@
 'use strict';
+// Aqui empiezan todas las variables para subir las fotos a cloudinary
+const imgpreview = document.getElementById('img_preview');
+const uploader_avatar = document.getElementById('img-uploader-avatar');
+const progress_bar = document.getElementById('progress_bar');
+const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/fenixsorbil/image/upload';
+const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
+
+// Aqui terminan las variables para subir las fotos a cloudinary
+
 // Constantes 
+const img_uploader_avatar = document.querySelector('#avatar');
 const input_usuario = document.querySelector('#txt-usuario');
 const input_correo = document.querySelector('#txt-correo');
 const input_contrasena = document.querySelector('#txt-contrasena');
@@ -19,6 +29,14 @@ const btn_crear_cuenta = document.querySelector('#btn-enviar');
 let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
 
     let error = false;
+
+    if (img_uploader_avatar.src == 'http://localhost:3000/public/imgs/avatar-placeholder.png'){
+        error = true;
+        img_uploader_avatar.classList.add('input_error');
+        
+    } else {
+        img_uploader_avatar.classList.remove('input_error');
+    }
 
     if (pusuario == '') {
         error = true;
@@ -115,6 +133,8 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
 };
 
 let llamar = () => {
+
+    let src_avatar= img_uploader_avatar.src;
     let usuario = input_usuario.value;
     let correo = input_correo.value;
     let contrasena = input_contrasena.value;
@@ -132,7 +152,7 @@ let llamar = () => {
     let error = validar(usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
 
     if (error == false) {
-        registrarUsuario(usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
+        registrarUsuario(src_avatar, usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

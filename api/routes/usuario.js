@@ -10,6 +10,7 @@ router.post('/registrar-usuario', function (req, res) {
     let body = req.body;
 
     let nuevo_usuario = new Usuario({
+        avatar: body.avatar,
         usuario: body.usuario,
         correo: body.correo,
         contrasena: body.contrasena,
