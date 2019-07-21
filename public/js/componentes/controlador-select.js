@@ -1,5 +1,5 @@
 'use strict';
-//Select TODO:
+//Select
 // let provincia = document.getElementById("txt-provincia");
 // let canton = document.getElementById("txt-canton");
 // let distrito = document.getElementById("txt-distrito");
@@ -113,4 +113,5 @@ window.onload = function () {
             distrito.options[distrito.options.length] = new Option(opt_distritos[i], opt_distritos[i]);
         }
     }
-}
+};
+

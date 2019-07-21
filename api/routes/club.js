@@ -42,7 +42,7 @@ router.post('/registrar-club', function (req, res) {
 });
 
 router.get('/listar-clubes', function (req, res) {
-    club.find(function (err, clubesDB) {
+    Club.find(function (err, clubesDB) {
         if (err) {
             return res.status(400).json({
                 success: false,
