@@ -10,7 +10,7 @@ router.post('/registrar-club', function (req, res) {
     let body = req.body;
 
     let nuevo_club = new Club({
-        usuario: body.usuario,
+        nombre: body.nombre,
         tema: body.tema,
         correo: body.correo,
         telefono: body.telefono,

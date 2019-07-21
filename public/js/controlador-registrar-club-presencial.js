@@ -4,12 +4,13 @@ const input_administrador_club = document.querySelector('#txt-administrador-club
 const input_tema = document.querySelector('#txt-tema-club');
 const input_telefono = document.querySelector('#txt-telefono');
 const input_correo = document.querySelector('#txt-correo');
-const input_fecha = document.querySelector('#txt-fecha');
 const input_categoria = document.querySelector('#txt-categoria');
 const input_genero = document.querySelector('#txt-genero');
+const input_fecha = document.querySelector('#txt-fecha');
 const input_provincia = document.querySelector('#txt-provincia');
 const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
+
 const btn_enviar = document.querySelector('#btn-enviar');
 
 let validar = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero, pprovincia, pcanton, pdistrito) => {
@@ -44,14 +45,14 @@ let validar = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero, 
         input_telefono.classList.remove('input_error');
     }
 
-    if (pcategoria == '0') {
+    if (pcategoria == '') {
         error = true;
         input_categoria.classList.add('input_error');
     } else {
         input_categoria.classList.remove('input_error');
     }
 
-    if (pgenero == '0') {
+    if (pgenero == '') {
         error = true;
         input_genero.classList.add('input_error');
     } else {
@@ -86,10 +87,11 @@ let validar = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero, 
     } else {
         input_distrito.classList.remove('input_error');
     }
+
     return error;
 };
 
-let saludar = () => {
+let llamar = () => {
     let nombre = input_administrador_club.value;
     let tema = input_tema.value;
     let telefono = input_telefono.value;
@@ -118,4 +120,4 @@ let saludar = () => {
     }
 };
 
-btn_enviar.addEventListener('click', saludar);
+btn_enviar.addEventListener('click', llamar);

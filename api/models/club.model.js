@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 //Esquema del registro del libro
 
 let club_schema = new mongoose.Schema({
-    usuario: { type: String, required: true, unique: true },
+    nombre: { type: String, required: true, unique: true },
     tema: { type: String, required: true, unique: true },
     correo: { type: String, required: true, unique: true },
     telefono: { type: String, required: true, unique: false },

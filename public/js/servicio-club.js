@@ -1,12 +1,12 @@
 'use strict';
 
-let registrarClub = (pusuario, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, pprovincia, pcanton, pdistrito) => {
+let registrarClub = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero, pprovincia, pcanton, pdistrito) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-club',
         responseType: 'json',
         data: {
-            usuario: pusuario,
+            nombre: pnombre,
             tema: ptema,
             correo: pcorreo,
             telefono: ptelefono,
