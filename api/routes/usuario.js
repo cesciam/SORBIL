@@ -26,6 +26,11 @@ router.post('/registrar-usuario', function (req, res) {
         direccion_exacta: body.direccion_exacta
     });
 
+    router.route('/validar_credenciales')
+        .post(function (req, res) {
+            userApi.validar(req, res);
+        });
+
     nuevo_usuario.save(
         function (err, usuariosBD) {
             if (err) {
@@ -62,3 +67,27 @@ router.get('/listar-usuarios', function (req, res) {
 });
 
 module.exports = router;
+
+
+module.exports.validar = function (req, res) {
+    userModel.findOne({ identificacion: req.body.identificacion }).then(
+        function (usuario) {
+            if (usuario.contrasena == req.body.contrasenna) {
+                req.json({
+                    success: true,
+                    usuario: usuario
+                });
+            } else {
+                req.json({
+                    success: false
+                });
+            } else {
+                res.json({
+                    success: false
+                    msg: 'El usuario no existe'
+                });
+            }
+        }
+    )
+};
+
