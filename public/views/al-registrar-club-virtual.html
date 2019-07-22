@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar Generos</title>
+    <title>Sorbil -- Librería -- Registrar Géneros</title>
 </head>
 
 <body id="grid-admin">
@@ -51,29 +51,66 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de Géneros</h1>
-            <p>Busca la información que te interesa</p>
+            <h1>Registro de club virtual</h1>
+            <p>Registra la información que te interesa</p>
         </div>
 
-        <div id="barra-busqueda">
-            <input type="text" id="txt-filtro" placeholder="Buscar por / género" aria-label="Buscar por / género">
+        <form id="form" action="#">
 
-            <!-- <button aria-label="Search" type="button">
-                <spans>Filtrar</spans>
-            </button> -->
+            <div id="form-container">
+                <div>
+                    <label for="#">Nombre del administrador</label>
+                    <input id="txt-administrador-club" type="text" placeholder="Ingrese su nombre"
+                        aria-label="Ingrese su nombre">
+                </div>
+                <div>
+                    <label for="#">Nombre del tema</label>
+                    <input id="txt-tema-club" type="text" placeholder="Ingrese el tema" aria-label="Ingrese el tema">
+                </div>
+                <div>
+                    <label for="#">Correo electrónico</label>
+                    <input id="txt-correo" type="email" placeholder="Ingresar su correo electrónico"
+                        aria-label="Ingresar el correo electrónico">
+                </div>
+                <div>
+                    <label for="#">Teléfono</label>
+                    <input id="txt-telefono" type="tel" placeholder="Ingresar el teléfono"
+                        aria-label="Ingresar su teléfono">
+                </div>
+                <div>
+                    <label for="#">Categoría</label>
+                    <select id="txt-categoria">
+                        <option value="" disabled="disabled" selected="true">
+                            Escoger una opción
+                        </option>
+                        <option value="Categoria">
+                            Categoría 1
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <label for="#">Género</label>
+                    <select id="txt-genero">
+                        <option value="" disabled="disabled" selected="true">
+                            Escoger una opción
+                        </option>
+                        <option value="Género">
+                            Género 1
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label for="#">fecha</label>
+                    <input id="txt-fecha" type="date" placeholder="Ingresar su correo electrónico"
+                        aria-label="Ingresar el correo electrónico">
+                </div>
+            </div>
 
-        </div>
+            <button id="btn-enviar" type="button">Registrar</button>
 
-        <table id="tabla-filtrado">
-            <thead>
-                <tr>
-                    <th>Genero</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
+        </form>
 
     </main>
 
@@ -150,12 +187,12 @@
     </footer>
 
     <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-genero.js"></script>
-    <script src="../js/controlador-listar-generos.js"></script>
-
+    <script src="../js/servicio-club-virtual.js"></script>
+    <script src="../js/controlador-registrar-club-virtual.js"></script>
 </body>
 
 </html>

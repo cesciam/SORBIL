@@ -4,10 +4,9 @@ const input_administrador_club = document.querySelector('#txt-administrador-club
 const input_tema = document.querySelector('#txt-tema-club');
 const input_telefono = document.querySelector('#txt-telefono');
 const input_correo = document.querySelector('#txt-correo');
-const input_fecha = document.querySelector('#txt-fecha');
 const input_categoria = document.querySelector('#txt-categoria');
 const input_genero = document.querySelector('#txt-genero');
-
+const input_fecha = document.querySelector('#txt-fecha');
 const btn_enviar = document.querySelector('#btn-enviar');
 
 let validar = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero) => {

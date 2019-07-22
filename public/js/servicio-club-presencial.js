@@ -1,9 +1,9 @@
 'use strict';
 
-let registrarClub = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero, pprovincia, pcanton, pdistrito) => {
+let registrarClub = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/registrar-club',
+        url: 'http://localhost:4000/api/registrar-club-presencial',
         responseType: 'json',
         data: {
             nombre: pnombre,
@@ -15,7 +15,8 @@ let registrarClub = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pge
             fecha: pfecha,
             provincia: pprovincia,
             canton: pcanton,
-            distrito: pdistrito
+            distrito: pdistrito,
+            direccion_exacta: pdireccionExacta
         }
     });
 };
@@ -25,7 +26,7 @@ let obtenerClubes = async () => {
         // fetch data from an url endpoint
         const response = await axios({
             method: 'get',
-            url: 'http://localhost:4000/api/listar-clubes',
+            url: 'http://localhost:4000/api/listar-clubes-presenciales',
             responseType: 'json'
         });
 

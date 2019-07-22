@@ -2,14 +2,15 @@
 
 const express = require('express'),
     router = express.Router(),
-    Club = require('../models/club.model');
+    Club = require('../models/club-virtuale.model');
 
 //Definicion de la ruta para registrar los libros
 
-router.post('/registrar-club', function (req, res) {
+router.post('/registrar-club-virtual', function (req, res) {
     let body = req.body;
 
     let nuevo_club = new Club({
+        //imagen
         nombre: body.nombre,
         tema: body.tema,
         correo: body.correo,
@@ -17,9 +18,6 @@ router.post('/registrar-club', function (req, res) {
         categoria: body.categoria,
         genero: body.genero,
         fecha: body.fecha,
-        provincia: body.provincia,
-        canton: body.canton,
-        distrito: body.distrito
     });
 
 
@@ -41,7 +39,7 @@ router.post('/registrar-club', function (req, res) {
     );
 });
 
-router.get('/listar-clubes', function (req, res) {
+router.get('/listar-clubes-virtuales', function (req, res) {
     Club.find(function (err, clubesDB) {
         if (err) {
             return res.status(400).json({

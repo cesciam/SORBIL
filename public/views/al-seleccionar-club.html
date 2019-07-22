@@ -51,29 +51,29 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de Géneros</h1>
+            <h1>Selecciona el club de lectura</h1>
             <p>Busca la información que te interesa</p>
         </div>
 
-        <div id="barra-busqueda">
-            <input type="text" id="txt-filtro" placeholder="Buscar por / género" aria-label="Buscar por / género">
-
-            <!-- <button aria-label="Search" type="button">
-                <spans>Filtrar</spans>
-            </button> -->
-
+        <div class="form-nav card-container">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img card-club-presencial"></div>
+                    <div class="card-content">
+                        <p>Club presencial</p>
+                        <a class="card-btn" href="al-registrar-club-presencial.html">Registrar club</a>
+                    </div>
+                </div>
+        
+                <div class="card">
+                    <div class="card-img card-club-virtual"></div>
+                    <div class="card-content">
+                        <p>Club virtual</p>
+                        <a class="card-btn" href="al-registrar-club-virtual.html">Registrar club</a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <table id="tabla-filtrado">
-            <thead>
-                <tr>
-                    <th>Genero</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
 
     </main>
 
@@ -152,9 +152,6 @@
     <!--Scripts-->
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-genero.js"></script>
-    <script src="../js/controlador-listar-generos.js"></script>
 
 </body>
 
