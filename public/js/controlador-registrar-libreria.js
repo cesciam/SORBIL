@@ -1,15 +1,14 @@
 'use strict';
 // Aqui empiezan todas las variables para subir las fotos a cloudinary
-// const imgpreview = document.getElementById('img_preview');
-// const uploader_portada = document.getElementById('img_uploader_portada');
-// const uploader_contraportada = document.getElementById('img_uploader_contraportada');
-// const progress_bar = document.getElementById('progress_bar');
-// const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/fenixsorbil/image/upload';
-// const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
+const imgpreview = document.getElementById('img_preview');
+const uploader_portada = document.getElementById('img_uploader_portada');
+const progress_bar = document.getElementById('progress_bar');
+const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/fenixsorbil/image/upload';
+const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
 
 // Aqui terminan las variables para subir las fotos a cloudinary
 
-const img_uploader_portada = document.querySelector('#portada');
+const img_uploader = document.querySelector('#imagen');
 const input_usuario = document.querySelector('#txt-usuario');
 const input_correo = document.querySelector('#txt-correo');
 const input_contrasenna = document.querySelector('#txt-contrasenna');
@@ -26,13 +25,13 @@ let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempr
 
     let error = false;
 
-    // if (img_uploader_portada.src == 'http://localhost:3000/public/imgs/book-placeholder.png') {
-    //     error = true;
-    //     img_uploader_portada.classList.add('input_error');
-    //     console.log('Todo mal');
-    // } else {
-    //     img_uploader_portada.classList.remove('input_error');
-    // }
+    if (img_uploader.src == 'http://localhost:3000/public/imgs/book-placeholder.png') {
+        error = true;
+        img_uploader.classList.add('input_error');
+        console.log('Todo mal');
+    } else {
+        img_uploader.classList.remove('input_error');
+    }
 
     if (pusuario == '') {
         error = true;

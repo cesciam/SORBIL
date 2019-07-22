@@ -100,7 +100,7 @@ button, select {
     color: var(--color-alternative-black);
 }
 
-input::placeholder {
+input::placeholder, textarea::placeholder {
     cursor: pointer;
     font-weight: var(--font-semibold);
     font-size: 1.2rem;
