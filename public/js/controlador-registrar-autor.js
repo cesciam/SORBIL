@@ -58,6 +58,3 @@ let saludar = () => {
 
 
 btn_enviar.addEventListener('click', saludar);
-
-
-btn_enviar.addEventListener('click', saludar);
