@@ -69,25 +69,23 @@ router.get('/listar-usuarios', function (req, res) {
 module.exports = router;
 
 
-module.exports.validar = function (req, res) {
-    userModel.findOne({ identificacion: req.body.identificacion }).then(
+router.post('/validar-credenciales', function (req, res) {
+    nuevo_usuario.findOne({ id: req.body.id }).then(
         function (usuario) {
-            if (usuario.contrasena == req.body.contrasenna) {
-                req.json({
-                    success: true,
-                    usuario: usuario
-                });
+            if (usuario) {
+                if (usuario.contrasena == req.body.contrasena) {
+                    res.json({
+                        success: true,
+                        usuario: usuario
+                    });
+                } else {
+                    res.json({
+                        success: false
+                    });
+                }
             } else {
-                req.json({
-                    success: false
-                });
-            } else {
-                res.json({
-                    success: false
-                    msg: 'El usuario no existe'
-                });
+                res.send(false);
             }
         }
     )
-};
-
+});
