@@ -55,6 +55,10 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
     if (pcontrasena == '') {
         error = true;
         input_contrasena.classList.add('input_error');
+    } else if (pcontrasena != pverfContrasena) {
+        error = true;
+        input_contrasena.classList.add('input_error');
+        input_verf_contrasena.classList.add('input_error');
     } else {
         input_contrasena.classList.remove('input_error');
     }
@@ -62,7 +66,11 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
     if (pverfContrasena == '') {
         error = true;
         input_verf_contrasena.classList.add('input_error');
-    } else {
+    } else if (pcontrasena != pverfContrasena) {
+        error = true;
+        input_contrasena.classList.add('input_error');
+        input_verf_contrasena.classList.add('input_error');
+    }else {
         input_verf_contrasena.classList.remove('input_error');
     }
     
