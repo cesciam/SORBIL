@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Registrar Autores</title>
+    <title>Sorbil -- Librería -- Listar Autores</title>
 </head>
 
 <body id="grid-admin">
@@ -24,12 +24,12 @@
         <div class="header-user-icons">
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
-                    <span class="user-notification"></span>
+                    <span class="user-notification">1</span>
                 </a>
             </div>
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification"></span>
+                    <span class="user-notification">6</span>
                 </a>
             </div>
 
@@ -51,39 +51,31 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro del Autor</h1>
-            <p>Registra la información que te interesa</p>
+            <h1>Listados de Autores</h1>
         </div>
 
-        <form id="form" action="#">
+        <div id="barra-busqueda">
+            <input id = "txt-filtro" type="text" placeholder="Buscar por / nombre de autor / apellido de autor"
+                aria-label="Buscar por / nombre de autor / apellido de autor">
+        </div>
 
-            <div class="centrar-input">
-                <div>
-                    <label for="#">Autor</label>
-                    <input id="txt-autor" type="text">
-                </div>
+        <!--Botones de Activar/Eliminar/Modificar pendientes de hacer-->
 
-                <div>
-                    <label for=" ">Biografía</label>
-                    <textarea id="txt_biografia"></textarea>
-                </div>
 
-                <div>
-                    <label for="">Fecha de nacimiento</label>
-                    <input type="date" id="txt_fecha">
-                </div>
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                    <th>Autor</th>
+                    <th>Libro</th>
+                </tr>
 
-                <div>
-                    <label for="">Fecha de defunción</label>
-                    <input type="date" id="txt_fecha">
-                </div>
 
-            </div>
+            </thead>
 
-            <button id="btn-enviar" type="button">Registrar</button>
-
-        </form>
-
+            <tbody>
+    
+            </tbody>
+        </table>
     </main>
 
     <!--Aside-->
@@ -159,15 +151,11 @@
     </footer>
 
     <!--Scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/controlador-registrar-generos.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/controlador-dropdowns-nav.js"></script>
-    <script src="../js/controlador-dropdowns-user.js"></script>
     <script src="../js/servicio-autor.js"></script>
-    <script src="../js/controlador-registrar-autor.js"></script>
+    <script src="../js/controlador-listar-autores.js"></script>
 </body>
 
 </html>

@@ -41,7 +41,7 @@ let saludar = () => {
     let error = validar(autor, biografia, fecha);
 
     if (error == false) {
-        registrarAutor(autor);
+        registrarAutor(autor); /*está bien? error en consola is not defined*/
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
