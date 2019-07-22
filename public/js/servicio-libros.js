@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarLibro = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategoria, pgenero, pidioma, pprecio, ptipo, pisbn, pportada, pcontraportada) => {
+let registrarLibro = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategoria, pgenero, pidioma, pprecio, ptipo, pisbn, pportada, pcontraportada, psinopsis) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libro',
@@ -18,7 +18,8 @@ let registrarLibro = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategoria,
             tipo: ptipo,
             isbn: pisbn,
             portada: pportada,
-            contraportada: pcontraportada
+            contraportada: pcontraportada,
+            sinopsis: psinopsis
         }
     });
 };
@@ -33,6 +34,21 @@ let obtenerLibros = async() => {
         });
 
         return response.data.lista_libros;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+let obtenerLibroid = async(_id) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-libro-id/${_id}`,
+            responseType: 'json'
+        });
+
+        return response.data.libro;
     } catch (error) {
         console.log(error);
     }

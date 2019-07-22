@@ -58,11 +58,3 @@ router.get('/listar-librerias', function (req, res) {
 });
 
 module.exports = router;
-
-
-// //TODO: el usuario no debe escribir la contraseña dos veces
-// if (req.body.contrasenna !== req.body.verificacion_contrasenna) {
-//     var err = new Error('La contraseña no coincide');
-//     err.status = 400;
-//     return next(err);
-// }
