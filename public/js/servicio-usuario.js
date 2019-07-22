@@ -25,25 +25,30 @@ let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pverfContrasena
 };
 
 let validar_credenciales = (pcorreo, pcontrasena) => {
-    axios({
+    let respuesta = '';
+    let peticion = axios({
         method: 'post',
-        url: 'localhost:4000/api/validar-credenciales',
+        url: 'http://localhost:4000/api/validar-credenciales',
         responseType: 'json',
         data: {
             correo: pcorreo,
             contrasena: pcontrasena
         }
     });
+
+    peticion.done(function (response) {
+        respuesta = response;
+        sessionStorage.setItem('conectado', response.success);
+        sessionStorage.setItem('nombre', tipo_usuario.usuario.nombre);
+    });
+
+    peticion.fail(function (response) {
+        respuesta = response;
+    });
+
+    return respuesta;
 };
 
-
-peticion.done(function(usuario){
-    respuesta = usuario;
-});
-
-peticion.fail(function(response){
-    respuesta = response;
-});
 
 let obtenerUsuarios = async() => {
     try {
