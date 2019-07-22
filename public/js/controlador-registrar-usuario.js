@@ -9,7 +9,7 @@ const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
 // Aqui terminan las variables para subir las fotos a cloudinary
 
 // Constantes 
-const img_uploader_avatar = document.querySelector('#avatar');
+const img_uploader_avatar = document.querySelector('#portada');
 const input_usuario = document.querySelector('#txt-usuario');
 const input_correo = document.querySelector('#txt-correo');
 const input_contrasena = document.querySelector('#txt-contrasena');
