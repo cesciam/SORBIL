@@ -55,6 +55,20 @@ html {
     margin-bottom: 2rem;
 }
 
+#main-admin .form-nav {
+    display: grid;
+    justify-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main-admin .form-nav .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10rem;
+}
+
 #main-admin p {
     margin-bottom: 2rem;
 }
@@ -152,6 +166,10 @@ Fin de estilos generales de administradores
     }
     .header-text {
         opacity: 0;
+    }
+    #main-admin .form-nav {
+        grid-template-columns: 1fr;
+        grid-row-gap: 2rem;
     }
 }
 

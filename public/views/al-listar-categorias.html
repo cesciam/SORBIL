@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Registrar Autores</title>
+    <title>Sorbil -- Librería -- Listar Categorías</title>
 </head>
 
 <body id="grid-admin">
@@ -19,17 +19,17 @@
     <!--Header-->
     <header id="header-admin">
 
-        <h3 class="header-text">Área del administrador de plataforma</h3>
+        <h3 class="header-text">Área del administrador de librería</h3>
 
         <div class="header-user-icons">
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
-                    <span class="user-notification"></span>
+                    <span class="user-notification">1</span>
                 </a>
             </div>
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification"></span>
+                    <span class="user-notification">6</span>
                 </a>
             </div>
 
@@ -51,38 +51,29 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro del Autor</h1>
-            <p>Registra la información que te interesa</p>
+            <h1>Listados de Categorías</h1>
+            <p>Busca la información que te interesa</p>
         </div>
 
-        <form id="form" action="#">
+        <div id="barra-busqueda">
+            <input type="text" id="txt-filtro" placeholder="Buscar por / categoría" aria-label="Buscar por / categoría">
 
-            <div class="centrar-input">
-                <div>
-                    <label for="#">Autor</label>
-                    <input id="txt-autor" type="text">
-                </div>
+            <!-- <button aria-label="Search" type="button">
+                <spans>Filtrar</spans>
+            </button> -->
 
-                <div>
-                    <label for=" ">Biografía</label> 
-                    <textarea id="txt_biografia"></textarea>
-                </div>
+        </div>
 
-                <div>
-                    <label for="">Fecha de nacimiento</label>
-                    <input type="date" id="txt_fecha">
-                </div>
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                    <th>Categoría</th>
+                </tr>
+            </thead>
+            <tbody>
 
-                <div>
-                    <label for="">Fecha de defunción</label>
-                    <input type="date" id="txt_fecha">
-                </div>
-
-            </div>
-
-            <button id="btn-enviar" type="button">Registrar</button>
-
-        </form>
+            </tbody>
+        </table>
 
     </main>
 
@@ -159,15 +150,12 @@
     </footer>
 
     <!--Scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/controlador-registrar-generos.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/controlador-dropdowns-nav.js"></script>
-    <script src="../js/controlador-dropdowns-user.js"></script>
-    <script src="../js/servicio-genero.js"></script>
-    <script src="../js/controlador-registrar-autor.js"></script>
+    <script src="../js/servicio-categoria.js"></script>
+    <script src="../js/controlador-listar-categorias.js"></script>
+
 </body>
 
 </html>

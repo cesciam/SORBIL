@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Registrar Autores</title>
+    <title>Sorbil -- Librería -- Registrar Géneros</title>
 </head>
 
 <body id="grid-admin">
@@ -19,17 +19,17 @@
     <!--Header-->
     <header id="header-admin">
 
-        <h3 class="header-text">Área del administrador de plataforma</h3>
+        <h3 class="header-text">Área del administrador de librería</h3>
 
         <div class="header-user-icons">
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
-                    <span class="user-notification"></span>
+                    <span class="user-notification">1</span>
                 </a>
             </div>
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification"></span>
+                    <span class="user-notification">6</span>
                 </a>
             </div>
 
@@ -51,33 +51,88 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro del Autor</h1>
+            <h1>Registro de club presencial</h1>
             <p>Registra la información que te interesa</p>
         </div>
 
         <form id="form" action="#">
 
-            <div class="centrar-input">
+            <div id="form-container">
                 <div>
-                    <label for="#">Autor</label>
-                    <input id="txt-autor" type="text">
+                    <label for="#">Nombre del administrador</label>
+                    <input id="txt-administrador-club" type="text" placeholder="Ingrese su nombre"
+                        aria-label="Ingrese su nombre">
+                </div>
+                <div>
+                    <label for="#">Nombre del tema</label>
+                    <input id="txt-tema-club" type="text" placeholder="Ingrese el tema" aria-label="Ingrese el tema">
+                </div>
+                <div>
+                    <label for="#">Correo electrónico</label>
+                    <input id="txt-correo" type="email" placeholder="Ingresar su correo electrónico"
+                        aria-label="Ingresar el correo electrónico">
+                </div>
+                <div>
+                    <label for="#">Teléfono</label>
+                    <input id="txt-telefono" type="tel" placeholder="Ingresar el teléfono"
+                        aria-label="Ingresar su teléfono">
+                </div>
+                <div>
+                    <label for="#">Categoría</label>
+                    <select id="txt-categoria">
+                        <option value="" disabled="disabled" selected="true">
+                            Escoger una opción
+                        </option>
+                        <option value="Categoria">
+                            Categoría 1
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <label for="#">Género</label>
+                    <select id="txt-genero">
+                        <option value="" disabled="disabled" selected="true">
+                            Escoger una opción
+                        </option>
+                        <option value="Género">
+                            Género 1
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <div>
+                        <label for="#">fecha</label>
+                        <input id="txt-fecha" type="date" placeholder="Ingresar su correo electrónico"
+                            aria-label="Ingresar el correo electrónico">
+                    </div>
+                </div>
+                <div>
+                    <label for="#">Provincia</label>
+                    <select id="txt-provincia">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar Provincia
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <label for="#">Cantón</label>
+                    <select id="txt-canton">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar Cantón
+                        </option>
+                    </select>
                 </div>
 
                 <div>
-                    <label for=" ">Biografía</label> 
-                    <textarea id="txt_biografia"></textarea>
+                    <label for="#">Distrito</label>
+                    <select id="txt-distrito">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar Distrito
+                        </option>
+                    </select>
                 </div>
+            </div>
 
-                <div>
-                    <label for="">Fecha de nacimiento</label>
-                    <input type="date" id="txt_fecha">
-                </div>
-
-                <div>
-                    <label for="">Fecha de defunción</label>
-                    <input type="date" id="txt_fecha">
-                </div>
-
+            <div>
+                <label for="#">Dirección exacta</label>
+                <textarea id="txt-direccion-exacta"></textarea>
             </div>
 
             <button id="btn-enviar" type="button">Registrar</button>
@@ -160,14 +215,12 @@
 
     <!--Scripts-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/controlador-registrar-generos.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/controlador-dropdowns-nav.js"></script>
-    <script src="../js/controlador-dropdowns-user.js"></script>
-    <script src="../js/servicio-genero.js"></script>
-    <script src="../js/controlador-registrar-autor.js"></script>
+    <script src="../js/componentes/controlador-select.js"></script>
+    <script src="../js/servicio-club-presencial.js"></script>
+    <script src="../js/controlador-registrar-club-presencial.js"></script>
 </body>
 
 </html>

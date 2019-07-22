@@ -1,20 +1,21 @@
 'use strict';
 
-let registrarLibreria = (pusuario,pcorreo,pcontrasenna,pverificacion_contrasenna,pempresa,ptelefono,pprovincia,pcanton,pdistrito) => {
+let registrarLibreria = (pavatar, pusuario, pcorreo, pcontrasenna, pempresa, ptelefono, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libreria',
         responseType: 'json',
         data: {
+            avatar: pavatar,
             usuario:pusuario,
             correo:pcorreo,
             contrasenna:pcontrasenna,
-            verificacion_contrasenna:pverificacion_contrasenna,
             empresa:pempresa,
             telefono:ptelefono,
             provincia:pprovincia,
             canton:pcanton,
             distrito:pdistrito,
+            direccion_exacta: pdireccionExacta
         }
     });
 };

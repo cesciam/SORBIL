@@ -8,7 +8,7 @@ const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
 
 // Aqui terminan las variables para subir las fotos a cloudinary
 
-const img_uploader = document.querySelector('#imagen');
+const img_uploader_portada = document.querySelector('#portada');
 const input_usuario = document.querySelector('#txt-usuario');
 const input_correo = document.querySelector('#txt-correo');
 const input_contrasenna = document.querySelector('#txt-contrasenna');
@@ -18,19 +18,19 @@ const input_telefono = document.querySelector('#txt-telefono');
 const input_provincia = document.querySelector('#txt-provincia');
 const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
-
+const input_direccion_exacta = document.querySelector('#txt-direccion-exacta');
 const btn_enviar = document.querySelector('#btn-enviar');
 
-let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempresa, ptelefono, pprovincia, pcanton, pdistrito) => {
+let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempresa, ptelefono, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
 
     let error = false;
 
-    if (img_uploader.src == 'http://localhost:3000/public/imgs/book-placeholder.png') {
+    if (img_uploader_portada.src == 'http://localhost:3000/public/imgs/book-placeholder.png') {
         error = true;
-        img_uploader.classList.add('input_error');
+        img_uploader_portada.classList.add('input_error');
         console.log('Todo mal');
     } else {
-        img_uploader.classList.remove('input_error');
+        img_uploader_portada.classList.remove('input_error');
     }
 
     if (pusuario == '') {
@@ -102,10 +102,18 @@ let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempr
         input_distrito.classList.remove('input_error');
     }
 
+    if (pdireccion_exacta == '') {
+        error = true;
+        input_direccion_exacta.classList.add('input_error');
+    } else {
+        input_direccion_exacta.classList.remove('input_error');
+    }
+
     return error;
 };
 
 let saludar = () => {
+    let src_avatar = img_uploader_portada.src;
     let usuario = input_usuario.value;
     let correo = input_correo.value;
     let contrasenna = input_contrasenna.value;
@@ -115,11 +123,12 @@ let saludar = () => {
     let provincia = input_provincia.value;
     let canton = input_canton.value;
     let distrito = input_distrito.value;
+    let direccion_exacta = input_direccion_exacta.value
 
-    let error = validar(usuario, correo, contrasenna, verificacion_contrasenna, empresa, telefono, provincia, canton, distrito);
+    let error = validar(usuario, correo, contrasenna, verificacion_contrasenna, empresa, telefono, provincia, canton, distrito, direccion_exacta);
 
     if (error == false) {
-        registrarLibreria(usuario, correo, contrasenna, verificacion_contrasenna, empresa, telefono, provincia, canton, distrito);
+        registrarLibreria(src_avatar, usuario, correo, contrasenna, verificacion_contrasenna, empresa, telefono, provincia, canton, distrito, direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

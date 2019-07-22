@@ -322,7 +322,8 @@ Fin de estilos de formularios
     #main-form #form-image {
         display: none;
     }
-    #main-form #form-container .form-nav {
+    #main-form .form-nav .cards {
         grid-template-columns: 1fr;
+        grid-row-gap: 2rem;
     }
 }
