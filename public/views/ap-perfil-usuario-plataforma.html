@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar Géneros</title>
+    <title>Sorbil -- Librería -- Registrar Géneros</title>
 </head>
 
 <body id="grid-admin">
@@ -51,18 +51,33 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de Categorías</h1>
-            <p>Listá la información que te interesa</p>
+            <h1>PLATAFORMA DEL SISTEMA</h1>
+            <p>En esta plataforma puedes editar y administrar tus datos de librería:
+                registros, listados, reportes y facturación. 
+            </p>
         </div>
 
-        <div id="barra-busqueda">
-            <input type="text" placeholder="Buscar por / categoría" aria-label="Buscar por / categoría">
+        <form id="form" action="#">
 
-            <button aria-label="Search" type="button">
-                <spans>Listar</spans>
-            </button>
-        </div>
+            <div class="centrar-input">
+                
+                <div class="registros">
 
+                </div>
+
+                <div class="listados">
+
+                </div>
+
+                <div class="reporteSistema">
+
+                </div>
+
+            </div>
+
+            <button id="btn-enviar" type="button">Registrar</button>
+
+        </form>
 
     </main>
 
@@ -139,8 +154,12 @@
     </footer>
 
     <!--Scripts-->
-    <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/controlador-dropdowns-nav.js"></script>
+    <script src="../js/controlador-dropdowns-user.js"></script>
+    <script src="../js/servicio-genero.js"></script>
+    <script src="../js/controlador-registrar-autor.js"></script>
 </body>
 
 </html>
