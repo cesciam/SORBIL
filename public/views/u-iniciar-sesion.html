@@ -19,35 +19,34 @@
 
     <main id="main-form">
 
-        <div id="form-image" class="form-bg-iniciar-sesion-usuario"></div>
+        <div id="form-image" class="form-bg-iniciar-sesion-usuario"><a href="#"><img src="../imgs/logo.png"
+                    alt="Logo de Sorbil"></a>
+        </div>
 
         <section id="seccion-form">
 
             <div>
+                <div class="form-title">
+                    <h1>Iniciar sesión</h1>
+                </div>
+
                 <form id="form" action="#">
 
                     <div id="form-container">
-
-                        <a href="#"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
-
-                        <h1>Inicia sesión</h1>
 
                         <div class="form-container-inputs">
 
                             <div>
                                 <label for="#">Correo electrónico</label>
-                                <input type="email" placeholder="Ingresar el correo electrónico"
+                                <input id="txt-correo" type="email" placeholder="Ingresar el correo electrónico"
                                     aria-label="Ingresar el correo electrónico">
                             </div>
                             <div>
                                 <label for="#">Contraseña <a href="#">¿olvidaste tu contraseña?</a></label>
-                                <input type="password" placeholder="Ingresar la contraseña"
+                                <input id="txt-contrasena" type="password" placeholder="Ingresar la contraseña"
                                     aria-label="Ingresar la contraseña">
                             </div>
-                            <div>
-                                <textarea name="" id="" cols="30" rows="10"></textarea>
-                            </div>
-                            
+
                         </div>
 
                         <button id="txt-btn" type="button">Iniciar sesión</button>
@@ -58,12 +57,14 @@
             </div>
 
         </section>
+        
     </main>
 
     <!--Scripts-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="../js/controlador-dropdowns-nav.js"></script>
-    <script src="../js/controlador-dropdowns-user.js"></script>
+    <script src="../js/controlador-u-iniciar-sesion.js"></script>
+    <script src="../js/servicio-usuario.js"></script>
 </body>
 
 </html>

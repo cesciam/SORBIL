@@ -42,13 +42,12 @@ Inicio de estilos de formularios
 
 #form p {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: var(--color-black);
     font-weight: var(--font-semibold);
 }
 
 #form button {
-    margin-top: 5rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -58,9 +57,20 @@ Inicio de estilos de formularios
     width: 100%;
 }
 
+#form select option {
+    font-size: 1.4rem;
+    display: block;
+    padding: 2rem;
+}
+
 #form textarea {
     border: 2px solid var(--color-alternative-bg);
-    resize: vertical;
+    resize: none;
+    height: 12rem;
+}
+
+#form input, select, textarea {
+    box-shadow: var(--shadow-light);
 }
 
 #form input[type="date"] {
@@ -72,14 +82,26 @@ Inicio de estilos de formularios
 #form .upload-img {
     display: grid;
     justify-items: center;
-    padding: 2rem;
-    background-color: var(--color-alternative-bg);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: var(--color-alternative-bg); */
+    /* border-radius: 60%; */
 }
 
-#form .upload-img i {
-    font-size: 10rem;
-    color: var(--color-alternative-grey);
-    opacity: .4;
+#form .upload-img img {
+    margin-bottom: 1rem;
+    width: 10rem;
+    height: 10rem;
+}
+
+#form .upload-img button {
+    background-color: transparent;
+    color: transparent;
+    padding: 7rem;
+    position: relative;
+    top: -15rem;
+    box-shadow: none;
 }
 
 #form .upload-img label {
@@ -87,19 +109,20 @@ Inicio de estilos de formularios
     color: var(--color-alternative-grey);
     font-weight: var(--font-semibold);
     margin-bottom: 1rem;
+    text-align: center;
 }
 
-#form .upload-img input {
+/* #form .upload-img input {
     color: transparent;
     display: grid;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 50%;
 }
 
 #form .upload-img input:hover {
     opacity: .9;
-}
+} 
 
 #form .upload-img input::-webkit-file-upload-button {
     visibility: hidden;
@@ -119,17 +142,17 @@ Inicio de estilos de formularios
 }
 
 #form .upload-img .upload-msg::before {
-    content: 'Subir una imagen';
+    content: 'Subir';
 }
 
 #form .upload-img .avatar-msg::before {
-    content: 'Escoger un avatar';
+    content: 'Avatars';
 }
 
 #form .upload-img input:active, input:focus {
     outline: 0;
     border: none;
-}
+} 
 
 /*
 Fin de estilos formularios
@@ -187,14 +210,6 @@ button:active:after {
     opacity: 1;
 }
 
-/*
-Inicio de estilos de selects
-*/
-
-/*
-Fin de estilos de selects
-*/
-
 /* 
 Inicio de estilos de los filtros y listados administradores
 */
@@ -205,7 +220,7 @@ Inicio de estilos de los filtros y listados administradores
     display: grid;
     grid-template-columns: 1fr auto;
     justify-items: center;
-    height: .1rem;
+    height: 3rem;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -407,7 +422,7 @@ Inicio de estilos de la navegación del sidenav
 
 .sidebar {
     display: grid;
-    grid-template-rows: auto auto 100vh;
+    grid-template-rows: auto repeat(2, 1fr);
 }
 
 .sidebar-open {
@@ -514,6 +529,101 @@ Inicio de estilos del carousel
 Fin de estilos del carousel 
 */
 
+/*
+Inicio de estilos del mapa
+*/
+
+#map {
+    height: 35rem;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+}
+
+/*
+Fin de estilos del mapa
+*/
+
+/*
+Inicio de estilos del header de las cartas
+*/
+
+.card-container {
+    display: grid;
+    justify-items: center;
+}
+
+.card-container .card .card-content a {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.card-container .card:hover {
+    opacity: .9;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-dark-2);
+}
+
+.card-container .card:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+
+.card-container .card {
+    display: grid;
+    box-shadow: var(--shadow-dark-1);
+    width: 30rem;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.3s;
+    border-radius: var(--box-radius);
+}
+
+.card-container .card .card-content {
+    display: grid;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    justify-items: center;
+}
+
+.card-container .card .card-content .card-btn {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s;
+    background-color: var(--color-alternative-blue);
+    color: var(--color-white);
+    box-shadow: var(--shadow-dark-1);
+    padding: var(--a-padding);
+    border-radius: var(--box-radius);
+}
+
+.card-container .card .card-content .card-btn:hover {
+    opacity: .9;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-light);
+}
+
+.card-container .card .card-img {
+    background-size: cover;
+    height: 20rem;
+    background-position: center;
+    border-radius: .4rem .4rem 0 0;
+    clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
+}
+
+.card-club-presencial {
+    background-image: url(../imgs/card-club-presencial.jpg);
+}
+
+.card-club-virtual {
+    background-image: url(../imgs/card-club-virtual.jpg);
+}
+
+/*
+Fin de estilos del header de las cartas
+*/
+
 @media (max-width: 76.8rem) {
     #barra-busqueda {
         display: grid;
@@ -529,5 +639,8 @@ Fin de estilos del carousel
     }
     .header-user-icons {
         justify-self: center;
+    }
+    .card-container .card {
+        grid-template-columns: 1fr;
     }
 }

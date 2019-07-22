@@ -8,8 +8,8 @@ const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
 
 // Aqui terminan las variables para subir las fotos a cloudinary
 
-const img_uploader_portada = document.querySelector('#img-uploader-portada');
-const img_uploader_contraportada = document.querySelector('#img-uploader-contraportada');
+const img_uploader_portada = document.querySelector('#portada');
+const img_uploader_contraportada = document.querySelector('#contraportada');
 const input_titulo = document.querySelector('#input_titulo');
 const input_autor = document.querySelector('#input_autor');
 const input_edicion = document.querySelector('#input_edicion');
@@ -22,13 +22,15 @@ const input_precio = document.querySelector('#input_precio');
 const input_tipo_libro = document.querySelector('#input_tipo_libro');
 const input_isbn = document.querySelector('#input_isbn');
 const btn_enviar = document.querySelector('#btn_enviar');
+const input_psinopsis = document.querySelector('#input_sinopsis');
 
-let validar = (pportada, pcontraportada, ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgeneros, pidioma, pprecio, plibro, pisbn) => {
+
+let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgeneros, pidioma, pprecio, plibro, pisbn, psinopsis) => {
     let error = false;
 
     let fecha_formateada = new Date(pfecha.value);
     
-    if (pportada.value == ''){
+    if (img_uploader_portada.src == 'http://localhost:3000/public/imgs/book-placeholder.png'){
         error = true;
         img_uploader_portada.classList.add('input_error');
         console.log('Todo mal');
@@ -36,7 +38,7 @@ let validar = (pportada, pcontraportada, ptitulo, pautor, pedicion, peditorial, 
         img_uploader_portada.classList.remove('input_error');
     }
     
-    if (pcontraportada.value == ''){
+    if (img_uploader_contraportada.src == 'http://localhost:3000/public/imgs/book-placeholder.png'){
         error = true;
         img_uploader_contraportada.classList.add('input_error');
         console.log('Todo mal');
@@ -108,7 +110,7 @@ let validar = (pportada, pcontraportada, ptitulo, pautor, pedicion, peditorial, 
         input_idioma.classList.remove('input_error');
     }
 
-    if (pprecio.value == '') {
+    if (pprecio.value < 0 || pprecio.value == '') {
         error = true;
         input_precio.classList.add('input_error');
     } else {
@@ -129,15 +131,69 @@ let validar = (pportada, pcontraportada, ptitulo, pautor, pedicion, peditorial, 
         input_isbn.classList.remove('input_error');
     }
 
+    if(psinopsis.value == ''){
+        error = true;
+        input_psinopsis.classList.add('input_error');
+    }else{
+        input_psinopsis.classList.remove('input_error');
+    }
+
     return error;
 
 };
 
 let llamar = () =>{
-    let resultado_validaciones = validar(img_uploader_portada, img_uploader_contraportada, input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn);
+    let titulo = input_titulo.value;
+    let autor = input_autor.value;
+    let edicion = input_edicion.value;
+    let editorial = input_editorial.value;
+    let fecha = new Date(input_fecha.value);
+    let categorias = input_categorias.value;
+    let generos = input_generos.value;
+    let precio = input_precio.value;
+    let idioma = input_idioma.value;
+    let tipo_libro = input_tipo_libro.value;
+    let isbn = input_isbn.value;
+    let src_portada = img_uploader_portada.src;
+    let src_contraportada = img_uploader_contraportada.src;
+    let sinopsis = input_psinopsis.value;
 
+
+
+    let resultado_validaciones = validar(input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn, sinopsis);
+    if(!resultado_validaciones){
+        registrarLibro(titulo, autor, edicion, editorial, fecha, categorias, generos, idioma, precio, tipo_libro, isbn, src_portada, src_contraportada, sinopsis);
+        Swal.fire({ //formato json
+            title: 'Se ha registrado la información exitosamente',
+            type: 'success',
+        })
+    }else{
+        Swal.fire({ //formato json
+            title: 'No se ha registrado la información',
+            type: 'warning',
+            text: 'Revise los campos resaltados e inténtelo de nuevo'
+        })
+    }
     
-}
+};
 
+
+
+let lista_generos = [];
+
+let agregar_generos = async () => {
+    let select = document.getElementById("input_generos");
+    lista_generos = obtenerGeneros();
+    let option = document.createElement("option");
+    for(i = 0; i < lista_generos.length; i++)
+    {
+        option = lista_generos[i]['genero'];
+        select.add(option);
+    }
+    
+    
+};
+
+agregar_generos();
 
 btn_enviar.addEventListener('click', llamar);
