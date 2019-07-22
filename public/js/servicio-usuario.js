@@ -24,9 +24,9 @@ let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pverfContrasena
     });
 };
 
-let validar_credenciales = (pcorreo, pcontrasena) => {
+let validar_credenciales = async (pcorreo, pcontrasena) => {
     let respuesta = '';
-    let peticion = axios({
+    const peticion = await axios({
         method: 'post',
         url: 'http://localhost:4000/api/validar-credenciales',
         responseType: 'json',
@@ -36,14 +36,14 @@ let validar_credenciales = (pcorreo, pcontrasena) => {
         }
     });
 
-    peticion.done(function (response) {
-        respuesta = response;
-        sessionStorage.setItem('conectado', response.success);
-        sessionStorage.setItem('nombre', tipo_usuario.usuario.nombre);
+    peticion.done(function (usuario) {
+        respuesta = usuario;
+        sessionStorage.setItem('conectado', usuario.success);
+        sessionStorage.setItem('tipo_usuario', usuario.usuario.nombre);
     });
 
-    peticion.fail(function (response) {
-        respuesta = response;
+    peticion.fail(function (usuario) {
+        respuesta = usuario;
     });
 
     return respuesta;
