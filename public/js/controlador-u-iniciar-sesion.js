@@ -1,8 +1,23 @@
 'use strict';
 const input_correo = document.querySelector('#txt-correo');
 const input_contrasena = document.querySelector('#txt-contrasena');
-const btn_enviar = document.querySelector('#btn-enviar');
+const btn_enviar = document.querySelector('#txt-btn');
 
+let obtenerDatos = () => {
+    let correoo = input_correo.value;
+    let contrasena = input_contrasena.value;
+
+    let error_blancos = validar(correoo, contrasena);
+    let usuario_aceptado = false;
+
+    if (!error_blancos) {
+        usuario_aceptado = validar_credenciales(correoo, contrasena);
+        if (usuario_aceptado) {
+            //window.location.href = './index.html';
+            console.log('Sirve lol');
+        }
+    }
+};
 
 let validar = (pcorreo, pcontrasena) => {
     let error = false;
@@ -20,21 +35,8 @@ let validar = (pcorreo, pcontrasena) => {
     } else {
         input_contrasena.classList.remove('input_error');
     }
-};
 
-let obtenerDatos = () => {
-    let correo = input_correo.value;
-    let contrasena = input_contrasena.value;
-
-    let error_blancos = validar(correo, contrasena);
-    usuario_aceptado = false;
-
-    if (!error_blancos) {
-        usuario_aceptado = validar_credenciales(correo, contrasena);
-        if (usuario_aceptado) {
-            window.location.href = 'u-inicio-sesion.html';
-        }
-    }
+    return error;
 };
 
 btn_enviar.addEventListener('click', obtenerDatos);
