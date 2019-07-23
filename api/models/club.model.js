@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 let club_schema = new mongoose.Schema({
     //imagen
-    tipo: { type: String, required: true, unique: false },
+    tipo: { type: String, required: false, unique: false },
     nombre: { type: String, required: true, unique: false },
     tema: { type: String, required: true, unique: false },
     correo: { type: String, required: true, unique: false },
