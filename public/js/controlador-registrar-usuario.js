@@ -1,5 +1,15 @@
 'use strict';
+// Aqui empiezan todas las variables para subir las fotos a cloudinary
+const imgpreview = document.getElementById('img_preview');
+const uploader_avatar = document.getElementById('img-uploader-avatar');
+const progress_bar = document.getElementById('progress_bar');
+const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/fenixsorbil/image/upload';
+const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
+
+// Aqui terminan las variables para subir las fotos a cloudinary
+
 // Constantes 
+const img_uploader_avatar = document.querySelector('#portada');
 const input_usuario = document.querySelector('#txt-usuario');
 const input_correo = document.querySelector('#txt-correo');
 const input_contrasena = document.querySelector('#txt-contrasena');
@@ -20,6 +30,14 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
 
     let error = false;
 
+    if (img_uploader_avatar.src == 'http://localhost:3000/public/imgs/avatar-placeholder.png'){
+        error = true;
+        img_uploader_avatar.classList.add('input_error');
+        
+    } else {
+        img_uploader_avatar.classList.remove('input_error');
+    }
+
     if (pusuario == '') {
         error = true;
         input_usuario.classList.add('input_error');
@@ -32,11 +50,15 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
         input_correo.classList.add('input_error');
     } else {
         input_correo.classList.remove('input_error');
-    }
-
+    }   
+    
     if (pcontrasena == '') {
         error = true;
         input_contrasena.classList.add('input_error');
+    } else if (pcontrasena != pverfContrasena) {
+        error = true;
+        input_contrasena.classList.add('input_error');
+        input_verf_contrasena.classList.add('input_error');
     } else {
         input_contrasena.classList.remove('input_error');
     }
@@ -44,7 +66,11 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
     if (pverfContrasena == '') {
         error = true;
         input_verf_contrasena.classList.add('input_error');
-    } else {
+    } else if (pcontrasena != pverfContrasena) {
+        error = true;
+        input_contrasena.classList.add('input_error');
+        input_verf_contrasena.classList.add('input_error');
+    }else {
         input_verf_contrasena.classList.remove('input_error');
     }
     
@@ -114,7 +140,39 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
     return error;
 };
 
+let validarCedula = (pidentificacion) => {
+    
+    let errorCedula = false;
+    let cedulaValida = /^[1-9]-?\d{4}-?\d{4}$/;
+
+    if(!cedulaValida.test(pidentificacion)){
+        errorCedula = true;
+        input_id.classList.add('input_error');        
+    }
+    else {
+        input_id.classList.remove('input_error');
+    }
+    return errorCedula;
+};
+
+let validarCorreo = (pcorreo) => {
+    
+    let errorCorreo = false;
+    let correoValido = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+    if(!correoValido.test(pcorreo)){
+        errorCorreo = true;
+        input_correo.classList.add('input_error');        
+    }
+    else {
+        input_correo.classList.remove('input_error');
+    }
+    return errorCorreo;
+};
+
 let llamar = () => {
+
+    let src_avatar= img_uploader_avatar.src;
     let usuario = input_usuario.value;
     let correo = input_correo.value;
     let contrasena = input_contrasena.value;
@@ -130,20 +188,23 @@ let llamar = () => {
     let direccion_exacta = input_direccion_exacta.value;
 
     let error = validar(usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
+    let errorCedula = validarCedula(id);
+    let errorCorreo = validarCorreo(correo);
 
-    if (error == false) {
-        registrarUsuario(usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
+    if (error == false && errorCedula == false && errorCorreo == false) {
+        registrarUsuario(src_avatar, usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
-        })
-    } else {
+        })    
+    }         
+    else {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',
             text: 'Revisá los campos resaltados e intentalo de nuevo'
         })
-    }
+    }    
 };
 
 btn_crear_cuenta.addEventListener('click', llamar);

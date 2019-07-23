@@ -56,6 +56,37 @@ let validar = (pnombre, ptelefono, pcorreo, pprovincia, pcanton, pdistrito) => {
     return error;
 };
 
+let validarTelefono = (ptelefono) => {
+    
+    let errorTelefono = false;
+    let telefonoValido = /\d{2}-?\d{2}-?\d{2}-?\d{2}$/;
+
+    if(!telefonoValido.test(ptelefono)){
+        errorTelefono = true;
+        input_telefono.classList.add('input_error');
+        
+    }
+    else {
+        input_telefono.classList.remove('input_error');
+    }
+    return errorTelefono;
+};
+
+let validarCorreo = (pcorreo) => {
+    
+    let errorCorreo = false;
+    let correoValido = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+    if(!correoValido.test(pcorreo)){
+        errorCorreo = true;
+        input_correo.classList.add('input_error');        
+    }
+    else {
+        input_correo.classList.remove('input_error');
+    }
+    return errorCorreo;
+};
+
 let llamar = () => {
     let nombre = input_nombre.value;
     let telefono = input_telefono.value;
@@ -65,8 +96,10 @@ let llamar = () => {
     let distrito = input_distrito.value;
     
     let error = validar(nombre, telefono, correo, provincia, canton, distrito);
+    let errorTelefono = validarTelefono(telefono);
+    let errorCorreo = validarCorreo(correo);
 
-    if (error == false) {
+    if (error == false && errorTelefono == false && errorCorreo == false) {
         registrarSucursal(nombre, telefono, correo, provincia, canton, distrito);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',

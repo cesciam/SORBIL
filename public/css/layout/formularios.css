@@ -63,6 +63,11 @@ html {
     margin-right: auto;
 }
 
+#main-form #form-container #txt-btn {
+    animation-name: moveInUp;
+    animation-duration: 1s;
+}
+
 #main-form .form-nav {
     display: grid;
     justify-items: center;
@@ -85,12 +90,27 @@ html {
 
 #main-form #seccion-form {
     display: grid;
+    /* grid-template-columns: 90% 10%; */
     align-items: center;
     box-shadow: var(--shadow-dark-2);
     padding: 2rem 0;
     /* margin: 1rem 1rem 1rem 0; */
     height: 1fr;
 }
+
+/* #main-form #seccion-form .btn-volver-formulario {
+    align-self: start;
+    justify-self: start;
+    margin-top: 5rem;
+}
+
+#main-form #seccion-form .btn-volver-formulario a {
+    padding: 1rem 2rem;
+    border-radius: var(--box-radius);
+    color: var(--color-primary);
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-dark-2);
+} */
 
 #main-form #seccion-form .form-title .progress-container {
     display: grid;
@@ -258,6 +278,8 @@ html {
 #main-form #form-container .form-btns .center-btns {
     display: grid;
     grid-template-columns: repeat(2, 20rem);
+    animation-name: moveInUp;
+    animation-duration: 2s;
 }
 
 #main-form #form-container .form-btns .center-btns button {
@@ -273,7 +295,9 @@ html {
 }
 
 #main-form #form-container .form-btns #btn-enviar {
-    margin-top: 6rem;
+    margin-top: 3rem;
+    animation-name: moveInUp;
+    animation-duration: 1s;
 }
 
 #main-form #form-container .form-btns #btn-enviar i {
@@ -313,7 +337,8 @@ Fin de estilos de formularios
     #main-form #form-image {
         display: none;
     }
-    #main-form #form-container .form-nav {
+    #main-form .form-nav .cards {
         grid-template-columns: 1fr;
+        grid-row-gap: 2rem;
     }
 }

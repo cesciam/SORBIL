@@ -10,15 +10,16 @@ router.post('/registrar-libreria', function (req, res) {
     let body = req.body;
 
     let nueva_libreria = new libreria({
+        avatar: body.avatar,
         usuario: body.usuario,
         correo: body.correo,
         contrasenna: body.contrasenna,
-        verificacion_contrasenna: body.verificacion_contrasenna,
         empresa: body.empresa,
         telefono: body.telefono,
         provincia: body.provincia,
         canton: body.canton,
-        distrito: body.distrito
+        distrito: body.distrito,
+        direccion_exacta: body.direccion_exacta
     });
 
 
@@ -58,11 +59,3 @@ router.get('/listar-librerias', function (req, res) {
 });
 
 module.exports = router;
-
-
-// //TODO: el usuario no debe escribir la contraseña dos veces
-// if (req.body.contrasenna !== req.body.verificacion_contrasenna) {
-//     var err = new Error('La contraseña no coincide');
-//     err.status = 400;
-//     return next(err);
-// }

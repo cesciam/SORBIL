@@ -10,6 +10,7 @@ router.post('/registrar-usuario', function (req, res) {
     let body = req.body;
 
     let nuevo_usuario = new Usuario({
+        avatar: body.avatar,
         usuario: body.usuario,
         correo: body.correo,
         contrasena: body.contrasena,
@@ -61,3 +62,29 @@ router.get('/listar-usuarios', function (req, res) {
 });
 
 module.exports = router;
+
+
+router.post('/validar-credenciales', function (req, res) {
+    Usuario.findOne({ correo: req.body.correo }).then(
+        function (usuario) {
+            if (usuario) {
+                if (usuario.contrasena == req.body.contrasena) {
+                    res.json({
+                        success: true,
+                        usuario: usuario
+                    });
+                } else {
+                    res.json({
+                        success: false,
+                        hola: "Aqui"
+                    });
+                }
+            } else {
+                res.json({
+                    success: false,
+                    msg: 'El usuario no existe'
+                });
+            }
+        }
+    )
+});

@@ -48,32 +48,33 @@
                                     <img src="../imgs/avatar-placeholder.png" alt="" class="img_registro_libro"
                                         id="portada">
                                     <label for="file">Subir imagen</label>
-                                    <button id="btnSeleccionarImagen" type="file" id="img-uploader-portada"
+                                    <button id="btnSeleccionarImagen" type="file" id="img-uploader-avatar"
                                         class="upload-msg"></button>
                                 </div>
-                            <div class="input-group">
-                                <label for="#">Usuario</label>
-                                <input id="txt-usuario" type="text" placeholder="Ingrese su nombre de usuario"
-                                    aria-label="Ingrese su nombre de usuario">
-                            </div>
-
-                            <div>
-                                <label for="#">Correo electrónico</label>
-                                <input id="txt-correo" type="email" placeholder="Ingresar el correo electrónico"
-                                    aria-label="Ingresar el correo electrónico">
-                            </div>
-
-                            <div class="input-dos-columnas">
                                 <div class="input-group">
-                                    <label for="#">Contraseña</label>
-                                    <input id="txt-contrasena" type="password" placeholder="Ingresar la contaseña"
-                                        aria-label="Ingresar la contaseña">
+                                    <label for="#">Usuario</label>
+                                    <input id="txt-usuario" type="text" placeholder="Ingrese su nombre de usuario"
+                                        aria-label="Ingrese su nombre de usuario">
                                 </div>
 
-                                <div class="input-group">
-                                    <label for="#">Verificación de contraseña</label>
-                                    <input id="txt-verf-contrasena" type="password" placeholder="Ingresar la contaseña"
-                                        aria-label="Ingresar la contaseña">
+                                <div>
+                                    <label for="#">Correo electrónico</label>
+                                    <input id="txt-correo" type="email" placeholder="Ingresar el correo electrónico"
+                                        aria-label="Ingresar el correo electrónico">
+                                </div>
+
+                                <div class="input-dos-columnas">
+                                    <div class="input-group">
+                                        <label for="#">Contraseña</label>
+                                        <input id="txt-contrasena" type="password" placeholder="Ingresar la contaseña"
+                                            aria-label="Ingresar la contaseña">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="#">Verificación de contraseña</label>
+                                        <input id="txt-verf-contrasena" type="password"
+                                            placeholder="Ingresar la contaseña" aria-label="Ingresar la contaseña">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +88,7 @@
 
                                 <div class="input-group">
                                     <label for="#">Identificación</label>
-                                    <input id="txt-id" type="text" placeholder="Identificación"
+                                    <input id="txt-id" type="text" placeholder="Formato: 0-0000-0000"
                                         aria-label="Identificación">
                                 </div>
                             </div>
@@ -111,7 +112,7 @@
                                 <div>
                                     <label for="#">Sexo</label>
                                     <select id="txt-sexo" name="">
-                                        <option value="0" disabled="disabled" selected="true">Escoger una opción
+                                        <option value="" disabled="disabled" selected="true">Escoger una opción
                                         </option>
                                         <option value="Femenino">Femenino</option>
                                         <option value="Masculino">Masculino</option>
@@ -127,18 +128,27 @@
                                 <div class="input-group">
                                     <div>
                                         <label for="#">Provincia</label>
-                                        <select id="txt-provincia"></select>
+                                        <select id="txt-provincia">
+                                            <option value="" selected="selected" disabled="disabled">Seleccionar
+                                                Provincia</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="input-dos-columnas">
                                     <div class="input-group">
                                         <label for="#">Cantón</label>
-                                        <select id="txt-canton"></select>
+                                        <select id="txt-canton">
+                                            <option value="" selected="selected" disabled="disabled">Seleccionar Cantón
+                                            </option>
+                                        </select>
                                     </div>
 
                                     <div class="input-group">
                                         <label for="#">Distrito</label>
-                                        <select id="txt-distrito"></select>
+                                        <select id="txt-distrito">
+                                            <option value="" selected="selected" disabled="disabled">Seleccionar
+                                                Distrito</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="input-group">
@@ -177,9 +187,7 @@
                                     <i class='bx bx-plus'></i>
                                 </button>
                             </div>
-
                         </div>
-                    </div>
                 </form>
             </div>
         </section>
