@@ -47,4 +47,35 @@ function initMap() {
     //         });
     //     }
     // }
+
+    //++++++++++++++++++++++++ NUEVO CÓDIGO DE PRUEBA ++++++++++++++++++++++++++++++++++++++++
+
+    let map;
+    let latitude = 9.934739; // YOUR LATITUDE VALUE
+    let longitude = -84.087502; // YOUR LONGITUDE VALUE
+
+    let myLatLng = { lat: latitude, lng: longitude };
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: myLatLng,
+        zoom: 14,
+        disableDoubleClickZoom: true, // disable the default map zoom on double click
+    });
+
+    let marker = new google.maps.Marker({
+        map: map,
+        position: myLatLng,
+        draggable: true
+    });
+
+    google.maps.event.addListener(marker, 'dragend', function () {
+
+        let latitud = marker.getPosition().lat();
+        let longitud = marker.getPosition().lng();
+
+        let coordenadas = console.log(`${latitud},${longitud}`);
+        return coordenadas;
+    });
+
+    
 }
