@@ -6,7 +6,7 @@ const express = require('express'),
 
 //Definicion de la ruta para registrar los libros
 
-router.post('/registrar-club-virtual', function (req, res) {
+router.post('/registrar-club', function (req, res) {
     let body = req.body;
 
     let nuevo_club = new Club({
@@ -41,7 +41,7 @@ router.post('/registrar-club-virtual', function (req, res) {
     );
 });
 
-router.get('/listar-clubes-virtuales', function (req, res) {
+router.get('/listar-clubes', function (req, res) {
     Club.find(function (err, clubesDB) {
         if (err) {
             return res.status(400).json({
