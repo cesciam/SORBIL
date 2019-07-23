@@ -3,7 +3,7 @@ const input_correo = document.querySelector('#txt-correo');
 const input_contrasena = document.querySelector('#txt-contrasena');
 const btn_enviar = document.querySelector('#txt-btn');
 
-let obtenerDatos = () => {
+let obtenerDatos = async () => {
     let correoo = input_correo.value;
     let contrasena = input_contrasena.value;
 
@@ -11,10 +11,10 @@ let obtenerDatos = () => {
     let usuario_aceptado = false;
 
     if (!error_blancos) {
-        usuario_aceptado = validar_credenciales(correoo, contrasena);
+        usuario_aceptado = await validar_credenciales(correoo, contrasena);
         if (usuario_aceptado) {
-            //window.location.href = './index.html';
-            console.log('Sirve lol');
+            window.location.href = '../index.html';
+            console.log('Sirve lol el login');
         }
     }
 };
