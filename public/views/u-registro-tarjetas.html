@@ -52,29 +52,16 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de Libro</h1>
-            <p>Registra la información que te interesa</p>
+            <h1>Registro de tarjetas de pago</h1>
+            <p>Registra que se solicita</p>
         </div>
 
         <form id="form" action="#">
-
+            <div>
+                <label for="#">Número de tarjeta</label>
+                <input id="input_isbn" type="number" placeholder="Ingresar el numero de tarjeta" aria-label="Ingresar el numero de tarjeta">
+            </div>
             <div id="form-container">
-                <div>
-                    <p for="">Portada</p>
-                    <div class="upload-img">
-                        <img src="../imgs/book-placeholder.png" alt="" class="img_registro_libro" id="portada">
-                        <label for="file">Arrastra o sube la portada</label>
-                        <button id="btnSeleccionarImagen"  type="file" id="img-uploader-portada" class="upload-msg"></button>
-                    </div>
-                </div>
-                <div>
-                    <p for="">Contraportada</p>
-                    <div class="upload-img">
-                        <img class="img_registro_libro" id="contraportada" src="../imgs/book-placeholder.png"></img>
-                        <label for="file">Arrastra o sube la contraportada</label>
-                        <button id="btnSeleccionarImagen2"  type="file" id="img-uploader-portada" class="upload-msg"></button>
-                    </div>
-                </div>
                 <div>
                     <label for="#">Título</label>
                     <input type="text" placeholder="Ingresar título de libro"
@@ -140,10 +127,7 @@
                 
 
             </div>
-            <div>
-                    <label for="#">ISBN</label>
-                    <input id="input_isbn" type="text" placeholder="Ingresar el ISBN de libro" aria-label="Ingresar el ISBN de libro">
-            </div>
+            
             <div>
                     <label for="#">Sinopsis</label>
                     <textarea id="input_sinopsis" type="" placeholder="Ingresar sinopsis del libro" aria-label="Ingresar sinopsis del libro"></textarea>
@@ -229,7 +213,7 @@
     </footer>
 
     <!--Scripts-->
-    
+    <script src="cleave.min.js"></script>
 </body>
 
 </html>
