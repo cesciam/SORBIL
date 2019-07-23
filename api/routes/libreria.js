@@ -16,10 +16,12 @@ router.post('/registrar-libreria', function (req, res) {
         contrasenna: body.contrasenna,
         empresa: body.empresa,
         telefono: body.telefono,
+        descripcion: body.descripcion,
         provincia: body.provincia,
         canton: body.canton,
         distrito: body.distrito,
-        direccion_exacta: body.direccion_exacta
+        direccion_exacta: body.direccion_exacta,
+        geoloc: body.geoloc
     });
 
 
