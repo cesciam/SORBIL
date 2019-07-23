@@ -2,7 +2,7 @@
 
 const express = require('express'),
     router = express.Router(),
-    Club = require('../models/club-virtuale.model');
+    Club = require('../models/club.model');
 
 //Definicion de la ruta para registrar los libros
 
@@ -11,7 +11,9 @@ router.post('/registrar-club-virtual', function (req, res) {
 
     let nuevo_club = new Club({
         //imagen
+        tipo: body.tipo,
         nombre: body.nombre,
+        tipo: body.tipo,
         tema: body.tema,
         correo: body.correo,
         telefono: body.telefono,

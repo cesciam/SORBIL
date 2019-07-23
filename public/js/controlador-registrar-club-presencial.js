@@ -12,6 +12,7 @@ const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
 const input_direccion_exacta = document.querySelector('#txt-direccion-exacta');
 const btn_enviar = document.querySelector('#btn-enviar');
+const tipo = 'club1';
 
 let validar = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
 
@@ -115,7 +116,7 @@ let llamar = () => {
     let error = validar(nombre, tema, telefono, correo, fecha, categoria, genero, provincia, canton, distrito, direccion_exacta);
 
     if (error == false) {
-        registrarClub(nombre, tema, telefono, correo, fecha, categoria, genero, provincia, canton, distrito, direccion_exacta);
+        registrarClub(tipo, nombre, tema, telefono, correo, fecha, categoria, genero, provincia, canton, distrito, direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
