@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/paginas/registrar-libro.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
+    <link rel="stylesheet" href="../css/paginas/registrar-tarjeta.css">
     <title>Sorbil -- Librería -- Registrar Géneros</title>
 </head>
 
@@ -52,104 +53,37 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de Libro</h1>
-            <p>Registra la información que te interesa</p>
+            <h1>Registro de tarjetas de pago</h1>
+            <p>Registra que se solicita</p>
         </div>
 
         <form id="form" action="#">
-
+            <div>
+                    <label for="#">Nombre del titular</label>
+                    <input id="input_nombre" type="text" placeholder="Ingresar nombre del titular" aria-label="Ingresar nombre del titular">
+            </div>
+            
             <div id="form-container">
                 <div>
-                    <p for="">Portada</p>
-                    <div class="upload-img">
-                        <img src="../imgs/book-placeholder.png" alt="" class="img_registro_libro" id="portada">
-                        <label for="file">Arrastra o sube la portada</label>
-                        <button id="btnSeleccionarImagen"  type="file" id="img-uploader-portada" class="upload-msg"></button>
-                    </div>
+                        <label for="#">Número de tarjeta</label>
+                        <input class="input_numero_tarjeta" type="text" placeholder="Ingresar el numero de tarjeta" aria-label="Ingresar el numero de tarjeta">
                 </div>
                 <div>
-                    <p for="">Contraportada</p>
-                    <div class="upload-img">
-                        <img class="img_registro_libro" id="contraportada" src="../imgs/book-placeholder.png"></img>
-                        <label for="file">Arrastra o sube la contraportada</label>
-                        <button id="btnSeleccionarImagen2"  type="file" id="img-uploader-portada" class="upload-msg"></button>
-                    </div>
+                    <i class="" id="tipo_tarjeta"></i>
                 </div>
                 <div>
-                    <label for="#">Título</label>
-                    <input type="text" placeholder="Ingresar título de libro"
-                        aria-label="Ingresar título de libro" id="input_titulo">
+                    <label for="#">Fecha de vencimiento</label>
+                    <input type="text" placeholder="MM/AA"
+                        aria-label="MM/AA" id="input_fecha" class="input_fecha">
                 </div>
                 <div>
-                    <label for="#">Autor</label>
-                    <input id="input_autor" type="text" placeholder="Ingresar el Autor de libro" aria-label="Ingresar el Autor de libro">
-                </div>
-                <div>
-                    <label for="#">Edición</label>
-                    <input id="input_edicion" type="text" placeholder="Ingresar la edición del libro" aria-label="Ingresar la edición del libro">
-                </div>
-                <div>
-                    <label for="#">Editorial</label>
-                    <input id="input_editorial" type="text" placeholder="Ingresar la editorial del libro" aria-label="Ingresar la editorial del libro">
-                </div>
-                <div>
-                    <label for="#">Fecha de publicación></label>
-                    <input id="input_fecha" type="date" placeholder="Ingresar la fecha de publicación del libro" aria-label="Ingresar la fecha de publicación del libro">
-                </div>
-                <div>
-                    <label for="#">Categoría</label>
-                    <select id="input_categorias" name="">
-                        <option value="0" disabled="disabled" selected="true">
-                            Escoger una opción
-                        </option>
-                        <option value="Categorías">
-                            Categoría 1
-                        </option>
-                    </select>
-                </div>
-                <div>
-                    <label for="#">Género</label>
-                    <select id="input_generos" name="">
-                        <option value="0" disabled="disabled" selected="true">
-                            Escoger una opción
-                        </option>
-                        <option value="genero">
-                            Género 1
-                        </option>
-                    </select>
-                </div>
-                <div>
-                    <label for="#">Idioma</label>
-                    <input id="input_idioma" type="text" placeholder="Ingresar el idioma del libro" aria-label="Ingresar el idioma del libro">
-                </div>
-                <div>
-                    <label for="#">Precio</label>
-                    <input id="input_precio" type="number" placeholder="Ingresar el precio del libro" aria-label="Ingresar el precio del libro">
-                </div>
-                <div>
-                    <label for="#">Tipo de libro</label>
-                    <select id="input_tipo_libro" name="">
-                        <option value="0" disabled="disabled" selected="true">Escoger una opción</option>
-                        <option value="Pasta dura">Pasta dura</option>
-                        <option value="Pasta suave">Pasta suave</option>
-                        <option value="De bolsillo">De bolsillo</option>
-                        <option value="Digital">Digital</option>
-                    </select>
+                    <label for="#">CVV</label>
+                    <input id="input_cvv" type="text" placeholder="CVV" aria-label="CVV" class="cvv">
                 </div>
 
                 
 
             </div>
-            <div>
-                    <label for="#">ISBN</label>
-                    <input id="input_isbn" type="text" placeholder="Ingresar el ISBN de libro" aria-label="Ingresar el ISBN de libro">
-            </div>
-            <div>
-                    <label for="#">Sinopsis</label>
-                    <textarea id="input_sinopsis" type="" placeholder="Ingresar sinopsis del libro" aria-label="Ingresar sinopsis del libro"></textarea>
-            </div>
-            
-
             <button id="btn_enviar" type="button">Registrar</button>
 
         </form>
@@ -229,7 +163,9 @@
     </footer>
 
     <!--Scripts-->
-    
+    <script src="https://kit.fontawesome.com/a1b50ac28c.js"></script>
+    <script src="../vendors/cleave.js-master/dist/cleave.min.js"></script>
+    +<script src="../js/controlador-registro-tarjetas.js"></script>
 </body>
 
 </html>
