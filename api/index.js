@@ -13,8 +13,9 @@ const categoria_route = require('./routes/categoria');
 const libreria_route = require('./routes/libreria');
 const usuario_route = require('./routes/usuario');
 const sucursal_route = require('./routes/sucursal');
-const club_presenciale_route = require('./routes/club-presenciale');
-const club_virtuale_route = require('./routes/club-virtuale');
+const club_presencial_route = require('./routes/club-presencial');
+const club_virtual_route = require('./routes/club-virtual');
+
 
 
 const app = express();
@@ -68,8 +69,8 @@ app.use('/api', libreria_route);
 app.use('/api', usuario_route);
 app.use('/api', sucursal_route);
 app.use('/api', categoria_route);
-app.use('/api', club_presenciale_route);
-app.use('/api', club_virtuale_route);
+app.use('/api', club_presencial_route);
+app.use('/api', club_virtual_route);
 
 
 //localhost:4000/api/registrar-contacto

@@ -12,8 +12,9 @@ const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
 const input_direccion_exacta = document.querySelector('#txt-direccion-exacta');
 const btn_enviar = document.querySelector('#btn-enviar');
+const tipo = 'clubPresencial';
 
-let validar = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
+let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
 
     let error = false;
 
@@ -101,21 +102,21 @@ let validar = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero, 
 let llamar = () => {
     let nombre = input_administrador_club.value;
     let tema = input_tema.value;
-    let telefono = input_telefono.value;
     let correo = input_correo.value;
-    let fecha = new Date(input_fecha.value);
+    let telefono = input_telefono.value;
     let categoria = input_categoria.value;
     let genero = input_genero.value;
+    let fecha = new Date(input_fecha.value);
     let provincia = input_provincia.value;
     let canton = input_canton.value;
     let distrito = input_distrito.value;
     let direccion_exacta = input_direccion_exacta.value;
     
 
-    let error = validar(nombre, tema, telefono, correo, fecha, categoria, genero, provincia, canton, distrito, direccion_exacta);
+    let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, provincia, canton, distrito, direccion_exacta);
 
     if (error == false) {
-        registrarClub(nombre, tema, telefono, correo, fecha, categoria, genero, provincia, canton, distrito, direccion_exacta);
+        registrarClub(tipo, nombre, tema, correo, telefono, categoria, genero, fecha, provincia, canton, distrito, direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

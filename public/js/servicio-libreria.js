@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarLibreria = (pavatar, pusuario, pcorreo, pcontrasenna, pempresa, ptelefono, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
+let registrarLibreria = (pavatar, pusuario, pcorreo, pcontrasenna, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pgeoloc) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libreria',
@@ -12,10 +12,12 @@ let registrarLibreria = (pavatar, pusuario, pcorreo, pcontrasenna, pempresa, pte
             contrasenna:pcontrasenna,
             empresa:pempresa,
             telefono:ptelefono,
+            descripcion:pdescripcion,
             provincia:pprovincia,
             canton:pcanton,
             distrito:pdistrito,
-            direccion_exacta: pdireccionExacta
+            direccion_exacta: pdireccion_exacta,
+            geoloc: pgeoloc
         }
     });
 };

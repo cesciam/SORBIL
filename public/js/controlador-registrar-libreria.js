@@ -15,13 +15,16 @@ const input_contrasenna = document.querySelector('#txt-contrasenna');
 const input_verificacion_contrasenna = document.querySelector('#txt-verificacion-contrasenna');
 const input_empresa = document.querySelector('#txt-empresa');
 const input_telefono = document.querySelector('#txt-telefono');
+const input_descripcion = document.querySelector('#txt-descripcion');
 const input_provincia = document.querySelector('#txt-provincia');
 const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
 const input_direccion_exacta = document.querySelector('#txt-direccion-exacta');
+const map_geo = document.querySelector('#map');
+
 const btn_enviar = document.querySelector('#btn-enviar');
 
-let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempresa, ptelefono, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
+let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
 
     let error = false;
 
@@ -81,6 +84,13 @@ let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempr
         input_telefono.classList.remove('input_error');
     }
 
+    if (pdireccion_exacta == '') {
+        error = true;
+        input_direccion_exacta.classList.add('input_error');
+    } else {
+        input_direccion_exacta.classList.remove('input_error');
+    }
+
     if (pprovincia == '') {
         error = true;
         input_provincia.classList.add('input_error');
@@ -102,11 +112,11 @@ let validar = (pusuario, pcorreo, pcontrasenna, pverificacion_contrasenna, pempr
         input_distrito.classList.remove('input_error');
     }
 
-    if (pdireccion_exacta == '') {
+    if (pdescripcion == '') {
         error = true;
-        input_direccion_exacta.classList.add('input_error');
+        input_descripcion.classList.add('input_error');
     } else {
-        input_direccion_exacta.classList.remove('input_error');
+        input_descripcion.classList.remove('input_error');
     }
 
     return error;
@@ -120,15 +130,17 @@ let saludar = () => {
     let verificacion_contrasenna = input_verificacion_contrasenna.value;
     let empresa = input_empresa.value;
     let telefono = input_telefono.value;
+    let descripcion = input_descripcion.value;
     let provincia = input_provincia.value;
     let canton = input_canton.value;
     let distrito = input_distrito.value;
     let direccion_exacta = input_direccion_exacta.value
+    let geoloc = map_geo.value;
 
-    let error = validar(usuario, correo, contrasenna, verificacion_contrasenna, empresa, telefono, provincia, canton, distrito, direccion_exacta);
+    let error = validar(usuario, correo, contrasenna, verificacion_contrasenna, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta);
 
     if (error == false) {
-        registrarLibreria(src_avatar, usuario, correo, contrasenna, verificacion_contrasenna, empresa, telefono, provincia, canton, distrito, direccion_exacta);
+        registrarLibreria(src_avatar, usuario, correo, contrasenna, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, geoloc);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
