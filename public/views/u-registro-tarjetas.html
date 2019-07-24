@@ -23,30 +23,30 @@
 
         <h3 class="header-text">Área del administrador de librería</h3>
 
-            <div class="header-user-icons">
-                <div class="header-user-container">
-                    <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
-                        <span class="user-notification">1</span>
-                    </a>
-                </div>
-                <div class="header-user-container">
-                    <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                        <span class="user-notification">6</span>
-                    </a>
-                </div>
-
-                <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                            class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
-                            class='bx bx-chevron-down'></i></a>
-                    <div class="menu-user-container">
-                        <ul class="user-menu">
-                            <a class="user-menu-link" href="#">Perfil</a>
-                            <a class="user-menu-link" href="#">Cerrar sesión</a>
-                        </ul>
-                    </div>
-                </div>
-
+        <div class="header-user-icons">
+            <div class="header-user-container">
+                <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
+                    <span class="user-notification">1</span>
+                </a>
             </div>
+            <div class="header-user-container">
+                <a class="header-icon" href="#"><i class='bx bx-bell'></i>
+                    <span class="user-notification">6</span>
+                </a>
+            </div>
+
+            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
+                        class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
+                        class='bx bx-chevron-down'></i></a>
+                <div class="menu-user-container">
+                    <ul class="user-menu">
+                        <a class="user-menu-link" href="#">Perfil</a>
+                        <a class="user-menu-link" href="#">Cerrar sesión</a>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
 
     </header>
 
@@ -54,34 +54,35 @@
     <main id="main-admin">
         <div class="main-admin-titulo">
             <h1>Registro de tarjetas de pago</h1>
-            <p>Registra que se solicita</p>
+            <p>Registra la información que se solicita</p>
         </div>
 
         <form id="form" action="#">
-            <div>
-                    <label for="#">Nombre del titular</label>
-                    <input id="input_nombre" type="text" placeholder="Ingresar nombre del titular" aria-label="Ingresar nombre del titular">
+            <div class="creditc-tipo">
+                <i id="tipo_tarjeta"></i>
             </div>
-            
+            <div>
+                <label for="#">Nombre del titular</label>
+                <input id="input_nombre" type="text" placeholder="Ingresar nombre del titular"
+                    aria-label="Ingresar nombre del titular">
+            </div>
+            <div>
+                <label for="#">Número de tarjeta</label>
+                <input class="input_numero_tarjeta" type="text" placeholder="Ingresar el numero de tarjeta"
+                    aria-label="Ingresar el numero de tarjeta">
+            </div>
+
             <div id="form-container">
                 <div>
-                        <label for="#">Número de tarjeta</label>
-                        <input class="input_numero_tarjeta" type="text" placeholder="Ingresar el numero de tarjeta" aria-label="Ingresar el numero de tarjeta">
-                </div>
-                <div>
-                    <i class="" id="tipo_tarjeta"></i>
-                </div>
-                <div>
                     <label for="#">Fecha de vencimiento</label>
-                    <input type="text" placeholder="MM/AA"
-                        aria-label="MM/AA" id="input_fecha" class="input_fecha">
+                    <input type="text" placeholder="MM/AA" aria-label="MM/AA" id="input_fecha" class="input_fecha">
                 </div>
                 <div>
                     <label for="#">CVV</label>
                     <input id="input_cvv" type="text" placeholder="CVV" aria-label="CVV" class="cvv">
                 </div>
 
-                
+
 
             </div>
             <button id="btn_enviar" type="button">Registrar</button>
@@ -165,7 +166,7 @@
     <!--Scripts-->
     <script src="https://kit.fontawesome.com/a1b50ac28c.js"></script>
     <script src="../vendors/cleave.js-master/dist/cleave.min.js"></script>
-    +<script src="../js/controlador-registro-tarjetas.js"></script>
+    <script src="../js/controlador-registro-tarjetas.js"></script>
 </body>
 
 </html>
