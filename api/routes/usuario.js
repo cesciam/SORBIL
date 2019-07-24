@@ -4,6 +4,11 @@ const express = require('express'),
     router = express.Router(),
     Usuario = require('../models/usuario.model');
 
+router.param('_id', function (req, res, next, _id) {
+    req.body._id = _id;
+    next();
+});
+
 //Definición de la ruta para registrar contactos
 
 router.post('/registrar-usuario', function (req, res) {
@@ -44,26 +49,6 @@ router.post('/registrar-usuario', function (req, res) {
     );
 });
 
-router.get('/listar-usuarios', function (req, res) {
-    Usuario.find(function (err, usuariosBD) {
-        if (err) {
-            return res.status(400).json({
-                success: false,
-                msj: 'No se pueden listar los usuarios',
-                err
-            });
-        } else {
-            return res.json({
-                success: true,
-                lista_usuarios: usuariosBD
-            });
-        }
-    })
-});
-
-module.exports = router;
-
-
 router.post('/validar-credenciales', function (req, res) {
     Usuario.findOne({ correo: req.body.correo }).then(
         function (usuario) {
@@ -88,3 +73,41 @@ router.post('/validar-credenciales', function (req, res) {
         }
     )
 });
+
+
+router.get('/listar-usuarios', function (req, res) {
+    Usuario.find(function (err, usuariosBD) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se pueden listar los usuarios',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                lista_usuarios: usuariosBD
+            });
+        }
+    })
+});
+
+router.get('/buscar-usuario-id/:_id', function (req, res) {
+    Usuario.findById(req.body._id, function (err, usuarioDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ninguna librería con ese _id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                usuario: usuarioDB
+            });
+        }
+    })
+});
+
+
+module.exports = router;

@@ -103,7 +103,7 @@ button, select {
 select {
     display: block;
     max-width: 100%;
-    background: url("https://i.ibb.co/b7xjLrB/selectbox-arrow.png") right center no-repeat;
+    background: url("../imgs/chevron.png") right center no-repeat;
     line-height: 16px;
     appearance: none;
     -webkit-appearance: none;

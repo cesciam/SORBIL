@@ -4,6 +4,12 @@ const express = require('express'),
     router = express.Router(),
     libreria = require('../models/libreria.model');
 
+
+router.param('_id', function (req, res, next, _id) {
+    req.body._id = _id;
+    next();
+});
+
 //Definicion de la ruta para registrar los libros
 
 router.post('/registrar-libreria', function (req, res) {
@@ -55,6 +61,23 @@ router.get('/listar-librerias', function (req, res) {
             return res.json({
                 success: true,
                 lista_librerias: libreriaDB
+            });
+        }
+    })
+});
+
+router.get('/buscar-libreria-id/:_id', function (req, res) {
+    libreria.findById(req.body._id, function (err, libreriaDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ninguna librería con ese _id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                libreria: libreriaDB
             });
         }
     })
