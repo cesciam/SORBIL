@@ -1,7 +1,7 @@
 'use strict';
 // Aqui empiezan todas las variables para subir las fotos a cloudinary
 const imgpreview = document.getElementById('img_preview');
-const uploader_avatar = document.getElementById('img-uploader-avatar');
+const uploader_avatar = document.getElementById('img_uploader_portada');
 const progress_bar = document.getElementById('progress_bar');
 const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/fenixsorbil/image/upload';
 const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
