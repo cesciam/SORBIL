@@ -17,7 +17,7 @@ html {
 }
 
 #main-form #form-image {
-    background-size: cover;
+    background-size: 250%;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
@@ -85,6 +85,7 @@ html {
 #main-form p {
     padding: .5rem;
     border-bottom: var(--line);
+    margin-bottom: 3rem;
 }
 
 #main-form #seccion-form {

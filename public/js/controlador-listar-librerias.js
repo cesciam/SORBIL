@@ -12,13 +12,23 @@ let mostrar_tabla = async () => {
 
     for (let i = 0; i < lista_librerias.length; i++) {
         let fila = tbody.insertRow();
-        fila.insertCell().innerHTML = lista_librerias[i]['usuario'];
-        fila.insertCell().innerHTML = lista_librerias[i]['correo'];
         fila.insertCell().innerHTML = lista_librerias[i]['empresa'];
+        fila.insertCell().innerHTML = lista_librerias[i]['correo'];
         fila.insertCell().innerHTML = lista_librerias[i]['telefono'];
         fila.insertCell().innerHTML = lista_librerias[i]['provincia'];
-        fila.insertCell().innerHTML = lista_librerias[i]['canton'];
-        fila.insertCell().innerHTML = lista_librerias[i]['distrito'];
+
+
+        let celda_perfil = fila.insertCell();
+        let boton_perfil = document.createElement('button');
+        boton_perfil.type = 'button';
+        boton_perfil.innerText = 'Ver perfil';
+        boton_perfil.dataset._id = lista_librerias[i]['_id'];
+
+        celda_perfil.appendChild(boton_perfil);
+
+        boton_perfil.addEventListener('click',function(){
+            window.location.href = `ver-perfil-libreria.html?_id=${this.dataset._id}`;
+        });
     }
 };
 
@@ -30,15 +40,12 @@ let filtrar_tabla = async () => {
 
 
     for (let i = 0; i < lista_librerias.length; i++) {
-        if (lista_librerias[i]['usuario'].toLowerCase().includes(filtro) || lista_librerias[i]['correo'].toLowerCase().includes(filtro) || lista_librerias[i]['empresa'].toLowerCase().includes(filtro) || lista_librerias[i]['telefono'].toLowerCase().includes(filtro) || lista_librerias[i]['provincia'].toLowerCase().includes(filtro) || lista_librerias[i]['canton'].toLowerCase().includes(filtro) || lista_librerias[i]['distrito'].toLowerCase().includes(filtro)) {
+        if (lista_librerias[i]['empresa'].toLowerCase().includes(filtro) || lista_librerias[i]['correo'].toLowerCase().includes(filtro) || lista_librerias[i]['telefono'].toLowerCase().includes(filtro) || lista_librerias[i]['provincia'].toLowerCase().includes(filtro)) {
             let fila = tbody.insertRow();
-            fila.insertCell().innerHTML = lista_librerias[i]['usuario'];
-            fila.insertCell().innerHTML = lista_librerias[i]['correo'];
             fila.insertCell().innerHTML = lista_librerias[i]['empresa'];
+            fila.insertCell().innerHTML = lista_librerias[i]['correo'];
             fila.insertCell().innerHTML = lista_librerias[i]['telefono'];
             fila.insertCell().innerHTML = lista_librerias[i]['provincia'];
-            fila.insertCell().innerHTML = lista_librerias[i]['canton'];
-            fila.insertCell().innerHTML = lista_librerias[i]['distrito'];
         }
 
     }
