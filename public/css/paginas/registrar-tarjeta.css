@@ -1,4 +1,13 @@
-i{
-    font-size: 5rem;
+.creditc-tipo {
+    display: grid;
+    justify-items: center;
 }
 
+#tipo_tarjeta {
+    font-size: 8rem;
+    color: var(--color-secondary);
+}
+
+#main-admin {
+    margin: 4rem 18%;
+}

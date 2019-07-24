@@ -35,7 +35,7 @@ html {
 #main-admin {
     grid-area: main;
     display: grid;
-    margin: 4rem 8%;
+    margin: 4rem 10%;
 }
 
 #main-admin #btn-enviar {
