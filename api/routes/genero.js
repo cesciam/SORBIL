@@ -31,19 +31,6 @@ router.post('/registrar-genero', function (req, res) {
     );
 });
 
-// router.get('/listar-generos', async function (req, res) {
-//     Genero.find()
-//         .then(lista_generos => {
-//             return res.json({
-//                 success: true,
-//                 lista_generos: lista_generos
-//             });
-//         })
-//         .catch(err => { throw new Error(err) });
-// });
-
-// module.exports = router; 
-
 router.get('/listar-generos', async function (req, res) {
     Genero.find(function (err, generosDB) {
         if (err) {

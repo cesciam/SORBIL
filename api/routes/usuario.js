@@ -4,6 +4,11 @@ const express = require('express'),
     router = express.Router(),
     Usuario = require('../models/usuario.model');
 
+router.param('_id', function (req, res, next, _id) {
+    req.body._id = _id;
+    next();
+});
+
 //Definición de la ruta para registrar contactos
 
 router.post('/registrar-usuario', function (req, res) {
@@ -26,11 +31,6 @@ router.post('/registrar-usuario', function (req, res) {
         direccion_exacta: body.direccion_exacta
     });
 
-    router.route('/validar_credenciales')
-        .post(function (req, res) {
-            userApi.validar(req, res);
-        });
-
     nuevo_usuario.save(
         function (err, usuariosBD) {
             if (err) {
@@ -49,6 +49,32 @@ router.post('/registrar-usuario', function (req, res) {
     );
 });
 
+router.post('/validar-credenciales', function (req, res) {
+    Usuario.findOne({ correo: req.body.correo }).then(
+        function (usuario) {
+            if (usuario) {
+                if (usuario.contrasena == req.body.contrasena) {
+                    res.json({
+                        success: true,
+                        usuario: usuario
+                    });
+                } else {
+                    res.json({
+                        success: false,
+                        hola: "Aqui"
+                    });
+                }
+            } else {
+                res.json({
+                    success: false,
+                    msg: 'El usuario no existe'
+                });
+            }
+        }
+    )
+});
+
+
 router.get('/listar-usuarios', function (req, res) {
     Usuario.find(function (err, usuariosBD) {
         if (err) {
@@ -66,26 +92,22 @@ router.get('/listar-usuarios', function (req, res) {
     })
 });
 
-module.exports = router;
-
-
-router.post('/validar-credenciales', function (req, res) {
-    nuevo_usuario.findOne({ id: req.body.id }).then(
-        function (usuario) {
-            if (usuario) {
-                if (usuario.contrasena == req.body.contrasena) {
-                    res.json({
-                        success: true,
-                        usuario: usuario
-                    });
-                } else {
-                    res.json({
-                        success: false
-                    });
-                }
-            } else {
-                res.send(false);
-            }
+router.get('/buscar-usuario-id/:_id', function (req, res) {
+    Usuario.findById(req.body._id, function (err, usuarioDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ninguna librería con ese _id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                usuario: usuarioDB
+            });
         }
-    )
+    })
 });
+
+
+module.exports = router;

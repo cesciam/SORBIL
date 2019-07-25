@@ -35,7 +35,7 @@ html {
 #main-admin {
     grid-area: main;
     display: grid;
-    margin: 4rem 8%;
+    margin: 4rem 10%;
 }
 
 #main-admin #btn-enviar {
@@ -44,6 +44,21 @@ html {
 
 #main-admin>* {
     margin-bottom: 5rem;
+}
+
+#main-admin button {
+    background-color: var(--color-primary);
+}
+
+#main-admin #tabla-filtrado button {
+    background-color: var(--color-alternative-blue);
+    color: var(--color-white);
+    border-radius: 0 .4rem .4rem 0;
+}
+
+#main-admin #tabla-filtrado button {
+    box-shadow: var(--shadow-dark-1);
+    transform: translateY(0);
 }
 
 #main-admin .main-admin-titulo {
@@ -55,12 +70,27 @@ html {
     margin-bottom: 2rem;
 }
 
+#main-admin .form-nav {
+    display: grid;
+    justify-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main-admin .form-nav .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10rem;
+}
+
 #main-admin p {
     margin-bottom: 2rem;
 }
 
 #main-admin .upload-img {
-    height: 8rem;
+    height: 15rem;
+    margin-bottom: 5rem;
 }
 
 #main-admin #form div {
@@ -152,6 +182,10 @@ Fin de estilos generales de administradores
     }
     .header-text {
         opacity: 0;
+    }
+    #main-admin .form-nav {
+        grid-template-columns: 1fr;
+        grid-row-gap: 2rem;
     }
 }
 

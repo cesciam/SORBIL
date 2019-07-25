@@ -8,7 +8,7 @@ $(function() {
     
     //Upload button
     let uploaButton = $('#btnSeleccionarImagen');
-    let uploadButton2 = $('#btnSeleccionarImagen2')
+    let uploadButton2 = $('#btnSeleccionarImagen2');
     
     //Upload button event
     uploaButton.on('click', function(e){
@@ -37,7 +37,7 @@ $(function() {
                 document.querySelector('#contraportada').src = imagenUrl;
                 console.log(imagenUrl);
             });    
-        });    
+        });  
     })
     
     function processImage(id) {

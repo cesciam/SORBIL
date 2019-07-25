@@ -24,7 +24,33 @@ let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pverfContrasena
     });
 };
 
-let obtenerUsuarios = async() => {
+let validar_credenciales = async (pcorreo, pcontrasena) => {
+    let respuesta = '';
+    const peticion = await axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/validar-credenciales',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            contrasena: pcontrasena
+        }
+
+    });
+
+    console.log(peticion);
+
+    sessionStorage.setItem('activo', JSON.stringify(peticion.data.usuario));
+    let usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
+
+
+    // peticion.fail(function (usuario) {
+    //     respuesta = usuario;
+    // });
+    return peticion.data;
+};
+
+
+let obtenerUsuarios = async () => {
     try {
         // fetch data from an url endpoint
         const response = await axios({

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar Géneros</title>
+    <title>Sorbil -- Librería -- Ver librerías</title>
 </head>
 
 <body id="grid-admin">
@@ -56,7 +56,9 @@
         </div>
 
         <div id="barra-busqueda">
-            <input type="text" id="txt-filtro" placeholder="Buscar por / usuario / correo / empresa / teléfono / provincia / distrito / cantón" aria-label="Buscar por / usuario / correo / empresa / teléfono / provincia / distrito / cantón">
+            <input type="text" id="txt-filtro"
+                placeholder="Buscar por / empresa / correo / teléfono / provincia"
+                aria-label="Buscar por / empresa / correo / teléfono / provincia">
 
             <!-- <button aria-label="Search" type="button">
                 <spans>Filtrar</spans>
@@ -67,13 +69,11 @@
         <table id="tabla-filtrado">
             <thead>
                 <tr>
-                    <th>Usuario</th>
-                    <th>Correo</th>
                     <th>Empresa</th>
+                    <th>Correo</th>
                     <th>Teléfono</th>
                     <th>Provincia</th>
-                    <th>Distrito</th>
-                    <th>Cantón</th>
+                    <th>Opciones</th>
                 </tr>
             </thead>
             <tbody>

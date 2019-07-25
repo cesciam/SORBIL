@@ -1,5 +1,13 @@
 'use strict';
+// Aqui empiezan todas las variables para subir las fotos a cloudinary
+const imgpreview = document.getElementById('img_preview');
+const uploader_imagen = document.getElementById('img_uploader_portada');
+const progress_bar = document.getElementById('progress_bar');
+const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/fenixsorbil/image/upload';
+const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
+
 // Constantes 
+const img_uploader_imagen = document.querySelector('#portada');
 const input_administrador_club = document.querySelector('#txt-administrador-club');
 const input_tema = document.querySelector('#txt-tema-club');
 const input_telefono = document.querySelector('#txt-telefono');
@@ -10,12 +18,21 @@ const input_fecha = document.querySelector('#txt-fecha');
 const input_provincia = document.querySelector('#txt-provincia');
 const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
-
+const input_direccion_exacta = document.querySelector('#txt-direccion-exacta');
 const btn_enviar = document.querySelector('#btn-enviar');
+const tipo = 'clubP';
 
-let validar = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero, pprovincia, pcanton, pdistrito) => {
+let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
 
     let error = false;
+
+    if (img_uploader_imagen.src == 'http://localhost:3000/public/imgs/book-placeholder.png') {
+        error = true;
+        img_uploader_imagen.classList.add('input_error');
+
+    } else {
+        img_uploader_imagen.classList.remove('input_error');
+    }
 
     if (pnombre == '') {
         error = true;
@@ -88,25 +105,35 @@ let validar = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero, 
         input_distrito.classList.remove('input_error');
     }
 
+    if (pdireccion_exacta == '') {
+        error = true;
+        input_direccion_exacta.classList.add('input_error');
+    } else {
+        input_direccion_exacta.classList.remove('input_error');
+    }
+
     return error;
 };
 
 let llamar = () => {
+    let src_imagen = img_uploader_imagen.src;;
     let nombre = input_administrador_club.value;
     let tema = input_tema.value;
-    let telefono = input_telefono.value;
     let correo = input_correo.value;
-    let fecha = new Date(input_fecha.value);
+    let telefono = input_telefono.value;
     let categoria = input_categoria.value;
     let genero = input_genero.value;
+    let fecha = new Date(input_fecha.value);
     let provincia = input_provincia.value;
     let canton = input_canton.value;
     let distrito = input_distrito.value;
+    let direccion_exacta = input_direccion_exacta.value;
+    
 
-    let error = validar(nombre, tema, telefono, correo, fecha, categoria, genero, provincia, canton, distrito);
+    let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, provincia, canton, distrito, direccion_exacta);
 
     if (error == false) {
-        registrarClub(nombre, tema, telefono, correo, fecha, categoria, genero, provincia, canton, distrito);
+        registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, provincia, canton, distrito, direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

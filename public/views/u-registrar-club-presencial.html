@@ -38,26 +38,24 @@
                     </div>
                 </div>
                 <form id="form" action="#">
-
                     <div id="form-container">
-
                         <!--Paso 1 del formulario-->
                         <div class="step step1">
                             <div>
                                 <div class="upload-img">
                                     <img src="../imgs/book-placeholder.png" alt="" class="img_registro_libro"
                                         id="portada">
-                                    <label for="file">Subir imagen</label>
-                                    <button id="btnSeleccionarImagen" type="file" id="img-uploader-portada"
+                                    <label for="file">Sube una imagen</label>
+                                    <button id="btnSeleccionarImagen" type="button" id="img-uploader-portada"
                                         class="upload-msg"></button>
                                 </div>
                             </div>
                             <div class="input-dos-columnas">
-                            <div class="input-group">
-                                <label for="#">Nombre del administrador</label>
-                                <input id="txt-administrador-club" type="text" placeholder="Ingrese su nombre"
-                                    aria-label="Ingrese su nombre">
-                            </div>
+                                <div class="input-group">
+                                    <label for="#">Nombre del administrador</label>
+                                    <input id="txt-administrador-club" type="text" placeholder="Ingrese su nombre"
+                                        aria-label="Ingrese su nombre">
+                                </div>
 
                                 <div class="input-group">
                                     <label for="#">Nombre del tema</label>
@@ -76,7 +74,8 @@
                                 </div>
                                 <div class="input-group">
                                     <label for="#">Teléfono</label>
-                                    <input id="txt-telefono" type="tel" placeholder="Ingresar el teléfono" aria-label="Ingresar su teléfono">
+                                    <input id="txt-telefono" type="tel" placeholder="Ingresar el teléfono"
+                                        aria-label="Ingresar su teléfono">
                                 </div>
                             </div>
                         </div>
@@ -85,23 +84,17 @@
                             <div class="input-dos-columnas">
                                 <div>
                                     <label for="#">Categoría</label>
-                                    <select id="txt-categoria">
+                                    <select id="txt-categoria" class="opt-categorias">
                                         <option value="" disabled="disabled" selected="true">
                                             Escoger una opción
-                                        </option>
-                                        <option value="Categoría">
-                                            Categoría 1
                                         </option>
                                     </select>
                                 </div>
                                 <div>
                                     <label for="#">Género</label>
-                                    <select id="txt-genero">
+                                    <select id="txt-genero" class="opt-generos">
                                         <option value="" disabled="disabled" selected="true">
                                             Escoger una opción
-                                        </option>
-                                        <option value="Género">
-                                            Género 1
                                         </option>
                                     </select>
                                 </div>
@@ -146,6 +139,10 @@
                                         </option>
                                     </select>
                                 </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="#">Dirección exacta</label>
+                                <textarea id="txt-direccion-exacta"></textarea>
                             </div>
                         </div>
                         <!--Paso 4 del formulario-->
@@ -203,7 +200,9 @@
     <script src="../js/servicio-imagen.js"></script>
     <script src="../js/servicio-club.js"></script>
     <script src="../js/controlador-registrar-club-presencial.js"></script>
-
+    <script src="../js/servicio-genero.js"></script>
+    <script src="../js/servicio-categoria.js"></script>
+    <script src="../js/componentes/controlador-lista-bd.js"></script>
 </body>
 
 </html>

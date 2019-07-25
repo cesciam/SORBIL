@@ -1,20 +1,23 @@
 'use strict';
 
-let registrarLibreria = (pusuario,pcorreo,pcontrasenna,pverificacion_contrasenna,pempresa,ptelefono,pprovincia,pcanton,pdistrito) => {
+let registrarLibreria = (pavatar, pusuario, pcorreo, pcontrasenna, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pgeoloc) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libreria',
         responseType: 'json',
         data: {
+            avatar: pavatar,
             usuario:pusuario,
             correo:pcorreo,
             contrasenna:pcontrasenna,
-            verificacion_contrasenna:pverificacion_contrasenna,
             empresa:pempresa,
             telefono:ptelefono,
+            descripcion:pdescripcion,
             provincia:pprovincia,
             canton:pcanton,
             distrito:pdistrito,
+            direccion_exacta: pdireccion_exacta,
+            geoloc: pgeoloc
         }
     });
 };
@@ -29,6 +32,21 @@ let obtenerLibrerias = async () => {
         });
 
         return response.data.lista_librerias;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+let obtenerLibreriaid = async (_id) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-libreria-id/${_id}`,
+            responseType: 'json'
+        });
+
+        return response.data.libreria;
     } catch (error) {
         console.log(error);
     }
