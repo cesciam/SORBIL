@@ -27,9 +27,9 @@ let filtrar_tabla = async () => {
     let filtro = txt_filtro.value.toLowerCase();
     tbody.innerHTML = '';
 
-    for (let i = 0; i < lista_usuarios.length; i++) {
+    for (let i = 0; i < lista_sucursales.length; i++) {
         if (lista_sucursales[i]['nombre'].toLowerCase().includes(filtro) ||
-            lista_sucursales[i]['telfeono'].toLowerCase().includes(filtro) ||
+            lista_sucursales[i]['telefono'].toLowerCase().includes(filtro) ||
             lista_sucursales[i]['correo'].toLowerCase().includes(filtro) ||
             lista_sucursales[i]['provincia'].toLowerCase().includes(filtro) ||
             lista_sucursales[i]['canton'].toLowerCase().includes(filtro) ||
