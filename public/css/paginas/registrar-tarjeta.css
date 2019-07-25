@@ -4,10 +4,26 @@
 }
 
 #tipo_tarjeta {
-    font-size: 8rem;
+    font-size: 4rem;
     color: var(--color-secondary);
 }
 
 #main-admin {
     margin: 4rem 18%;
+}
+
+#div-numTarjeta{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    
+}
+
+#div-numTarjeta i {
+    background: var(--color-white);
+    text-align: center;
+    margin-top: .1rem;
+}
+
+#input_num_tarjeta:focus{
+    border: none !important;
 }

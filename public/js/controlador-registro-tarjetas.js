@@ -2,6 +2,7 @@
 
 const btn_registrar = document.querySelector('#btn_enviar');
 const tipo_tarjeta = document.querySelector('#tipo_tarjeta');
+const num_tarjeta = document.querySelector('#input_num_tarjeta');
 
 let validar_tarjeta = new Cleave('.input_numero_tarjeta', {
     creditCard: true,
@@ -22,7 +23,6 @@ let validar_tarjeta = new Cleave('.input_numero_tarjeta', {
         }else if (type == 'unknown'){
             tipo_tarjeta.className = '';
         }
-
     }
 });
 
@@ -37,4 +37,4 @@ let cvv = new Cleave('.cvv', {
     uppercase: true
 });
 
-btn_registrar.addEventListener('click', validar_tarjeta);
+console.log(num_tarjeta.value.length);
