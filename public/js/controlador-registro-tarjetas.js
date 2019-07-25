@@ -30,7 +30,7 @@ let validar_tarjeta = new Cleave('.input_numero_tarjeta', {
 let fecha_vencimiento = new Cleave('.input_fecha', {
     date: true,
     datePattern: ['m', 'y']
-});
+})
 
 let cvv = new Cleave('.cvv', {
     blocks: [3],
