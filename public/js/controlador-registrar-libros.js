@@ -183,11 +183,11 @@ let lista_generos = [];
 
 let agregar_generos = async () => {
     let select = document.getElementById("input_generos");
-    lista_generos = obtenerGeneros();
-    let option = document.createElement("option");
+    lista_generos = await obtenerGeneros();
+    
     for(i = 0; i < lista_generos.length; i++)
     {
-        option = lista_generos[i]['genero'];
+        let option = new Option(lista_generos[i]['genero']);
         select.add(option);
     }
     
