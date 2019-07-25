@@ -35,7 +35,6 @@ html {
 #main-admin {
     grid-area: main;
     display: grid;
-    margin: 4rem 10%;
 }
 
 #main-admin #btn-enviar {
@@ -48,6 +47,18 @@ html {
 
 #main-admin button {
     background-color: var(--color-primary);
+}
+
+#main-admin #tabla-filtrado {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+
+#main-admin #barra-busqueda {
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
 }
 
 #main-admin #tabla-filtrado button {
@@ -91,6 +102,12 @@ html {
 #main-admin .upload-img {
     height: 15rem;
     margin-bottom: 5rem;
+}
+
+#main-admin #form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 
 #main-admin #form div {

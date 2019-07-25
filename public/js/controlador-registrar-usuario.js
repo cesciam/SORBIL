@@ -23,6 +23,7 @@ const input_provincia = document.querySelector('#txt-provincia');
 const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
 const input_direccion_exacta= document.querySelector('#txt-direccion-exacta');
+const tipo = 'Al';
 
 const btn_crear_cuenta = document.querySelector('#btn-enviar');
 
