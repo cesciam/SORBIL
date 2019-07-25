@@ -9,7 +9,7 @@ const express = require('express'),
 router.post('/registrar-sucursal', function (req, res) {
     let body = req.body;
 
-    let nuevo_usuario = new Usuario({
+    let nuevo_sucursal = new Sucursal({
         nombre: body.nombre,
         telefono: body.telefono,
         correo: body.correo,

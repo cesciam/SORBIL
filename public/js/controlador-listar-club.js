@@ -16,6 +16,18 @@ let mostrar_tabla = async () => {
         fila.insertCell().innerHTML = lista_clubes[i]['tema'];
         fila.insertCell().innerHTML = lista_clubes[i]['categoria'];
         fila.insertCell().innerHTML = lista_clubes[i]['genero'];
+
+        let celda_perfil = fila.insertCell();
+        let boton_perfil = document.createElement('button');
+        boton_perfil.type = 'button';
+        boton_perfil.innerText = 'Ver perfil';
+        boton_perfil.dataset._id = lista_clubes[i]['_id'];
+
+        celda_perfil.appendChild(boton_perfil);
+
+        boton_perfil.addEventListener('click', function () {
+            window.location.href = `ver-perfil-club.html?_id=${this.dataset._id}`;
+        });
     }
 };
 

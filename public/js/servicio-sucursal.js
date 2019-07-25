@@ -3,7 +3,7 @@
 let registrarSucursal = (pnombre, ptelefono, pcorreo, pprovincia, pcanton, pdistrito) => {
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/registrar-usuario',
+        url: 'http://localhost:4000/api/registrar-sucursal',
         responseType: 'json',
         data: {
             nombre: pnombre,
@@ -11,13 +11,12 @@ let registrarSucursal = (pnombre, ptelefono, pcorreo, pprovincia, pcanton, pdist
             correo: pcorreo,
             provincia: pprovincia,
             canton: pcanton,
-            distrito: pdistrito,
-            
+            distrito: pdistrito,            
         }
     });
 };
 
-let obtenerSucurales= async() => {
+let obtenerSucursales= async() => {
     try {
         // fetch data from an url endpoint
         const response = await axios({

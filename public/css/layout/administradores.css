@@ -46,6 +46,21 @@ html {
     margin-bottom: 5rem;
 }
 
+#main-admin button {
+    background-color: var(--color-primary);
+}
+
+#main-admin #tabla-filtrado button {
+    background-color: var(--color-alternative-blue);
+    color: var(--color-white);
+    border-radius: 0 .4rem .4rem 0;
+}
+
+#main-admin #tabla-filtrado button {
+    box-shadow: var(--shadow-dark-1);
+    transform: translateY(0);
+}
+
 #main-admin .main-admin-titulo {
     text-align: center;
     font-weight: var(--font-semibold);
@@ -74,7 +89,8 @@ html {
 }
 
 #main-admin .upload-img {
-    height: 8rem;
+    height: 15rem;
+    margin-bottom: 5rem;
 }
 
 #main-admin #form div {

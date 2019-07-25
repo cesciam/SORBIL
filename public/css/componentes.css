@@ -158,7 +158,7 @@ Inicio de estilos de formularios
 Fin de estilos formularios
 */
 
-button {
+button, .btn-white, .btn-color {
     position: relative;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
@@ -199,15 +199,25 @@ button:active:after {
 
 /*Estilos del botón blanco*/
 
+.btn-white, .btn-color {
+    padding: var(--box-padding);
+    border-radius: var(--box-radius);
+    text-align: center;
+}
+
+.btn-color {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
 .btn-white {
     background-color: var(--color-white);
     color: var(--color-primary);
 }
 
-.btn-white:hover {
-    background-color: var(--color-white);
-    color: var(--color-primary);
-    opacity: 1;
+.btn-white:hover, .btn-color:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-dark-2);
 }
 
 /* 
