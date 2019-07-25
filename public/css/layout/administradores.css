@@ -89,7 +89,8 @@ html {
 }
 
 #main-admin .upload-img {
-    height: 8rem;
+    height: 15rem;
+    margin-bottom: 5rem;
 }
 
 #main-admin #form div {

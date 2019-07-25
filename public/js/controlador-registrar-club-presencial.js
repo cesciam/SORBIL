@@ -1,5 +1,13 @@
 'use strict';
+// Aqui empiezan todas las variables para subir las fotos a cloudinary
+const imgpreview = document.getElementById('img_preview');
+const uploader_imagen = document.getElementById('img_uploader_portada');
+const progress_bar = document.getElementById('progress_bar');
+const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/fenixsorbil/image/upload';
+const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
+
 // Constantes 
+const img_uploader_imagen = document.querySelector('#portada');
 const input_administrador_club = document.querySelector('#txt-administrador-club');
 const input_tema = document.querySelector('#txt-tema-club');
 const input_telefono = document.querySelector('#txt-telefono');
@@ -12,11 +20,19 @@ const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
 const input_direccion_exacta = document.querySelector('#txt-direccion-exacta');
 const btn_enviar = document.querySelector('#btn-enviar');
-const tipo = 'clubPresencial';
+const tipo = 'clubP';
 
 let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
 
     let error = false;
+
+    if (img_uploader_imagen.src == 'http://localhost:3000/public/imgs/book-placeholder.png') {
+        error = true;
+        img_uploader_imagen.classList.add('input_error');
+
+    } else {
+        img_uploader_imagen.classList.remove('input_error');
+    }
 
     if (pnombre == '') {
         error = true;
@@ -100,6 +116,7 @@ let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, 
 };
 
 let llamar = () => {
+    let src_imagen = img_uploader_imagen.src;;
     let nombre = input_administrador_club.value;
     let tema = input_tema.value;
     let correo = input_correo.value;
@@ -116,7 +133,7 @@ let llamar = () => {
     let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, provincia, canton, distrito, direccion_exacta);
 
     if (error == false) {
-        registrarClub(tipo, nombre, tema, correo, telefono, categoria, genero, fecha, provincia, canton, distrito, direccion_exacta);
+        registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, provincia, canton, distrito, direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

@@ -41,7 +41,7 @@ let validar_credenciales = async (pcorreo, pcontrasena) => {
 
     sessionStorage.setItem('activo', JSON.stringify(peticion.data.usuario));
     let usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
- 
+
 
     // peticion.fail(function (usuario) {
     //     respuesta = usuario;
@@ -50,7 +50,7 @@ let validar_credenciales = async (pcorreo, pcontrasena) => {
 };
 
 
-let obtenerUsuarios = async() => {
+let obtenerUsuarios = async () => {
     try {
         // fetch data from an url endpoint
         const response = await axios({

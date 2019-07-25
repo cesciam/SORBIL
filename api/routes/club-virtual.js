@@ -15,7 +15,7 @@ router.post('/registrar-club', function (req, res) {
     let body = req.body;
 
     let nuevo_club = new Club({
-        //imagen
+        imagen: body.imagen,
         tipo: body.tipo,
         nombre: body.nombre,
         tipo: body.tipo,
@@ -24,7 +24,7 @@ router.post('/registrar-club', function (req, res) {
         telefono: body.telefono,
         categoria: body.categoria,
         genero: body.genero,
-        fecha: body.fecha,
+        fecha: body.fecha
     });
 
 

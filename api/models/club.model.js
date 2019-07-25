@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 //Esquema del registro del club presencial
 
 let club_schema = new mongoose.Schema({
-    //imagen
+    imagen: { type: String, required: false, unique: false },
     tipo: { type: String, required: false, unique: false },
     nombre: { type: String, required: true, unique: false },
     tema: { type: String, required: true, unique: false },
