@@ -19,7 +19,6 @@ router.post('/registrar-usuario', function (req, res) {
         usuario: body.usuario,
         correo: body.correo,
         contrasena: body.contrasena,
-        verfContrasena: body.verfContrasena,
         nombre: body.nombre,
         id: body.id,
         primer_apellido: body.primer_apellido,

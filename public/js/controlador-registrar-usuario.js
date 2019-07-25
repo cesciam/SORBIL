@@ -192,7 +192,7 @@ let llamar = () => {
     let errorCorreo = validarCorreo(correo);
 
     if (error == false && errorCedula == false && errorCorreo == false) {
-        registrarUsuario(src_avatar, usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
+        registrarUsuario(src_avatar, usuario,correo,contrasena, nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
