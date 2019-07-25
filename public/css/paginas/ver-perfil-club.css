@@ -1,0 +1,69 @@
+#main-user {
+    display: grid;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6rem 0;
+}
+
+#club-seccion {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    width: 85%;
+}
+
+#club-seccion img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+#club-seccion h1, h2, h3, h4, p {
+    margin-bottom: 3rem;
+}
+
+#club-title h1 {
+    text-transform: capitalize;
+    text-align: left;
+}
+
+#club-seccion h2 {
+    font-size: 2rem;
+    border-bottom: var(--line);
+    padding-bottom: 1rem;
+    width: 50%;
+}
+
+.club-info #direccion-exacta {
+    font-size: 1.8rem;
+}
+
+.club-info-ubicacion {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-weight: var(--font-semibold);
+}
+
+.club-info-ubicacion span {
+    font-weight: 400;
+}
+
+#club-title #descripcion {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.club-contacto {
+    display: grid;
+    grid-template-columns: 5rem 25rem auto;
+}
+
+.club-contacto p {
+    font-size: 1.8rem;
+}
+
+.club-contacto i {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 2.8rem;
+}

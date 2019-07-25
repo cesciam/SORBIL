@@ -51,6 +51,41 @@ Inicio de estilos del header
     margin-left: auto;
 }
 
+#header-nav-1 .header-user-icons {
+    display: grid;
+    align-items: center;
+    position: relative;
+    top: .1rem;
+}
+
+#header-nav-1 .header-user-icons i {
+    font-size: 2.5rem;
+}
+
+#header-nav-1 .header-user-icons .header-user-container .bx-chevron-down {
+    font-size: 1.6rem;
+    top: -.6rem;
+}
+
+#header-nav-1 .header-user-icons .header-user-container button {
+    width: 100%;
+    background-color: var(--color-white);
+    box-shadow: none;
+    transform: translateY(0);
+    border: 0;
+    padding: 1rem 0;
+}
+
+#header-nav-1 .header-user-icons .header-user-container button:hover {
+    box-shadow: none;
+    transform: translateY(0);
+    border: 0;
+}
+
+#header-nav-1 .header-user-icons .user-notification {
+    left: 2rem;
+}
+
 /*Estilos de la navegación secundaria*/
 
 #header-nav-2 {

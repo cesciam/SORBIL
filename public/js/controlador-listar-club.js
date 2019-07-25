@@ -12,6 +12,7 @@ let mostrar_tabla = async () => {
 
     for (let i = 0; i < lista_clubes.length; i++) {
         let fila = tbody.insertRow();
+        fila.insertCell().innerHTML = lista_clubes[i]['tipo'];
         fila.insertCell().innerHTML = lista_clubes[i]['nombre'];
         fila.insertCell().innerHTML = lista_clubes[i]['tema'];
         fila.insertCell().innerHTML = lista_clubes[i]['categoria'];
@@ -39,8 +40,9 @@ let filtrar_tabla = async () => {
 
 
     for (let i = 0; i < lista_clubes.length; i++) {
-        if (lista_clubes[i]['nombre'].toLowerCase().includes(filtro) || lista_clubes[i]['tema'].toLowerCase().includes(filtro) || lista_clubes[i]['categoria'].toLowerCase().includes(filtro) || lista_clubes[i]['genero'].toLowerCase().includes(filtro)) {
+        if (lista_clubes[i]['tipo'].toLowerCase().includes(filtro) || lista_clubes[i]['nombre'].toLowerCase().includes(filtro) || lista_clubes[i]['tema'].toLowerCase().includes(filtro) || lista_clubes[i]['categoria'].toLowerCase().includes(filtro) || lista_clubes[i]['genero'].toLowerCase().includes(filtro)) {
             let fila = tbody.insertRow();
+            fila.insertCell().innerHTML = lista_clubes[i]['tipo'];
             fila.insertCell().innerHTML = lista_clubes[i]['nombre'];
             fila.insertCell().innerHTML = lista_clubes[i]['tema'];
             fila.insertCell().innerHTML = lista_clubes[i]['categoria'];

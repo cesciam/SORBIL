@@ -231,7 +231,7 @@ Inicio de estilos de los filtros y listados administradores
     grid-template-columns: 1fr auto;
     justify-items: center;
     height: 3rem;
-    width: 90%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -587,6 +587,7 @@ Inicio de estilos del header de las cartas
     transform: translate3d(0, 0, 0);
     transition: all 0.3s;
     border-radius: var(--box-radius);
+    background-color: var(--color-white);
 }
 
 .card-container .card .card-content {

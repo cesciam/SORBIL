@@ -37,3 +37,18 @@ let obtenerClubes = async () => {
         console.log(error);
     }
 };
+
+let obtenerClubid = async (_id) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-club-id/${_id}`,
+            responseType: 'json'
+        });
+
+        return response.data.club;
+    } catch (error) {
+        console.log(error);
+    }
+};

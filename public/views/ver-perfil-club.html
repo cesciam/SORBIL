@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/componentes.css">
-    <link rel="stylesheet" href="../css/paginas/perfil-libro.css">
+    <link rel="stylesheet" href="../css/paginas/ver-perfil-club.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
     <title>Sorbil -- Perfil-libros</title>
 </head>
@@ -56,12 +56,51 @@
 
 
     <main id="main-user">
-        <section id="club-info">
-            <div>
+        <section id="club-seccion">
+
+            <div><img src="../imgs/book-placeholder.png" id="imagen"></div>
+
+            <div id="club-title">
+                <div>
+                    <button>Registrar</button>
+                </div>
+                <h1 id="tema"></h1>
+                <h2 id="fecha"></h2>
+                <!-- <p id="Descripcion"></p> -->
+
+                <div class="club-info">
+                    <h2>Dirección de la empresa</h2>
+                    <div class="club-ubicacion">
+                        <div class="club-info-ubicacion">
+                            <p>Provincia: <span id="provincia"></span></p>
+                            <p>Cantón: <span id="canton"></span></p>
+                            <p>Distrito: <span id="distrito"></span></p>
+                        </div>
+                        <div>
+                            <p id="direccion-exacta"></p>
+                        </div>
+                    </div>
+                    <h2>Información de contacto</h2>
+                    <div class="club-contacto">
+                        <div>
+                            <i class='bx bx-phone-call'></i>
+                            <i class='bx bx-mail-send'></i>
+                        </div>
+                        <div>
+                            <h4>Teléfono:</h4>
+                            <h4>Correo electrónico:</h4>
+                        </div>
+                        <div>
+                            <p id="telefono"></p>
+                            <p id="correo"></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
             </div>
         </section>
-
     </main>
 
     <footer id="footer-user">
@@ -86,8 +125,8 @@
 
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-libros.js"></script>
-    <script src="../js/controlador-perfil-libro.js"></script>
+    <script src="../js/servicio-club.js"></script>
+    <script src="../js/controlador-perfil-club.js"></script>
 </body>
 
 </html>
