@@ -15,4 +15,4 @@ let sucursal_schema = new mongoose.Schema({
     
 });
 
-module.exports = mongoose.model('Sucursal', sucursal_schema);
+module.exports = mongoose.model('Sucursale', sucursal_schema);

@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
+let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, /*pverfContrasena,*/ pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-usuario',
@@ -10,7 +10,6 @@ let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pverfContrasena
             usuario: pusuario,
             correo: pcorreo,
             contrasena: pcontrasena,
-            verfContrasena: pverfContrasena,
             nombre: pnombre,
             id: pid,
             sexo: psexo,
@@ -19,7 +18,9 @@ let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pverfContrasena
             provincia: pprovincia,
             canton: pcanton,
             distrito: pdistrito,
-            direccion_exacta: pdireccionExacta
+            direccion_exacta: pdireccionExacta,
+            direccion_latitud: pdireccion_longitud,
+            direccion_longitud: pdireccion_latitud
         }
     });
 };
@@ -64,3 +65,22 @@ let obtenerUsuarios = async () => {
         console.log(error);
     }
 };
+
+let corlatitud;
+let corlongitud;
+
+let latitud = (platitud) =>{
+    corlatitud = platitud;
+};
+
+let longitud = (plongitud) =>{
+    corlongitud = plongitud;
+};
+
+let enviarLat = () =>{
+    return corlatitud;
+}
+
+let enviarLon = () =>{
+    return corlongitud;
+}

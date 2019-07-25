@@ -70,11 +70,11 @@ function initMap() {
 
     google.maps.event.addListener(marker, 'dragend', function () {
 
-        let latitud = marker.getPosition().lat();
-        let longitud = marker.getPosition().lng();
+        let valuelatitud = marker.getPosition().lat();
+        let valuelongitud = marker.getPosition().lng();
+        longitud(valuelongitud);
+        latitud(valuelatitud);
 
-        let coordenadas = console.log(`${latitud},${longitud}`);
-        return coordenadas;
     });
 
     

@@ -171,7 +171,7 @@ let validarCorreo = (pcorreo) => {
     return errorCorreo;
 };
 
-let llamar = () => {
+let llamar = async() => {
 
     let src_avatar= img_uploader_avatar.src;
     let usuario = input_usuario.value;
@@ -187,13 +187,19 @@ let llamar = () => {
     let canton = input_canton.value;
     let distrito = input_distrito.value;
     let direccion_exacta = input_direccion_exacta.value;
+    let latitud =  await enviarLat();
+    let longitud = await enviarLon();
+
+    
+
+
 
     let error = validar(usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
     let errorCedula = validarCedula(id);
     let errorCorreo = validarCorreo(correo);
 
     if (error == false && errorCedula == false && errorCorreo == false) {
-        registrarUsuario(src_avatar, usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
+        registrarUsuario(src_avatar, usuario,correo,contrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta, longitud, latitud);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
