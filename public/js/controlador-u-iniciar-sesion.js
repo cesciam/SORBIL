@@ -13,7 +13,7 @@ let obtenerDatos = async () => {
     if (!error_blancos) {
         usuario_aceptado = await validar_credenciales(correoo, contrasena);
         if (usuario_aceptado) {
-            window.location.href = '../index.html';
+            window.location.href = '../views/u-inicio.html';
             console.log('Sirve lol el login');
         }
     }
