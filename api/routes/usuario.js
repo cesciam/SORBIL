@@ -14,7 +14,6 @@ router.post('/registrar-usuario', function (req, res) {
         usuario: body.usuario,
         correo: body.correo,
         contrasena: body.contrasena,
-        verfContrasena: body.verfContrasena,
         nombre: body.nombre,
         id: body.id,
         primer_apellido: body.primer_apellido,
@@ -23,7 +22,9 @@ router.post('/registrar-usuario', function (req, res) {
         provincia: body.provincia,
         canton: body.canton,
         distrito: body.distrito,
-        direccion_exacta: body.direccion_exacta
+        direccion_exacta: body.direccion_exacta,
+        direccion_latitud: body.direccion_latitud,
+        direccion_longitud: body.direccion_longitud
     });
 
     nuevo_usuario.save(
