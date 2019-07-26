@@ -133,6 +133,10 @@ label {
     border: 2px solid var(--color-alternative-red) !important;
 }
 
+.ocultar {
+    display: none;
+}
+
 /*
 Inicio de estilos generales de keyframes
 */

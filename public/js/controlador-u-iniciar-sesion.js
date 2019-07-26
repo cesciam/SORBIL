@@ -14,7 +14,7 @@ let obtenerDatos = async () => {
         usuario_aceptado = await validar_credenciales(correoo, contrasena);
         if (usuario_aceptado) {
             window.location.href = '../views/u-inicio.html';
-            console.log('Sirve lol el login');
+            // console.log('¡Bienvenido a Sorbil!');
         }
     }
 };
