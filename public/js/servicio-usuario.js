@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, /*pverfContrasena,*/ pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud) => {
+let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-usuario',
@@ -19,8 +19,8 @@ let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, /*pverfContrase
             canton: pcanton,
             distrito: pdistrito,
             direccion_exacta: pdireccionExacta,
-            direccion_latitud: pdireccion_longitud,
-            direccion_longitud: pdireccion_latitud
+            direccion_latitud: pdireccion_latitud,
+            direccion_longitud: pdireccion_longitud
         }
     });
 };
@@ -66,6 +66,22 @@ let obtenerUsuarios = async () => {
     }
 };
 
+let obtenerUsuarioCorreo = async(correo) => {
+    try {
+        
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-usuario-correo/${correo}`,
+            responseType: 'json'
+        });
+
+        return response.data.usuario;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+// Funciones para obtener coordenadas de google maps
 let corlatitud;
 let corlongitud;
 
