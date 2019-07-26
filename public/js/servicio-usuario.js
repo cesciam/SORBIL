@@ -66,6 +66,22 @@ let obtenerUsuarios = async () => {
     }
 };
 
+let obtenerUsuarioCorreo = async(correo) => {
+    try {
+        
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-usuario-correo/${correo}`,
+            responseType: 'json'
+        });
+
+        return response.data.usuario;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+// Funciones para obtener coordenadas de google maps
 let corlatitud;
 let corlongitud;
 

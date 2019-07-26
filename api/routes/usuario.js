@@ -9,7 +9,11 @@ router.param('_id', function (req, res, next, _id) {
     next();
 });
 
-//Definición de la ruta para registrar contactos
+router.param('correo', function(req, res, next, correo) {
+    req.body.correo = correo;
+    next();
+});
+
 
 router.post('/registrar-usuario', function (req, res) {
     let body = req.body;
@@ -75,7 +79,6 @@ router.post('/validar-credenciales', function (req, res) {
     )
 });
 
-
 router.get('/listar-usuarios', function (req, res) {
     Usuario.find(function (err, usuariosBD) {
         if (err) {
@@ -110,5 +113,21 @@ router.get('/buscar-usuario-id/:_id', function (req, res) {
     })
 });
 
+router.get('/buscar-usuario-correo/:correo', function(req, res) {
+    Usuario.find({ correo: req.body.correo }, function(err, usuarioBD) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontró ningún usuario con ese correo',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                usuario: usuarioBD
+            });
+        }
+    })
+});
 
 module.exports = router;
