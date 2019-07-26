@@ -95,7 +95,14 @@
                             Distrito</option>
                     </select>
                 </div>
-            </div>
+
+                <div class="input-group">
+                    <div>
+                        <h2>Seleccioná la ubicación de la sucursal en el mapa</h2>
+                    </div>
+                    <div id="map"></div>
+                </div>
+
             </div>
             <button id="btn-enviar" type="button">Registrar</button>
         </form>
@@ -175,11 +182,14 @@
     </footer>
 
     <!--Scripts-->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnj4Pk6sSOX5m4uxn8jO9VN2YjMUR7iO4&callback=initMap"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <script src="../js/componentes/controlador-select.js"></script>
+    <script src="../js/componentes/controlador-map.js"></script>
     <script src="../js/servicio-sucursal.js"></script>
     <script src="../js/controlador-registrar-sucursal.js"></script>
 </body>

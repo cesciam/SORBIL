@@ -87,20 +87,22 @@ let validarCorreo = (pcorreo) => {
     return errorCorreo;
 };
 
-let llamar = () => {
+let llamar = async () => {
     let nombre = input_nombre.value;
     let telefono = input_telefono.value;
     let correo = input_correo.value;
     let provincia = input_provincia.value;
     let canton = input_canton.value;
     let distrito = input_distrito.value;
+    let latitud =  await enviarLat();
+    let longitud = await enviarLon();
     
     let error = validar(nombre, telefono, correo, provincia, canton, distrito);
     let errorTelefono = validarTelefono(telefono);
     let errorCorreo = validarCorreo(correo);
 
     if (error == false && errorTelefono == false && errorCorreo == false) {
-        registrarSucursal(nombre, telefono, correo, provincia, canton, distrito);
+        registrarSucursal(nombre, telefono, correo, provincia, canton, distrito, latitud, longitud);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

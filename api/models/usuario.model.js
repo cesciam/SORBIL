@@ -17,7 +17,7 @@ let usuario_schema = new mongoose.Schema({
     sexo: {type: String, required: true, unique: false},
     provincia: {type: String, required: true, unique: false},
     canton: {type: String, required: true, unique: false},
-    distrito: {type: String, required: true, unique: false},
+    distrito: {type: String, required: true, unique: false},    
     direccion_exacta: {type: String, required: true, unique: false},
     direccion_latitud: {type: Number, required: true, unique: false},
     direccion_longitud: {type: Number, required: true, unique: false}
