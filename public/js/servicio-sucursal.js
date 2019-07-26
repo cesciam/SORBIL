@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarSucursal = (pnombre, ptelefono, pcorreo, pprovincia, pcanton, pdistrito) => {
+let registrarSucursal = (pnombre, ptelefono, pcorreo, pprovincia, pcanton, pdistrito, pdireccion_latitud, pdireccion_longitud) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-sucursal',
@@ -11,7 +11,9 @@ let registrarSucursal = (pnombre, ptelefono, pcorreo, pprovincia, pcanton, pdist
             correo: pcorreo,
             provincia: pprovincia,
             canton: pcanton,
-            distrito: pdistrito,            
+            distrito: pdistrito,   
+            direccion_latitud: pdireccion_latitud,
+            direccion_longitud: pdireccion_longitud         
         }
     });
 };
@@ -30,3 +32,22 @@ let obtenerSucursales= async() => {
         console.log(error);
     }
 };
+
+let corlatitud;
+let corlongitud;
+
+let latitud = (platitud) =>{
+    corlatitud = platitud;
+};
+
+let longitud = (plongitud) =>{
+    corlongitud = plongitud;
+};
+
+let enviarLat = () =>{
+    return corlatitud;
+}
+
+let enviarLon = () =>{
+    return corlongitud;
+}

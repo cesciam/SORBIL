@@ -75,7 +75,5 @@ function initMap() {
         longitud(valuelongitud);
         latitud(valuelatitud);
 
-    });
-
-    
+    });    
 }

@@ -189,17 +189,14 @@ let llamar = async() => {
     let direccion_exacta = input_direccion_exacta.value;
     let latitud =  await enviarLat();
     let longitud = await enviarLon();
+  
 
-    
-
-
-
-    let error = validar(usuario,correo,contrasena,verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
+    let error = validar(usuario,correo,contrasena, verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
     let errorCedula = validarCedula(id);
     let errorCorreo = validarCorreo(correo);
 
     if (error == false && errorCedula == false && errorCorreo == false) {
-        registrarUsuario(src_avatar, usuario,correo,contrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta, longitud, latitud);
+        registrarUsuario(src_avatar, usuario,correo,contrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta, latitud, longitud);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
