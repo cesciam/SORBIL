@@ -247,7 +247,7 @@ Inicio de estilos de los filtros y listados administradores
     width: 110%;
 }
 
-#barra-busqueda button {
+/* #barra-busqueda button {
     background-color: var(--color-alternative-blue);
     color: var(--color-white);
     border-radius: 0 .4rem .4rem 0;
@@ -256,7 +256,7 @@ Inicio de estilos de los filtros y listados administradores
 #barra-busqueda button:hover {
     box-shadow: var(--shadow-dark-1);
     transform: translateY(0);
-}
+} */
 
 /*
 Fin de estilos de la barra de búsqueda
@@ -347,6 +347,10 @@ Inicio de estilos del header de usuario
 
 .header-icon i:hover {
     color: var(--color-primary);
+}
+
+.mini-photo-wrapper{
+    cursor: pointer;
 }
 
 .mini-photo-wrapper i {

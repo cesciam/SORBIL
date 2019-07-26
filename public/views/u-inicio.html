@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/paginas/index.css">
+    <link rel="stylesheet" href="../css/paginas/u-inicio.css">
     <link rel="stylesheet" href="../vendors/glide-3.3.0/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="../vendors/glide-3.3.0/dist/css/glide.theme.min.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
@@ -31,7 +32,7 @@
                 <a href="u-contacto.html"><i class='bx bx-mail-send'></i>Contacto</a>
             </nav>
 
-            <div class="header-user-icons">
+            <div id="nav-inicio" class="header-user-icons">
                 <div class="header-user-container">
                     <a class="header-icon" href="#"><i class='bx bx-cart-alt'></i>
                         <span class="user-notification">1</span>
@@ -42,18 +43,16 @@
                         <span class="user-notification">1</span>
                     </a>
                 </div>
-
                 <div class="header-user-container user-menu-wrap"><b class="mini-photo-wrapper" href="#"><img
                             class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
                             class='bx bx-chevron-down'></i></b>
                     <div class="menu-user-container">
                         <ul class="user-menu">
-                            <button class="user-menu-link" href="#">Perfil</button>
-                            <button class="user-menu-link" href="#">Cerrar sesión</button>
+                            <a class="user-menu-link" href="#">Perfil</a>
+                            <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
                         </ul>
                     </div>
                 </div>
-
             </div>
 
         </div>
@@ -72,57 +71,17 @@
     <!--Main-->
     <!--Main-->
     <main id="main-user">
-    
+
         <section id="main-user-section-banner">
-    
+
             <div class="main-user-call-banner">
-                <h1>Comenzá a leer con Sorbil</h1>
-                <p>¡Adquirí e intercambiá tus libros favoritos y mucho más!</p>
-                <a class="btn-color" href="views/u-registrar-usuario.html">Descubrir<i class='bx bx-chevron-right'></i></a>
+                <h1>Encontrá los libros que deseas adquirir</h1>
+                <input id="txt-filtro" type="text" placeholder="Buscar por / título / autor / categoría / género / ISBN"
+                    aria-label="Buscar por / título / autor / categoría / género / ISBN">
             </div>
-    
-            <div class="glide">
-                <div class="glide__track" data-glide-el="track">
-                    <ul class="glide__slides">
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="../imgs/libro.png" alt=""></a></li>
-                    </ul>
-                </div>
-    
-                <!-- Estilo flechas de navegación -->
-                <!--<div class="glide__arrows" data-glide-el="controls">
-                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-                        </div>  -->
-    
-                <!-- Estilo bullets (puntos) -->
-                <!-- <div class="glide__bullets" data-glide-el="controls[nav]">
-                        <button class="glide__bullet" data-glide-dir="=0"></button>
-                        <button class="glide__bullet" data-glide-dir="=1"></button>
-                        <button class="glide__bullet" data-glide-dir="=2"></button>
-                        <button class="glide__bullet" data-glide-dir="=3"></button>
-                        <button class="glide__bullet" data-glide-dir="=4"></button>
-                    </div> -->
-    
-            </div>
-    
+
         </section>
-    
+
     </main>
 
     <footer id="footer-user">
@@ -153,6 +112,7 @@
     <script src="../vendors/glide-3.3.0/dist/glide.min.js"></script>
     <script src="../js/componentes/controlador-slider.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+    <!-- <script src="../js/componentes/controlador-nav.js"></script> -->
 </body>
 
 </html>

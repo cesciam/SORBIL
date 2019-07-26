@@ -120,6 +120,25 @@ Fin de estilos del header
 */
 
 /*
+Inicio de estilos generales del main
+*/
+
+#txt-filtro {
+    width: 55%;
+    margin-top: 5rem;
+    transition: all .2s;
+    box-shadow: var(--shadow-dark-1);
+}
+
+#txt-filtro:focus {
+    width: 60%;
+}
+
+/*
+Fin de estilos generales del main
+*/
+
+/*
 Inicio de estilos del footer
 */
 
