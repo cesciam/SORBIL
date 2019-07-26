@@ -212,7 +212,7 @@ let validarCorreo = (pcorreo) => {
 // let validarTelefono = (ptelefono) => {
 
 //     let errorTelefono = false;
-//     let telefonoValido = /^[1-9]-?\d{4}-?\d{4}$/;
+//     let telefonoValido = /^[1-8]\d{4}-?\d{4}$/;
 
 //     if (!telefonoValido.test(ptelefono)) {
 //         errorTelefono = true;
@@ -225,10 +225,10 @@ let validarCorreo = (pcorreo) => {
 // };
 
 function calcularEdad(pfecha) {
-    var hoy = new Date();
-    var nacimiento = new Date(pfecha);
-    var edad = hoy.getFullYear() - nacimiento.getFullYear();
-    var m = hoy.getMonth() - nacimiento.getMonth();
+    let hoy = new Date();
+    let nacimiento = new Date(pfecha);
+    let edad = hoy.getFullYear() - nacimiento.getFullYear();
+    let m = hoy.getMonth() - nacimiento.getMonth();
     if (m < 0 || (m === 0 && hoy.getDate() < nacimiento.getDate())) {
         edad--;
     }
