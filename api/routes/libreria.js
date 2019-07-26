@@ -16,10 +16,11 @@ router.post('/registrar-libreria', function (req, res) {
     let body = req.body;
 
     let nueva_libreria = new libreria({
-        avatar: body.avatar,
+        //Info de la librería
+        imagen: body.imagen,
         usuario: body.usuario,
         correo: body.correo,
-        contrasenna: body.contrasenna,
+        contrasena: body.contrasena,
         empresa: body.empresa,
         telefono: body.telefono,
         descripcion: body.descripcion,
@@ -27,7 +28,17 @@ router.post('/registrar-libreria', function (req, res) {
         canton: body.canton,
         distrito: body.distrito,
         direccion_exacta: body.direccion_exacta,
-        geoloc: body.geoloc
+        direccion_latitud: body.direccion_latitud,
+        direccion_longitud: body.direccion_longitud,
+        //Info del administrador
+        avatar: body.avatar,
+        nombre: body.nombre,
+        primer_apellido: body.primer_apellido,
+        segundo_apellido: body.segundo_apellido,
+        id: body.id,
+        fecha: body.fecha,
+        edad: body.edad,
+        tipo_usuario: body.tipo_usuario
     });
 
 

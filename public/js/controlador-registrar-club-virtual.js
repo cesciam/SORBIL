@@ -16,7 +16,7 @@ const input_categoria = document.querySelector('#txt-categoria');
 const input_genero = document.querySelector('#txt-genero');
 const input_fecha = document.querySelector('#txt-fecha');
 const btn_enviar = document.querySelector('#btn-enviar');
-const tipo = 'Club Virtual';
+let tipo = 'Club Virtual';
 
 let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha) => {
 
@@ -71,7 +71,6 @@ let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha) 
     } else {
         input_genero.classList.remove('input_error');
     }
-
 
     if (pfecha == 'Invalid Date') {
         error = true;

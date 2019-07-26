@@ -22,8 +22,8 @@ const input_sexo = document.querySelector('#txt-sexo');
 const input_provincia = document.querySelector('#txt-provincia');
 const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
-const input_direccion_exacta= document.querySelector('#txt-direccion-exacta');
-const tipo = 'Al';
+const input_direccion_exacta = document.querySelector('#txt-direccion-exacta');
+let tipo_usuario = 'u';
 
 const btn_crear_cuenta = document.querySelector('#btn-enviar');
 
@@ -31,10 +31,10 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
 
     let error = false;
 
-    if (img_uploader_avatar.src == 'http://localhost:3000/public/imgs/avatar-placeholder.png'){
+    if (img_uploader_avatar.src == 'http://localhost:3000/public/imgs/avatar-placeholder.png') {
         error = true;
         img_uploader_avatar.classList.add('input_error');
-        
+
     } else {
         img_uploader_avatar.classList.remove('input_error');
     }
@@ -51,8 +51,8 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
         input_correo.classList.add('input_error');
     } else {
         input_correo.classList.remove('input_error');
-    }   
-    
+    }
+
     if (pcontrasena == '') {
         error = true;
         input_contrasena.classList.add('input_error');
@@ -71,10 +71,10 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
         error = true;
         input_contrasena.classList.add('input_error');
         input_verf_contrasena.classList.add('input_error');
-    }else {
+    } else {
         input_verf_contrasena.classList.remove('input_error');
     }
-    
+
     if (pnombre == '') {
         error = true;
         input_nombre.classList.add('input_error');
@@ -142,13 +142,13 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
 };
 
 let validarCedula = (pidentificacion) => {
-    
+
     let errorCedula = false;
     let cedulaValida = /^[1-9]-?\d{4}-?\d{4}$/;
 
-    if(!cedulaValida.test(pidentificacion)){
+    if (!cedulaValida.test(pidentificacion)) {
         errorCedula = true;
-        input_id.classList.add('input_error');        
+        input_id.classList.add('input_error');
     }
     else {
         input_id.classList.remove('input_error');
@@ -157,13 +157,13 @@ let validarCedula = (pidentificacion) => {
 };
 
 let validarCorreo = (pcorreo) => {
-    
+
     let errorCorreo = false;
     let correoValido = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
-    if(!correoValido.test(pcorreo)){
+    if (!correoValido.test(pcorreo)) {
         errorCorreo = true;
-        input_correo.classList.add('input_error');        
+        input_correo.classList.add('input_error');
     }
     else {
         input_correo.classList.remove('input_error');
@@ -171,9 +171,9 @@ let validarCorreo = (pcorreo) => {
     return errorCorreo;
 };
 
-let llamar = async() => {
+let llamar = async () => {
 
-    let src_avatar= img_uploader_avatar.src;
+    let src_avatar = img_uploader_avatar.src;
     let usuario = input_usuario.value;
     let correo = input_correo.value;
     let contrasena = input_contrasena.value;
@@ -181,34 +181,34 @@ let llamar = async() => {
     let nombre = input_nombre.value;
     let id = input_id.value;
     let primer_apellido = input_primer_apellido.value;
-    let segundo_apellido  = input_segundo_apellido.value;
+    let segundo_apellido = input_segundo_apellido.value;
     let sexo = input_sexo.value;
     let provincia = input_provincia.value;
     let canton = input_canton.value;
     let distrito = input_distrito.value;
     let direccion_exacta = input_direccion_exacta.value;
-    let latitud =  await enviarLat();
+    let latitud = await enviarLat();
     let longitud = await enviarLon();
-  
 
-    let error = validar(usuario,correo,contrasena, verfContrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta);
+
+    let error = validar(usuario, correo, contrasena, verfContrasena, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta);
     let errorCedula = validarCedula(id);
     let errorCorreo = validarCorreo(correo);
 
     if (error == false && errorCedula == false && errorCorreo == false) {
-        registrarUsuario(src_avatar, usuario,correo,contrasena,nombre,id,primer_apellido,segundo_apellido,sexo,provincia,canton,distrito,direccion_exacta, latitud, longitud);
+        registrarUsuario(src_avatar, usuario, correo, contrasena, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta, latitud, longitud);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
-        })    
-    }         
+        })
+    }
     else {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',
             text: 'Revisá los campos resaltados e intentalo de nuevo'
         })
-    }    
+    }
 };
 
 btn_crear_cuenta.addEventListener('click', llamar);

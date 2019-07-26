@@ -1,23 +1,34 @@
 'use strict';
 
-let registrarLibreria = (pavatar, pusuario, pcorreo, pcontrasenna, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pgeoloc) => {
+let registrarLibreria = (pimagen, pusuario, pcorreo, pcontrasena, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud, pavatar, pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha, pedad, ptipo_usuario) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libreria',
         responseType: 'json',
         data: {
-            avatar: pavatar,
-            usuario:pusuario,
-            correo:pcorreo,
-            contrasenna:pcontrasenna,
-            empresa:pempresa,
-            telefono:ptelefono,
-            descripcion:pdescripcion,
-            provincia:pprovincia,
-            canton:pcanton,
-            distrito:pdistrito,
+            //Info de la librería
+            imagen: pimagen,
+            usuario: pusuario,
+            correo: pcorreo,
+            contrasena: pcontrasena,
+            empresa: pempresa,
+            telefono: ptelefono,
+            descripcion: pdescripcion,
+            provincia: pprovincia,
+            canton: pcanton,
+            distrito: pdistrito,
             direccion_exacta: pdireccion_exacta,
-            geoloc: pgeoloc
+            direccion_latitud: pdireccion_latitud,
+            direccion_longitud: pdireccion_longitud,
+            //Info del administrador
+            avatar: pavatar,
+            nombre: pnombre,
+            primer_apellido: pprimer_apellido,
+            segundo_apellido: psegundo_apellido,
+            id: pid,
+            fecha: pfecha,
+            edad: pedad,
+            tipo_usuario: ptipo_usuario
         }
     });
 };
@@ -51,3 +62,23 @@ let obtenerLibreriaid = async (_id) => {
         console.log(error);
     }
 };
+
+// Funciones para obtener coordenadas de google maps
+let corlatitud;
+let corlongitud;
+
+let latitud = (platitud) => {
+    corlatitud = platitud;
+};
+
+let longitud = (plongitud) => {
+    corlongitud = plongitud;
+};
+
+let enviarLat = () => {
+    return corlatitud;
+}
+
+let enviarLon = () => {
+    return corlongitud;
+}
