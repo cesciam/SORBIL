@@ -34,6 +34,8 @@
                             <li class="progress-bar__dot"></li>
                             <li class="progress-bar__connector"></li>
                             <li class="progress-bar__dot"></li>
+                            <li class="progress-bar__connector"></li>
+                            <li class="progress-bar__dot"></li>
                         </ul>
                     </div>
                 </div>
@@ -43,7 +45,15 @@
 
                         <!--Paso 1 del formulario-->
                         <div class="step step1">
+                            <div>
+                                <div class="upload-img">
+                                    <img src="../imgs/book-placeholder.png" alt="Subir imagen de registro" class="img_registro_libro" id="portada">
+                                    <label for="file">Subir logotipo</label>
+                                    <button id="btnSeleccionarImagen" type="button" id="img-uploader-portada" class="upload-msg"></button>
+                                </div>
+                            </div>
                             <div class="input-dos-columnas">
+                                
                                 <div class="input-group">
                                     <label for="#">Nombre de usuario</label>
                                     <input id="txt-usuario" type="text" placeholder="Ingrese el nombre de usuario"
@@ -58,13 +68,13 @@
                                 </div>
                                 <div class="input-group">
                                     <label for="#">Contraseña</label>
-                                    <input id="txt-contrasenna" type="password" placeholder="Ingrese la contaseña"
+                                    <input id="txt-contrasena" type="password" placeholder="Ingrese la contaseña"
                                         aria-label="Ingrese la contaseña">
                                 </div>
 
                                 <div class="input-group">
                                     <label for="#">Verificación de contraseña</label>
-                                    <input id="txt-verificacion-contrasenna" type="password"
+                                    <input id="txt-verificacion-contrasena" type="password"
                                         placeholder="Ingrese la contaseña" aria-label="Ingrese la contaseña">
                                 </div>
                             </div>
@@ -73,15 +83,6 @@
                         <div class="step step2 hidden">
                             <div>
                                 <h2>Información de la librería</h2>
-                            </div>
-                            <div>
-                                <div class="upload-img">
-                                    <img src="../imgs/book-placeholder.png" alt="Subir imagen de registro"
-                                        class="img_registro_libro" id="portada">
-                                    <label for="file">Sube una imagen</label>
-                                    <button id="btnSeleccionarImagen" type="button" id="img-uploader-portada"
-                                        class="upload-msg"></button>
-                                </div>
                             </div>
                             <div class="input-dos-columnas">
                                 <div class="input-group">
@@ -93,7 +94,7 @@
                                     <div class="input-group">
                                         <label for="#">Teléfono</label>
                                         <input id="txt-telefono" type="tel" placeholder="Ingresar el teléfono"
-                                            aria-label="Ingresar el teléfono">
+                                            aria-label="Ingresar el teléfono" maxlength="8">
                                     </div>
                                 </div>
                             </div>
@@ -143,13 +144,55 @@
                         <!--Paso 4 del formulario-->
                         <div class="step step4 hidden">
                             <div>
-                                <h2>Selecciona la ubicación en el mapa</h2>
+                                <h2>Arrastra la ubicación en el mapa</h2>
                             </div>
                             <div id="map"></div>
                         </div>
+                        <!--Paso 5 del formulario-->
+                        <div class="step step5 hidden">
+                            <div>
+                                <h2>Tu información personal</h2>
+                            </div>
+                            <div class="upload-img">
+                                <img class="img_registro_libro" id="contraportada" src="../imgs/avatar-placeholder.png"></img>
+                                <label for="file">Subir avatar</label>
+                                <button id="btnSeleccionarImagen2" type="button" id="img-uploader-portada" class="upload-msg"></button>
+                            </div>
+                            <div class="input-dos-columnas">
+                                <div class="input-group">
+                                    <label for="#">Nombre</label>
+                                    <input id="txt-nombre" type="text" placeholder="Nombre" aria-label="Nombre">
+                                </div>
+                            
+                                <div class="input-group">
+                                    <label for="#">Identificación</label>
+                                    <input id="txt-id" type="text" placeholder="Formato: 0-0000-0000" aria-label="Identificación" maxlength="9">
+                                </div>
+                            </div>
+                            
+                            <div class="input-dos-columnas">
+                                <div class="input-group">
+                                    <label for="#">Primer apellido</label>
+                                    <input id="txt-primer-apellido" type="text" placeholder="Primer apellido" aria-label="Primer apellido">
+                                </div>
+                            
+                                <div class="input-group">
+                                    <label for="#">Segundo apellido</label>
+                                    <input id="txt-segundo-apellido" type="text" placeholder="Segundo apellido" aria-label="Segundo apellido">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="txt-group">
+                                    <div>
+                                        <label for="#">fecha de nacimiento</label>
+                                        <input id="txt-fecha" type="date" placeholder="Ingresar su fecha de nacimiento"
+                                            aria-label="Ingresar su fecha de nacimiento">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!--Botones del formulario-->
                         <div class="form-btns">
-
                             <div class="center-btns">
                                 <div>
                                     <button id="previous" class="disabled button" disabled>
@@ -189,7 +232,7 @@
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnj4Pk6sSOX5m4uxn8jO9VN2YjMUR7iO4&callback=initMap"></script>
     <script src="../js/componentes/controlador-map.js"></script>
-    <script src="../js/componentes/controlador-form-step4.js"></script>
+    <script src="../js/componentes/controlador-form-step5.js"></script>
     <script src="../js/componentes/controlador-select.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js"

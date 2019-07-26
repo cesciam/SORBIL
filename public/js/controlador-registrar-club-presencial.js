@@ -20,7 +20,7 @@ const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
 const input_direccion_exacta = document.querySelector('#txt-direccion-exacta');
 const btn_enviar = document.querySelector('#btn-enviar');
-const tipo = 'Club Presencial';
+let tipo = 'Club Presencial';
 
 let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
 
