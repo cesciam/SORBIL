@@ -92,7 +92,7 @@ let llamar = () => {
     let genero = input_genero.value;
     let fecha = new Date(input_fecha.value);
 
-    let error = validar(tipo, nombre, tema, correo, telefono, categoria, genero, fecha);
+    let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha,);
 
     if (error == false) {
         registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha);
