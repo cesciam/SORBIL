@@ -18,13 +18,13 @@ router.post('/registrar-club', function (req, res) {
         imagen: body.imagen,
         tipo: body.tipo,
         nombre: body.nombre,
-        tipo: body.tipo,
         tema: body.tema,
         correo: body.correo,
         telefono: body.telefono,
         categoria: body.categoria,
         genero: body.genero,
-        fecha: body.fecha
+        fecha: body.fecha,
+        descripcion: body.descripcion,
     });
 
 

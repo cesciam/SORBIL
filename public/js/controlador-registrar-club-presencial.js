@@ -19,10 +19,12 @@ const input_provincia = document.querySelector('#txt-provincia');
 const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
 const input_direccion_exacta = document.querySelector('#txt-direccion-exacta');
-const btn_enviar = document.querySelector('#btn-enviar');
+const input_descripcion = document.querySelector('#txt-descripcion');
 let tipo = 'Club Presencial';
 
-let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
+const btn_enviar = document.querySelector('#btn-enviar');
+
+let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
 
     let error = false;
 
@@ -83,6 +85,13 @@ let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, 
         input_fecha.classList.remove('input_error');
     }
 
+    if (pdescripcion == '') {
+        error = true;
+        input_descripcion.classList.add('input_error');
+    } else {
+        input_descripcion.classList.remove('input_error');
+    }
+
     if (pprovincia == '') {
         error = true;
         input_provincia.classList.add('input_error');
@@ -114,6 +123,21 @@ let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, 
     return error;
 };
 
+let validarCorreo = (pcorreo) => {
+
+    let errorCorreo = false;
+    let correoValido = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+    if (!correoValido.test(pcorreo)) {
+        errorCorreo = true;
+        input_correo.classList.add('input_error');
+    }
+    else {
+        input_correo.classList.remove('input_error');
+    }
+    return errorCorreo;
+};
+
 let llamar = () => {
     let src_imagen = img_uploader_imagen.src;;
     let nombre = input_administrador_club.value;
@@ -127,12 +151,15 @@ let llamar = () => {
     let canton = input_canton.value;
     let distrito = input_distrito.value;
     let direccion_exacta = input_direccion_exacta.value;
+    let descripcion = input_descripcion.value;
+
     
 
-    let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, provincia, canton, distrito, direccion_exacta);
+    let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, descripcion, provincia, canton, distrito, direccion_exacta);
+    let errorCorreo = validarCorreo(correo);
 
-    if (error == false) {
-        registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, provincia, canton, distrito, direccion_exacta);
+    if (error == false && errorCorreo == false) {
+        registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, descripcion, provincia, canton, distrito, direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
