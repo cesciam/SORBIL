@@ -565,11 +565,32 @@ Inicio de estilos del header de las cartas
 .card-container {
     display: grid;
     justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .card-container .card .card-content a {
     margin-bottom: 1rem;
     font-size: 1.4rem;
+}
+
+.card-container img {
+
+    width: 100%;
+}
+
+.card-container h2 {
+
+    text-align: center;
+}
+
+.card-container p {
+    
+    text-align: center;
+}
+
+.card-container button {
+    
+    margin: 30px;
 }
 
 .card-container .card:hover {

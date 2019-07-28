@@ -10,8 +10,7 @@ let llenar_perfil = async() => {
     let usuario = await obtenerUsuarioCorreo(correo);
     if (usuario) {
         txt_nombre.innerHTML = usuario['nombre'];
-        txt_correo.innerHTML = usuario['correo'];
-       
+        txt_correo.innerHTML = usuario['correo'];    
     }
 };
 
