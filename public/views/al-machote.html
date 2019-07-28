@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Perfil del usuario</title>
+    <title>Sorbil -- Plataforma -- XXX</title>
 </head>
 
 <body id="grid-admin">
@@ -19,7 +19,7 @@
     <!--Header-->
     <header id="header-admin">
 
-        <h3 class="header-text">Área del usuario</h3>
+        <h3 class="header-text">Área del administrador de plataforma</h3>
 
         <div class="header-user-icons">
             <div class="header-user-container">
@@ -29,7 +29,7 @@
             </div>
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification">6</span>
+                    <span class="user-notification">1</span>
                 </a>
             </div>
 
@@ -50,12 +50,7 @@
 
     <!--Main-->
     <main id="main-admin">
-        <div class="main-admin-titulo">
-            <h1>Plataforma del usuario</h1>
-            <p>En esta plataforma podés administrar tu perfil</p>
-            <h2>Saludos <span id="txt_nombre"></span> </h2>
-            <p>Su correo electrónico es <span id="txt_correo"></span></p>
-        </div>
+
     </main>
 
     <!--Aside-->
@@ -64,51 +59,13 @@
         <div class="sidebar">
 
             <div class="sidenav-menu">
-                <a class="logo" href="../views/ver-perfil-usuario.html"><img src="../imgs/logo.png" alt="logo de Sorbil"></a>
+                <a class="logo" href="../views/ver-perfil-administrador-libreria.html"><img src="../imgs/logo.png"
+                        alt="logo de Sorbil"></a>
             </div>
 
             <ul class="sidenav-list">
-                <li class="sidenav-list-item"><a href="../views/ver-perfil-usuario.html"><i
+                <li class="sidenav-list-item"><a href="../views/ver-perfil-administrador-libreria.html"><i
                             class='bx bx-home sidenav-i'></i>Inicio</a>
-                </li>
-
-                <li class="sidenav-list-item"><a href="../views/u-registro-tarjetas.html"><i
-                            class='bx bxs-credit-card sidenav-i'></i>Tarjetas de crédito</a>
-                </li>
-                
-                <li class="sidenav-list-item">
-                    <a href="#" class="sidenav-btn dropdown-toggle">
-                        <i class='bx bx-list-plus'></i>
-                        Historiales
-                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <div class="sidenav-small-menu dropdown-menu">
-                        <a href="../views/u-calficaciones-libros.html">Calificaciones de libros</a>
-                        <a href="../views/u-lista-intercambios.html">Intercambios</a>
-                        <a href="../views/u-lista-compras.html">Compras</a>
-                    </div>
-                </li>
-                <li class="sidenav-list-item">
-                    <a href="#" class="sidenav-btn dropdown-toggle">
-                        <i class='bx bxs-bell'></i>
-                        Notificaciones
-                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <div class="sidenav-small-menu dropdown-menu">
-                        <a href="../views/u-notificacion-intercambios.html">Intercambios nuevos</a>
-                    </div>
-                </li>
-
-                <li class="sidenav-list-item">
-                    <a href="#" class="sidenav-btn dropdown-toggle">
-                        <i class='bx bxs-lock'></i>
-                        Seguridad
-                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <div class="sidenav-small-menu dropdown-menu">
-                        <a href="../views/u-cambiar-contrasena.html">Cambiar contraseña</a>
-                        <a href="../views/u-desactivar-perfil.html">Desactivar perfil</a>
-                    </div>
                 </li>
 
                 <li class="sidenav-list-item">
@@ -118,7 +75,11 @@
                         <div class="chevron"><i class='bx bx-chevron-down'></i></div>
                     </a>
                     <div class="sidenav-small-menu dropdown-menu">
-                        <a href="../views/u-seleccionar-club.html">Club de lectura</a>
+                        <a href="../views/al-registrar-libro.html">Libro</a>
+                        <a href="../views/al-registrar-categorias.html">Categorías</a>
+                        <a href="../views/al-registrar-generos.html">Géneros</a>
+                        <a href="../views/al-registrar-oferta.html">Ofertas</a>
+                        <a href="../views/al-seleccionar-club.html">Club de lectura</a>
                     </div>
                 </li>
 
@@ -129,13 +90,31 @@
                         <div class="chevron"><i class='bx bx-chevron-down'></i></div>
                     </a>
                     <div class="sidenav-small-menu dropdown-menu">
-                        <a href="../views/u-listar-libros.html">Libros</a>
-                        <a href="../views/u-listar-clubles.html">Clubes de lectura</a>
-                        <a href="../views/u-compras.html">Compras</a>
+                        <a href="../views/al-listar-libros.html">Libros</a>
+                        <a href="../views/al-listar-usuarios.html">Usuarios</a>
+                        <a href="../views/al-listar-sucursales.html">Sucursales</a>
+                        <a href="../views/al-listar-autores.html">Autores</a>
+                        <a href="../views/al-listar-intercambios.html">Intercambios</a>
+                        <a href="../views/al-listar-ofertas.html">Ofertas</a>
+                        <a href="../views/al-listar-categorias.html">Categorías</a>
+                        <a href="../views/al-listar-generos.html">Géneros</a>
+                        <a href="../views/al-listar-clubes.html">Clubes de lectura</a>
                     </div>
                 </li>
+
+                <li class="sidenav-list-item"><a href="al-reportes.html"><i
+                            class='bx bxs-report sidenav-i'></i>Reportes</a>
+                </li>
+
+                <li class="sidenav-list-item"><a href="../views/al-ventas.html"><i
+                            class='bx bx-dollar-circle sidenav-i'></i>Ventas</a></li>
+
+                <li class="sidenav-list-item"><a href="../views/al-bitactoras.html"><i
+                            class='bx bx-loader-alt sidenav-i'></i>Bitácora</a></li>
             </ul>
+
         </div>
+
     </aside>
 
     <!--Footer-->
@@ -147,8 +126,6 @@
     <!--Scripts-->
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/servicio-usuario.js"></script>
-    <script src="../js/controlador-perfil-usuario.js"></script>
 
 </body>
 
