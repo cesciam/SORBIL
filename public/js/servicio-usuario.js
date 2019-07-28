@@ -113,3 +113,19 @@ let registrarTarjetas = (pid, pnombre, pnum_tarjeta, pfecha_ven, pcvv) =>{
         }
     });
 }
+
+
+let obtenerTarjetas = async(_id) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-tarjetas/${_id}`,
+            responseType: 'json'
+        });
+
+        return response.data.usuario.tarjetas;
+    } catch (error) {
+        console.log(error);
+    }
+};

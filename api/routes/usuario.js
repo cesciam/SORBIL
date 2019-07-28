@@ -158,4 +158,20 @@ router.post('/agregar-tarjeta', function(req, res) {
     )
 });
 
+router.get('/buscar-tarjetas/:_id', function (req, res) {
+    Usuario.findById(req.body._id, function (err, usuarioDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ningun usuario con ese id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                usuario: usuarioDB
+            });
+        }
+    })
+});
 module.exports = router;
