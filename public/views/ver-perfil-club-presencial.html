@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/layout/perfiles.css">
     <link rel="stylesheet" href="../css/paginas/ver-perfil-club.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Perfil-libros</title>
+    <title>Sorbil -- Perfil de librería</title>
 </head>
 
 <body>
@@ -56,22 +57,26 @@
 
 
     <main id="main-user">
-        <section id="club-seccion">
+        <section class="section-one">
 
-            <div><img src="../imgs/book-placeholder.png" id="imagen"></div>
+            <div class="img"><img src="../imgs/book-placeholder.png" id="imagen"></div>
 
-            <div id="club-title">
-                <div>
-                    <button>Registrar</button>
+            <div class="section-container">
+                <div class="title">
+                    <h1 id="tema"></h1>
+                    <h2 id="fecha"></h2>
+                    <button id="btn-registrar">Registrarse al club</button>
+                    <p id="descripcion"></p>
+                    <div class="title-2-col">
+                        <p>Categoría: <span id="categoria"></span></p>
+                        <p>Género: <span id="genero"></span></p>
+                    </div>
                 </div>
-                <h1 id="tema"></h1>
-                <h2 id="fecha"></h2>
-                <!-- <p id="Descripcion"></p> -->
 
-                <div class="club-info">
-                    <h2>Dirección de la empresa</h2>
-                    <div class="club-ubicacion">
-                        <div class="club-info-ubicacion">
+                <div class="info">
+                    <div class="info-2-col">
+                        <h2>Dirección del club</h2>
+                        <div class="info-2-col-container">
                             <p>Provincia: <span id="provincia"></span></p>
                             <p>Cantón: <span id="canton"></span></p>
                             <p>Distrito: <span id="distrito"></span></p>
@@ -80,26 +85,27 @@
                             <p id="direccion-exacta"></p>
                         </div>
                     </div>
+
                     <h2>Información de contacto</h2>
-                    <div class="club-contacto">
-                        <div>
-                            <i class='bx bx-phone-call'></i>
-                            <i class='bx bx-mail-send'></i>
-                        </div>
-                        <div>
-                            <h4>Teléfono:</h4>
-                            <h4>Correo electrónico:</h4>
-                        </div>
-                        <div>
-                            <p id="telefono"></p>
-                            <p id="correo"></p>
+                    <div class="info-3-col">
+                        <div class="info-3-col-container">
+                            <div>
+                                <i class='bx bx-phone-call'></i>
+                                <i class='bx bx-mail-send'></i>
+                            </div>
+                            <div>
+                                <h4>Teléfono:</h4>
+                                <h4>Correo electrónico:</h4>
+                            </div>
+                            <div>
+                                <p id="telefono"></p>
+                                <p id="correo"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            </div>
         </section>
     </main>
 
@@ -123,10 +129,9 @@
     </footer>
 
 
-
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/servicio-club.js"></script>
-    <script src="../js/controlador-perfil-club.js"></script>
+    <script src="../js/controlador-perfil-club-presencial.js"></script>
 </body>
 
 </html>

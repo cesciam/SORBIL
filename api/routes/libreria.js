@@ -5,6 +5,8 @@ const express = require('express'),
     router = express.Router(),
     libreria = require('../models/libreria.model');
 
+//Definicion de credenciales para enviar correos
+
 const transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: {

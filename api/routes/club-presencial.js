@@ -24,6 +24,8 @@ router.post('/registrar-club', function (req, res) {
         categoria: body.categoria,
         genero: body.genero,
         fecha: body.fecha,
+        descripcion: body.descripcion,
+        //Solamente para el club presencial
         provincia: body.provincia,
         canton: body.canton,
         distrito: body.distrito,

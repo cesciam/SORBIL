@@ -1,69 +1,14 @@
-#main-user {
-    display: grid;
-    justify-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 6rem 0;
-}
-
-#libreria-seccion {
-    display: grid;
-    justify-items: center;
+.section-one {
     grid-template-columns: repeat(2, 1fr);
-    width: 85%;
 }
 
-#libreria-seccion img {
-    width: 100%;
+.section-one .img img {
     border-radius: 50%;
+    width: 80%;
+    align-self: center;
 }
 
-#libreria-seccion h1, h2, h3, h4, p {
-    margin-bottom: 3rem;
-}
-
-#libreria-title h1 {
-    text-transform: capitalize;
-    text-align: left;
-}
-
-#libreria-seccion h2 {
-    font-size: 2rem;
-    border-bottom: var(--line);
-    padding-bottom: 1rem;
-    width: 50%;
-}
-
-.libreria-info #direccion-exacta {
-    font-size: 1.8rem;
-}
-
-.libreria-info-ubicacion {
+.section-one .info .info-2-col .info-2-col-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    font-weight: var(--font-semibold);
-}
-
-.libreria-info-ubicacion span {
-    font-weight: 400;
-}
-
-#libreria-title #descripcion {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.libreria-contacto {
-    display: grid;
-    grid-template-columns: 5rem 25rem auto;
-}
-
-.libreria-contacto p {
-    font-size: 1.8rem;
-}
-
-.libreria-contacto i {
-    font-size: 3rem;
-    color: var(--color-primary);
-    margin-bottom: 2.8rem;
+    grid-template-columns: repeat(2, 1fr);
 }
