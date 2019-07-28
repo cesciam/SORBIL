@@ -1,6 +1,6 @@
 .creditc-tipo {
     display: grid;
-    justify-items: center;
+    justify-items: end;
 }
 
 #tipo_tarjeta {
