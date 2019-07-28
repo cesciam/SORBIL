@@ -60,8 +60,7 @@
         <form id="form" action="#">
             <div>
                 <label for="#">Nombre del titular</label>
-                <input id="input_nombre" type="text" placeholder="Ingresar nombre del titular"
-                    aria-label="Ingresar nombre del titular">
+                <input id="input_nombre" type="text" placeholder="Ingresar nombre del titular" aria-label="Ingresar nombre del titular">
             </div>
             <div>
                     <label for="#">Número de tarjeta</label>
@@ -76,7 +75,7 @@
             <div id="form-container">
                 <div>
                     <label for="#">Fecha de vencimiento</label>
-                    <input type="text" placeholder="MM/AA" aria-label="MM/AA" id="input_fecha" class="input_fecha">
+                    <input type="text" placeholder="MM/AA" aria-label="MM/AA" id="input_fecha_ven" class="input_fecha">
                 </div>
                 <div>
                     <label for="#">CVV</label>
@@ -165,8 +164,11 @@
     </footer>
 
     <!--Scripts-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://kit.fontawesome.com/a1b50ac28c.js"></script>
     <script src="../vendors/cleave.js-master/dist/cleave.min.js"></script>
+    <script src="../js/servicio-usuario.js"></script>
     <script src="../js/controlador-registro-tarjetas.js"></script>
 </body>
 

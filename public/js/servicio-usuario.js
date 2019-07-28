@@ -38,10 +38,8 @@ let validar_credenciales = async (pcorreo, pcontrasena) => {
 
     });
 
-    console.log(peticion);
 
     sessionStorage.setItem('activo', JSON.stringify(peticion.data.usuario));
-    let usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
 
 
     // peticion.fail(function (usuario) {
@@ -99,4 +97,19 @@ let enviarLat = () =>{
 
 let enviarLon = () =>{
     return corlongitud;
+}
+
+let registrarTarjetas = (pid, pnombre, pnum_tarjeta, pfecha_ven, pcvv) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar-tarjeta',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            nombre: pnombre,
+            num_tarjeta: pnum_tarjeta,
+            fecha_ven: pfecha_ven,
+            cvv: pcvv
+        }
+    });
 }
