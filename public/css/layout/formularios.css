@@ -115,6 +115,7 @@ html {
 #main-form #seccion-form .form-title .progress-container {
     display: grid;
     justify-items: center;
+    display: none;
 }
 
 #main-form #seccion-form .form-title .progress-bar {

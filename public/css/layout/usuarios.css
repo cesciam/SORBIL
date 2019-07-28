@@ -67,7 +67,7 @@ Inicio de estilos del header
     top: -.6rem;
 }
 
-#header-nav-1 .header-user-icons .header-user-container button {
+/* #header-nav-1 .header-user-icons .header-user-container button {
     width: 100%;
     background-color: var(--color-white);
     box-shadow: none;
@@ -80,10 +80,10 @@ Inicio de estilos del header
     box-shadow: none;
     transform: translateY(0);
     border: 0;
-}
+} */
 
 #header-nav-1 .header-user-icons .user-notification {
-    left: 2rem;
+    left: 1.7rem;
 }
 
 /*Estilos de la navegación secundaria*/
@@ -117,6 +117,25 @@ Inicio de estilos del header
 
 /*
 Fin de estilos del header
+*/
+
+/*
+Inicio de estilos generales del main
+*/
+
+#txt-filtro {
+    width: 55%;
+    margin-top: 5rem;
+    transition: all .2s;
+    box-shadow: var(--shadow-dark-1);
+}
+
+#txt-filtro:focus {
+    width: 60%;
+}
+
+/*
+Fin de estilos generales del main
 */
 
 /*

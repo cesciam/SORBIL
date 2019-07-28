@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/paginas/index.css">
+    <link rel="stylesheet" href="../css/paginas/u-inicio.css">
     <link rel="stylesheet" href="../vendors/glide-3.3.0/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="../vendors/glide-3.3.0/dist/css/glide.theme.min.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
@@ -31,29 +32,26 @@
                 <a href="u-contacto.html"><i class='bx bx-mail-send'></i>Contacto</a>
             </nav>
 
-            <div class="header-user-icons">
+            <div id="nav-inicio" class="header-user-icons">
                 <div class="header-user-container">
                     <a class="header-icon" href="#"><i class='bx bx-cart-alt'></i>
                         <span class="user-notification">1</span>
                     </a>
                 </div>
                 <div class="header-user-container">
-                    <a class="header-icon" href="#"><i class='bx bx-book'></i>
-                        <span class="user-notification">1</span>
+                    <a class="header-icon" href="#"><i class='bx bx-book-bookmark'></i>
                     </a>
                 </div>
-
                 <div class="header-user-container user-menu-wrap"><b class="mini-photo-wrapper" href="#"><img
                             class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
                             class='bx bx-chevron-down'></i></b>
                     <div class="menu-user-container">
                         <ul class="user-menu">
-                            <button class="user-menu-link" href="#">Perfil</button>
-                            <button class="user-menu-link" href="#">Cerrar sesión</button>
+                            <a class="user-menu-link" href="#">Perfil</a>
+                            <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
                         </ul>
                     </div>
                 </div>
-
             </div>
 
         </div>
@@ -70,9 +68,16 @@
 
     </header>
     <!--Main-->
+    <!--Main-->
     <main id="main-user">
 
         <section id="main-user-section-banner">
+
+            <div class="main-user-call-banner">
+                <h1>Buscá entre los mejores libros</h1>
+                <input id="txt-filtro" type="text" placeholder="Buscar por / título / autor / categoría / género / ISBN"
+                    aria-label="Buscar por / título / autor / categoría / género / ISBN">
+            </div>
 
         </section>
 
@@ -100,11 +105,13 @@
     <!--Scripts-->
     <!-- Sticky JS -->
     <script src="../vendors/sticky-js-master/dist/sticky.min.js"></script>
+    <script src="../js/componentes/controlador-slider.js"></script>
     <script src="../js/componentes/controlador-sticky.js"></script>
     <!-- Glide JS -->
     <script src="../vendors/glide-3.3.0/dist/glide.min.js"></script>
     <script src="../js/componentes/controlador-slider.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+    <!-- <script src="../js/componentes/controlador-nav.js"></script> -->
 </body>
 
 </html>
