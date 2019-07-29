@@ -20,7 +20,7 @@
 
 #div-numTarjeta i {
     background: var(--color-white);
-    text-align: center;
+    text-align: end;
     margin-top: .1rem;
 }
 

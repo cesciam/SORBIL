@@ -1,6 +1,7 @@
 'use strict';
 
-let registrarLibreria = (pimagen, pusuario, pcorreo, pcontrasena, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud, pavatar, pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha, pedad, ptipo_usuario) => {
+
+let registrarLibreria = (pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libreria',
@@ -10,7 +11,6 @@ let registrarLibreria = (pimagen, pusuario, pcorreo, pcontrasena, pempresa, ptel
             imagen: pimagen,
             usuario: pusuario,
             correo: pcorreo,
-            contrasena: pcontrasena,
             empresa: pempresa,
             telefono: ptelefono,
             descripcion: pdescripcion,
@@ -19,9 +19,22 @@ let registrarLibreria = (pimagen, pusuario, pcorreo, pcontrasena, pempresa, ptel
             distrito: pdistrito,
             direccion_exacta: pdireccion_exacta,
             direccion_latitud: pdireccion_latitud,
-            direccion_longitud: pdireccion_longitud,
+            direccion_longitud: pdireccion_longitud
+        }
+    });
+};
+
+
+let registrarAdminLibreria = (pavatar, pcorreo, pcontrasena ,pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha, pedad, ptipo_usuario) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/registrar-usuario',
+        responseType: 'json',
+        data: {
             //Info del administrador
             avatar: pavatar,
+            correo: pcorreo,
+            contrasena: pcontrasena,
             nombre: pnombre,
             primer_apellido: pprimer_apellido,
             segundo_apellido: psegundo_apellido,

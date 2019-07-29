@@ -101,4 +101,51 @@ let registrarDatos = () =>{
     }
 }
 
+//Aqui inicia el proceso de listar las tarjetas ya registradas 
+
+const tbody = document.querySelector('#tabla-filtrado tbody');
+let lista_tarjetas = [];
+let txt_filtro = document.querySelector('#txt_filtro');
+
+let mostrar_tabla = async() => {
+
+    lista_tarjetas = await obtenerTarjetas(id_usuario_activo);
+    tbody.innerHTML = '';
+
+
+    for (let i = 0; i < lista_tarjetas.length; i++) {
+        let fila = tbody.insertRow();
+        fila.insertCell().innerHTML = lista_tarjetas[i]['nombre'];
+        fila.insertCell().innerHTML = lista_tarjetas[i]['fecha_ven'];
+        fila.insertCell().innerHTML = lista_tarjetas[i]['num_tarjeta'];
+        fila.insertCell().innerHTML = lista_tarjetas[i]['cvv'];
+
+    }
+};
+
+
+let filtrar_tabla = async() => {
+
+    let filtro = txt_filtro.value.toLowerCase();
+    tbody.innerHTML = '';
+
+
+    for (let i = 0; i < lista_tarjetas.length; i++) {
+        if (lista_tarjetas[i]['nombre'].toLowerCase().includes(filtro) ||  lista_tarjetas[i]['fecha_ven'].toLowerCase().includes(filtro) || lista_tarjetas[i]['num_tarjeta'].toLowerCase().includes(filtro) || lista_tarjetas[i]['cvv'].toLowerCase().includes(filtro)) {
+            let fila = tbody.insertRow();
+            fila.insertCell().innerHTML = lista_tarjetas[i]['nombre'];
+            fila.insertCell().innerHTML = lista_tarjetas[i]['fecha_ven'];
+            fila.insertCell().innerHTML = lista_tarjetas[i]['num_tarjeta'];
+            fila.insertCell().innerHTML = lista_tarjetas[i]['cvv'];
+        }
+
+    }
+
+
+};
+
+
+mostrar_tabla();
+txt_filtro.addEventListener('keyup', filtrar_tabla);
+
 btn_registrar.addEventListener('click', registrarDatos);

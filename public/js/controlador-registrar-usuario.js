@@ -23,7 +23,7 @@ const input_provincia = document.querySelector('#txt-provincia');
 const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
 const input_direccion_exacta = document.querySelector('#txt-direccion-exacta');
-let tipo_usuario = 'u';
+const tipo_usuario = 'u';
 
 const btn_crear_cuenta = document.querySelector('#btn-enviar');
 
@@ -196,7 +196,7 @@ let llamar = async () => {
     let errorCorreo = validarCorreo(correo);
 
     if (error == false && errorCedula == false && errorCorreo == false) {
-        registrarUsuario(src_avatar, usuario, correo, contrasena, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta, latitud, longitud);
+        registrarUsuario(src_avatar, usuario, correo, contrasena, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta, latitud, longitud, tipo_usuario);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

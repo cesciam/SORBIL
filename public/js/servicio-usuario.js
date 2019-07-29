@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud) => {
+let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud, ptipo_usuario) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-usuario',
@@ -20,7 +20,8 @@ let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, p
             distrito: pdistrito,
             direccion_exacta: pdireccionExacta,
             direccion_latitud: pdireccion_latitud,
-            direccion_longitud: pdireccion_longitud
+            direccion_longitud: pdireccion_longitud,
+            tipo_usuario: ptipo_usuario
         }
     });
 };
@@ -38,14 +39,16 @@ let validar_credenciales = async (pcorreo, pcontrasena) => {
 
     });
 
+    console.log(peticion);
+    respuesta = peticion.data.success;
 
-    sessionStorage.setItem('activo', JSON.stringify(peticion.data.usuario));
+    if(respuesta){
+        sessionStorage.setItem('activo', JSON.stringify(peticion.data.usuario));
+    }else{
+        sessionStorage.clear();
+    }
 
-
-    // peticion.fail(function (usuario) {
-    //     respuesta = usuario;
-    // });
-    return peticion.data;
+    return respuesta;
 };
 
 
@@ -113,3 +116,19 @@ let registrarTarjetas = (pid, pnombre, pnum_tarjeta, pfecha_ven, pcvv) =>{
         }
     });
 }
+
+
+let obtenerTarjetas = async(_id) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-tarjetas/${_id}`,
+            responseType: 'json'
+        });
+
+        return response.data.usuario.tarjetas;
+    } catch (error) {
+        console.log(error);
+    }
+};
