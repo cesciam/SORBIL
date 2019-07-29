@@ -209,20 +209,21 @@ let validarCorreo = (pcorreo) => {
     return errorCorreo;
 };
 
-// let validarTelefono = (ptelefono) => {
+let validarTelefono = (ptelefono) => {
 
-//     let errorTelefono = false;
-//     let telefonoValido = /^[1-8]\d{4}-?\d{4}$/;
+    let errorTelefono = false;
+    let telefonoValido = /\d{2}-?\d{2}-?\d{2}-?\d{2}$/;
 
-//     if (!telefonoValido.test(ptelefono)) {
-//         errorTelefono = true;
-//         input_telefono.classList.add('input_error');
-//     }
-//     else {
-//         input_telefono.classList.remove('input_error');
-//     }
-//     return errorTelefono;
-// };
+    if (!telefonoValido.test(ptelefono)) {
+        errorTelefono = true;
+        input_telefono.classList.add('input_error');
+
+    }
+    else {
+        input_telefono.classList.remove('input_error');
+    }
+    return errorTelefono;
+};
 
 function calcularEdad(pfecha) {
     let hoy = new Date();
@@ -261,10 +262,11 @@ let saludar = () => {
 
     let error = validar(usuario, correo, contrasena, verfContrasena, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, nombre, primer_apellido, segundo_apellido, id, fecha);
     let errorCedula = validarCedula(id);
+    let errorTelefono = validarTelefono(telefono);
     let errorCorreo = validarCorreo(correo);
     let edad = calcularEdad(fecha);
 
-    if (error == false && errorCedula == false && errorCorreo == false) {
+    if (error == false && errorCedula == false && errorCorreo == false && errorTelefono == false) {
         registrarLibreria(src_imagen, usuario, correo, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, latitud, longitud);
         registrarAdminLibreria(src_avatar, correo, contrasena, nombre, primer_apellido, segundo_apellido, id, fecha, edad, tipo_usuario);
         Swal.fire({ //formato json
