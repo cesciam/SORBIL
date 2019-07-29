@@ -82,7 +82,7 @@
                 <div>
                     <label for="#">Teléfono</label>
                     <input id="txt-telefono" type="tel" placeholder="Ingresar el teléfono"
-                        aria-label="Ingresar su teléfono">
+                        aria-label="Ingresar su teléfono" maxlength="8">
                 </div>
                 <div>
                     <label for="#">Categoría</label>
@@ -135,6 +135,17 @@
                 <label for="#">Dirección exacta</label>
                 <textarea id="txt-direccion-exacta"></textarea>
             </div>
+            <div>
+                <div class="input-group">
+                    <label for="#">Descripción del Club</label>
+                    <textarea id="txt-descripcion"></textarea>
+                </div>
+            </div>
+
+            <div>
+                <h2>Selecciona una sucursal en el mapa</h2>
+            </div>
+            <div id="map"></div>
 
             <button id="btn-enviar" type="button">Registrar</button>
 

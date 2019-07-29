@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarClub = (pimagen, ptipo, pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
+let registrarClub = (pimagen, ptipo, pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-club',
@@ -15,6 +15,7 @@ let registrarClub = (pimagen, ptipo, pnombre, ptema, pcorreo, ptelefono, pcatego
             categoria: pcategoria,
             genero: pgenero,
             fecha: pfecha,
+            descripcion: pdescripcion,
             provincia: pprovincia,
             canton: pcanton,
             distrito: pdistrito,
@@ -52,3 +53,23 @@ let obtenerClubid = async (_id) => {
         console.log(error);
     }
 };
+
+// Funciones para obtener coordenadas de google maps
+let corlatitud;
+let corlongitud;
+
+let latitud = (platitud) => {
+    corlatitud = platitud;
+};
+
+let longitud = (plongitud) => {
+    corlongitud = plongitud;
+};
+
+let enviarLat = () => {
+    return corlatitud;
+}
+
+let enviarLon = () => {
+    return corlongitud;
+}

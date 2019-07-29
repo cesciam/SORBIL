@@ -15,10 +15,12 @@ const input_correo = document.querySelector('#txt-correo');
 const input_categoria = document.querySelector('#txt-categoria');
 const input_genero = document.querySelector('#txt-genero');
 const input_fecha = document.querySelector('#txt-fecha');
-const btn_enviar = document.querySelector('#btn-enviar');
+const input_descripcion = document.querySelector('#txt-descripcion');
 let tipo = 'Club Virtual';
 
-let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha) => {
+const btn_enviar = document.querySelector('#btn-enviar');
+
+let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, pdescripcion) => {
 
     let error = false;
 
@@ -79,7 +81,29 @@ let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha) 
         input_fecha.classList.remove('input_error');
     }
 
+    if (pdescripcion == '') {
+        error = true;
+        input_descripcion.classList.add('input_error');
+    } else {
+        input_descripcion.classList.remove('input_error');
+    }
+
     return error;
+};
+
+let validarCorreo = (pcorreo) => {
+
+    let errorCorreo = false;
+    let correoValido = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+    if (!correoValido.test(pcorreo)) {
+        errorCorreo = true;
+        input_correo.classList.add('input_error');
+    }
+    else {
+        input_correo.classList.remove('input_error');
+    }
+    return errorCorreo;
 };
 
 let llamar = () => {
@@ -91,11 +115,13 @@ let llamar = () => {
     let categoria = input_categoria.value;
     let genero = input_genero.value;
     let fecha = new Date(input_fecha.value);
+    let descripcion = input_descripcion.value;
 
-    let error = validar(tipo, nombre, tema, correo, telefono, categoria, genero, fecha);
+    let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, descripcion);
+    let errorCorreo = validarCorreo(correo);
 
-    if (error == false) {
-        registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha);
+    if (error == false && errorCorreo == false) {
+        registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, descripcion);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

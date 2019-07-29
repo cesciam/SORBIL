@@ -18,6 +18,7 @@ let mostrar_tabla = async () => {
         fila.insertCell().innerHTML = lista_clubes[i]['categoria'];
         fila.insertCell().innerHTML = lista_clubes[i]['genero'];
 
+        let tipo = lista_clubes[i]['tipo'];
         let celda_perfil = fila.insertCell();
         let boton_perfil = document.createElement('button');
         boton_perfil.type = 'button';
@@ -27,7 +28,11 @@ let mostrar_tabla = async () => {
         celda_perfil.appendChild(boton_perfil);
 
         boton_perfil.addEventListener('click', function () {
-            window.location.href = `ver-perfil-club.html?_id=${this.dataset._id}`;
+            if (tipo == 'Club Presencial') {
+                window.location.href = `ver-perfil-club-presencial.html?_id=${this.dataset._id}`;
+            } else if (tipo == 'Club Virtual'){
+                window.location.href = `ver-perfil-club-virtual.html?_id=${this.dataset._id}`;
+            }
         });
     }
 };

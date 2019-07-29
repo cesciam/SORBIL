@@ -21,7 +21,6 @@ $(function() {
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/fenixsorbil/image/upload/' + id;
                 document.querySelector('#portada').src = imagenUrl;
-                console.log(imagenUrl);
             });    
         });
 
@@ -35,7 +34,6 @@ $(function() {
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/fenixsorbil/image/upload/' + id;
                 document.querySelector('#contraportada').src = imagenUrl;
-                console.log(imagenUrl);
             });    
         });  
     })

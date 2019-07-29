@@ -4,7 +4,7 @@ const express = require('express'),
     router = express.Router(),
     Usuario = require('../models/usuario.model');
 
-router.param('_id', function (req, res, next, _id) {
+router.param('_id', function(req, res, next, _id) {
     req.body._id = _id;
     next();
 });
@@ -15,7 +15,7 @@ router.param('correo', function(req, res, next, correo) {
 });
 
 
-router.post('/registrar-usuario', function (req, res) {
+router.post('/registrar-usuario', function(req, res) {
     let body = req.body;
 
     let nuevo_usuario = new Usuario({
@@ -37,7 +37,7 @@ router.post('/registrar-usuario', function (req, res) {
     });
 
     nuevo_usuario.save(
-        function (err, usuariosBD) {
+        function(err, usuariosBD) {
             if (err) {
                 return res.status(400).json({
                     success: false,
@@ -54,9 +54,9 @@ router.post('/registrar-usuario', function (req, res) {
     );
 });
 
-router.post('/validar-credenciales', function (req, res) {
+router.post('/validar-credenciales', function(req, res) {
     Usuario.findOne({ correo: req.body.correo }).then(
-        function (usuario) {
+        function(usuario) {
             if (usuario) {
                 if (usuario.contrasena == req.body.contrasena) {
                     res.json({
@@ -79,8 +79,8 @@ router.post('/validar-credenciales', function (req, res) {
     )
 });
 
-router.get('/listar-usuarios', function (req, res) {
-    Usuario.find(function (err, usuariosBD) {
+router.get('/listar-usuarios', function(req, res) {
+    Usuario.find(function(err, usuariosBD) {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -96,8 +96,8 @@ router.get('/listar-usuarios', function (req, res) {
     })
 });
 
-router.get('/buscar-usuario-id/:_id', function (req, res) {
-    Usuario.findById(req.body._id, function (err, usuarioDB) {
+router.get('/buscar-usuario-id/:_id', function(req, res) {
+    Usuario.findById(req.body._id, function(err, usuarioDB) {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -128,6 +128,34 @@ router.get('/buscar-usuario-correo/:correo', function(req, res) {
             });
         }
     })
+});
+
+router.post('/agregar-tarjeta', function(req, res) {
+    Usuario.update({ _id: req.body._id }, {
+            $push:{ 
+                'tarjetas': {
+                    nombre: req.body.nombre,
+                    num_tarjeta: req.body.num_tarjeta,
+                    fecha_ven: req.body.fecha_ven,
+                    cvv: req.body.cvv   
+                }
+            }
+        },
+        function(error){
+            if (error) {
+                return res.status(400).json({
+                    success: false,
+                    msj: 'No se pudo agregar la tarjeta',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La tarjeta se guardó con éxito'
+                });
+            }
+        }
+    )
 });
 
 module.exports = router;
