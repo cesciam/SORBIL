@@ -29,7 +29,7 @@ const input_primer_apellido = document.querySelector('#txt-primer-apellido');
 const input_segundo_apellido = document.querySelector('#txt-segundo-apellido');
 const input_id = document.querySelector('#txt-id');
 const input_fecha = document.querySelector('#txt-fecha');
-let tipo_usuario = 'al';
+const tipo_usuario = 'al';
 
 const btn_enviar = document.querySelector('#btn-enviar');
 
@@ -265,7 +265,8 @@ let saludar = () => {
     let edad = calcularEdad(fecha);
 
     if (error == false && errorCedula == false && errorCorreo == false) {
-        registrarLibreria(src_imagen, usuario, correo, contrasena, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, latitud, longitud, src_avatar, nombre, primer_apellido, segundo_apellido, id, fecha, edad, tipo_usuario);
+        registrarLibreria(src_imagen, usuario, correo, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, latitud, longitud);
+        registrarAdminLibreria(src_avatar, correo, contrasena, nombre, primer_apellido, segundo_apellido, id, fecha, edad, tipo_usuario);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

@@ -33,7 +33,10 @@ router.post('/registrar-usuario', function(req, res) {
         distrito: body.distrito,
         direccion_exacta: body.direccion_exacta,
         direccion_latitud: body.direccion_latitud,
-        direccion_longitud: body.direccion_longitud
+        direccion_longitud: body.direccion_longitud,
+        tipo_usuario: body.tipo_usuario,
+        edad: body.edad,
+        fecha: body.fecha
     });
 
     nuevo_usuario.save(
