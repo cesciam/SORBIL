@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Seleccionar club de lectura</title>
+    <title>Sorbil -- Librería -- Listar libros para intercambio</title>
 </head>
 
 <body id="grid-admin">
@@ -51,47 +51,44 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Selecciona el club de lectura</h1>
-            <p>Busca la información que te interesa</p>
+            <h1>Listar libros para intercambio</h1>
+            <p>Listá la información que te interesa</p>
         </div>
 
-        <div class="form-nav card-container">
-            <div class="cards">
-                <div class="card">
-                    <div class="card-img card-club-presencial"></div>
-                    <div class="card-content">
-                        <p>Club presencial</p>
-                        <a class="card-btn" href="al-registrar-club-presencial.html">Registrar club</a>
-                    </div>
-                </div>
-        
-                <div class="card">
-                    <div class="card-img card-club-virtual"></div>
-                    <div class="card-content">
-                        <p>Club virtual</p>
-                        <a class="card-btn" href="al-registrar-club-virtual.html">Registrar club</a>
-                    </div>
-                </div>
-            </div>
+        <div id="barra-busqueda">
+
+            <input type="text" placeholder="Buscar por / libro" aria-label="Buscar por / libro">
+
         </div>
+
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                    <th>Genero</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
 
     </main>
 
     <!--Aside-->
     <aside id="sidenav-admin">
-    
+
         <div class="sidebar">
-    
+
             <div class="sidenav-menu">
                 <a class="logo" href="../views/ver-perfil-administrador-libreria.html"><img src="../imgs/logo.png"
                         alt="logo de Sorbil"></a>
             </div>
-    
+
             <ul class="sidenav-list">
                 <li class="sidenav-list-item"><a href="../views/ver-perfil-administrador-libreria.html"><i
                             class='bx bx-home sidenav-i'></i>Inicio</a>
                 </li>
-    
+
                 <li class="sidenav-list-item">
                     <a href="#" class="sidenav-btn dropdown-toggle">
                         <i class='bx bx-plus'></i>
@@ -106,7 +103,7 @@
                         <a href="../views/al-seleccionar-club.html">Club de lectura</a>
                     </div>
                 </li>
-    
+
                 <li class="sidenav-list-item">
                     <a href="#" class="sidenav-btn dropdown-toggle">
                         <i class='bx bx-list-ul'></i>
@@ -125,30 +122,33 @@
                         <a href="../views/al-listar-clubes.html">Clubes de lectura</a>
                     </div>
                 </li>
-    
-                <li class="sidenav-list-item"><a href="al-reportes.html"><i class='bx bxs-report sidenav-i'></i>Reportes</a>
+
+                <li class="sidenav-list-item"><a href="al-reportes.html"><i
+                            class='bx bxs-report sidenav-i'></i>Reportes</a>
                 </li>
-    
+
                 <li class="sidenav-list-item"><a href="../views/al-ventas.html"><i
                             class='bx bx-dollar-circle sidenav-i'></i>Ventas</a></li>
-    
+
                 <li class="sidenav-list-item"><a href="../views/al-bitacora.html"><i
                             class='bx bx-loader-alt sidenav-i'></i>Bitácora</a></li>
             </ul>
-    
+
         </div>
-    
+
     </aside>
-    
+
     <!--Footer-->
     <footer id="footer-admin">
         <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
             <span>FÉNIX</span></a>
     </footer>
+
     <!--Scripts-->
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-
+    <script src="../js/controlador-general.js"></script>
+    <script src="../js/controlador-listar-generos.js"></script>
 </body>
 
 </html>
