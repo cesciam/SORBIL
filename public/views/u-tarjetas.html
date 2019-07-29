@@ -81,13 +81,36 @@
                     <label for="#">CVV</label>
                     <input id="input_cvv" type="text" placeholder="CVV" aria-label="CVV" class="cvv">
                 </div>
-
-
-
             </div>
             <button id="btn_enviar" type="button">Registrar</button>
-
         </form>
+
+        <div class="main-admin-titulo">
+            <h2>Listados de tarjetas</h2>
+            <p>Busca la información que te interesa</p>
+        </div>
+
+        <div id="barra-busqueda">
+            <input id="txt_filtro" type="text" placeholder="Buscar por / Nombre / Numero de tarjeta / Fecha / CVV " aria-label="Buscar por / Nombre / Numero de tarjeta / Fecha / CVV ">
+
+            <button aria-label="Search" type="button" value = "Refresh" onclick="history.go(0)">
+                <spans>Actualizar</spans>
+            </button>
+        </div>
+
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                   <th>Nombre</th>
+                   <th>Fecha de vencimiento</th>
+                   <th>Número de tarjeta</th>
+                   <th>CVV</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
 
     </main>
 

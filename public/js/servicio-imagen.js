@@ -18,7 +18,7 @@ $(function() {
                 if(error) console.log(error);
                 //if no Error, log img data to console
                 let id = result[0].public_id;
-                console.log(id);
+
                 imagenUrl = 'https://res.cloudinary.com/fenixsorbil/image/upload/' + id;
                 document.querySelector('#portada').src = imagenUrl;
             });    
@@ -31,7 +31,6 @@ $(function() {
                 if(error) console.log(error);
                 //if no Error, log img data to console
                 let id = result[0].public_id;
-                console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/fenixsorbil/image/upload/' + id;
                 document.querySelector('#contraportada').src = imagenUrl;
             });    

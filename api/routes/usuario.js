@@ -33,7 +33,10 @@ router.post('/registrar-usuario', function(req, res) {
         distrito: body.distrito,
         direccion_exacta: body.direccion_exacta,
         direccion_latitud: body.direccion_latitud,
-        direccion_longitud: body.direccion_longitud
+        direccion_longitud: body.direccion_longitud,
+        tipo_usuario: body.tipo_usuario,
+        edad: body.edad,
+        fecha: body.fecha
     });
 
     nuevo_usuario.save(
@@ -158,4 +161,20 @@ router.post('/agregar-tarjeta', function(req, res) {
     )
 });
 
+router.get('/buscar-tarjetas/:_id', function (req, res) {
+    Usuario.findById(req.body._id, function (err, usuarioDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ningun usuario con ese id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                usuario: usuarioDB
+            });
+        }
+    })
+});
 module.exports = router;
