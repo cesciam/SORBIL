@@ -16,7 +16,7 @@ const input_categoria = document.querySelector('#txt-categoria');
 const input_genero = document.querySelector('#txt-genero');
 const input_fecha = document.querySelector('#txt-fecha');
 const input_descripcion = document.querySelector('#txt-descripcion');
-let tipo = 'Club Virtual';
+const tipo = 'Club Virtual';
 
 const btn_enviar = document.querySelector('#btn-enviar');
 

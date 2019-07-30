@@ -20,7 +20,7 @@ const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
 const input_direccion_exacta = document.querySelector('#txt-direccion-exacta');
 const input_descripcion = document.querySelector('#txt-descripcion');
-let tipo = 'Club Presencial';
+const tipo = 'Club Presencial';
 
 const btn_enviar = document.querySelector('#btn-enviar');
 
