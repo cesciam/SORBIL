@@ -1,9 +1,20 @@
 .main-card img {
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
     margin-top: 5rem;
+    border-radius: 50%;
 }
 
 .main-card p {
     font-size: 2rem;
+}
+
+.main-card p:first-child {
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    border-bottom: var(--line);
+}
+
+.card-content p {
+    font-weight: var(--font-semibold);
 }

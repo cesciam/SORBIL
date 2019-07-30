@@ -27,7 +27,7 @@ let mostrar_tabla = async () => {
         celda_perfil.appendChild(boton_perfil);
 
         boton_perfil.addEventListener('click', function () {
-            window.location.href = `ver-perfil-administrador-libreria.html?correo=${this.dataset.correo}`;
+            window.location.href = `ver-perfil-administrador-libreria.html?_id=${this.dataset._id}`;
         });
     }
 };

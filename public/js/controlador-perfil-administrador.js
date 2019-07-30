@@ -2,20 +2,24 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 
-let correo = urlParams.get('correo');
+let id = urlParams.get('_id');
 
 let avatar = document.querySelector('#avatar');
+let imagen = document.querySelector('#imagen');
 let nombre = document.querySelector('#nombre');
-let correo = document.querySelector('#correo');
+let empresa = document.querySelector('#empresa');
 
 
 let llenar_perfil = async () => {
 
-    let usuario = await obtenerUsuarioCorreo(correo);
+    let libreriaid = await obtenerLibreriaid(id);
 
-    if (usuario) {
-        avatar.innerHTML = usuario['avatar'];
-        nombre.innerHTML = usuario['nombre'];
-        correo.innerHTML = usuario['correo'];
+    if (libreriaid) {
+        avatar.src = libreriaid['avatar'];
+        imagen.src = libreriaid['imagen'];
+        nombre.innerHTML = libreriaid['nombre'];
+        empresa.innerHTML = libreriaid['empresa'];
     }
 };
+
+llenar_perfil();
