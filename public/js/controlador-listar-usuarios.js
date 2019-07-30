@@ -22,7 +22,7 @@ let mostrar_cards = async() => {
         let contenedor_imagen = document.createElement('div');
         contenedor_imagen.classList.add('contenedor_imagen');
         let foto = document.createElement('img');
-        foto.src = '../imgs/avatar-placeholder.png';
+        foto.src = lista_usuarios[i]['avatar'];
 
         contenedor_imagen.appendChild(foto);
 
