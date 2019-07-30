@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Plataforma -- Registrar Categorías</title>
+    <title>Sorbil -- Plataforma -- Registrar Sucursal</title>
 </head>
 
 <body id="grid-admin">
@@ -51,22 +51,60 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de Categorías</h1>
+            <h1>Registro de Sucursal</h1>
             <p>Registra la información que te interesa</p>
         </div>
 
         <form id="form" action="#">
 
-            <div class="centrar-input">
+            <div id="form-container">
                 <div>
-                    <label for="#">Categoria</label>
-                    <input id="txt-categoria" type="text" placeholder="Ingresar la categoría"
-                        aria-label="Ingresar la categoría">
+                    <label for="#">Nombre</label>
+                    <input id="txt-nombre-sucursal" type="text" placeholder="Ingresar nombre de la sucursal"
+                        aria-label="Ingresar nombre de la sucursal">
                 </div>
+                <div>
+                    <label for="#">Teléfono</label>
+                    <input id="txt-telefono" type="tel" placeholder="Formato: 00-00-00-00"
+                        aria-label="Ingresar el número de teléfono">
+                </div>
+                <div>
+                    <label for="#">Correo Electrónico</label>
+                    <input id="txt-correo" type="email" placeholder="Ingresar el correo electrónico"
+                        aria-label="Ingresar el correo electrónico">
+                </div>
+                <div>
+                    <label for="#">Provincia</label>
+                    <select id="txt-provincia">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar
+                            Provincia</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="#">Cantón</label>
+                    <select id="txt-canton">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar Cantón
+                        </option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="#">Distrito</label>
+                    <select id="txt-distrito">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar
+                            Distrito</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <div>
+                        <h2>Seleccioná la ubicación de la sucursal en el mapa</h2>
+                    </div>
+                    <div id="map"></div>
+                </div>
+
             </div>
-
             <button id="btn-enviar" type="button">Registrar</button>
-
         </form>
 
     </main>
@@ -146,20 +184,23 @@
     </div>
 
 </aside>
-
     <!--Footer-->
     <footer id="footer-admin">
-        <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+        <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
             <span>FÉNIX</span></a>
     </footer>
 
     <!--Scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnj4Pk6sSOX5m4uxn8jO9VN2YjMUR7iO4&callback=initMap"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/servicio-categoria.js"></script>
-    <script src="../js/controlador-registrar-categoria.js"></script>
+    <script src="../js/componentes/controlador-select.js"></script>
+    <script src="../js/componentes/controlador-map.js"></script>
+    <script src="../js/servicio-sucursal.js"></script>
+    <script src="../js/controlador-registrar-sucursal.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
 </body>
 

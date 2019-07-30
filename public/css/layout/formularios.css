@@ -63,6 +63,19 @@ html {
     margin-right: auto;
 }
 
+#main-form #form-container #btn-contrasena {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--color-black);
+    transition: .2s;
+    animation-name: moveInUp;
+    animation-duration: 1s;
+}
+
+#main-form #form-container #btn-contrasena:hover {
+    color: var(--color-alternative-blue);
+}
+
 #main-form #form-container #txt-btn {
     animation-name: moveInUp;
     animation-duration: 1s;
@@ -182,7 +195,7 @@ html {
 }
 
 #main-form #form-container>*, select {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 #main-form #form-container h2 {

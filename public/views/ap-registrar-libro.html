@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/paginas/registrar-libro.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Plataforma -- Registrar Categorías</title>
+    <title>Sorbil -- Plataforma -- Registrar Géneros</title>
 </head>
 
 <body id="grid-admin">
@@ -51,21 +52,109 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de Categorías</h1>
+            <h1>Registro de Libro</h1>
             <p>Registra la información que te interesa</p>
         </div>
 
         <form id="form" action="#">
 
-            <div class="centrar-input">
+            <div id="form-container">
                 <div>
-                    <label for="#">Categoria</label>
-                    <input id="txt-categoria" type="text" placeholder="Ingresar la categoría"
-                        aria-label="Ingresar la categoría">
+                    <p for="">Portada</p>
+                    <div class="upload-img">
+                        <img src="../imgs/book-placeholder.png" alt="" class="img_registro_libro" id="portada">
+                        <label for="file">Arrastra o sube la portada</label>
+                        <button id="btnSeleccionarImagen" type="file" id="img-uploader-portada"
+                            class="upload-msg"></button>
+                    </div>
                 </div>
+                <div>
+                    <p for="">Contraportada</p>
+                    <div class="upload-img">
+                        <img class="img_registro_libro" id="contraportada" src="../imgs/book-placeholder.png"></img>
+                        <label for="file">Arrastra o sube la contraportada</label>
+                        <button id="btnSeleccionarImagen2" type="file" id="img-uploader-portada"
+                            class="upload-msg"></button>
+                    </div>
+                </div>
+                <div>
+                    <label for="#">Título</label>
+                    <input type="text" placeholder="Ingresar título de libro" aria-label="Ingresar título de libro"
+                        id="input_titulo">
+                </div>
+                <div>
+                    <label for="#">Autor</label>
+                    <input id="input_autor" type="text" placeholder="Ingresar el Autor de libro"
+                        aria-label="Ingresar el Autor de libro">
+                </div>
+                <div>
+                    <label for="#">Edición</label>
+                    <input id="input_edicion" type="text" placeholder="Ingresar la edición del libro"
+                        aria-label="Ingresar la edición del libro">
+                </div>
+                <div>
+                    <label for="#">Editorial</label>
+                    <input id="input_editorial" type="text" placeholder="Ingresar la editorial del libro"
+                        aria-label="Ingresar la editorial del libro">
+                </div>
+                <div>
+                    <label for="#">Fecha de publicación></label>
+                    <input id="input_fecha" type="date" placeholder="Ingresar la fecha de publicación del libro"
+                        aria-label="Ingresar la fecha de publicación del libro">
+                </div>
+                <div>
+                    <label for="#">Categoría</label>
+                    <select id="input_categorias" name="">
+                        <option value="0" disabled="disabled" selected="true">
+                            Escoger una opción
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <label for="#">Género</label>
+                    <select id="input_generos" name="">
+                        <option value="0" disabled="disabled" selected="true">
+                            Escoger una opción
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <label for="#">Idioma</label>
+                    <input id="input_idioma" type="text" placeholder="Ingresar el idioma del libro"
+                        aria-label="Ingresar el idioma del libro">
+                </div>
+                <div>
+                    <label for="#">Precio</label>
+                    <input id="input_precio" type="number" placeholder="Ingresar el precio del libro"
+                        aria-label="Ingresar el precio del libro">
+                </div>
+                <div>
+                    <label for="#">Tipo de libro</label>
+                    <select id="input_tipo_libro" name="">
+                        <option value="0" disabled="disabled" selected="true">Escoger una opción</option>
+                        <option value="Pasta dura">Pasta dura</option>
+                        <option value="Pasta suave">Pasta suave</option>
+                        <option value="De bolsillo">De bolsillo</option>
+                        <option value="Digital">Digital</option>
+                    </select>
+                </div>
+
+
+
+            </div>
+            <div>
+                <label for="#">ISBN</label>
+                <input id="input_isbn" type="text" placeholder="Ingresar el ISBN de libro"
+                    aria-label="Ingresar el ISBN de libro">
+            </div>
+            <div>
+                <label for="#">Sinopsis</label>
+                <textarea id="input_sinopsis" type="" placeholder="Ingresar sinopsis del libro"
+                    aria-label="Ingresar sinopsis del libro"></textarea>
             </div>
 
-            <button id="btn-enviar" type="button">Registrar</button>
+
+            <button id="btn_enviar" type="button">Registrar</button>
 
         </form>
 
@@ -147,19 +236,27 @@
 
 </aside>
 
+
     <!--Footer-->
     <footer id="footer-admin">
-        <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+        <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
             <span>FÉNIX</span></a>
     </footer>
 
     <!--Scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+    <script src="../js/servicio-genero.js"></script>
     <script src="../js/servicio-categoria.js"></script>
-    <script src="../js/controlador-registrar-categoria.js"></script>
+    <script src="../js/servicio-libros.js"></script>
+    <script src="../js/controlador-registrar-libros.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js"
+        type="text/javascript"></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="../js/servicio-imagen.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
 </body>
 
