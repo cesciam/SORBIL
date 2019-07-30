@@ -18,3 +18,34 @@
 .card-content p {
     font-weight: var(--font-semibold);
 }
+
+.card {
+    width: 10rem;
+}
+
+.card-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.card-row .card {
+    display: grid;
+    padding: 1rem;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card-row .card i {
+    font-size: 5rem;
+    color: var(--color-primary);
+}
+
+.card-row .card a {
+    font-size: 1.6rem;
+    color: var(--color-secondary);
+}
+
+.card-row-title {
+    text-align: left;
+    margin-left: 5rem;
+}

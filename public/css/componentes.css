@@ -656,27 +656,6 @@ Inicio de estilos del header de las cartas
     background-image: url(../imgs/card-club-virtual.jpg);
 }
 
-.card-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.card-row .card {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 5rem;
-    align-items: center;
-}
-
-.card-row .card i {
-    font-size: 8rem;
-    color: var(--color-primary);
-}
-
-.card-row .card a {
-    font-size: 2rem;
-    color: var(--color-secondary);
-}
 
 /*
 Fin de estilos del header de las cartas
