@@ -30,7 +30,6 @@ router.post('/registrar-libreria', function (req, res) {
         imagen: body.imagen,
         usuario: body.usuario,
         correo: body.correo,
-        contrasena: body.contrasena,
         empresa: body.empresa,
         telefono: body.telefono,
         descripcion: body.descripcion,
@@ -40,15 +39,6 @@ router.post('/registrar-libreria', function (req, res) {
         direccion_exacta: body.direccion_exacta,
         direccion_latitud: body.direccion_latitud,
         direccion_longitud: body.direccion_longitud,
-        //Info del administrador
-        avatar: body.avatar,
-        nombre: body.nombre,
-        primer_apellido: body.primer_apellido,
-        segundo_apellido: body.segundo_apellido,
-        id: body.id,
-        fecha: body.fecha,
-        edad: body.edad,
-        tipo_usuario: body.tipo_usuario
     });
 
 

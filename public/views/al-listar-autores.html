@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar Sucursales</title>
+    <title>Sorbil -- Librería -- Listar Autores</title>
 </head>
 
 <body id="grid-admin">
@@ -29,7 +29,7 @@
             </div>
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification">1</span>
+                    <span class="user-notification">6</span>
                 </a>
             </div>
 
@@ -51,33 +51,28 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listado de Sucursales</h1>
+            <h1>Listados de Autores</h1>
             <p>Busca la información que te interesa</p>
         </div>
 
         <div id="barra-busqueda">
-            <input id = "txt-filtro" type="text" placeholder="Buscar por / nombre / correo electrónico"
-                aria-label="Buscar por / nombre / correo electrónico">
+            <input type="text" id="txt-filtro" placeholder="Buscar por / autor / fecha" aria-label="Buscar por / autor / fecha">
 
         </div>
 
         <table id="tabla-filtrado">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Teléfono</th>
-                    <th>Correo electrónico</th>
-                    <th>Provincia</th>
-                    <th>Cantón</th>
-                    <th>Distrito</th>
+                    <th>Autor</th>
+                    <th>Fecha</th>
                 </tr>
             </thead>
             <tbody>
+
             </tbody>
         </table>
 
     </main>
-
 <!--Aside-->
 <aside id="sidenav-admin">
 
@@ -151,8 +146,8 @@
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-sucursal.js"></script>
-    <script src="../js/controlador-listar-sucursales.js"></script>
+    <script src="../js/servicio-autor.js"></script>
+    <script src="../js/controlador-listar-autores.js"></script>
 
 </body>
 
