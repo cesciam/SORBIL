@@ -12,7 +12,9 @@ let sucursal_schema = new mongoose.Schema({
     provincia: {type: String, required: true, unique: false},
     canton: {type: String, required: true, unique: false},
     distrito: {type: String, required: true, unique: false},
+    direccion_latitud: {type: Number, required: true, unique: false},
+    direccion_longitud: {type: Number, required: true, unique: false}
     
 });
 
-module.exports = mongoose.model('Sucursal', sucursal_schema);
+module.exports = mongoose.model('Sucursale', sucursal_schema);

@@ -13,8 +13,24 @@ let obtenerDatos = async () => {
     if (!error_blancos) {
         usuario_aceptado = await validar_credenciales(correoo, contrasena);
         if (usuario_aceptado) {
-            window.location.href = '../index.html';
-            console.log('Sirve lol el login');
+            let usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
+            let id_usuario_activo = usuarioActivo.tipo_usuario;
+            if(id_usuario_activo == 'al'){
+                window.location.href = '../views/al-inicio.html';
+            }
+            else{
+                window.location.href = '../views/u-inicio.html';
+            }
+            
+            
+        }else{
+            Swal.fire({ //formato json
+                title: 'Erro en el inicio de sesión',
+                type: 'warning',
+                text: 'Revise los campos resaltados e inténtelo de nuevo'
+            });
+            input_correo.classList.add('input_error');
+            input_contrasena.classList.add('input_error');
         }
     }
 };

@@ -4,22 +4,27 @@ const express = require('express'),
     router = express.Router(),
     Club = require('../models/club.model');
 
+router.param('_id', function (req, res, next, _id) {
+    req.body._id = _id;
+    next();
+});
+
 //Definicion de la ruta para registrar los libros
 
-router.post('/registrar-club-virtual', function (req, res) {
+router.post('/registrar-club', function (req, res) {
     let body = req.body;
 
     let nuevo_club = new Club({
-        //imagen
+        imagen: body.imagen,
         tipo: body.tipo,
         nombre: body.nombre,
-        tipo: body.tipo,
         tema: body.tema,
         correo: body.correo,
         telefono: body.telefono,
         categoria: body.categoria,
         genero: body.genero,
         fecha: body.fecha,
+        descripcion: body.descripcion,
     });
 
 
@@ -41,7 +46,7 @@ router.post('/registrar-club-virtual', function (req, res) {
     );
 });
 
-router.get('/listar-clubes-virtuales', function (req, res) {
+router.get('/listar-clubes', function (req, res) {
     Club.find(function (err, clubesDB) {
         if (err) {
             return res.status(400).json({
@@ -53,6 +58,23 @@ router.get('/listar-clubes-virtuales', function (req, res) {
             return res.json({
                 success: true,
                 lista_clubes: clubesDB
+            });
+        }
+    })
+});
+
+router.get('/buscar-club-id/:_id', function (req, res) {
+    Club.findById(req.body._id, function (err, clubDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ningun club con ese _id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                club: clubDB
             });
         }
     })

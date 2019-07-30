@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/layout/usuarios.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/layout/perfiles.css">
+    <link rel="stylesheet" href="../css/paginas/ver-perfil-club.css">
+    <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
+    <title>Sorbil -- Perfil de librería</title>
+</head>
+
+<body>
+    <!--Header-->
+    <header id="header-user">
+
+        <div id="header-nav-1">
+            <a class="logo" href="index.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
+
+            <nav>
+                <a href="index.html"><i class='bx bx-home-circle'></i>Inicio</a>
+                <a href="u-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
+                <a href="u-contacto.html"><i class='bx bx-mail-send'></i>Contacto</a>
+            </nav>
+
+            <div class="header-nav-1-btns">
+                <div class="header-btn">
+                    <a class="btn-white" href="views/u-iniciar-sesion.html">Iniciar sesión</a>
+                </div>
+
+                <div class="header-btn">
+                    <a class="btn-color" href="views/u-registrar-usuario.html">Crear cuenta</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="header-nav-2" class="sticky">
+            <nav>
+                <ul>
+                    <li><a href="#">Catálogo de libros<i class='bx bx-chevron-down'></i></a></li>
+                    <li><a href="#">Librerías asociadas<i class='bx bx-chevron-down'></i></a></li>
+                    <li><a href="#">Clubes de lectura<i class='bx bx-chevron-down'></i></a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+
+    <main id="main-user">
+        <section class="section-one">
+
+            <div class="img"><img src="../imgs/book-placeholder.png" id="imagen"></div>
+
+            <div class="section-container">
+                <div class="title">
+                    <h1 id="tema"></h1>
+                    <h2 id="fecha"></h2>
+                    <button id="btn-registrar">Registrarse al club</button>
+                    <p id="descripcion"></p>
+                    <div class="title-2-col">
+                        <p>Categoría: <span id="categoria"></span></p>
+                        <p>Género: <span id="genero"></span></p>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <div class="info-2-col">
+                        <h2>Dirección del club</h2>
+                        <div class="info-2-col-container">
+                            <p>Provincia: <span id="provincia"></span></p>
+                            <p>Cantón: <span id="canton"></span></p>
+                            <p>Distrito: <span id="distrito"></span></p>
+                        </div>
+                        <div>
+                            <p id="direccion-exacta"></p>
+                        </div>
+                    </div>
+
+                    <h2>Información de contacto</h2>
+                    <div class="info-3-col">
+                        <div class="info-3-col-container">
+                            <div>
+                                <i class='bx bx-phone-call'></i>
+                                <i class='bx bx-mail-send'></i>
+                            </div>
+                            <div>
+                                <h4>Teléfono:</h4>
+                                <h4>Correo electrónico:</h4>
+                            </div>
+                            <div>
+                                <p id="telefono"></p>
+                                <p id="correo"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer id="footer-user">
+    
+        <div id="footer-links">
+            <a href="../index.html"><img src="../imgs/logo-light.png" alt="Logo de Sorbil"></a>
+    
+            <nav>
+                <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
+                <a href="../views/u-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="../views/u-quienes-somos"><i class='bx bx-user-voice'></i>Quiénes somos</a>
+                <a href="../u-contacto"><i class='bx bx-mail-send'></i>Contacto</a>
+            </nav>
+        </div>
+    
+        <div id="footer-copyright">
+            <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+                <span>FÉNIX</span></a>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/servicio-club.js"></script>
+    <script src="../js/controlador-perfil-club-presencial.js"></script>
+    
+</body>
+
+</html>

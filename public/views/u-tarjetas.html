@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/layout/administradores.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/paginas/registrar-libro.css">
+    <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
+    <link rel="stylesheet" href="../css/paginas/registrar-tarjeta.css">
+    <title>Sorbil -- Registro de tarjetas</title>
+</head>
+
+<body id="grid-admin">
+
+    <!--Header-->
+    <header id="header-admin">
+
+        <h3 class="header-text">Área del administrador de librería</h3>
+
+        <div class="header-user-icons">
+            <div class="header-user-container">
+                <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
+                    <span class="user-notification">1</span>
+                </a>
+            </div>
+            <div class="header-user-container">
+                <a class="header-icon" href="#"><i class='bx bx-bell'></i>
+                    <span class="user-notification">6</span>
+                </a>
+            </div>
+
+            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
+                        class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
+                        class='bx bx-chevron-down'></i></a>
+                <div class="menu-user-container">
+                    <ul class="user-menu">
+                        <a class="user-menu-link" href="#">Perfil</a>
+                        <a  id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!--Main-->
+    <main id="main-admin">
+        <div class="main-admin-titulo">
+            <h1>Registro de tarjetas de pago</h1>
+            <p>Registra la información que se solicita</p>
+        </div>
+
+        <form id="form" action="#">
+            <div>
+                <label for="#">Nombre del titular</label>
+                <input id="input_nombre" type="text" placeholder="Ingresar nombre del titular" aria-label="Ingresar nombre del titular">
+            </div>
+            <div>
+                    <label for="#">Número de tarjeta</label>
+                <div id="div-numTarjeta">
+                        <input class="input_numero_tarjeta" type="text" placeholder="Ingresar el numero de tarjeta" aria-label="Ingresar el numero de tarjeta" id="input_num_tarjeta">
+                        <i id="tipo_tarjeta"></i>
+                </div>
+                
+                    
+            </div>
+
+            <div id="form-container">
+                <div>
+                    <label for="#">Fecha de vencimiento</label>
+                    <input type="text" placeholder="MM/AA" aria-label="MM/AA" id="input_fecha_ven" class="input_fecha">
+                </div>
+                <div>
+                    <label for="#">CVV</label>
+                    <input id="input_cvv" type="text" placeholder="CVV" aria-label="CVV" class="cvv">
+                </div>
+            </div>
+            <button id="btn_enviar" type="button">Registrar</button>
+        </form>
+
+        <div class="main-admin-titulo">
+            <h2>Listados de tarjetas</h2>
+            <p>Busca la información que te interesa</p>
+        </div>
+
+        <div id="barra-busqueda">
+            <input id="txt_filtro" type="text" placeholder="Buscar por / Nombre / Numero de tarjeta / Fecha / CVV " aria-label="Buscar por / Nombre / Numero de tarjeta / Fecha / CVV ">
+
+            <button aria-label="Search" type="button" value = "Refresh" onclick="history.go(0)">
+                <spans>Actualizar</spans>
+            </button>
+        </div>
+
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                   <th>Nombre</th>
+                   <th>Fecha de vencimiento</th>
+                   <th>Número de tarjeta</th>
+                   <th>CVV</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </main>
+
+    <!--Aside-->
+    <aside id="sidenav-admin">
+
+        <div class="sidebar">
+
+            <div class="sidenav-menu">
+                <a class="logo" href="al-inicio"><img src="../imgs/logo.png" alt="logo de Sorbil"></a>
+            </div>
+
+            <ul class="sidenav-list">
+                <li class="sidenav-list-item"><a href="al-inicio.html"><i class='bx bx-home sidenav-i'></i>Inicio</a>
+                </li>
+
+                <li class="sidenav-list-item"><a href="al-solicitudes.html"><i
+                            class='bx bx-user-plus sidenav-i'></i>Solicitudes</a></li>
+
+                <li class="sidenav-list-item">
+                    <a href="#" class="sidenav-btn dropdown-toggle">
+                        <i class='bx bx-plus'></i>
+                        Registros
+                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <div class="sidenav-small-menu dropdown-menu">
+                        <a href="al-registrar-libro.html">Libro</a>
+                        <a href="al-registrar-categorias.html">Categorías</a>
+                        <a href="al-registrar-generos.html">Géneros</a>
+                        <a href="al-registrar-clubes-de-lectura.html">Club de lectura</a>
+                        <a href="al-registrar-ofertas.html">Ofertas</a>
+                    </div>
+                </li>
+
+                <li class="sidenav-list-item">
+                    <a href="#" class="sidenav-btn dropdown-toggle">
+                        <i class='bx bx-list-ul'></i>
+                        Listados
+                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <div class="sidenav-small-menu dropdown-menu">
+                        <a href="al-listar-libros.html">Libros</a>
+                        <a href="al-listar-usuarios.html">Usuarios</a>
+                        <a href="al-listar-sucursales.html">Sucursales</a>
+                        <a href="al-listar-autores.html">Autores</a>
+                        <a href="al-listar-intercambios.html">Intercambios</a>
+                        <a href="al-listar-ofertas.html">Ofertas</a>
+                        <a href="al-listar-categorias.html">Categorías</a>
+                        <a href="al-listar-generos.html">Géneros</a>
+                        <a href="al-listar-usuarios-de-clubes.html">Usuarios de Clubes</a>
+                        <a href="al-listar-clubes-de-lectura.html">Clubes de lectura</a>
+                    </div>
+                </li>
+
+                <li class="sidenav-list-item"><a href="al-reportes.html"><i
+                            class='bx bxs-report sidenav-i'></i>Reportes</a>
+                </li>
+
+                <li class="sidenav-list-item"><a href="al-facturas.html"><i
+                            class='bx bx-dollar-circle sidenav-i'></i>Facturas</a></li>
+
+                <li class="sidenav-list-item"><a href="al-bitactoras.html"><i
+                            class='bx bx-loader-alt sidenav-i'></i>Bitácora</a></li>
+            </ul>
+
+        </div>
+
+    </aside>
+
+    <!--Footer-->
+    <footer id="footer-admin">
+        <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+            <span>FÉNIX</span></a>
+    </footer>
+
+    <!--Scripts-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://kit.fontawesome.com/a1b50ac28c.js"></script>
+    <script src="../vendors/cleave.js-master/dist/cleave.min.js"></script>
+    <script src="../js/servicio-usuario.js"></script>
+    <script src="../js/controlador-registro-tarjetas.js"></script>
+    <script src="../js/cerrar-sesion.js"></script>
+</body>
+
+</html>

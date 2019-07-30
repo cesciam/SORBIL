@@ -87,31 +87,31 @@ let ubicaciones = {
         "Pococí": ["Guápiles"]
 
     }
-}
-window.onload = function () {
-    let provincia = document.getElementById("txt-provincia"),
-        canton = document.getElementById("txt-canton"),
-        distrito = document.getElementById("txt-distrito");
 
-    for (let opt_provincia in ubicaciones) {
-        provincia.options[provincia.options.length] = new Option(opt_provincia, opt_provincia);
+}
+
+let provincia = document.querySelector("#txt-provincia"),
+    canton = document.querySelector("#txt-canton"),
+    distrito = document.querySelector("#txt-distrito");
+
+for (let opt_provincia in ubicaciones) {
+    provincia.options[provincia.options.length] = new Option(opt_provincia, opt_provincia);
+}
+provincia.onchange = function () {
+    canton.length = 1;
+    distrito.length = 1;
+    if (this.selectedIndex < 1) return;
+    for (let opt_canton in ubicaciones[this.value]) {
+        canton.options[canton.options.length] = new Option(opt_canton, opt_canton);
     }
-    provincia.onchange = function () {
-        canton.length = 1; 
-        distrito.length = 1; 
-        if (this.selectedIndex < 1) return;   
-        for (let opt_canton in ubicaciones[this.value]) {
-            canton.options[canton.options.length] = new Option(opt_canton, opt_canton);
-        }
+}
+provincia.onchange();
+canton.onchange = function () {
+    distrito.length = 1;
+    if (this.selectedIndex < 1) return;
+    let opt_distritos = ubicaciones[provincia.value][this.value];
+    for (let i = 0; i < opt_distritos.length; i++) {
+        distrito.options[distrito.options.length] = new Option(opt_distritos[i], opt_distritos[i]);
     }
-    provincia.onchange(); 
-    canton.onchange = function () {
-        distrito.length = 1; 
-        if (this.selectedIndex < 1) return;    
-        let opt_distritos = ubicaciones[provincia.value][this.value];
-        for (let i = 0; i < opt_distritos.length; i++) {
-            distrito.options[distrito.options.length] = new Option(opt_distritos[i], opt_distritos[i]);
-        }
-    }
-};
+}
 

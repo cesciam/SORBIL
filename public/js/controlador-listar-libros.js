@@ -28,7 +28,7 @@ let mostrar_tabla = async() => {
         celdaPerfil.appendChild(btn_perfil);
 
         btn_perfil.addEventListener('click', function(){
-            window.location.href = `perfil-libro.html?_id=${this.dataset._id}`;
+            window.location.href = `ver-perfil-libro.html?_id=${this.dataset._id}`;
         });
     }
 };

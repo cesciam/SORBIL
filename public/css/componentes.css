@@ -158,7 +158,7 @@ Inicio de estilos de formularios
 Fin de estilos formularios
 */
 
-button {
+button, .btn-white, .btn-color {
     position: relative;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
@@ -199,15 +199,25 @@ button:active:after {
 
 /*Estilos del botón blanco*/
 
+.btn-white, .btn-color {
+    padding: var(--box-padding);
+    border-radius: var(--box-radius);
+    text-align: center;
+}
+
+.btn-color {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
 .btn-white {
     background-color: var(--color-white);
     color: var(--color-primary);
 }
 
-.btn-white:hover {
-    background-color: var(--color-white);
-    color: var(--color-primary);
-    opacity: 1;
+.btn-white:hover, .btn-color:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-dark-2);
 }
 
 /* 
@@ -221,14 +231,14 @@ Inicio de estilos de los filtros y listados administradores
     grid-template-columns: 1fr auto;
     justify-items: center;
     height: 3rem;
-    width: 90%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
 
 #barra-busqueda input {
     width: 100%;
-    box-shadow: var(--shadow-light);
+    box-shadow: var(--shadow-dark-1);
     border-radius: .4rem 0 0 .4rem;
     transition: all .2s;
 }
@@ -237,7 +247,7 @@ Inicio de estilos de los filtros y listados administradores
     width: 110%;
 }
 
-#barra-busqueda button {
+/* #barra-busqueda button {
     background-color: var(--color-alternative-blue);
     color: var(--color-white);
     border-radius: 0 .4rem .4rem 0;
@@ -246,7 +256,7 @@ Inicio de estilos de los filtros y listados administradores
 #barra-busqueda button:hover {
     box-shadow: var(--shadow-dark-1);
     transform: translateY(0);
-}
+} */
 
 /*
 Fin de estilos de la barra de búsqueda
@@ -337,6 +347,10 @@ Inicio de estilos del header de usuario
 
 .header-icon i:hover {
     color: var(--color-primary);
+}
+
+.mini-photo-wrapper {
+    cursor: pointer;
 }
 
 .mini-photo-wrapper i {
@@ -551,12 +565,33 @@ Inicio de estilos del header de las cartas
 .card-container {
     display: grid;
     justify-items: center;
+    /* grid-template-columns: repeat(3, 1fr); */
 }
 
 .card-container .card .card-content a {
     margin-bottom: 1rem;
     font-size: 1.4rem;
 }
+
+/* .card-container img {
+
+    width: 100%;
+}
+
+.card-container h2 {
+
+    text-align: center;
+}
+
+.card-container p {
+    
+    text-align: center;
+}
+
+.card-container button {
+    
+    margin: 30px;
+} */
 
 .card-container .card:hover {
     opacity: .9;
@@ -577,6 +612,7 @@ Inicio de estilos del header de las cartas
     transform: translate3d(0, 0, 0);
     transition: all 0.3s;
     border-radius: var(--box-radius);
+    background-color: var(--color-white);
 }
 
 .card-container .card .card-content {
@@ -618,6 +654,28 @@ Inicio de estilos del header de las cartas
 
 .card-club-virtual {
     background-image: url(../imgs/card-club-virtual.jpg);
+}
+
+.card-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card-row .card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5rem;
+    align-items: center;
+}
+
+.card-row .card i {
+    font-size: 8rem;
+    color: var(--color-primary);
+}
+
+.card-row .card a {
+    font-size: 2rem;
+    color: var(--color-secondary);
 }
 
 /*

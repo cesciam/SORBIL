@@ -34,11 +34,18 @@
                     </div>
                 </div>
                 <form id="form" action="#">
-
                     <div id="form-container">
-
                         <!--Paso 1 del formulario-->
                         <div class="step step1">
+                            <div>
+                                <div class="upload-img">
+                                    <img src="../imgs/book-placeholder.png" alt="" class="img_registro_libro"
+                                        id="portada">
+                                    <label for="file">Sube una imagen</label>
+                                    <button id="btnSeleccionarImagen" type="button" id="img-uploader-portada"
+                                        class="upload-msg"></button>
+                                </div>
+                            </div>
                             <div class="input-dos-columnas">
                                 <div class="input-group">
                                     <label for="#">Nombre del administrador</label>
@@ -57,15 +64,14 @@
                                 <div class="input-group">
                                     <div>
                                         <label for="#">Correo electrónico</label>
-                                        <input id="txt-correo" type="email"
-                                            placeholder="Ingresar su correo electrónico"
+                                        <input id="txt-correo" type="email" placeholder="Ingresar su correo electrónico"
                                             aria-label="Ingresar el correo electrónico">
                                     </div>
                                 </div>
                                 <div class="input-group">
                                     <label for="#">Teléfono</label>
                                     <input id="txt-telefono" type="tel" placeholder="Ingresar el teléfono"
-                                        aria-label="Ingresar su teléfono">
+                                        aria-label="Ingresar su teléfono" maxlength="8">
                                 </div>
                             </div>
                         </div>
@@ -74,23 +80,17 @@
                             <div class="input-dos-columnas">
                                 <div>
                                     <label for="#">Categoría</label>
-                                    <select id="txt-categoria">
+                                    <select id="txt-categoria" class="opt-categorias">
                                         <option value="" disabled="disabled" selected="true">
                                             Escoger una opción
-                                        </option>
-                                        <option value="Categoria">
-                                            Categoría 1
                                         </option>
                                     </select>
                                 </div>
                                 <div>
                                     <label for="#">Género</label>
-                                    <select id="txt-genero">
+                                    <select id="txt-genero" class="opt-generos">
                                         <option value="" disabled="disabled" selected="true">
                                             Escoger una opción
-                                        </option>
-                                        <option value="Género">
-                                            Género 1
                                         </option>
                                     </select>
                                 </div>
@@ -99,10 +99,15 @@
                                 <div class="input-group">
                                     <div>
                                         <label for="#">fecha</label>
-                                        <input id="txt-fecha" type="date"
-                                            placeholder="Ingresar su correo electrónico"
-                                            aria-label="Ingresar el correo electrónico">
+                                        <input id="txt-fecha" type="date" placeholder="Ingresar la fecha"
+                                            aria-label="Ingresar la fecha">
                                     </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="input-group">
+                                    <label for="#">Dirección del club</label>
+                                    <textarea id="txt-descripcion"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +155,10 @@
     <script src="../js/servicio-imagen.js"></script>
     <script src="../js/servicio-club.js"></script>
     <script src="../js/controlador-registrar-club-virtual.js"></script>
-
+    <script src="../js/servicio-genero.js"></script>
+    <script src="../js/servicio-categoria.js"></script>
+    <script src="../js/componentes/controlador-lista-bd.js"></script>
+    
 </body>
 
 </html>

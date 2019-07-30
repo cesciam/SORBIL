@@ -17,7 +17,7 @@ html {
 }
 
 #main-form #form-image {
-    background-size: cover;
+    background-size: 250%;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
@@ -63,6 +63,19 @@ html {
     margin-right: auto;
 }
 
+#main-form #form-container #btn-contrasena {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--color-black);
+    transition: .2s;
+    animation-name: moveInUp;
+    animation-duration: 1s;
+}
+
+#main-form #form-container #btn-contrasena:hover {
+    color: var(--color-alternative-blue);
+}
+
 #main-form #form-container #txt-btn {
     animation-name: moveInUp;
     animation-duration: 1s;
@@ -84,8 +97,8 @@ html {
 
 #main-form p {
     padding: .5rem;
-    margin-bottom: 8rem;
     border-bottom: var(--line);
+    margin-bottom: 3rem;
 }
 
 #main-form #seccion-form {
@@ -115,6 +128,7 @@ html {
 #main-form #seccion-form .form-title .progress-container {
     display: grid;
     justify-items: center;
+    display: none;
 }
 
 #main-form #seccion-form .form-title .progress-bar {
@@ -181,7 +195,7 @@ html {
 }
 
 #main-form #form-container>*, select {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 #main-form #form-container h2 {
