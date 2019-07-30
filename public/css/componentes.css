@@ -349,7 +349,7 @@ Inicio de estilos del header de usuario
     color: var(--color-primary);
 }
 
-.mini-photo-wrapper{
+.mini-photo-wrapper {
     cursor: pointer;
 }
 
@@ -654,6 +654,28 @@ Inicio de estilos del header de las cartas
 
 .card-club-virtual {
     background-image: url(../imgs/card-club-virtual.jpg);
+}
+
+.card-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card-row .card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5rem;
+    align-items: center;
+}
+
+.card-row .card i {
+    font-size: 8rem;
+    color: var(--color-primary);
+}
+
+.card-row .card a {
+    font-size: 2rem;
+    color: var(--color-secondary);
 }
 
 /*
