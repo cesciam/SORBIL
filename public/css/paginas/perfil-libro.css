@@ -4,8 +4,8 @@
 
 #libro-info {
     display: grid;
-    grid-template-columns: 60% 40%;
-    grid-template-rows: repeat(2, ifr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     padding: 6rem;
     background: var( --color-alternative-bg);
     background-size: cover;
@@ -42,9 +42,10 @@
     border: solid 2px var(--color-secondary);
     grid-gap: 2rem;
     padding: 4%;
-    padding-left: 7%;
-    padding-right: 7%;
+    padding-left: 5%;
+    padding-right: 5%;
     background: white;
+    max-width: 100%;
 }
 
 #info-libro-precio #div-img-portada{
@@ -57,4 +58,15 @@
 
 #portada{
     width: 20rem;
+}
+
+#info-libro-div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+}
+
+#info-libro-div p {
+    justify-self: start;
+    font-weight: var(--font-semibold);
 }

@@ -51,12 +51,12 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de Géneros</h1>
+            <h1>Listados de Clubes</h1>
             <p>Busca la información que te interesa</p>
         </div>
 
         <div id="barra-busqueda">
-            <input type="text" id="txt-filtro" placeholder="Buscar por / Nombre / Tema / Provincia / Género" aria-label="Buscar por / Nombre / Tema / Provincia / Género">
+            <input type="text" id="txt-filtro" placeholder="Buscar por / Nombre / Tema / Categoría / Género" aria-label="Buscar por / Nombre / Tema / Categoría / Género">
 
             <!-- <button aria-label="Search" type="button">
                 <spans>Filtrar</spans>
@@ -67,10 +67,12 @@
         <table id="tabla-filtrado">
             <thead>
                 <tr>
-                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Administrador</th>
                     <th>Tema</th>
-                    <th>Provincia</th>
+                    <th>Categoría</th>
                     <th>Género</th>
+                    <th>Opciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -156,6 +158,8 @@
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/servicio-club.js"></script>
+    <script src="../js/controlador-listar-club.js"></script>
 </body>
 
 </html>

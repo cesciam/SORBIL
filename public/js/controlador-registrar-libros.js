@@ -33,7 +33,6 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
     if (img_uploader_portada.src == 'http://localhost:3000/public/imgs/book-placeholder.png'){
         error = true;
         img_uploader_portada.classList.add('input_error');
-        console.log('Todo mal');
     } else {
         img_uploader_portada.classList.remove('input_error');
     }
@@ -41,7 +40,6 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
     if (img_uploader_contraportada.src == 'http://localhost:3000/public/imgs/book-placeholder.png'){
         error = true;
         img_uploader_contraportada.classList.add('input_error');
-        console.log('Todo mal');
     } else {
         img_uploader_contraportada.classList.remove('input_error');
     }
@@ -49,7 +47,6 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
     if (ptitulo.value == ''){
         error = true;
         input_titulo.classList.add('input_error');
-        console.log('Todo mal');
     } else {
         input_titulo.classList.remove('input_error');
     }
@@ -57,7 +54,6 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
     if (pautor.value == ''){
         error = true;
         input_autor.classList.add('input_error');
-        console.log('Todo mal');
     } else {
         input_autor.classList.remove('input_error');
     }
@@ -65,7 +61,6 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
     if (pedicion.value == ''){
         error = true;
         input_edicion.classList.add('input_error');
-        console.log('Todo mal');
     } else {
         input_edicion.classList.remove('input_error');
     }
@@ -73,7 +68,6 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
     if (peditorial.value == ''){
         error = true;
         input_editorial.classList.add('input_error');
-        console.log('Todo mal');
     } else {
         input_editorial.classList.remove('input_error');
     }
@@ -81,7 +75,6 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
     if (fecha_formateada == 'Invalid Date'){
         error = true;
         input_fecha.classList.add('input_error');
-        console.log('Todo mal');
     } else {
         input_fecha.classList.remove('input_error');
     }
@@ -89,7 +82,6 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
     if (pcategorias.value == 0){
         error = true;
         input_categorias.classList.add('input_error');
-        console.log('Todo mal');
     } else {
         input_categorias.classList.remove('input_error');
     }
@@ -97,7 +89,6 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
     if (pgeneros.value == 0){
         error = true;
         input_generos.classList.add('input_error');
-        console.log('Todo mal');
     } else {
         input_generos.classList.remove('input_error');
     }
@@ -105,7 +96,6 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
     if (pidioma.value == ''){
         error = true;
         input_idioma.classList.add('input_error');
-        console.log('Todo mal');
     } else {
         input_idioma.classList.remove('input_error');
     }
@@ -131,7 +121,7 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
         input_isbn.classList.remove('input_error');
     }
 
-    if(psinopsis.value == ''){
+    if(psinopsis == ''){
         error = true;
         input_psinopsis.classList.add('input_error');
     }else{
@@ -183,11 +173,24 @@ let lista_generos = [];
 
 let agregar_generos = async () => {
     let select = document.getElementById("input_generos");
-    lista_generos = obtenerGeneros();
-    let option = document.createElement("option");
+    lista_generos = await obtenerGeneros();
+    
     for(i = 0; i < lista_generos.length; i++)
     {
-        option = lista_generos[i]['genero'];
+        let option = new Option(lista_generos[i]['genero']);
+        select.add(option);
+    }
+    
+    
+};
+
+let agregar_categorias = async () => {
+    let select = document.getElementById("input_categorias");
+    let lista_catergorias = await obtenerCategorias();
+    
+    for(i = 0; i < lista_catergorias.length; i++)
+    {
+        let option = new Option(lista_catergorias[i]['categoria']);
         select.add(option);
     }
     
@@ -195,5 +198,6 @@ let agregar_generos = async () => {
 };
 
 agregar_generos();
+agregar_categorias();
 
 btn_enviar.addEventListener('click', llamar);

@@ -35,7 +35,6 @@ html {
 #main-admin {
     grid-area: main;
     display: grid;
-    margin: 4rem 8%;
 }
 
 #main-admin #btn-enviar {
@@ -44,6 +43,33 @@ html {
 
 #main-admin>* {
     margin-bottom: 5rem;
+}
+
+#main-admin button {
+    background-color: var(--color-primary);
+}
+
+#main-admin #tabla-filtrado {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+
+#main-admin #barra-busqueda {
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+}
+
+#main-admin #tabla-filtrado button {
+    background-color: var(--color-alternative-blue);
+    color: var(--color-white);
+    border-radius: 0 .4rem .4rem 0;
+}
+
+#main-admin #tabla-filtrado button {
+    box-shadow: var(--shadow-dark-1);
+    transform: translateY(0);
 }
 
 #main-admin .main-admin-titulo {
@@ -74,7 +100,14 @@ html {
 }
 
 #main-admin .upload-img {
-    height: 8rem;
+    height: 15rem;
+    margin-bottom: 5rem;
+}
+
+#main-admin #form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 
 #main-admin #form div {
@@ -102,7 +135,7 @@ html {
 }
 
 #main-admin #btn_enviar {
-    margin-top: 6rem;
+    margin-top: 2rem;
 }
 
 /*Sólo en casos específicos*/

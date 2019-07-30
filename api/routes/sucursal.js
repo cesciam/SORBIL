@@ -9,13 +9,15 @@ const express = require('express'),
 router.post('/registrar-sucursal', function (req, res) {
     let body = req.body;
 
-    let nuevo_usuario = new Usuario({
+    let nuevo_sucursal = new Sucursal({
         nombre: body.nombre,
         telefono: body.telefono,
         correo: body.correo,
         provincia: body.provincia,
         canton: body.canton,
-        distrito: body.distrito,    
+        distrito: body.distrito,   
+        direccion_latitud: body.direccion_latitud,
+        direccion_longitud: body.direccion_longitud 
     });
 
     nuevo_sucursal.save(

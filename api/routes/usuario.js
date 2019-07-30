@@ -4,9 +4,18 @@ const express = require('express'),
     router = express.Router(),
     Usuario = require('../models/usuario.model');
 
-//Definición de la ruta para registrar contactos
+router.param('_id', function(req, res, next, _id) {
+    req.body._id = _id;
+    next();
+});
 
-router.post('/registrar-usuario', function (req, res) {
+router.param('correo', function(req, res, next, correo) {
+    req.body.correo = correo;
+    next();
+});
+
+
+router.post('/registrar-usuario', function(req, res) {
     let body = req.body;
 
     let nuevo_usuario = new Usuario({
@@ -14,7 +23,6 @@ router.post('/registrar-usuario', function (req, res) {
         usuario: body.usuario,
         correo: body.correo,
         contrasena: body.contrasena,
-        verfContrasena: body.verfContrasena,
         nombre: body.nombre,
         id: body.id,
         primer_apellido: body.primer_apellido,
@@ -23,11 +31,16 @@ router.post('/registrar-usuario', function (req, res) {
         provincia: body.provincia,
         canton: body.canton,
         distrito: body.distrito,
-        direccion_exacta: body.direccion_exacta
+        direccion_exacta: body.direccion_exacta,
+        direccion_latitud: body.direccion_latitud,
+        direccion_longitud: body.direccion_longitud,
+        tipo_usuario: body.tipo_usuario,
+        edad: body.edad,
+        fecha: body.fecha
     });
 
     nuevo_usuario.save(
-        function (err, usuariosBD) {
+        function(err, usuariosBD) {
             if (err) {
                 return res.status(400).json({
                     success: false,
@@ -44,29 +57,9 @@ router.post('/registrar-usuario', function (req, res) {
     );
 });
 
-router.get('/listar-usuarios', function (req, res) {
-    Usuario.find(function (err, usuariosBD) {
-        if (err) {
-            return res.status(400).json({
-                success: false,
-                msj: 'No se pueden listar los usuarios',
-                err
-            });
-        } else {
-            return res.json({
-                success: true,
-                lista_usuarios: usuariosBD
-            });
-        }
-    })
-});
-
-module.exports = router;
-
-
-router.post('/validar-credenciales', function (req, res) {
+router.post('/validar-credenciales', function(req, res) {
     Usuario.findOne({ correo: req.body.correo }).then(
-        function (usuario) {
+        function(usuario) {
             if (usuario) {
                 if (usuario.contrasena == req.body.contrasena) {
                     res.json({
@@ -88,3 +81,100 @@ router.post('/validar-credenciales', function (req, res) {
         }
     )
 });
+
+router.get('/listar-usuarios', function(req, res) {
+    Usuario.find(function(err, usuariosBD) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se pueden listar los usuarios',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                lista_usuarios: usuariosBD
+            });
+        }
+    })
+});
+
+router.get('/buscar-usuario-id/:_id', function(req, res) {
+    Usuario.findById(req.body._id, function(err, usuarioDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ninguna librería con ese _id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                usuario: usuarioDB
+            });
+        }
+    })
+});
+
+router.get('/buscar-usuario-correo/:correo', function(req, res) {
+    Usuario.find({ correo: req.body.correo }, function(err, usuarioBD) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontró ningún usuario con ese correo',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                usuario: usuarioBD
+            });
+        }
+    })
+});
+
+router.post('/agregar-tarjeta', function(req, res) {
+    Usuario.update({ _id: req.body._id }, {
+            $push:{ 
+                'tarjetas': {
+                    nombre: req.body.nombre,
+                    num_tarjeta: req.body.num_tarjeta,
+                    fecha_ven: req.body.fecha_ven,
+                    cvv: req.body.cvv   
+                }
+            }
+        },
+        function(error){
+            if (error) {
+                return res.status(400).json({
+                    success: false,
+                    msj: 'No se pudo agregar la tarjeta',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La tarjeta se guardó con éxito'
+                });
+            }
+        }
+    )
+});
+
+router.get('/buscar-tarjetas/:_id', function (req, res) {
+    Usuario.findById(req.body._id, function (err, usuarioDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ningun usuario con ese id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                usuario: usuarioDB
+            });
+        }
+    })
+});
+module.exports = router;

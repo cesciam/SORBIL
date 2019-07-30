@@ -13,8 +13,16 @@ let obtenerDatos = async () => {
     if (!error_blancos) {
         usuario_aceptado = await validar_credenciales(correoo, contrasena);
         if (usuario_aceptado) {
-            window.location.href = '../index.html';
-            console.log('Sirve lol el login');
+            window.location.href = '../views/u-inicio.html';
+            
+        }else{
+            Swal.fire({ //formato json
+                title: 'Erro en el inicio de sesión',
+                type: 'warning',
+                text: 'Revise los campos resaltados e inténtelo de nuevo'
+            });
+            input_correo.classList.add('input_error');
+            input_contrasena.classList.add('input_error');
         }
     }
 };
