@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar Categorías</title>
+    <title>Sorbil -- Librería -- Registrar Categorías</title>
 </head>
 
 <body id="grid-admin">
@@ -51,25 +51,22 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de Categorías</h1>
-            <p>Listá la información que te interesa</p>
+            <h1>Registro de Categorías</h1>
+            <p>Registra la información que te interesa</p>
         </div>
 
-        <div id="barra-busqueda">
-            <input type="text" placeholder="Buscar por / categoría" aria-label="Buscar por / categoría">
+        <form id="form" action="#">
 
-            <button aria-label="Search" type="button">
-                <spans>Listar</spans>
-            </button>
-        </div>
+            <div class="centrar-input">
+                <div>
+                    <label for="#">Categoria</label>
+                    <input id="txt-categoria" type="text" placeholder="Ingresar la categoría" aria-label="Ingresar la categoría">
+                </div>
+            </div>
 
-        <table id="tabla-filtrado">
-            <thead>
-                <tr>
-                    <th>Categoría</th>
-                </tr>
-            </thead>
-            <tbody>
+            <button id="btn-enviar" type="button">Registrar</button>
+
+        </form>
 
     </main>
 
@@ -146,8 +143,12 @@
     </footer>
 
     <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+    <script src="../js/servicio-categoria.js"></script>
+    <script src="../js/controlador-registrar-categoria.js"></script>
 </body>
 
 </html>

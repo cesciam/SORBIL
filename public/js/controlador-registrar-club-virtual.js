@@ -4,11 +4,11 @@ const input_administrador_club = document.querySelector('#txt-administrador-club
 const input_tema = document.querySelector('#txt-tema-club');
 const input_telefono = document.querySelector('#txt-telefono');
 const input_correo = document.querySelector('#txt-correo');
-const input_fecha = document.querySelector('#txt-fecha');
 const input_categoria = document.querySelector('#txt-categoria');
 const input_genero = document.querySelector('#txt-genero');
-
+const input_fecha = document.querySelector('#txt-fecha');
 const btn_enviar = document.querySelector('#btn-enviar');
+const tipo = 'club2';
 
 let validar = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero) => {
 
@@ -76,10 +76,10 @@ let llamar = () => {
     let categoria = input_categoria.value;
     let genero = input_genero.value;
 
-    let error = validar(nombre, tema, telefono, correo, fecha, categoria, genero);
+    let error = validar(tipo, nombre, tema, telefono, correo, fecha, categoria, genero);
 
     if (error == false) {
-        registrarClub(nombre, tema, telefono, correo, fecha, categoria, genero);
+        registrarClub(tipo, nombre, tema, telefono, correo, fecha, categoria, genero);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

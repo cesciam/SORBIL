@@ -2,37 +2,37 @@
 
 const express = require('express'),
     router = express.Router(),
-    Genero = require('../models/genero.model');
+    Categoria = require('../models/categoria.model');
 
-//Definición de la ruta para registrar generos
+//Definición de la ruta para registrar categorias
 
-router.post('/registrar-genero', function (req, res) {
+router.post('/registrar-categoria', function (req, res) {
     let body = req.body;
 
-    let nuevo_genero = new Genero({
-        genero: body.genero
+    let nuevo_categoria = new Categoria({
+        categoria: body.categoria
     });
 
-    nuevo_genero.save(
-        function (err, generoDB) {
+    nuevo_categoria.save(
+        function (err, categoriaDB) {
             if (err) {
                 return res.status(400).json({
                     success: false,
-                    msj: 'El genero no se pudo guardar',
+                    msj: 'El categoria no se pudo guardar',
                     err
                 });
             } else {
                 res.json({
                     success: true,
-                    msj: 'El genero se guardó con éxito'
+                    msj: 'El categoria se guardó con éxito'
                 });
             }
         }
     );
 });
 
-router.get('/listar-generos', async function (req, res) {
-    Genero.find(function (err, generosDB) {
+router.get('/listar-categorias', async function (req, res) {
+    Categoria.find(function (err, categoriasDB) {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -42,12 +42,11 @@ router.get('/listar-generos', async function (req, res) {
         } else {
             return res.json({
                 success: true,
-                lista_generos: generosDB
+                lista_categorias: categoriasDB
             });
         }
     })
 });
 
-module.exports = router; 
-
+module.exports = router;
 

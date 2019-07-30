@@ -9,10 +9,13 @@ const mongoose = require('mongoose');
 const contacto_route = require('./routes/contacto');
 const libro_route = require('./routes/registrar-libro');
 const genero_route = require('./routes/genero');
+const categoria_route = require('./routes/categoria');
 const libreria_route = require('./routes/libreria');
 const usuario_route = require('./routes/usuario');
 const sucursal_route = require('./routes/sucursal');
-const club_route = require('./routes/club');
+const club_presencial_route = require('./routes/club-presencial');
+const club_virtual_route = require('./routes/club-virtual');
+
 
 
 const app = express();
@@ -65,7 +68,10 @@ app.use('/api', genero_route);
 app.use('/api', libreria_route);
 app.use('/api', usuario_route);
 app.use('/api', sucursal_route);
-app.use('/api', club_route);
+app.use('/api', categoria_route);
+app.use('/api', club_presencial_route);
+app.use('/api', club_virtual_route);
+
 
 //localhost:4000/api/registrar-contacto
 //localhost:4000/api/registrar-genero

@@ -2,7 +2,7 @@
 
 const tbody = document.querySelector('#tabla-filtrado tbody');
 let lista_libros = [];
-let txt_filtro = document.querySelector('#txt-filtro');
+let txt_filtro = document.querySelector('#txt_filtro');
 
 let mostrar_tabla = async() => {
 

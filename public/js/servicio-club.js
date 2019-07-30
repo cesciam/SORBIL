@@ -1,11 +1,12 @@
 'use strict';
 
-let registrarClub = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero, pprovincia, pcanton, pdistrito) => {
+let registrarClub = (ptipo, pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pgenero, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-club',
         responseType: 'json',
         data: {
+            tipo: ptipo,
             nombre: pnombre,
             tema: ptema,
             correo: pcorreo,
@@ -15,7 +16,8 @@ let registrarClub = (pnombre, ptema, ptelefono, pcorreo, pfecha, pcategoria, pge
             fecha: pfecha,
             provincia: pprovincia,
             canton: pcanton,
-            distrito: pdistrito
+            distrito: pdistrito,
+            direccion_exacta: pdireccionExacta
         }
     });
 };

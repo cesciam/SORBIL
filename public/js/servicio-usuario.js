@@ -34,19 +34,19 @@ let validar_credenciales = async (pcorreo, pcontrasena) => {
             correo: pcorreo,
             contrasena: pcontrasena
         }
+
     });
 
-    peticion.done(function (usuario) {
-        respuesta = usuario;
-        sessionStorage.setItem('conectado', usuario.success);
-        sessionStorage.setItem('tipo_usuario', usuario.usuario.nombre);
-    });
+    console.log(peticion);
 
-    peticion.fail(function (usuario) {
-        respuesta = usuario;
-    });
+    sessionStorage.setItem('activo', JSON.stringify(peticion.data.usuario));
+    let usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
+ 
 
-    return respuesta;
+    // peticion.fail(function (usuario) {
+    //     respuesta = usuario;
+    // });
+    return peticion.data;
 };
 
 

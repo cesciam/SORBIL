@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar Categorías</title>
+    <title>Sorbil -- Librería -- Listar Clubes</title>
 </head>
 
 <body id="grid-admin">
@@ -19,7 +19,7 @@
     <!--Header-->
     <header id="header-admin">
 
-        <h3 class="header-text">Área del administrador de plataforma</h3>
+        <h3 class="header-text">Área del administrador de librería</h3>
 
         <div class="header-user-icons">
             <div class="header-user-container">
@@ -51,25 +51,32 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de Categorías</h1>
-            <p>Listá la información que te interesa</p>
+            <h1>Listados de Géneros</h1>
+            <p>Busca la información que te interesa</p>
         </div>
 
         <div id="barra-busqueda">
-            <input type="text" placeholder="Buscar por / categoría" aria-label="Buscar por / categoría">
+            <input type="text" id="txt-filtro" placeholder="Buscar por / Nombre / Tema / Provincia / Género" aria-label="Buscar por / Nombre / Tema / Provincia / Género">
 
-            <button aria-label="Search" type="button">
-                <spans>Listar</spans>
-            </button>
+            <!-- <button aria-label="Search" type="button">
+                <spans>Filtrar</spans>
+            </button> -->
+
         </div>
 
         <table id="tabla-filtrado">
             <thead>
                 <tr>
-                    <th>Categoría</th>
+                    <th>Nombre</th>
+                    <th>Tema</th>
+                    <th>Provincia</th>
+                    <th>Género</th>
                 </tr>
             </thead>
             <tbody>
+
+            </tbody>
+        </table>
 
     </main>
 
@@ -148,6 +155,7 @@
     <!--Scripts-->
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 
 </html>

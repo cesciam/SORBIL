@@ -2,19 +2,22 @@
 
 const mongoose = require('mongoose');
 
-//Esquema del registro del libro
+//Esquema del registro del club presencial
 
 let club_schema = new mongoose.Schema({
-    nombre: { type: String, required: true, unique: true },
-    tema: { type: String, required: true, unique: true },
-    correo: { type: String, required: true, unique: true },
+    //imagen
+    tipo: { type: String, required: true, unique: false },
+    nombre: { type: String, required: true, unique: false },
+    tema: { type: String, required: true, unique: false },
+    correo: { type: String, required: true, unique: false },
     telefono: { type: String, required: true, unique: false },
     categoria: { type: String, required: true, unique: false },
     genero: { type: String, required: true, unique: false },
     fecha: { type: Date, required: true, unique: false },
-    provincia: { type: String, required: true, unique: false },
-    canton: { type: String, required: true, unique: false },
-    distrito: { type: String, required: true, unique: false }
+    provincia: { type: String, required: false, unique: false },
+    canton: { type: String, required: false, unique: false },
+    distrito: { type: String, required: false, unique: false },
+    direccion_exacta: { type: String, required: false, unique: false }
 });
 
-module.exports = mongoose.model('club', club_schema);
+module.exports = mongoose.model('Club', club_schema);

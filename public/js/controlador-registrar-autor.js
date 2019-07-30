@@ -41,7 +41,7 @@ let saludar = () => {
     let error = validar(autor, biografia, fecha);
 
     if (error == false) {
-        registrarAutor(autor); /*está bien? error en consola is not defined*/
+        registrarAutor(autor);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
@@ -55,9 +55,6 @@ let saludar = () => {
     }
 
 };
-
-
-btn_enviar.addEventListener('click', saludar);
 
 
 btn_enviar.addEventListener('click', saludar);

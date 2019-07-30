@@ -75,7 +75,8 @@ router.post('/validar-credenciales', function (req, res) {
                     });
                 } else {
                     res.json({
-                        success: false
+                        success: false,
+                        hola: "Aqui"
                     });
                 }
             } else {

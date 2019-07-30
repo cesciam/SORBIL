@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar Categorías</title>
+    <title>Sorbil -- Librería -- Registrar Géneros</title>
 </head>
 
 <body id="grid-admin">
@@ -19,7 +19,7 @@
     <!--Header-->
     <header id="header-admin">
 
-        <h3 class="header-text">Área del administrador de plataforma</h3>
+        <h3 class="header-text">Área del administrador de librería</h3>
 
         <div class="header-user-icons">
             <div class="header-user-container">
@@ -51,25 +51,93 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de Categorías</h1>
-            <p>Listá la información que te interesa</p>
+            <h1>Registro de club presencial</h1>
+            <p>Registra la información que te interesa</p>
         </div>
 
-        <div id="barra-busqueda">
-            <input type="text" placeholder="Buscar por / categoría" aria-label="Buscar por / categoría">
+        <form id="form" action="#">
 
-            <button aria-label="Search" type="button">
-                <spans>Listar</spans>
-            </button>
-        </div>
+            <div id="form-container">
+                <div>
+                    <label for="#">Nombre del administrador</label>
+                    <input id="txt-administrador-club" type="text" placeholder="Ingrese su nombre"
+                        aria-label="Ingrese su nombre">
+                </div>
+                <div>
+                    <label for="#">Nombre del tema</label>
+                    <input id="txt-tema-club" type="text" placeholder="Ingrese el tema" aria-label="Ingrese el tema">
+                </div>
+                <div>
+                    <label for="#">Correo electrónico</label>
+                    <input id="txt-correo" type="email" placeholder="Ingresar su correo electrónico"
+                        aria-label="Ingresar el correo electrónico">
+                </div>
+                <div>
+                    <label for="#">Teléfono</label>
+                    <input id="txt-telefono" type="tel" placeholder="Ingresar el teléfono"
+                        aria-label="Ingresar su teléfono">
+                </div>
+                <div>
+                    <label for="#">Categoría</label>
+                    <select id="txt-categoria">
+                        <option value="" disabled="disabled" selected="true">
+                            Escoger una opción
+                        </option>
+                        <option value="Categoria">
+                            Categoría 1
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <label for="#">Género</label>
+                    <select id="txt-genero">
+                        <option value="" disabled="disabled" selected="true">
+                            Escoger una opción
+                        </option>
+                        <option value="Género">
+                            Género 1
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <div>
+                        <label for="#">fecha</label>
+                        <input id="txt-fecha" type="date" placeholder="Ingresar su correo electrónico"
+                            aria-label="Ingresar el correo electrónico">
+                    </div>
+                </div>
+                <div>
+                    <label for="#">Provincia</label>
+                    <select id="txt-provincia">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar Provincia
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <label for="#">Cantón</label>
+                    <select id="txt-canton">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar Cantón
+                        </option>
+                    </select>
+                </div>
 
-        <table id="tabla-filtrado">
-            <thead>
-                <tr>
-                    <th>Categoría</th>
-                </tr>
-            </thead>
-            <tbody>
+                <div>
+                    <label for="#">Distrito</label>
+                    <select id="txt-distrito">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar Distrito
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label for="#">Dirección exacta</label>
+                <textarea id="txt-direccion-exacta"></textarea>
+            </div>
+
+            <button id="btn-enviar" type="button">Registrar</button>
+
+        </form>
 
     </main>
 
@@ -146,8 +214,13 @@
     </footer>
 
     <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+    <script src="../js/componentes/controlador-select.js"></script>
+    <script src="../js/servicio-club-presencial.js"></script>
+    <script src="../js/controlador-registrar-club-presencial.js"></script>
 </body>
 
 </html>
