@@ -11,37 +11,36 @@
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/componentes.css">
-    <link rel="stylesheet" href="../css/layout/perfiles.css">
-    <link rel="stylesheet" href="../css/paginas/ver-perfil-club.css">
+    <link rel="stylesheet" href="../css/paginas/perfil-libro.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Perfil de librería</title>
+    <title>Sorbil -- Perfil libros</title>
 </head>
 
 <body>
     <!--Header-->
     <header id="header-user">
-
+    
         <div id="header-nav-1">
             <a class="logo" href="../index.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
-
+    
             <nav>
                 <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
                 <a href="../views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
                 <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
             </nav>
-
+    
             <div class="header-nav-1-btns">
                 <div class="header-btn">
                     <a class="btn-white" href="../views/u-iniciar-sesion.html">Iniciar sesión</a>
                 </div>
-
+    
                 <div class="header-btn">
                     <a class="btn-color" href="../views/u-registrar-usuario.html">Crear cuenta</a>
                 </div>
             </div>
-
+    
         </div>
-
+    
         <div id="header-nav-2" class="sticky">
             <nav>
                 <ul>
@@ -51,61 +50,61 @@
                 </ul>
             </nav>
         </div>
-
+    
     </header>
 
-
+    <!--Main-->
     <main id="main-user">
-        <section class="section-one">
-
-            <div class="img"><img src="../imgs/book-placeholder.png" id="imagen"></div>
-
-            <div class="section-container">
-                <div class="title">
-                    <h1 id="tema"></h1>
-                    <h2 id="fecha"></h2>
-                    <button id="btn-registrar">Registrarse al club</button>
-                    <p id="descripcion"></p>
-                    <div class="title-2-col">
-                        <p>Categoría: <span id="categoria"></span></p>
-                        <p>Género: <span id="genero"></span></p>
-                    </div>
+        <section id="libro-info">
+            <div id="info-libro-descrip">
+                <h1 id="title-libro"></h1>
+                <p>Best seller</p>
+                <div>
+                    <i class='bx bxs-book-bookmark'></i>
+                    <i class='bx bxs-book-bookmark'></i>
+                    <i class='bx bxs-book-bookmark'></i>
+                    <i class='bx bxs-book-bookmark'></i>
+                    <i class='bx bxs-book-bookmark'></i>
                 </div>
+                <p>4,8 (4500 Calificacion)</p>
+                <div>
+                    <p>Edicion: <span id="edicion"></span></p>
+                    <p>Editorial: <span id="editorial"></span></p>
+                </div>
+                <p id="descrip"></p>
+            </div>
 
-                <div class="info">
-                    <div class="info-2-col">
-                        <h2>Dirección del club</h2>
-                        <div class="info-2-col-container">
-                            <p>Provincia: <span id="provincia"></span></p>
-                            <p>Cantón: <span id="canton"></span></p>
-                            <p>Distrito: <span id="distrito"></span></p>
-                        </div>
-                        <div>
-                            <p id="direccion-exacta"></p>
-                        </div>
-                    </div>
-
-                    <h2>Información de contacto</h2>
-                    <div class="info-3-col">
-                        <div class="info-3-col-container">
-                            <div>
-                                <i class='bx bx-phone-call'></i>
-                                <i class='bx bx-mail-send'></i>
-                            </div>
-                            <div>
-                                <h4>Teléfono:</h4>
-                                <h4>Correo electrónico:</h4>
-                            </div>
-                            <div>
-                                <p id="telefono"></p>
-                                <p id="correo"></p>
-                            </div>
-                        </div>
-                    </div>
+            <div id="info-libro-precio">
+                <div id="div-img-portada"><img src="../imgs/book-placeholder.png" id="portada"></div>
+                <p class="conten-div-precio">Precio: ₡<span id="precio"></span></p>
+                <button type="button">Comprar</button>
+                <div id="info-libro-div">
+                    <p class="conten-div-precio">Autor: </p>
+                    <span id="autor"></span>
+                    <p class="conten-div-precio">Categoría: </p>
+                    <span id="categoria"></span>
+                    <p class="conten-div-precio">Género: </p>
+                    <span id="genero"></span>
+                    <p class="conten-div-precio">Publicación: </p>
+                    <span id="fecha"></span>
+                    <p class="conten-div-precio">ISBN: </p>
+                    <span id="isbn"></span>
+                    <p class="conten-div-precio">Formato: </p>
+                    <span id="tipo"></span>
+                    <p class="conten-div-precio">Idioma: </p>
+                    <span id="idioma"></span>
                 </div>
             </div>
 
+            <div>
+                <p>
+                    hola
+                </p>
+            </div>
+
+
         </section>
+
     </main>
 
     <footer id="footer-user">
@@ -121,17 +120,16 @@
         </div>
 
         <div id="footer-copyright">
-            <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i>
-                por
+            <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
                 <span>FÉNIX</span></a>
         </div>
     </footer>
 
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-club.js"></script>
-    <script src="../js/controlador-perfil-club-presencial.js"></script>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/servicio-libros.js"></script>
+    <script src="../js/controlador-perfil-libro.js"></script>
 </body>
 
 </html>

@@ -9,6 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
+    <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
     <title>Sorbil -- Librería -- Perfil del usuario</title>
@@ -17,19 +18,23 @@
 <body id="grid-admin">
 
     <!--Header-->
-    <header id="header-admin">
+    <header id="header-admin" >
 
-        <h3 class="header-text">Área del usuario</h3>
+        <nav class="perfil-usuario-nav">
+            <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
+            <a href="../views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+            <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
+        </nav>
+        
 
         <div class="header-user-icons">
             <div class="header-user-container">
-                <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
+                <a class="header-icon" href="../views/u-ver-carrito.html"><i class='bx bx-cart-alt'></i>
                     <span class="user-notification">1</span>
                 </a>
             </div>
             <div class="header-user-container">
-                <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification">6</span>
+                <a class="header-icon" href="../views/u-ver-libros.html"><i class='bx bx-book-bookmark'></i>
                 </a>
             </div>
 
@@ -47,6 +52,53 @@
         </div>
 
     </header>
+
+    <!-- <header id="header-user">
+    
+        <div id="header-nav-1">
+            <a class="logo" href="../index.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
+    
+            <nav>
+                <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
+                <a href="../views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
+            </nav>
+    
+            <div id="nav-inicio" class="header-user-icons">
+                <div class="header-user-container">
+                    <a class="header-icon" href="#"><i class='bx bx-cart-alt'></i>
+                        <span class="user-notification">1</span>
+                    </a>
+                </div>
+                <div class="header-user-container">
+                    <a class="header-icon" href="#"><i class='bx bx-book-bookmark'></i>
+                    </a>
+                </div>
+                <div class="header-user-container user-menu-wrap"><b class="mini-photo-wrapper" href="#"><img
+                            class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
+                            class='bx bx-chevron-down'></i></b>
+                    <div class="menu-user-container">
+                        <ul class="user-menu">
+                            <a class="user-menu-link" href="../views/ver-perfil-usuario.html">Perfil</a>
+                            <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    
+        <div id="header-nav-2" class="sticky">
+            <nav>
+                <ul>
+                    <li><a href="#">Catálogo de libros<i class='bx bx-chevron-down'></i></a></li>
+                    <li><a href="#">Librerías asociadas<i class='bx bx-chevron-down'></i></a></li>
+                    <li><a href="#">Clubes de lectura<i class='bx bx-chevron-down'></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    
+    </header> -->
 
     <!--Main-->
     <main id="main-admin">

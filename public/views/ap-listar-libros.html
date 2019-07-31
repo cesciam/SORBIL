@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Plataforma -- Registrar Categorías</title>
+    <title>Sorbil -- Plataforma -- Listar Libros</title>
 </head>
 
 <body id="grid-admin">
@@ -29,7 +29,7 @@
             </div>
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification">6</span>
+                    <span class="user-notification">1</span>
                 </a>
             </div>
 
@@ -51,26 +51,33 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de Categorías</h1>
-            <p>Registra la información que te interesa</p>
+            <h1>Listados de libros</h1>
+            <p>Busca la información que te interesa</p>
         </div>
 
-        <form id="form" action="#">
-
-            <div class="centrar-input">
-                <div>
-                    <label for="#">Categoria</label>
-                    <input id="txt-categoria" type="text" placeholder="Ingresar la categoría"
-                        aria-label="Ingresar la categoría">
-                </div>
+        <div id="barra-busqueda">
+            <input id="txt_filtro" type="text" placeholder="Buscar por / título / autor / categoría / género / ISBN"
+                aria-label="Buscar por / título / autor / categoría / género / ISBN">
+            
             </div>
 
-            <button id="btn-enviar" type="button">Registrar</button>
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Categoría</th>
+                    <th>Género</th>
+                    <th>ISBN</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
 
-        </form>
+            </tbody>
+        </table>
 
     </main>
-
 <!--Aside-->
 <aside id="sidenav-admin">
 
@@ -146,20 +153,19 @@
     </div>
 
 </aside>
-
+    
     <!--Footer-->
     <footer id="footer-admin">
-        <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+        <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
             <span>FÉNIX</span></a>
     </footer>
 
     <!--Scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/servicio-categoria.js"></script>
-    <script src="../js/controlador-registrar-categoria.js"></script>
+    <script src="../js/servicio-libros.js"></script>
+    <script src="../js/controlador-listar-libros.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
 </body>
 

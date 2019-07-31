@@ -349,7 +349,7 @@ Inicio de estilos del header de usuario
     color: var(--color-primary);
 }
 
-.mini-photo-wrapper{
+.mini-photo-wrapper {
     cursor: pointer;
 }
 
@@ -655,6 +655,7 @@ Inicio de estilos del header de las cartas
 .card-club-virtual {
     background-image: url(../imgs/card-club-virtual.jpg);
 }
+
 
 /*
 Fin de estilos del header de las cartas

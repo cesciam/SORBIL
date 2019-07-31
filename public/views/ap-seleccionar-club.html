@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Plataforma -- Registrar Categorías</title>
+    <title>Sorbil -- Plataforma -- Seleccionar club de lectura</title>
 </head>
 
 <body id="grid-admin">
@@ -51,23 +51,29 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de Categorías</h1>
-            <p>Registra la información que te interesa</p>
+            <h1>Selecciona el club de lectura</h1>
+            <p>Busca la información que te interesa</p>
         </div>
 
-        <form id="form" action="#">
+        <div class="form-nav card-container">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img card-club-presencial"></div>
+                    <div class="card-content">
+                        <p>Club presencial</p>
+                        <a class="card-btn" href="ap-registrar-club-presencial.html">Registrar club</a>
+                    </div>
+                </div>
 
-            <div class="centrar-input">
-                <div>
-                    <label for="#">Categoria</label>
-                    <input id="txt-categoria" type="text" placeholder="Ingresar la categoría"
-                        aria-label="Ingresar la categoría">
+                <div class="card">
+                    <div class="card-img card-club-virtual"></div>
+                    <div class="card-content">
+                        <p>Club virtual</p>
+                        <a class="card-btn" href="ap-registrar-club-virtual.html">Registrar club</a>
+                    </div>
                 </div>
             </div>
-
-            <button id="btn-enviar" type="button">Registrar</button>
-
-        </form>
+        </div>
 
     </main>
 
@@ -146,21 +152,16 @@
     </div>
 
 </aside>
-
     <!--Footer-->
     <footer id="footer-admin">
-        <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+        <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
             <span>FÉNIX</span></a>
     </footer>
-
     <!--Scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/servicio-categoria.js"></script>
-    <script src="../js/controlador-registrar-categoria.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
+
 </body>
 
 </html>
