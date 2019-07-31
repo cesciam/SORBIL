@@ -12,20 +12,20 @@
     <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Perfil del usuario</title>
+    <title>Sorbil -- Perfil de usuario</title>
 </head>
 
 <body id="grid-admin">
 
     <!--Header-->
-    <header id="header-admin" >
+    <header id="header-admin">
 
         <nav class="perfil-usuario-nav">
             <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
             <a href="../views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
             <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
         </nav>
-        
+
 
         <div class="header-user-icons">
             <div class="header-user-container">
@@ -53,53 +53,6 @@
 
     </header>
 
-    <!-- <header id="header-user">
-    
-        <div id="header-nav-1">
-            <a class="logo" href="../index.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
-    
-            <nav>
-                <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="../views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-            </nav>
-    
-            <div id="nav-inicio" class="header-user-icons">
-                <div class="header-user-container">
-                    <a class="header-icon" href="#"><i class='bx bx-cart-alt'></i>
-                        <span class="user-notification">1</span>
-                    </a>
-                </div>
-                <div class="header-user-container">
-                    <a class="header-icon" href="#"><i class='bx bx-book-bookmark'></i>
-                    </a>
-                </div>
-                <div class="header-user-container user-menu-wrap"><b class="mini-photo-wrapper" href="#"><img
-                            class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
-                            class='bx bx-chevron-down'></i></b>
-                    <div class="menu-user-container">
-                        <ul class="user-menu">
-                            <a class="user-menu-link" href="../views/ver-perfil-usuario.html">Perfil</a>
-                            <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-    
-        </div>
-    
-        <div id="header-nav-2" class="sticky">
-            <nav>
-                <ul>
-                    <li><a href="#">Catálogo de libros<i class='bx bx-chevron-down'></i></a></li>
-                    <li><a href="#">Librerías asociadas<i class='bx bx-chevron-down'></i></a></li>
-                    <li><a href="#">Clubes de lectura<i class='bx bx-chevron-down'></i></a></li>
-                </ul>
-            </nav>
-        </div>
-    
-    </header> -->
-
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
@@ -116,7 +69,8 @@
         <div class="sidebar">
 
             <div class="sidenav-menu">
-                <a class="logo" href="../views/ver-perfil-usuario.html"><img src="../imgs/logo.png" alt="logo de Sorbil"></a>
+                <a class="logo" href="../views/ver-perfil-usuario.html"><img src="../imgs/logo.png"
+                        alt="logo de Sorbil"></a>
             </div>
 
             <ul class="sidenav-list">
@@ -124,10 +78,34 @@
                             class='bx bx-home sidenav-i'></i>Inicio</a>
                 </li>
 
+                <li class="sidenav-list-item">
+                    <a href="#" class="sidenav-btn dropdown-toggle">
+                        <i class='bx bx-plus'></i>
+                        Registros
+                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <div class="sidenav-small-menu dropdown-menu">
+                        <a href="../views/u-seleccionar-club.html">Club de lectura</a>
+                    </div>
+                </li>
+
+                <li class="sidenav-list-item">
+                    <a href="#" class="sidenav-btn dropdown-toggle">
+                        <i class='bx bx-list-ul'></i>
+                        Listados
+                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <div class="sidenav-small-menu dropdown-menu">
+                        <a href="../views/u-listar-libros.html">Libros</a>
+                        <a href="../views/u-listar-clubles.html">Clubes de lectura</a>
+                        <a href="../views/u-compras.html">Compras</a>
+                    </div>
+                </li>
+
                 <li class="sidenav-list-item"><a href="../views/u-registro-tarjetas.html"><i
                             class='bx bxs-credit-card sidenav-i'></i>Tarjetas de crédito</a>
                 </li>
-                
+
                 <li class="sidenav-list-item">
                     <a href="#" class="sidenav-btn dropdown-toggle">
                         <i class='bx bx-list-plus'></i>
@@ -163,29 +141,6 @@
                     </div>
                 </li>
 
-                <li class="sidenav-list-item">
-                    <a href="#" class="sidenav-btn dropdown-toggle">
-                        <i class='bx bx-plus'></i>
-                        Registros
-                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <div class="sidenav-small-menu dropdown-menu">
-                        <a href="../views/u-seleccionar-club.html">Club de lectura</a>
-                    </div>
-                </li>
-
-                <li class="sidenav-list-item">
-                    <a href="#" class="sidenav-btn dropdown-toggle">
-                        <i class='bx bx-list-ul'></i>
-                        Listados
-                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <div class="sidenav-small-menu dropdown-menu">
-                        <a href="../views/u-listar-libros.html">Libros</a>
-                        <a href="../views/u-listar-clubles.html">Clubes de lectura</a>
-                        <a href="../views/u-compras.html">Compras</a>
-                    </div>
-                </li>
             </ul>
         </div>
     </aside>
