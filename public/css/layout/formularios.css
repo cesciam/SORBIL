@@ -65,7 +65,7 @@ html {
 
 #main-form #form-container #btn-contrasena {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: var(--color-black);
     transition: .2s;
     animation-name: moveInUp;

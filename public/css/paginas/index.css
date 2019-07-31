@@ -29,7 +29,7 @@
 #main-user-section-banner p {
     font-size: 2rem;
     font-weight: var(--font-semibold);
-    margin-bottom: 5rem;
+    /* margin-bottom: 5rem; */
 }
 
 #main-user-section-banner a {
