@@ -10,6 +10,9 @@ let mostrar_cards = async() => {
 
     lista_usuarios = await obtenerUsuarios();
     for (let i = 0; i < lista_usuarios.length; i++) {
+
+        let tipoUsuario = lista_usuarios[i]['tipo_usuario'];
+
         let contenedor_card = document.createElement('div');
         contenedor_card.classList.add('card');
 
@@ -34,7 +37,7 @@ let mostrar_cards = async() => {
         btn_perfil.dataset._id = lista_usuarios[i]['correo'];
         btn_perfil.addEventListener('click', function() {
             //console.log(this.dataset._id);
-            window.location.href = `ver-perfil-usuario.html?_id=${this.dataset.correo}`
+            window.location.href = `ver-perfil-usuario.html?_id=${this.dataset._id}`
         });
 
         contenedor_card.appendChild(header);
@@ -43,9 +46,7 @@ let mostrar_cards = async() => {
         contenedor_card.appendChild(btn_perfil);
 
         sct_usuarios.appendChild(contenedor_card);
-
     }
-
 };
 
 let filtrar_cards = async() => {
