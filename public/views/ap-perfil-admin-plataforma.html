@@ -51,36 +51,39 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro del Autor</h1>
-            <p>Registra la información que te interesa</p>
+            <h1>Bienvenido a tu plataforma</h1>
+            <p>En esta plataforma puedes administrar tus datos de librería: solicitudes,registros, listados, reportes y facturación.</p>
         </div>
 
-        <form id="form" action="#">
+        <div class="perfil-admin">
+            <button id="btn-enviar" type="button">Administrador de Sorbil</button>
+            <button id="btn-enviar" type="button">Solicitudes de librería</button>
+        </div>
+            
+        <div class="registros">
+            <p>Registros</p>
+            <button id="btn-enviar" type="button">Usuarios</button>
+            <button id="btn-enviar" type="button">Libros</button>
+            <button id="btn-enviar" type="button">Ofertas</button>
+            <button id="btn-enviar" type="button">Autores</button>
+        </div>
 
-            <div class="centrar-input">
-                <div>
-                    <label for="#">Autor</label>
-                    <input id="txt-autor" type="text">
-                </div>
+        <div class="listados">
+            <p>Listados</p>
+            <button id="btn-enviar" type="button">Librerías</button>
+            <button id="btn-enviar" type="button">Usuarios</button>
+            <button id="btn-enviar" type="button">Libros</button>
+            <button id="btn-enviar" type="button">Clubes</button>
+        </div>
 
-                <div>
-                    <label for=" ">Biografía</label>
-                    <textarea id="txt_biografia"></textarea>
-                </div>
+        <div class="reportes">
+            <p>Reportes de venta del sistema</p>
+        </div>
 
-                <div>
-                    <label for="">Fecha de nacimiento</label>
-                    <input type="date" id="txt_fecha">
-                </div>
+        <div class="sucursales">
+            <p>Sucursales</p>
+        </div>
 
-                <div>
-                    <label for="">Fecha de defunción</label>
-                    <input type="date" id="txt_fecha">
-                </div>
-
-            </div>
-
-            <button id="btn-enviar" type="button">Registrar</button>
 
         </form>
 
