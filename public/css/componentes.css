@@ -208,11 +208,13 @@ button:active:after {
 .btn-color {
     background-color: var(--color-primary);
     color: var(--color-white);
+    cursor: pointer;
 }
 
 .btn-white {
     background-color: var(--color-white);
     color: var(--color-primary);
+    cursor: pointer;
 }
 
 .btn-white:hover, .btn-color:hover {
@@ -655,7 +657,6 @@ Inicio de estilos del header de las cartas
 .card-club-virtual {
     background-image: url(../imgs/card-club-virtual.jpg);
 }
-
 
 /*
 Fin de estilos del header de las cartas
