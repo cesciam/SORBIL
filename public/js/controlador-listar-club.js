@@ -56,7 +56,6 @@ let filtrar_tabla = async () => {
 
     }
 
-
 };
 
 

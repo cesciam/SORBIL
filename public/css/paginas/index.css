@@ -17,9 +17,9 @@
 }
 
 #main-user-section-banner .main-user-call-banner {
-    animation-name: moveInUp;
-    animation-duration: 1.2s;
     padding: 6rem;
+    /* animation-name: moveInUp;
+    animation-duration: 1.2s; */
 }
 
 #main-user-section-banner h1 {

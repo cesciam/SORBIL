@@ -39,6 +39,7 @@
                     <a href="views/u-registrar-usuario.html" class="btn-color">Crear cuenta</a>
                     <div class="dropdown-btn-content">
                         <a href="views/u-registrar-libreria.html">Registrar librería</a>
+
                     </div>
                 </div>
 
@@ -59,18 +60,15 @@
                         <a href="#">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
                             <div class="dropdown-content">
-                                <div>
-                                    <li><a id="" href="#">Libro</a></li>
-                                    <li><a id="" href="#">Libro</a></li>
-                                    <li><a id="" href="#">Libro</a></li>
-                                    <li><a id="" href="#">Libro</a></li>
-                                </div>
-                                <div>
-                                    <li><a id="" href="#">Libro</a></li>
-                                    <li><a id="" href="#">Libro</a></li>
-                                    <li><a id="" href="#">Libro</a></li>
-                                    <li><a id="" href="#">Libro</a></li>
-                                </div>
+                                <table id="tabla-libros" class="tabla-links">
+                                    <thead>
+                                        <tr>
+                                            <th>Lista de libros</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
                         </ul>
                     </li>
@@ -79,18 +77,15 @@
                         <a href="#">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
                             <div class="dropdown-content">
-                                <div>
-                                    <li><a id="" href="#">Librería</a></li>
-                                    <li><a id="" href="#">Librería</a></li>
-                                    <li><a id="" href="#">Librería</a></li>
-                                    <li><a id="" href="#">Librería</a></li>
-                                </div>
-                                <div>
-                                    <li><a id="" href="#">Librería</a></li>
-                                    <li><a id="" href="#">Librería</a></li>
-                                    <li><a id="" href="#">Librería</a></li>
-                                    <li><a id="" href="#">Librería</a></li>
-                                </div>
+                                <table id="tabla-librerias" class="tabla-links">
+                                    <thead>
+                                        <tr>
+                                            <th>Lista de librerias</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
                         </ul>
                     </li>
@@ -99,18 +94,15 @@
                         <a href="#">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
                             <div class="dropdown-content">
-                                <div>
-                                    <li><a id="" href="#">Club</a></li>
-                                    <li><a id="" href="#">Club</a></li>
-                                    <li><a id="" href="#">Club</a></li>
-                                    <li><a id="" href="#">Club</a></li>
-                                </div>
-                                <div>
-                                    <li><a id="" href="#">Club</a></li>
-                                    <li><a id="" href="#">Club</a></li>
-                                    <li><a id="" href="#">Club</a></li>
-                                    <li><a id="" href="#">Club</a></li>
-                                </div>
+                                <table id="tabla-clubes" class="tabla-links">
+                                    <thead>
+                                        <tr>
+                                            <th>Lista de clubes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
                         </ul>
                     </li>
@@ -137,7 +129,7 @@
 
             <div class="glide">
                 <div class="glide__track" data-glide-el="track">
-                    <ul class="glide__slides TODO:">
+                    <ul class="glide__slides">
                         <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
                         <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
                         <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
@@ -206,12 +198,18 @@
     </footer>
 
     <!--Scripts-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="vendors/sticky-js-master/dist/sticky.min.js"></script>
     <script src="js/componentes/controlador-sticky.js"></script>
     <!-- Glide JS -->
     <script src="vendors/glide-3.3.0/dist/glide.min.js"></script>
     <script src="js/componentes/controlador-slider.js"></script>
     <script src="js/componentes/controlador-dropdowns-main.js"></script>
+    <!-- JS para listar -->
+    <script src="js/servicio-club.js"></script>
+    <script src="js/servicio-libreria.js"></script>
+    <script src="js/servicio-libros.js"></script>
+    <script src="js/componentes/controlador-lista-enlaces.js"></script>
 </body>
 
 </html>
