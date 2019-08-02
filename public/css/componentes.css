@@ -662,6 +662,24 @@ Inicio de estilos del header de las cartas
 Fin de estilos del header de las cartas
 */
 
+/*
+Inicio de estilos de las calificaciones
+*/
+
+.ratings {
+    color: var(--color-alternative-grey);
+    cursor: pointer;
+}
+
+.ratings:hover {
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+/*
+Fin de estilos de las calificaciones
+*/
+
 @media (max-width: 76.8rem) {
     #barra-busqueda {
         display: grid;

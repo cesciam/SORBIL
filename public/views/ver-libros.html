@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/componentes.css">
-    <link rel="stylesheet" href="../css/paginas/perfil-libro.css">
+    <link rel="stylesheet" href="../css/layout/perfiles.css">
+    <link rel="stylesheet" href="../css/paginas/ver-perfil-club.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Perfil de libros</title>
+    <title>Sorbil -- Perfil de club presencial</title>
 </head>
 
 <body>
@@ -120,51 +121,11 @@
 
     </header>
 
-    <!--Main-->
+
     <main id="main-user">
-        <section id="libro-info">
-            <div id="info-libro-descrip">
-                <h1 id="title-libro"></h1>
-                <p>Best seller</p>
-                <div class="ratings">
-                    <i class='bx bxs-book-bookmark'></i>
-                    <i class='bx bxs-book-bookmark'></i>
-                    <i class='bx bxs-book-bookmark'></i>
-                    <i class='bx bxs-book-bookmark'></i>
-                    <i class='bx bxs-book-bookmark'></i>
-                </div>
-                <p>4,8 (4500 Calificacion)</p>
-                <div>
-                    <p>Edicion: <span id="edicion"></span></p>
-                    <p>Editorial: <span id="editorial"></span></p>
-                </div>
-                <p id="descrip"></p>
-            </div>
-
-            <div id="info-libro-precio">
-                <div id="div-img-portada"><img src="../imgs/book-placeholder.png" id="portada"></div>
-                <p class="conten-div-precio precio-libro">Precio: ₡<span id="precio"></span></p>
-                <button type="button">Comprar</button>
-                <div id="info-libro-div">
-                    <p class="conten-div-precio">Autor: </p>
-                    <span id="autor"></span>
-                    <p class="conten-div-precio">Categoría: </p>
-                    <span id="categoria"></span>
-                    <p class="conten-div-precio">Género: </p>
-                    <span id="genero"></span>
-                    <p class="conten-div-precio">Publicación: </p>
-                    <span id="fecha"></span>
-                    <p class="conten-div-precio">ISBN: </p>
-                    <span id="isbn"></span>
-                    <p class="conten-div-precio">Formato: </p>
-                    <span id="tipo"></span>
-                    <p class="conten-div-precio">Idioma: </p>
-                    <span id="idioma"></span>
-                </div>
-            </div>
-
+        <section class="">
+            
         </section>
-
     </main>
 
     <footer id="footer-user">
@@ -180,17 +141,17 @@
         </div>
 
         <div id="footer-copyright">
-            <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+            <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i>
+                por
                 <span>FÉNIX</span></a>
         </div>
     </footer>
 
-
-
+    <!--Scripts-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-libros.js"></script>
-    <script src="../js/controlador-perfil-libro.js"></script>
     <script src="../js/componentes/controlador-dropdowns-main.js"></script>
+    <script src="../js/servicio-libros.js"></script>
+    <script src="../js/controlador-ver-libros.js"></script>
 
 </body>
 
