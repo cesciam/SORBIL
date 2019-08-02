@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Perfil de usuario</title>
+    <title>Sorbil -- Usuario -- Listar libros</title>
 </head>
 
 <body id="grid-admin">
@@ -55,14 +55,35 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Plataforma del usuario</h1>
-            <p>En esta plataforma podés administrar tu perfil</p>
-            <h2>Saludos <span id="txt-nombre"></span> </h2>
-            <p>Su correo electrónico es <span id="txt-correo"></span></p>
+            <h1>Listados de libros</h1>
+            <p>Busca la información que te interesa</p>
         </div>
-    </main>
 
+        <div id="barra-busqueda">
+            <input id="txt_filtro" type="text" placeholder="Buscar por / título / autor / categoría / género / ISBN"
+                aria-label="Buscar por / título / autor / categoría / género / ISBN">
+
+        </div>
+
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Categoría</th>
+                    <th>Género</th>
+                    <th>ISBN</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </main>
     <!--Aside-->
+
     <aside id="sidenav-admin">
 
         <div class="sidebar">
@@ -149,6 +170,7 @@
         </div>
     </aside>
 
+
     <!--Footer-->
     <footer id="footer-admin">
         <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
@@ -159,8 +181,9 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/servicio-usuario.js"></script>
-    <script src="../js/controlador-perfil-usuario.js"></script>
+    <script src="../js/servicio-libros.js"></script>
+    <script src="../js/controlador-listar-libros.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
 </body>
+
 </html>
