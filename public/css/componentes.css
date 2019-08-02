@@ -696,15 +696,7 @@ Fin de estilos de las calificaciones
     .header-user-icons {
         justify-self: center;
     }
-<<<<<<< Updated upstream
     .card-container .card {
         grid-template-columns: 1fr;
     }
-=======
-}
-
-
-.biografia{
-    resize: none
->>>>>>> Stashed changes
 }
