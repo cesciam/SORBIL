@@ -206,4 +206,14 @@ Fin de estilos generales de administradores
     }
 }
 
+<<<<<<< Updated upstream
 /*pending to fix*/
+=======
+textarea{
+    resize: none;
+    width: 30px;
+    height: 65px;
+}
+
+/*pending to fix*/
+>>>>>>> Stashed changes
