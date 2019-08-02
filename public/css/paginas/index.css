@@ -1,7 +1,3 @@
-/* #main-user {
-    display: grid;
-} */
-
 #main-user-section-banner {
     text-align: center;
     background: var(--color-alternative-bg);
@@ -36,11 +32,6 @@
 #main-user-section-banner a:hover {
     opacity: 1;
 }
-
-/* #txt-filtro {
-    animation-name: moveInUp;
-    animation-duration: 1s;
-} */
 
 #main-user-section-banner a i {
     position: relative;

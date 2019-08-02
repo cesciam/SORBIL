@@ -187,8 +187,8 @@ let llamar = async () => {
     let canton = input_canton.value;
     let distrito = input_distrito.value;
     let direccion_exacta = input_direccion_exacta.value;
-    let latitud = await enviarLat();
-    let longitud = await enviarLon();
+    let latitud = enviarLat();
+    let longitud = enviarLon();
 
 
     let error = validar(usuario, correo, contrasena, verfContrasena, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta);

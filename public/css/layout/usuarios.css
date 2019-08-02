@@ -307,6 +307,8 @@ Inicio de estilos generales del main
     margin-top: 5rem;
     transition: all .2s;
     box-shadow: var(--shadow-dark-1);
+    animation-name: moveInUp;
+    animation-duration: 1s;
 }
 
 #txt-filtro:focus {

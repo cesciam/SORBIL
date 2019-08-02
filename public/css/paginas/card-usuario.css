@@ -1,7 +1,14 @@
 .card-container {
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 3rem;
+}
+
+.card-container .card {
+    display: grid;
+    justify-items: center;
+    padding: .8rem;
 }
 
 .card-container .card .card-content a {
@@ -9,25 +16,33 @@
     font-size: 1.4rem;
 }
 
-.card-container img {
+.card-container .contenedor_imagen {
+    display: grid;
+    justify-items: center;
+    margin: 0 auto;
+}
 
-    width: 100%;
-    justify-content: center;
+.card-container img {
+    border-radius: 50%;
+    height: 16rem;
+    width: 16rem;
+    display: grid;
+    margin-bottom: 1rem;
 }
 
 .card-container h2 {
-
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .card-container p {
-    
-    text-align: center;
+    align-self: center;
+    font-size: 1.6rem;
 }
 
 .card-container button {
-    
     margin: 30px;
+    height: 4rem;
 }
 
 .card-container .card:hover {
