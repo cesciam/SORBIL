@@ -29,7 +29,7 @@ let saludar = () => {
             type: 'success',
         })
         //Se llama a la función para limpiar el formulario
-        limpiarFormulario()
+        limpiarFormulario();
     } else {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',

@@ -208,11 +208,13 @@ button:active:after {
 .btn-color {
     background-color: var(--color-primary);
     color: var(--color-white);
+    cursor: pointer;
 }
 
 .btn-white {
     background-color: var(--color-white);
     color: var(--color-primary);
+    cursor: pointer;
 }
 
 .btn-white:hover, .btn-color:hover {
@@ -656,9 +658,26 @@ Inicio de estilos del header de las cartas
     background-image: url(../imgs/card-club-virtual.jpg);
 }
 
-
 /*
 Fin de estilos del header de las cartas
+*/
+
+/*
+Inicio de estilos de las calificaciones
+*/
+
+.ratings {
+    color: var(--color-alternative-grey);
+    cursor: pointer;
+}
+
+.ratings:hover {
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+/*
+Fin de estilos de las calificaciones
 */
 
 @media (max-width: 76.8rem) {

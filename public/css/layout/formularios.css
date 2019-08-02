@@ -23,6 +23,7 @@ html {
     height: 100vh;
     display: grid;
     justify-items: start;
+    position: sticky;
 }
 
 #main-form #form-image a img {

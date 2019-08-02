@@ -53,29 +53,28 @@
     <main id="main-admin">
 
         <div class="main-admin-titulo">
-            <h1>Plataforma del sistema</h1>
-            <p>En esta plataforma podés administrar el sitio</p>
+            <h1>PLATAFORMA DEL SISTEMA</h1>
+            <p>En esta plataforma puedes editar y administrar tus datos de librería:
+                registros, listados, reportes y facturación. 
+            </p>
         </div>
-        <!--Cards-->
-        <div class="card-container">
-            <div class="cards">
-                <div class="card main-card">
-                    <img id="imagen" alt="Imagen del administrador">
-                    <div class="card-content">
-                        <p id="nombre"></p>
-                        <p id="empresa"></p>
-                    </div>
+
+        <form id="form" action="#">
+
+            <div class="centrar-input">
+                
+                <div class="registros">
+
+                </div>
+
+                <div class="listados">
+
                 </div>
             </div>
         </div>
 
-        <div class="card-row">
-            <div class="card-container">
-                <div class="cards">
-                    <div class="card">
-                        <i class='bx bxs-user-circle'></i>
-                        <a href="">Usuarios</a>
-                    </div>
+                <div class="reporteSistema">
+
                 </div>
             </div>
         </div>
@@ -166,9 +165,12 @@
     </footer>
 
     <!--Scripts-->
-    <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/cerrar-sesion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/controlador-dropdowns-nav.js"></script>
+    <script src="../js/controlador-dropdowns-user.js"></script>
+    <script src="../js/servicio-genero.js"></script>
+    <script src="../js/controlador-registrar-autor.js"></script>
 </body>
 
 </html>

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../css/layout/perfiles.css">
     <link rel="stylesheet" href="../css/paginas/ver-perfil-club.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Perfil de librería</title>
+    <title>Sorbil -- Perfil de club presencial</title>
 </head>
 
 <body>
@@ -35,20 +35,87 @@
                     <a class="btn-white" href="../views/u-iniciar-sesion.html">Iniciar sesión</a>
                 </div>
 
-                <div class="header-btn">
-                    <a class="btn-color" href="../views/u-registrar-usuario.html">Crear cuenta</a>
+                <div class="header-btn dropdown-btn">
+                    <a href="../views/u-registrar-usuario.html" class="btn-color">Crear cuenta</a>
+                    <div class="dropdown-btn-content">
+                        <a href="../views/u-registrar-libreria.html">Registrar librería</a>
+                    </div>
                 </div>
             </div>
 
         </div>
 
         <div id="header-nav-2" class="sticky">
-            <nav>
-                <ul>
-                    <li><a href="#">Catálogo de libros<i class='bx bx-chevron-down'></i></a></li>
-                    <li><a href="#">Librerías asociadas<i class='bx bx-chevron-down'></i></a></li>
-                    <li><a href="#">Clubes de lectura<i class='bx bx-chevron-down'></i></a></li>
+            <nav class="top">
+        
+                <div class="dropdownBackground">
+                    <span class="arrow"></span>
+                </div>
+        
+                <ul class="cool header-nav-2-content">
+        
+                    <li>
+                        <a href="#">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <div>
+                                    <li><a id="" href="#">Libro</a></li>
+                                    <li><a id="" href="#">Libro</a></li>
+                                    <li><a id="" href="#">Libro</a></li>
+                                    <li><a id="" href="#">Libro</a></li>
+                                </div>
+                                <div>
+                                    <li><a id="" href="#">Libro</a></li>
+                                    <li><a id="" href="#">Libro</a></li>
+                                    <li><a id="" href="#">Libro</a></li>
+                                    <li><a id="" href="#">Libro</a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+        
+                    <li>
+                        <a href="#">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <div>
+                                    <li><a id="" href="#">Librería</a></li>
+                                    <li><a id="" href="#">Librería</a></li>
+                                    <li><a id="" href="#">Librería</a></li>
+                                    <li><a id="" href="#">Librería</a></li>
+                                </div>
+                                <div>
+                                    <li><a id="" href="#">Librería</a></li>
+                                    <li><a id="" href="#">Librería</a></li>
+                                    <li><a id="" href="#">Librería</a></li>
+                                    <li><a id="" href="#">Librería</a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+        
+                    <li>
+                        <a href="#">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <div>
+                                    <li><a id="" href="#">Club</a></li>
+                                    <li><a id="" href="#">Club</a></li>
+                                    <li><a id="" href="#">Club</a></li>
+                                    <li><a id="" href="#">Club</a></li>
+                                </div>
+                                <div>
+                                    <li><a id="" href="#">Club</a></li>
+                                    <li><a id="" href="#">Club</a></li>
+                                    <li><a id="" href="#">Club</a></li>
+                                    <li><a id="" href="#">Club</a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+        
                 </ul>
+        
             </nav>
         </div>
 
@@ -131,6 +198,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/servicio-club.js"></script>
     <script src="../js/controlador-perfil-club-presencial.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
 
 </body>
 

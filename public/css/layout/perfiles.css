@@ -4,6 +4,7 @@
     margin-left: auto;
     margin-right: auto;
     padding: 3rem 0;
+    background-color: var(--color-alternative-bg);
 }
 
 /*
@@ -98,4 +99,31 @@ Inicio de estilos de la sección principal
 
 /*
 Fin de estilos de la sección principal
+*/
+
+/*
+Inicio de estilos de ver
+*/
+
+.section-ver {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 85%;
+}
+
+.section-ver a {
+    justify-self: center;
+    width: 21rem;
+}
+
+.section-ver a i {
+    font-size: 2rem;
+    justify-self: center;
+    position: relative;
+    top: .4rem;
+    margin-right: 1rem;
+}
+
+/*
+Fin de estilos de ver
 */

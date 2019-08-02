@@ -22,6 +22,7 @@ let usuario_schema = new mongoose.Schema({
     direccion_latitud: { type: Number, required: false, unique: false },
     direccion_longitud: { type: Number, required: false, unique: false },
     tipo_usuario: { type: String, required: true, unique: false },
+    edad: { type: String, required: false, unique: false },
     fecha: { type: Date, required: false, unique: false },
     tarjetas: [{
         nombre: { type: String, required: true, unique: false },

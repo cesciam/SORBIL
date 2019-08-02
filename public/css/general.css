@@ -123,6 +123,10 @@ label {
     font-weight: var(--font-semibold);
 }
 
+textarea{
+    resize: none;
+}
+
 /*Estilos importantes*/
 
 .swal2-popup {

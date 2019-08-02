@@ -107,6 +107,8 @@ let llamar = async () => {
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
         })
+        //Se llama a la fun ción para limpiar el formulario
+        limpiarFormulario();
     } else {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
@@ -114,6 +116,16 @@ let llamar = async () => {
             text: 'Revisá los campos resaltados e intentalo de nuevo'
         })
     }
+};
+
+const limpiarFormulario = () => {
+    input_nombre.value = '';
+    input_telefono.value = '';
+    input_correo.value = '';
+    input_verf_contrasena.value = '';
+    input_provincia.value = '';
+    input_canton.value = '';
+    input_distrito.value = '';
 };
 
 btn_crear_sucursal.addEventListener('click', llamar);
