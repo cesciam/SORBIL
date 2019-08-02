@@ -27,20 +27,19 @@
             <a class="logo" href="../index.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
 
             <nav>
-                <a href="index.html"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="u-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-                <a href="u-contacto.html"><i class='bx bx-mail-send'></i>Contacto</a>
+                <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
+                <a href="../views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
             </nav>
 
             <div id="nav-inicio" class="header-user-icons">
                 <div class="header-user-container">
-                    <a class="header-icon" href="#"><i class='bx bx-cart-alt'></i>
+                    <a class="header-icon" href="../views/u-ver-carrito.html"><i class='bx bx-cart-alt'></i>
                         <span class="user-notification">1</span>
                     </a>
                 </div>
                 <div class="header-user-container">
-                    <a class="header-icon" href="#"><i class='bx bx-book-bookmark'></i>
+                    <a class="header-icon" href="../views/u-ver-libros.html"><i class='bx bx-book-bookmark'></i>
                     </a>
                 </div>
                 <div class="header-user-container user-menu-wrap"><b class="mini-photo-wrapper" href="#"><img
@@ -48,7 +47,7 @@
                             class='bx bx-chevron-down'></i></b>
                     <div class="menu-user-container">
                         <ul class="user-menu">
-                            <a class="user-menu-link" href="#">Perfil</a>
+                            <a class="user-menu-link" href="../views/ver-perfil-usuario.html">Perfil</a>
                             <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
                         </ul>
                     </div>
@@ -58,17 +57,81 @@
         </div>
 
         <div id="header-nav-2" class="sticky">
-            <nav>
-                <ul>
-                    <li><a href="#">Catálogo de libros<i class='bx bx-chevron-down'></i></a></li>
-                    <li><a href="#">Librerías asociadas<i class='bx bx-chevron-down'></i></a></li>
-                    <li><a href="#">Clubes de lectura<i class='bx bx-chevron-down'></i></a></li>
+            <nav class="top">
+        
+                <div class="dropdownBackground">
+                    <span class="arrow"></span>
+                </div>
+        
+                <ul class="cool header-nav-2-content">
+        
+                    <li>
+                        <a href="#">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <div>
+                                    <li><a id="" href="#">Libro</a></li>
+                                    <li><a id="" href="#">Libro</a></li>
+                                    <li><a id="" href="#">Libro</a></li>
+                                    <li><a id="" href="#">Libro</a></li>
+                                </div>
+                                <div>
+                                    <li><a id="" href="#">Libro</a></li>
+                                    <li><a id="" href="#">Libro</a></li>
+                                    <li><a id="" href="#">Libro</a></li>
+                                    <li><a id="" href="#">Libro</a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+        
+                    <li>
+                        <a href="#">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <div>
+                                    <li><a id="" href="#">Librería</a></li>
+                                    <li><a id="" href="#">Librería</a></li>
+                                    <li><a id="" href="#">Librería</a></li>
+                                    <li><a id="" href="#">Librería</a></li>
+                                </div>
+                                <div>
+                                    <li><a id="" href="#">Librería</a></li>
+                                    <li><a id="" href="#">Librería</a></li>
+                                    <li><a id="" href="#">Librería</a></li>
+                                    <li><a id="" href="#">Librería</a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+        
+                    <li>
+                        <a href="#">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <div>
+                                    <li><a id="" href="#">Club</a></li>
+                                    <li><a id="" href="#">Club</a></li>
+                                    <li><a id="" href="#">Club</a></li>
+                                    <li><a id="" href="#">Club</a></li>
+                                </div>
+                                <div>
+                                    <li><a id="" href="#">Club</a></li>
+                                    <li><a id="" href="#">Club</a></li>
+                                    <li><a id="" href="#">Club</a></li>
+                                    <li><a id="" href="#">Club</a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+        
                 </ul>
+        
             </nav>
         </div>
 
     </header>
-    <!--Main-->
+
     <!--Main-->
     <main id="main-user">
 
@@ -87,13 +150,12 @@
     <footer id="footer-user">
 
         <div id="footer-links">
-            <a href="index.html"><img src="../imgs/logo-light.png" alt="Logo de Sorbil"></a>
+            <a href="../index.html"><img src="../imgs/logo-light.png" alt="Logo de Sorbil"></a>
 
             <nav>
-                <a href="#"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="#"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="#"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-                <a href="#"><i class='bx bx-mail-send'></i>Contacto</a>
+                <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
+                <a href="../views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
             </nav>
         </div>
 
@@ -113,6 +175,7 @@
     <script src="../js/componentes/controlador-slider.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
     <!-- <script src="../js/componentes/controlador-nav.js"></script> -->
 </body>
 

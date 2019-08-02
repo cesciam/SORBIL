@@ -13,7 +13,15 @@ let obtenerDatos = async () => {
     if (!error_blancos) {
         usuario_aceptado = await validar_credenciales(correoo, contrasena);
         if (usuario_aceptado) {
-            window.location.href = '../views/u-inicio.html';
+            let usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
+            let id_usuario_activo = usuarioActivo.tipo_usuario;
+            if(id_usuario_activo == 'al'){
+                window.location.href = '../views/al-inicio.html';
+            }
+            else{
+                window.location.href = '../views/u-inicio.html';
+            }
+            
             
         }else{
             Swal.fire({ //formato json

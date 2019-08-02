@@ -23,6 +23,7 @@ html {
     height: 100vh;
     display: grid;
     justify-items: start;
+    position: sticky;
 }
 
 #main-form #form-image a img {
@@ -61,6 +62,19 @@ html {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+}
+
+#main-form #form-container #btn-contrasena {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--color-black);
+    transition: .2s;
+    animation-name: moveInUp;
+    animation-duration: 1s;
+}
+
+#main-form #form-container #btn-contrasena:hover {
+    color: var(--color-alternative-blue);
 }
 
 #main-form #form-container #txt-btn {
@@ -182,7 +196,7 @@ html {
 }
 
 #main-form #form-container>*, select {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 #main-form #form-container h2 {

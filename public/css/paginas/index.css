@@ -8,17 +8,12 @@
     width: 100%;
     /* clip-path: circle(73% at 50% 15%); */
     margin-bottom: 5rem;
-}
-
-#main-user-section-banner {
     background-image: url(../../imgs/landing-bgr.jpg);
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 #main-user-section-banner .main-user-call-banner {
-    animation-name: moveInUp;
-    animation-duration: 2s;
     padding: 6rem;
 }
 
@@ -29,7 +24,7 @@
 #main-user-section-banner p {
     font-size: 2rem;
     font-weight: var(--font-semibold);
-    margin-bottom: 5rem;
+    /* margin-bottom: 5rem; */
 }
 
 #main-user-section-banner a {
@@ -41,6 +36,11 @@
 #main-user-section-banner a:hover {
     opacity: 1;
 }
+
+/* #txt-filtro {
+    animation-name: moveInUp;
+    animation-duration: 1s;
+} */
 
 #main-user-section-banner a i {
     position: relative;

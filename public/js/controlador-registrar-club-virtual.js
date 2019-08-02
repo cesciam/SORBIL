@@ -16,7 +16,7 @@ const input_categoria = document.querySelector('#txt-categoria');
 const input_genero = document.querySelector('#txt-genero');
 const input_fecha = document.querySelector('#txt-fecha');
 const input_descripcion = document.querySelector('#txt-descripcion');
-let tipo = 'Club Virtual';
+const tipo = 'Club Virtual';
 
 const btn_enviar = document.querySelector('#btn-enviar');
 
@@ -126,6 +126,8 @@ let llamar = () => {
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
         })
+        //Se llama a la función para limpiar el formulario
+        limpiarFormulario();
     } else {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
@@ -133,6 +135,19 @@ let llamar = () => {
             text: 'Revisá los campos resaltados e intentalo de nuevo'
         })
     }
+};
+
+//Función para limpiar el formulario
+const limpiarFormulario = () => {
+    input_administrador_club.value = '';
+    input_tema.value = '';
+    input_administrador_club.value = '';
+    input_correo.value = '';
+    input_telefono.value = '';
+    input_categoria.value = '';
+    input_genero.value = '';
+    input_fecha.value = '';
+    input_descripcion.value = '';
 };
 
 btn_enviar.addEventListener('click', llamar);

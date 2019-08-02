@@ -28,15 +28,21 @@ let saludar = () => {
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
         })
+        //Se llama a la función para limpiar el formulario
+        limpiarFormulario();
     } else {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',
             text: 'Revise los campos resaltados e inténtelo de nuevo'
         })
-    }
+    } 
 
 };
 
+//Función para limpiar el formulario
+const limpiarFormulario = () => {
+    input_categoria.value = '';
+};
 
 btn_enviar.addEventListener('click', saludar);

@@ -208,11 +208,13 @@ button:active:after {
 .btn-color {
     background-color: var(--color-primary);
     color: var(--color-white);
+    cursor: pointer;
 }
 
 .btn-white {
     background-color: var(--color-white);
     color: var(--color-primary);
+    cursor: pointer;
 }
 
 .btn-white:hover, .btn-color:hover {
@@ -349,7 +351,7 @@ Inicio de estilos del header de usuario
     color: var(--color-primary);
 }
 
-.mini-photo-wrapper{
+.mini-photo-wrapper {
     cursor: pointer;
 }
 
@@ -660,6 +662,24 @@ Inicio de estilos del header de las cartas
 Fin de estilos del header de las cartas
 */
 
+/*
+Inicio de estilos de las calificaciones
+*/
+
+.ratings {
+    color: var(--color-alternative-grey);
+    cursor: pointer;
+}
+
+.ratings:hover {
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+/*
+Fin de estilos de las calificaciones
+*/
+
 @media (max-width: 76.8rem) {
     #barra-busqueda {
         display: grid;
@@ -676,15 +696,7 @@ Fin de estilos del header de las cartas
     .header-user-icons {
         justify-self: center;
     }
-<<<<<<< Updated upstream
     .card-container .card {
         grid-template-columns: 1fr;
     }
-=======
-}
-
-
-.biografia{
-    resize: none
->>>>>>> Stashed changes
 }
