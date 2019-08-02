@@ -201,7 +201,8 @@ Inicio de estilos de ver
 }
 
 .section-ver .ver-cards .ver-cards-container img {
-    width: 70%;
+    width: 20rem;
+    height: 20rem;
     border-radius: 50%;
     box-shadow: var(--shadow-dark-2);
 }
