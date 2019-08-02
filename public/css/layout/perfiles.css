@@ -126,6 +126,7 @@ Inicio de estilos de ver
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 3rem;
+    padding-top: 1rem;
 }
 
 .section-ver .ver-cards {
@@ -190,6 +191,8 @@ Inicio de estilos de ver
     font-size: 1.6rem;
     padding-bottom: 2rem 0;
     height: 6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .section-ver .ver-cards .ver-cards-container h2 {
@@ -226,7 +229,7 @@ Inicio de estilos de ver
 }
 
 .section-ver .ver-cards .ver-cards-container .contenedor_atributo p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align: center;
     color: var(--color-secondary);
     padding: 0 2rem;
