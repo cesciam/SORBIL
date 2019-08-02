@@ -198,7 +198,7 @@ Inicio de estilos de ver
 }
 
 .section-ver .ver-cards .ver-cards-container img {
-    width: 80%;
+    width: 70%;
     border-radius: 50%;
     box-shadow: var(--shadow-dark-2);
 }
@@ -231,6 +231,12 @@ Inicio de estilos de ver
     color: var(--color-secondary);
     padding: 0 2rem;
     padding-top: 2rem;
+}
+
+@media (max-width: 100rem) {
+    .section-ver .ver-cards .ver-cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /*
