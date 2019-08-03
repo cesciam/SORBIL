@@ -172,6 +172,7 @@ Inicio de estilos de ver
     transition: all 0.3s;
     border-radius: var(--box-radius);
     background-color: var(--color-white);
+    width: 35rem;
 }
 
 .section-ver .ver-cards .ver-cards-container header {
@@ -250,7 +251,6 @@ Inicio de estilos de ver
     .section-ver .ver-title {
         grid-template-columns: 1fr;
     }
-
     .section-ver .ver-title h1 {
         margin-bottom: 3rem;
     }
