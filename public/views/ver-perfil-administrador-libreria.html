@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/paginas/ver-perfil-admin.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
     <title>Sorbil -- Librería -- Perfil administrador de librería</title>
 </head>
@@ -33,13 +34,13 @@
                 </a>
             </div>
 
-            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
+            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img id="avatar"
                         class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
                         class='bx bx-chevron-down'></i></a>
                 <div class="menu-user-container">
                     <ul class="user-menu">
                         <a class="user-menu-link" href="#">Perfil</a>
-                        <a class="user-menu-link" href="#">Cerrar sesión</a>
+                        <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
                     </ul>
                 </div>
             </div>
@@ -51,28 +52,50 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Plataforma de la librería </h1>
+            <h1>Plataforma de librería</h1>
             <p>En esta plataforma podés administrar tu librería</p>
         </div>
-        <!--TODO:-->
-        
+        <!--Cards-->
+        <div class="card-container">
+            <div class="cards">
+                <div class="card main-card">
+                    <img id="imagen" alt="Imagen del administrador">
+                    <div class="card-content">
+                        <p id="empresa"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-row">
+            <div class="card-container">
+                <div class="cards">
+                    <div class="card">
+                        <i class='bx bxs-user-circle'></i>
+                        <a href="">Usuarios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </main>
 
     <!--Aside-->
     <aside id="sidenav-admin">
-    
+
         <div class="sidebar">
-    
+
             <div class="sidenav-menu">
                 <a class="logo" href="../views/ver-perfil-administrador-libreria.html"><img src="../imgs/logo.png"
                         alt="logo de Sorbil"></a>
             </div>
-    
+
             <ul class="sidenav-list">
                 <li class="sidenav-list-item"><a href="../views/ver-perfil-administrador-libreria.html"><i
                             class='bx bx-home sidenav-i'></i>Inicio</a>
                 </li>
-    
+
                 <li class="sidenav-list-item">
                     <a href="#" class="sidenav-btn dropdown-toggle">
                         <i class='bx bx-plus'></i>
@@ -87,7 +110,7 @@
                         <a href="../views/al-seleccionar-club.html">Club de lectura</a>
                     </div>
                 </li>
-    
+
                 <li class="sidenav-list-item">
                     <a href="#" class="sidenav-btn dropdown-toggle">
                         <i class='bx bx-list-ul'></i>
@@ -106,21 +129,22 @@
                         <a href="../views/al-listar-clubes.html">Clubes de lectura</a>
                     </div>
                 </li>
-    
-                <li class="sidenav-list-item"><a href="al-reportes.html"><i class='bx bxs-report sidenav-i'></i>Reportes</a>
+
+                <li class="sidenav-list-item"><a href="al-reportes.html"><i
+                            class='bx bxs-report sidenav-i'></i>Reportes</a>
                 </li>
-    
+
                 <li class="sidenav-list-item"><a href="../views/al-ventas.html"><i
                             class='bx bx-dollar-circle sidenav-i'></i>Ventas</a></li>
-    
+
                 <li class="sidenav-list-item"><a href="../views/al-bitacora.html"><i
                             class='bx bx-loader-alt sidenav-i'></i>Bitácora</a></li>
             </ul>
-    
+
         </div>
-    
+
     </aside>
-    
+
     <!--Footer-->
     <footer id="footer-admin">
         <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
@@ -131,9 +155,9 @@
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-genero.js"></script>
-    <script src="../js/controlador-listar-generos.js"></script>
-    <script src="../js/controlador-filtrar.js"></script>
+    <script src="../js/servicio-libreria.js"></script>
+    <script src="../js/controlador-perfil-administrador.js"></script>
+    <script src="../js/cerrar-sesion.js"></script>
 </body>
 
 </html>

@@ -37,7 +37,6 @@ let mostrar_tabla = async () => {
     }
 };
 
-
 let filtrar_tabla = async () => {
 
     let filtro = txt_filtro.value.toLowerCase();
@@ -55,7 +54,6 @@ let filtrar_tabla = async () => {
         }
 
     }
-
 
 };
 

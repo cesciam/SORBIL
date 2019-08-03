@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/validar-usuario-adminLib.js"></script>
     <link rel="stylesheet" href="../css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
@@ -11,7 +12,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Registrar Sucursal</title>
+    <title>Sorbil -- Librería -- Registrar sucursal</title>
 </head>
 
 <body id="grid-admin">
@@ -39,7 +40,7 @@
                 <div class="menu-user-container">
                     <ul class="user-menu">
                         <a class="user-menu-link" href="#">Perfil</a>
-                        <a class="user-menu-link" href="#">Cerrar sesión</a>
+                        <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
                     </ul>
                 </div>
             </div>
@@ -65,7 +66,7 @@
                 </div>
                 <div>
                     <label for="#">Teléfono</label>
-                    <input id="txt-telefono" type="tel" placeholder="Formato: 00-00-00-00"
+                    <input id="txt-telefono" type="tel" maxlength="11" placeholder="Formato: 00-00-00-00"
                         aria-label="Ingresar el número de teléfono">
                 </div>
                 <div>
@@ -189,6 +190,7 @@
     <script src="../js/componentes/controlador-map.js"></script>
     <script src="../js/servicio-sucursal.js"></script>
     <script src="../js/controlador-registrar-sucursal.js"></script>
+    <script src="../js/cerrar-sesion.js"></script>
 </body>
 
 </html>

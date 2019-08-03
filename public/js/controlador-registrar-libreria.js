@@ -273,6 +273,9 @@ let saludar = () => {
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
         })
+        //Se llama a la función para limpiar el formulario
+        limpiarFormulario();
+        window.location.href = 'u-iniciar-sesion.html';
     } else {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
@@ -282,6 +285,29 @@ let saludar = () => {
     }
 
 };
+
+//Función para limpiar el formulario
+const limpiarFormulario = () => {
+    input_usuario.value = '';
+    input_correo.value = '';
+    input_contrasena.value = '';
+    input_verf_contrasena.value = '';
+    input_empresa.value = '';
+    input_telefono.value = '';
+    input_fecha.value = '';
+    input_provincia.value = '';
+    input_canton.value = '';
+    input_distrito.value = '';
+    input_direccion_exacta.value = '';
+    input_nombre.value = '';
+    input_primer_apellido.value = '';
+    input_segundo_apellido.value = '';
+    input_id.value = '';
+    input_descripcion.value = '';
+    img_uploader_imagen.src = '../imgs/book-placeholder.png';
+    img_uploader_avatar.src = '../imgs/avatar-placeholder.png';
+};
+
 
 
 btn_enviar.addEventListener('click', saludar);
