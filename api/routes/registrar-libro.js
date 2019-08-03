@@ -87,4 +87,30 @@ router.get('/buscar-libro-id/:_id', function (req, res) {
     })
 });
 
+
+router.post('/agregar-oferta', function(req, res) {
+    Registro_libro.update({ _id: req.body._id }, {
+            $push:{ 
+                'ofertas': {
+                    porcentaje: req.body.porcentaje,                 
+                }
+            }
+        },
+        function(error){
+            if (error) {
+                return res.status(400).json({
+                    success: false,
+                    msj: 'No se pudo agregar la oferta',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La oferta se guardó con éxito'
+                });
+            }
+        }
+    )
+});
+
 module.exports = router;

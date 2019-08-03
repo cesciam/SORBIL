@@ -51,16 +51,35 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de Oferta</h1>
-            <p>Registra la información que te interesa</p>
+            <h1>Registro de Ofertas</h1>
+            <p>Registrá las ofertas a los libros</p>
         </div>
 
-        <form id="form" action="#">
-
+        <div id="barra-busqueda">
+            <input id="txt_filtro" type="text" placeholder="Buscar por / título / autor / categoría / género / ISBN"
+                aria-label="Buscar por / título / autor / categoría / género / ISBN">
             
-        </form>
+            </div>
+
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Categoría</th>
+                    <th>Género</th>
+                    <th>ISBN</th>
+                    <th>Tipo</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
 
     </main>
+
 
     <!--Aside-->
     <aside id="sidenav-admin">
@@ -135,8 +154,8 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/servicio-categoria.js"></script>
-    <script src="../js/controlador-registrar-categoria.js"></script>
+    <script src="../js/servicio-libros.js"></script>    
+    <script src="../js/controlador-registrar-oferta.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
 </body>
 
