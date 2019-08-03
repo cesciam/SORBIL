@@ -1,6 +1,7 @@
 'use strict';
 let lista_generos = [];
 let lista_catergorias = [];
+let lista_libros = [];
 
 let agregar_generos = async () => {
     let select = document.querySelector(".opt-generos");
@@ -10,8 +11,6 @@ let agregar_generos = async () => {
         let option = new Option(lista_generos[i]['genero']);
         select.add(option);
     }
-
-
 };
 
 let agregar_categorias = async () => {
@@ -22,8 +21,6 @@ let agregar_categorias = async () => {
         let option = new Option(lista_catergorias[i]['categoria']);
         select.add(option);
     }
-
-
 };
 
 agregar_generos();

@@ -43,8 +43,8 @@
 
 let ubicaciones = {
     "San José": {
-        "San José": ["Carmen", "Catedral", "Hatillo", "Hospital", "La Uruca", "Mata Redonda", "Merced", "Pavas", "San Francisco de Dos Ríos", "San Sebastián", "Zapote"],
-        "Acosta": ["Cangrejal", "Guaitil", "Palmichal", "Sabanillas", "San Ignaci"],
+        "Central": ["Carmen", "Catedral", "Hatillo", "Hospital", "La Uruca", "Mata Redonda", "Merced", "Pavas", "San Francisco de Dos Ríos", "San Sebastián", "Zapote"],
+        "Acosta": ["Cangrejal", "Guaitil", "Palmichal", "Sabanillas", "San Ignacio"],
         "Alajuelita": ["Alajuelita", "Concepción", " San Antonio", "San Felipe", "San Josecito"],
         "Aserrí": ["Aserrí", "Legua", "Monterrey", "Salitrillos", "San Gabriel", "Tarbaca", " Vuelta de Jorco"],
         "Curridabat": ["Curridabat"],

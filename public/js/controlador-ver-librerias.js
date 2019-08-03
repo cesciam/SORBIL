@@ -1,58 +1,52 @@
 'use strict';
 
-const sct_clubes = document.querySelector('#lista_clubes');
-let lista_clubes = [];
+const sct_librerias = document.querySelector('#lista_librerias');
+let lista_librerias = [];
 let txt_filtro = document.querySelector('#txt-filtro');
 
 let mostrar_cards = async () => {
 
-    lista_clubes = await obtenerClubes();
+    lista_librerias = await obtenerLibrerias();
 
-    for (let i = 0; i < lista_clubes.length; i++) {
+    for (let i = 0; i < lista_librerias.length; i++) {
 
         let contenedor_card = document.createElement('div');
         contenedor_card.classList.add('card');
 
         let header = document.createElement('header');
         let h2 = document.createElement('h2');
-        h2.innerText = lista_clubes[i]['tema'];
+        h2.innerText = lista_librerias[i]['empresa'];
 
         header.appendChild(h2);
 
         let contenedor_imagen = document.createElement('div');
         contenedor_imagen.classList.add('contenedor_imagen');
         let foto = document.createElement('img');
-        foto.src = lista_clubes[i]['imagen'];
+        foto.src = lista_librerias[i]['imagen'];
 
         contenedor_imagen.appendChild(foto);
 
         let contenedor_atributo = document.createElement('div');
         contenedor_atributo.classList.add('contenedor_atributo');
-        let categoria = document.createElement('p');
-        let genero = document.createElement('p');
-        categoria.innerText = lista_clubes[i]['categoria'];
-        genero.innerText = lista_clubes[i]['genero'];
+        let correo = document.createElement('p');
+        let telefono = document.createElement('p');
+        correo.innerText = lista_librerias[i]['correo'];
+        telefono.innerText = lista_librerias[i]['telefono'];
 
-        contenedor_atributo.appendChild(categoria);
-        contenedor_atributo.appendChild(genero);
+        contenedor_atributo.appendChild(correo);
+        contenedor_atributo.appendChild(telefono);
 
         let contenedor_descripcion = document.createElement('div');
         let descripcion = document.createElement('p');
-        descripcion.innerText = lista_clubes[i]['descripcion'];
+        descripcion.innerText = lista_librerias[i]['descripcion'];
 
         contenedor_descripcion.appendChild(descripcion);
 
-
-        let tipo = lista_clubes[i]['tipo'];
         let btn_perfil = document.createElement('button');
-        btn_perfil.innerText = 'Ver club';
-        btn_perfil.dataset._id = lista_clubes[i]['_id'];
+        btn_perfil.innerText = 'Ver librería';
+        btn_perfil.dataset._id = lista_librerias[i]['_id'];
         btn_perfil.addEventListener('click', function () {
-            if (tipo == 'Club Presencial') {
-                window.location.href = `ver-perfil-club-presencial.html?_id=${this.dataset._id}`;
-            } else if (tipo == 'Club Virtual') {
-                window.location.href = `ver-perfil-club-virtual.html?_id=${this.dataset._id}`;
-            }
+            window.location.href = `ver-perfil-libreria.html?_id=${this.dataset._id}`;
         });
 
         contenedor_card.appendChild(header);
@@ -61,7 +55,7 @@ let mostrar_cards = async () => {
         contenedor_card.appendChild(contenedor_descripcion);
         contenedor_card.appendChild(btn_perfil);
 
-        sct_clubes.appendChild(contenedor_card);
+        sct_librerias.appendChild(contenedor_card);
     }
 
 };
@@ -69,54 +63,48 @@ let mostrar_cards = async () => {
 let filtrar_cards = async () => {
 
     let filtro = txt_filtro.value.toLowerCase();
-    sct_clubes.innerHTML = '';
+    sct_librerias.innerHTML = '';
 
-    for (let i = 0; i < lista_clubes.length; i++) {
+    for (let i = 0; i < lista_librerias.length; i++) {
 
-        if (lista_clubes[i]['tema'].toLowerCase().includes(filtro) || lista_clubes[i]['genero'].toLowerCase().includes(filtro) || lista_clubes[i]['categoria'].toLowerCase().includes(filtro)) {
+        if (lista_librerias[i]['empresa'].toLowerCase().includes(filtro) || lista_librerias[i]['correo'].toLowerCase().includes(filtro) || lista_librerias[i]['telefono'].toLowerCase().includes(filtro)) {
             let contenedor_card = document.createElement('div');
             contenedor_card.classList.add('card');
 
             let header = document.createElement('header');
             let h2 = document.createElement('h2');
-            h2.innerText = lista_clubes[i]['tema'];
+            h2.innerText = lista_librerias[i]['empresa'];
 
             header.appendChild(h2);
 
             let contenedor_imagen = document.createElement('div');
             contenedor_imagen.classList.add('contenedor_imagen');
             let foto = document.createElement('img');
-            foto.src = lista_clubes[i]['imagen'];
+            foto.src = lista_librerias[i]['imagen'];
 
             contenedor_imagen.appendChild(foto);
 
             let contenedor_atributo = document.createElement('div');
             contenedor_atributo.classList.add('contenedor_atributo');
-            let categoria = document.createElement('p');
-            let genero = document.createElement('p');
-            categoria.innerText = lista_clubes[i]['categoria'];
-            genero.innerText = lista_clubes[i]['genero'];
+            let correo = document.createElement('p');
+            let telefono = document.createElement('p');
+            correo.innerText = lista_librerias[i]['correo'];
+            telefono.innerText = lista_librerias[i]['telefono'];
 
-            contenedor_atributo.appendChild(categoria);
-            contenedor_atributo.appendChild(genero);
+            contenedor_atributo.appendChild(correo);
+            contenedor_atributo.appendChild(telefono);
 
             let contenedor_descripcion = document.createElement('div');
             let descripcion = document.createElement('p');
-            descripcion.innerText = lista_clubes[i]['descripcion'];
+            descripcion.innerText = lista_librerias[i]['descripcion'];
 
             contenedor_descripcion.appendChild(descripcion);
 
-
-            let tipo = lista_clubes[i]['tipo'];
             let btn_perfil = document.createElement('button');
-            btn_perfil.innerText = 'Ver club';
-            btn_perfil.dataset._id = lista_clubes[i]['_id'];
+            btn_perfil.innerText = 'Ver librería';
+            btn_perfil.dataset._id = lista_librerias[i]['_id'];
             btn_perfil.addEventListener('click', function () {
-                if (tipo == 'Club Presencial') {
-                    window.location.href = `ver-perfil-club-presencial.html?_id=${this.dataset._id}`;
-                } else if (tipo == 'Club Virtual') {
-                    window.location.href = `ver-perfil-club-virtual.html?_id=${this.dataset._id}`;
-                }
+                window.location.href = `ver-perfil-libreria.html?_id=${this.dataset._id}`;
             });
 
             contenedor_card.appendChild(header);
@@ -125,7 +113,7 @@ let filtrar_cards = async () => {
             contenedor_card.appendChild(contenedor_descripcion);
             contenedor_card.appendChild(btn_perfil);
 
-            sct_clubes.appendChild(contenedor_card);
+            sct_librerias.appendChild(contenedor_card);
         }
     }
 };
