@@ -1,11 +1,11 @@
 'use strict';
 
-const botones = document.querySelectorAll("#nav-inicio div");
+const Nav_inicio_sesion = document.querySelector("#nav-inicio");
 
-let activo = sessionStorage.getItem('activo');
-let tipo_usuario = sessionStorage.getItem('tipo-usuario');
+let usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
+let tipo_usuario = usuarioActivo.tipo_usuario;
 
-if (activo) {
+if (usuarioActivo) {
     switch (tipo_usuario) {
         case 'ap':
 
@@ -14,20 +14,10 @@ if (activo) {
 
             break;
         case 'u':
-        botones[0].classList.add('ocultar');
-        botones[1].classList.add('ocultar');
-        botones[2].classList.add('ocultar');
-        botones[3].classList.add('ocultar');
-        botones[4].classList.add('ocultar');
+        Nav_inicio_sesion.classList.remove('header-nav-1-btns');
+        Nav_inicio_sesion.classList.add('ocultar');
             break;
     }
 } else {
     window.location.href = 'u-inicio.html'
 }
-
-function cerrar_sesion() {
-    sessionStorage.clear();
-    window.location.href = 'index.html';
-}
-
-btn_cerrar_sesion.addEventListener('click', btn-cerrar-sesion);
