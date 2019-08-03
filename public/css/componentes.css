@@ -680,6 +680,30 @@ Inicio de estilos de las calificaciones
 Fin de estilos de las calificaciones
 */
 
+/*
+Inicio de estilos del carousel 
+*/
+
+.slider {
+    height: 100%;
+    margin-bottom: 10rem;
+}
+
+.slider a img {
+    width: 80%;
+}
+
+/* Cuando el cuadro obtiene el foco cambia el color
+
+.slider[class*=active] {
+    box-shadow: none;
+    background: var(--color-primary);
+} */
+
+/*
+Fin de estilos del carousel 
+*/
+
 @media (max-width: 76.8rem) {
     #barra-busqueda {
         display: grid;
