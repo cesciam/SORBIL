@@ -10,6 +10,7 @@ let mostrar_cards = async () => {
 
     for (let i = 0; i < lista_libros.length; i++) {
 
+        let autor = lista_libros[i]['autor'];
         let contenedor_card = document.createElement('div');
         contenedor_card.classList.add('card');
 
@@ -17,10 +18,15 @@ let mostrar_cards = async () => {
         let h2 = document.createElement('h2');
         let h3 = document.createElement('h3');
         h2.innerText = lista_libros[i]['titulo'];
-        h3.innerText = lista_libros[i]['autor'];
+        let btn_autor = document.createElement('a');
+        btn_autor.innerText = `${autor}`;
+        btn_autor.dataset._id = lista_libros[i]['_id'];
+        btn_autor.addEventListener('click', function () {
+            window.location.href = `ver-perfil-autor.html?_id=${this.dataset._id}`;
+        });
 
         header.appendChild(h2);
-        header.appendChild(h3);
+        header.appendChild(btn_autor);
 
         let contenedor_imagen = document.createElement('div');
         contenedor_imagen.classList.add('contenedor_imagen');

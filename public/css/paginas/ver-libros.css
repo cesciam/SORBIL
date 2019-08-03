@@ -96,13 +96,22 @@ Inicio de estilos de ver
 .section-ver .ver-cards .ver-cards-container h2 {
     font-size: 1.45rem;
     color: var(--color-secondary);
-    height: 5rem;
 }
 
-.section-ver .ver-cards .ver-cards-container h3 {
+.section-ver .ver-cards .ver-cards-container a {
     font-size: 1.2rem;
     color: var(--color-black);
+    background-color: none;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    width: 100%;
+    display: inline-block;
     text-align: center;
+    transition: .2s;
+}
+
+.section-ver .ver-cards .ver-cards-container a:hover {
+    color: var(--color-primary);
 }
 
 .section-ver .ver-cards .ver-cards-container img {
