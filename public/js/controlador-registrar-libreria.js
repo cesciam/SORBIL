@@ -275,6 +275,7 @@ let saludar = () => {
         })
         //Se llama a la función para limpiar el formulario
         limpiarFormulario();
+        window.location.href = 'u-iniciar-sesion.html';
     } else {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
@@ -303,6 +304,8 @@ const limpiarFormulario = () => {
     input_segundo_apellido.value = '';
     input_id.value = '';
     input_descripcion.value = '';
+    img_uploader_imagen.src = '../imgs/book-placeholder.png';
+    img_uploader_avatar.src = '../imgs/avatar-placeholder.png';
 };
 
 
