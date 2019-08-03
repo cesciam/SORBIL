@@ -7,7 +7,7 @@ if(usuarioActivo == null){
     window.location.href = 'u-iniciar-sesion.html';
 }
 
-if(usuarioActivo != 'al'){
+if(usuarioActivo != 'ap'){
     window.location.href = '../index.html';
 }
 
