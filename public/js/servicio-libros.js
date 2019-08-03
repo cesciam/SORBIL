@@ -65,3 +65,18 @@ let registrarOferta = (pid, pporcentaje) =>{
         }
     });
 }
+
+let obtenerOfertas = async() => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: 'http://localhost:4000/api/listar-ofertas',
+            responseType: 'json'
+        });
+
+        return response.data.lista_ofertas;
+    } catch (error) {
+        console.log(error);
+    }
+};

@@ -82,6 +82,21 @@ let obtenerUsuarioCorreo = async(correo) => {
     }
 };
 
+let obtenerUsuarioId = async(_id) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-usuario-id/${_id}`,
+            responseType: 'json'
+        });
+
+        return response.data.usuario;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 // Funciones para obtener coordenadas de google maps
 let corlatitud;
 let corlongitud;
