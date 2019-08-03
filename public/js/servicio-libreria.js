@@ -76,22 +76,18 @@ let obtenerLibreriaid = async (_id) => {
     }
 };
 
-// Funciones para obtener coordenadas de google maps
-let corlatitud;
-let corlongitud;
+// let obtenerLibreriaCorreo = async (correo) => {
+//     try {
+//         // fetch data from an url endpoint
+//         const response = await axios({
+//             method: 'get',
+//             url: `http://localhost:4000/api/buscar-libreria-correo/${correo}`,
+//             responseType: 'json'
+//         });
 
-let latitud = (platitud) => {
-    corlatitud = platitud;
-};
+//         return response.data.libreria;
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
 
-let longitud = (plongitud) => {
-    corlongitud = plongitud;
-};
-
-let enviarLat = () => {
-    return corlatitud;
-}
-
-let enviarLon = () => {
-    return corlongitud;
-}

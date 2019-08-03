@@ -187,8 +187,8 @@ let llamar = async () => {
     let canton = input_canton.value;
     let distrito = input_distrito.value;
     let direccion_exacta = input_direccion_exacta.value;
-    let latitud = await enviarLat();
-    let longitud = await enviarLon();
+    let latitud = enviarLat();
+    let longitud = enviarLon();
 
 
     let error = validar(usuario, correo, contrasena, verfContrasena, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta);
@@ -201,6 +201,8 @@ let llamar = async () => {
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
         })
+        //Se llama a la fun ción para limpiar el formulario
+        limpiarFormulario();
     }
     else {
         Swal.fire({ //formato json
@@ -209,6 +211,24 @@ let llamar = async () => {
             text: 'Revisá los campos resaltados e intentalo de nuevo'
         })
     }
+};
+
+//Función para limpiar el formulario
+const limpiarFormulario = () => {
+
+    input_usuario.value = '';
+    input_correo.value = '';
+    input_contrasena.value = '';
+    input_verf_contrasena.value = '';
+    input_nombre.value = '';
+    input_id.value = '';
+    input_primer_apellido.value = '';
+    input_segundo_apellido.value = '';
+    input_sexo.value = '';
+    input_provincia.value = '';
+    input_canton.value = '';
+    input_distrito.value = '';
+    input_direccion_exacta.value = ''; 
 };
 
 btn_crear_cuenta.addEventListener('click', llamar);

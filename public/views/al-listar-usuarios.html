@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/validar-usuario-adminLib.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
+    <link rel="stylesheet" href="../css/paginas/card-usuario.css">   
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar Usuarios</title>
+    <title>Sorbil -- Librería -- Listar usuarios</title>
 </head>
 
 <body id="grid-admin">
@@ -39,11 +41,10 @@
                 <div class="menu-user-container">
                     <ul class="user-menu">
                         <a class="user-menu-link" href="#">Perfil</a>
-                        <a class="user-menu-link" href="#">Cerrar sesión</a>
+                        <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
                     </ul>
                 </div>
             </div>
-
         </div>
 
     </header>
@@ -141,6 +142,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/servicio-usuario.js"></script>
     <script src="../js/controlador-listar-usuarios.js"></script>
+    <script src="../js/cerrar-sesion.js"></script>
 
 </body>
 

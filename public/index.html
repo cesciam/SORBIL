@@ -26,29 +26,92 @@
 
             <nav>
                 <a href="index.html"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="u-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-                <a href="u-contacto.html"><i class='bx bx-mail-send'></i>Contacto</a>
+                <a href="views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
             </nav>
 
             <div id="nav-inicio" class="header-nav-1-btns">
                 <div class="header-btn">
                     <a class="btn-white" href="views/u-iniciar-sesion.html">Iniciar sesión</a>
                 </div>
-                <div class="header-btn">
-                    <a class="btn-color" href="views/u-registrar-usuario.html">Crear cuenta</a>
+
+                <div class="header-btn dropdown-btn">
+                    <a href="views/u-registrar-usuario.html" class="btn-color">Crear cuenta</a>
+                    <div class="dropdown-btn-content">
+                        <a href="views/u-registrar-libreria.html">Registrar librería</a>
+
+                    </div>
                 </div>
+
             </div>
 
         </div>
 
         <div id="header-nav-2" class="sticky">
-            <nav>
-                <ul>
-                    <li><a href="#">Catálogo de libros<i class='bx bx-chevron-down'></i></a></li>
-                    <li><a href="#">Librerías asociadas<i class='bx bx-chevron-down'></i></a></li>
-                    <li><a href="#">Clubes de lectura<i class='bx bx-chevron-down'></i></a></li>
+            <nav class="top">
+
+                <div class="dropdownBackground">
+                    <span class="arrow"></span>
+                </div>
+
+                <ul class="cool header-nav-2-content">
+
+                    <li>
+                        <a href="views/ver-libros.html">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <table id="tabla-libros" class="tabla-links">
+                                    <thead>
+                                        <tr>
+                                            <th><i class='bx bxs-book'></i>Lista de libros</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <div><a href="views/ver-libros.html"  class="btn-white">Más libros</a></div>
+                            </div>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="views/ver-librerias.html">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <table id="tabla-librerias" class="tabla-links">
+                                    <thead>
+                                        <tr>
+                                            <th><i class='bx bxs-store'></i>Lista de librerías</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <div><a href="views/ver-librerias.html" class="btn-white">Más librerías</a></div>
+                            </div>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="views/ver-clubes.html">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <table id="tabla-clubes" class="tabla-links">
+                                    <thead>
+                                        <tr>
+                                            <th><i class='bx bxs-group'></i>Lista de clubes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <div><a href="views/ver-clubes.html" class="btn-white">Más clubes</a></div>
+                            </div>
+                        </ul>
+                    </li>
+
                 </ul>
+
             </nav>
         </div>
 
@@ -61,8 +124,10 @@
             <div class="main-user-call-banner">
                 <h1>Comenzá a leer con Sorbil</h1>
                 <p>¡Adquirí e intercambiá tus libros favoritos y mucho más!</p>
-                <a class="btn-color" href="views/u-registrar-usuario.html">Descubrir<i
-                        class='bx bx-chevron-right'></i></a>
+                <!-- <a class="btn-color" href="views/u-registrar-usuario.html">Descubrir<i
+                        class='bx bx-chevron-right'></i></a> -->
+                <input id="txt-filtro" type="text" placeholder="Buscar por / título / autor / categoría / género / ISBN"
+                    aria-label="Buscar por / título / autor / categoría / género / ISBN">
             </div>
 
             <div class="glide">
@@ -118,32 +183,37 @@
     </main>
 
     <footer id="footer-user">
-
         <div id="footer-links">
             <a href="index.html"><img src="imgs/logo-light.png" alt="Logo de Sorbil"></a>
 
             <nav>
                 <a href="index.html"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="u-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-                <a href="u-contacto.html"><i class='bx bx-mail-send'></i>Contacto</a>
+                <a href="views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
             </nav>
         </div>
 
         <div id="footer-copyright">
-            <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+            <a class="copyright" href="views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i>
+                por
                 <span>FÉNIX</span></a>
         </div>
     </footer>
 
     <!--Scripts-->
-    <!-- Sticky JS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="vendors/sticky-js-master/dist/sticky.min.js"></script>
     <script src="js/componentes/controlador-sticky.js"></script>
+    <script src="js/componentes/controlador-nav.js"></script>
     <!-- Glide JS -->
     <script src="vendors/glide-3.3.0/dist/glide.min.js"></script>
     <script src="js/componentes/controlador-slider.js"></script>
-    <!-- <script src="js/componentes/controlador-nav.js"></script> -->
+    <script src="js/componentes/controlador-dropdowns-main.js"></script>
+    <!-- JS para listar -->
+    <script src="js/servicio-club.js"></script>
+    <script src="js/servicio-libreria.js"></script>
+    <script src="js/servicio-libros.js"></script>
+    <script src="js/componentes/controlador-lista-enlaces-index.js"></script>
 </body>
 
 </html>

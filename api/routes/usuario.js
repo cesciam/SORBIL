@@ -14,7 +14,6 @@ router.param('correo', function(req, res, next, correo) {
     next();
 });
 
-
 router.post('/registrar-usuario', function(req, res) {
     let body = req.body;
 
