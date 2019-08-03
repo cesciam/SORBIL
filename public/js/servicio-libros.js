@@ -53,3 +53,15 @@ let obtenerLibroid = async(_id) => {
         console.log(error);
     }
 };
+
+let registrarOferta = (pid, pporcentaje) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar-oferta',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            porcentaje: pporcentaje
+        }
+    });
+}
