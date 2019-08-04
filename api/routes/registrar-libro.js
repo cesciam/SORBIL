@@ -113,4 +113,38 @@ router.post('/agregar-oferta', function(req, res) {
     )
 });
 
+router.get('/buscar-ofertas/:_id', function (req, res) {
+    Registro_libro.find(req.body._id, function (err, libroDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ninguna oferta con ese id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                libro: libroDB
+            });
+        }
+    })
+});
+
+router.get('/listar-ofertas', function (req, res) {
+    Registro_libro.find(function (err, ofertasDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se pueden listar los libros',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                lista_ofertas: ofertasDB
+            });
+        }
+    })
+});
+
 module.exports = router;

@@ -36,9 +36,9 @@ let mostrar_cards = async () => {
 
             let btn_perfil = document.createElement('button');
             btn_perfil.innerText = 'Ver perfil';
-            btn_perfil.dataset._id = lista_usuarios[i]['correo'];
+            btn_perfil.dataset._id = lista_usuarios[i]['_id'];
             btn_perfil.addEventListener('click', function () {
-                //console.log(this.dataset._id);
+                console.log(this.dataset._id);
                 window.location.href = `ver-perfil-usuario.html?_id=${this.dataset._id}`
             });
 
@@ -85,7 +85,7 @@ let filtrar_cards = async () => {
                 btn_perfil.innerText = 'Ver perfil';
                 btn_perfil.dataset._id = lista_usuarios[i]['_id'];
                 btn_perfil.addEventListener('click', function () {
-                    //console.log(this.dataset._id);
+                    console.log(this.dataset._id);
                     window.location.href = `ver-perfil-usuario.html?_id=${this.dataset._id}`
                 });
 
