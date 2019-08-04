@@ -1,6 +1,29 @@
+body {
+    background: var(--color-alternative-bg);
+}
+
+.section-ver {
+    margin: 0 auto;
+}
+
+.section-ver .ver-cards .ver-cards-container .contenedor_atributo p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--color-secondary);
+    padding: 0 0;
+    padding-top: 0rem;
+    height: 4rem;
+}
+
+.section-ver .ver-cards .ver-cards-container .contenedor_precio p {
+    font-size: 1.8rem;
+    color: var(--color-alternative-blue);
+    font-weight: var(--font-semibold);
+    height: 5rem;
+}
+
 #main-user-section-banner {
     text-align: center;
-    background: var(--color-alternative-bg);
     width: 100%;
     /* clip-path: circle(73% at 50% 15%); */
     margin-bottom: 5rem;
@@ -11,6 +34,8 @@
 
 #main-user-section-banner .main-user-call-banner {
     padding: 6rem;
+    animation-name: moveInUp;
+    animation-duration: 2s;
 }
 
 #main-user-section-banner h1 {
@@ -20,13 +45,13 @@
 #main-user-section-banner p {
     font-size: 2rem;
     font-weight: var(--font-semibold);
-    /* margin-bottom: 5rem; */
+    margin-bottom: 5rem;
 }
 
 #main-user-section-banner a {
     padding: 1.6rem 5rem;
     animation-name: moveInUp;
-    animation-duration: 3s;
+    animation-duration: 4s;
 }
 
 #main-user-section-banner a:hover {
@@ -38,14 +63,6 @@
     top: .30rem;
     left: .6rem;
     font-size: 1.8rem;
-}
-
-.slider {
-    margin-bottom: 10rem;
-}
-
-.slider a img {
-    width: 80%;
 }
 
 @media (max-width: 76.8rem) {
