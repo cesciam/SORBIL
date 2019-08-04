@@ -14,8 +14,8 @@ if (usuarioActivo) {
 
             break;
         case 'u':
-        Nav_inicio_sesion.classList.remove('header-nav-1-btns');
-        Nav_inicio_sesion.classList.add('ocultar');
+            Nav_inicio_sesion.classList.remove('header-nav-1-btns');
+            Nav_inicio_sesion.classList.add('ocultar');
             break;
     }
 } else {
