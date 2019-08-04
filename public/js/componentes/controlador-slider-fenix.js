@@ -9,7 +9,7 @@ let glide = new Glide('.glide', {
     hoverpause: true, // pausa cuandos se hace hover
     focusAt: 'center', // estará enfocada en el centro 
     keyboard: true, // permite el uso del teclado
-    autoplay: 3000, //tiempo del slide en miliseg
+    autoplay: 2000, //tiempo del slide en miliseg
     perView: 1, //cantidad de slide en pantalla
     breakpoints: { //para otros dispositivos
         800: { perView: 2 }, //elementos para tablet
