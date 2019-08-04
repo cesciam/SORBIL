@@ -658,6 +658,7 @@ Inicio de estilos del header de las cartas
     background-image: url(../imgs/card-club-virtual.jpg);
 }
 
+
 /*
 Fin de estilos del header de las cartas
 */
@@ -690,7 +691,7 @@ Inicio de estilos del carousel
 }
 
 .slider a img {
-    width: 80%;
+    width: 90%;
 }
 
 /* Cuando el cuadro obtiene el foco cambia el color

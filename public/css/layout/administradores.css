@@ -180,9 +180,61 @@ html {
     align-items: end;
 }
 
+.card-container .card-admin {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+}
+
+.card-container .card-admin {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.card-container .card-admin i {
+    font-size: 10rem;
+    color: var(--color-primary);
+    align-self: center;
+    padding: 6rem 0;
+}
+
+.card-container .card-admin-two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+}
+
+.card-container .card-admin-two-col {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.card-container .card-admin-two-col i {
+    font-size: 10rem;
+    color: var(--color-primary);
+    align-self: center;
+    padding: 6rem 0;
+}
+
+.card-container .card-admin-two-col h2 {
+    margin-bottom: 2rem;
+}
+
+.card-container .card .card-content {
+    padding-top: 0 !important;
+}
+
 /*
 Fin de estilos generales de administradores
 */
+
+@media (max-width: 100rem) {
+    .card-container .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+    }
+}
 
 @media (max-width: 76.8rem) {
     #grid-admin {
