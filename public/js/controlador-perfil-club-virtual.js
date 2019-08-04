@@ -50,6 +50,8 @@ let registroUsuarioClubV = () =>{
         type: 'success',
     })
 
+    
+
 }
 
 btn_registrar.addEventListener('click', registroUsuarioClubV);

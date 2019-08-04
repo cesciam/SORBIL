@@ -8,7 +8,7 @@ let _id = usuarioActivo._id;
 
 
 btn_perfil.addEventListener('click', function () {
-    window.location.href = `ver-perfil-administrador-libreria.html?_id=${_id}`
+    window.location.href = `ver-perfil-usuario.html?_id=${_id}`
 });
 
 
