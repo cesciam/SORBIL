@@ -77,7 +77,7 @@ let filtrar_tabla = async () => {
             btn_oferta.addEventListener('click', async function () {
                 Swal.fire({
                     title: 'Añadir oferta a este libro',
-                    html: '<input type="number" id="txt-porcentaje" placeholder="Ingresá el porcentaje de descuento">'
+                    html: '<input type="number" maxlength="2" id="txt-porcentaje" placeholder="Ingresá el porcentaje de descuento">'
                 }).then(() => {
                     let porcentaje = document.querySelector('#txt-porcentaje').value;
                     if(porcentaje) {
