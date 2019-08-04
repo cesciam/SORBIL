@@ -35,4 +35,8 @@ let llenar_perfil = async () => {
 
 };
 
+let registrarUsuario =() =>{
+    
+};
+
 llenar_perfil();

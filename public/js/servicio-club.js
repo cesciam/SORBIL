@@ -54,3 +54,17 @@ let obtenerClubid = async (_id) => {
     }
 };
 
+let registrarUsuarioAlClub = (pid_club, pidusuario, pnombre, pcorreo) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar-usuario-club',
+        responseType: 'json',
+        data: {
+            _id: pid_club,
+            usuario_id: pidusuario,
+            nombre: pnombre,
+            correo: pcorreo
+        }
+    });
+};
+
