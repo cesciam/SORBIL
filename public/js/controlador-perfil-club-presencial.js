@@ -17,6 +17,8 @@ let canton = document.querySelector('#canton');
 let distrito = document.querySelector('#distrito');
 let direccion_exacta = document.querySelector('#direccion-exacta');
 
+const btn_registrar = document.querySelector('#btn-registrar');
+
 let llenar_perfil = async () => {
 
     let clubid = await obtenerClubid(id);
@@ -42,5 +44,20 @@ let llenar_perfil = async () => {
 
 
 };
+
+let registroUsuarioClub = () =>{
+    let usuarioParaSuscribir = JSON.parse(sessionStorage.getItem('activo'));
+    let idusuario = usuarioParaSuscribir._id;
+    let nombreUsuario = usuarioParaSuscribir.nombre;
+    let correo = usuarioParaSuscribir.correo;
+
+    registrarUsuarioAlClub(id, idusuario, nombreUsuario, correo);
+    Swal.fire({ //formato json
+        title: 'Se ha registrado el usuario exitosamente',
+        type: 'success',
+    })
+}
+
+btn_registrar.addEventListener('click', registroUsuarioClub);
 
 llenar_perfil();
