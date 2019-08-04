@@ -86,7 +86,7 @@ router.get('/buscar-club-id/:_id', function (req, res) {
 });
 
 router.post('/agregar-usuario-club', function(req, res) {
-    Usuario.update({ _id: req.body._id }, {
+    Club.update({ _id: req.body._id }, {
             $push:{ 
                 'usuarios': {
                     usuario_id: req.body.usuario_id,
