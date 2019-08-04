@@ -15,6 +15,7 @@ const usuario_route = require('./routes/usuario');
 const sucursal_route = require('./routes/sucursal');
 const club_presencial_route = require('./routes/club-presencial');
 const club_virtual_route = require('./routes/club-virtual');
+const autor_route = require('./routes/autor');
 
 
 
@@ -71,7 +72,7 @@ app.use('/api', sucursal_route);
 app.use('/api', categoria_route);
 app.use('/api', club_presencial_route);
 app.use('/api', club_virtual_route);
-
+app.use('/api', autor_route);
 
 //localhost:4000/api/registrar-contacto
 //localhost:4000/api/registrar-genero

@@ -28,9 +28,9 @@ let mostrar_clubes = async () => {
 
         boton_perfil.addEventListener('click', function () {
             if (tipo == 'Club Presencial') {
-                window.location.href = `ver-perfil-club-presencial.html?_id=${this.dataset._id}`;
+                window.location.href = `views/ver-perfil-club-presencial.html?_id=${this.dataset._id}`;
             } else if (tipo == 'Club Virtual') {
-                window.location.href = `ver-perfil-club-virtual.html?_id=${this.dataset._id}`;
+                window.location.href = `views/ver-perfil-club-virtual.html?_id=${this.dataset._id}`;
             }
         });
     }
@@ -54,7 +54,7 @@ let mostrar_librerias = async () => {
         celda_perfil.appendChild(boton_perfil);
 
         boton_perfil.addEventListener('click', function () {
-                window.location.href = `ver-perfil-libreria.html?_id=${this.dataset._id}`;
+                window.location.href = `views/ver-perfil-libreria.html?_id=${this.dataset._id}`;
         });
     }
 };
@@ -77,7 +77,7 @@ let mostrar_libros = async () => {
         celda_perfil.appendChild(boton_perfil);
 
         boton_perfil.addEventListener('click', function () {
-                window.location.href = `ver-perfil-libro.html?_id=${this.dataset._id}`;
+                window.location.href = `views/ver-perfil-libro.html?_id=${this.dataset._id}`;
         });
     }
 };
