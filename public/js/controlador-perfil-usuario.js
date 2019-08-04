@@ -1,14 +1,14 @@
 'use strict';
 
 const urlParams = new URLSearchParams(window.location.search);
-let correo = urlParams.get('correo');
+let _id = urlParams.get('_id');
 const txt_nombre = document.querySelector('#txt-nombre');
 const txt_correo = document.querySelector('#txt-correo');
 let avatar = document.querySelector('#avatar');
 
 
 let llenar_perfil = async() => {
-    let usuario = await obtenerUsuarioCorreo(correo);
+    let usuario = await obtenerUsuarioId(_id);
     if (usuario) {
         avatar.src = usuario['avatar'];
         txt_nombre.innerHTML = usuario['nombre'];
