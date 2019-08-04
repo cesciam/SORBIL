@@ -11,10 +11,8 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
-    <link rel="stylesheet" href="../css/paginas/index.css">
-    <link rel="stylesheet" href="../css/paginas/u-inicio.css">
-    <link rel="stylesheet" href="../vendors/glide-3.3.0/dist/css/glide.core.min.css">
-    <link rel="stylesheet" href="../vendors/glide-3.3.0/dist/css/glide.theme.min.css">
+    <link rel="stylesheet" href="../css/layout/perfiles.css">
+    <link rel="stylesheet" href="../css/paginas/ver-libros.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
     <title>Sorbil -- Inicio</title>
 </head>
@@ -43,11 +41,11 @@
                     </a>
                 </div>
                 <div class="header-user-container user-menu-wrap"><b class="mini-photo-wrapper" href="#"><img
-                            class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
+                            class="mini-photo" src="" width="36" height="36"> <i
                             class='bx bx-chevron-down'></i></b>
                     <div class="menu-user-container">
                         <ul class="user-menu">
-                            <a class="user-menu-link" href="../views/ver-perfil-usuario.html">Perfil</a>
+                            <a class="user-menu-link" href="#">Perfil</a>
                             <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
                         </ul>
                     </div>
@@ -66,7 +64,7 @@
                 <ul class="cool header-nav-2-content">
         
                     <li>
-                        <a href="views/ver-libros.html">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
+                        <a href="ver-libros.html">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
                             <div class="dropdown-content">
                                 <table id="tabla-libros" class="tabla-links">
@@ -78,13 +76,13 @@
                                     <tbody>
                                     </tbody>
                                 </table>
-                                <div><a href="views/ver-libros.html" class="btn-white">Más libros</a></div>
+                                <div><a href="ver-libros.html" class="btn-white">Más libros</a></div>
                             </div>
                         </ul>
                     </li>
         
                     <li>
-                        <a href="views/ver-librerias.html">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
+                        <a href="ver-librerias.html">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
                             <div class="dropdown-content">
                                 <table id="tabla-librerias" class="tabla-links">
@@ -96,13 +94,13 @@
                                     <tbody>
                                     </tbody>
                                 </table>
-                                <div><a href="views/ver-librerias.html" class="btn-white">Más librerías</a></div>
+                                <div><a href="ver-librerias.html" class="btn-white">Más librerías</a></div>
                             </div>
                         </ul>
                     </li>
         
                     <li>
-                        <a href="views/ver-clubes.html">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
+                        <a href="ver-clubes.html">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
                             <div class="dropdown-content">
                                 <table id="tabla-clubes" class="tabla-links">
@@ -114,7 +112,7 @@
                                     <tbody>
                                     </tbody>
                                 </table>
-                                <div><a href="views/ver-clubes.html" class="btn-white">Más clubes</a></div>
+                                <div><a href="ver-clubes.html" class="btn-white">Más clubes</a></div>
                             </div>
                         </ul>
                     </li>
@@ -128,17 +126,21 @@
 
     <!--Main-->
     <main id="main-user">
-
-        <section id="main-user-section-banner">
-
-            <div class="main-user-call-banner">
+        <section class="section-ver">
+            <div class="ver-title">
                 <h1>Buscá entre los mejores libros</h1>
-                <input id="txt-filtro" type="text" placeholder="Buscar por / título / autor / categoría / género / ISBN"
-                    aria-label="Buscar por / título / autor / categoría / género / ISBN">
             </div>
-
+            <div class="ver-cards">
+                <input id="txt-filtro" type="text" placeholder="Buscar por / título / categoría / género / autor"
+                    aria-label="Buscar por / título / categoría / género / autor">
+    
+                <div id="lista_libros" class="ver-cards-container">
+    
+                </div>
+            </div>
+    
         </section>
-
+    
     </main>
 
     <footer id="footer-user">
@@ -160,17 +162,16 @@
     </footer>
 
     <!--Scripts-->
-    <!-- Sticky JS -->
-    <script src="../vendors/sticky-js-master/dist/sticky.min.js"></script>
-    <script src="../js/componentes/controlador-slider.js"></script>
-    <script src="../js/componentes/controlador-sticky.js"></script>
-    <!-- Glide JS -->
-    <script src="../vendors/glide-3.3.0/dist/glide.min.js"></script>
-    <script src="../js/componentes/controlador-slider.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/cerrar-sesion.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-dropdowns-main.js"></script>
-    <!-- <script src="../js/componentes/controlador-nav.js"></script> -->
+    <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+    <!-- JS para listar -->
+    <script src="../js/servicio-club.js"></script>
+    <script src="../js/servicio-libreria.js"></script>
+    <script src="../js/servicio-libros.js"></script>
+    <script src="../js/componentes/controlador-lista-enlaces.js"></script>
+    <script src="../js/controlador-ver-libros.js"></script>
 </body>
 
 </html>
