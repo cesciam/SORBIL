@@ -610,7 +610,7 @@ Inicio de estilos del header de las cartas
 .card-container .card {
     display: grid;
     box-shadow: var(--shadow-dark-1);
-    width: 30rem;
+    width: 25rem;
     transform: translate3d(0, 0, 0);
     transition: all 0.3s;
     border-radius: var(--box-radius);
