@@ -31,7 +31,7 @@ btn_perfil.addEventListener('click', function () {
 //Permisos de usuario para registrar
 
 btn_registrar_libro.addEventListener('click', function () {
-    window.location.href = `ap-registrar-libro.html?3=${_id3}`
+    window.location.href = `ap-registrar-libro.html?_id=${_id3}`
 });
 
 btn_registrar_autor.addEventListener('click', function () {

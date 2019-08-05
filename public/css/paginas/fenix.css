@@ -199,7 +199,7 @@ Inicio de definicion de variables
 }
 
 .section-app p {
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
 }
 
 .app-info {
@@ -218,7 +218,7 @@ Inicio de definicion de variables
 }
 
 .portafolio-sorbil {
-    align-self: start;
+    align-self: center;
     justify-self: start;
 }
 
@@ -255,6 +255,7 @@ footer {
 .skills {
     display: grid;
     grid-template-columns: repeat(3, 10rem);
+    margin-bottom: 5rem;
 }
 
 .skills i {

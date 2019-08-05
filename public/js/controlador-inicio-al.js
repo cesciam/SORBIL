@@ -20,69 +20,69 @@ const btn_listar_generos = document.querySelector('#listar_adminal_generos');
 const btn_listar_clubes = document.querySelector('#listar_adminal_clubes');
 
 usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
-let idAl = usuarioActivo.idAl;
+let idAl = usuarioActivo._id;
 
 btn_perfil.addEventListener('click', function () {
-    window.location.href = `ver-perfil-administrador-libreria.html?idAl=${idAl}`
+    window.location.href = `ver-perfil-administrador-libreria.html?_id=${idAl}`
 });
 
 //Permisos de usuario para registrar
 
 btn_registrar_categoria.addEventListener('click', function () {
-    window.location.href = `al-registrar-categorias.html?idAl=${idAl}`
+    window.location.href = `al-registrar-categorias.html?_id=${idAl}`
 });
 
 btn_registrar_genero.addEventListener('click', function () {
-    window.location.href = `al-registrar-generos.html?idAl=${idAl}`
+    window.location.href = `al-registrar-generos.html?_id=${idAl}`
 });
 
 btn_registrar_oferta.addEventListener('click', function () {
-    window.location.href = `al-registrar-oferta.html?idAl=${idAl}`
+    window.location.href = `al-registrar-oferta.html?_id=${idAl}`
 });
 
 btn_registrar_club_presencial.addEventListener('click', function () {
-    window.location.href = `al-registrar-club-presencial.html?idAl=${idAl}`
+    window.location.href = `al-registrar-club-presencial.html?_id=${idAl}`
 });
 
 btn_registrar_club_virtual.addEventListener('click', function () {
-    window.location.href = `al-registrar-club-virtual.html?idAl=${idAl}`
+    window.location.href = `al-registrar-club-virtual.html?_id=${idAl}`
 });
 
 
 //Permisos de usuario para listar
 
 btn_listar_libros.addEventListener('click', function () {
-    window.location.href = `al-listar-libros.html?idAl=${idAl}`
+    window.location.href = `al-listar-libros.html?_id=${idAl}`
 });
 
 btn_listar_usuarios.addEventListener('click', function () {
-    window.location.href = `al-listar-usuarios.html?idAl=${idAl}`
+    window.location.href = `al-listar-usuarios.html?_id=${idAl}`
 });
 
 btn_listar_sucursales.addEventListener('click', function () {
-    window.location.href = `al-listar-sucursales.html?idAl=${idAl}`
+    window.location.href = `al-listar-sucursales.html?_id=${idAl}`
 });
 
 btn_listar_autores.addEventListener('click', function () {
-    window.location.href = `al-listar-autores.html?idAl=${idAl}`
+    window.location.href = `al-listar-autores.html?_id=${idAl}`
 });
 
 btn_listar_intercambios.addEventListener('click', function () {
-    window.location.href = `al-listar-intercambios.html?idAl=${idAl}`
+    window.location.href = `al-listar-intercambios.html?_id=${idAl}`
 });
 
 btn_listar_ofertas.addEventListener('click', function () {
-    window.location.href = `al-listar-ofertas.html?idAl=${idAl}`
+    window.location.href = `al-listar-ofertas.html?_id=${idAl}`
 });
 
 btn_listar_categorias.addEventListener('click', function () {
-    window.location.href = `al-listar-categorias.html?idAl=${idAl}`
+    window.location.href = `al-listar-categorias.html?_id=${idAl}`
 });
 
 btn_listar_generos.addEventListener('click', function () {
-    window.location.href = `al-listar-generos.html?idAl=${idAl}`
+    window.location.href = `al-listar-generos.html?_id=${idAl}`
 });
 
 btn_listar_clubes.addEventListener('click', function () {
-    window.location.href = `al-listar-clubes.html?idAl=${idAl}`
+    window.location.href = `al-listar-clubes.html?_id=${idAl}`
 });
