@@ -5,8 +5,9 @@ const urlParams = new URLSearchParams(window.location.search);
 let id = urlParams.get('_id');
 
 
-let imagen = document.querySelector('#imagen');
-let empresa = document.querySelector('#empresa');
+let avatar = document.querySelector('#avatar');
+let nombre = document.querySelector('#nombre');
+let correo = document.querySelector('#correo');
 
 
 let llenar_perfil = async () => {
@@ -14,8 +15,9 @@ let llenar_perfil = async () => {
     let libreriaid = await obtenerUsuarioId(id);
 
     if (libreriaid) {
-        imagen.src = libreriaid['avatar'];
-        empresa.innerHTML = libreriaid['empresa'];
+        avatar.src = libreriaid['avatar'];
+        nombre.innerHTML = libreriaid['nombre'];
+        correo.innerHTML = libreriaid['correo'];
     }
 };
 
