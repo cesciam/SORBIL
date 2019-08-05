@@ -39,6 +39,18 @@ let filtrar_tabla = async () => {
         if (lista_autores[i]['autor'].toLowerCase().includes(filtro)) {
             let fila = tbody.insertRow();
             fila.insertCell().innerHTML = lista_autores[i]['autor'];
+
+            let celdaPerfil = fila.insertCell();
+            let btn_perfil = document.createElement('button');
+            btn_perfil.type = 'button';
+            btn_perfil.innerText = 'Ver perfil';
+            btn_perfil.dataset._id = lista_autores[i]['_id'];
+    
+            celdaPerfil.appendChild(btn_perfil);
+    
+            btn_perfil.addEventListener('click', function(){
+                window.location.href = `ver-perfil-autor.html?_id=${this.dataset._id}`;
+            });
         }
 
     }

@@ -46,10 +46,20 @@ let filtrar_tabla = async () => {
             fila.insertCell().innerHTML = lista_librerias[i]['correo'];
             fila.insertCell().innerHTML = lista_librerias[i]['telefono'];
             fila.insertCell().innerHTML = lista_librerias[i]['provincia'];
+
+            let celda_perfil = fila.insertCell();
+            let boton_perfil = document.createElement('button');
+            boton_perfil.type = 'button';
+            boton_perfil.innerText = 'Ver perfil';
+            boton_perfil.dataset._id = lista_librerias[i]['_id'];
+    
+            celda_perfil.appendChild(boton_perfil);
+    
+            boton_perfil.addEventListener('click', function () {
+                window.location.href = `ver-perfil-administrador-libreria.html?_id=${this.dataset._id}`;
+            });
         }
-
     }
-
 };
 
 
