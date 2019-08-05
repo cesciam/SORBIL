@@ -513,7 +513,7 @@ Inicio de estilos de la navegación del sidenav
 }
 
 .dropdown-mostrar {
-    max-height: 500px;
+    max-height: 800px;
     transition: max-height 0.30s ease-in;
 }
 

@@ -34,18 +34,18 @@ let mostrar_cards = async () => {
             let p_correo = document.createElement('p');
             p_correo.innerText = lista_usuarios[i]['correo'];
 
-            let btn_perfil = document.createElement('button');
-            btn_perfil.innerText = 'Ver perfil';
-            btn_perfil.dataset._id = lista_usuarios[i]['_id'];
-            btn_perfil.addEventListener('click', function () {
-                console.log(this.dataset._id);
-                window.location.href = `ver-perfil-usuario.html?_id=${this.dataset._id}`
-            });
+            // let btn_perfil = document.createElement('button');
+            // btn_perfil.innerText = 'Ver perfil';
+            // btn_perfil.dataset._id = lista_usuarios[i]['_id'];
+            // btn_perfil.addEventListener('click', function () {
+            //     console.log(this.dataset._id);
+            //     window.location.href = `ver-perfil-usuario.html?_id=${this.dataset._id}`
+            // });
 
             contenedor_card.appendChild(header);
             contenedor_card.appendChild(contenedor_imagen);
             contenedor_card.appendChild(p_correo);
-            contenedor_card.appendChild(btn_perfil);
+            // contenedor_card.appendChild(btn_perfil);
 
             sct_usuarios.appendChild(contenedor_card);
         }
