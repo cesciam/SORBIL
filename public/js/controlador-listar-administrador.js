@@ -59,9 +59,7 @@ let filtrar_tabla = async () => {
                 window.location.href = `ver-perfil-administrador-libreria.html?_id=${this.dataset._id}`;
             });
         }
-
     }
-
 };
 
 
