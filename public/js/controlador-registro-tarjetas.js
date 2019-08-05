@@ -8,8 +8,8 @@ const input_fecha_ven = document.querySelector('#input_fecha_ven');
 const input_cvv = document.querySelector('#input_cvv');
 const div_tarjeta = document.querySelector('#div-numTarjeta');
 
-let usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
-let id_usuario_activo = usuarioActivo._id;
+let usuarioActivo2 = JSON.parse(sessionStorage.getItem('activo'));
+let id_usuario_activo = usuarioActivo2._id;
 
 let validar = (pnombre, pnumtarjeta, pfecha, pcvv) => {
     let error = false;
@@ -123,7 +123,6 @@ let mostrar_tabla = async() => {
     }
 };
 
-
 let filtrar_tabla = async() => {
 
     let filtro = txt_filtro.value.toLowerCase();
@@ -138,9 +137,7 @@ let filtrar_tabla = async() => {
             fila.insertCell().innerHTML = lista_tarjetas[i]['num_tarjeta'];
             fila.insertCell().innerHTML = lista_tarjetas[i]['cvv'];
         }
-
     }
-
 
 };
 

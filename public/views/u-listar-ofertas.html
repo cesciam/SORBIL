@@ -12,10 +12,8 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/componentes.css">
-    <link rel="stylesheet" href="../css/paginas/registrar-libro.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <link rel="stylesheet" href="../css/paginas/registrar-tarjeta.css">
-    <title>Sorbil -- Registro de tarjetas</title>
+    <title>Sorbil -- Usuario -- Listar libros</title>
 </head>
 
 <body id="grid-admin">
@@ -52,73 +50,35 @@
                 </div>
             </div>
         </div>
+
     </header>
 
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de tarjetas de pago</h1>
-            <p>Registra la información que se solicita</p>
-        </div>
-
-        <form id="form" action="#">
-            <div>
-                <label for="#">Nombre del titular</label>
-                <input id="input_nombre" type="text" placeholder="Ingresar nombre del titular"
-                    aria-label="Ingresar nombre del titular">
-            </div>
-            <div>
-                <label for="#">Número de tarjeta</label>
-                <div id="div-numTarjeta">
-                    <input class="input_numero_tarjeta" type="text" placeholder="Ingresar el numero de tarjeta"
-                        aria-label="Ingresar el numero de tarjeta" id="input_num_tarjeta">
-                    <i id="tipo_tarjeta"></i>
-                </div>
-
-
-            </div>
-
-            <div id="form-container">
-                <div>
-                    <label for="#">Fecha de vencimiento</label>
-                    <input type="text" placeholder="MM/AA" aria-label="MM/AA" id="input_fecha_ven" class="input_fecha">
-                </div>
-                <div>
-                    <label for="#">CVV</label>
-                    <input id="input_cvv" type="text" placeholder="CVV" aria-label="CVV" class="cvv">
-                </div>
-            </div>
-            <button id="btn_enviar" type="button">Registrar</button>
-        </form>
-
-        <div class="main-admin-titulo">
-            <h2>Listados de tarjetas</h2>
+            <h1>Listados de Ofertas</h1>
             <p>Busca la información que te interesa</p>
         </div>
 
         <div id="barra-busqueda">
-            <input id="txt_filtro" type="text" placeholder="Buscar por / Nombre / Numero de tarjeta / Fecha / CVV "
-                aria-label="Buscar por / Nombre / Numero de tarjeta / Fecha / CVV ">
-
-            <button aria-label="Search" type="button" value="Refresh" onclick="history.go(0)">
-                <spans>Actualizar</spans>
-            </button>
-        </div>
+            <input id="txt_filtro" type="text" placeholder="Buscar por / título / autor / categoría / género / ISBN"
+                aria-label="Buscar por / título / autor / categoría / género / ISBN">
+            
+            </div>
 
         <table id="tabla-filtrado">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Fecha de vencimiento</th>
-                    <th>Número de tarjeta</th>
-                    <th>CVV</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Precio</th>
+                    <th>Tipo</th>
+                    <th>Descuento (%)</th>                    
                 </tr>
             </thead>
             <tbody>
-
             </tbody>
         </table>
-
     </main>
 
     <!--Aside-->
@@ -210,19 +170,16 @@
 
     <!--Footer-->
     <footer id="footer-admin">
-        <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+        <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
             <span>FÉNIX</span></a>
     </footer>
 
     <!--Scripts-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://kit.fontawesome.com/a1b50ac28c.js"></script>
     <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../vendors/cleave.js-master/dist/cleave.min.js"></script>
-    <script src="../js/servicio-usuario.js"></script>
-    <script src="../js/controlador-registro-tarjetas.js"></script>
+    <script src="../js/servicio-libros.js"></script>
+    <script src="../js/controlador-listar-ofertas.js"></script>
     <script src="../js/controlador-inicio-u.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
 </body>
