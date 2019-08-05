@@ -99,6 +99,10 @@ Inicio de estilos de ver
     color: var(--color-secondary);
 }
 
+.section-ver .ver-cards .ver-cards-container h3 {
+    display: none;
+}
+
 .section-ver .ver-cards .ver-cards-container a {
     font-size: 1.2rem;
     color: var(--color-black);

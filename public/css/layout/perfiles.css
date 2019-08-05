@@ -22,6 +22,28 @@ Inicio de estilos de la sección principal
 .section-one .img {
     display: grid;
     justify-items: center;
+    align-items: center;
+}
+
+.section-one .img img {
+    width: 40rem;
+    border-radius: 50%;
+}
+
+.section-one #logo {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.section-container{
+    padding: 5rem 0;
+}
+
+.section-one #logo img {
+    width: 40rem;
+    border-radius: 50%;
+    padding: 5rem 0;
 }
 
 .section-one .img img {
