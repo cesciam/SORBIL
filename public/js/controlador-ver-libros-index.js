@@ -139,5 +139,16 @@ let filtrar_cards = async () => {
 };
 
 
+const btn_cerrar_sesion = document.querySelector('#btn-cerrar-sesion');
+
+
+
+btn_cerrar_sesion.addEventListener('click', function(){
+    sessionStorage.clear();
+    window.location.href = 'index.html';
+    
+});
+
+
 mostrar_cards();
 txt_filtro.addEventListener('keyup', filtrar_cards);

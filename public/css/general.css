@@ -162,3 +162,7 @@ Inicio de estilos generales de keyframes
 /*
 Fin de estilos generales de keyframes
 */
+
+#div-usuarioEnSesion{
+    justify-self: end;
+}
