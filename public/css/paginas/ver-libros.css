@@ -89,7 +89,7 @@ Inicio de estilos de ver
 .section-ver .ver-cards .ver-cards-container p {
     font-size: 1.6rem;
     padding-bottom: 0;
-    height: 2rem;
+    height: 5rem;
     padding-left: 0;
     padding-right: 0;
 }
@@ -143,15 +143,14 @@ Inicio de estilos de ver
     grid-template-columns: repeat(2, 1fr);
     font-weight: var(--font-semibold);
     justify-items: center;
+    grid-gap: 1rem;
 }
 
 .section-ver .ver-cards .ver-cards-container .contenedor_atributo p {
     font-size: 1.2rem;
     text-align: center;
     color: var(--color-secondary);
-    padding: 0 0;
-    padding-top: 0rem;
-    height: 8rem;
+    padding: 1rem 0;
 }
 
 .section-ver .ver-cards .ver-cards-container .contenedor_precio p {

@@ -10,7 +10,7 @@
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
-    <link rel="stylesheet" href="../css/paginas/card-perfil-usuario.css"> 
+    <link rel="stylesheet" href="../css/paginas/card-perfil-usuario.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
@@ -22,12 +22,12 @@
     <!--Header-->
     <header id="header-admin">
 
-        <nav class="perfil-usuario-nav">
+        <!-- <nav class="perfil-usuario-nav">
             <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
             <a href="../views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
             <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-        </nav>
-
+        </nav> -->
+        <h3 class="header-text">Área del usuario</h3>
 
         <div class="header-user-icons">
             <div class="header-user-container">
@@ -69,7 +69,8 @@
                             <p>Tu correo electrónico es <span id="txt-correo"></span></p>
                             <p>Usuario: <span id="txt-usuario"></span></p>
                             <p>Identificación: <span id="txt-id"></span></p>
-                            <p>Apellidos: <span id="txt-primer-apellido"></span> <span id="txt-segundo-apellido"></span></p>
+                            <p>Apellidos: <span id="txt-primer-apellido"></span> <span id="txt-segundo-apellido"></span>
+                            </p>
                             <p>Provincia: <span id="txt-provincia"></span></p>
                             <p>Cantón: <span id="txt-canton"></span></p>
                             <p>Distrito: <span id="txt-distrito"></span></p>
@@ -86,12 +87,11 @@
         <div class="sidebar">
 
             <div class="sidenav-menu">
-                <a class="logo" href="#" id ="ver_perfil_usuario"><img src="../imgs/logo.png"
-                        alt="logo de Sorbil"></a>
+                <a class="logo" href="#" id="ver_perfil_usuario"><img src="../imgs/logo.png" alt="logo de Sorbil"></a>
             </div>
 
             <ul class="sidenav-list">
-                <li class="sidenav-list-item"><a href="#" id = "ver_perfil_usuario"><i
+                <li class="sidenav-list-item"><a href="#" id="ver_perfil_usuario"><i
                             class='bx bx-home sidenav-i'></i>Inicio</a>
                 </li>
 
@@ -115,13 +115,13 @@
                         <div class="chevron"><i class='bx bx-chevron-down'></i></div>
                     </a>
                     <div class="sidenav-small-menu dropdown-menu">
-                        <a href="#" id ="u-listar-libro">Libros</a>
-                        <a href="#" id = "u-listar-clubes">Clubes de lectura</a>
-                        <a href="../views/u-listar-compras.html">Compras</a>
+                        <a href="#" id="u-listar-libro">Libros</a>
+                        <a href="#" id="u-listar-clubes">Clubes de lectura</a>
+                        <a href="#">Compras</a>
                     </div>
                 </li>
 
-                <li class="sidenav-list-item"><a href="#" id ="u-tarjetas"><i
+                <li class="sidenav-list-item"><a href="#" id="u-tarjetas"><i
                             class='bx bxs-credit-card sidenav-i'></i>Tarjetas de crédito</a>
                 </li>
 
@@ -137,9 +137,9 @@
                         <div class="chevron"><i class='bx bx-chevron-down'></i></div>
                     </a>
                     <div class="sidenav-small-menu dropdown-menu">
-                        <a href="../views/u-calificaciones-libros.html">Calificaciones de libros</a>
-                        <a href="../views/u-lista-intercambios.html">Intercambios</a>
-                        <a href="../views/u-lista-compras.html">Compras</a>
+                        <a href="#">Calificaciones de libros</a>
+                        <a href="#">Intercambios</a>
+                        <a href="#">Compras</a>
                     </div>
                 </li>
                 <li class="sidenav-list-item">
@@ -149,7 +149,7 @@
                         <div class="chevron"><i class='bx bx-chevron-down'></i></div>
                     </a>
                     <div class="sidenav-small-menu dropdown-menu">
-                        <a href="../views/u-notificacion-intercambios.html">Intercambios nuevos</a>
+                        <a href="#">Intercambios nuevos</a>
                     </div>
                 </li>
 
@@ -160,8 +160,8 @@
                         <div class="chevron"><i class='bx bx-chevron-down'></i></div>
                     </a>
                     <div class="sidenav-small-menu dropdown-menu">
-                        <a href="../views/u-cambiar-contrasena.html">Cambiar contraseña</a>
-                        <a href="../views/u-desactivar-perfil.html">Desactivar perfil</a>
+                        <a href="#">Cambiar contraseña</a>
+                        <a href="#">Desactivar perfil</a>
                     </div>
                 </li>
             </ul>
@@ -182,7 +182,7 @@
     <script src="../js/controlador-perfil-usuario.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-inicio-u.js"></script>
-    
+
 </body>
 
 </html>
