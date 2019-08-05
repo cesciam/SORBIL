@@ -2,6 +2,11 @@
 
 const btn_perfil = document.querySelector('#ver_perfil_usuario');
 const btn_seleccionar_club = document.querySelector('#seleccionar_u_club');
+const btn_listar_libro = document.querySelector('#u-listar-libro');
+const btn_listar_clubes = document.querySelector('#u-listar-clubes');
+const btn_tarjetas = document.querySelector('#u-tarjetas');
+const btn_listar_ofertas = document.querySelector('#u-listar-ofertas');
+
 
 usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
 let _id2 = usuarioActivo._id;
@@ -12,4 +17,20 @@ btn_perfil.addEventListener('click', function () {
 
 btn_seleccionar_club.addEventListener('click', function () {
     window.location.href = `u-seleccionar-club.html?_id=${_id2}`
+});
+
+btn_listar_libro.addEventListener('click', function () {
+    window.location.href = `u-listar-libros.html?_id=${_id2}`
+});
+
+btn_listar_clubes.addEventListener('click', function () {
+    window.location.href = `u-listar-clubes.html?_id=${_id2}`
+});
+
+btn_tarjetas.addEventListener('click', function () {
+    window.location.href = `u-tarjetas.html?_id=${_id2}`
+});
+
+btn_listar_ofertas.addEventListener('click', function () {
+    window.location.href = `u-listar-ofertas.html?_id=${_id2}`
 });
