@@ -30,7 +30,7 @@
                 <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
             </nav>
 
-            <div class="header-nav-1-btns">
+            <div class="header-nav-1-btns" id="nav-inicio">
                 <div class="header-btn">
                     <a class="btn-white" href="../views/u-iniciar-sesion.html">Iniciar sesión</a>
                 </div>
@@ -41,6 +41,15 @@
                         <a href="../views/u-registrar-libreria.html">Registrar librería</a>
                     </div>
                 </div>
+            </div>
+            <div class="header-user-container user-menu-wrap ocultar" id="div-usuarioEnSesion">
+                    <a class="mini-photo-wrapper" href="#"><img id="avatar-img" class="mini-photo" src="../imgs/user.png" width="36" height="36"><i class='bx bx-chevron-down'></i></a>
+                    <div class="menu-user-container">
+                        <ul class="user-menu">
+                            <a class="user-menu-link" href="#" id="ver_perfil_usuario">Perfil</a>
+                            <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
+                        </ul>   
+                    </div>
             </div>
 
         </div>
@@ -162,11 +171,17 @@
     <script src="../js/servicio-autor.js"></script>
     <script src="../js/controlador-perfil-autor.js"></script>
     <script src="../js/componentes/controlador-dropdowns-main.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <!-- JS para listar -->
     <script src="../js/servicio-club.js"></script>
     <script src="../js/servicio-libreria.js"></script>
     <script src="../js/servicio-libros.js"></script>
     <script src="../js/componentes/controlador-lista-enlaces.js"></script>
+    <script src="../js/cerrar-sesion.js"></script>
+    <script src="../js/controlador-avatar.js"></script>
+    <script src="../js/componentes/controlador-nav-inicios.js"></script>
 
 </body>
 
