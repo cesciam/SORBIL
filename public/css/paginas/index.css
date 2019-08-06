@@ -19,7 +19,8 @@ body {
     font-size: 1.8rem;
     color: var(--color-alternative-blue);
     font-weight: var(--font-semibold);
-    height: 5rem;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
 }
 
 #main-user-section-banner {
@@ -65,12 +66,22 @@ body {
     font-size: 1.8rem;
 }
 
+.slider {
+    height: 100%;
+    margin-bottom: 2rem;
+}
+
+.slider a img {
+    width: 20rem;
+    height: 30rem;
+}
+
+#div-usuarioEnSesion {
+    justify-self: end;
+}
+
 @media (max-width: 76.8rem) {
     #main-user-section-banner {
         clip-path: none;
     }
-}
-
-#div-usuarioEnSesion{
-    justify-self: end;
 }

@@ -158,6 +158,7 @@ let llamar = () =>{
             type: 'success',
         })
     }else{
+        limpiarFormulario();
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',
@@ -167,7 +168,20 @@ let llamar = () =>{
     
 };
 
-
+const limpiarFormulario = () => {
+    input_titulo.value = '';
+    input_autor.value = '';
+    input_edicion.value = '';
+    input_editorial.value = '';
+    input_empresa.value = '';
+    input_fecha.value = '';
+    input_categorias.value = '';
+    input_generos.value = '';
+    input_precio.value = '';
+    input_idioma.value = '';
+    input_isbn.value = '';
+    input_psinopsis.value = '';
+};
 
 let lista_generos = [];
 

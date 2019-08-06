@@ -150,6 +150,10 @@ html {
     margin: 0 20%;
 }
 
+#main-admin td button {
+    float: right;
+}
+
 /*Estilos del sidenav del admin*/
 
 #sidenav-admin {

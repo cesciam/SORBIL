@@ -29,7 +29,7 @@ let obtenerDatos = async () => {
             
         }else{
             Swal.fire({ //formato json
-                title: 'Erro en el inicio de sesión',
+                title: 'Error en el inicio de sesión',
                 type: 'warning',
                 text: 'Revise los campos resaltados e inténtelo de nuevo'
             });
