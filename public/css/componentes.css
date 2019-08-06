@@ -658,6 +658,48 @@ Inicio de estilos del header de las cartas
     background-image: url(../imgs/card-club-virtual.jpg);
 }
 
+.user-profile-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-dark-1);
+    padding: 5rem 0;
+}
+
+.profile-saludo {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profile-solicitudes {
+    text-align: center;
+    justify-self: center;
+}
+
+.user-profile-container .profile-h2, .profile-h3 {
+    margin-bottom: 2rem;
+}
+
+.user-profile-container img {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-dark-2);
+}
+
+.user-profile-container .profile-content {
+    display: grid;
+    grid-template-columns: repeat(2, 30rem);
+    justify-items: start;
+    text-align: start;
+}
+
+.user-profile-container .profile-titles p {
+    font-weight: var(--font-semibold);
+    color: var(--color-secondary);
+}
 
 /*
 Fin de estilos del header de las cartas

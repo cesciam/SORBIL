@@ -52,27 +52,32 @@
 
     <!--Main-->
     <main id="main-admin">
-        <div class="main-admin-titulo">
+        <div class="main-admin-titulo card-title">
             <h1>Plataforma de librería</h1>
-            <p>En esta plataforma podés administrar tu librería</p>
+            <p>En esta plataforma puedes listar y registrar la información</p>
         </div>
-        <!--Cards-->
-        <div class="card-container">
-            <div class="cards">
-                <div class="card main-card user-card">
-                    <div>
-                        <img src="../imgs/avatar-placeholder.png" id="avatar">
-                    </div>
-                    <div class="card-content">
-                        <h2>Saludos <span id="txt-nombre"></span></h2>
-                        <p>Tu correo electrónico es <span id="txt-correo"></span></p>
-                        <p>Identificación: <span id="txt-id"></span></p>
-                        <p>Apellidos: <span id="txt-primer-apellido"></span> <span id="txt-segundo-apellido"></span></p>
-                    </div>
+    
+        <div class="user-profile-container">
+            <div class="profile-saludo">
+                <h2>Saludos <span id="txt-nombre"></span></h2>
+                <img src="../imgs/avatar-placeholder.png" id="avatar">
+            </div>
+            <div class="profile-content">
+                <div class="profile-titles">
+                    <p>Correo:</p>
+                    <p>Identificación:</p>
+                    <p>Primer apellido:</p>
+                    <p>Segundo apellido:</p>
+                </div>
+                <div class="profile-info">
+                    <p id="txt-correo"></p>
+                    <p id="txt-id"></p>
+                    <p id="txt-primer-apellido"></p>
+                    <p id="txt-segundo-apellido"></p>
                 </div>
             </div>
         </div>
-
+    
     </main>
 
     <aside id="sidenav-admin">
