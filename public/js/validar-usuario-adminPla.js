@@ -3,7 +3,6 @@
 let usuarioActivo = false;
 
 usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
-let id = usuarioActivo._id;
 
 if(usuarioActivo == null){
     window.location.href = 'u-iniciar-sesion.html';
