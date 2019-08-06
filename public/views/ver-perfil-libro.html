@@ -10,10 +10,9 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
-    <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/paginas/perfil-libro.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Perfil libros</title>
+    <title>Sorbil -- Perfil de libros</title>
 </head>
 
 <body>
@@ -21,47 +20,116 @@
     <header id="header-user">
 
         <div id="header-nav-1">
-            <a class="logo" href="index.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
+            <a class="logo" href="../index.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
+
             <nav>
-                <a href="index.html"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="u-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-                <a href="u-contacto.html"><i class='bx bx-mail-send'></i>Contacto</a>
+                <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
+                <a href="../views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
             </nav>
-            <div class="header-nav-1-btns">
+
+            <div class="header-nav-1-btns" id="nav-inicio">
                 <div class="header-btn">
-                    <button role="link" onclick="window.location='views/u-iniciar-sesion.html'" class="btn-white"
-                        href="#">Iniciar sesión</button>
+                    <a class="btn-white" href="../views/u-iniciar-sesion.html">Iniciar sesión</a>
                 </div>
 
-                <div class="header-btn">
-                    <button role="link" onclick="window.location='views/u-registrar-usuario.html'"
-                        class="dropdown-toggle">Crear cuenta</button>
+                <div class="header-btn dropdown-btn">
+                    <a href="../views/u-registrar-usuario.html" class="btn-color">Crear cuenta</a>
+                    <div class="dropdown-btn-content">
+                        <a href="../views/u-registrar-libreria.html">Registrar librería</a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-user-container user-menu-wrap ocultar" id="div-usuarioEnSesion">
+                <a class="mini-photo-wrapper" href="#"><img id="avatar-img" class="mini-photo" src="../imgs/user.png" width="36" height="36"><i class='bx bx-chevron-down'></i></a>
+                <div class="menu-user-container">
+                    <ul class="user-menu">
+                        <a class="user-menu-link" href="#" id="ver_perfil_usuario">Perfil</a>
+                        <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
+                    </ul>   
                 </div>
             </div>
 
         </div>
 
         <div id="header-nav-2" class="sticky">
-            <nav>
-                <ul>
-                    <li><a href="#">Categorías<i class='bx bx-chevron-down'></i></a></li>
-                    <li><a href="#">Géneros<i class='bx bx-chevron-down'></i></a></li>
-                    <li><a href="#">Clubes<i class='bx bx-chevron-down'></i></a></li>
-                    <li><a href="#">Librerías<i class='bx bx-chevron-down'></i></a></li>
+            <nav class="top">
+        
+                <div class="dropdownBackground">
+                    <span class="arrow"></span>
+                </div>
+        
+                <ul class="cool header-nav-2-content">
+        
+                    <li>
+                        <a href="../views/ver-libros.html">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <table id="tabla-libros" class="tabla-links">
+                                    <thead>
+                                        <tr>
+                                            <th><i class='bx bxs-book'></i>Lista de libros</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <div><a href="../views/ver-libros.html" class="btn-white">Más libros</a></div>
+                            </div>
+                        </ul>
+                    </li>
+        
+                    <li>
+                        <a href="../views/ver-librerias.html">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <table id="tabla-librerias" class="tabla-links">
+                                    <thead>
+                                        <tr>
+                                            <th><i class='bx bxs-store'></i>Lista de librerías</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <div><a href="../views/ver-librerias.html" class="btn-white">Más librerías</a></div>
+                            </div>
+                        </ul>
+                    </li>
+        
+                    <li>
+                        <a href="../views/ver-clubes.html">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <table id="tabla-clubes" class="tabla-links">
+                                    <thead>
+                                        <tr>
+                                            <th><i class='bx bxs-group'></i>Lista de clubes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <div><a href="../views/ver-clubes.html" class="btn-white">Más clubes</a></div>
+                            </div>
+                        </ul>
+                    </li>
+        
                 </ul>
+        
             </nav>
         </div>
 
+
     </header>
 
-
+    <!--Main-->
     <main id="main-user">
         <section id="libro-info">
             <div id="info-libro-descrip">
                 <h1 id="title-libro"></h1>
                 <p>Best seller</p>
-                <div>
+                <div class="ratings">
                     <i class='bx bxs-book-bookmark'></i>
                     <i class='bx bxs-book-bookmark'></i>
                     <i class='bx bxs-book-bookmark'></i>
@@ -78,7 +146,7 @@
 
             <div id="info-libro-precio">
                 <div id="div-img-portada"><img src="../imgs/book-placeholder.png" id="portada"></div>
-                <p class="conten-div-precio">Precio: ₡<span id="precio"></span></p>
+                <p class="conten-div-precio precio-libro">Precio: ₡<span id="precio"></span></p>
                 <button type="button">Comprar</button>
                 <div id="info-libro-div">
                     <p class="conten-div-precio">Autor: </p>
@@ -98,32 +166,19 @@
                 </div>
             </div>
 
-            <div>
-                <p>
-                    hola
-                </p>
-            </div>
-
-
         </section>
-
-
-
-
-
 
     </main>
 
     <footer id="footer-user">
 
         <div id="footer-links">
-            <a href="index.html"><img src="../imgs/logo-light.png" alt="Logo de Sorbil"></a>
+            <a href="../index.html"><img src="../imgs/logo-light.png" alt="Logo de Sorbil"></a>
 
             <nav>
-                <a href="#"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="#"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="#"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-                <a href="#"><i class='bx bx-mail-send'></i>Contacto</a>
+                <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
+                <a href="../views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
             </nav>
         </div>
 
@@ -138,6 +193,16 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/servicio-libros.js"></script>
     <script src="../js/controlador-perfil-libro.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
+    <!-- JS para listar -->
+    <script src="../js/servicio-club.js"></script>
+    <script src="../js/servicio-libreria.js"></script>
+    <script src="../js/componentes/controlador-lista-enlaces.js"></script>
+    <script src="../js/componentes/controlador-nav-inicios.js "></script>
+    <script src="../js/cerrar-sesion.js"></script>
+    <script src="../js/controlador-avatar.js"></script>
 </body>
 
 </html>

@@ -208,11 +208,13 @@ button:active:after {
 .btn-color {
     background-color: var(--color-primary);
     color: var(--color-white);
+    cursor: pointer;
 }
 
 .btn-white {
     background-color: var(--color-white);
     color: var(--color-primary);
+    cursor: pointer;
 }
 
 .btn-white:hover, .btn-color:hover {
@@ -230,7 +232,7 @@ Inicio de estilos de los filtros y listados administradores
     display: grid;
     grid-template-columns: 1fr auto;
     justify-items: center;
-    height: 3rem;
+    /* height: 3rem; */
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -511,7 +513,7 @@ Inicio de estilos de la navegación del sidenav
 }
 
 .dropdown-mostrar {
-    max-height: 500px;
+    max-height: 800px;
     transition: max-height 0.30s ease-in;
 }
 
@@ -608,7 +610,7 @@ Inicio de estilos del header de las cartas
 .card-container .card {
     display: grid;
     box-shadow: var(--shadow-dark-1);
-    width: 30rem;
+    width: 28rem;
     transform: translate3d(0, 0, 0);
     transition: all 0.3s;
     border-radius: var(--box-radius);
@@ -656,30 +658,93 @@ Inicio de estilos del header de las cartas
     background-image: url(../imgs/card-club-virtual.jpg);
 }
 
-.card-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.card-row .card {
+.user-profile-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 5rem;
     align-items: center;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-dark-1);
+    padding: 5rem 0;
 }
 
-.card-row .card i {
-    font-size: 8rem;
-    color: var(--color-primary);
+.profile-saludo {
+    margin: 0 auto;
+    text-align: center;
 }
 
-.card-row .card a {
-    font-size: 2rem;
+.profile-solicitudes {
+    text-align: center;
+    justify-self: center;
+}
+
+.user-profile-container .profile-h2, .profile-h3 {
+    margin-bottom: 2rem;
+}
+
+.user-profile-container img {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-dark-2);
+}
+
+.user-profile-container .profile-content {
+    display: grid;
+    grid-template-columns: repeat(2, 30rem);
+    justify-items: start;
+    text-align: start;
+}
+
+.user-profile-container .profile-titles p {
+    font-weight: var(--font-semibold);
     color: var(--color-secondary);
 }
 
 /*
 Fin de estilos del header de las cartas
+*/
+
+/*
+Inicio de estilos de las calificaciones
+*/
+
+.ratings {
+    color: var(--color-alternative-grey);
+    cursor: pointer;
+}
+
+.ratings:hover {
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+/*
+Fin de estilos de las calificaciones
+*/
+
+/*
+Inicio de estilos del carousel 
+*/
+
+.slider {
+    height: 100%;
+    margin-bottom: 10rem;
+}
+
+.slider a img {
+    width: 90%;
+}
+
+/* Cuando el cuadro obtiene el foco cambia el color
+
+.slider[class*=active] {
+    box-shadow: none;
+    background: var(--color-primary);
+} */
+
+/*
+Fin de estilos del carousel 
 */
 
 @media (max-width: 76.8rem) {

@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/validar-usuario-u.js"></script>
     <link rel="stylesheet" href="../css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
+    <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/paginas/registrar-libro.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
     <link rel="stylesheet" href="../css/paginas/registrar-tarjeta.css">
-    <title>Sorbil -- Registro de tarjetas</title>
+    <title>Sorbil -- Usuario -- Listar tarjetas</title>
 </head>
 
 <body id="grid-admin">
@@ -21,33 +23,34 @@
     <!--Header-->
     <header id="header-admin">
 
-        <h3 class="header-text">Área del administrador de librería</h3>
+        <!-- <nav class="perfil-usuario-nav">
+            <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
+            <a href="../views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+            <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
+        </nav> -->
+        <h3 class="header-text">Área del usuario</h3>
 
         <div class="header-user-icons">
             <div class="header-user-container">
-                <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
+                <a class="header-icon" href="../views/u-ver-carrito.html"><i class='bx bx-cart-alt'></i>
                     <span class="user-notification">1</span>
                 </a>
             </div>
             <div class="header-user-container">
-                <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification">6</span>
+                <a class="header-icon" href="../views/u-ver-libros.html"><i class='bx bx-book-bookmark'></i>
                 </a>
             </div>
 
-            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                        class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
-                        class='bx bx-chevron-down'></i></a>
+            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img id="avatar-img" class="mini-photo" src="../imgs/user.png" width="36" height="36">
+                    <i class='bx bx-chevron-down'></i></a>
                 <div class="menu-user-container">
                     <ul class="user-menu">
-                        <a class="user-menu-link" href="#">Perfil</a>
-                        <a  id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
+                        <a class="user-menu-link" href="#" id="ver_perfil_usuario">Perfil</a>
+                        <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
                     </ul>
                 </div>
             </div>
-
         </div>
-
     </header>
 
     <!--Main-->
@@ -60,16 +63,18 @@
         <form id="form" action="#">
             <div>
                 <label for="#">Nombre del titular</label>
-                <input id="input_nombre" type="text" placeholder="Ingresar nombre del titular" aria-label="Ingresar nombre del titular">
+                <input id="input_nombre" type="text" placeholder="Ingresar nombre del titular"
+                    aria-label="Ingresar nombre del titular">
             </div>
             <div>
-                    <label for="#">Número de tarjeta</label>
+                <label for="#">Número de tarjeta</label>
                 <div id="div-numTarjeta">
-                        <input class="input_numero_tarjeta" type="text" placeholder="Ingresar el numero de tarjeta" aria-label="Ingresar el numero de tarjeta" id="input_num_tarjeta">
-                        <i id="tipo_tarjeta"></i>
+                    <input class="input_numero_tarjeta" type="text" placeholder="Ingresar el numero de tarjeta"
+                        aria-label="Ingresar el numero de tarjeta" id="input_num_tarjeta">
+                    <i id="tipo_tarjeta"></i>
                 </div>
-                
-                    
+
+
             </div>
 
             <div id="form-container">
@@ -91,9 +96,10 @@
         </div>
 
         <div id="barra-busqueda">
-            <input id="txt_filtro" type="text" placeholder="Buscar por / Nombre / Numero de tarjeta / Fecha / CVV " aria-label="Buscar por / Nombre / Numero de tarjeta / Fecha / CVV ">
+            <input id="txt_filtro" type="text" placeholder="Buscar por / Nombre / Numero de tarjeta / Fecha / CVV "
+                aria-label="Buscar por / Nombre / Numero de tarjeta / Fecha / CVV ">
 
-            <button aria-label="Search" type="button" value = "Refresh" onclick="history.go(0)">
+            <button aria-label="Search" type="button" value="Refresh" onclick="history.go(0)">
                 <spans>Actualizar</spans>
             </button>
         </div>
@@ -101,10 +107,10 @@
         <table id="tabla-filtrado">
             <thead>
                 <tr>
-                   <th>Nombre</th>
-                   <th>Fecha de vencimiento</th>
-                   <th>Número de tarjeta</th>
-                   <th>CVV</th>
+                    <th>Nombre</th>
+                    <th>Fecha de vencimiento</th>
+                    <th>Número de tarjeta</th>
+                    <th>CVV</th>
                 </tr>
             </thead>
             <tbody>
@@ -114,71 +120,92 @@
 
     </main>
 
-    <!--Aside-->
-    <aside id="sidenav-admin">
+<!--Aside-->
+<aside id="sidenav-admin">
 
-        <div class="sidebar">
+    <div class="sidebar">
 
-            <div class="sidenav-menu">
-                <a class="logo" href="al-inicio"><img src="../imgs/logo.png" alt="logo de Sorbil"></a>
-            </div>
-
-            <ul class="sidenav-list">
-                <li class="sidenav-list-item"><a href="al-inicio.html"><i class='bx bx-home sidenav-i'></i>Inicio</a>
-                </li>
-
-                <li class="sidenav-list-item"><a href="al-solicitudes.html"><i
-                            class='bx bx-user-plus sidenav-i'></i>Solicitudes</a></li>
-
-                <li class="sidenav-list-item">
-                    <a href="#" class="sidenav-btn dropdown-toggle">
-                        <i class='bx bx-plus'></i>
-                        Registros
-                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <div class="sidenav-small-menu dropdown-menu">
-                        <a href="al-registrar-libro.html">Libro</a>
-                        <a href="al-registrar-categorias.html">Categorías</a>
-                        <a href="al-registrar-generos.html">Géneros</a>
-                        <a href="al-registrar-clubes-de-lectura.html">Club de lectura</a>
-                        <a href="al-registrar-ofertas.html">Ofertas</a>
-                    </div>
-                </li>
-
-                <li class="sidenav-list-item">
-                    <a href="#" class="sidenav-btn dropdown-toggle">
-                        <i class='bx bx-list-ul'></i>
-                        Listados
-                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                    </a>
-                    <div class="sidenav-small-menu dropdown-menu">
-                        <a href="al-listar-libros.html">Libros</a>
-                        <a href="al-listar-usuarios.html">Usuarios</a>
-                        <a href="al-listar-sucursales.html">Sucursales</a>
-                        <a href="al-listar-autores.html">Autores</a>
-                        <a href="al-listar-intercambios.html">Intercambios</a>
-                        <a href="al-listar-ofertas.html">Ofertas</a>
-                        <a href="al-listar-categorias.html">Categorías</a>
-                        <a href="al-listar-generos.html">Géneros</a>
-                        <a href="al-listar-usuarios-de-clubes.html">Usuarios de Clubes</a>
-                        <a href="al-listar-clubes-de-lectura.html">Clubes de lectura</a>
-                    </div>
-                </li>
-
-                <li class="sidenav-list-item"><a href="al-reportes.html"><i
-                            class='bx bxs-report sidenav-i'></i>Reportes</a>
-                </li>
-
-                <li class="sidenav-list-item"><a href="al-facturas.html"><i
-                            class='bx bx-dollar-circle sidenav-i'></i>Facturas</a></li>
-
-                <li class="sidenav-list-item"><a href="al-bitactoras.html"><i
-                            class='bx bx-loader-alt sidenav-i'></i>Bitácora</a></li>
-            </ul>
-
+        <div class="sidenav-menu">
+            <a class="logo" href="#" id="ver_perfil_usuario"><img src="../imgs/logo.png" alt="logo de Sorbil"></a>
         </div>
 
-    </aside>
+        <ul class="sidenav-list">
+            <li class="sidenav-list-item"><a href="#" id="ver_perfil_usuario"><i
+                        class='bx bx-home sidenav-i'></i>Inicio</a>
+            </li>
+
+            <li class="sidenav-list-item">
+                <a href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bx-plus'></i>
+                    Registros
+                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                </a>
+
+                <div class="sidenav-small-menu dropdown-menu">
+                    <a href="#" id="u-registrar-club-virtual">Club virtual</a>
+                    <a href="#" id="u-registrar-club-presencial">Club presencial</a>
+                </div>
+            </li>
+
+            <li class="sidenav-list-item">
+                <a href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bx-list-ul'></i>
+                    Listados
+                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                </a>
+                <div class="sidenav-small-menu dropdown-menu">
+                    <a href="#" id="u-listar-libro">Libros</a>
+                    <a href="#" id="u-listar-clubes">Clubes de lectura</a>
+                    <a href="#">Compras</a>
+                </div>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="u-tarjetas"><i
+                        class='bx bxs-credit-card sidenav-i'></i>Tarjetas de crédito</a>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="u-listar-ofertas"><i
+                        class='bx bxs-purchase-tag sidenav-i'></i>Ofertas</a>
+            </li>
+
+
+            <li class="sidenav-list-item">
+                <a href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bx-list-plus'></i>
+                    Historiales
+                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                </a>
+                <div class="sidenav-small-menu dropdown-menu">
+                    <a href="#">Calificaciones de libros</a>
+                    <a href="#">Intercambios</a>
+                    <a href="#">Compras</a>
+                </div>
+            </li>
+            <li class="sidenav-list-item">
+                <a href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-bell'></i>
+                    Notificaciones
+                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                </a>
+                <div class="sidenav-small-menu dropdown-menu">
+                    <a href="#">Intercambios nuevos</a>
+                </div>
+            </li>
+
+            <li class="sidenav-list-item">
+                <a href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-lock'></i>
+                    Seguridad
+                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                </a>
+                <div class="sidenav-small-menu dropdown-menu">
+                    <a href="#">Cambiar contraseña</a>
+                    <a href="#">Desactivar perfil</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
 
     <!--Footer-->
     <footer id="footer-admin">
@@ -190,10 +217,14 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://kit.fontawesome.com/a1b50ac28c.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <script src="../vendors/cleave.js-master/dist/cleave.min.js"></script>
     <script src="../js/servicio-usuario.js"></script>
     <script src="../js/controlador-registro-tarjetas.js"></script>
+    <script src="../js/controlador-inicio-u.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
+    <script src="../js/controlador-avatar.js"></script>
 </body>
 
 </html>

@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/componentes.css">
     <link rel="stylesheet" href="css/layout/usuarios.css">
-    <link rel="stylesheet" href="css/paginas/index.css">
     <link rel="stylesheet" href="vendors/glide-3.3.0/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="vendors/glide-3.3.0/dist/css/glide.theme.min.css">
+    <link rel="stylesheet" href="css/paginas/ver-libros.css">
+    <link rel="stylesheet" href="css/paginas/index.css">
     <link rel="shortcut icon" type="image/png" href="imgs/favicon.png">
     <title>Sorbil -- Inicio</title>
 </head>
@@ -26,29 +27,102 @@
 
             <nav>
                 <a href="index.html"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="u-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-                <a href="u-contacto.html"><i class='bx bx-mail-send'></i>Contacto</a>
+                <a href="views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
             </nav>
 
             <div id="nav-inicio" class="header-nav-1-btns">
                 <div class="header-btn">
                     <a class="btn-white" href="views/u-iniciar-sesion.html">Iniciar sesión</a>
                 </div>
-                <div class="header-btn">
-                    <a class="btn-color" href="views/u-registrar-usuario.html">Crear cuenta</a>
+
+                <div class="header-btn dropdown-btn">
+                    <a href="views/u-registrar-usuario.html" class="btn-color">Crear cuenta</a>
+                    <div class="dropdown-btn-content">
+                        <a href="views/u-registrar-libreria.html">Registrar librería</a>
+
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="header-user-container user-menu-wrap ocultar" id="div-usuarioEnSesion">
+                <a class="mini-photo-wrapper" href="#"><img id="avatar-img" class="mini-photo" src="../imgs/user.png" width="36" height="36"><i class='bx bx-chevron-down'></i></a>
+                <div class="menu-user-container">
+                    <ul class="user-menu">
+                        <a class="user-menu-link" href="#" id="ver_perfil_usuario">Perfil</a>
+                        <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
+                    </ul>   
                 </div>
             </div>
 
         </div>
 
         <div id="header-nav-2" class="sticky">
-            <nav>
-                <ul>
-                    <li><a href="#">Catálogo de libros<i class='bx bx-chevron-down'></i></a></li>
-                    <li><a href="#">Librerías asociadas<i class='bx bx-chevron-down'></i></a></li>
-                    <li><a href="#">Clubes de lectura<i class='bx bx-chevron-down'></i></a></li>
+            <nav class="top">
+
+                <div class="dropdownBackground">
+                    <span class="arrow"></span>
+                </div>
+
+                <ul class="cool header-nav-2-content">
+
+                    <li>
+                        <a href="views/ver-libros.html">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <table id="tabla-libros" class="tabla-links">
+                                    <thead>
+                                        <tr>
+                                            <th><i class='bx bxs-book'></i>Lista de libros</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <div><a href="views/ver-libros.html" class="btn-white">Más libros</a></div>
+                            </div>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="views/ver-librerias.html">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <table id="tabla-librerias" class="tabla-links">
+                                    <thead>
+                                        <tr>
+                                            <th><i class='bx bxs-store'></i>Lista de librerías</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <div><a href="views/ver-librerias.html" class="btn-white">Más librerías</a></div>
+                            </div>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="views/ver-clubes.html">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown dropdown1">
+                            <div class="dropdown-content">
+                                <table id="tabla-clubes" class="tabla-links">
+                                    <thead>
+                                        <tr>
+                                            <th><i class='bx bxs-group'></i>Lista de clubes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <div><a href="views/ver-clubes.html" class="btn-white">Más clubes</a></div>
+                            </div>
+                        </ul>
+                    </li>
+
                 </ul>
+
             </nav>
         </div>
 
@@ -68,31 +142,56 @@
             <div class="glide">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
-                        <li class="slider"><a href="#"><img src="imgs/libro.png" alt=""></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564963652/losJuegosDelHambre_zpb0zk.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564967630/enllamas_k8kvdo.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564964879/eldiariodegreg_pymyn8.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564962175/cuentosdemitiapanchita_uhselc.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564984649/julioverne1_jyguj0.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564984649/julioverne2_mpjjmo.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564984649/wilde2_vre2vf.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564984878/1_opruyl.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564984878/2_crqzaa.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564984879/5_eft1cy.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564984882/4_rhmctr.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564984883/3_k7bfg1.png"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564985267/7_gzfjqz.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564985267/3_ihp81w.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564985267/1_h72wdl.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564985266/8_amfbb8.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564985522/juegos-ninos-calleja_io7u4y.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564985513/15848565_aslum8.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564985265/6_okgxqw.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564985265/9_wxhua1.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564985265/2_tvxjor.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564985266/4_nyuing.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564985266/5_gg9gxl.jpg"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564985266/5_lxjdj8.png"
+                                    alt="Demostración de libros"></a></li>
+                        <li class="slider"><a href="views/ver-libros.html"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564985266/5_lxjdj8.png"
+                                    alt="Demostración de libros"></a></li>
                     </ul>
                 </div>
 
@@ -115,35 +214,63 @@
 
         </section>
 
+        <section id="main-user-ver">
+            <div class="section-ver">
+                <div class="ver-title">
+                    <h1>Catálogo de libros</h1>
+                </div>
+                <div class="ver-cards">
+                    <input id="txt-filtro" type="text" placeholder="Buscar por / título / categoría / género / autor"
+                        aria-label="Buscar por / título / categoría / género / autor">
+
+                    <div id="lista_libros" class="ver-cards-container">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer id="footer-user">
-
         <div id="footer-links">
             <a href="index.html"><img src="imgs/logo-light.png" alt="Logo de Sorbil"></a>
 
             <nav>
                 <a href="index.html"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="u-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-                <a href="u-contacto.html"><i class='bx bx-mail-send'></i>Contacto</a>
+                <a href="views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
             </nav>
         </div>
 
         <div id="footer-copyright">
-            <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+            <a class="copyright" href="views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i>
+                por
                 <span>FÉNIX</span></a>
         </div>
     </footer>
 
     <!--Scripts-->
-    <!-- Sticky JS -->
+    <script src="js/componentes/controlador-dropdowns-nav.js"></script>
+    <script src="js/componentes/controlador-dropdowns-user.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="vendors/sticky-js-master/dist/sticky.min.js"></script>
     <script src="js/componentes/controlador-sticky.js"></script>
+    <script src="js/componentes/controlador-nav-inicios.js"></script>
     <!-- Glide JS -->
     <script src="vendors/glide-3.3.0/dist/glide.min.js"></script>
     <script src="js/componentes/controlador-slider.js"></script>
-    <!-- <script src="js/componentes/controlador-nav.js"></script> -->
+    <script src="js/componentes/controlador-dropdowns-main.js"></script>
+    <!-- JS para listar -->
+    <script src="js/servicio-club.js"></script>
+    <script src="js/servicio-libreria.js"></script>
+    <script src="js/servicio-libros.js"></script>
+    <script src="js/servicio-autor.js"></script>
+    <script src="js/componentes/controlador-lista-enlaces-index.js"></script>
+    <script src="js/controlador-ver-libros-index.js"></script>
+    <script src="js/controlador-avatar.js"></script>
+    <script src="js/cerrar-sesion.js"></script>
+    <script src="js/ver-perfil-index.js"></script>
 </body>
 
 </html>

@@ -123,6 +123,10 @@ label {
     font-weight: var(--font-semibold);
 }
 
+textarea{
+    resize: none;
+}
+
 /*Estilos importantes*/
 
 .swal2-popup {
@@ -158,3 +162,7 @@ Inicio de estilos generales de keyframes
 /*
 Fin de estilos generales de keyframes
 */
+
+#div-usuarioEnSesion{
+    justify-self: end;
+}

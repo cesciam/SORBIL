@@ -54,22 +54,17 @@ let obtenerClubid = async (_id) => {
     }
 };
 
-// Funciones para obtener coordenadas de google maps
-let corlatitud;
-let corlongitud;
-
-let latitud = (platitud) => {
-    corlatitud = platitud;
+let registrarUsuarioAlClub = (pid_club, pidusuario, pnombre, pcorreo) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar-usuario-club',
+        responseType: 'json',
+        data: {
+            _id: pid_club,
+            usuario_id: pidusuario,
+            nombre: pnombre,
+            correo: pcorreo
+        }
+    });
 };
 
-let longitud = (plongitud) => {
-    corlongitud = plongitud;
-};
-
-let enviarLat = () => {
-    return corlatitud;
-}
-
-let enviarLon = () => {
-    return corlongitud;
-}

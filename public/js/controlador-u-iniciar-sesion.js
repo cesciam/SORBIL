@@ -15,17 +15,21 @@ let obtenerDatos = async () => {
         if (usuario_aceptado) {
             let usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
             let id_usuario_activo = usuarioActivo.tipo_usuario;
-            if(id_usuario_activo == 'al'){
-                window.location.href = '../views/al-inicio.html';
+            switch (id_usuario_activo) {
+                case 'ap':
+                    window.location.href = '../views/ap-inicio.html';
+                    break;
+                case 'al':
+                    window.location.href = '../views/al-inicio.html';
+                    break;
+                case 'u':
+                    window.location.href = '../views/u-inicio.html';
+                    break;
             }
-            else{
-                window.location.href = '../views/u-inicio.html';
-            }
-            
             
         }else{
             Swal.fire({ //formato json
-                title: 'Erro en el inicio de sesión',
+                title: 'Error en el inicio de sesión',
                 type: 'warning',
                 text: 'Revise los campos resaltados e inténtelo de nuevo'
             });

@@ -1,25 +1,43 @@
-/* #main-user {
-    display: grid;
-} */
-
-#main-user-section-banner {
-    text-align: center;
+body {
     background: var(--color-alternative-bg);
-    width: 100%;
-    /* clip-path: circle(73% at 50% 15%); */
-    margin-bottom: 5rem;
+}
+
+.section-ver {
+    margin: 0 auto;
+}
+
+.section-ver .ver-cards .ver-cards-container .contenedor_atributo p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--color-secondary);
+    padding: 0 0;
+    padding-top: 0rem;
+    height: 4rem;
+}
+
+.section-ver .ver-cards .ver-cards-container .contenedor_precio p {
+    font-size: 1.8rem;
+    color: var(--color-alternative-blue);
+    font-weight: var(--font-semibold);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    margin-top: 0;
 }
 
 #main-user-section-banner {
+    text-align: center;
+    width: 100%;
+    /* clip-path: circle(73% at 50% 15%); */
+    margin-bottom: 5rem;
     background-image: url(../../imgs/landing-bgr.jpg);
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 #main-user-section-banner .main-user-call-banner {
-    animation-name: moveInUp;
-    animation-duration: 2s;
     padding: 6rem;
+    animation-name: moveInUp;
+    animation-duration: 1s;
 }
 
 #main-user-section-banner h1 {
@@ -35,7 +53,7 @@
 #main-user-section-banner a {
     padding: 1.6rem 5rem;
     animation-name: moveInUp;
-    animation-duration: 3s;
+    animation-duration: 2s;
 }
 
 #main-user-section-banner a:hover {
@@ -50,11 +68,17 @@
 }
 
 .slider {
-    margin-bottom: 10rem;
+    height: 100%;
+    margin-bottom: 2rem;
 }
 
 .slider a img {
-    width: 80%;
+    width: 20rem;
+    height: 30rem;
+}
+
+#div-usuarioEnSesion {
+    justify-self: end;
 }
 
 @media (max-width: 76.8rem) {

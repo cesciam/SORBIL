@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/validar-usuario-adminLib.js"></script>
     <link rel="stylesheet" href="../css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
@@ -11,16 +12,16 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar Libros</title>
+    <title>Sorbil -- Librería -- Listar libros</title>
 </head>
 
 <body id="grid-admin">
 
     <!--Header-->
     <header id="header-admin">
-
+    
         <h3 class="header-text">Área del administrador de librería</h3>
-
+    
         <div class="header-user-icons">
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
@@ -29,37 +30,35 @@
             </div>
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification">1</span>
+                    <span class="user-notification">6</span>
                 </a>
             </div>
-
-            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                        class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
-                        class='bx bx-chevron-down'></i></a>
+    
+            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img id="avatar-img"
+                        class="mini-photo" src="" width="36" height="36"> <i class='bx bx-chevron-down'></i></a>
                 <div class="menu-user-container">
                     <ul class="user-menu">
-                        <a class="user-menu-link" href="#">Perfil</a>
+                        <a class="user-menu-link" href="#" id="ver_perfil_admin_libreria">Perfil</a>
                         <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
                     </ul>
                 </div>
             </div>
-
+    
         </div>
-
+    
     </header>
-
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
             <h1>Listados de libros</h1>
-            <p>Busca la información que te interesa</p>
+            <p>Buscá la información que te interesa</p>
         </div>
 
         <div id="barra-busqueda">
             <input id="txt_filtro" type="text" placeholder="Buscar por / título / autor / categoría / género / ISBN"
                 aria-label="Buscar por / título / autor / categoría / género / ISBN">
-            
-            </div>
+
+        </div>
 
         <table id="tabla-filtrado">
             <thead>
@@ -81,19 +80,19 @@
 
     <!--Aside-->
     <aside id="sidenav-admin">
-    
+
         <div class="sidebar">
-    
+
             <div class="sidenav-menu">
-                <a class="logo" href="../views/ver-perfil-administrador-libreria.html"><img src="../imgs/logo.png"
+                <a class="logo" href="" id="ver_perfil_admin_libreria"><img src="../imgs/logo.png"
                         alt="logo de Sorbil"></a>
             </div>
-    
+
             <ul class="sidenav-list">
-                <li class="sidenav-list-item"><a href="../views/ver-perfil-administrador-libreria.html"><i
+                <!-- <li class="sidenav-list-item"><a href="" id="ver_perfil_admin_libreria"><i
                             class='bx bx-home sidenav-i'></i>Inicio</a>
-                </li>
-    
+                </li> -->
+
                 <li class="sidenav-list-item">
                     <a href="#" class="sidenav-btn dropdown-toggle">
                         <i class='bx bx-plus'></i>
@@ -101,14 +100,14 @@
                         <div class="chevron"><i class='bx bx-chevron-down'></i></div>
                     </a>
                     <div class="sidenav-small-menu dropdown-menu">
-                        <a href="../views/al-registrar-libro.html">Libro</a>
-                        <a href="../views/al-registrar-categorias.html">Categorías</a>
-                        <a href="../views/al-registrar-generos.html">Géneros</a>
-                        <a href="../views/al-registrar-oferta.html">Oferta</a>
-                        <a href="../views/al-seleccionar-club.html">Club de lectura</a>
+                        <a href="#" id="registrar_adminal_categoria">Categorías</a>
+                        <a href="#" id="registrar_adminal_genero">Géneros</a>
+                        <a href="#" id="registrar_adminal_oferta">Oferta</a>
+                        <a href="#" id="registrar_adminal_club_presencial">Club presencial</a>
+                        <a href="#" id="registrar_adminal_club_virtual">Club virtual</a>
                     </div>
                 </li>
-    
+
                 <li class="sidenav-list-item">
                     <a href="#" class="sidenav-btn dropdown-toggle">
                         <i class='bx bx-list-ul'></i>
@@ -116,32 +115,30 @@
                         <div class="chevron"><i class='bx bx-chevron-down'></i></div>
                     </a>
                     <div class="sidenav-small-menu dropdown-menu">
-                        <a href="../views/al-listar-libros.html">Libros</a>
-                        <a href="../views/al-listar-usuarios.html">Usuarios</a>
-                        <a href="../views/al-listar-sucursales.html">Sucursales</a>
-                        <a href="../views/al-listar-autores.html">Autores</a>
-                        <a href="../views/al-listar-intercambios.html">Intercambios</a>
-                        <a href="../views/al-listar-ofertas.html">Ofertas</a>
-                        <a href="../views/al-listar-categorias.html">Categorías</a>
-                        <a href="../views/al-listar-generos.html">Géneros</a>
-                        <a href="../views/al-listar-clubes.html">Clubes de lectura</a>
+                        <a href="#" id="listar_adminal_libros">Libros</a>
+                        <a href="#" id="listar_adminal_usuarios">Usuarios</a>
+                        <a href="#" id="listar_adminal_sucursales">Sucursales</a>
+                        <a href="#" id="listar_adminal_autores">Autores</a>
+                        <a href="#" id="listar_adminal_intercambios">Intercambios</a>
+                        <a href="#" id="listar_adminal_ofertas">Ofertas</a>
+                        <a href="#" id="listar_adminal_categorias">Categorías</a>
+                        <a href="#" id="listar_adminal_generos">Géneros</a>
+                        <a href="#" id="listar_adminal_clubes">Clubes de lectura</a>
                     </div>
                 </li>
-    
-                <li class="sidenav-list-item"><a href="al-reportes.html"><i class='bx bxs-report sidenav-i'></i>Reportes</a>
+
+                <li class="sidenav-list-item"><a href="#"><i class='bx bxs-report sidenav-i'></i>Reportes</a>
                 </li>
-    
-                <li class="sidenav-list-item"><a href="../views/al-ventas.html"><i
-                            class='bx bx-dollar-circle sidenav-i'></i>Ventas</a></li>
-    
-                <li class="sidenav-list-item"><a href="../views/al-bitacora.html"><i
-                            class='bx bx-loader-alt sidenav-i'></i>Bitácora</a></li>
+                
+                <li class="sidenav-list-item"><a href="#"><i class='bx bx-dollar-circle sidenav-i'></i>Ventas</a></li>
+                
+                <li class="sidenav-list-item"><a href="#"><i class='bx bx-loader-alt sidenav-i'></i>Bitácora</a></li>
             </ul>
-    
+
         </div>
-    
+
     </aside>
-    
+
     <!--Footer-->
     <footer id="footer-admin">
         <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
@@ -155,6 +152,9 @@
     <script src="../js/servicio-libros.js"></script>
     <script src="../js/controlador-listar-libros.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
+    <script src="../js/controlador-inicio-al.js"></script>
+    <script src="../js/controlador-avatar.js"></script>
+
 </body>
 
 </html>

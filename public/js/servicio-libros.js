@@ -53,3 +53,30 @@ let obtenerLibroid = async(_id) => {
         console.log(error);
     }
 };
+
+let registrarOferta = (pid, pporcentaje) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar-oferta',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            porcentaje: pporcentaje
+        }
+    });
+}
+
+let obtenerOfertas = async() => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: 'http://localhost:4000/api/listar-ofertas',
+            responseType: 'json'
+        });
+
+        return response.data.lista_ofertas;
+    } catch (error) {
+        console.log(error);
+    }
+};

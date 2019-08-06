@@ -87,4 +87,64 @@ router.get('/buscar-libro-id/:_id', function (req, res) {
     })
 });
 
+
+router.post('/agregar-oferta', function(req, res) {
+    Registro_libro.update({ _id: req.body._id }, {
+            $push:{ 
+                'ofertas': {
+                    porcentaje: req.body.porcentaje,                 
+                }
+            }
+        },
+        function(error){
+            if (error) {
+                return res.status(400).json({
+                    success: false,
+                    msj: 'No se pudo agregar la oferta',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La oferta se guardó con éxito'
+                });
+            }
+        }
+    )
+});
+
+router.get('/buscar-ofertas/:_id', function (req, res) {
+    Registro_libro.find(req.body._id, function (err, libroDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ninguna oferta con ese id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                libro: libroDB
+            });
+        }
+    })
+});
+
+router.get('/listar-ofertas', function (req, res) {
+    Registro_libro.find(function (err, ofertasDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se pueden listar los libros',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                lista_ofertas: ofertasDB
+            });
+        }
+    })
+});
+
 module.exports = router;

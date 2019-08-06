@@ -11,7 +11,7 @@ const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
 const img_uploader_portada = document.querySelector('#portada');
 const img_uploader_contraportada = document.querySelector('#contraportada');
 const input_titulo = document.querySelector('#input_titulo');
-const input_autor = document.querySelector('#input_autor');
+const input_autor = document.querySelector('#input_autores');
 const input_edicion = document.querySelector('#input_edicion');
 const input_editorial = document.querySelector('#input_editorial');
 const input_fecha = document.querySelector('#input_fecha');
@@ -51,7 +51,7 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
         input_titulo.classList.remove('input_error');
     }
 
-    if (pautor.value == ''){
+    if (pautor.value == 0){
         error = true;
         input_autor.classList.add('input_error');
     } else {
@@ -158,6 +158,7 @@ let llamar = () =>{
             type: 'success',
         })
     }else{
+        limpiarFormulario();
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',
@@ -167,7 +168,20 @@ let llamar = () =>{
     
 };
 
-
+const limpiarFormulario = () => {
+    input_titulo.value = '';
+    input_autor.value = '';
+    input_edicion.value = '';
+    input_editorial.value = '';
+    input_empresa.value = '';
+    input_fecha.value = '';
+    input_categorias.value = '';
+    input_generos.value = '';
+    input_precio.value = '';
+    input_idioma.value = '';
+    input_isbn.value = '';
+    input_psinopsis.value = '';
+};
 
 let lista_generos = [];
 
@@ -193,11 +207,23 @@ let agregar_categorias = async () => {
         let option = new Option(lista_catergorias[i]['categoria']);
         select.add(option);
     }
-    
-    
 };
+
+let agregar_autores = async () => {
+    let select = document.getElementById("input_autores");
+    let lista_autores = await obtenerAutor();
+    
+    for(i = 0; i < lista_autores.length; i++)
+    {
+        let option = new Option(lista_autores[i]['autor']);
+        select.add(option);
+    }
+};
+
+
 
 agregar_generos();
 agregar_categorias();
+agregar_autores();
 
 btn_enviar.addEventListener('click', llamar);
