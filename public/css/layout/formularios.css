@@ -282,7 +282,7 @@ html {
 }
 
 #main-form #form-container .button.disabled {
-    opacity: 0.4;
+    display: none;
 }
 
 #main-form #form-container .form-btns {
