@@ -161,6 +161,8 @@ Inicio de estilos de ver
     font-size: 1.8rem;
     color: var(--color-alternative-blue);
     font-weight: var(--font-semibold);
+    height: 2rem;
+    margin-top: 2rem;
 }
 
 @media (max-width: 100rem) {

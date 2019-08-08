@@ -204,7 +204,7 @@ html {
 
 .card-container .card-admin-two-col {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     grid-gap: 2rem;
 }
 
@@ -227,7 +227,6 @@ html {
 .card-container .card .card-content {
     padding-top: 0 !important;
 }
-
 /*
 Fin de estilos generales de administradores
 */
