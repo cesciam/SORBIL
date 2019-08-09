@@ -158,7 +158,7 @@ let llamar = () =>{
             type: 'success',
         })
     }else{
-        limpiarFormulario();
+        
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',
