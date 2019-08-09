@@ -181,6 +181,8 @@ const limpiarFormulario = () => {
     input_tipo_libro.value = '';   
     input_isbn.value = '';
     input_psinopsis.value = '';
+    img_uploader_portada.src = '../imgs/book-placeholder.png';
+    img_uploader_contraportada.src = '../imgs/book-placeholder.png';
 };
 
 let lista_generos = [];
@@ -193,8 +195,7 @@ let agregar_generos = async () => {
     {
         let option = new Option(lista_generos[i]['genero']);
         select.add(option);
-    }
-    
+    }    
     
 };
 

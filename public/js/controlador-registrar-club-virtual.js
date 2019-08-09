@@ -141,13 +141,13 @@ let llamar = () => {
 const limpiarFormulario = () => {
     input_administrador_club.value = '';
     input_tema.value = '';
-    input_administrador_club.value = '';
     input_correo.value = '';
     input_telefono.value = '';
     input_categoria.value = '';
     input_genero.value = '';
     input_fecha.value = '';
     input_descripcion.value = '';
+    img_uploader_imagen.src = '../imgs/book-placeholder.png'
 };
 
 btn_enviar.addEventListener('click', llamar);
