@@ -10,6 +10,11 @@ router.param('_id', function(req, res, next, _id){
     next();
 });
 
+router.param('autor', function(req, res, next, autor) {
+    req.body.autor = autor;
+    next();
+});
+
 //Definicion de la ruta para registrar los libros
 
 router.post('/registrar-libro', function (req, res) {
@@ -142,6 +147,24 @@ router.get('/listar-ofertas', function (req, res) {
             return res.json({
                 success: true,
                 lista_ofertas: ofertasDB
+            });
+        }
+    })
+});
+
+
+router.get('/buscar-libro-autor/:autor', function (req, res) {
+    Registro_libro.find({autor:req.body.autor}, function (err, libroDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ningun libro con ese id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                libro: libroDB
             });
         }
     })
