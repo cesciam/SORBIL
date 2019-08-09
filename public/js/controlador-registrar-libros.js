@@ -157,6 +157,7 @@ let llamar = () =>{
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
         })
+        limpiarFormulario();
     }else{
         
         Swal.fire({ //formato json
@@ -164,8 +165,7 @@ let llamar = () =>{
             type: 'warning',
             text: 'Revise los campos resaltados e inténtelo de nuevo'
         })
-    }
-    
+    }    
 };
 
 const limpiarFormulario = () => {
@@ -173,12 +173,12 @@ const limpiarFormulario = () => {
     input_autor.value = '';
     input_edicion.value = '';
     input_editorial.value = '';
-    input_empresa.value = '';
     input_fecha.value = '';
     input_categorias.value = '';
     input_generos.value = '';
-    input_precio.value = '';
     input_idioma.value = '';
+    input_precio.value = '';
+    input_tipo_libro.value = '';   
     input_isbn.value = '';
     input_psinopsis.value = '';
 };
