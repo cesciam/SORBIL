@@ -232,7 +232,6 @@ Inicio de estilos de los filtros y listados administradores
     display: grid;
     grid-template-columns: 1fr auto;
     justify-items: center;
-    /* height: 3rem; */
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -240,7 +239,7 @@ Inicio de estilos de los filtros y listados administradores
 
 #barra-busqueda input {
     width: 100%;
-    box-shadow: var(--shadow-dark-1);
+    box-shadow: var(--shadow-light);
     border-radius: .4rem 0 0 .4rem;
     transition: all .2s;
 }
@@ -249,16 +248,89 @@ Inicio de estilos de los filtros y listados administradores
     width: 110%;
 }
 
-/* #barra-busqueda button {
+.btn-registrar {
     background-color: var(--color-alternative-blue);
     color: var(--color-white);
     border-radius: 0 .4rem .4rem 0;
+    padding: var(--box-padding);
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: var(--shadow-dark-2);
 }
 
-#barra-busqueda button:hover {
+.btn-registrar:hover {
     box-shadow: var(--shadow-dark-1);
     transform: translateY(0);
-} */
+    opacity: .9;
+}
+
+.btn-registrar i {
+    position: relative;
+    top: .25rem;
+    font-size: 1.8rem;
+    left: -.6rem;
+}
+
+/*dropdown del btn*/
+
+.dropdown-btns {
+    position: relative;
+    display: inline-block;
+    z-index: 9999;
+}
+
+.dropdown-btns-content {
+    display: none;
+    top: 3rem;
+    position: absolute;
+    min-width: 15rem;
+    padding-top: 1rem;
+}
+
+.dropdown-btns-content a {
+    text-decoration: none;
+    display: block;
+    border-radius: var(--box-radius);
+    color: var(--color-black);
+    font-size: 1.2rem;
+    padding: 1.3rem 2.5rem;
+    background-color: var(--color-white);
+    transition: .2s;
+    box-shadow: var(--shadow-dark-1);
+}
+
+.dropdown-btns-content a:hover {
+    transform: translateY(0px);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-dark-2);
+}
+
+.dropdown-btns:hover .dropdown-btns-content {
+    display: block;
+}
+
+.btn-registrar-dropdown {
+    background-color: var(--color-alternative-blue);
+    color: var(--color-white);
+    border-radius: 0 .4rem .4rem 0;
+    padding: var(--box-padding);
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: var(--shadow-dark-2);
+}
+
+.btn-registrar-dropdown:hover {
+    box-shadow: var(--shadow-dark-1);
+    transform: translateY(0);
+    opacity: .9;
+}
+
+.btn-registrar-dropdown i {
+    position: relative;
+    top: .25rem;
+    font-size: 1.8rem;
+    left: -.6rem;
+}
 
 /*
 Fin de estilos de la barra de búsqueda
@@ -438,7 +510,7 @@ Inicio de estilos de la navegación del sidenav
 
 .sidebar {
     display: grid;
-    grid-template-rows: auto repeat(2, 1fr);
+    grid-template-rows: auto 1fr 15rem;
 }
 
 .sidebar-open {
@@ -472,6 +544,7 @@ Inicio de estilos de la navegación del sidenav
 
 .sidenav-list-item .chevron {
     float: right;
+    display: none;
 }
 
 .sidenav-list-item .chevron i {

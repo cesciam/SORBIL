@@ -79,6 +79,7 @@ html {
 
 #main-admin .main-admin-titulo h1 {
     margin-bottom: 2rem;
+    font-size: 2.4rem;
 }
 
 #main-admin .form-nav {
@@ -227,6 +228,7 @@ html {
 .card-container .card .card-content {
     padding-top: 0 !important;
 }
+
 /*
 Fin de estilos generales de administradores
 */
