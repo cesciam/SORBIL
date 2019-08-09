@@ -12,7 +12,6 @@ let mostrar_cards = async () => {
 
     for (let i = 0; i < lista_libros.length; i++) {
 
-        let autor = lista_autores[i]['autor'];
         let contenedor_card = document.createElement('div');
         contenedor_card.classList.add('card');
 

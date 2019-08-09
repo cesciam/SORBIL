@@ -987,4 +987,37 @@ router.get('/buscar-libreria-id/:_id', function (req, res) {
 });
 
 
+
+router.post('/agregar-sucursal', function(req, res) {
+    libreria.update({ correo: req.body.correo }, {
+            $push:{ 
+                'sucursales': {
+                    nombre: req.body.nombre,
+                    telefono: req.body.telefono,
+                    provincia: req.body.provincia,
+                    canton: req.body.canton,
+                    distrito: req.body.distrito,
+                    direccion_latitud: req.body.direccion_latitud,
+                    direccion_longitud: req.body.direccion_longitud                
+                }
+            }
+        },
+        function(error){
+            if (error) {
+                return res.status(400).json({
+                    success: false,
+                    msj: 'No se pudo agregar la sucursal',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La sucursal se agregó con éxito'
+                });
+            }
+        }
+    )
+});
+
+
 module.exports = router;

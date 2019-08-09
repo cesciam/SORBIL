@@ -2,13 +2,12 @@
 // Constantes 
 const input_nombre = document.querySelector('#txt-nombre-sucursal');
 const input_telefono = document.querySelector('#txt-telefono');
-const input_correo = document.querySelector('#txt-correo');
 const input_provincia = document.querySelector('#txt-provincia');
 const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
 const btn_crear_sucursal = document.querySelector('#btn-enviar');
 
-let validar = (pnombre, ptelefono, pcorreo, pprovincia, pcanton, pdistrito) => {
+let validar = (pnombre, ptelefono, pprovincia, pcanton, pdistrito) => {
 
     let error = false;
 
@@ -26,12 +25,6 @@ let validar = (pnombre, ptelefono, pcorreo, pprovincia, pcanton, pdistrito) => {
         input_telefono.classList.remove('input_error');
     }
 
-    if (pcorreo == '') {
-        error = true;
-        input_correo.classList.add('input_error');
-    } else {
-        input_correo.classList.remove('input_error');
-    }
 
     if (pprovincia == '') {
         error = true;
@@ -72,37 +65,23 @@ let validarTelefono = (ptelefono) => {
     return errorTelefono;
 };
 
-let validarCorreo = (pcorreo) => {
-    
-    let errorCorreo = false;
-    let correoValido = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-
-    if(!correoValido.test(pcorreo)){
-        errorCorreo = true;
-        input_correo.classList.add('input_error');        
-    }
-    else {
-        input_correo.classList.remove('input_error');
-    }
-    return errorCorreo;
-};
-
 let llamar = async () => {
     let nombre = input_nombre.value;
     let telefono = input_telefono.value;
-    let correo = input_correo.value;
     let provincia = input_provincia.value;
     let canton = input_canton.value;
     let distrito = input_distrito.value;
     let latitud =  await enviarLat();
     let longitud = await enviarLon();
-    
-    let error = validar(nombre, telefono, correo, provincia, canton, distrito);
-    let errorTelefono = validarTelefono(telefono);
-    let errorCorreo = validarCorreo(correo);
 
-    if (error == false && errorTelefono == false && errorCorreo == false) {
-        registrarSucursal(nombre, telefono, correo, provincia, canton, distrito, latitud, longitud);
+    let datosSucursal = JSON.parse(sessionStorage.getItem('activo'));
+    let correo_sucursal = datosSucursal.correo;
+    
+    let error = validar(nombre, telefono, provincia, canton, distrito);
+    let errorTelefono = validarTelefono(telefono);
+
+    if (error == false && errorTelefono == false) {
+        registrarSucursal(correo_sucursal, nombre, telefono, provincia, canton, distrito, latitud, longitud);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
@@ -121,11 +100,11 @@ let llamar = async () => {
 const limpiarFormulario = () => {
     input_nombre.value = '';
     input_telefono.value = '';
-    input_correo.value = '';
-    input_verf_contrasena.value = '';
     input_provincia.value = '';
     input_canton.value = '';
     input_distrito.value = '';
 };
+
+
 
 btn_crear_sucursal.addEventListener('click', llamar);

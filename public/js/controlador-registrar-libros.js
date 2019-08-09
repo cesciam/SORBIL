@@ -157,15 +157,15 @@ let llamar = () =>{
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
         })
-    }else{
         limpiarFormulario();
+    }else{
+        
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',
             text: 'Revise los campos resaltados e inténtelo de nuevo'
         })
-    }
-    
+    }    
 };
 
 const limpiarFormulario = () => {
@@ -173,14 +173,16 @@ const limpiarFormulario = () => {
     input_autor.value = '';
     input_edicion.value = '';
     input_editorial.value = '';
-    input_empresa.value = '';
     input_fecha.value = '';
     input_categorias.value = '';
     input_generos.value = '';
-    input_precio.value = '';
     input_idioma.value = '';
+    input_precio.value = '';
+    input_tipo_libro.value = '';   
     input_isbn.value = '';
     input_psinopsis.value = '';
+    img_uploader_portada.src = '../imgs/book-placeholder.png';
+    img_uploader_contraportada.src = '../imgs/book-placeholder.png';
 };
 
 let lista_generos = [];
@@ -193,8 +195,7 @@ let agregar_generos = async () => {
     {
         let option = new Option(lista_generos[i]['genero']);
         select.add(option);
-    }
-    
+    }    
     
 };
 

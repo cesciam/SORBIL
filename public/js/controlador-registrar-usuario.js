@@ -201,8 +201,9 @@ let llamar = async () => {
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
         })
-        //Se llama a la fun ción para limpiar el formulario
+        //Se llama a la función para limpiar el formulario
         limpiarFormulario();
+        window.location.href = 'u-iniciar-sesion.html';
     }
     else {
         Swal.fire({ //formato json
@@ -229,6 +230,7 @@ const limpiarFormulario = () => {
     input_canton.value = '';
     input_distrito.value = '';
     input_direccion_exacta.value = ''; 
+    img_uploader_avatar.src = '../imgs/avatar-placeholder.png';
 };
 
 btn_crear_cuenta.addEventListener('click', llamar);

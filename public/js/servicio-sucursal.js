@@ -1,37 +1,37 @@
 'use strict';
 
-let registrarSucursal = (pnombre, ptelefono, pcorreo, pprovincia, pcanton, pdistrito, pdireccion_latitud, pdireccion_longitud) => {
+let registrarSucursal = (pcorreo, pnombre, ptelefono, pprovincia, pcanton, pdistrito, pdireccion_latitud, pdireccion_longitud) =>{
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/registrar-sucursal',
+        url: 'http://localhost:4000/api/agregar-sucursal',
         responseType: 'json',
         data: {
+            correo: pcorreo,
             nombre: pnombre,
             telefono: ptelefono,
-            correo: pcorreo,
             provincia: pprovincia,
             canton: pcanton,
-            distrito: pdistrito,   
+            distrito: pdistrito,
             direccion_latitud: pdireccion_latitud,
-            direccion_longitud: pdireccion_longitud         
+            direccion_longitud: pdireccion_longitud
         }
     });
-};
+}
 
-let obtenerSucursales= async() => {
-    try {
-        // fetch data from an url endpoint
-        const response = await axios({
-            method: 'get',
-            url: 'http://localhost:4000/api/listar-sucursales',
-            responseType: 'json'
-        });
+// let obtenerSucursales= async() => {
+//     try {
+//         // fetch data from an url endpoint
+//         const response = await axios({
+//             method: 'get',
+//             url: 'http://localhost:4000/api/listar-sucursales',
+//             responseType: 'json'
+//         });
 
-        return response.data.lista_sucursales;
-    } catch (error) {
-        console.log(error);
-    }
-};
+//         return response.data.lista_sucursales;
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
 
 let corlatitud;
 let corlongitud;
