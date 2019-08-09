@@ -122,7 +122,6 @@ const limpiarFormulario = () => {
     input_nombre.value = '';
     input_telefono.value = '';
     input_correo.value = '';
-    input_verf_contrasena.value = '';
     input_provincia.value = '';
     input_canton.value = '';
     input_distrito.value = '';
