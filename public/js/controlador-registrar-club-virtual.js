@@ -106,6 +106,22 @@ let validarCorreo = (pcorreo) => {
     return errorCorreo;
 };
 
+let validarTelefono = (ptelefono) => {
+    
+    let errorTelefono = false;
+    let telefonoValido = /\d{2}-?\d{2}-?\d{2}-?\d{2}$/;
+
+    if(!telefonoValido.test(ptelefono)){
+        errorTelefono = true;
+        input_telefono.classList.add('input_error');
+        
+    }
+    else {
+        input_telefono.classList.remove('input_error');
+    }
+    return errorTelefono;
+};
+
 let llamar = () => {
     let src_imagen = img_uploader_imagen.src;;
     let nombre = input_administrador_club.value;
@@ -119,8 +135,9 @@ let llamar = () => {
 
     let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, descripcion);
     let errorCorreo = validarCorreo(correo);
+    let errorTelefono = validarTelefono(telefono);
 
-    if (error == false && errorCorreo == false) {
+    if (error == false && errorCorreo == false && errorTelefono == false) {
         registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, descripcion);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
