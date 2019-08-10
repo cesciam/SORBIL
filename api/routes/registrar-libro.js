@@ -10,6 +10,11 @@ router.param('_id', function(req, res, next, _id){
     next();
 });
 
+router.param('autor', function(req, res, next, autor) {
+    req.body.autor = autor;
+    next();
+});
+
 //Definicion de la ruta para registrar los libros
 
 router.post('/registrar-libro', function (req, res) {
@@ -72,6 +77,84 @@ router.get('/listar-libros', function (req, res) {
 
 router.get('/buscar-libro-id/:_id', function (req, res) {
     Registro_libro.findById(req.body._id, function (err, libroDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ningun libro con ese id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                libro: libroDB
+            });
+        }
+    })
+});
+
+
+router.post('/agregar-oferta', function(req, res) {
+    Registro_libro.update({ _id: req.body._id }, {
+            $push:{ 
+                'ofertas': {
+                    porcentaje: req.body.porcentaje,                 
+                }
+            }
+        },
+        function(error){
+            if (error) {
+                return res.status(400).json({
+                    success: false,
+                    msj: 'No se pudo agregar la oferta',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La oferta se guardó con éxito'
+                });
+            }
+        }
+    )
+});
+
+router.get('/buscar-ofertas/:_id', function (req, res) {
+    Registro_libro.find(req.body._id, function (err, libroDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ninguna oferta con ese id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                libro: libroDB
+            });
+        }
+    })
+});
+
+router.get('/listar-ofertas', function (req, res) {
+    Registro_libro.find(function (err, ofertasDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se pueden listar los libros',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                lista_ofertas: ofertasDB
+            });
+        }
+    })
+});
+
+
+router.get('/buscar-libro-autor/:autor', function (req, res) {
+    Registro_libro.find({autor:req.body.autor}, function (err, libroDB) {
         if (err) {
             return res.status(400).json({
                 success: false,

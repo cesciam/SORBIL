@@ -232,7 +232,6 @@ Inicio de estilos de los filtros y listados administradores
     display: grid;
     grid-template-columns: 1fr auto;
     justify-items: center;
-    height: 3rem;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -240,7 +239,7 @@ Inicio de estilos de los filtros y listados administradores
 
 #barra-busqueda input {
     width: 100%;
-    box-shadow: var(--shadow-dark-1);
+    box-shadow: var(--shadow-light);
     border-radius: .4rem 0 0 .4rem;
     transition: all .2s;
 }
@@ -249,16 +248,89 @@ Inicio de estilos de los filtros y listados administradores
     width: 110%;
 }
 
-/* #barra-busqueda button {
+.btn-registrar {
     background-color: var(--color-alternative-blue);
     color: var(--color-white);
     border-radius: 0 .4rem .4rem 0;
+    padding: var(--box-padding);
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: var(--shadow-dark-2);
 }
 
-#barra-busqueda button:hover {
+.btn-registrar:hover {
     box-shadow: var(--shadow-dark-1);
     transform: translateY(0);
-} */
+    opacity: .9;
+}
+
+.btn-registrar i {
+    position: relative;
+    top: .25rem;
+    font-size: 1.8rem;
+    left: -.6rem;
+}
+
+/*dropdown del btn*/
+
+.dropdown-btns {
+    position: relative;
+    display: inline-block;
+    z-index: 9999;
+}
+
+.dropdown-btns-content {
+    display: none;
+    top: 3rem;
+    position: absolute;
+    min-width: 15rem;
+    padding-top: 1rem;
+}
+
+.dropdown-btns-content a {
+    text-decoration: none;
+    display: block;
+    border-radius: var(--box-radius);
+    color: var(--color-black);
+    font-size: 1.2rem;
+    padding: 1.3rem 2.5rem;
+    background-color: var(--color-white);
+    transition: .2s;
+    box-shadow: var(--shadow-dark-1);
+}
+
+.dropdown-btns-content a:hover {
+    transform: translateY(0px);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-dark-2);
+}
+
+.dropdown-btns:hover .dropdown-btns-content {
+    display: block;
+}
+
+.btn-registrar-dropdown {
+    background-color: var(--color-alternative-blue);
+    color: var(--color-white);
+    border-radius: 0 .4rem .4rem 0;
+    padding: var(--box-padding);
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: var(--shadow-dark-2);
+}
+
+.btn-registrar-dropdown:hover {
+    box-shadow: var(--shadow-dark-1);
+    transform: translateY(0);
+    opacity: .9;
+}
+
+.btn-registrar-dropdown i {
+    position: relative;
+    top: .25rem;
+    font-size: 1.8rem;
+    left: -.6rem;
+}
 
 /*
 Fin de estilos de la barra de búsqueda
@@ -438,7 +510,7 @@ Inicio de estilos de la navegación del sidenav
 
 .sidebar {
     display: grid;
-    grid-template-rows: auto repeat(2, 1fr);
+    grid-template-rows: auto 1fr 15rem;
 }
 
 .sidebar-open {
@@ -472,6 +544,7 @@ Inicio de estilos de la navegación del sidenav
 
 .sidenav-list-item .chevron {
     float: right;
+    display: none;
 }
 
 .sidenav-list-item .chevron i {
@@ -513,7 +586,7 @@ Inicio de estilos de la navegación del sidenav
 }
 
 .dropdown-mostrar {
-    max-height: 500px;
+    max-height: 800px;
     transition: max-height 0.30s ease-in;
 }
 
@@ -610,7 +683,7 @@ Inicio de estilos del header de las cartas
 .card-container .card {
     display: grid;
     box-shadow: var(--shadow-dark-1);
-    width: 30rem;
+    width: 28rem;
     transform: translate3d(0, 0, 0);
     transition: all 0.3s;
     border-radius: var(--box-radius);
@@ -658,6 +731,49 @@ Inicio de estilos del header de las cartas
     background-image: url(../imgs/card-club-virtual.jpg);
 }
 
+.user-profile-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-dark-1);
+    padding: 5rem 0;
+}
+
+.profile-saludo {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profile-solicitudes {
+    text-align: center;
+    justify-self: center;
+}
+
+.user-profile-container .profile-h2, .profile-h3 {
+    margin-bottom: 2rem;
+}
+
+.user-profile-container img {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-dark-2);
+}
+
+.user-profile-container .profile-content {
+    display: grid;
+    grid-template-columns: repeat(2, 30rem);
+    justify-items: start;
+    text-align: start;
+}
+
+.user-profile-container .profile-titles p {
+    font-weight: var(--font-semibold);
+    color: var(--color-secondary);
+}
+
 /*
 Fin de estilos del header de las cartas
 */
@@ -678,6 +794,30 @@ Inicio de estilos de las calificaciones
 
 /*
 Fin de estilos de las calificaciones
+*/
+
+/*
+Inicio de estilos del carousel 
+*/
+
+.slider {
+    height: 100%;
+    margin-bottom: 10rem;
+}
+
+.slider a img {
+    width: 90%;
+}
+
+/* Cuando el cuadro obtiene el foco cambia el color
+
+.slider[class*=active] {
+    box-shadow: none;
+    background: var(--color-primary);
+} */
+
+/*
+Fin de estilos del carousel 
 */
 
 @media (max-width: 76.8rem) {

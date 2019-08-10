@@ -236,7 +236,7 @@ function calcularEdad(pfecha) {
     return edad;
 }
 
-let saludar = () => {
+let saludar = async () => {
     //variables de la librería
     let src_imagen = img_uploader_imagen.src;
     let usuario = input_usuario.value;
@@ -276,7 +276,7 @@ let saludar = () => {
         //Se llama a la función para limpiar el formulario
         limpiarFormulario();
         window.location.href = 'u-iniciar-sesion.html';
-    } else {
+    } else {        
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',
@@ -307,7 +307,5 @@ const limpiarFormulario = () => {
     img_uploader_imagen.src = '../imgs/book-placeholder.png';
     img_uploader_avatar.src = '../imgs/avatar-placeholder.png';
 };
-
-
 
 btn_enviar.addEventListener('click', saludar);

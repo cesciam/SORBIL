@@ -3,8 +3,11 @@
     justify-items: center;
     margin-left: auto;
     margin-right: auto;
-    padding: 3rem 0;
     background-color: var(--color-alternative-bg);
+}
+
+.ver-title {
+    margin-top: 5rem;
 }
 
 /*
@@ -19,11 +22,35 @@ Inicio de estilos de la sección principal
 .section-one .img {
     display: grid;
     justify-items: center;
+    align-items: center;
+}
+
+.section-one .img img {
+    width: 40rem;
+    border-radius: 50%;
+}
+
+.section-one #logo {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.section-container{
+    padding: 5rem 0;
+}
+
+.section-one #logo img {
+    width: 40rem;
+    border-radius: 50%;
+    padding: 5rem 0;
 }
 
 .section-one .img img {
     width: 80%;
     box-shadow: var(--shadow-dark-2);
+    align-self: start !important;
+    margin-top: 10rem;
 }
 
 .section-one h1, h2, h3, h4, p {
@@ -172,7 +199,7 @@ Inicio de estilos de ver
     transition: all 0.3s;
     border-radius: var(--box-radius);
     background-color: var(--color-white);
-    width: 35rem;
+    width: 32rem;
 }
 
 .section-ver .ver-cards .ver-cards-container header {
@@ -205,6 +232,7 @@ Inicio de estilos de ver
     width: 20rem;
     height: 20rem;
     border-radius: 50%;
+    margin: 2rem;
     box-shadow: var(--shadow-dark-2);
 }
 
@@ -228,6 +256,7 @@ Inicio de estilos de ver
     grid-template-columns: repeat(2, 1fr);
     font-weight: var(--font-semibold);
     justify-items: center;
+    height: 5rem;
 }
 
 .section-ver .ver-cards .ver-cards-container .contenedor_atributo p {

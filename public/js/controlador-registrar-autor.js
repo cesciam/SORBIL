@@ -80,6 +80,7 @@ const limpiarFormulario = () => {
     input_autor.value = '';
     input_biografia.value = '';
     input_fecha.value = '';
+    img_uploader_imagen.src = "../imgs/book-placeholder.png"
 };
 
 
