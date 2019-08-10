@@ -92,6 +92,7 @@ let registrarDatos = () =>{
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
         })
+        limpiarFormulario();
     }else{
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
@@ -100,6 +101,13 @@ let registrarDatos = () =>{
         })
     }
 }
+// Función para limpiar inputs
+const limpiarFormulario = () => {
+    input_nombre.value = '';
+    input_num_tarjeta.value = '';
+    input_fecha_ven.value = '';
+    input_cvv.value = '';
+};
 
 //Aqui inicia el proceso de listar las tarjetas ya registradas 
 

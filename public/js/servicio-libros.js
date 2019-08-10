@@ -80,3 +80,18 @@ let obtenerOfertas = async() => {
         console.log(error);
     }
 };
+
+let obtenerLibroautor = async(autor) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-libro-autor/${autor}`,
+            responseType: 'json'
+        });
+
+        return response.data.libro;
+    } catch (error) {
+        console.log(error);
+    }
+};
