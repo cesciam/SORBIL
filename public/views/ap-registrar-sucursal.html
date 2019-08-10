@@ -29,17 +29,17 @@
                 </a>
             </div>
             <div class="header-user-container">
-                <a class="header-icon" href="#"><i class='bx bx-bell'></i>
+                <a class="header-icon" href="#" id="adminap_solicitudes"><i class='bx bx-bell'></i>
                     <span class="user-notification">6</span>
                 </a>
             </div>
 
             <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                        class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
+                        class="mini-photo" id="avatar-img" src="../imgs/user.png" width="36" height="36"> <i
                         class='bx bx-chevron-down'></i></a>
                 <div class="menu-user-container">
                     <ul class="user-menu">
-                        <a class="user-menu-link" href="#">Perfil</a>
+                        <a class="user-menu-link" href="#" id="ver_perfil_admin_plataforma">Perfil</a>
                         <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
                     </ul>
                 </div>
@@ -53,7 +53,6 @@
     <main id="main-admin">
         <div class="main-admin-titulo">
             <h1>Registro de Sucursal</h1>
-            <p>Registra la información que te interesa</p>
         </div>
 
         <form id="form" action="#">
@@ -66,7 +65,7 @@
                 </div>
                 <div>
                     <label for="#">Teléfono</label>
-                    <input id="txt-telefono" type="tel" maxlength="11" placeholder="Formato: 00-00-00-00"
+                    <input id="txt-telefono" type="tel" placeholder="Formato: 00-00-00-00"
                         aria-label="Ingresar el número de teléfono">
                 </div>
                 <div>
@@ -116,70 +115,145 @@
     <div class="sidebar">
 
         <div class="sidenav-menu">
-            <a class="logo" href="../views/ver-perfil-administrador-plataforma.html"><img src="../imgs/logo.png"
+            <a class="logo" href="" id="ver_perfil_admin_plataforma"><img src="../imgs/logo.png"
                     alt="logo de Sorbil"></a>
         </div>
 
         <ul class="sidenav-list">
-            <li class="sidenav-list-item"><a href="../views/ver-perfil-administrador-plataforma.html"><i
-                        class='bx bx-home sidenav-i'></i>Inicio</a>
-            </li>
 
-            <li class="sidenav-list-item"><a href="../views/ap-solicitudes.html"><i
-                        class='bx bx-user-plus sidenav-i'></i>Solicitudes</a></li>
+            <!-- <li class="sidenav-list-item">
+                        <a href="#" class="sidenav-btn dropdown-toggle">
+                            <i class='bx bx-plus'></i>
+                            Registros
+                            <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                        </a>
+                        <div class="sidenav-small-menu dropdown-menu">
+                            <a href="#" id="registrar_adminap_categoria">Categorías</a>
+                            <a href="#" id="registrar_adminap_genero">Géneros</a>
+                            <a href="#" id="registrar_adminap_oferta">Oferta</a>
+                            <a href="#" id="registrar_adminap_club_presencial">Club presencial</a>
+                            <a href="#" id="registrar_adminap_club_virtual">Club virtual</a>
+                        </div>
+                    </li>
+    
+                    <li class="sidenav-list-item">
+                        <a href="#" class="sidenav-btn dropdown-toggle">
+                            <i class='bx bx-list-ul'></i>
+                            Listados
+                            <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                        </a>
+                        <div class="sidenav-small-menu dropdown-menu">
+                            <a href="#" id="listar_adminap_libros">Libros</a>
+                            <a href="#" id="listar_adminap_usuarios">Usuarios</a>
+                            <a href="#" id="listar_adminap_sucursales">Sucursales</a>
+                            <a href="#" id="listar_adminap_autores">Autores</a>
+                            <a href="#" id="listar_adminap_intercambios">Intercambios</a>
+                            <a href="#" id="listar_adminap_ofertas">Ofertas</a>
+                            <a href="#" id="listar_adminap_categorias">Categorías</a>
+                            <a href="#" id="listar_adminap_generos">Géneros</a>
+                            <a href="#" id="listar_adminap_clubes">Clubes de lectura</a>
+                        </div>
+                    </li> -->
 
             <li class="sidenav-list-item">
-                <a href="#" class="sidenav-btn dropdown-toggle">
-                    <i class='bx bx-plus'></i>
-                    Registros
+                <a id="listar_adminap_librerias" href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-store'></i>
+                    Librerías
                     <div class="chevron"><i class='bx bx-chevron-down'></i></div>
                 </a>
                 <div class="sidenav-small-menu dropdown-menu">
-                    <a href="../views/ap-registrar-libro.html">Libro</a>
-                    <a href="../views/ap-registrar-autores.html">Autor</a>
-                    <a href="../views/ap-registrar-categorias.html">Categorías</a>
-                    <a href="../views/ap-registrar-generos.html">Géneros</a>
-                    <a href="../views/ap-registrar-oferta.html">Ofertas</a>
-                    <a href="../views/ap-seleccionar-club.html">Club de lectura</a>
+                    <a href="#" id="listar_adminap_sucursales">Sucursal</a>
+                    <a href="#" id="registrar_adminap_sucursal">Sucursal</a>
+                </div>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="listar_adminap_usuarios"><i
+                        class='bx bxs-user-plus sidenav-i'></i>Usuarios</a>
+            </li>
+
+            <li class="sidenav-list-item">
+                <a id="listar_adminap_libros" href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-book'></i>
+                    Libros
+                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                </a>
+                <div class="sidenav-small-menu dropdown-menu">
+                    <a href="#" id="registrar_adminap_libro">Libros</a>
                 </div>
             </li>
 
             <li class="sidenav-list-item">
-                <a href="#" class="sidenav-btn dropdown-toggle">
-                    <i class='bx bx-list-ul'></i>
-                    Listados
+                <a id="listar_adminap_autores" href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-pencil'></i>
+                    Autores
                     <div class="chevron"><i class='bx bx-chevron-down'></i></div>
                 </a>
                 <div class="sidenav-small-menu dropdown-menu">
-                    <a href="../views/ap-listar-libros.html">Libros</a>
-                    <a href="../views/ap-listar-usuarios.html">Usuarios</a>
-                    <a href="../views/ap-listar-sucursales.html">Sucursales</a>
-                    <a href="../views/ap-listar-autores.html">Autores</a>
-                    <a href="../views/ap-listar-intercambios.html">Intercambios</a>
-                    <a href="../views/ap-listar-ofertas.html">Ofertas</a>
-                    <a href="../views/ap-listar-categorias.html">Categorías</a>
-                    <a href="../views/ap-listar-generos.html">Géneros</a>
-                    <a href="../views/ap-listar-clubes.html">Clubes de lectura</a>
+                    <a href="#" id="registrar_adminap_autor">Autores</a>
+                </div>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="listar_adminap_intercambios"><i
+                        class='bx bxs-group sidenav-i'></i>Intercambios</a>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="listar_adminap_compras"><i
+                        class='bx bxs-shopping-bag sidenav-i'></i>Compras</a>
+            </li>
+
+            <li class="sidenav-list-item">
+                <a id="listar_adminap_ofertas" href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-discount'></i>
+                    Ofertas
+                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                </a>
+                <div class="sidenav-small-menu dropdown-menu">
+                    <a href="#" id="registrar_adminap_oferta">Ofertas</a>
                 </div>
             </li>
 
             <li class="sidenav-list-item">
-                <a href="#" class="sidenav-btn dropdown-toggle">
-                    <i class='bx bxs-report'></i>
-                    Reportes
+                <a id="listar_adminap_categorias" href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-bookmarks'></i>
+                    Categorías
                     <div class="chevron"><i class='bx bx-chevron-down'></i></div>
                 </a>
                 <div class="sidenav-small-menu dropdown-menu">
-                    <a href="../views/ap-reportes-generales.html">Plataforma</a>
-                    <a href="../views/ap-reportes-librerias.html">Librerías</a>
+                    <a href="#" id="registrar_adminap_categoria">Categorías</a>
                 </div>
             </li>
 
-            <li class="sidenav-list-item"><a href="../views/ap-ventas.html"><i
-                        class='bx bx-dollar-circle sidenav-i'></i>Ventas</a></li>
+            <li class="sidenav-list-item">
+                <a id="listar_adminap_generos" href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-bookmarks'></i>
+                    Géneros
+                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                </a>
+                <div class="sidenav-small-menu dropdown-menu">
+                    <a href="#" id="registrar_adminap_genero">Géneros</a>
+                </div>
+            </li>
 
-            <li class="sidenav-list-item"><a href="../views/ap-bitacora.html"><i
-                        class='bx bx-loader-alt sidenav-i'></i>Bitácora</a></li>
+            <li class="sidenav-list-item">
+                <a id="listar_adminap_clubes" href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-book-open'></i>
+                    Clubes de lectura
+                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                </a>
+                <div class="sidenav-small-menu dropdown-menu">
+                    <a href="#" id="registrar_adminap_club_virtual">Club virtual</a>
+                    <a href="#" id="registrar_adminap_club_presencial">Club presencial</a>
+                </div>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="adminap_reportes"><i
+                        class='bx bxs-report sidenav-i'></i>Reportes</a>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="adminap_bitacora"><i
+                        class='bx bx-loader-alt sidenav-i'></i>Bitácora</a>
+            </li>
+
         </ul>
 
     </div>
@@ -196,13 +270,15 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnj4Pk6sSOX5m4uxn8jO9VN2YjMUR7iO4&callback=initMap"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
+    <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <script src="../js/componentes/controlador-select.js"></script>
     <script src="../js/componentes/controlador-map.js"></script>
     <script src="../js/servicio-sucursal.js"></script>
     <script src="../js/controlador-registrar-sucursal.js"></script>
+    <script src="../js/controlador-inicio-ap.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
+    <script src="../js/controlador-avatar.js"></script>
 </body>
 
 </html>

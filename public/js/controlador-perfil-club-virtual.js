@@ -13,6 +13,8 @@ let genero = document.querySelector('#genero');
 let fecha = document.querySelector('#fecha');
 let descripcion = document.querySelector('#descripcion');
 
+const btn_registrar = document.querySelector('#btn-registrar');
+
 let llenar_perfil = async () => {
 
     let clubid = await obtenerClubid(id);
@@ -34,5 +36,24 @@ let llenar_perfil = async () => {
 
 
 };
+
+let registroUsuarioClubV = () =>{
+    let usuarioParaSuscribir = JSON.parse(sessionStorage.getItem('activo'));
+    let idusuario = usuarioParaSuscribir._id;
+    let nombreUsuario = usuarioParaSuscribir.nombre;
+    let correo = usuarioParaSuscribir.correo;
+
+    registrarUsuarioAlClub(id, idusuario, nombreUsuario, correo);
+
+    Swal.fire({ //formato json
+        title: 'Se ha registrado el usuario exitosamente',
+        type: 'success',
+    })
+
+    
+
+}
+
+btn_registrar.addEventListener('click', registroUsuarioClubV);
 
 llenar_perfil();

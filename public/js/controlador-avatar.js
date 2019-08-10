@@ -1,6 +1,7 @@
-const avatar = document.querySelector('#avatar-img');
+const avatarUser = document.querySelector('#avatar-img');
 
 let UsuarioEnSesion = JSON.parse(sessionStorage.getItem('activo'));
 
+avatarUser.src = UsuarioEnSesion.avatar;
 
-avatar.src = UsuarioEnSesion.avatar;
+

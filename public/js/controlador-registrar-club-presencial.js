@@ -138,6 +138,22 @@ let validarCorreo = (pcorreo) => {
     return errorCorreo;
 };
 
+let validarTelefono = (ptelefono) => {
+    
+    let errorTelefono = false;
+    let telefonoValido = /\d{2}-?\d{2}-?\d{2}-?\d{2}$/;
+
+    if(!telefonoValido.test(ptelefono)){
+        errorTelefono = true;
+        input_telefono.classList.add('input_error');
+        
+    }
+    else {
+        input_telefono.classList.remove('input_error');
+    }
+    return errorTelefono;
+};
+
 let llamar = () => {
     let src_imagen = img_uploader_imagen.src;;
     let nombre = input_administrador_club.value;
@@ -157,8 +173,9 @@ let llamar = () => {
 
     let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, descripcion, provincia, canton, distrito, direccion_exacta);
     let errorCorreo = validarCorreo(correo);
+    let errorTelefono = validarTelefono(telefono);
 
-    if (error == false && errorCorreo == false) {
+    if (error == false && errorCorreo == false && errorTelefono == false) {
         registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, descripcion, provincia, canton, distrito, direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
@@ -178,8 +195,7 @@ let llamar = () => {
 //Función para limpiar el formulario
 const limpiarFormulario = () => {
     input_administrador_club.value = '';
-    input_tema.value = '';
-    input_administrador_club.value = '';
+    input_tema.value = '';    
     input_correo.value = '';
     input_telefono.value = '';
     input_categoria.value = '';
@@ -190,6 +206,7 @@ const limpiarFormulario = () => {
     input_distrito.value = '';
     input_direccion_exacta.value = '';
     input_descripcion.value = '';
+    img_uploader_imagen.src = '../imgs/book-placeholder.png'
 };
 
 btn_enviar.addEventListener('click', llamar);
