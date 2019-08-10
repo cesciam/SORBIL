@@ -13,7 +13,7 @@ let registro_libro_schema = new mongoose.Schema({
     categoria: {type: String, required: true, unique: false},
     genero: {type: String, required: true, unique: false},
     idioma: {type: String, required: true, unique: false},
-    precio: {type: Number, required: true, unique: false},
+    precio: {type: String, required: true, unique: false},
     tipo: {type: String, required: true, unique: false},
     isbn: {type: String, required: true, unique: true},
     portada: {type: String, required: true, unique: false},
