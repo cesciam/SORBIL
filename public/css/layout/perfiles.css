@@ -49,6 +49,8 @@ Inicio de estilos de la sección principal
 .section-one .img img {
     width: 80%;
     box-shadow: var(--shadow-dark-2);
+    align-self: start !important;
+    margin-top: 10rem;
 }
 
 .section-one h1, h2, h3, h4, p {
@@ -230,6 +232,7 @@ Inicio de estilos de ver
     width: 20rem;
     height: 20rem;
     border-radius: 50%;
+    margin: 2rem;
     box-shadow: var(--shadow-dark-2);
 }
 

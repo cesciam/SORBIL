@@ -17,7 +17,16 @@ let libreria_schema = new mongoose.Schema({
     distrito: { type: String, required: true, unique: false },
     direccion_exacta: { type: String, required: true, unique: false },
     direccion_latitud: { type: Number, required: true, unique: false },
-    direccion_longitud: { type: Number, required: true, unique: false }
+    direccion_longitud: { type: Number, required: true, unique: false },
+    sucursales: [{
+        nombre: {type: String, required: false, unique: false},
+        telefono: { type: String, required: false, unique: false },   
+        provincia: {type: String, required: false, unique: false},
+        canton: {type: String, required: false, unique: false},
+        distrito: {type: String, required: false, unique: false},
+        direccion_latitud: {type: Number, required: false, unique: false},
+        direccion_longitud: {type: Number, required: false, unique: false}
+    }]
 });
 
 module.exports = mongoose.model('Libreria', libreria_schema);

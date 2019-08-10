@@ -5,7 +5,6 @@
 #libro-info {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     padding: 6rem;
     background-size: cover;
     margin-left: auto;
@@ -36,7 +35,6 @@
 
 #info-libro-precio {
     display: grid;
-    /* grid-row: span 2; */
     justify-self: center;
     grid-gap: 2rem;
     padding: 4%;
@@ -75,8 +73,4 @@
 #info-libro-div p {
     justify-self: start;
     font-weight: var(--font-semibold);
-}
-
-button, .btn-white, .btn-color{
-    height: 5rem;
 }
