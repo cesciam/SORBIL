@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarLibro = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategoria, pgenero, pidioma, pprecio, ptipo, pisbn, pportada, pcontraportada, psinopsis) => {
+let registrarLibro = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategoria, pgenero, pidioma, pprecio, ptipo, pisbn, pportada, pcontraportada, psinopsis, pcantidad) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libro',
@@ -19,7 +19,8 @@ let registrarLibro = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategoria,
             isbn: pisbn,
             portada: pportada,
             contraportada: pcontraportada,
-            sinopsis: psinopsis
+            sinopsis: psinopsis,
+            cantidad: pcantidad
         }
     });
 };
@@ -95,3 +96,17 @@ let obtenerLibroautor = async(autor) => {
         console.log(error);
     }
 };
+
+let registrar_libros_libreria = (pcorreo, pidlibro, pcantidad) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar-libros-sucursal',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            idlibro: pidlibro,
+            cantidad: pcantidad 
+        }
+    });
+
+}

@@ -23,15 +23,16 @@ const input_tipo_libro = document.querySelector('#input_tipo_libro');
 const input_isbn = document.querySelector('#input_isbn');
 const btn_enviar = document.querySelector('#btn_enviar');
 const input_psinopsis = document.querySelector('#input_sinopsis');
+const input_cantidad = document.querySelector('#input_cantidad');
 
 const anElement = new AutoNumeric('#input_precio', {
-    currencySymbol : '₵',
+    currencySymbol : '₡',
     decimalCharacter : ',',
     digitGroupSeparator : '.',
 });
 
 
-let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgeneros, pidioma, pprecio, plibro, pisbn, psinopsis) => {
+let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgeneros, pidioma, pprecio, plibro, pisbn, psinopsis, pcantidad) => {
     let error = false;
 
     let fecha_formateada = new Date(pfecha.value);
@@ -134,6 +135,13 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
         input_psinopsis.classList.remove('input_error');
     }
 
+    if(pcantidad == '' || pcantidad < 0){
+        error = true;
+        input_cantidad.classList.add('input_error');
+    }else{
+        input_cantidad.classList.remove('input_error');
+    }
+
     return error;
 
 };
@@ -202,13 +210,14 @@ let llamar = () =>{
     let src_portada = img_uploader_portada.src;
     let src_contraportada = img_uploader_contraportada.src;
     let sinopsis = input_psinopsis.value;
+    let cantidad = input_cantidad.value;
 
     let resultadoFuncionISBN = resultadoisbn(isbn);
 
-    let resultado_validaciones = validar(input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn, sinopsis);
+    let resultado_validaciones = validar(input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn, sinopsis, cantidad);
 
     if(!resultado_validaciones && !resultadoFuncionISBN){
-        registrarLibro(titulo, autor, edicion, editorial, fecha, categorias, generos, idioma, precio, tipo_libro, isbn, src_portada, src_contraportada, sinopsis);
+        registrarLibro(titulo, autor, edicion, editorial, fecha, categorias, generos, idioma, precio, tipo_libro, isbn, src_portada, src_contraportada, sinopsis, cantidad);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
