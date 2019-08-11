@@ -54,7 +54,7 @@ let listarLibrosCards = async ()=>{
         let btn_agregar = document.createElement('button');
         btn_agregar.innerText = 'Agregar a mi librería';
         btn_agregar.addEventListener('click', function () {
-            agregar_libros_libreria(libros[i]['_id']);
+            agregar_libros_libreria(libros[i]['_id'], libros[i].cantidad);
         });
 
         let btn_perfil = document.createElement('a');
@@ -76,8 +76,51 @@ let listarLibrosCards = async ()=>{
     }
 }
 
-let agregar_libros_libreria =(pid) =>{
-    console.log(pid);
+let agregar_libros_libreria =(pid, pcantidad) =>{
+    let usuarioActivoEnRegistroLibros = JSON.parse(sessionStorage.getItem('activo'));
+    let correoUserActivo = usuarioActivoEnRegistroLibros.correo;
+
+
+    Swal.fire({
+        title: 'Cantidad de libros que deseas añadir',
+        html: '<input type="number" id="txt-cantidad" placeholder="Ingresá la cantidad de libros">'
+    }).then(() => {
+        let cantidad = document.querySelector('#txt-cantidad').value;
+        if(cantidad) {
+            let resultado = validar_cantidad_libros(cantidad, pcantidad);
+            if(resultado){
+                Swal.fire(
+                    'Error',
+                    'Ingrese un valor válido.',
+                    'warning'
+                )
+            }else{
+                Swal.fire(
+                    'Libros registados',
+                    'Los libros se han registrado con éxito.',
+                    'success'
+                )
+            }
+            registrar_libros_libreria(correoUserActivo, pid, cantidad);
+        }
+    });
+
+    
+}
+
+let validar_cantidad_libros =(pcantidad, pcantidadStockLibros)=>{
+    let error = false;
+    if(pcantidad < 0){
+        error = true;
+    }
+    if(pcantidad == ''){
+        error = true;
+    }
+    if(pcantidad > pcantidadStockLibros){
+        error = true;
+    }
+
+    return error;
 }
 
 listarLibrosCards();

@@ -1019,5 +1019,33 @@ router.post('/agregar-sucursal', function(req, res) {
     )
 });
 
+router.post('/agregar-libros-sucursal', function(req, res) {
+    libreria.update({ correo: req.body.correo }, {
+            $push:{ 
+                'libros': {
+                    idlibro: req.body.idlibro,
+                    cantidad: req.body.cantidad              
+                }
+            }
+        },
+        function(error){
+            if (error) {
+                return res.status(400).json({
+                    success: false,
+                    msj: 'No se pudo agregar los libros a la librería.',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'Los libros se agregaron con exito a la librería.'
+                });
+            }
+        }
+    )
+});
+
+
+
 
 module.exports = router;

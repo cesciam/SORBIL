@@ -96,3 +96,17 @@ let obtenerLibroautor = async(autor) => {
         console.log(error);
     }
 };
+
+let registrar_libros_libreria = (pcorreo, pidlibro, pcantidad) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar-libros-sucursal',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            idlibro: pidlibro,
+            cantidad: pcantidad 
+        }
+    });
+
+}
