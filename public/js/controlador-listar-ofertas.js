@@ -22,7 +22,7 @@ let mostrar_tabla = async () => {
             let fila = tbody.insertRow();
             fila.insertCell().innerHTML = lista_libros[i]['titulo'];
             fila.insertCell().innerHTML = lista_libros[i]['autor'];
-             fila.insertCell().innerHTML = lista_libros[i]['precio'];
+            fila.insertCell().innerHTML = lista_libros[i]['precio'];
             fila.insertCell().innerHTML = lista_libros[i]['tipo'];
             fila.insertCell().innerHTML = lista_ofertas[j]['porcentaje'];
         }

@@ -154,6 +154,21 @@ let validarTelefono = (ptelefono) => {
     return errorTelefono;
 };
 
+let validarFecha = (pfecha) => {
+    
+    let hoy = new Date();
+    let errorFecha = false;
+    
+    if(pfecha < hoy || pfecha == 'Invalid Date') {
+        errorFecha = true;
+        input_fecha.classList.add('input_error');
+    } 
+    else {
+        input_fecha.classList.remove('input_error');
+    }
+    return errorFecha;    
+};
+
 let llamar = () => {
     let src_imagen = img_uploader_imagen.src;;
     let nombre = input_administrador_club.value;
@@ -168,14 +183,13 @@ let llamar = () => {
     let distrito = input_distrito.value;
     let direccion_exacta = input_direccion_exacta.value;
     let descripcion = input_descripcion.value;
-
-    
-
+ 
     let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, descripcion, provincia, canton, distrito, direccion_exacta);
     let errorCorreo = validarCorreo(correo);
     let errorTelefono = validarTelefono(telefono);
+    let errorFecha = validarFecha(fecha);
 
-    if (error == false && errorCorreo == false && errorTelefono == false) {
+    if (error == false && errorCorreo == false && errorTelefono == false && errorFecha == false) {
         registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, descripcion, provincia, canton, distrito, direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',

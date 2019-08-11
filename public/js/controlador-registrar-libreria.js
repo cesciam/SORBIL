@@ -236,6 +236,21 @@ function calcularEdad(pfecha) {
     return edad;
 }
 
+let validarFecha = (pfecha) => {
+    
+    let hoy = new Date();
+    let errorFecha = false;
+    
+    if(pfecha > hoy || pfecha == 'Invalid Date') {
+        errorFecha = true;
+        input_fecha.classList.add('input_error');
+    } 
+    else {
+        input_fecha.classList.remove('input_error');
+    }
+    return errorFecha;    
+};
+
 let saludar = async () => {
     //variables de la librería
     let src_imagen = img_uploader_imagen.src;
@@ -265,8 +280,10 @@ let saludar = async () => {
     let errorTelefono = validarTelefono(telefono);
     let errorCorreo = validarCorreo(correo);
     let edad = calcularEdad(fecha);
+    let errorFecha = validarFecha(fecha);
 
-    if (error == false && errorCedula == false && errorCorreo == false && errorTelefono == false) {
+
+    if (error == false && errorCedula == false && errorCorreo == false && errorTelefono == false && errorFecha == false) {
         registrarLibreria(src_imagen, usuario, correo, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, latitud, longitud);
         registrarAdminLibreria(src_avatar, correo, contrasena, nombre, primer_apellido, segundo_apellido, id, fecha, edad, tipo_usuario);
         Swal.fire({ //formato json
@@ -283,7 +300,6 @@ let saludar = async () => {
             text: 'Revise los campos resaltados e inténtelo de nuevo'
         })
     }
-
 };
 
 //Función para limpiar el formulario

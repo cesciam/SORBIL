@@ -7,6 +7,10 @@ const btn_listar_compras = document.querySelector('#u-listar-compras');
 const btn_listar_clubes = document.querySelector('#u-listar-clubes');
 const btn_tarjetas = document.querySelector('#u-tarjetas');
 const btn_listar_ofertas = document.querySelector('#u-listar-ofertas');
+const btn_listar_intercambios = document.querySelector('#u-listar-intercambios');
+const btn_listar_calificaciones = document.querySelector('#u-listar-calificaciones');
+const btn_listar_notificaciones = document.querySelector('#u-listar-notificaciones');
+const btn_listar_seguridad = document.querySelector('#u-listar-seguridad');
 
 
 usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
@@ -39,4 +43,20 @@ btn_tarjetas.addEventListener('click', function () {
 
 btn_listar_ofertas.addEventListener('click', function () {
     window.location.href = `u-listar-ofertas.html?_id=${_id2}`
+});
+
+btn_listar_intercambios.addEventListener('click', function () {
+    window.location.href = `u-listar-intercambios.html?_id=${_id2}`
+});
+
+btn_listar_calificaciones.addEventListener('click', function () {
+    window.location.href = `u-listar-calificaciones.html?_id=${_id2}`
+});
+
+btn_listar_notificaciones.addEventListener('click', function () {
+    window.location.href = `u-notificaciones.html?_id=${_id2}`
+});
+
+btn_listar_seguridad.addEventListener('click', function () {
+    window.location.href = `u-seguridad.html?_id=${_id2}`
 });
