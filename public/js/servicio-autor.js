@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarAutor = (pimagen, pautor, pbiografia, pfecha) => {
+let registrarAutor = (pimagen, pautor, pbiografia, pfechaNacimiento, pfechaDefuncion, pNacionalidad) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-autor',
@@ -9,7 +9,9 @@ let registrarAutor = (pimagen, pautor, pbiografia, pfecha) => {
             imagen: pimagen,
             autor: pautor,
             biografia: pbiografia,
-            fecha: pfecha
+            fecha_nacimiento: pfechaNacimiento,
+            fecha_defuncion: pfechaDefuncion,
+            nacionalidad: pNacionalidad
         }
     });
 };
