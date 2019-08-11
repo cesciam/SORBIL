@@ -76,9 +76,11 @@ let listarLibrosCards = async ()=>{
     }
 }
 
-let agregar_libros_libreria =(pid, pcantidad) =>{
+let agregar_libros_libreria = async(pid, pcantidad) =>{
     let usuarioActivoEnRegistroLibros = JSON.parse(sessionStorage.getItem('activo'));
     let correoUserActivo = usuarioActivoEnRegistroLibros.correo;
+
+    let datoslibros = await obtenerDatosCorreo(correoUserActivo);
 
 
     Swal.fire({

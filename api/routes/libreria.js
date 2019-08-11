@@ -1046,6 +1046,23 @@ router.post('/agregar-libros-sucursal', function(req, res) {
 });
 
 
+router.get('/buscar-libros-libreria/:correo', function (req, res) {
+    Usuario.find({correo: req.body.correo}, function (err, librobd) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontro ningun usuario con ese id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                usuario: librobd
+            });
+        }
+    })
+});
+
 
 
 module.exports = router;
