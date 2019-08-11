@@ -46,7 +46,7 @@ btn_listar_ofertas.addEventListener('click', function () {
 });
 
 btn_listar_intercambios.addEventListener('click', function () {
-    window.location.href = `u-listar-btn_listar_intercambios.html?_id=${_id2}`
+    window.location.href = `u-listar-intercambios.html?_id=${_id2}`
 });
 
 btn_listar_calificaciones.addEventListener('click', function () {
@@ -54,9 +54,9 @@ btn_listar_calificaciones.addEventListener('click', function () {
 });
 
 btn_listar_notificaciones.addEventListener('click', function () {
-    window.location.href = `u-listar-notificaciones.html?_id=${_id2}`
+    window.location.href = `u-notificaciones.html?_id=${_id2}`
 });
 
 btn_listar_seguridad.addEventListener('click', function () {
-    window.location.href = `u-listar-seguridad.html?_id=${_id2}`
+    window.location.href = `u-seguridad.html?_id=${_id2}`
 });
