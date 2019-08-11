@@ -12,12 +12,10 @@ let listarLibrosCards = async ()=>{
 
         let header = document.createElement('header');
         let h2 = document.createElement('h2');
-        let h3 = document.createElement('h3');
         h2.innerText = libros[i]['titulo'];
 
 
         header.appendChild(h2);
-        header.appendChild(h3);
 
         let contenedor_imagen = document.createElement('div');
         contenedor_imagen.classList.add('contenedor_imagen');
