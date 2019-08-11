@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/validar-usuario-adminPla.js"></script>
+    <script src="../js/validar-usuario-adminLib.js"></script>
     <link rel="stylesheet" href="../css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Plataforma -- Registrar club virtual</title>
+    <title>Sorbil -- Librería -- Compras del sistema</title>
 </head>
 
 <body id="grid-admin">
@@ -24,7 +24,7 @@
 
         <div class="header-user-icons">
             <div class="header-user-container">
-                <a class="header-icon" href="#" id="adminap_solicitudes"><i class='bx bx-mail-send'></i>
+                <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
                     <span class="user-notification">1</span>
                 </a>
             </div>
@@ -35,11 +35,11 @@
             </div>
 
             <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                        class="mini-photo" id="avatar-img" src="../imgs/user.png" width="36" height="36"> <i
+                        class="mini-photo" src="../imgs/user.png" width="36" height="36"  id="avatar-img"> <i
                         class='bx bx-chevron-down'></i></a>
                 <div class="menu-user-container">
                     <ul class="user-menu">
-                        <a class="user-menu-link" href="#" id="ver_perfil_admin_plataforma">Perfil</a>
+                        <a class="user-menu-link" href="#">Perfil</a>
                         <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
                     </ul>
                 </div>
@@ -52,76 +52,26 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de club virtual</h1>
+            <h1>Listados de Compras</h1>
         </div>
 
-        <form id="form" action="#">
-            <div>
-                <div class="upload-img">
-                    <img src="../imgs/book-placeholder.png" alt="" class="img_registro_libro" id="portada">
-                    <label for="file">Sube una imagen</label>
-                    <button id="btnSeleccionarImagen" type="button" id="img-uploader-portada"
-                        class="upload-msg"></button>
-                </div>
-            </div>
+        <div id="barra-busqueda">
+            <input type="text" id="txt-filtro" placeholder="Buscar por compra" aria-label="Buscar por compra">
+        </div>
 
-            <div id="form-container">
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                    <th>Compra</th>
+                </tr>
+            </thead>
+            <tbody>
 
-                <div>
-                    <label for="#">Nombre del administrador</label>
-                    <input id="txt-administrador-club" type="text" placeholder="Ingrese su nombre"
-                        aria-label="Ingrese su nombre">
-                </div>
-                <div>
-                    <label for="#">Nombre del tema</label>
-                    <input id="txt-tema-club" type="text" placeholder="Ingrese el tema" aria-label="Ingrese el tema">
-                </div>
-                <div>
-                    <label for="#">Correo electrónico</label>
-                    <input id="txt-correo" type="email" placeholder="Ingresar su correo electrónico"
-                        aria-label="Ingresar el correo electrónico">
-                </div>
-                <div>
-                    <label for="#">Teléfono</label>
-                    <input id="txt-telefono" type="tel" placeholder="Formato: 00-00-00-00"
-                        aria-label="Ingresar su teléfono" maxlength="8">
-                </div>
-                <div>
-                    <label for="#">Categoría</label>
-                    <select id="txt-categoria" class="opt-categorias">
-                        <option value="" disabled="disabled" selected="true">
-                            Escoger una opción
-                        </option>
-                    </select>
-                </div>
-                <div>
-                    <label for="#">Género</label>
-                    <select id="txt-genero" class="opt-generos">
-                        <option value="" disabled="disabled" selected="true">
-                            Escoger una opción
-                        </option>
-                    </select>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <label for="#">Fecha</label>
-                    <input id="txt-fecha" type="date" placeholder="Ingresar su correo electrónico"
-                        aria-label="Ingresar el correo electrónico">
-                </div>
-            </div>
-            <div>
-                <div class="input-group">
-                    <label for="#">Descripción del club</label>
-                    <textarea id="txt-descripcion"></textarea>
-                </div>
-            </div>
-
-            <button id="btn-enviar" type="button">Registrar</button>
-
-        </form>
+            </tbody>
+        </table>
 
     </main>
+
 <!--Aside-->
 <aside id="sidenav-admin">
 
@@ -284,23 +234,14 @@
     </footer>
 
     <!--Scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js"
-        type="text/javascript"></script>
-    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-    <script src="../js/servicio-imagen.js"></script>
-    <script src="../js/servicio-club.js"></script>
-    <script src="../js/controlador-registrar-club-virtual.js"></script>
-    <script src="../js/servicio-genero.js"></script>
-    <script src="../js/servicio-categoria.js"></script>
-    <script src="../js/componentes/controlador-lista-bd.js"></script>
-    <script src="../js/controlador-inicio-ap.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/controlador-listar-autores.js"></script>
+    <script src="../js/controlador-inicio-al.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-avatar.js"></script>
+
 </body>
 
 </html>
