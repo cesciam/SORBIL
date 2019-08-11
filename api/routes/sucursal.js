@@ -38,21 +38,5 @@ router.post('/registrar-sucursal', function (req, res) {
     );
 });
 
-router.get('/listar-sucursales', function (req, res) {
-    Sucursal.find(function (err, sucursalesBD) {
-        if (err) {
-            return res.status(400).json({
-                success: false,
-                msj: 'No se pueden listar las sucursales',
-                err
-            });
-        } else {
-            return res.json({
-                success: true,
-                lista_sucursales: sucursalesBD
-            });
-        }
-    })
-});
 
 module.exports = router;
