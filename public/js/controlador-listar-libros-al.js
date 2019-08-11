@@ -41,7 +41,23 @@ let listarLibrosCards = async ()=>{
 
         contenedor_precio.appendChild(precio);
 
-        let btn_perfil = document.createElement('button');
+        let contenedor_cantidad = document.createElement('div');
+        contenedor_cantidad.classList.add('contenedor_cantidad');
+        let cantidad = document.createElement('p');
+        let texto_cantidad = document.createElement('p');
+        cantidad.innerText = libros[i].cantidad;
+        texto_cantidad.innerText = 'Cantidad:  ';
+
+        contenedor_cantidad.appendChild(texto_cantidad);
+        contenedor_cantidad.appendChild(cantidad);
+
+        let btn_agregar = document.createElement('button');
+        btn_agregar.innerText = 'Agregar a mi librería';
+        btn_agregar.addEventListener('click', function () {
+            agregar_libros_libreria(libros[i]['_id']);
+        });
+
+        let btn_perfil = document.createElement('a');
         btn_perfil.innerText = 'Ver libro';
         btn_perfil.dataset._id = libros[i]['_id'];
         btn_perfil.addEventListener('click', function () {
@@ -51,11 +67,17 @@ let listarLibrosCards = async ()=>{
         contenedor_card.appendChild(contenedor_imagen);
         contenedor_card.appendChild(header);
         contenedor_card.appendChild(contenedor_atributo);
+        contenedor_card.appendChild(contenedor_cantidad);
         contenedor_card.appendChild(contenedor_precio);
+        contenedor_card.appendChild(btn_agregar);
         contenedor_card.appendChild(btn_perfil);
 
         sct_libros.appendChild(contenedor_card);
     }
+}
+
+let agregar_libros_libreria =(pid) =>{
+    console.log(pid);
 }
 
 listarLibrosCards();

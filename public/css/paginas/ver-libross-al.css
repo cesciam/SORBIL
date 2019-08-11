@@ -135,7 +135,7 @@ Inicio de estilos de ver
     margin: 0 auto;
     padding: 1.3rem 5rem;
     font-size: 1.2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .section-ver .ver-cards .ver-cards-container .contenedor_imagen {
@@ -146,6 +146,7 @@ Inicio de estilos de ver
 
 .section-ver .ver-cards .ver-cards-container .contenedor_atributo {
     display: grid;
+    height: 5rem;   
     grid-template-columns: repeat(2, 1fr);
     font-weight: var(--font-semibold);
     justify-items: center;
@@ -183,6 +184,14 @@ Inicio de estilos de ver
     .section-ver .ver-title h1 {
         margin-bottom: 3rem;
     }
+}
+
+.section-ver .ver-cards .ver-cards-container .contenedor_cantidad{
+        display: grid;
+        padding-top: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        height: 4rem;
 }
 
 /*
