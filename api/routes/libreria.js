@@ -1019,5 +1019,23 @@ router.post('/agregar-sucursal', function(req, res) {
     )
 });
 
+router.get('/listar-sucursales/:correo', function (req, res) {
+    libreria.find({ correo: req.body.correo }, function (err, libreriaDB) {
+
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontró ninguna sucursal con ese id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                libreria: libreriaDB
+            });
+        }
+    })
+});
+
 
 module.exports = router;

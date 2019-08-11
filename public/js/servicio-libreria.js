@@ -76,6 +76,23 @@ let obtenerLibreriaid = async (_id) => {
     }
 };
 
+let obtenerSucursales= async(correo) => {
+   
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/listar-sucursales/${correo}`,
+            responseType: 'json'
+        });
+
+        return response.data.libreria.sucursales;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
 // let obtenerLibreriaCorreo = async (correo) => {
 //     try {
 //         // fetch data from an url endpoint
