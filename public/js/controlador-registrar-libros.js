@@ -26,7 +26,7 @@ const input_psinopsis = document.querySelector('#input_sinopsis');
 const input_cantidad = document.querySelector('#input_cantidad');
 
 const anElement = new AutoNumeric('#input_precio', {
-    currencySymbol : '₵',
+    currencySymbol : '₡',
     decimalCharacter : ',',
     digitGroupSeparator : '.',
 });
