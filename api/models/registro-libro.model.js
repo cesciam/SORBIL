@@ -21,7 +21,8 @@ let registro_libro_schema = new mongoose.Schema({
     sinopsis: {type: String, required: true, unique: false},
     ofertas: [{
         porcentaje: { type: String, required: false, unique: false},
-    }]
+    }],
+    cantidad: {type: Number, required: true, unique: false} 
 });
 
 module.exports =  mongoose.model('Libro', registro_libro_schema);
