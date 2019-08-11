@@ -1,76 +1,142 @@
 #main-user {
-    display: grid;
+    background-color: var(--color-alternative-bg);
 }
 
-#libro-info {
+.section-book {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 6rem;
-    background-size: cover;
+    justify-items: center;
+    grid-template-columns: 22% 30% 43%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
-    width: 85%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    grid-gap: 3rem;
 }
 
-#info-libro-descrip {
+.book-img {
+    box-shadow: var(--shadow-light);
+}
+
+.book-img img {
+    width: 24rem;
+    height: 35rem;
+    margin-bottom: 2rem;
+}
+
+.book-img p {
+    text-align: center;
+    color: var(--color-black);
+    font-weight: var(--font-semibold);
+    font-size: 2.2rem;
+    margin-bottom: 2.4rem;
+}
+
+.book-img p span {
+    color: var(--color-alternative-blue);
+}
+
+.book-img button {
+    justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.book-info h2 {
+    padding: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+    box-shadow: var(--shadow-dark-1);
+    margin-bottom: 4rem;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.book-info-list {
     display: grid;
-    grid-template-columns: 20rem 15rem 1fr;
-    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    grid-gap: 2rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
+    color: var(--color-secondary);
 }
 
-#info-libro-descrip h1 {
+.book-info-list p {
+    margin-bottom: 3rem;
+}
+
+.book-info-list p:last-child {
+    margin-bottom: 0;
+}
+
+.book-atributes {
+    color: var(--color-black);
+}
+
+.book-titles {
+    font-weight: var(--font-semibold);
+}
+
+.book-ed {
     display: grid;
-    text-align: start;
-    grid-column: span 3;
+    grid-template-columns: repeat(2, 1fr);
+    font-weight: var(--font-semibold);
+    color: var(--color-secondary);
+    margin-right: 1rem;
 }
 
-#info-libro-descrip div i {
-    font-size: 2rem;
+.book-ed span {
+    font-weight: 400;
+    color: var(--color-black);
 }
 
 #descrip {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+}
+
+#title-libro {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: .5rem;
+    font-size: 2.4rem;
+    margin-bottom: 4rem;
+}
+
+.book-rating-container {
     display: grid;
-    grid-column: span 3;
+    grid-template-columns: 40% 60%;
+    margin-bottom: 2rem;
 }
 
-#info-libro-precio {
-    display: grid;
-    justify-self: center;
-    grid-gap: 2rem;
-    padding: 4%;
-    padding-left: 5%;
-    padding-right: 5%;
-    background: white;
-    max-width: 100%;
-    box-shadow: var(--shadow-dark-2);
+.book-ratings i {
+    cursor: pointer;
+    font-size: 2.4rem;
+    color: var(--color-alternative-grey);
+    transition: .2s;
+    margin-right: .5rem;
 }
 
-#info-libro-precio #div-img-portada {
-    justify-self: center;
+.book-ratings i:hover {
+    color: var(--color-primary);
 }
 
-.conten-div-precio {
-    justify-self: center;
+.book-rating-global {
     font-weight: var(--font-semibold);
     color: var(--color-secondary);
 }
 
-.precio-libro {
-    color: var(--color-alternative-blue);
-    font-size: 2.4rem;
+.book-rating-info {
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
 }
 
-#portada {
-    width: 20rem;
-}
-
-#info-libro-div {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
-}
-
-#info-libro-div p {
-    justify-self: start;
-    font-weight: var(--font-semibold);
+.book-descrip h3 {
+    padding: 2rem 0;
+    width: 100%;
+    font-size: 1.8rem;
 }
