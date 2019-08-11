@@ -128,7 +128,7 @@
                 </div>
                 <div>
                     <label for="#">Precio</label>
-                    <input id="input_precio" type="number" placeholder="Ingresar el precio del libro"
+                    <input id="input_precio" type="String" placeholder="Ingresar el precio del libro"
                         aria-label="Ingresar el precio del libro">
                 </div>
                 <div>
@@ -300,12 +300,16 @@
                     </div>
                 </li>
     
-                <li class="sidenav-list-item"><a href="#" id="adminap_reportes"><i
-                            class='bx bxs-report sidenav-i'></i>Reportes</a>
+                <li class="sidenav-list-item"><a href="#" id="adminap_reportes"><i class='bx bxs-report sidenav-i'
+                            id="adminap_reportes_libreria"></i>Reportes de librería</a>
                 </li>
-    
-                <li class="sidenav-list-item"><a href="#" id="adminap_bitacora"><i
-                            class='bx bx-loader-alt sidenav-i'></i>Bitácora</a>
+                
+                <li class="sidenav-list-item"><a href="#" id="adminap_reportes"><i class='bx bxs-report sidenav-i'
+                            id="adminap_reportes_generales"></i>Reportes generales</a>
+                </li>
+                
+                <li class="sidenav-list-item"><a href="#" id="adminap_bitacora"><i class='bx bx-loader-alt sidenav-i'
+                            id="adminap_bitacora"></i>Bitácora</a>
                 </li>
     
             </ul>
@@ -321,6 +325,7 @@
     </footer>
 
     <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.1.0"></script>                                                                                  
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->

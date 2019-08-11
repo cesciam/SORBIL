@@ -25,7 +25,8 @@ const btn_listar_clubes = document.querySelector('#listar_adminap_clubes');
 const btn_listar_compras = document.querySelector('#listar_adminap_compras');
 
 //Permisos de usuario para reportes y bitácora
-const btn_reportes = document.querySelector('#adminap_reportes');
+const btn_reportes_libreria = document.querySelector('#adminap_reportes_libreria');
+const btn_reportes_generales = document.querySelector('#adminap_reportes_generales');
 const btn_bitacora = document.querySelector('#adminap_bitacora');
 const btn_solicitudes = document.querySelector('#adminap_solicitudes');
 
@@ -119,8 +120,12 @@ btn_listar_compras.addEventListener('click', function () {
 
 //Permisos para bitácora y compras
 
-btn_reportes.addEventListener('click', function () {
-    window.location.href = `ap-reportes.html?_id=${idAl}`
+btn_reportes_libreria.addEventListener('click', function () {
+    window.location.href = `ap-reportes-libreria.html?_id=${idAl}`
+});
+
+btn_reportes_generales.addEventListener('click', function () {
+    window.location.href = `ap-reportes-generales.html?_id=${idAl}`
 });
 
 btn_bitacora.addEventListener('click', function () {
