@@ -108,4 +108,16 @@ let obtenerDatosCorreo = async(correo) => {
 };
 
 
+let actualizarLibrosLibreria = (pcorreo, pcantidad)=> {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/actualizar-libros-libreria',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            cantidad: pcantidad
+        }
+    });
+}
+
 

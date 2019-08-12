@@ -1069,10 +1069,29 @@ router.get('/buscar-libros-libreria/:correo', function (req, res) {
 });
 
 router.post('/actualizar-libros-libreria', function(req, res){
-    libreria.findOneAndUpdate({correo: req.body.correo}, {
-        $set: {
-            libros
+    let posicionObjeto = req.body.posicion;
+    libreria.findOneAndUpdate({ correo: req.body.correo }, {
+            $set: {
+                "libros.1.cantidad": req.body.cantidad
+            }
+        },
+        function(error){
+            if (error) {
+                return res.json({
+                    success: false,
+                    msj: 'No se pudo agregar la sucursal',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La sucursal se agregó con éxito'
+                });
+            }
         }
+    )
+
+
 });
 
 
