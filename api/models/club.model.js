@@ -14,6 +14,8 @@ let club_schema = new mongoose.Schema({
     categoria: { type: String, required: true, unique: false },
     genero: { type: String, required: true, unique: false },
     fecha: { type: Date, required: true, unique: false },
+    hora: { type: String, required: true, unique: false },
+    frecuencia: { type: String, required: true, unique: false },
     descripcion: { type: String, required: true, unique: false },
     usuarios: [{
         usuario_id: { type: String, required: true, unique: true },

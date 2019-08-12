@@ -32,17 +32,22 @@ let mostrar_tabla = async () => {
         btn_oferta.addEventListener('click', async function () {
             Swal.fire({
                 title: 'Añadir oferta a este libro',
-                html: '<input type="number" maxlength="2" id="txt-porcentaje" placeholder="Ingresá el porcentaje de descuento">'
+                html: '<input type="number" id="txt-porcentaje" placeholder="Ingresá el porcentaje de descuento">'
             }).then(() => {
                 let porcentaje = document.querySelector('#txt-porcentaje').value;
-                if(porcentaje) {
+                if(porcentaje > 0 && porcentaje < 101) {
                     registrarOferta(this.dataset._id, porcentaje);
-
-                    Swal.fire(
-                        'Oferta registrada',
-                        'La oferta fue registrada existosamente',
-                        'success'
-                    )
+                    Swal.fire({
+                        title: 'Oferta registrada',
+                        text:'La oferta fue registrada existosamente',
+                        type: 'success'
+                    })
+                } else {
+                    Swal.fire({ 
+                        title: 'No se ha registrado la oferta',
+                        type: 'warning',
+                        text: 'Revisá los campos resaltados e intentalo de nuevo'
+                    })
                 }
             })
         });
@@ -80,13 +85,19 @@ let filtrar_tabla = async () => {
                     html: '<input type="number" id="txt-porcentaje" placeholder="Ingresá el porcentaje de descuento">'
                 }).then(() => {
                     let porcentaje = document.querySelector('#txt-porcentaje').value;
-                    if(porcentaje) {
+                    if(porcentaje > 0 && porcentaje < 101) {
                         registrarOferta(this.dataset._id, porcentaje);
-                        Swal.fire(
-                            'Oferta registrada',
-                            'La oferta fue registrada existosamente',
-                            'success'
-                        )
+                        Swal.fire({
+                            title: 'Oferta registrada',
+                            text:'La oferta fue registrada existosamente',
+                            type: 'success'
+                        })
+                    } else {
+                        Swal.fire({ 
+                            title: 'No se ha registrado la oferta',
+                            type: 'warning',
+                            text: 'Revisá los campos resaltados e intentalo de nuevo'
+                        })
                     }
                 })
             });
