@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/paginas/ver-libross-al.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
     <title>Sorbil -- Librería -- Listar libros</title>
 </head>
@@ -50,7 +51,7 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de libros</h1>
+            <h1>Catalogos de libros</h1>
         </div>
 
         <div id="barra-busqueda">
@@ -59,21 +60,16 @@
 
         </div>
 
-        <table id="tabla-filtrado">
-            <thead>
-                <tr>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>Categoría</th>
-                    <th>Género</th>
-                    <th>ISBN</th>
-                    <th>Tipo</th>
-                </tr>
-            </thead>
-            <tbody>
+        <section class="section-ver">
 
-            </tbody>
-        </table>
+        <div class="ver-cards">
+
+            <div id="lista_libros" class="ver-cards-container">
+                
+            </div>
+        </div>
+
+        </section>
 
     </main>
 
@@ -219,11 +215,13 @@
     </footer>
 
     <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <script src="../js/servicio-libros.js"></script>
-    <script src="../js/controlador-listar-libros.js"></script>
+    <script src="../js/servicio-libreria.js"></script>
+    <script src="../js/controlador-listar-libros-al.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-inicio-al.js"></script>
     <script src="../js/controlador-avatar.js"></script>
