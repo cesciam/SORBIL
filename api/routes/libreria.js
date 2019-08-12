@@ -1068,12 +1068,12 @@ router.get('/buscar-libros-libreria/:correo', function (req, res) {
     })
 });
 
-router.post('/actualizar-libros-libreria', function(req, res){
-    libreria.findOneAndUpdate({correo: req.body.correo}, {
-        $set: {
-            libros
-        }
-});
+// router.post('/actualizar-libros-libreria', function(req, res){
+//     libreria.findOneAndUpdate({correo: req.body.correo}, {
+//         $set: {
+//             libros
+//         }
+// });
 
 
 
