@@ -35,6 +35,8 @@ router.post('/registrar-club', function (req, res) {
         categoria: body.categoria,
         genero: body.genero,
         fecha: body.fecha,
+        hora: body.hora,
+        frecuencia: body.frecuencia,
         descripcion: body.descripcion,
     });
 

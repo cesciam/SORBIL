@@ -84,7 +84,7 @@
                 <div>
                     <label for="#">Teléfono</label>
                     <input id="txt-telefono" type="tel" placeholder="Formato: 00-00-00-00"
-                        aria-label="Ingresar su teléfono" maxlength="8">
+                        aria-label="Ingresar su teléfono">
                 </div>
                 <div>
                     <label for="#">Categoría</label>
@@ -102,14 +102,34 @@
                         </option>
                     </select>
                 </div>
+                <div>
+                    <div>
+                        <label for="#">Fecha de incio</label>
+                        <input id="txt-fecha" type="date" placeholder="Ingresar su correo electrónico"
+                            aria-label="Ingresar el correo electrónico">
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <label for="#">Hora</label>
+                        <input id="txt-hora" type="time" placeholder="Ingresar la hora" aria-label="Ingresar la hora">
+                    </div>
+                </div> 
             </div>
+
             <div>
                 <div>
-                    <label for="#">Fecha</label>
-                    <input id="txt-fecha" type="date" placeholder="Ingresar su correo electrónico"
-                        aria-label="Ingresar el correo electrónico">
+                    <label for="#">Frecuencia</label>
+                    <select id="txt-frecuencia">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar frecuencia</option>
+                        <option value="Semanal">Semanal</option>
+                        <option value="Quincenal">Quincenal</option>
+                        <option value="Mensual">Mensual</option>
+                    </select>
                 </div>
             </div>
+
             <div>
                 <div class="input-group">
                     <label for="#">Descripción del club</label>
@@ -122,63 +142,63 @@
         </form>
 
     </main>
-<!--Aside-->
-<aside id="sidenav-admin">
+    <!--Aside-->
+    <aside id="sidenav-admin">
 
-    <div class="sidebar">
+        <div class="sidebar">
 
-        <div class="sidenav-menu">
-            <a class="logo" href="#" id="ver_perfil_usuario"><img src="../imgs/logo.png" alt="logo de Sorbil"></a>
+            <div class="sidenav-menu">
+                <a class="logo" href="#" id="ver_perfil_usuario"><img src="../imgs/logo.png" alt="logo de Sorbil"></a>
+            </div>
+
+            <ul class="sidenav-list">
+
+                <li class="sidenav-list-item"><a href="#" id="u-tarjetas"><i
+                            class='bx bxs-credit-card sidenav-i'></i>Tarjetas de
+                        crédito</a>
+                </li>
+
+                <li class="sidenav-list-item">
+                    <a href="#" class="sidenav-btn dropdown-toggle" id="u-listar-clubes">
+                        <i class='bx bxs-book-open'></i>
+                        Clubes de lectura
+                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+
+                    <div class="sidenav-small-menu dropdown-menu">
+                        <a href="#" id="u-registrar-club-virtual">Club virtual</a>
+                        <a href="#" id="u-registrar-club-presencial">Club presencial</a>
+                    </div>
+                </li>
+
+
+                <li class="sidenav-list-item"><a href="#" id="u-listar-compras"><i
+                            class='bx bx-money sidenav-i'></i>Compras</a>
+                </li>
+
+                <li class="sidenav-list-item"><a href="#" id="u-listar-ofertas"><i
+                            class='bx bxs-purchase-tag sidenav-i'></i>Ofertas</a>
+                </li>
+
+                <li class="sidenav-list-item"><a href="#" id="u-listar-intercambios"><i
+                            class='bx bxs-group sidenav-i'></i>Intercambios</a>
+                </li>
+
+                <li class="sidenav-list-item"><a href="#" id="u-listar-calificaciones"><i
+                            class='bx bxs-star sidenav-i'></i>Calificaciones</a>
+                </li>
+
+                <li class="sidenav-list-item"><a href="#" id="u-listar-notificaciones"><i
+                            class='bx bxs-bell-ring sidenav-i'></i>Notificaciones</a>
+                </li>
+
+                <li class="sidenav-list-item"><a href="#" id="u-listar-seguridad"><i
+                            class='bx bxs-lock sidenav-i'></i>Seguridad</a>
+                </li>
+
+            </ul>
         </div>
-
-        <ul class="sidenav-list">
-
-            <li class="sidenav-list-item"><a href="#" id="u-tarjetas"><i
-                        class='bx bxs-credit-card sidenav-i'></i>Tarjetas de
-                    crédito</a>
-            </li>
-
-            <li class="sidenav-list-item">
-                <a href="#" class="sidenav-btn dropdown-toggle" id="u-listar-clubes">
-                    <i class='bx bxs-book-open'></i>
-                    Clubes de lectura
-                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                </a>
-
-                <div class="sidenav-small-menu dropdown-menu">
-                    <a href="#" id="u-registrar-club-virtual">Club virtual</a>
-                    <a href="#" id="u-registrar-club-presencial">Club presencial</a>
-                </div>
-            </li>
-
-
-            <li class="sidenav-list-item"><a href="#" id="u-listar-compras"><i
-                        class='bx bx-money sidenav-i'></i>Compras</a>
-            </li>
-
-            <li class="sidenav-list-item"><a href="#" id="u-listar-ofertas"><i
-                        class='bx bxs-purchase-tag sidenav-i'></i>Ofertas</a>
-            </li>
-
-            <li class="sidenav-list-item"><a href="#" id="u-listar-intercambios"><i
-                        class='bx bxs-group sidenav-i'></i>Intercambios</a>
-            </li>
-
-            <li class="sidenav-list-item"><a href="#" id="u-listar-calificaciones"><i
-                        class='bx bxs-star sidenav-i'></i>Calificaciones</a>
-            </li>
-
-            <li class="sidenav-list-item"><a href="#" id="u-listar-notificaciones"><i
-                        class='bx bxs-bell-ring sidenav-i'></i>Notificaciones</a>
-            </li>
-
-            <li class="sidenav-list-item"><a href="#" id="u-listar-seguridad"><i
-                        class='bx bxs-lock sidenav-i'></i>Seguridad</a>
-            </li>
-
-        </ul>
-    </div>
-</aside>
+    </aside>
 
     <!--Footer-->
     <footer id="footer-admin">

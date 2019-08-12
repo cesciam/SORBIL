@@ -15,6 +15,8 @@ const input_correo = document.querySelector('#txt-correo');
 const input_categoria = document.querySelector('#txt-categoria');
 const input_genero = document.querySelector('#txt-genero');
 const input_fecha = document.querySelector('#txt-fecha');
+const input_hora = document.querySelector('#txt-hora');
+const input_frecuencia = document.querySelector('#txt-frecuencia');
 const input_provincia = document.querySelector('#txt-provincia');
 const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
@@ -24,7 +26,7 @@ const tipo = 'Club Presencial';
 
 const btn_enviar = document.querySelector('#btn-enviar');
 
-let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
+let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, phora, pfrecuencia, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
 
     let error = false;
 
@@ -85,6 +87,20 @@ let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, 
         input_fecha.classList.remove('input_error');
     }
 
+    if (phora == '') {
+        error = true;
+        input_hora.classList.add('input_error');
+    } else {
+        input_hora.classList.remove('input_error');
+    }
+
+    if (pfrecuencia == '') {
+        error = true;
+        input_frecuencia.classList.add('input_error');
+    } else {
+        input_frecuencia.classList.remove('input_error');
+    }
+
     if (pdescripcion == '') {
         error = true;
         input_descripcion.classList.add('input_error');
@@ -139,14 +155,14 @@ let validarCorreo = (pcorreo) => {
 };
 
 let validarTelefono = (ptelefono) => {
-    
+
     let errorTelefono = false;
     let telefonoValido = /\d{2}-?\d{2}-?\d{2}-?\d{2}$/;
 
-    if(!telefonoValido.test(ptelefono)){
+    if (!telefonoValido.test(ptelefono)) {
         errorTelefono = true;
         input_telefono.classList.add('input_error');
-        
+
     }
     else {
         input_telefono.classList.remove('input_error');
@@ -155,18 +171,18 @@ let validarTelefono = (ptelefono) => {
 };
 
 let validarFecha = (pfecha) => {
-    
+
     let hoy = new Date();
     let errorFecha = false;
-    
-    if(pfecha < hoy || pfecha == 'Invalid Date') {
+
+    if (pfecha < hoy || pfecha == 'Invalid Date') {
         errorFecha = true;
         input_fecha.classList.add('input_error');
-    } 
+    }
     else {
         input_fecha.classList.remove('input_error');
     }
-    return errorFecha;    
+    return errorFecha;
 };
 
 let llamar = () => {
@@ -178,19 +194,21 @@ let llamar = () => {
     let categoria = input_categoria.value;
     let genero = input_genero.value;
     let fecha = new Date(input_fecha.value);
+    let hora = input_hora.value;
+    let frecuencia = input_frecuencia.value;
     let provincia = input_provincia.value;
     let canton = input_canton.value;
     let distrito = input_distrito.value;
     let direccion_exacta = input_direccion_exacta.value;
     let descripcion = input_descripcion.value;
- 
-    let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, descripcion, provincia, canton, distrito, direccion_exacta);
+
+    let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, hora, frecuencia, descripcion, provincia, canton, distrito, direccion_exacta);
     let errorCorreo = validarCorreo(correo);
     let errorTelefono = validarTelefono(telefono);
     let errorFecha = validarFecha(fecha);
 
     if (error == false && errorCorreo == false && errorTelefono == false && errorFecha == false) {
-        registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, descripcion, provincia, canton, distrito, direccion_exacta);
+        registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, hora, frecuencia, descripcion, provincia, canton, distrito, direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
@@ -209,12 +227,14 @@ let llamar = () => {
 //Función para limpiar el formulario
 const limpiarFormulario = () => {
     input_administrador_club.value = '';
-    input_tema.value = '';    
+    input_tema.value = '';
     input_correo.value = '';
     input_telefono.value = '';
     input_categoria.value = '';
     input_genero.value = '';
     input_fecha.value = '';
+    input_hora.value = '';
+    input_frecuencia.value = '';
     input_provincia.value = '';
     input_canton.value = '';
     input_distrito.value = '';
