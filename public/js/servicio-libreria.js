@@ -92,19 +92,20 @@ let obtenerSucursales= async(correo) => {
     }
 };
 
+let obtenerDatosCorreo = async(correo) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-libros-libreria/${correo}`,
+            responseType: 'json'
+        });
+        
+        return response.data.libreria[0].libros;
+    } catch (error) {
+        console.log(error);
+    }
+};
 
-// let obtenerLibreriaCorreo = async (correo) => {
-//     try {
-//         // fetch data from an url endpoint
-//         const response = await axios({
-//             method: 'get',
-//             url: `http://localhost:4000/api/buscar-libreria-correo/${correo}`,
-//             responseType: 'json'
-//         });
 
-//         return response.data.libreria;
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
 
