@@ -20,6 +20,11 @@ router.param('_id', function (req, res, next, _id) {
     next();
 });
 
+router.param('correo', function (req, res, next, correo) {
+    req.body.correo = correo;
+    next();
+});
+
 //Definicion de la ruta para registrar los libros
 
 router.post('/registrar-libreria', function (req, res) {
@@ -1047,20 +1052,27 @@ router.post('/agregar-libros-sucursal', function(req, res) {
 
 
 router.get('/buscar-libros-libreria/:correo', function (req, res) {
-    Usuario.find({correo: req.body.correo}, function (err, librobd) {
+    libreria.find({correo: req.body.correo}, function (err, librobd) {
         if (err) {
-            return res.status(400).json({
+            return res.json({
                 success: false,
-                msj: 'No se encontro ningun usuario con ese id.',
+                msj: 'No se encontro ningun libro.',
                 err
             });
         } else {
             return res.json({
                 success: true,
-                usuario: librobd
+                libreria: librobd
             });
         }
     })
+});
+
+router.post('/actualizar-libros-libreria', function(req, res){
+    libreria.findOneAndUpdate({correo: req.body.correo}, {
+        $set: {
+            libros
+        }
 });
 
 
