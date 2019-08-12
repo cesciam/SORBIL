@@ -34,7 +34,7 @@ Inicio de estilos de ver
 
 .section-ver .ver-cards .ver-cards-container {
     display: grid;
-    
+    grid-template-columns: repeat(5, 1fr);
     justify-items: center;
     align-items: center;
     width: 100%;
@@ -146,7 +146,7 @@ Inicio de estilos de ver
 
 .section-ver .ver-cards .ver-cards-container .contenedor_atributo {
     display: grid;
-    height: 5rem;   
+    height: 5rem;
     grid-template-columns: repeat(2, 1fr);
     font-weight: var(--font-semibold);
     justify-items: center;
@@ -186,12 +186,12 @@ Inicio de estilos de ver
     }
 }
 
-.section-ver .ver-cards .ver-cards-container .contenedor_cantidad{
-        display: grid;
-        padding-top: 2rem;
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-        height: 4rem;
+.section-ver .ver-cards .ver-cards-container .contenedor_cantidad {
+    display: grid;
+    padding-top: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    height: 4rem;
 }
 
 /*
