@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="../js/validar-usuario-u.js"></script> -->
     <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/validar-usuario-u.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/layout/perfiles.css">
-    <link rel="stylesheet" href="../css/paginas/ver-libros.css">
+    <link rel="stylesheet" href="../css/paginas/ver-perfil-club.css">
     <link rel="stylesheet" href="../css/layout/perfil-usuario.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Inicio</title>
+    <title>Sorbil -- Perfil de club presencial</title>
 </head>
 
 <body>
@@ -23,22 +23,22 @@
     <header id="header-user">
 
         <div id="header-nav-1">
-            <a class="logo" href="../index.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
+            <a class="logo" href="../views/u-inicio.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
 
             <nav>
-                <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="../views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
+                <a href="../views/u-inicio.html"><i class='bx bx-home-circle'></i>Inicio</a>
+                <a href="#" id="u-intercambios"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="#" id="u-quienes-somos"><i class='bx bx-user-voice'></i>Quiénes somos</a>
             </nav>
 
             <div id="nav-inicio" class="header-user-icons">
                 <div class="header-user-container">
-                    <a class="header-icon" href="../views/u-ver-carrito.html"><i class='bx bx-cart-alt'></i>
+                    <a class="header-icon" href="#" id="u-carrito"><i class='bx bx-cart-alt'></i>
                         <span class="user-notification">1</span>
                     </a>
                 </div>
                 <div class="header-user-container">
-                    <a class="header-icon" href="../views/u-ver-libros.html"><i class='bx bx-book-bookmark'></i>
+                    <a class="header-icon" href="#" id="u-biblioteca"><i class='bx bx-book-bookmark'></i>
                     </a>
                 </div>
                 <div class="header-user-container user-menu-wrap"><b class="mini-photo-wrapper" href="#"><img
@@ -55,7 +55,7 @@
 
         </div>
 
-        <div id="header-nav-2">
+        <div id="header-nav-2" class="sticky">
             <nav class="top">
 
                 <div class="dropdownBackground">
@@ -69,7 +69,7 @@
                     </div>
 
                     <li>
-                        <a href="ver-libros.html">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
+                        <a href="p-ver-libros.html">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
                             <div class="dropdown-content">
                                 <table id="tabla-libros" class="tabla-links">
@@ -81,13 +81,13 @@
                                     <tbody>
                                     </tbody>
                                 </table>
-                                <div><a href="ver-libros.html" class="btn-white">Más libros</a></div>
+                                <div><a href="p-ver-libros.html" class="btn-white">Más libros</a></div>
                             </div>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="ver-librerias.html">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
+                        <a href="p-ver-librerias.html">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
                             <div class="dropdown-content">
                                 <table id="tabla-librerias" class="tabla-links">
@@ -99,13 +99,13 @@
                                     <tbody>
                                     </tbody>
                                 </table>
-                                <div><a href="ver-librerias.html" class="btn-white">Más librerías</a></div>
+                                <div><a href="p-ver-librerias.html" class="btn-white">Más librerías</a></div>
                             </div>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="ver-clubes.html">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
+                        <a href="p-ver-clubes.html">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
                             <div class="dropdown-content">
                                 <table id="tabla-clubes" class="tabla-links">
@@ -117,7 +117,7 @@
                                     <tbody>
                                     </tbody>
                                 </table>
-                                <div><a href="ver-clubes.html" class="btn-white">Más clubes</a></div>
+                                <div><a href="p-ver-clubes.html" class="btn-white">Más clubes</a></div>
                             </div>
                         </ul>
                     </li>
@@ -129,9 +129,8 @@
 
     </header>
 
-    <!--Main-->
-    <main id="main-login">
 
+    <main id="main-user">
         <!--Aside-->
         <aside id="sidenav-user">
 
@@ -178,58 +177,77 @@
                                 class='bx bxs-bell-ring sidenav-i'></i>Notificaciones</a>
                     </li>
 
-                    <li class="sidenav-list-item"><a href="#" id="u-listar-seguridad"><i
+                    <li class="sidenav-list-item"><a href="#" id="u-seguridad"><i
                                 class='bx bxs-lock sidenav-i'></i>Seguridad</a>
                     </li>
+
 
                 </ul>
             </div>
 
         </aside>
 
-        <!--Content-->
-        <div id="main-user-profile">
-            <h1>Saludos <span id="txt-nombre"></span></h1>
-            <div class="user-profile-container">
-                <div>
-                    <img src="../imgs/avatar-placeholder.png" id="avatar">
-                </div>
-                <div class="profile-content">
-                    <div class="profile-titles">
-                        <p>Correo:</p>
-                        <p>Usuario:</p>
-                        <p>Identificación:</p>
-                        <p>Primer apellido:</p>
-                        <p>Segundo apellido:</p>
-                        <p>Provincia:</p>
-                        <p>Cantón:</p>
-                        <p>Distrito:</p>
+        <section class="section-one">
+
+            <div class="img"><img src="../imgs/book-placeholder.png" id="imagen"></div>
+
+            <div class="section-container">
+                <div class="title">
+                    <h1 id="tema"></h1>
+                    <h2 id="fecha"></h2>
+                    <button id="btn-registrar">Registrarse al club</button>
+                    <p id="descripcion"></p>
+                    <div class="title-2-col">
+                        <p>Categoría: <span id="categoria"></span></p>
+                        <p>Género: <span id="genero"></span></p>
                     </div>
-                    <div class="profile-info">
-                        <p id="txt-correo"></p>
-                        <p id="txt-usuario"></p>
-                        <p id="txt-id"></p>
-                        <p id="txt-primer-apellido"></p>
-                        <p id="txt-segundo-apellido"></p>
-                        <p id="txt-provincia"></p>
-                        <p id="txt-canton"></p>
-                        <p id="txt-distrito"></p>
+                </div>
+
+                <div class="info">
+                    <div class="info-2-col">
+                        <h2>Dirección del club</h2>
+                        <div class="info-2-col-container">
+                            <p>Provincia: <span id="provincia"></span></p>
+                            <p>Cantón: <span id="canton"></span></p>
+                            <p>Distrito: <span id="distrito"></span></p>
+                        </div>
+                        <div>
+                            <p id="direccion-exacta"></p>
+                        </div>
+                    </div>
+
+                    <h2>Información de contacto</h2>
+                    <div class="info-3-col">
+                        <div class="info-3-col-container">
+                            <div>
+                                <i class='bx bx-phone-call'></i>
+                                <i class='bx bx-mail-send'></i>
+                            </div>
+                            <div>
+                                <h4>Teléfono:</h4>
+                                <h4>Correo electrónico:</h4>
+                            </div>
+                            <div>
+                                <p id="telefono"></p>
+                                <p id="correo"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
+        </section>
     </main>
 
     <footer id="footer-user">
 
         <div id="footer-links">
-            <a href="../index.html"><img src="../imgs/logo-light.png" alt="Logo de Sorbil"></a>
+            <a href="../views/u-inicio.html"><img src="../imgs/logo-light.png" alt="Logo de Sorbil"></a>
 
             <nav>
-                <a href="../index.html"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="../views/ver-perfil-intercambios.html"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="../views/u-quienes-somos.html"><i class='bx bx-user-voice'></i>Quiénes somos</a>
+                <a href="../views/u-inicio.html"><i class='bx bx-home-circle'></i>Inicio</a>
+                <a href="#" id="u-intercambios"><i class='bx bxs-book'></i>Intercambios</a>
+                <a href="#" id="u-quienes-somos"><i class='bx bx-user-voice'></i>Quiénes somos</a>
             </nav>
         </div>
 
@@ -240,25 +258,23 @@
 
     </footer>
 
-    <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-sidemenu.js"></script>
     <script src="../js/componentes/controlador-dropdowns-main.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../vendors/sticky-js-master/dist/sticky.min.js"></script>
-    <script src="../js/componentes/controlador-sticky.js"></script>
     <!-- JS para listar -->
-    <!-- <script src="../js/servicio-club.js"></script>
+    <script src="../js/servicio-club.js"></script>
     <script src="../js/servicio-libreria.js"></script>
     <script src="../js/servicio-libros.js"></script>
-    <script src="../js/servicio-autor.js"></script>
-    <script src="../js/componentes/controlador-lista-enlaces.js"></script>
-    <script src="../js/controlador-ver-libros.js"></script>
+    <script src="../js/componentes/controlador-lista-enlaces-privados.js"></script>
+    <script src="../js/controlador-perfil-club-presencial.js"></script>
+    <!-- <script src="../js/componentes/controlador-nav-inicios.js"></script> -->
+    <!-- JS para los permisos del usuario-->
     <script src="../js/cerrar-sesion.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-main.js"></script> -->
-    <!-- <script src="../js/componentes/controlador-nav.js"></script> -->
-    <!-- <script src="../js/controlador-inicio-u.js"></script>
-    <script src="../js/controlador-avatar.js"></script> -->
+    <script src="../js/controlador-avatar.js"></script>
+    <script src="../js/controlador-inicio-u.js"></script>
+
 </body>
 
 </html>

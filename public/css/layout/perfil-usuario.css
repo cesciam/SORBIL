@@ -1,33 +1,34 @@
 /*
-Inicio de estilos de la navegación del sidenav
+Inicio de estilos generales del perfil del usuario
 */
 
 #main-user-profile {
     display: grid;
     margin-left: auto;
     margin-right: auto;
-    width: 85%;
+    width: 84%;
 }
 
 .user-profile-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    background-color: var(--color-white);
+    background-color: var(--color-alternative-bg) !important;
     box-shadow: none;
     padding: 5rem 0;
 }
 
 .sidebar {
     display: grid;
-    grid-template-columns: 20rem;
+    grid-template-columns: 25rem;
     grid-template-rows: 1fr;
     position: absolute;
-    height: 95vh;
+    /* height: 95vh; */
     background-color: var(--color-white);
     box-shadow: var(--shadow-light);
-    left: -20rem;
-    transition: 300ms left cubic-bezier(0.77, 0, 0.175,1)
+    left: -25rem;
+    transition: 300ms left cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 9998;
 }
 
 .sidebar.open {
@@ -109,8 +110,8 @@ Inicio de estilos de la navegación del sidenav
 
 .menu_toggler {
     position: relative;
-    top: 1rem;
-    left: 1rem;
+    top: .5rem;
+    left: 3rem;
     height: 28px;
     width: 28px;
     outline: none;
@@ -151,3 +152,179 @@ Inicio de estilos de la navegación del sidenav
 .menu_toggler.active>.menu_icon:after {
     transform: rotate(45deg);
 }
+
+/*
+Fin de estilos generales del perfil del usuario
+*/
+
+/*
+Inicio de estilos del perfil del usuario
+*/
+
+#main-user-profile {
+    padding: 5rem 0;
+}
+
+#main-user-profile .main-user-h1 span {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: var(--box-radius);
+    margin-left: 1rem;
+}
+
+#main-user-profile .user-profile-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow-2);
+    padding: 3rem 0;
+}
+
+#main-user-profile .user-profile-container img {
+    width: 30rem;
+    height: 30rem;
+    border-radius: var(--box-radius);
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-dark-2);
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+#main-user-profile .user-profile-container .profile-content {
+    display: grid;
+    grid-template-columns: repeat(2, 20rem);
+}
+
+#main-user-profile .user-profile-container .profile-content p {
+    margin-bottom: 1rem;
+}
+
+/*
+Fin de estilos del perfil del usuario
+*/
+
+/*
+Inicio de estilos de registro
+*/
+
+#main-profile {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    padding: 3rem 0;
+    height: 100vh;
+}
+
+#main-profile>* {
+    margin-bottom: 3rem;
+}
+
+#main-profile button {
+    background-color: var(--color-alternative-blue);
+}
+
+#main-profile #tabla-filtrado {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+
+#main-profile #barra-busqueda {
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+}
+
+#main-profile #tabla-filtrado button {
+    background-color: var(--color-alternative-blue);
+    color: var(--color-white);
+    border-radius: 0 .4rem .4rem 0;
+}
+
+#main-profile #tabla-filtrado button {
+    box-shadow: var(--shadow-dark-1);
+    transform: translateY(0);
+}
+
+#main-profile .main-profile-titulo {
+    text-align: center;
+    font-weight: var(--font-semibold);
+}
+
+#main-profile .main-profile-titulo h1 {
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+}
+
+#main-profile .main-profile-titulo h2 {
+    font-size: 2rem;
+    text-align: left;
+}
+
+#main-profile .form-nav {
+    display: grid;
+    justify-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main-profile .form-nav .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10rem;
+}
+
+#main-profile p {
+    margin-bottom: 2rem;
+}
+
+#main-profile .upload-img {
+    height: 15rem;
+    margin-bottom: 5rem;
+}
+
+#main-profile #form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+#main-profile #form div {
+    margin-bottom: 3rem;
+}
+
+#main-profile #form #form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 4rem;
+    grid-row-gap: 2rem;
+}
+
+#main-profile .credit-card-form {
+    margin-bottom: 8rem;
+}
+
+#main-profile #form input, select {
+    transition: .2s;
+    border: .2rem solid var(--opacity-0);
+}
+
+#main-profile #form input:focus, select:focus {
+    border: .2rem solid var(--color-alternative-blue);
+}
+
+#main-profile #form input[type="file"] {
+    border: .2rem solid var(--opacity-0);
+}
+
+#main-profile #btn_enviar {
+    margin-top: 2rem;
+}
+
+/*
+Fin de estilos de registro
+*/
