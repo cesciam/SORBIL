@@ -1,0 +1,153 @@
+/*
+Inicio de estilos de la navegación del sidenav
+*/
+
+#main-user-profile {
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+}
+
+.user-profile-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    background-color: var(--color-white);
+    box-shadow: none;
+    padding: 5rem 0;
+}
+
+.sidebar {
+    display: grid;
+    grid-template-columns: 20rem;
+    grid-template-rows: 1fr;
+    position: absolute;
+    height: 95vh;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-light);
+    left: -20rem;
+    transition: 300ms left cubic-bezier(0.77, 0, 0.175,1)
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidenav-list-item {
+    border-bottom: var(--line);
+}
+
+.sidenav-list-item a {
+    width: 100%;
+    display: block;
+    padding: 1.5rem 1rem;
+    border-left: .4rem solid var(--color-white);
+    transition: .1s;
+}
+
+.sidenav-list-item a:hover {
+    border-left: .4rem solid var(--color-primary);
+    background-color: var(--color-alternative-bg);
+    color: var(--color-black-light);
+}
+
+.sidenav-list-item i {
+    font-size: 2rem;
+    color: var(--color-primary);
+    position: relative;
+    top: 3px;
+}
+
+.sidenav-list-item .chevron {
+    float: right;
+    display: none;
+}
+
+.sidenav-list-item .chevron i {
+    color: var(--color-black);
+}
+
+.sidenav-list-item .chevron::after {
+    content: '';
+    clear: both;
+}
+
+.sidenav-i {
+    /*los íconos de aquellos que no tienen dropdown*/
+    margin-right: 1.4rem;
+}
+
+.sidenav-btn {
+    border-bottom: var(--line);
+}
+
+.sidenav-btn i {
+    /*los íconos de aquellos que tienen dropdown*/
+    margin-right: 1.2rem;
+}
+
+.sidenav-small-menu a {
+    transition: 0.1s;
+    padding: 2rem 2rem;
+    border-bottom: var(--line);
+    transition: height 350ms ease-in-out;
+}
+
+/*Estilos de la navegación secundaria*/
+
+#header-nav-2 .header-nav-2-content {
+    display: grid;
+    grid-template-columns: 10rem repeat(3, 25rem);
+    padding: 1rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 88%;
+}
+
+/*Estilos del menú de hamburguesa*/
+
+.menu_toggler {
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    height: 28px;
+    width: 28px;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.menu_icon, .menu_icon:after, .menu_icon:before {
+    position: absolute;
+    content: '';
+    width: 28px;
+    height: 2.5px;
+    background-color: var(--color-white);
+    transition: .2s;
+}
+
+.menu_icon:before {
+    top: -8px;
+}
+
+.menu_icon::after {
+    top: 8px;
+}
+
+.menu_toggler.active>.menu_icon {
+    background: transparent;
+}
+
+.menu_toggler.active>.menu_icon:after, .menu_toggler.active>.menu_icon:before {
+    top: 0;
+}
+
+.menu_toggler.active>.menu_icon:before {
+    transform: rotate(-45deg);
+}
+
+.menu_toggler.active>.menu_icon:after {
+    transform: rotate(45deg);
+}
