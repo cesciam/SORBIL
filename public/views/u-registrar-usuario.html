@@ -89,12 +89,6 @@
                                     <label for="#">Nombre</label>
                                     <input id="txt-nombre" type="text" placeholder="Nombre" aria-label="Nombre">
                                 </div>
-
-                                <div class="input-group">
-                                    <label for="#">Identificación</label>
-                                    <input id="txt-id" type="text" placeholder="Formato: 0-0000-0000"
-                                        aria-label="Identificación">
-                                </div>
                             </div>
 
                             <div class="input-dos-columnas">
@@ -111,6 +105,26 @@
                                 </div>
                             </div>
 
+                            <div class="input-group">
+                                <div>
+                                    <label for="#">Número de cédula o pasaporte</label>
+                                    <select id="txt-cedulas" name="">
+                                        <option value="" disabled="disabled" selected="true">Escoger una opción
+                                        </option>
+                                        <option value="cedidentidad">Cédula de identidad</option>
+                                        <option value="cedresidencia">Cédula de residencia</option>
+                                        <option value="carnerefugiado">Carné de refugiado</option>
+                                        <option value="pasaporte">Pasaporte</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="#">Identificación</label>
+                                    <input id="txt-id" type="text" aria-label="Identificación">
+                                </div>
+                                
+                            </div>
+
                             <div></div>
                             <div class="input-group">
                                 <div>
@@ -124,6 +138,8 @@
                                     </select>
                                 </div>
                             </div>
+
+
 
                         </div>
                         <!--Paso 3 del formulario-->
