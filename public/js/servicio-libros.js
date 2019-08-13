@@ -110,3 +110,16 @@ let registrar_libros_libreria = (pcorreo, pidlibro, pcantidad) =>{
     });
 
 }
+
+let actualizarCantidadLibros = (pid, pcantidad) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/actualizar-cantidad-libros',
+        responseType: 'json',
+        data: {
+            id: pid,
+            cantidad: pcantidad
+
+        }
+    });
+}
