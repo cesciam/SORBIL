@@ -2,14 +2,15 @@
 
 const tbody = document.querySelector('#tabla-filtrado tbody');
 let txt_filtro = document.querySelector('#txt-filtro');
+let lista_sucursales = [];
 
 let usuarioActivoLibreria = JSON.parse(sessionStorage.getItem('activo'));
-let id_usuario_activo_libreria = usuarioActivoLibreria.correo;
+let usuario_activo_libreria = usuarioActivoLibreria.correo;
 
 let mostrar_tabla = async () => {
 
-    let lista_sucursales = await obtenerSucursales(id_usuario_activo_libreria);
-    console.log(lista_sucursales);
+    lista_sucursales = await obtenerSucursales(usuario_activo_libreria);
+    
     tbody.innerHTML = '';
 
     for (let i = 0; i < lista_sucursales.length; i++) {
