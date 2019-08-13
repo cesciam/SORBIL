@@ -34,7 +34,23 @@ let mostrar_cards = async () => {
             let p_correo = document.createElement('p');
             p_correo.innerText = lista_usuarios[i]['correo'];
 
-            // let btn_perfil = document.createElement('button');
+            let enlace_habilitado = document.createElement('a');
+            if (lista_usuarios[i]["estado"] == "Habilitado") {
+                enlace_habilitado.innerText = "Habilitado";
+            } else {
+                enlace_habilitado.innerText = "Deshabilitado";
+            }
+            enlace_habilitado.href = 'al-listar-usuarios.html';
+            enlace_habilitado.addEventListener('click', function () {
+                if (lista_usuarios[i]["estado"] == "Habilitado") {
+                    habilitar(lista_usuarios[i]['_id'], "Desabilitado");
+                } else {
+                    habilitar(lista_usuarios[i]['_id'], "Habilitado");
+                }
+                mostrar_cards();
+            });
+            
+            // let btn_estado = document.createElement('button');
             // btn_perfil.innerText = 'Ver perfil';
             // btn_perfil.dataset._id = lista_usuarios[i]['_id'];
             // btn_perfil.addEventListener('click', function () {
@@ -45,8 +61,7 @@ let mostrar_cards = async () => {
             contenedor_card.appendChild(header);
             contenedor_card.appendChild(contenedor_imagen);
             contenedor_card.appendChild(p_correo);
-            // contenedor_card.appendChild(btn_perfil);
-
+            contenedor_card.appendChild(enlace_habilitado);
             sct_usuarios.appendChild(contenedor_card);
         }
     }
@@ -81,6 +96,22 @@ let filtrar_cards = async () => {
                 let p_correo = document.createElement('p');
                 p_correo.innerText = lista_usuarios[i]['correo'];
 
+                let enlace_habilitado = document.createElement('a');
+                if (lista_usuarios[i]["estado"] == "Habilitado") {
+                    enlace_habilitado.innerText = "Habilitado";
+                } else {
+                    enlace_habilitado.innerText = "Deshabilitado";
+                }
+                enlace_habilitado.href = 'al-listar-usuarios.html';
+                enlace_habilitado.addEventListener('click', function () {
+                    if (lista_usuarios[i]["estado"] == "Habilitado") {
+                        habilitar(lista_usuarios[i]['_id'], "Desabilitado");
+                    } else {
+                        habilitar(lista_usuarios[i]['_id'], "Habilitado");
+                    }
+                    mostrar_cards();
+                });
+
                 // let btn_perfil = document.createElement('button');
                 // btn_perfil.innerText = 'Ver perfil';
                 // btn_perfil.dataset._id = lista_usuarios[i]['_id'];
@@ -92,7 +123,7 @@ let filtrar_cards = async () => {
                 contenedor_card.appendChild(header);
                 contenedor_card.appendChild(contenedor_imagen);
                 contenedor_card.appendChild(p_correo);
-                // contenedor_card.appendChild(btn_perfil);
+                contenedor_card.appendChild(enlace_habilitado);
 
                 sct_usuarios.appendChild(contenedor_card);
             }
