@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
-    <link rel="stylesheet" href="../css/layout/perfiles.css">
-    <link rel="stylesheet" href="../css/paginas/ver-libros.css">
     <link rel="stylesheet" href="../css/layout/perfil-usuario.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
     <title>Sorbil -- Inicio</title>
@@ -129,83 +127,93 @@
 
     </header>
 
-    <!--Main-->
-    <main id="main-login">
+    <!--Aside-->
+    <aside id="sidenav-user">
 
-        <!--Aside-->
-        <aside id="sidenav-user">
+        <div class="sidebar">
 
-            <div class="sidebar">
+            <ul class="sidenav-list">
 
-                <ul class="sidenav-list">
+                <li class="sidenav-list-item"><a href="#" id="u-tarjetas"><i
+                            class='bx bxs-credit-card sidenav-i'></i>Tarjetas de
+                        crédito</a>
+                </li>
 
-                    <li class="sidenav-list-item"><a href="#" id="u-tarjetas"><i
-                                class='bx bxs-credit-card sidenav-i'></i>Tarjetas de
-                            crédito</a>
-                    </li>
-
-                    <li class="sidenav-list-item">
-                        <a href="#" class="sidenav-btn dropdown-toggle" id="u-listar-clubes">
-                            <i class='bx bxs-book-open'></i>
-                            Clubes de lectura
-                            <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                        </a>
-
-                        <div class="sidenav-small-menu dropdown-menu">
-                            <a href="#" id="u-registrar-club-virtual">Club virtual</a>
-                            <a href="#" id="u-registrar-club-presencial">Club presencial</a>
-                        </div>
-                    </li>
+                <li class="sidenav-list-item">
+                    <a href="#" class="sidenav-btn dropdown-toggle" id="u-listar-clubes">
+                        <i class='bx bxs-book-open'></i>
+                        Clubes de lectura
+                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                </li>
 
 
-                    <li class="sidenav-list-item"><a href="#" id="u-listar-compras"><i
-                                class='bx bx-money sidenav-i'></i>Compras</a>
-                    </li>
+                <li class="sidenav-list-item"><a href="#" id="u-listar-compras"><i
+                            class='bx bx-money sidenav-i'></i>Compras</a>
+                </li>
 
-                    <li class="sidenav-list-item"><a href="#" id="u-listar-ofertas"><i
-                                class='bx bxs-purchase-tag sidenav-i'></i>Ofertas</a>
-                    </li>
+                <li class="sidenav-list-item"><a href="#" id="u-listar-ofertas"><i
+                            class='bx bxs-purchase-tag sidenav-i'></i>Ofertas</a>
+                </li>
 
-                    <li class="sidenav-list-item"><a href="#" id="u-listar-intercambios"><i
-                                class='bx bxs-group sidenav-i'></i>Intercambios</a>
-                    </li>
+                <li class="sidenav-list-item"><a href="#" id="u-listar-intercambios"><i
+                            class='bx bxs-group sidenav-i'></i>Intercambios</a>
+                </li>
 
-                    <li class="sidenav-list-item"><a href="#" id="u-listar-calificaciones"><i
-                                class='bx bxs-star sidenav-i'></i>Calificaciones</a>
-                    </li>
+                <li class="sidenav-list-item"><a href="#" id="u-listar-calificaciones"><i
+                            class='bx bxs-star sidenav-i'></i>Calificaciones</a>
+                </li>
 
-                    <li class="sidenav-list-item"><a href="#" id="u-listar-notificaciones"><i
-                                class='bx bxs-bell-ring sidenav-i'></i>Notificaciones</a>
-                    </li>
+                <li class="sidenav-list-item"><a href="#" id="u-listar-notificaciones"><i
+                            class='bx bxs-bell-ring sidenav-i'></i>Notificaciones</a>
+                </li>
 
-                    <li class="sidenav-list-item"><a href="#" id="u-seguridad"><i
-                                class='bx bxs-lock sidenav-i'></i>Seguridad</a>
-                    </li>
+                <li class="sidenav-list-item"><a href="#" id="u-seguridad"><i
+                            class='bx bxs-lock sidenav-i'></i>Seguridad</a>
+                </li>
 
-                </ul>
+
+            </ul>
+        </div>
+
+    </aside>
+
+    <!--Content-->
+    <main id="main-profile">
+        <div class="main-profile-titulo">
+            <h1>Listados de Clubes</h1>
+            <p>Buscá la información que te interesa</p>
+        </div>
+
+        <div id="barra-busqueda">
+            <input type="text" id="txt-filtro" placeholder="Buscar por nombre, tema, categoría, género"
+                aria-label="Buscar por nombre, tema, categoría, género">
+
+            <div class="dropdown-btns">
+                <a href="#" class="btn-registrar-dropdown"><i class='bx bx-plus-circle'></i>Registrar</a>
+                <div class="dropdown-btns-content">
+                    <a href="#" id="registrar-club-virtual">Club virtual</a>
+                    <a href="#" id="registrar-club-presencial">Club presencial</a>
+                </div>
             </div>
 
-        </aside>
+        </div>
 
-        <!--Content-->
-        <!--Main-->
-        <main id="main-user">
-            <section class="section-ver">
-                <div class="ver-title">
-                    <h1>Buscá entre los mejores libros</h1>
-                </div>
-                <div class="ver-cards">
-                    <input id="txt-filtro" type="text" placeholder="Buscar por título, categoría, género, autor"
-                        aria-label="Buscar por título, categoría, género, autor">
-        
-                    <div id="lista_libros" class="ver-cards-container">
-        
-                    </div>
-                </div>
-        
-            </section>
-        
-        </main>
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Administrador</th>
+                    <th>Tema</th>
+                    <th>Categoría</th>
+                    <th>Género</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
 
     </main>
 
@@ -230,6 +238,7 @@
 
     <!--Scripts-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="../js/componentes/controlador-sidemenu.js"></script>
     <script src="../js/componentes/controlador-dropdowns-main.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
@@ -239,11 +248,9 @@
     <script src="../js/servicio-club.js"></script>
     <script src="../js/servicio-libreria.js"></script>
     <script src="../js/servicio-libros.js"></script>
-    <script src="../js/servicio-autor.js"></script>
     <script src="../js/componentes/controlador-lista-enlaces-privados.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
     <!-- JS para los perfiles-->
-    <script src="../js/controlador-ver-libros-privado.js"></script>
+    <script src="../js/controlador-listar-club-privado.js"></script>
     <!-- JS para los permisos del usuario-->
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-avatar.js"></script>

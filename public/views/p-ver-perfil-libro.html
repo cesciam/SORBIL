@@ -11,11 +11,10 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
-    <link rel="stylesheet" href="../css/layout/perfiles.css">
-    <link rel="stylesheet" href="../css/paginas/ver-libros.css">
+    <link rel="stylesheet" href="../css/paginas/perfil-libro.css">
     <link rel="stylesheet" href="../css/layout/perfil-usuario.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Inicio</title>
+    <title>Sorbil -- Perfil de libros</title>
 </head>
 
 <body>
@@ -130,7 +129,7 @@
     </header>
 
     <!--Main-->
-    <main id="main-login">
+    <main id="main-user">
 
         <!--Aside-->
         <aside id="sidenav-user">
@@ -182,31 +181,69 @@
                                 class='bx bxs-lock sidenav-i'></i>Seguridad</a>
                     </li>
 
+
                 </ul>
             </div>
 
         </aside>
 
-        <!--Content-->
-        <!--Main-->
-        <main id="main-user">
-            <section class="section-ver">
-                <div class="ver-title">
-                    <h1>Buscá entre los mejores libros</h1>
-                </div>
-                <div class="ver-cards">
-                    <input id="txt-filtro" type="text" placeholder="Buscar por título, categoría, género, autor"
-                        aria-label="Buscar por título, categoría, género, autor">
-        
-                    <div id="lista_libros" class="ver-cards-container">
-        
+        <section class="section-book">
+            <div class="book-img">
+                <div id="div-img-portada"><img src="../imgs/book-placeholder.png" id="portada"></div>
+                <p class="conten-div-precio precio-libro">Precio: <span id="precio"></span></p>
+                <button type="button">Comprar</button>
+            </div>
+            <div class="book-info">
+                <h2>Información del libro</h2>
+                <div class="book-info-list">
+                    <div class="book-titles">
+                        <p class="conten-div-precio">Autor: </p>
+                        <p class="conten-div-precio">Categoría: </p>
+                        <p class="conten-div-precio">Género: </p>
+                        <p class="conten-div-precio">Publicación: </p>
+                        <p class="conten-div-precio">ISBN: </p>
+                        <p class="conten-div-precio">Formato: </p>
+                        <p class="conten-div-precio">Idioma: </p>
+                    </div>
+                    <div class="book-atributes">
+                        <p id="autor"></p>
+                        <p id="categoria"></p>
+                        <p id="genero"></p>
+                        <p id="fecha"></p>
+                        <p id="isbn"></p>
+                        <p id="tipo"></p>
+                        <p id="idioma"></p>
                     </div>
                 </div>
-        
-            </section>
-        
-        </main>
+            </div>
+            <div class="book-rating">
+                <h1 id="title-libro"></h1>
+                <!-- <p>Best seller</p> -->
+                <div class="book-rating-info">
+                    <div class="book-rating-container">
+                        <div class="book-ratings">
+                            <i class='bx bxs-book-bookmark'></i>
+                            <i class='bx bxs-book-bookmark'></i>
+                            <i class='bx bxs-book-bookmark'></i>
+                            <i class='bx bxs-book-bookmark'></i>
+                            <i class='bx bxs-book-bookmark'></i>
+                        </div>
+                        <div class="book-rating-global">
+                            <p>4,8 (4500 Calificacion)</p>
+                        </div>
+                    </div>
 
+                    <div class="book-ed">
+                        <p>Edicion: <span id="edicion"></span></p>
+                        <p>Editorial: <span id="editorial"></span></p>
+                    </div>
+                    <div class="book-descrip">
+                        <h3>Sinopsis</h3>
+                        <p id="descrip"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer id="footer-user">
@@ -228,22 +265,19 @@
 
     </footer>
 
-    <!--Scripts-->
+
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-sidemenu.js"></script>
+    <script src="../js/servicio-libros.js"></script>
+    <script src="../js/controlador-perfil-libro.js"></script>
     <script src="../js/componentes/controlador-dropdowns-main.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../vendors/sticky-js-master/dist/sticky.min.js"></script>
-    <script src="../js/componentes/controlador-sticky.js"></script>
-    <!-- JS para listar en el dropdown-->
+    <!-- JS para listar -->
     <script src="../js/servicio-club.js"></script>
     <script src="../js/servicio-libreria.js"></script>
-    <script src="../js/servicio-libros.js"></script>
-    <script src="../js/servicio-autor.js"></script>
     <script src="../js/componentes/controlador-lista-enlaces-privados.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
-    <!-- JS para los perfiles-->
-    <script src="../js/controlador-ver-libros-privado.js"></script>
+    <!-- <script src="../js/componentes/controlador-nav-inicios.js "></script> -->
     <!-- JS para los permisos del usuario-->
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-avatar.js"></script>

@@ -166,12 +166,12 @@ Inicio de estilos del header
     transform-origin: 50% 0;
     display: grid;
     justify-items: center;
-    opacity: 0;
-    z-index: 9998;
+    display: none;
+    z-index: 9999;
 }
 
 #header-nav-2 .dropdownBackground.open {
-    opacity: 1;
+    display: block;
 }
 
 #header-nav-2 .dropdown {
@@ -192,6 +192,7 @@ Inicio de estilos del header
     position: absolute;
     width: 2rem;
     height: 2rem;
+    left: 20rem;
     display: block;
     background: var(--color-white);
     transform: translateY(-20%) rotate(45deg);
@@ -369,7 +370,7 @@ Fin de estilos del header
 Inicio de estilos generales del main
 */
 
-#txt-filtro {
+#main-user #txt-filtro {
     width: 55%;
     margin-top: 5rem;
     transition: all .2s;

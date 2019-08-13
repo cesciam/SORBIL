@@ -26,7 +26,7 @@ let mostrar_cards = async () => {
         btn_autor.innerText = `${autor}`;
         btn_autor.dataset._id = lista_autores[i]['_id'];
         btn_autor.addEventListener('click', function () {
-            window.location.href = `ver-perfil-autor.html?_id=${this.dataset._id}`;
+            window.location.href = `p-ver-perfil-autor.html?_id=${this.dataset._id}`;
         });
 
         header.appendChild(h2);
@@ -61,7 +61,7 @@ let mostrar_cards = async () => {
         btn_perfil.innerText = 'Ver libro';
         btn_perfil.dataset._id = lista_libros[i]['_id'];
         btn_perfil.addEventListener('click', function () {
-            window.location.href = `ver-perfil-libro.html?_id=${this.dataset._id}`;
+            window.location.href = `p-ver-perfil-libro.html?_id=${this.dataset._id}`;
         });
 
         contenedor_card.appendChild(contenedor_imagen);
@@ -98,7 +98,7 @@ let filtrar_cards = async () => {
             btn_autor.innerText = `${autor}`;
             btn_autor.dataset._id = lista_autores[i]['_id'];
             btn_autor.addEventListener('click', function () {
-                window.location.href = `ver-perfil-autor.html?_id=${this.dataset._id}`;
+                window.location.href = `p-ver-perfil-autor.html?_id=${this.dataset._id}`;
             });
 
             header.appendChild(h2);
@@ -133,7 +133,7 @@ let filtrar_cards = async () => {
             btn_perfil.innerText = 'Ver libro';
             btn_perfil.dataset._id = lista_libros[i]['_id'];
             btn_perfil.addEventListener('click', function () {
-                window.location.href = `ver-perfil-libro.html?_id=${this.dataset._id}`;
+                window.location.href = `p-ver-perfil-libro.html?_id=${this.dataset._id}`;
             });
 
             contenedor_card.appendChild(contenedor_imagen);

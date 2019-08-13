@@ -46,8 +46,10 @@ Inicio de estilos de la sección principal
 
 .section-one #logo img {
     width: 40rem;
+    height: 40rem;
+    object-fit: cover;
+    box-shadow: var(--shadow-dark-2);
     border-radius: 50%;
-    padding: 5rem 0;
 }
 
 .section-one .img img {
@@ -203,6 +205,9 @@ Inicio de estilos de ver
     border-radius: var(--box-radius);
     background-color: var(--color-white);
     width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
 .section-ver .ver-cards .ver-cards-container header {
@@ -266,7 +271,6 @@ Inicio de estilos de ver
     font-size: 1.4rem;
     text-align: center;
     color: var(--color-secondary);
-    padding: 0 2rem;
     padding-top: 2rem;
 }
 

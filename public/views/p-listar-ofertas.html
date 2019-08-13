@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
-    <link rel="stylesheet" href="../css/layout/perfiles.css">
-    <link rel="stylesheet" href="../css/paginas/ver-libros.css">
     <link rel="stylesheet" href="../css/layout/perfil-usuario.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
     <title>Sorbil -- Inicio</title>
@@ -152,8 +150,8 @@
                         </a>
 
                         <div class="sidenav-small-menu dropdown-menu">
-                            <a href="#" id="u-registrar-club-virtual">Club virtual</a>
-                            <a href="#" id="u-registrar-club-presencial">Club presencial</a>
+                            <a href="#" id="registrar-club-virtual">Club virtual</a>
+                            <a href="#" id="registrar-club-presencial">Club presencial</a>
                         </div>
                     </li>
 
@@ -182,72 +180,78 @@
                                 class='bx bxs-lock sidenav-i'></i>Seguridad</a>
                     </li>
 
+
                 </ul>
             </div>
 
         </aside>
 
         <!--Content-->
-        <!--Main-->
-        <main id="main-user">
-            <section class="section-ver">
-                <div class="ver-title">
-                    <h1>Buscá entre los mejores libros</h1>
-                </div>
-                <div class="ver-cards">
-                    <input id="txt-filtro" type="text" placeholder="Buscar por título, categoría, género, autor"
-                        aria-label="Buscar por título, categoría, género, autor">
-        
-                    <div id="lista_libros" class="ver-cards-container">
-        
-                    </div>
-                </div>
-        
-            </section>
-        
+        <main id="main-profile">
+            <div class="main-profile-titulo">
+                <h1>Listados de Ofertas</h1>
+                <p>Buscá la información que te interesa</p>
+            </div>
+
+            <div id="barra-busqueda">
+                <input id="txt_filtro" type="text" placeholder="Buscar por título, autor, categoría, género, ISBN"
+                    aria-label="Buscar por título, autor, categoría, género, ISBN">
+
+            </div>
+
+            <table id="tabla-filtrado">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Precio</th>
+                        <th>Tipo</th>
+                        <th>Descuento (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </main>
 
-    </main>
+        <footer id="footer-user">
 
-    <footer id="footer-user">
+            <div id="footer-links">
+                <a href="../views/u-inicio.html"><img src="../imgs/logo-light.png" alt="Logo de Sorbil"></a>
 
-        <div id="footer-links">
-            <a href="../views/u-inicio.html"><img src="../imgs/logo-light.png" alt="Logo de Sorbil"></a>
+                <nav>
+                    <a href="../views/u-inicio.html"><i class='bx bx-home-circle'></i>Inicio</a>
+                    <a href="#" id="u-intercambios"><i class='bx bxs-book'></i>Intercambios</a>
+                    <a href="#" id="u-quienes-somos"><i class='bx bx-user-voice'></i>Quiénes somos</a>
+                </nav>
+            </div>
 
-            <nav>
-                <a href="../views/u-inicio.html"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="#" id="u-intercambios"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="#" id="u-quienes-somos"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-            </nav>
-        </div>
+            <div id="footer-copyright">
+                <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+                    <span>FÉNIX</span></a>
+            </div>
 
-        <div id="footer-copyright">
-            <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
-                <span>FÉNIX</span></a>
-        </div>
+        </footer>
 
-    </footer>
-
-    <!--Scripts-->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/componentes/controlador-sidemenu.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../vendors/sticky-js-master/dist/sticky.min.js"></script>
-    <script src="../js/componentes/controlador-sticky.js"></script>
-    <!-- JS para listar en el dropdown-->
-    <script src="../js/servicio-club.js"></script>
-    <script src="../js/servicio-libreria.js"></script>
-    <script src="../js/servicio-libros.js"></script>
-    <script src="../js/servicio-autor.js"></script>
-    <script src="../js/componentes/controlador-lista-enlaces-privados.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
-    <!-- JS para los perfiles-->
-    <script src="../js/controlador-ver-libros-privado.js"></script>
-    <!-- JS para los permisos del usuario-->
-    <script src="../js/cerrar-sesion.js"></script>
-    <script src="../js/controlador-avatar.js"></script>
-    <script src="../js/controlador-inicio-u.js"></script>
+        <!--Scripts-->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="../js/componentes/controlador-sidemenu.js"></script>
+        <script src="../js/componentes/controlador-dropdowns-main.js"></script>
+        <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+        <script src="../vendors/sticky-js-master/dist/sticky.min.js"></script>
+        <script src="../js/componentes/controlador-sticky.js"></script>
+        <!-- JS para listar en el dropdown-->
+        <script src="../js/servicio-club.js"></script>
+        <script src="../js/servicio-libreria.js"></script>
+        <script src="../js/servicio-libros.js"></script>
+        <script src="../js/componentes/controlador-lista-enlaces-privados.js"></script>
+        <!-- JS para los perfiles-->
+        <script src="../js/controlador-listar-ofertas.js"></script>
+        <!-- JS para los permisos del usuario-->
+        <script src="../js/cerrar-sesion.js"></script>
+        <script src="../js/controlador-avatar.js"></script>
+        <script src="../js/controlador-inicio-u.js"></script>
 
 </body>
 

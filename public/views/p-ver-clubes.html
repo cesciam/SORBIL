@@ -4,33 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/validar-usuario-u.js"></script>
     <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/validar-usuario-u.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
     <link rel="stylesheet" href="../css/layout/perfiles.css">
-    <link rel="stylesheet" href="../css/paginas/ver-libros.css">
+    <link rel="stylesheet" href="../css/paginas/ver-perfil-club.css">
     <link rel="stylesheet" href="../css/layout/perfil-usuario.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Inicio</title>
+    <title>Sorbil -- Perfil de club presencial</title>
 </head>
 
 <body>
     <!--Header-->
     <header id="header-user">
-
+    
         <div id="header-nav-1">
             <a class="logo" href="../views/u-inicio.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
-
+    
             <nav>
                 <a href="../views/u-inicio.html"><i class='bx bx-home-circle'></i>Inicio</a>
                 <a href="#" id="u-intercambios"><i class='bx bxs-book'></i>Intercambios</a>
                 <a href="#" id="u-quienes-somos"><i class='bx bx-user-voice'></i>Quiénes somos</a>
             </nav>
-
+    
             <div id="nav-inicio" class="header-user-icons">
                 <div class="header-user-container">
                     <a class="header-icon" href="#" id="u-carrito"><i class='bx bx-cart-alt'></i>
@@ -52,22 +52,22 @@
                     </div>
                 </div>
             </div>
-
+    
         </div>
-
+    
         <div id="header-nav-2" class="sticky">
             <nav class="top">
-
+    
                 <div class="dropdownBackground">
                     <span class="arrow"></span>
                 </div>
-
+    
                 <ul class="cool header-nav-2-content">
-
+    
                     <div class="menu_toggler">
                         <span class="menu_icon"></span>
                     </div>
-
+    
                     <li>
                         <a href="p-ver-libros.html">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
@@ -85,7 +85,7 @@
                             </div>
                         </ul>
                     </li>
-
+    
                     <li>
                         <a href="p-ver-librerias.html">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
@@ -103,7 +103,7 @@
                             </div>
                         </ul>
                     </li>
-
+    
                     <li>
                         <a href="p-ver-clubes.html">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
@@ -121,17 +121,16 @@
                             </div>
                         </ul>
                     </li>
-
+    
                 </ul>
-
+    
             </nav>
         </div>
-
+    
     </header>
 
-    <!--Main-->
-    <main id="main-login">
 
+    <main id="main-user">
         <!--Aside-->
         <aside id="sidenav-user">
 
@@ -182,30 +181,28 @@
                                 class='bx bxs-lock sidenav-i'></i>Seguridad</a>
                     </li>
 
+
                 </ul>
             </div>
 
         </aside>
 
-        <!--Content-->
-        <!--Main-->
-        <main id="main-user">
-            <section class="section-ver">
-                <div class="ver-title">
-                    <h1>Buscá entre los mejores libros</h1>
+        <section class="section-ver">
+            <div class="ver-title">
+                <h1>Clubes de lectura</h1>
+                <a href="../views/u-seleccionar-club.html" class="btn-color"><i class='bx bx-plus'></i>Registrar
+                    club</a>
+            </div>
+            <div class="ver-cards">
+                <input id="txt-filtro" type="text" placeholder="Buscar por / tema / categoría / género"
+                    aria-label="Buscar por / tema / categoría / géner">
+
+                <div id="lista_clubes" class="ver-cards-container">
+
                 </div>
-                <div class="ver-cards">
-                    <input id="txt-filtro" type="text" placeholder="Buscar por título, categoría, género, autor"
-                        aria-label="Buscar por título, categoría, género, autor">
-        
-                    <div id="lista_libros" class="ver-cards-container">
-        
-                    </div>
-                </div>
-        
-            </section>
-        
-        </main>
+            </div>
+
+        </section>
 
     </main>
 
@@ -232,23 +229,19 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/componentes/controlador-sidemenu.js"></script>
     <script src="../js/componentes/controlador-dropdowns-main.js"></script>
+    <script src="../js/componentes/controlador-sidemenu.js"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../vendors/sticky-js-master/dist/sticky.min.js"></script>
-    <script src="../js/componentes/controlador-sticky.js"></script>
-    <!-- JS para listar en el dropdown-->
+    <!-- JS para listar -->
     <script src="../js/servicio-club.js"></script>
     <script src="../js/servicio-libreria.js"></script>
     <script src="../js/servicio-libros.js"></script>
-    <script src="../js/servicio-autor.js"></script>
-    <script src="../js/componentes/controlador-lista-enlaces-privados.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
-    <!-- JS para los perfiles-->
-    <script src="../js/controlador-ver-libros-privado.js"></script>
+    <script src="../js/componentes/controlador-lista-enlaces.js"></script>
+    <script src="../js/controlador-ver-clubes-privados.js"></script>
+    <!-- <script src="../js/componentes/controlador-nav-inicios.js"></script> -->
     <!-- JS para los permisos del usuario-->
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-avatar.js"></script>
     <script src="../js/controlador-inicio-u.js"></script>
-
 </body>
 
 </html>
