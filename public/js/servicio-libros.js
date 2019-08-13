@@ -108,7 +108,18 @@ let registrar_libros_libreria = (pcorreo, pidlibro, pcantidad) =>{
             cantidad: pcantidad 
         }
     });
+}
 
+let hablitarOferta = (pid, plista_ofertas)=> {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/habilitar-oferta',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            ofertas: plista_ofertas,
+        }
+    });
 }
 
 let actualizarCantidadLibros = (pid, pcantidad) =>{
@@ -120,6 +131,18 @@ let actualizarCantidadLibros = (pid, pcantidad) =>{
             id: pid,
             cantidad: pcantidad
 
+        }
+    });
+}
+
+let deshablitarOferta = (pid, plista_ofertas)=> {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/deshabilitar-oferta',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            ofertas: plista_ofertas,
         }
     });
 }

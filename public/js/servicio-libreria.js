@@ -86,7 +86,7 @@ let obtenerSucursales= async(correo) => {
             responseType: 'json'
         });
 
-        return response.data.libreria.sucursales;
+        return response.data.libreria[0].sucursales;
     } catch (error) {
         console.log(error);
     }
