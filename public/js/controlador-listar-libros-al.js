@@ -75,18 +75,26 @@ let listarLibrosCards = async ()=>{
         sct_libros.appendChild(contenedor_card);
     }
 }
-let validarSiYaExisteLibro = (pid, plibros) =>{
+let validarSiYaExisteLibro = (pid, plibros, pcantidad) =>{
     let existe = false;
 
     for(let i = 0; i < plibros.length; i++){
         
         if (pid == plibros[i].idlibro){
             existe = true;
-            console.log('Si sirve');
+            let num1 = parseInt(plibros[i].cantidad);
+            let num2 =parseInt(pcantidad);
+            let suma =  num1 + num2;
+            let nuevaCantidad = suma.toString();
+            plibros[i].cantidad = nuevaCantidad;
         }
     }
 
-    return existe;
+    if(existe){
+        return plibros;
+    }else{
+        return false;
+    }
 
 };
 
@@ -118,9 +126,9 @@ let agregar_libros_libreria = async(pid, pcantidad) =>{
                     'success'
                 )
             }
-            let existe = validarSiYaExisteLibro(pid, librosEnLibreria);
+            let existe = validarSiYaExisteLibro(pid, librosEnLibreria, cantidad);
             if(existe){
-
+                    actualizarLibrosLibreria(existe, correoUserActivo);
             }else
             registrar_libros_libreria(correoUserActivo, pid, cantidad);
         }

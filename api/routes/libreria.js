@@ -1069,11 +1069,12 @@ router.get('/buscar-libros-libreria/:correo', function (req, res) {
 });
 
 router.post('/actualizar-libros-libreria', function(req, res){
-    let posicionObjeto = req.body.posicion;
+    
     libreria.findOneAndUpdate({ correo: req.body.correo }, {
             $set: {
-                "libros.1.cantidad": req.body.cantidad
+                'libros': req.body.libros
             }
+            
         },
         function(error){
             if (error) {
