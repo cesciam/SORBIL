@@ -23,9 +23,16 @@ const input_tipo_libro = document.querySelector('#input_tipo_libro');
 const input_isbn = document.querySelector('#input_isbn');
 const btn_enviar = document.querySelector('#btn_enviar');
 const input_psinopsis = document.querySelector('#input_sinopsis');
+const input_cantidad = document.querySelector('#input_cantidad');
+
+const anElement = new AutoNumeric('#input_precio', {
+    currencySymbol : '₡',
+    decimalCharacter : ',',
+    digitGroupSeparator : '.',
+});
 
 
-let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgeneros, pidioma, pprecio, plibro, pisbn, psinopsis) => {
+let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgeneros, pidioma, pprecio, plibro, pisbn, psinopsis, pcantidad) => {
     let error = false;
 
     let fecha_formateada = new Date(pfecha.value);
@@ -114,7 +121,7 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
         input_tipo_libro.classList.remove('input_error');
     }
 
-    if(pisbn.value == 0){
+    if(pisbn.value == 0 && pisbn.value == ''){
         error = true;
         input_isbn.classList.add('input_error');
     }else{
@@ -128,9 +135,65 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
         input_psinopsis.classList.remove('input_error');
     }
 
+    if(pcantidad == '' || pcantidad < 0){
+        error = true;
+        input_cantidad.classList.add('input_error');
+    }else{
+        input_cantidad.classList.remove('input_error');
+    }
+
     return error;
 
 };
+
+// Inicio Validacion de ISBN
+let validarISBN10 =(pisbn) =>{
+    let errorISBN = false;
+
+    let regexISBN10 = /^(?:ISBN(?:-10)?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$)[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$/;
+
+
+    if (!regexISBN10.test(pisbn)) {
+        errorISBN = true;
+        input_isbn.classList.add('input_error');
+    }
+    else {
+        errorISBN = false;
+        input_isbn.classList.remove('input_error');
+    }
+    return errorISBN;
+}
+
+let validarISBN13 =(pisbn) =>{
+    let errorISBN = false;
+    let regexISBN13 = /^(?:ISBN(?:-13)?:? )?(?=[0-9]{13}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)97[89][- ]?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9]$/;   
+
+    if (!regexISBN13.test(pisbn)) {
+        errorISBN = true;
+        input_isbn.classList.add('input_error');
+    }
+    else {
+        errorISBN = false;
+        input_isbn.classList.remove('input_error');
+    }
+    return errorISBN;
+}
+
+let resultadoisbn =(pisbn) =>{
+    let error = false; 
+    let resultado10 = validarISBN10(pisbn);
+    
+    if(resultado10){
+        let resultado13 = validarISBN13(pisbn);
+        if (resultado13){
+            error = true;
+        }
+    }
+
+    return error;
+}
+
+// Aqui termina la validacion de ISBN
 
 let llamar = () =>{
     let titulo = input_titulo.value;
@@ -147,12 +210,14 @@ let llamar = () =>{
     let src_portada = img_uploader_portada.src;
     let src_contraportada = img_uploader_contraportada.src;
     let sinopsis = input_psinopsis.value;
+    let cantidad = input_cantidad.value;
 
+    let resultadoFuncionISBN = resultadoisbn(isbn);
 
+    let resultado_validaciones = validar(input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn, sinopsis, cantidad);
 
-    let resultado_validaciones = validar(input_titulo, input_autor, input_edicion, input_editorial, input_fecha, input_categorias, input_generos, input_idioma, input_precio, input_tipo_libro, input_isbn, sinopsis);
-    if(!resultado_validaciones){
-        registrarLibro(titulo, autor, edicion, editorial, fecha, categorias, generos, idioma, precio, tipo_libro, isbn, src_portada, src_contraportada, sinopsis);
+    if(!resultado_validaciones && !resultadoFuncionISBN){
+        registrarLibro(titulo, autor, edicion, editorial, fecha, categorias, generos, idioma, precio, tipo_libro, isbn, src_portada, src_contraportada, sinopsis, cantidad);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

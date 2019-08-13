@@ -51,6 +51,7 @@ body {
     font-size: 1.6rem;
     line-height: 1.7;
     color: var(--color-black);
+    background-color: var(--color-alternative-bg);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -123,7 +124,7 @@ label {
     font-weight: var(--font-semibold);
 }
 
-textarea{
+textarea {
     resize: none;
 }
 
@@ -163,6 +164,6 @@ Inicio de estilos generales de keyframes
 Fin de estilos generales de keyframes
 */
 
-#div-usuarioEnSesion{
+#div-usuarioEnSesion {
     justify-self: end;
 }

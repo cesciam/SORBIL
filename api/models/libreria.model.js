@@ -25,7 +25,15 @@ let libreria_schema = new mongoose.Schema({
         canton: {type: String, required: false, unique: false},
         distrito: {type: String, required: false, unique: false},
         direccion_latitud: {type: Number, required: false, unique: false},
-        direccion_longitud: {type: Number, required: false, unique: false}
+        direccion_longitud: {type: Number, required: false, unique: false},
+        librosSuc: [{
+            id: {type: String, required: false, unique: true},
+            cantidad: { type: String, required: false, unique: false }
+        }]
+    }],
+    libros: [{
+        idlibro: {type: String, required: false, unique: true},
+        cantidad: { type: String, required: false, unique: false }
     }]
 });
 

@@ -15,12 +15,14 @@ const input_correo = document.querySelector('#txt-correo');
 const input_categoria = document.querySelector('#txt-categoria');
 const input_genero = document.querySelector('#txt-genero');
 const input_fecha = document.querySelector('#txt-fecha');
+const input_hora = document.querySelector('#txt-hora');
+const input_frecuencia = document.querySelector('#txt-frecuencia');
 const input_descripcion = document.querySelector('#txt-descripcion');
 const tipo = 'Club Virtual';
 
 const btn_enviar = document.querySelector('#btn-enviar');
 
-let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, pdescripcion) => {
+let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, phora, pfrecuencia, pdescripcion) => {
 
     let error = false;
 
@@ -81,6 +83,20 @@ let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, 
         input_fecha.classList.remove('input_error');
     }
 
+    if (phora == '') {
+        error = true;
+        input_hora.classList.add('input_error');
+    } else {
+        input_hora.classList.remove('input_error');
+    }
+
+    if (pfrecuencia == '') {
+        error = true;
+        input_frecuencia.classList.add('input_error');
+    } else {
+        input_frecuencia.classList.remove('input_error');
+    }
+
     if (pdescripcion == '') {
         error = true;
         input_descripcion.classList.add('input_error');
@@ -122,6 +138,21 @@ let validarTelefono = (ptelefono) => {
     return errorTelefono;
 };
 
+let validarFecha = (pfecha) => {
+    
+    let hoy = new Date();
+    let errorFecha = false;
+    
+    if(pfecha < hoy || pfecha == 'Invalid Date') {
+        errorFecha = true;
+        input_fecha.classList.add('input_error');
+    } 
+    else {
+        input_fecha.classList.remove('input_error');
+    }
+    return errorFecha;    
+};
+
 let llamar = () => {
     let src_imagen = img_uploader_imagen.src;;
     let nombre = input_administrador_club.value;
@@ -131,14 +162,17 @@ let llamar = () => {
     let categoria = input_categoria.value;
     let genero = input_genero.value;
     let fecha = new Date(input_fecha.value);
+    let hora = input_hora.value;
+    let frecuencia = input_frecuencia.value;
     let descripcion = input_descripcion.value;
 
-    let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, descripcion);
+    let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, hora, frecuencia, descripcion);
     let errorCorreo = validarCorreo(correo);
     let errorTelefono = validarTelefono(telefono);
+    let errorFecha = validarFecha(fecha);
 
-    if (error == false && errorCorreo == false && errorTelefono == false) {
-        registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, descripcion);
+    if (error == false && errorCorreo == false && errorTelefono == false && errorFecha == false) {
+        registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, hora, frecuencia, descripcion);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
@@ -163,6 +197,8 @@ const limpiarFormulario = () => {
     input_categoria.value = '';
     input_genero.value = '';
     input_fecha.value = '';
+    input_hora.value = '';
+    input_frecuencia.value = '';
     input_descripcion.value = '';
     img_uploader_imagen.src = '../imgs/book-placeholder.png'
 };

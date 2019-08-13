@@ -24,6 +24,9 @@ router.post('/registrar-autor', function(req, res) {
         autor: body.autor,
         fecha: body.fecha,
         biografia: body.biografia,
+        fecha_nacimiento: body.fecha_nacimiento,
+        fecha_defuncion: body.fecha_defuncion,
+        nacionalidad: body.nacionalidad
     });
 
     nuevo_autor.save(

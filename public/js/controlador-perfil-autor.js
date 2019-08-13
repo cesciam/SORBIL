@@ -6,8 +6,10 @@ let _id = urlParams.get('_id');
 
 const imagen = document.querySelector('#imagen');
 const autor = document.querySelector('#autor');
+const nacionalidad = document.querySelector('#nacionalidad');
 const biografia = document.querySelector('#biografia');
-const fecha = document.querySelector('#fecha');
+const fecha_nacimiento = document.querySelector('#fecha_nacimiento');
+const fecha_defuncion = document.querySelector('#fecha_defuncion');
 
 const sct_libros = document.querySelector('#lista_libros');
 
@@ -17,12 +19,21 @@ let llenar_perfil = async() => {
     if (autorid) {
         imagen.src = autorid['imagen'];
         autor.innerHTML = autorid['autor'];
+        nacionalidad.innerHTML = autorid['nacionalidad'];
         biografia.innerHTML = autorid['biografia'];
-        fecha.innerHTML = autorid['fecha'];
+        fecha_nacimiento.innerHTML = autorid['fecha_nacimiento'];
+        fecha_defuncion.innerHTML = autorid['fecha_defuncion'];
 
-        let fecha_new = new Date(autorid['fecha']);
-        let fecha_formateada = fecha_new.getUTCDate() + '-' + Number(fecha_new.getUTCMonth() + 1) + '-' + fecha_new.getFullYear();
-        fecha.innerHTML = fecha_formateada;
+        let fecha_new1 = new Date(autorid['fecha_nacimiento']);
+        let fecha_nacimiento_formateada = fecha_new1.getUTCDate() + '-' + Number(fecha_new1.getUTCMonth() + 1) + '-' + fecha_new1.getFullYear();
+
+        fecha_nacimiento.innerHTML = fecha_nacimiento_formateada;
+
+
+        let fecha_new2 = new Date(autorid['fecha_defuncion']);
+        let fecha_defuncion_formateada = fecha_new2.getUTCDate() + '-' + Number(fecha_new2.getUTCMonth() + 1) + '-' + fecha_new2.getFullYear();
+
+        fecha_defuncion.innerHTML = fecha_defuncion_formateada;
     }
 
     let nombreautor =  autorid['autor'];

@@ -76,18 +76,58 @@ let obtenerLibreriaid = async (_id) => {
     }
 };
 
-// let obtenerLibreriaCorreo = async (correo) => {
-//     try {
-//         // fetch data from an url endpoint
-//         const response = await axios({
-//             method: 'get',
-//             url: `http://localhost:4000/api/buscar-libreria-correo/${correo}`,
-//             responseType: 'json'
-//         });
+let obtenerSucursales= async(correo) => {
+   
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/listar-sucursales/${correo}`,
+            responseType: 'json'
+        });
 
-//         return response.data.libreria;
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
+        return response.data.libreria[0].sucursales;
+    } catch (error) {
+        console.log(error);
+    }
+};
 
+let obtenerDatosCorreo = async(correo) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-libros-libreria/${correo}`,
+            responseType: 'json'
+        });
+        
+        return response.data.libreria[0].libros;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
+// let actualizarLibrosLibreria = (pcorreo, pcantidad)=> {
+//     axios({
+//         method: 'post',
+//         url: 'http://localhost:4000/api/actualizar-libros-libreria',
+//         responseType: 'json',
+//         data: {
+//             correo: pcorreo,
+//             cantidad: pcantidad
+//         }
+//     });
+// }
+
+let actualizarLibrosLibreria = (pArrayLibros, pcorreo)=> {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/actualizar-libros-libreria',
+        responseType: 'json',
+        data: {
+            libros: pArrayLibros,
+            correo: pcorreo
+        }
+    });
+}

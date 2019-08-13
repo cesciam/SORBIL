@@ -277,13 +277,14 @@ Inicio de estilos de los filtros y listados administradores
     position: relative;
     display: inline-block;
     z-index: 9999;
+    margin: auto 0;
 }
 
 .dropdown-btns-content {
     display: none;
     top: 3rem;
     position: absolute;
-    min-width: 15rem;
+    min-width: 16rem;
     padding-top: 1rem;
 }
 
