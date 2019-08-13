@@ -52,7 +52,7 @@ let mostrar_tabla = async () => {
             }
             enlace_habilitado.href = '#';
             enlace_habilitado.addEventListener('click', function () {
-                if (lista_ofertas[i]["estado"] == "Habilitado") {
+                if (lista_ofertas[i]["estadoOferta"] == "Habilitado") {
                     habilitar(lista_ofertas[i]['_id'], "Desabilitado");
                 } else {
                     habilitar(lista_ofertas[i]['_id'], "Habilitado");
@@ -85,17 +85,15 @@ let filtrar_tabla = async () => {
                 fila.insertCell().innerHTML = lista_ofertas[j]['porcentaje'];
 
                 // Botón modificar oferta
+
                 let celdaModificarOferta = fila.insertCell();
-                let icono = document.createElement('i');
-                icono.type = 'i';
-                btn_modificarOferta.appendChild(icono);
-                let btn_modificarOferta = document.createElement('a');
-                btn_modificarOferta.type = 'a';
-                
+                let btn_modificarOferta = document.createElement('button');
+                btn_modificarOferta.type = 'button';
+                btn_modificarOferta.innerText = 'Modificar';
                 btn_modificarOferta.dataset._id = lista_libros[i]['_id'];
                 celdaModificarOferta.appendChild(btn_modificarOferta);
 
-                // Botón modificar oferta
+                // Botón eliminar oferta
                 let celdaEliminarOferta = fila.insertCell();
                 let btn_eliminarOferta = document.createElement('button');
                 btn_eliminarOferta.type = 'button';
@@ -114,9 +112,9 @@ let filtrar_tabla = async () => {
                 enlace_habilitado.href = '#';
                 enlace_habilitado.addEventListener('click', function () {
                     if (lista_ofertas[i]["estado"] == "Habilitado") {
-                        habilitar(lista_ofertas[i]['_id'], "Desabilitado");
+                        deshabilitar(lista_ofertas[i]['_id'], lista_ofertas);
                     } else {
-                        habilitar(lista_ofertas[i]['_id'], "Habilitado");
+                        habilitar(lista_ofertas[i]['_id'], lista_ofertas);
                     }
                     mostrar_tabla();
                 });
@@ -126,6 +124,28 @@ let filtrar_tabla = async () => {
         }
     }
 };
+
+let habilitar = (pid, plista_ofertas) => {
+
+    for (let index = 0; index < plista_ofertas.length; index++) {
+        if (pid == plista_ofertas[i]._id) {
+            plista_ofertas[i].estadoOferta = 'Habilitado';
+        }
+    }
+
+    hablitarOferta(pid, plista_ofertas);
+}
+
+let deshabilitar = (pid, plista_ofertas) => {
+
+    for (let index = 0; index < plista_ofertas.length; index++) {
+        if (pid == plista_ofertas[i]._id) {
+            plista_ofertas[i].estadoOferta = 'Deshabilitado';
+        }
+    }
+
+    deshablitarOferta(pid, plista_ofertas);
+}
 
 mostrar_tabla();
 txt_filtro.addEventListener('keyup', filtrar_tabla);

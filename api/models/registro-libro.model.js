@@ -21,6 +21,7 @@ let registro_libro_schema = new mongoose.Schema({
     sinopsis: {type: String, required: true, unique: false},
     ofertas: [{
         porcentaje: { type: String, required: false, unique: false},
+        estadoOferta: {type: String, required: false, unique: false}
     }],
     cantidad: {type: Number, required: true, unique: false} 
 });
