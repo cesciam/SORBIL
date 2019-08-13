@@ -3,7 +3,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 let _id = urlParams.get('_id');
 const avatar = document.querySelector('#avatar');
-const avatar_mini = document.querySelector('#avatar-mini');
 const txt_nombre = document.querySelector('#txt-nombre');
 const txt_correo = document.querySelector('#txt-correo');
 const txt_usuario = document.querySelector('#txt-usuario');
@@ -19,7 +18,6 @@ let llenar_perfil = async() => {
     let usuario = await obtenerUsuarioId(_id);
     if (usuario) {
         avatar.src = usuario['avatar'];
-        avatar_mini.src = usuario['avatar'];
         txt_nombre.innerHTML = usuario['nombre'];
         txt_correo.innerHTML = usuario['correo'];
         txt_usuario.innerHTML = usuario['usuario'];
