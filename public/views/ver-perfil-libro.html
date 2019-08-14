@@ -41,12 +41,13 @@
                 </div>
             </div>
             <div class="header-user-container user-menu-wrap ocultar" id="div-usuarioEnSesion">
-                <a class="mini-photo-wrapper" href="#"><img id="avatar-img" class="mini-photo" src="../imgs/user.png" width="36" height="36"><i class='bx bx-chevron-down'></i></a>
+                <a class="mini-photo-wrapper" href="#"><img id="avatar-img" class="mini-photo" src="../imgs/user.png"
+                        width="36" height="36"><i class='bx bx-chevron-down'></i></a>
                 <div class="menu-user-container">
                     <ul class="user-menu">
                         <a class="user-menu-link" href="#" id="ver_perfil_usuario">Perfil</a>
                         <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
-                    </ul>   
+                    </ul>
                 </div>
             </div>
 
@@ -54,13 +55,13 @@
 
         <div id="header-nav-2" class="sticky">
             <nav class="top">
-        
+
                 <div class="dropdownBackground">
                     <span class="arrow"></span>
                 </div>
-        
+
                 <ul class="cool header-nav-2-content">
-        
+
                     <li>
                         <a href="../views/ver-libros.html">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
@@ -78,7 +79,7 @@
                             </div>
                         </ul>
                     </li>
-        
+
                     <li>
                         <a href="../views/ver-librerias.html">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
@@ -96,7 +97,7 @@
                             </div>
                         </ul>
                     </li>
-        
+
                     <li>
                         <a href="../views/ver-clubes.html">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown dropdown1">
@@ -114,9 +115,9 @@
                             </div>
                         </ul>
                     </li>
-        
+
                 </ul>
-        
+
             </nav>
         </div>
 
@@ -125,49 +126,63 @@
 
     <!--Main-->
     <main id="main-user">
-        <section id="libro-info">
-            <div id="info-libro-descrip">
-                <h1 id="title-libro"></h1>
-                <p>Best seller</p>
-                <div class="ratings">
-                    <i class='bx bxs-book-bookmark'></i>
-                    <i class='bx bxs-book-bookmark'></i>
-                    <i class='bx bxs-book-bookmark'></i>
-                    <i class='bx bxs-book-bookmark'></i>
-                    <i class='bx bxs-book-bookmark'></i>
-                </div>
-                <p>4,8 (4500 Calificacion)</p>
-                <div>
-                    <p>Edicion: <span id="edicion"></span></p>
-                    <p>Editorial: <span id="editorial"></span></p>
-                </div>
-                <p id="descrip"></p>
-            </div>
-
-            <div id="info-libro-precio">
+        <section class="section-book">
+            <div class="book-img">
                 <div id="div-img-portada"><img src="../imgs/book-placeholder.png" id="portada"></div>
-                <p class="conten-div-precio precio-libro">Precio: ₡<span id="precio"></span></p>
+                <p class="conten-div-precio precio-libro">Precio: <span id="precio"></span></p>
                 <button type="button">Comprar</button>
-                <div id="info-libro-div">
-                    <p class="conten-div-precio">Autor: </p>
-                    <span id="autor"></span>
-                    <p class="conten-div-precio">Categoría: </p>
-                    <span id="categoria"></span>
-                    <p class="conten-div-precio">Género: </p>
-                    <span id="genero"></span>
-                    <p class="conten-div-precio">Publicación: </p>
-                    <span id="fecha"></span>
-                    <p class="conten-div-precio">ISBN: </p>
-                    <span id="isbn"></span>
-                    <p class="conten-div-precio">Formato: </p>
-                    <span id="tipo"></span>
-                    <p class="conten-div-precio">Idioma: </p>
-                    <span id="idioma"></span>
+            </div>
+            <div class="book-info">
+                <h2>Información del libro</h2>
+                <div class="book-info-list">
+                    <div class="book-titles">
+                        <p class="conten-div-precio">Autor: </p>
+                        <p class="conten-div-precio">Categoría: </p>
+                        <p class="conten-div-precio">Género: </p>
+                        <p class="conten-div-precio">Publicación: </p>
+                        <p class="conten-div-precio">ISBN: </p>
+                        <p class="conten-div-precio">Formato: </p>
+                        <p class="conten-div-precio">Idioma: </p>
+                    </div>
+                    <div class="book-atributes">
+                        <p id="autor"></p>
+                        <p id="categoria"></p>
+                        <p id="genero"></p>
+                        <p id="fecha"></p>
+                        <p id="isbn"></p>
+                        <p id="tipo"></p>
+                        <p id="idioma"></p>
+                    </div>
                 </div>
             </div>
+            <div class="book-rating">
+                <h1 id="title-libro"></h1>
+                <!-- <p>Best seller</p> -->
+                <div class="book-rating-info">
+                    <div class="book-rating-container">
+                        <div class="book-ratings">
+                            <i class='bx bxs-book-bookmark'></i>
+                            <i class='bx bxs-book-bookmark'></i>
+                            <i class='bx bxs-book-bookmark'></i>
+                            <i class='bx bxs-book-bookmark'></i>
+                            <i class='bx bxs-book-bookmark'></i>
+                        </div>
+                        <div class="book-rating-global">
+                            <p>4,8 (4500 Calificacion)</p>
+                        </div>
+                    </div>
 
+                    <div class="book-ed">
+                        <p>Edicion: <span id="edicion"></span></p>
+                        <p>Editorial: <span id="editorial"></span></p>
+                    </div>
+                    <div class="book-descrip">
+                        <h3>Sinopsis</h3>
+                        <p id="descrip"></p>
+                    </div>
+                </div>
+            </div>
         </section>
-
     </main>
 
     <footer id="footer-user">

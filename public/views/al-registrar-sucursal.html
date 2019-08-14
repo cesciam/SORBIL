@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/layout/formularios.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
@@ -52,26 +53,21 @@
     <main id="main-admin">
         <div class="main-admin-titulo">
             <h1>Registro de Sucursal</h1>
-            <p>Registra la información que te interesa</p>
         </div>
 
         <form id="form" action="#">
 
+            <div>
+                <label for="#">Nombre</label>
+                <input id="txt-nombre-sucursal" type="text" placeholder="Ingresar nombre de la sucursal"
+                    aria-label="Ingresar nombre de la sucursal">
+            </div>
             <div id="form-container">
-                <div>
-                    <label for="#">Nombre</label>
-                    <input id="txt-nombre-sucursal" type="text" placeholder="Ingresar nombre de la sucursal"
-                        aria-label="Ingresar nombre de la sucursal">
-                </div>
+                
                 <div>
                     <label for="#">Teléfono</label>
-                    <input id="txt-telefono" type="tel" maxlength="11" placeholder="Formato: 00-00-00-00"
+                    <input id="txt-telefono" type="tel" placeholder="Formato: 00-00-00-00"
                         aria-label="Ingresar el número de teléfono">
-                </div>
-                <div>
-                    <label for="#">Correo Electrónico</label>
-                    <input id="txt-correo" type="email" placeholder="Ingresar el correo electrónico"
-                        aria-label="Ingresar el correo electrónico">
                 </div>
                 <div>
                     <label for="#">Provincia</label>
@@ -109,7 +105,7 @@
 
     </main>
 
-    <!--Aside-->
+<!--Aside-->
 <aside id="sidenav-admin">
 
     <div class="sidebar">
@@ -119,50 +115,125 @@
         </div>
 
         <ul class="sidenav-list">
-            <!-- <li class="sidenav-list-item"><a href="" id="ver_perfil_admin_libreria"><i
-                        class='bx bx-home sidenav-i'></i>Inicio</a>
-            </li> -->
+
+            <!-- <li class="sidenav-list-item">
+                        <a href="#" class="sidenav-btn dropdown-toggle">
+                            <i class='bx bx-plus'></i>
+                            Registros
+                            <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                        </a>
+                        <div class="sidenav-small-menu dropdown-menu">
+                            <a href="#" id="registrar_adminal_categoria">Categorías</a>
+                            <a href="#" id="registrar_adminal_genero">Géneros</a>
+                            <a href="#" id="registrar_adminal_oferta">Oferta</a>
+                            <a href="#" id="registrar_adminal_club_presencial">Club presencial</a>
+                            <a href="#" id="registrar_adminal_club_virtual">Club virtual</a>
+                        </div>
+                    </li>
+    
+                    <li class="sidenav-list-item">
+                        <a href="#" class="sidenav-btn dropdown-toggle">
+                            <i class='bx bx-list-ul'></i>
+                            Listados
+                            <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                        </a>
+                        <div class="sidenav-small-menu dropdown-menu">
+                            <a href="#" id="listar_adminal_libros">Libros</a>
+                            <a href="#" id="listar_adminal_usuarios">Usuarios</a>
+                            <a href="#" id="listar_adminal_sucursales">Sucursales</a>
+                            <a href="#" id="listar_adminal_autores">Autores</a>
+                            <a href="#" id="listar_adminal_intercambios">Intercambios</a>
+                            <a href="#" id="listar_adminal_ofertas">Ofertas</a>
+                            <a href="#" id="listar_adminal_categorias">Categorías</a>
+                            <a href="#" id="listar_adminal_generos">Géneros</a>
+                            <a href="#" id="listar_adminal_clubes">Clubes de lectura</a>
+                        </div>
+                    </li> -->
 
             <li class="sidenav-list-item">
-                <a href="#" class="sidenav-btn dropdown-toggle">
-                    <i class='bx bx-plus'></i>
-                    Registros
+                <a id="listar_adminal_sucursales" href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-store'></i>
+                    Sucursales
+                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                </a>
+                <div class="sidenav-small-menu dropdown-menu">
+                    <a href="#" id="registrar_adminal_sucursal">Sucursales</a>
+                </div>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="listar_adminal_usuarios"><i
+                        class='bx bxs-user-plus sidenav-i'></i>Usuarios</a>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="listar_adminal_libros"><i
+                        class='bx bxs-book sidenav-i'></i>Libros</a>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="listar_adminal_autores"><i
+                        class='bx bxs-pencil sidenav-i'></i>Autores</a>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="listar_adminal_intercambios"><i
+                        class='bx bxs-group sidenav-i'></i>Intercambios</a>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="listar_adminal_compras"><i
+                        class='bx bxs-shopping-bag sidenav-i'></i>Compras</a>
+            </li>
+
+            <li class="sidenav-list-item">
+                <a id="listar_adminal_ofertas" href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-discount'></i>
+                    Ofertas
+                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                </a>
+                <div class="sidenav-small-menu dropdown-menu">
+                    <a href="#" id="registrar_adminal_oferta">Ofertas</a>
+                </div>
+            </li>
+
+            <li class="sidenav-list-item">
+                <a id="listar_adminal_categorias" href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-bookmarks'></i>
+                    Categorías
                     <div class="chevron"><i class='bx bx-chevron-down'></i></div>
                 </a>
                 <div class="sidenav-small-menu dropdown-menu">
                     <a href="#" id="registrar_adminal_categoria">Categorías</a>
-                    <a href="#" id="registrar_adminal_genero">Géneros</a>
-                    <a href="#" id="registrar_adminal_oferta">Oferta</a>
-                    <a href="#" id="registrar_adminal_club_presencial">Club presencial</a>
-                    <a href="#" id="registrar_adminal_club_virtual">Club virtual</a>
                 </div>
             </li>
 
             <li class="sidenav-list-item">
-                <a href="#" class="sidenav-btn dropdown-toggle">
-                    <i class='bx bx-list-ul'></i>
-                    Listados
+                <a id="listar_adminal_generos" href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-bookmarks'></i>
+                    Géneros
                     <div class="chevron"><i class='bx bx-chevron-down'></i></div>
                 </a>
                 <div class="sidenav-small-menu dropdown-menu">
-                    <a href="#" id="listar_adminal_libros">Libros</a>
-                    <a href="#" id="listar_adminal_usuarios">Usuarios</a>
-                    <a href="#" id="listar_adminal_sucursales">Sucursales</a>
-                    <a href="#" id="listar_adminal_autores">Autores</a>
-                    <a href="#" id="listar_adminal_intercambios">Intercambios</a>
-                    <a href="#" id="listar_adminal_ofertas">Ofertas</a>
-                    <a href="#" id="listar_adminal_categorias">Categorías</a>
-                    <a href="#" id="listar_adminal_generos">Géneros</a>
-                    <a href="#" id="listar_adminal_clubes">Clubes de lectura</a>
+                    <a href="#" id="registrar_adminal_genero">Géneros</a>
                 </div>
             </li>
 
-                <li class="sidenav-list-item"><a href="#"><i class='bx bxs-report sidenav-i'></i>Reportes</a>
-                </li>
-                
-                <li class="sidenav-list-item"><a href="#"><i class='bx bx-dollar-circle sidenav-i'></i>Ventas</a></li>
-                
-                <li class="sidenav-list-item"><a href="#"><i class='bx bx-loader-alt sidenav-i'></i>Bitácora</a></li>
+            <li class="sidenav-list-item">
+                <a id="listar_adminal_clubes" href="#" class="sidenav-btn dropdown-toggle">
+                    <i class='bx bxs-book-open'></i>
+                    Clubes de lectura
+                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                </a>
+                <div class="sidenav-small-menu dropdown-menu">
+                    <a href="#" id="registrar_adminal_club_virtual">Club virtual</a>
+                    <a href="#" id="registrar_adminal_club_presencial">Club presencial</a>
+                </div>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="adminal_reportes"><i
+                        class='bx bxs-report sidenav-i'></i>Reportes</a>
+            </li>
+
+            <li class="sidenav-list-item"><a href="#" id="adminal_bitacora"><i
+                        class='bx bx-loader-alt sidenav-i'></i>Bitácora</a>
+            </li>
+
         </ul>
 
     </div>
@@ -180,7 +251,7 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnj4Pk6sSOX5m4uxn8jO9VN2YjMUR7iO4&callback=initMap"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
+    <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <script src="../js/componentes/controlador-select.js"></script>
     <script src="../js/componentes/controlador-map.js"></script>

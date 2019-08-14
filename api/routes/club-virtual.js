@@ -35,6 +35,8 @@ router.post('/registrar-club', function (req, res) {
         categoria: body.categoria,
         genero: body.genero,
         fecha: body.fecha,
+        hora: body.hora,
+        frecuencia: body.frecuencia,
         descripcion: body.descripcion,
     });
 
@@ -981,6 +983,22 @@ router.get('/buscar-club-id/:_id', function (req, res) {
             });
         }
     })
+});
+
+router.post('/modificar-club', function (req, res) {
+    let body = req.body;
+
+    Club.findByIdAndUpdate(body._id, {
+        $set: req.body
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la información' });
+            } else {
+                res.json({ success: true, msg: 'La información se modificó con éxito' });
+            }
+        }
+    )
 });
 
 module.exports = router;

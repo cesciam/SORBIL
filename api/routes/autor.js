@@ -10,20 +10,9 @@ router.param('_id', function (req, res, next, _id) {
     next();
 });
 
-// router.param('autor', function(req, res, next, autor) {
-//     req.body.autor = autor;
-//     next();
-// });
 
-// router.param('fecha', function(req, res, next, fecha) {
-//     req.body.fecha = fecha;
-//     next();
-// });
 
-// router.param('biografia', function(req, res, next, biografia) {
-//     req.body.biografia = biografia;
-//     next();
-// });
+
 
 //Definición de la ruta para registrar contactos
 
@@ -35,6 +24,9 @@ router.post('/registrar-autor', function(req, res) {
         autor: body.autor,
         fecha: body.fecha,
         biografia: body.biografia,
+        fecha_nacimiento: body.fecha_nacimiento,
+        fecha_defuncion: body.fecha_defuncion,
+        nacionalidad: body.nacionalidad
     });
 
     nuevo_autor.save(
@@ -89,21 +81,8 @@ router.get('/buscar-autor-id/:_id', function(req, res) {
     })
 });
 
-// router.get('/buscar-contacto-correo/:correo', function(req, res) {
-//     Contacto.find({ correo: req.body.correo }, function(err, contactoBD) {
-//         if (err) {
-//             return res.status(400).json({
-//                 success: false,
-//                 msj: 'No se encontró ningún contacto con ese correo',
-//                 err
-//             });
-//         } else {
-//             return res.json({
-//                 success: true,
-//                 contacto: contactoBD
-//             });
-//         }
-//     })
-// });
+
+
+
 
 module.exports = router;

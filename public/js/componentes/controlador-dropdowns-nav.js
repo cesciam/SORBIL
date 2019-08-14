@@ -30,5 +30,5 @@ let handleClick = click => {
     }
 };
 
-document.addEventListener('click', handleClick);
+document.addEventListener('mouseover', handleClick);
 

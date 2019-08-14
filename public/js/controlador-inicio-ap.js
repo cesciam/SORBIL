@@ -4,6 +4,7 @@ const btn_perfil = document.querySelector('#ver_perfil_admin_plataforma');
 //Permisos de usuario para registrar
 const btn_registrar_libro = document.querySelector('#registrar_adminap_libro');
 const btn_registrar_autor = document.querySelector('#registrar_adminap_autor');
+const btn_registrar_sucursal = document.querySelector('#registrar_adminap_sucursal');
 const btn_registrar_categoria = document.querySelector('#registrar_adminap_categoria');
 const btn_registrar_genero = document.querySelector('#registrar_adminap_genero');
 const btn_registrar_oferta = document.querySelector('#registrar_adminap_oferta');
@@ -13,6 +14,7 @@ const btn_registrar_club_presencial = document.querySelector('#registrar_adminap
 //Permisos de usuario para listar
 const btn_listar_libros = document.querySelector('#listar_adminap_libros');
 const btn_listar_usuarios = document.querySelector('#listar_adminap_usuarios');
+const btn_listar_librerias = document.querySelector('#listar_adminap_librerias');
 const btn_listar_sucursales = document.querySelector('#listar_adminap_sucursales');
 const btn_listar_autores = document.querySelector('#listar_adminap_autores');
 const btn_listar_intercambios = document.querySelector('#listar_adminap_intercambios');
@@ -20,6 +22,13 @@ const btn_listar_ofertas = document.querySelector('#listar_adminap_ofertas');
 const btn_listar_categorias = document.querySelector('#listar_adminap_categorias');
 const btn_listar_generos = document.querySelector('#listar_adminap_generos');
 const btn_listar_clubes = document.querySelector('#listar_adminap_clubes');
+const btn_listar_compras = document.querySelector('#listar_adminap_compras');
+
+//Permisos de usuario para reportes y bitácora
+const btn_reportes_libreria = document.querySelector('#adminap_reportes_libreria');
+const btn_reportes_generales = document.querySelector('#adminap_reportes_generales');
+const btn_bitacora = document.querySelector('#adminap_bitacora');
+const btn_solicitudes = document.querySelector('#adminap_solicitudes');
 
 usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
 let _id3 = usuarioActivo._id;
@@ -29,6 +38,10 @@ btn_perfil.addEventListener('click', function () {
 });
 
 //Permisos de usuario para registrar
+
+btn_registrar_sucursal.addEventListener('click', function () {
+    window.location.href = `ap-registrar-sucursal.html?_id=${idAl}`
+});
 
 btn_registrar_libro.addEventListener('click', function () {
     window.location.href = `ap-registrar-libro.html?_id=${_id3}`
@@ -69,6 +82,10 @@ btn_listar_usuarios.addEventListener('click', function () {
     window.location.href = `ap-listar-usuarios.html?_id=${_id3}`
 });
 
+btn_listar_librerias.addEventListener('click', function () {
+    window.location.href = `ap-listar-librerias.html?_id=${_id3}`
+});
+
 btn_listar_sucursales.addEventListener('click', function () {
     window.location.href = `ap-listar-sucursales.html?_id=${_id3}`
 });
@@ -97,3 +114,24 @@ btn_listar_clubes.addEventListener('click', function () {
     window.location.href = `ap-listar-clubes.html?_id=${_id3}`
 });
 
+btn_listar_compras.addEventListener('click', function () {
+    window.location.href = `ap-listar-compras.html?_id=${idAl}`
+});
+
+//Permisos para bitácora y compras
+
+btn_reportes_libreria.addEventListener('click', function () {
+    window.location.href = `ap-reportes-libreria.html?_id=${idAl}`
+});
+
+btn_reportes_generales.addEventListener('click', function () {
+    window.location.href = `ap-reportes-generales.html?_id=${idAl}`
+});
+
+btn_bitacora.addEventListener('click', function () {
+    window.location.href = `ap-bitacora.html?_id=${idAl}`
+});
+
+btn_solicitudes.addEventListener('click', function () {
+    window.location.href = `ap-solicitudes.html?_id=${idAl}`
+});

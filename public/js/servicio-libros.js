@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarLibro = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategoria, pgenero, pidioma, pprecio, ptipo, pisbn, pportada, pcontraportada, psinopsis) => {
+let registrarLibro = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategoria, pgenero, pidioma, pprecio, ptipo, pisbn, pportada, pcontraportada, psinopsis, pcantidad) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libro',
@@ -19,7 +19,8 @@ let registrarLibro = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategoria,
             isbn: pisbn,
             portada: pportada,
             contraportada: pcontraportada,
-            sinopsis: psinopsis
+            sinopsis: psinopsis,
+            cantidad: pcantidad
         }
     });
 };
@@ -80,3 +81,68 @@ let obtenerOfertas = async() => {
         console.log(error);
     }
 };
+
+let obtenerLibroautor = async(autor) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-libro-autor/${autor}`,
+            responseType: 'json'
+        });
+
+        return response.data.libro;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+let registrar_libros_libreria = (pcorreo, pidlibro, pcantidad) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar-libros-sucursal',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            idlibro: pidlibro,
+            cantidad: pcantidad 
+        }
+    });
+}
+
+let hablitarOferta = (pid, plista_ofertas)=> {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/habilitar-oferta',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            ofertas: plista_ofertas,
+        }
+    });
+}
+
+let actualizarCantidadLibros = (pid, pcantidad) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/actualizar-cantidad-libros',
+        responseType: 'json',
+        data: {
+            id: pid,
+            cantidad: pcantidad
+
+        }
+    });
+}
+
+let deshablitarOferta = (pid, plista_ofertas)=> {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/deshabilitar-oferta',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            ofertas: plista_ofertas,
+        }
+    });
+}

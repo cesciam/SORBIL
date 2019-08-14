@@ -92,6 +92,7 @@ let registrarDatos = () =>{
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
         })
+        limpiarFormulario();
     }else{
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
@@ -100,6 +101,13 @@ let registrarDatos = () =>{
         })
     }
 }
+// Función para limpiar inputs
+const limpiarFormulario = () => {
+    input_nombre.value = '';
+    input_num_tarjeta.value = '';
+    input_fecha_ven.value = '';
+    input_cvv.value = '';
+};
 
 //Aqui inicia el proceso de listar las tarjetas ya registradas 
 
@@ -119,6 +127,20 @@ let mostrar_tabla = async() => {
         fila.insertCell().innerHTML = lista_tarjetas[i]['fecha_ven'];
         fila.insertCell().innerHTML = lista_tarjetas[i]['num_tarjeta'];
         fila.insertCell().innerHTML = lista_tarjetas[i]['cvv'];
+
+        let celdaIcono = fila.insertCell();
+        let aIcono = document.createElement('a');
+        aIcono.className = 'header-icon';
+        let icon = document.createElement('i');
+        icon.className  = 'bx bxs-edit-alt';
+        aIcono.appendChild(icon);
+
+        celdaIcono.appendChild(aIcono);
+        icon.addEventListener('click', function(){
+            window.location.href = `p-tarjetas-modificar.html?_i=${i}`;
+        });
+
+
 
     }
 };

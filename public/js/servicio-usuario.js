@@ -96,6 +96,31 @@ let obtenerUsuarioId = async(_id) => {
         console.log(error);
     }
 };
+// Modificar el estado
+let habilitar = (pid, pestado) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/habilitar-usuario',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            estado: pestado
+        }
+    });
+};
+
+// Modificar el estado
+let deshabilitar = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/deshabilitar-usuario',
+        responseType: 'json',
+        data: {  
+            _id: pid
+
+        }
+    });
+};
 
 // Funciones para obtener coordenadas de google maps
 let corlatitud;
@@ -147,3 +172,4 @@ let obtenerTarjetas = async(_id) => {
         console.log(error);
     }
 };
+

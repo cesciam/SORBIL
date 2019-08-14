@@ -1,8 +1,8 @@
 'use strict';
 
-const urlParams = new URLSearchParams(window.location.search);
+const urlParamslibreria = new URLSearchParams(window.location.search);
 
-let id = urlParams.get('_id');
+let id = urlParamslibreria.get('_id');
 
 let imagen = document.querySelector('#imagen');
 let empresa = document.querySelector('#empresa');
@@ -14,7 +14,7 @@ let canton = document.querySelector('#canton');
 let distrito = document.querySelector('#distrito');
 let direccion_exacta = document.querySelector('#direccion-exacta');
 
-let llenar_perfil = async () => {
+let llenar_perfil_libreria = async () => {
 
     let libreriaid = await obtenerLibreriaid(id);
 
@@ -31,6 +31,6 @@ let llenar_perfil = async () => {
     }
 };
 
-llenar_perfil();
+llenar_perfil_libreria();
 
 
