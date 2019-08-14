@@ -27,3 +27,30 @@ let obtenerGeneros = async () => {
         alert(error);
     }
 };
+
+let obtenerGeneroid = async (_id) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-genero-id/${_id}`,
+            responseType: 'json'
+        });
+
+        return response.data.genero;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+let modificar = (pid, pgenero) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-genero',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            genero: pgenero
+        }
+    });
+};

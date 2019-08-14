@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/validar-usuario-adminLib.js"></script>
     <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/validar-usuario-adminLib.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
-    <link rel="stylesheet" href="../css/paginas/ver-perfil-admin.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Perfil administrador de librería</title>
+    <title>Sorbil -- Librería -- Registrar géneros</title>
 </head>
 
 <body id="grid-admin">
@@ -36,7 +35,7 @@
             </div>
 
             <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                        class="mini-photo" src="" width="36" height="36" id="avatar-img"> <i
+                        id="avatar-img" class="mini-photo" src="" width="36" height="36"> <i
                         class='bx bx-chevron-down'></i></a>
                 <div class="menu-user-container">
                     <ul class="user-menu">
@@ -52,33 +51,23 @@
 
     <!--Main-->
     <main id="main-admin">
-        <div class="main-admin-titulo card-title">
-            <h1>Plataforma de librería</h1>
+        <div class="main-admin-titulo">
+            <h1>Registro de Género</h1>
         </div>
 
-        <div class="user-profile-container">
-            <div class="profile-saludo">
-                <h2>Saludos <span id="txt-nombre"></span></h2>
-                <img src="../imgs/avatar-placeholder.png" id="avatar">
-                <!-- <img src="../imgs/book-placeholder.png" id="imagen"> -->
-            </div>
-            <div class="profile-content">
-                <div class="profile-titles">
-                    <p>Correo:</p>
-                    <p>Identificación:</p>
-                    <p>Primer apellido:</p>
-                    <p>Segundo apellido:</p>
-                    <!-- <p>Empresa</p> -->
-                </div>
-                <div class="profile-info">
-                    <p id="txt-correo"></p>
-                    <p id="txt-id"></p>
-                    <p id="txt-primer-apellido"></p>
-                    <p id="txt-segundo-apellido"></p>
-                    <!-- <p id="empresa"></p> -->
+        <form id="form" action="#">
+
+            <div class="centrar-input">
+                <div>
+                    <label for="#">Género</label>
+                    <input id="txt-genero" class="effect-21" type="text" placeholder="Ingresar el género"
+                        aria-label="Ingresar el género">
                 </div>
             </div>
-        </div>
+
+            <button id="btn-enviar" type="button">Registrar</button>
+
+        </form>
 
     </main>
 
@@ -222,18 +211,23 @@
         <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
             <span>FÉNIX</span></a>
     </footer>
+    <footer id="footer-admin">
+        <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+            <span>FÉNIX</span></a>
+    </footer>
 
     <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-usuario.js"></script>
-    <script src="../js/servicio-libreria.js"></script>
-    <script src="../js/controlador-perfil-administrador.js"></script>
-    <!-- <script src="../js/controlador-perfil-libreria.js"></script> -->
+    <script src="../js/servicio-genero.js"></script>
+    <script src="../js/controlador-registrar-genero.js"></script>
+    <script src="../js/controlador-al-editar-genero.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
-    <script src="../js/controlador-avatar.js"></script>
     <script src="../js/controlador-inicio-al.js"></script>
+    <script src="../js/controlador-avatar.js"></script>
+
 </body>
 
 </html>
