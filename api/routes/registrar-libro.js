@@ -171,4 +171,81 @@ router.get('/buscar-libro-autor/:autor', function (req, res) {
     })
 });
 
+router.post('/actualizar-cantidad-libros', function(req, res){
+    
+    Registro_libro.findByIdAndUpdate(req.body.id, {
+            $set: {
+                'cantidad': req.body.cantidad
+            }
+            
+        },
+        function(error){
+            if (error) {
+                return res.json({
+                    success: false,
+                    msj: 'No se actualizar la cantidad de libros',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'El libro se actualizo con exito'
+                });
+            }
+        }
+    )
+
+
+});
+
+router.post('/habilitar-oferta', function(req, res){
+    
+    Registro_libro.findOneAndUpdate({ _id: req.body._id }, {
+            $set: {
+                'ofertas': req.body.ofertas
+            }
+            
+        },
+        function(error){
+            if (error) {
+                return res.json({
+                    success: false,
+                    msj: 'No se pudo habilitar la oferta',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La oferta se habilitó con éxito'
+                });
+            }
+        }
+    )
+});
+
+router.post('/deshabilitar-oferta', function(req, res){
+    
+    Registro_libro.findOneAndUpdate({ _id: req.body._id }, {
+            $set: {
+                'ofertas': req.body.ofertas
+            }
+            
+        },
+        function(error){
+            if (error) {
+                return res.json({
+                    success: false,
+                    msj: 'No se pudo deshabilitar la oferta',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La oferta se deshabilitó con éxito'
+                });
+            }
+        }
+    )
+});
+
 module.exports = router;

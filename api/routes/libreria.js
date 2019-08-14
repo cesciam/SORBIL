@@ -1068,12 +1068,49 @@ router.get('/buscar-libros-libreria/:correo', function (req, res) {
     })
 });
 
-// router.post('/actualizar-libros-libreria', function(req, res){
-//     libreria.findOneAndUpdate({correo: req.body.correo}, {
-//         $set: {
-//             libros
-//         }
-// });
+router.post('/actualizar-libros-libreria', function(req, res){
+    
+    libreria.findOneAndUpdate({ correo: req.body.correo }, {
+            $set: {
+                'libros': req.body.libros
+            }
+            
+        },
+        function(error){
+            if (error) {
+                return res.json({
+                    success: false,
+                    msj: 'No se pudo agregar la sucursal',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La sucursal se agregó con éxito'
+                });
+            }
+        }
+    )
+
+});
+
+router.get('/listar-sucursales/:correo', function (req, res) {
+    libreria.find({ correo: req.body.correo }, function (err, libreriaDB) {
+
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontró ninguna sucursal con ese id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                libreria: libreriaDB
+            });
+        }
+    })
+});
 
 
 

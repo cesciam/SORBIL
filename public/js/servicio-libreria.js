@@ -86,7 +86,7 @@ let obtenerSucursales= async(correo) => {
             responseType: 'json'
         });
 
-        return response.data.libreria.sucursales;
+        return response.data.libreria[0].sucursales;
     } catch (error) {
         console.log(error);
     }
@@ -109,3 +109,14 @@ let obtenerDatosCorreo = async(correo) => {
 
 
 
+let actualizarLibrosLibreria = (pArrayLibros, pcorreo)=> {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/actualizar-libros-libreria',
+        responseType: 'json',
+        data: {
+            libros: pArrayLibros,
+            correo: pcorreo
+        }
+    });
+}
