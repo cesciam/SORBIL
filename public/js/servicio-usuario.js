@@ -172,3 +172,4 @@ let obtenerTarjetas = async(_id) => {
         console.log(error);
     }
 };
+
