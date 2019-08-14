@@ -736,14 +736,25 @@ Inicio de estilos del header de las cartas
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    background-color: var(--color-white);
-    box-shadow: var(--shadow-dark-1);
-    padding: 5rem 0;
+    /* background-color: var(--color-white);
+    box-shadow: var(--shadow-dark-1); */
+    padding: 2rem 0;
 }
 
 .profile-saludo {
     margin: 0 auto;
     text-align: center;
+}
+
+.profile-saludo h2 {
+    margin-bottom: 1rem;
+}
+
+.profile-saludo h2 span {
+    color: var(--color-white);
+    background-color: var(--color-secondary);
+    padding: 0 1rem;
+    border-radius: var(--box-radius);
 }
 
 .profile-solicitudes {
@@ -756,11 +767,12 @@ Inicio de estilos del header de las cartas
 }
 
 .user-profile-container img {
-    width: 25rem;
-    height: 25rem;
-    border-radius: 50%;
+    width: 20rem;
+    height: 20rem;
+    border-radius: var(--box-radius);
     margin-bottom: 1rem;
     box-shadow: var(--shadow-dark-2);
+    margin-right: 2rem;
 }
 
 .user-profile-container .profile-content {
@@ -773,6 +785,25 @@ Inicio de estilos del header de las cartas
 .user-profile-container .profile-titles p {
     font-weight: var(--font-semibold);
     color: var(--color-secondary);
+}
+
+#main-admin p {
+    margin-bottom: 1rem;
+}
+
+.list-icon {
+    float: right;
+}
+
+.list-icon i {
+    color: var(--color-alternative-blue);
+    cursor: pointer;
+    transition: .2s;
+    font-size: 2.5rem;
+}
+
+.list-icon i:hover {
+    opacity: .8;
 }
 
 /*
