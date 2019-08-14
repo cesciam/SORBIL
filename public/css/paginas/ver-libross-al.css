@@ -34,14 +34,14 @@ Inicio de estilos de ver
 
 .section-ver .ver-cards .ver-cards-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     justify-items: center;
     align-items: center;
     width: 100%;
     padding-left: 10rem;
     padding-bottom: 10rem;
     padding-right: 10rem;
-    grid-gap: 3rem;
+    grid-gap: 5rem;
 }
 
 .section-ver .ver-cards .ver-cards-container .card {
@@ -71,7 +71,7 @@ Inicio de estilos de ver
     transition: all 0.3s;
     border-radius: var(--box-radius);
     background-color: var(--color-alternative-bg);
-    width: 17rem;
+    width: 20rem;
 }
 
 .section-ver .ver-cards .ver-cards-container header {
@@ -80,7 +80,7 @@ Inicio de estilos de ver
     margin-bottom: 0;
     color: var(--color-white);
     box-shadow: none;
-    height: 5rem;
+    /* height: .1rem; */
 }
 
 .section-ver .ver-cards .ver-cards-container h2, img {
@@ -97,7 +97,7 @@ Inicio de estilos de ver
 }
 
 .section-ver .ver-cards .ver-cards-container h2 {
-    font-size: 1.45rem;
+    font-size: 1.2rem;
     color: var(--color-secondary);
 }
 
@@ -106,36 +106,48 @@ Inicio de estilos de ver
 }
 
 .section-ver .ver-cards .ver-cards-container a {
-    font-size: 1.2rem;
+    /* font-size: 1rem;
     color: var(--color-black);
     background-color: none;
-    margin-bottom: 2rem;
     cursor: pointer;
     width: 100%;
     display: inline-block;
     text-align: center;
+    transition: .2s; */
+    position: absolute;
+    opacity: 0;
+    top: 0rem;
+    height: 23rem;
+    width: 80%;
+    cursor: pointer;
     transition: .2s;
 }
 
 .section-ver .ver-cards .ver-cards-container a:hover {
-    color: var(--color-primary);
+    opacity: .1;
+    background-color: var(--color-white);
+    color: transparent;
 }
 
 .section-ver .ver-cards .ver-cards-container img {
-    width: 100%;
-    height: 23.5rem;
+    width: 80%;
+    height: 22rem;
     border-radius: 0;
     box-shadow: var(--shadow-dark-2);
     margin-bottom: 2rem;
 }
 
 .section-ver .ver-cards .ver-cards-container button {
-    background-color: var(--color-alternative-blue);
     display: inline-block;
     margin: 0 auto;
-    padding: 1.3rem 5rem;
+    padding: 2rem 3rem;
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    background-color: var(--color-alternative-blue) !important;
+    /* position: relative;
+    opacity: 0;
+    top: -50rem;
+    height: 29rem; */
 }
 
 .section-ver .ver-cards .ver-cards-container .contenedor_imagen {
@@ -146,7 +158,6 @@ Inicio de estilos de ver
 
 .section-ver .ver-cards .ver-cards-container .contenedor_atributo {
     display: grid;
-    height: 5rem;
     grid-template-columns: repeat(2, 1fr);
     font-weight: var(--font-semibold);
     justify-items: center;
@@ -154,10 +165,11 @@ Inicio de estilos de ver
 }
 
 .section-ver .ver-cards .ver-cards-container .contenedor_atributo p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
     color: var(--color-secondary);
     padding: 1rem 0;
+    height: 3rem;
 }
 
 .section-ver .ver-cards .ver-cards-container .contenedor_precio p {
@@ -168,9 +180,23 @@ Inicio de estilos de ver
     margin-top: 2rem;
 }
 
+.section-ver .ver-cards .ver-cards-container .contenedor_cantidad {
+    display: grid;
+    /* padding-top: 2rem; */
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.section-ver .ver-cards .ver-cards-container .contenedor_cantidad p:last-of-type {
+    color: var(--color-alternative-green);
+}
+
 @media (max-width: 100rem) {
     .section-ver .ver-cards .ver-cards-container {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -184,14 +210,6 @@ Inicio de estilos de ver
     .section-ver .ver-title h1 {
         margin-bottom: 3rem;
     }
-}
-
-.section-ver .ver-cards .ver-cards-container .contenedor_cantidad {
-    display: grid;
-    padding-top: 2rem;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    height: 4rem;
 }
 
 /*
