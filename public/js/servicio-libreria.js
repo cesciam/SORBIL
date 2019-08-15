@@ -25,7 +25,7 @@ let registrarLibreria = (pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescr
 };
 
 
-let registrarAdminLibreria = (pavatar, pcorreo, pcontrasena ,pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha, pedad, ptipo_usuario) => {
+let registrarAdminLibreria = (pavatar, pcorreo, pcontrasena, pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha, pedad, ptipo_usuario) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-usuario',
@@ -76,8 +76,8 @@ let obtenerLibreriaid = async (_id) => {
     }
 };
 
-let obtenerSucursales= async(correo) => {
-   
+let obtenerSucursales = async (correo) => {
+
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -92,7 +92,7 @@ let obtenerSucursales= async(correo) => {
     }
 };
 
-let obtenerDatosCorreo = async(correo) => {
+let obtenerDatosCorreo = async (correo) => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -100,7 +100,7 @@ let obtenerDatosCorreo = async(correo) => {
             url: `http://localhost:4000/api/buscar-libros-libreria/${correo}`,
             responseType: 'json'
         });
-        
+
         return response.data.libreria[0].libros;
     } catch (error) {
         console.log(error);
@@ -108,19 +108,8 @@ let obtenerDatosCorreo = async(correo) => {
 };
 
 
-// let actualizarLibrosLibreria = (pcorreo, pcantidad)=> {
-//     axios({
-//         method: 'post',
-//         url: 'http://localhost:4000/api/actualizar-libros-libreria',
-//         responseType: 'json',
-//         data: {
-//             correo: pcorreo,
-//             cantidad: pcantidad
-//         }
-//     });
-// }
 
-let actualizarLibrosLibreria = (pArrayLibros, pcorreo)=> {
+let actualizarLibrosLibreria = (pArrayLibros, pcorreo) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/actualizar-libros-libreria',

@@ -13,6 +13,19 @@ let mostrar_tabla = async () => {
     for (let i = 0; i < lista_generos.length; i++) {
         let fila = tbody.insertRow();
         fila.insertCell().innerHTML = lista_generos[i]['genero'];
+
+
+        let celdaIcono = fila.insertCell();
+        let aIcono = document.createElement('a');
+        aIcono.className = 'list-icon';
+        let icon = document.createElement('i');
+        icon.className = 'bx bxs-edit';
+        aIcono.appendChild(icon);
+
+        celdaIcono.appendChild(aIcono);
+        icon.addEventListener('click', function () {
+            window.location.href = `al-editar-genero.html?_id=${lista_generos[i]['_id']}`;
+        });
     }
 };
 

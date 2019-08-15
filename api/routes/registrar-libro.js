@@ -171,6 +171,33 @@ router.get('/buscar-libro-autor/:autor', function (req, res) {
     })
 });
 
+router.post('/actualizar-cantidad-libros', function(req, res){
+    
+    Registro_libro.findByIdAndUpdate(req.body.id, {
+            $set: {
+                'cantidad': req.body.cantidad
+            }
+            
+        },
+        function(error){
+            if (error) {
+                return res.json({
+                    success: false,
+                    msj: 'No se actualizar la cantidad de libros',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'El libro se actualizo con exito'
+                });
+            }
+        }
+    )
+
+
+});
+
 router.post('/habilitar-oferta', function(req, res){
     
     Registro_libro.findOneAndUpdate({ _id: req.body._id }, {

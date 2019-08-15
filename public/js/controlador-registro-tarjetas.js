@@ -128,6 +128,20 @@ let mostrar_tabla = async() => {
         fila.insertCell().innerHTML = lista_tarjetas[i]['num_tarjeta'];
         fila.insertCell().innerHTML = lista_tarjetas[i]['cvv'];
 
+        let celdaIcono = fila.insertCell();
+        let aIcono = document.createElement('a');
+        aIcono.className = 'header-icon';
+        let icon = document.createElement('i');
+        icon.className  = 'bx bxs-edit-alt';
+        aIcono.appendChild(icon);
+
+        celdaIcono.appendChild(aIcono);
+        icon.addEventListener('click', function(){
+            window.location.href = `p-tarjetas-modificar.html?_i=${i}`;
+        });
+
+
+
     }
 };
 

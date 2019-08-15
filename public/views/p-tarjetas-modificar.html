@@ -11,9 +11,8 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
-    <link rel="stylesheet" href="../css/layout/perfiles.css">
-    <link rel="stylesheet" href="../css/paginas/ver-libros.css">
     <link rel="stylesheet" href="../css/layout/perfil-usuario.css">
+    <link rel="stylesheet" href="../css/paginas/registrar-tarjeta.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
     <title>Sorbil -- Inicio</title>
 </head>
@@ -37,10 +36,10 @@
                         <span class="user-notification">1</span>
                     </a>
                 </div>
-                <div class="header-user-container">
+                <!-- <div class="header-user-container">
                     <a class="header-icon" href="#" id="u-biblioteca"><i class='bx bx-book-bookmark'></i>
                     </a>
-                </div>
+                </div> -->
                 <div class="header-user-container user-menu-wrap"><b class="mini-photo-wrapper" href="#"><img
                             class="mini-photo" src="" width="36" height="36" id="avatar-img"> <i
                             class='bx bx-chevron-down'></i></b>
@@ -182,72 +181,92 @@
                                 class='bx bxs-lock sidenav-i'></i>Seguridad</a>
                     </li>
 
+
                 </ul>
             </div>
 
         </aside>
 
         <!--Content-->
-        <!--Main-->
-        <main id="main-user">
-            <section class="section-ver">
-                <div class="ver-title">
-                    <h1>Buscá entre los mejores libros</h1>
+        <main id="main-profile">
+            <div class="main-profile-titulo">
+                <h1>Modificá las tarjetas de pago</h1>
+                <p>Modificá la información que deseas</p>
+            </div>
+
+            <form id="form" class="credit-card-form" action="#">
+                <div>
+                    <label for="#">Nombre del titular</label>
+                    <input id="input_nombre_modi" type="text" placeholder="Ingresar nombre del titular"
+                        aria-label="Ingresar nombre del titular">
                 </div>
-                <div class="ver-cards">
-                    <input id="txt-filtro" type="text" placeholder="Buscar por título, categoría, género, autor"
-                        aria-label="Buscar por título, categoría, género, autor">
-        
-                    <div id="lista_libros" class="ver-cards-container">
-        
+                <div>
+                    <label for="#">Número de tarjeta</label>
+                    <div id="div-numTarjeta">
+                        <input class="input_numero_tarjeta" type="text" placeholder="Ingresar el número de tarjeta"
+                            aria-label="Ingresar el numero de tarjeta" id="input_num_tarjeta_modi">
+                        <i id="tipo_tarjeta"></i>
+                    </div>
+
+
+                </div>
+
+                <div id="form-container">
+                    <div>
+                        <label for="#">Fecha de vencimiento</label>
+                        <input type="text" placeholder="MM/AA" aria-label="MM/AA" id="input_fecha_ven_modi"
+                            class="input_fecha">
+                    </div>
+                    <div>
+                        <label for="#">CVV</label>
+                        <input id="input_cvv_modi" type="text" placeholder="CVV" aria-label="CVV" class="cvv">
                     </div>
                 </div>
-        
-            </section>
-        
+                <button id="btn_enviar_modi" type="button">Actualizar</button>
+            </form>
+
+
         </main>
 
-    </main>
+        <footer id="footer-user">
 
-    <footer id="footer-user">
+            <div id="footer-links">
+                <a href="../views/u-inicio.html"><img src="../imgs/logo-light.png" alt="Logo de Sorbil"></a>
 
-        <div id="footer-links">
-            <a href="../views/u-inicio.html"><img src="../imgs/logo-light.png" alt="Logo de Sorbil"></a>
+                <nav>
+                    <a href="../views/u-inicio.html"><i class='bx bx-home-circle'></i>Inicio</a>
+                    <a href="#" id="u-intercambios"><i class='bx bxs-book'></i>Intercambios</a>
+                    <a href="#" id="u-quienes-somos"><i class='bx bx-user-voice'></i>Quiénes somos</a>
+                </nav>
+            </div>
 
-            <nav>
-                <a href="../views/u-inicio.html"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="#" id="u-intercambios"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="#" id="u-quienes-somos"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-            </nav>
-        </div>
+            <div id="footer-copyright">
+                <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+                    <span>FÉNIX</span></a>
+            </div>
 
-        <div id="footer-copyright">
-            <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
-                <span>FÉNIX</span></a>
-        </div>
+        </footer>
 
-    </footer>
-
-    <!--Scripts-->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/componentes/controlador-sidemenu.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../vendors/sticky-js-master/dist/sticky.min.js"></script>
-    <script src="../js/componentes/controlador-sticky.js"></script>
-    <!-- JS para listar en el dropdown-->
-    <script src="../js/servicio-club.js"></script>
-    <script src="../js/servicio-libreria.js"></script>
-    <script src="../js/servicio-libros.js"></script>
-    <script src="../js/servicio-autor.js"></script>
-    <script src="../js/componentes/controlador-lista-enlaces-privados.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
-    <!-- JS para los perfiles-->
-    <script src="../js/controlador-ver-libros-privado.js"></script>
-    <!-- JS para los permisos del usuario-->
-    <script src="../js/cerrar-sesion.js"></script>
-    <script src="../js/controlador-avatar.js"></script>
-    <script src="../js/controlador-inicio-u.js"></script>
+        <!--Scripts-->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="../js/componentes/controlador-sidemenu.js"></script>
+        <script src="../js/componentes/controlador-dropdowns-main.js"></script>
+        <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+        <script src="../vendors/sticky-js-master/dist/sticky.min.js"></script>
+        <script src="../js/componentes/controlador-sticky.js"></script>
+        <!-- JS para listar en el dropdown-->
+        <script src="../js/servicio-usuario.js"></script>
+        <script src="../js/componentes/controlador-lista-enlaces-privados.js"></script>
+        <!-- JS para los perfiles-->
+        <script src="https://kit.fontawesome.com/a1b50ac28c.js"></script>
+        <script src="../vendors/cleave.js-master/dist/cleave.min.js"></script>
+        <script src="../js/servicio-usuario.js"></script>
+        <script src="../js/controlador-modificar-tarjetas.js"></script>
+        <!-- JS para los permisos del usuario-->
+        <script src="../js/cerrar-sesion.js"></script>
+        <script src="../js/controlador-avatar.js"></script>
+        <script src="../js/controlador-inicio-u.js"></script>
 
 </body>
 

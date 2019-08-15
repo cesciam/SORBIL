@@ -122,6 +122,19 @@ let hablitarOferta = (pid, plista_ofertas)=> {
     });
 }
 
+let actualizarCantidadLibros = (pid, pcantidad) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/actualizar-cantidad-libros',
+        responseType: 'json',
+        data: {
+            id: pid,
+            cantidad: pcantidad
+
+        }
+    });
+}
+
 let deshablitarOferta = (pid, plista_ofertas)=> {
     axios({
         method: 'post',

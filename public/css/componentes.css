@@ -736,14 +736,25 @@ Inicio de estilos del header de las cartas
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    background-color: var(--color-white);
-    box-shadow: var(--shadow-dark-1);
-    padding: 5rem 0;
+    /* background-color: var(--color-white);
+    box-shadow: var(--shadow-dark-1); */
+    padding: 2rem 0;
 }
 
 .profile-saludo {
     margin: 0 auto;
     text-align: center;
+}
+
+.profile-saludo h2 {
+    margin-bottom: 1rem;
+}
+
+.profile-saludo h2 span {
+    color: var(--color-white);
+    background-color: var(--color-secondary);
+    padding: 0 1rem;
+    border-radius: var(--box-radius);
 }
 
 .profile-solicitudes {
@@ -756,11 +767,12 @@ Inicio de estilos del header de las cartas
 }
 
 .user-profile-container img {
-    width: 25rem;
-    height: 25rem;
-    border-radius: 50%;
+    width: 20rem;
+    height: 20rem;
+    border-radius: var(--box-radius);
     margin-bottom: 1rem;
     box-shadow: var(--shadow-dark-2);
+    margin-right: 2rem;
 }
 
 .user-profile-container .profile-content {
@@ -775,6 +787,25 @@ Inicio de estilos del header de las cartas
     color: var(--color-secondary);
 }
 
+#main-admin p {
+    margin-bottom: 1rem;
+}
+
+.list-icon {
+    float: right;
+}
+
+.list-icon i {
+    color: var(--color-alternative-blue);
+    cursor: pointer;
+    transition: .2s;
+    font-size: 2.5rem;
+}
+
+.list-icon i:hover {
+    opacity: .8;
+}
+
 /*
 Fin de estilos del header de las cartas
 */
@@ -783,15 +814,45 @@ Fin de estilos del header de las cartas
 Inicio de estilos de las calificaciones
 */
 
-.ratings {
-    color: var(--color-alternative-grey);
-    cursor: pointer;
+.form-ratings {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    grid-column-gap: .5rem;
 }
 
-.ratings:hover {
-    color: var(--color-primary);
-    cursor: pointer;
+.form-ratings p {
+    text-align: center;
 }
+
+.form-ratings label {
+    font-size: 2.8rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.form-ratings input[type="radio"] {
+    display: none;
+}
+
+.form-ratings label {
+    color: var(--color-alternative-grey);
+}
+
+.form-ratings label:hover, label:hover~label {
+    color: var(--color-alternative-blue);
+}
+
+.form-ratings input[type="radio"]:checked~label {
+    color: var(--color-alternative-blue);
+}
+
+/* .form-ratings button {
+    position: relative;
+    width: 10%;
+    display: none;
+} */
 
 /*
 Fin de estilos de las calificaciones

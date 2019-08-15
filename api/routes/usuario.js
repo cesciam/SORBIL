@@ -217,4 +217,22 @@ router.post('/habilitar-usuario', function (req, res) {
     )
 });
 
+router.post('/modificar-tarjetas', function(req, res) {
+    let body = req.body;
+
+    Contacto.findByIdAndUpdate(body._id, {
+            $set: {
+                tarjetas: body.tarjetas
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar el contacto' });
+            } else {
+                res.json({ success: true, msg: 'El contacto se modificó con éxito' });
+            }
+        }
+    )
+});
+
 module.exports = router;
