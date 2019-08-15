@@ -85,25 +85,50 @@ let filtrar_tabla = async() => {
             fila.insertCell().innerHTML = lista_tarjetas[i]['fecha_ven'];
             fila.insertCell().innerHTML = lista_tarjetas[i]['num_tarjeta'];
             fila.insertCell().innerHTML = lista_tarjetas[i]['cvv'];
-
+    
             let celdaIcono = fila.insertCell();
             let aIcono = document.createElement('a');
-            aIcono.className = 'header-icon';
+            
             let icon = document.createElement('i');
             icon.className  = 'bx bxs-edit-alt';
             aIcono.appendChild(icon);
-
+    
             let celdaIconoActivar = fila.insertCell();
             let aIconoAc = document.createElement('a');
             aIconoAc.className = 'header-icon';
             let iconAc = document.createElement('i');
             iconAc.className  = 'bx bxs-check-square';
             aIconoAc.appendChild(iconAc);
-
-            
-
+    
+            if(lista_tarjetas[i]['estado'] == 'habilitado'){
+                iconAc.id = 'habilitadoIon';
+                icon.addEventListener('click', function(){
+                    window.location.href = `p-tarjetas-modificar.html?_i=${i}`;
+                });
+                aIcono.className = 'header-icon';
+                iconAc.addEventListener('click', function(){
+                    lista_tarjetas[i]['estado'] = 'desabilitado';
+    
+                    cambiarEstadoTarjetas(lista_tarjetas, id_usuario_activo);
+                    window.location.reload();
+                });
+            }else{
+                aIcono.className = 'header-iconDisable';
+                iconAc.addEventListener('click', function(){
+                    lista_tarjetas[i]['estado'] = 'habilitado';
+    
+                    cambiarEstadoTarjetas(lista_tarjetas, id_usuario_activo);
+                    window.location.reload();
+                });
+            }
+    
             celdaIcono.appendChild(aIcono);
             celdaIconoActivar.appendChild(aIconoAc);
+    
+            
+    
+    
+    
         }
     }
 
