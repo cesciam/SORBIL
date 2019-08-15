@@ -33,7 +33,7 @@ let obtenerGeneroid = async (_id) => {
         // fetch data from an url endpoint
         const response = await axios({
             method: 'get',
-            url: `http://localhost:4000/api/buscar-genero-id/${_id}`,
+            url: `http://localhost:4000/api/buscar-genero/${_id}`,
             responseType: 'json'
         });
 
@@ -43,7 +43,7 @@ let obtenerGeneroid = async (_id) => {
     }
 };
 
-let modificar = (pid, pgenero) => {
+let modificarGenero = (pid, pgenero) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-genero',

@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/reset.css">
     <script src="../js/validar-usuario-adminLib.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Registrar géneros</title>
+    <title>Sorbil -- Librería -- Listar géneros</title>
 </head>
 
 <body id="grid-admin">
@@ -52,7 +52,7 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de Género</h1>
+            <h1>Edición de Género</h1>
         </div>
 
         <form id="form" action="#">
@@ -65,9 +65,31 @@
                 </div>
             </div>
 
-            <button id="btn-enviar" type="button">Registrar</button>
+            <button id="listar_adminal_generos" type="button">Editar</button>
 
         </form>
+        <!-- <div class="main-admin-titulo">
+            <h1>Listados de Géneros</h1>
+        </div> -->
+
+        <div id="barra-busqueda">
+            <input type="text" id="txt-filtro" placeholder="Buscar por género" aria-label="Buscar por género">
+
+            <a href="#" class="btn-registrar" aria-label="Registrar" type="button" onclick="history.go(0)">
+                <spans>Actualizar</spans>
+            </a>
+        </div>
+
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                    <th>Género</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
 
     </main>
 
@@ -206,24 +228,21 @@
         </div>
 
     </aside>
+
     <!--Footer-->
     <footer id="footer-admin">
         <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
             <span>FÉNIX</span></a>
     </footer>
-    <footer id="footer-admin">
-        <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
-            <span>FÉNIX</span></a>
-    </footer>
 
     <!--Scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/servicio-genero.js"></script>
-    <script src="../js/controlador-registrar-genero.js"></script>
-    <script src="../js/controlador-al-editar-genero.js"></script>
+    <script src="../js/controlador-al-listar-generos.js"></script>
+    <script src="../js/controlador-al-modificar-genero.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-inicio-al.js"></script>
     <script src="../js/controlador-avatar.js"></script>

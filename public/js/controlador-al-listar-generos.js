@@ -6,7 +6,7 @@ const txt_filtro = document.querySelector('#txt-filtro');
 
 
 let mostrar_tabla = async () => {
-    
+
     lista_generos = await obtenerGeneros();
     tbody.innerHTML = '';
 
@@ -21,11 +21,9 @@ let mostrar_tabla = async () => {
         let icon = document.createElement('i');
         icon.className = 'bx bxs-edit';
         aIcono.appendChild(icon);
+        aIcono.href = `al-modificar-genero.html?_id=${lista_generos[i]['_id']}`;
 
         celdaIcono.appendChild(aIcono);
-        icon.addEventListener('click', function () {
-            window.location.href = `al-editar-genero.html?_id=${lista_generos[i]['_id']}`;
-        });
     }
 };
 
@@ -40,11 +38,19 @@ let filtrar_tabla = async () => {
         if (lista_generos[i]['genero'].toLowerCase().includes(filtro)) {
             let fila = tbody.insertRow();
             fila.insertCell().innerHTML = lista_generos[i]['genero'];
+
+            let celdaIcono = fila.insertCell();
+            let aIcono = document.createElement('a');
+            aIcono.className = 'list-icon';
+            let icon = document.createElement('i');
+            icon.className = 'bx bxs-edit';
+            aIcono.appendChild(icon);
+            aIcono.href = `al-modificar-genero.html?_id=${lista_generos[i]['_id']}`;
+
+            celdaIcono.appendChild(aIcono);
         }
 
     }
-
-
 };
 
 mostrar_tabla();
