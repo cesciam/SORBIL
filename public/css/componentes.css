@@ -902,3 +902,13 @@ Fin de estilos del carousel
         grid-template-columns: 1fr;
     }
 }
+
+#habilitadoIon{
+    color: var(--color-primary);
+}
+
+.header-iconDisable i {
+    font-size: 2.4rem;
+    color: var(--color-primary-light);
+    transition: .2s;
+}

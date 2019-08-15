@@ -139,7 +139,8 @@ router.post('/agregar-tarjeta', function(req, res) {
                     nombre: req.body.nombre,
                     num_tarjeta: req.body.num_tarjeta,
                     fecha_ven: req.body.fecha_ven,
-                    cvv: req.body.cvv   
+                    cvv: req.body.cvv,
+                    estado: 'habilitado'
                 }
             }
         },
@@ -220,9 +221,25 @@ router.post('/habilitar-usuario', function (req, res) {
 router.post('/modificar-tarjetas', function(req, res) {
     let body = req.body;
 
-    Contacto.findByIdAndUpdate(body._id, {
+    Usuario.findByIdAndUpdate(body._id, {
+            $set: body.datos
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar el contacto' });
+            } else {
+                res.json({ success: true, msg: 'El contacto se modificó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/modificar-estado-tarjetas', function(req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndUpdate(body._id, {
             $set: {
-                tarjetas: body.tarjetas
+                'tarjetas': req.body.datos
             }
         },
         function(error) {

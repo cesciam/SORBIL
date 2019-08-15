@@ -173,3 +173,26 @@ let obtenerTarjetas = async(_id) => {
     }
 };
 
+let actualizarTarjetas = (pdatos, pid)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-tarjetas',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            datos: pdatos
+        }
+    });
+}
+
+let cambiarEstadoTarjetas = (pdatos, pid) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-estado-tarjetas',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            datos: pdatos
+        }
+    });
+}
