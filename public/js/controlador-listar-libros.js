@@ -21,11 +21,17 @@ let mostrar_tabla = async () => {
 
         let celdaPerfil = fila.insertCell();
         let aPerfil = document.createElement('a');
-        aPerfil.className = 'header-icon';
         let iPerfil = document.createElement('i');
         iPerfil.className  = 'bx bx-show';
         aPerfil.dataset._id = lista_libros[i]['_id'];
         aPerfil.appendChild(iPerfil);
+
+        let celdaIconoEditar = fila.insertCell();
+        let aIconoEditar = document.createElement('a');
+        let iconeditar = document.createElement('i');
+        iconeditar.className  = 'bx bxs-edit-alt';
+        aIconoEditar.appendChild(iconeditar);
+
 
         let celdaIconoActivar = fila.insertCell();
         let aIconoAc = document.createElement('a');
@@ -39,15 +45,22 @@ let mostrar_tabla = async () => {
             aPerfil.addEventListener('click', function () {
                 window.location.href = `ver-perfil-libro.html?_id=${this.dataset._id}`;
             });
+            aPerfil.className = 'header-icon';
+            aIconoEditar.className = 'header-icon';
             iconAc.addEventListener('click', function(){
                 let estado = 'desabilitado';
                 cambiarEstadoLibros(lista_libros[i]._id, estado);
                 window.location.reload();
             });
 
+            iconeditar.addEventListener('click', function(){
+                window.location.href = `ap-modificar-libro.html?_i=${i}`;
+            });
+
 
         }else{
             aPerfil.className = 'header-iconDisable';
+            aIconoEditar.className = 'header-iconDisable';
             iconAc.addEventListener('click', function(){
                 let estado = 'habilitado';
                 cambiarEstadoLibros(lista_libros[i]._id, estado);
@@ -55,12 +68,7 @@ let mostrar_tabla = async () => {
             });
         }
 
-        
-
-
-        
-        
-
+        celdaIconoEditar.appendChild(aIconoEditar);
         celdaIconoActivar.appendChild(aIconoAc);
         celdaPerfil.appendChild(aPerfil);
 
@@ -81,23 +89,64 @@ let filtrar_tabla = async () => {
             fila.insertCell().innerHTML = lista_libros[i]['titulo'];
             fila.insertCell().innerHTML = lista_libros[i]['autor'];
             fila.insertCell().innerHTML = lista_libros[i]['categoria'];
-            fila.insertCell().innerHTML = lista_libros[i]['genero'];
+            //fila.insertCell().innerHTML = lista_libros[i]['genero'];
             fila.insertCell().innerHTML = lista_libros[i]['isbn'];
             fila.insertCell().innerHTML = lista_libros[i]['tipo'];
-
+    
             let celdaPerfil = fila.insertCell();
-            let iconPerfil = document.createElement('a');
-            iconPerfil.className = 'header-icon';
-            let iconPerfilI = document.createElement('i');
-            iconPerfil.className  = 'bx bx-show';
-            iconPerfil.dataset._id = lista_libros[i]['_id'];
+            let aPerfil = document.createElement('a');
+            let iPerfil = document.createElement('i');
+            iPerfil.className  = 'bx bx-show';
+            aPerfil.dataset._id = lista_libros[i]['_id'];
+            aPerfil.appendChild(iPerfil);
+    
+            let celdaIconoEditar = fila.insertCell();
+            let aIconoEditar = document.createElement('a');
+            let iconeditar = document.createElement('i');
+            iconeditar.className  = 'bx bxs-edit-alt';
+            aIconoEditar.appendChild(iconeditar);
+    
+    
+            let celdaIconoActivar = fila.insertCell();
+            let aIconoAc = document.createElement('a');
+            aIconoAc.className = 'header-icon';
+            let iconAc = document.createElement('i');
+            iconAc.className  = 'bx bxs-check-square';
+            aIconoAc.appendChild(iconAc);
+    
+            if(lista_libros[i].estado == 'habilitado'){
+                iconAc.id = 'habilitadoIon';
+                aPerfil.addEventListener('click', function () {
+                    window.location.href = `ver-perfil-libro.html?_id=${this.dataset._id}`;
+                });
+                aPerfil.className = 'header-icon';
+                aIconoEditar.className = 'header-icon';
+                iconAc.addEventListener('click', function(){
+                    let estado = 'desabilitado';
+                    cambiarEstadoLibros(lista_libros[i]._id, estado);
+                    window.location.reload();
+                });
+    
+                iconeditar.addEventListener('click', function(){
+                    window.location.href = `ap-modificar-libro.html?_i=${i}`;
+                });
+    
+    
+            }else{
+                aPerfil.className = 'header-iconDisable';
+                aIconoEditar.className = 'header-iconDisable';
+                iconAc.addEventListener('click', function(){
+                    let estado = 'habilitado';
+                    cambiarEstadoLibros(lista_libros[i]._id, estado);
+                    window.location.reload();
+                });
+            }
+    
+            celdaIconoEditar.appendChild(aIconoEditar);
+            celdaIconoActivar.appendChild(aIconoAc);
+            celdaPerfil.appendChild(aPerfil);
+    
             
-            iconPerfil.appendChild(iconPerfilI);
-            celdaPerfil.appendChild(iconPerfil);
-
-            iconPerfil.addEventListener('click', function () {
-                window.location.href = `ver-perfil-libro.html?_id=${this.dataset._id}`;
-            });
         }
 
     }
