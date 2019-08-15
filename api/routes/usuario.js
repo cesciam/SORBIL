@@ -218,6 +218,22 @@ router.post('/habilitar-usuario', function (req, res) {
     )
 });
 
+router.post('/modificar-usuario', function(req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndUpdate(body._id, {
+            $set: req.body
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar el usuario' });
+            } else {
+                res.json({ success: true, msg: 'El usuario se modificó con éxito' });
+            }
+        }
+    )
+});
+
 router.post('/modificar-tarjetas', function(req, res) {
     let body = req.body;
 
