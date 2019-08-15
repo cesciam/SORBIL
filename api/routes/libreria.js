@@ -1114,6 +1114,47 @@ router.get('/listar-sucursales/:correo', function (req, res) {
 
 router.post('/modificar-libreria', function (req, res) {
     let body = req.body;
+// Estado de la sucursal
+router.post('/deshabilitar-sucursal', function (req, res) {
+    let body = req.body;
+
+    libreria.findByIdAndUpdate(body._id, {
+        $set: {
+            estadoSucursal: 'Deshabilitado'
+        }
+    },
+        function (error) {
+            if (error) {
+                console.log("error")
+                console.log(error)
+                res.json({ success: false, msg: 'No se pudo deshabilitar la sucursal' });
+            } else {
+                console.log("sirve")
+                res.json({ success: true, msg: 'La sucursal se deshabilitó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/habilitar-sucursal', function (req, res) {
+    let body = req.body;
+
+    libreria.findByIdAndUpdate(body._id, {
+        $set: {
+            estadoSucursal: req.body.estadoSucursal
+        }
+    },
+        function (error) {
+
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo habilitar la sucursal' });
+            } else {
+                res.json({ success: true, msg: 'La sucursal se habilitó con éxito' });
+            }
+        }
+    )
+});
+// Fin Estado de la sucursal
 
     Libreria.findByIdAndUpdate(body._id, {
         $set: req.body

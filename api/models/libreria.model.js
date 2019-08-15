@@ -29,7 +29,8 @@ let libreria_schema = new mongoose.Schema({
         librosSuc: [{
             id: {type: String, required: false, unique: true},
             cantidad: { type: String, required: false, unique: false }
-        }]
+        }],
+        estadoSucursal: {type: String, required: true, unique: false}
     }],
     libros: [{
         idlibro: {type: String, required: false, unique: true},
