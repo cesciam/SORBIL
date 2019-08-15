@@ -244,9 +244,9 @@ router.post('/modificar-estado-tarjetas', function(req, res) {
         },
         function(error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo modificar el contacto' });
+                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
             } else {
-                res.json({ success: true, msg: 'El contacto se modificó con éxito' });
+                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
             }
         }
     )

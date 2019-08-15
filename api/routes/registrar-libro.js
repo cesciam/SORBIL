@@ -35,7 +35,8 @@ router.post('/registrar-libro', function (req, res) {
         portada: body.portada,
         contraportada: body.contraportada,
         sinopsis: body.sinopsis,
-        cantidad: body.cantidad
+        cantidad: body.cantidad,
+        estado: 'habilitado'
     });
 
 
@@ -243,6 +244,24 @@ router.post('/deshabilitar-oferta', function(req, res){
                     success: true,
                     msj: 'La oferta se deshabilitó con éxito'
                 });
+            }
+        }
+    )
+});
+
+router.post('/modificar-estado-libros', function(req, res) {
+    let body = req.body;
+
+    Registro_libro.findByIdAndUpdate(body._id, {
+            $set: {
+                'estado': req.body.estado
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+            } else {
+                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
             }
         }
     )
