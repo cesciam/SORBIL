@@ -16,6 +16,7 @@
     display: grid;
     grid-template-columns: 93% 7%;
     margin: auto 0;
+    height: 6rem;
 }
 
 #div-numTarjeta i {
