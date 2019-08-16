@@ -10,7 +10,7 @@ let usuario_activo_libreria = usuarioActivoLibreria.correo;
 let mostrar_tabla = async () => {
 
     lista_sucursales = await obtenerSucursales(usuario_activo_libreria);
-    
+
     tbody.innerHTML = '';
 
     for (let i = 0; i < lista_sucursales.length; i++) {
@@ -20,6 +20,13 @@ let mostrar_tabla = async () => {
         fila.insertCell().innerHTML = lista_sucursales[i]['provincia'];
         fila.insertCell().innerHTML = lista_sucursales[i]['canton'];
         fila.insertCell().innerHTML = lista_sucursales[i]['distrito'];
+
+        let celdaModificar = fila.insertCell();
+        let btn_modificar = document.createElement('a');
+        btn_modificar.innerText = 'Modificar';
+        btn_modificar.href = `modificar-sucursal-al.html?_id=${i}`;
+        celdaModificar.appendChild(btn_modificar);
+ 
     }
 };
 
@@ -41,7 +48,14 @@ let filtrar_tabla = async () => {
             fila.insertCell().innerHTML = lista_sucursales[i]['provincia'];
             fila.insertCell().innerHTML = lista_sucursales[i]['canton'];
             fila.insertCell().innerHTML = lista_sucursales[i]['distrito'];
-        }
+
+            let celdaModificar = fila.insertCell();
+            let btn_modificar = document.createElement('a');
+            btn_modificar.innerText = 'Modificar';
+            btn_modificar.href = `modificar-sucursal-al.html?_id=${i}`;
+            celdaModificar.appendChild(btn_modificar);
+
+         }
     }
 };
 

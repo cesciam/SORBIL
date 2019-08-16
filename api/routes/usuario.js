@@ -140,7 +140,8 @@ router.post('/agregar-tarjeta', function(req, res) {
                     nombre: req.body.nombre,
                     num_tarjeta: req.body.num_tarjeta,
                     fecha_ven: req.body.fecha_ven,
-                    cvv: req.body.cvv   
+                    cvv: req.body.cvv,
+                    estado: 'habilitado'
                 }
             }
         },
@@ -177,4 +178,95 @@ router.get('/buscar-tarjetas/:_id', function (req, res) {
         }
     })
 });
+
+router.post('/deshabilitar-usuario', function (req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: 'Deshabilitado'
+        }
+    },
+        function (error) {
+            if (error) {
+                console.log("error")
+                console.log(error)
+                res.json({ success: false, msg: 'No se pudo deshabilitar el usuario' });
+            } else {
+                console.log("sirve")
+                res.json({ success: true, msg: 'El usuario se deshabilitó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/habilitar-usuario', function (req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: req.body.estado
+        }
+    },
+        function (error) {
+
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo habilitar el usuario' });
+            } else {
+                res.json({ success: true, msg: 'El usuario se habilitó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/modificar-usuario', function(req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndUpdate(body._id, {
+            $set: req.body
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar el usuario' });
+            } else {
+                res.json({ success: true, msg: 'El usuario se modificó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/modificar-tarjetas', function(req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndUpdate(body._id, {
+            $set: body.datos
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar el contacto' });
+            } else {
+                res.json({ success: true, msg: 'El contacto se modificó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/modificar-estado-tarjetas', function(req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndUpdate(body._id, {
+            $set: {
+                'tarjetas': req.body.datos
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+            } else {
+                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
+            }
+        }
+    )
+});
+
 module.exports = router;

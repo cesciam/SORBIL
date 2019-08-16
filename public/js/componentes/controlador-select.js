@@ -41,7 +41,7 @@
 // valoresCanton();
 // valoresDistrito();
 
-let ubicaciones = {
+/*let ubicaciones = {
     "San José": {
         "Central": ["Carmen", "Catedral", "Hatillo", "Hospital", "La Uruca", "Mata Redonda", "Merced", "Pavas", "San Francisco de Dos Ríos", "San Sebastián", "Zapote"],
         "Acosta": ["Cangrejal", "Guaitil", "Palmichal", "Sabanillas", "San Ignacio"],
@@ -133,7 +133,9 @@ let ubicaciones = {
 
     }
 
-}
+}*/
+
+
 
 let provincia = document.querySelector("#txt-provincia"),
     canton = document.querySelector("#txt-canton"),
@@ -160,6 +162,7 @@ canton.onchange = function () {
         distrito.options[distrito.options.length] = new Option(opt_distritos[i], opt_distritos[i]);
     }
 }
+
 
 /*cedulas.onchange();
 cedidentidad.onchange = function () {
@@ -190,6 +193,26 @@ carnerefugiado.onchange = function () {
         cedulas.options[cedulas.options.length] = new Option(opt_cedulas[i], opt_cedulas[i]);
     }
 }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

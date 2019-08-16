@@ -42,7 +42,8 @@ router.post('/registrar-club', function (req, res) {
         provincia: body.provincia,
         canton: body.canton,
         distrito: body.distrito,
-        direccion_exacta: body.direccion_exacta
+        direccion_exacta: body.direccion_exacta,
+        estado: 'habilitado'
     });
 
 
@@ -1012,6 +1013,58 @@ router.post('/agregar-usuario-club', function(req, res) {
                     success: true,
                     msj: 'El usuario se agregó con éxito'
                 });
+            }
+        }
+    )
+});
+
+router.post('/deshabilitar-club', function (req, res) {
+    let body = req.body;
+
+    Club.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: 'deshabilitado'
+        }
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo deshabilitar el club' });
+            } else {
+                res.json({ success: true, msg: 'El club se deshabilitó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/habilitar-club', function (req, res) {
+    let body = req.body;
+
+    Club.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: 'habilitado'
+        }
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo habilitar el club' });
+            } else {
+                res.json({ success: true, msg: 'El club se habilitó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/modificar-club', function (req, res) {
+    let body = req.body;
+
+    Club.findByIdAndUpdate(body._id, {
+        $set: req.body
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la información' });
+            } else {
+                res.json({ success: true, msg: 'La información se modificó con éxito' });
             }
         }
     )

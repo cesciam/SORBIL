@@ -35,7 +35,8 @@ router.post('/registrar-libro', function (req, res) {
         portada: body.portada,
         contraportada: body.contraportada,
         sinopsis: body.sinopsis,
-        cantidad: body.cantidad
+        cantidad: body.cantidad,
+        estado: 'habilitado'
     });
 
 
@@ -169,6 +170,116 @@ router.get('/buscar-libro-autor/:autor', function (req, res) {
             });
         }
     })
+});
+
+router.post('/actualizar-cantidad-libros', function(req, res){
+    
+    Registro_libro.findByIdAndUpdate(req.body.id, {
+            $set: {
+                'cantidad': req.body.cantidad
+            }
+            
+        },
+        function(error){
+            if (error) {
+                return res.json({
+                    success: false,
+                    msj: 'No se actualizar la cantidad de libros',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'El libro se actualizo con exito'
+                });
+            }
+        }
+    )
+
+
+});
+
+router.post('/habilitar-oferta', function(req, res){
+    
+    Registro_libro.findOneAndUpdate({ _id: req.body._id }, {
+            $set: {
+                'estadoOferta': req.body.estadoOferta
+            }
+            
+        },
+        function(error){
+            if (error) {
+                return res.json({
+                    success: false,
+                    msj: 'No se pudo habilitar la oferta',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La oferta se habilitó con éxito'
+                });
+            }
+        }
+    )
+});
+
+router.post('/deshabilitar-oferta', function(req, res){
+    
+    Registro_libro.findOneAndUpdate({ _id: req.body._id }, {
+            $set: {
+                'estadoOferta': req.body.estadoOfertas            }
+            
+        },
+        function(error){
+            if (error) {
+                return res.json({
+                    success: false,
+                    msj: 'No se pudo deshabilitar la oferta',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La oferta se deshabilitó con éxito'
+                });
+            }
+        }
+    )
+});
+
+router.post('/modificar-estado-libros', function(req, res) {
+    let body = req.body;
+
+    Registro_libro.findByIdAndUpdate(body._id, {
+            $set: {
+                'estado': req.body.estado
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+            } else {
+                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/modificar-libros', function(req, res) {
+    let body = req.body;
+
+    Registro_libro.findByIdAndUpdate(body._id, {
+            $set: req.body.libro
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar el libro' });
+            } else {
+                res.json({ success: true, msg: 'EL libro se modificó con éxito' });
+            }
+        }
+    )
 });
 
 module.exports = router;
