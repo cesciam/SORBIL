@@ -45,17 +45,17 @@ let mostrar_tabla = async () => {
             // Botón estado oferta
             let celda_estado = fila.insertCell();
             let enlace_habilitado = document.createElement('button');
-            if (lista_ofertas[i]["estado"] == "Habilitado") {
+            if (lista_ofertas[j]["estadoOferta"] == "Habilitado") {
                 enlace_habilitado.innerText = "Habilitar";
             } else {
                 enlace_habilitado.innerText = "Deshabilitar";
             }
-            enlace_habilitado.href = '#';
+            enlace_habilitado.href = 'ap-listar-ofertas.html';
             enlace_habilitado.addEventListener('click', function () {
-                if (lista_ofertas[i]["estadoOferta"] == "Habilitado") {
-                    habilitar(lista_ofertas[i]['_id'], "Desabilitado");
+                if (lista_ofertas[j]["estadoOferta"] == "Habilitado") {
+                    habilitar(lista_ofertas[j]['_id'], "Desabilitado");
                 } else {
-                    habilitar(lista_ofertas[i]['_id'], "Habilitado");
+                    habilitar(lista_ofertas[j]['_id'], "Habilitado");
                 }
                 mostrar_tabla();
             });
@@ -104,17 +104,17 @@ let filtrar_tabla = async () => {
                 // Botón estado oferta
                 let celda_estado = fila.insertCell();
                 let enlace_habilitado = document.createElement('button');
-                if (lista_ofertas[i]["estado"] == "Habilitado") {
+                if (lista_ofertas[j]["estadoOferta"] == "Habilitado") {
                     enlace_habilitado.innerText = "Habilitar";
                 } else {
                     enlace_habilitado.innerText = "Deshabilitar";
                 }
-                enlace_habilitado.href = '#';
+                enlace_habilitado.href = 'ap-listar-ofertas.html';
                 enlace_habilitado.addEventListener('click', function () {
-                    if (lista_ofertas[i]["estado"] == "Habilitado") {
-                        deshabilitar(lista_ofertas[i]['_id'], lista_ofertas);
+                    if (lista_ofertas[j]["estadoOferta"] == "Habilitado") {
+                        habilitar(lista_ofertas[j]['_id'], "Desabilitado");
                     } else {
-                        habilitar(lista_ofertas[i]['_id'], lista_ofertas);
+                        habilitar(lista_ofertas[j]['_id'], "Habilitado");
                     }
                     mostrar_tabla();
                 });
@@ -133,7 +133,7 @@ let habilitar = (pid, plista_ofertas) => {
         }
     }
 
-    hablitarOferta(pid, plista_ofertas);
+    habilitarOferta(pid, plista_ofertas);
 }
 
 let deshabilitar = (pid, plista_ofertas) => {
@@ -144,7 +144,7 @@ let deshabilitar = (pid, plista_ofertas) => {
         }
     }
 
-    deshablitarOferta(pid, plista_ofertas);
+    deshabilitarOferta(pid, plista_ofertas);
 }
 
 mostrar_tabla();

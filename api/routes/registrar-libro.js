@@ -203,7 +203,7 @@ router.post('/habilitar-oferta', function(req, res){
     
     Registro_libro.findOneAndUpdate({ _id: req.body._id }, {
             $set: {
-                'ofertas': req.body.ofertas
+                'estadoOferta': req.body.estadoOferta
             }
             
         },
@@ -228,8 +228,7 @@ router.post('/deshabilitar-oferta', function(req, res){
     
     Registro_libro.findOneAndUpdate({ _id: req.body._id }, {
             $set: {
-                'ofertas': req.body.ofertas
-            }
+                'estadoOferta': req.body.estadoOfertas            }
             
         },
         function(error){
