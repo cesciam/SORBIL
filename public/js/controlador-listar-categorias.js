@@ -3,6 +3,9 @@
 const tbody = document.querySelector('#tabla-filtrado tbody');
 let lista_categoria = [];
 const txt_filtro = document.querySelector('#txt-filtro');
+let usuarioActivolis = JSON.parse(sessionStorage.getItem('activo'));
+let tipoUserlis = usuarioActivo.tipo_usuario;
+
 
 
 let mostrar_tabla = async () => {
@@ -37,7 +40,13 @@ let mostrar_tabla = async () => {
                 window.location.reload();
             });
             icon.addEventListener('click', function(){
-                window.location.href = `al-modificar-categoria.html?_i=${i}`;
+                switch(tipoUserlis){
+                    case 'al': {window.location.href = `al-modificar-categoria.html?_i=${i}`;
+                break;}
+                    case 'ap' :{ window.location.href = `ap-modificar-categoria.html?_i=${i}`;
+                    break;}
+                }
+                
             });
         }else{
             aIcono.className = 'header-iconDisable';

@@ -268,11 +268,13 @@ let agregar_categorias = async () => {
     let select = document.getElementById("input_categorias");
     let lista_catergorias = await obtenerCategorias();
     
-    for(i = 0; i < lista_catergorias.length; i++)
-    {
-        let option = new Option(lista_catergorias[i]['categoria']);
-        select.add(option);
+    for(i = 0; i < lista_catergorias.length; i++){
+        if(lista_catergorias[i].estado == 'habilitado'){
+            let option = new Option(lista_catergorias[i]['categoria']);
+            select.add(option);
+        }
     }
+    
 };
 
 let agregar_autores = async () => {
