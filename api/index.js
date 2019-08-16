@@ -6,13 +6,11 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 //Se declaran todos los accesos de los archivos routes.
-const contacto_route = require('./routes/contacto');
 const libro_route = require('./routes/registrar-libro');
 const genero_route = require('./routes/genero');
 const categoria_route = require('./routes/categoria');
 const libreria_route = require('./routes/libreria');
 const usuario_route = require('./routes/usuario');
-
 const club_presencial_route = require('./routes/club-presencial');
 const club_virtual_route = require('./routes/club-virtual');
 const autor_route = require('./routes/autor');
@@ -63,18 +61,12 @@ function handleError(res, reason, message, code) {
 }
 
 // Conexion a todas la rutas.
-app.use('/api', contacto_route);
 app.use('/api', libro_route);
 app.use('/api', genero_route);
 app.use('/api', libreria_route);
 app.use('/api', usuario_route);
-
 app.use('/api', categoria_route);
 app.use('/api', club_presencial_route);
 app.use('/api', club_virtual_route);
 app.use('/api', autor_route);
 
-//localhost:4000/api/registrar-contacto
-//localhost:4000/api/registrar-genero
-//localhost:4000/api/registrar-libro
-//localhost:4000/api/registrar-libreria

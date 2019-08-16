@@ -1,5 +1,7 @@
 const input_categoria = document.querySelector('#txt-categoria');
 const btn_actualizar = document.querySelector('#btn-enviar');
+let usuarioActivoMod = JSON.parse(sessionStorage.getItem('activo'));
+let tipoUserMod = usuarioActivoMod.tipo_usuario;
 
 const urlParams = new URLSearchParams(window.location.search);
 const posicion = urlParams.get('_i');
@@ -36,7 +38,18 @@ let modificarCatt = async() =>{
 
     if (!error){
         modificarCategorias(categoriaA._id, categoriaA);
-        window.location.href = `al-listar-categorias.html?_id=${idAl}`;
+        switch(tipoUserMod){
+            case 'al' :  {
+                window.location.href = `al-listar-categorias.html?_id=${idAl}`;
+                break;
+            }
+
+            case 'ap' : { 
+                window.location.href = `ap-listar-categorias.html?_id=${_id3}`;
+                break;
+            }
+        }
+       
         
     }else{
         Swal.fire({ //formato json

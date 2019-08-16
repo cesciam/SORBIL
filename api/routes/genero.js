@@ -15,7 +15,8 @@ router.post('/registrar-genero', function (req, res) {
     let body = req.body;
 
     let nuevo_genero = new Genero({
-        genero: body.genero
+        genero: body.genero,
+        estado: 'habilitado'
     });
 
     nuevo_genero.save(
@@ -68,6 +69,43 @@ router.get('/buscar-genero/:_id', function (req, res) {
             });
         }
     })
+});
+
+
+router.post('/deshabilitar-genero', function (req, res) {
+    let body = req.body;
+
+    Genero.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: 'deshabilitado'
+        }
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo deshabilitar el género' });
+            } else {
+                res.json({ success: true, msg: 'El género se deshabilitó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/habilitar-genero', function (req, res) {
+    let body = req.body;
+
+    Genero.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: 'habilitado'
+        }
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo habilitar el género' });
+            } else {
+                res.json({ success: true, msg: 'El género se habilitó con éxito' });
+            }
+        }
+    )
 });
 
 

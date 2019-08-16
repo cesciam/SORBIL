@@ -44,6 +44,7 @@ router.post('/registrar-libreria', function (req, res) {
         direccion_exacta: body.direccion_exacta,
         direccion_latitud: body.direccion_latitud,
         direccion_longitud: body.direccion_longitud,
+        estado: 'habilitado'
     });
 
 
@@ -1211,6 +1212,22 @@ router.get('/buscar-libreria-por-correo/:correo', function(req, res) {
             });
         }
     })
+});
+
+router.post('/modificar-libreria', function (req, res) {
+    let body = req.body;
+
+    libreria.findByIdAndUpdate(body._id, {
+        $set: req.body
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la información' });
+            } else {
+                res.json({ success: true, msg: 'La información se modificó con éxito' });
+            }
+        }
+    )
 });
 
 module.exports = router;
