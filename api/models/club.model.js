@@ -18,7 +18,7 @@ let club_schema = new mongoose.Schema({
     frecuencia: { type: String, required: true, unique: false },
     descripcion: { type: String, required: true, unique: false },
     usuarios: [{
-        usuario_id: { type: String, required: true, unique: true },
+        usuario_id: { type: String, required: true, unique: false },
         nombre: { type: String, required: true, unique: false },
         correo: { type: String, required: true, unique: false }
     }],
@@ -27,6 +27,7 @@ let club_schema = new mongoose.Schema({
     canton: { type: String, required: false, unique: false },
     distrito: { type: String, required: false, unique: false },
     direccion_exacta: { type: String, required: false, unique: false },
+    estado: { type: String, required: false, unique: false }
 });
 
 module.exports = mongoose.model('Club', club_schema);

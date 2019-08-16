@@ -2,8 +2,6 @@
 
 const mongoose = require('mongoose');
 
-//Esquema del usuario
-// VERIFICAR LOS TIPOS DE DATOS MAS ADELANTE
 
 let usuario_schema = new mongoose.Schema({
     avatar: { type: String, required: true, unique: false },
@@ -30,7 +28,9 @@ let usuario_schema = new mongoose.Schema({
         num_tarjeta: { type: String, required: true, unique: false },
         fecha_ven: { type: String, required: true, unique: false },
         cvv: { type: String, required: true, unique: false },
-    }]
+        estado: { type: String, required: true, unique: false }
+    }],
+    estado: { type: String, required: true, unique: false }
 });
 
 module.exports = mongoose.model('Usuario', usuario_schema);

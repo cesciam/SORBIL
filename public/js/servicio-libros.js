@@ -108,5 +108,67 @@ let registrar_libros_libreria = (pcorreo, pidlibro, pcantidad) =>{
             cantidad: pcantidad 
         }
     });
+}
+
+
+let actualizarCantidadLibros = (pid, pcantidad) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/actualizar-cantidad-libros',
+        responseType: 'json',
+        data: {
+            id: pid,
+            cantidad: pcantidad
+
+        }
+    });
+}
+
+let deshabilitarOferta = (pid, plista_ofertas)=> {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/deshabilitar-oferta',
+        responseType: 'json',
+        data: {
+            _id: pid            
+        }
+    });
+}
+
+let habilitarOferta = (pid, plista_ofertas)=> {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/habilitar-oferta',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            estadoOferta: pestado,
+        }
+    });
+}
+
+let cambiarEstadoLibros =(pid, pestado)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-estado-libros',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            estado: pestado
+        }
+    });
+
+}
+
+let modificarLibros =(pid, plibro)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-libros',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            libro: plibro
+        }
+    });
 
 }

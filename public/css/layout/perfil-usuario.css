@@ -258,9 +258,9 @@ Inicio de estilos de registro
     font-size: 2.2rem;
 }
 
-#main-profile .main-profile-titulo h2 {
+#main-profile h2 {
     font-size: 2rem;
-    text-align: left;
+    text-align: center;
 }
 
 #main-profile .form-nav {
@@ -292,7 +292,11 @@ Inicio de estilos de registro
     width: 70%;
 }
 
-#main-profile #form div {
+#main-profile #form input, select {
+    margin-bottom: 3rem;
+}
+
+#main-profile #form textarea, #map {
     margin-bottom: 3rem;
 }
 
@@ -322,6 +326,15 @@ Inicio de estilos de registro
 
 #main-profile #btn_enviar {
     margin-top: 2rem;
+}
+
+.section-ver .ver-title {
+    grid-template-columns: 1fr;
+
+}
+
+.ver-title h1 {
+    text-align: center !important;
 }
 
 /*

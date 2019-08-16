@@ -25,7 +25,7 @@ let registrarLibreria = (pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescr
 };
 
 
-let registrarAdminLibreria = (pavatar, pcorreo, pcontrasena ,pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha, pedad, ptipo_usuario) => {
+let registrarAdminLibreria = (pavatar, pcorreo, pcontrasena, pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha, pedad, ptipo_usuario) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-usuario',
@@ -76,8 +76,8 @@ let obtenerLibreriaid = async (_id) => {
     }
 };
 
-let obtenerSucursales= async(correo) => {
-   
+let obtenerSucursales = async (correo) => {
+
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -92,7 +92,25 @@ let obtenerSucursales= async(correo) => {
     }
 };
 
-let obtenerDatosCorreo = async(correo) => {
+let modificarSucursal = (pcorreo, pnombre, ptelefono, pprovincia, pcanton, pdistrito, pdireccion_latitud, pdireccion_longitud) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-sucursal',
+        responseType: 'json',
+        data: {        
+            correo: pcorreo,    
+            nombre: pnombre,
+            telefono: ptelefono,
+            provincia: pprovincia,
+            canton: pcanton,
+            distrito: pdistrito,
+            direccion_latitud: pdireccion_latitud,
+            direccion_longitud: pdireccion_longitud
+        }
+    });
+};
+
+let obtenerDatosCorreo = async (correo) => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -100,27 +118,45 @@ let obtenerDatosCorreo = async(correo) => {
             url: `http://localhost:4000/api/buscar-libros-libreria/${correo}`,
             responseType: 'json'
         });
-        
+
         return response.data.libreria[0].libros;
     } catch (error) {
         console.log(error);
     }
 };
 
+let obtenerLibreriaPorCorreo = async (correo) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-libreria-por-correo/${correo}`,
+            responseType: 'json'
+        });
 
-// let actualizarLibrosLibreria = (pcorreo, pcantidad)=> {
-//     axios({
-//         method: 'post',
-//         url: 'http://localhost:4000/api/actualizar-libros-libreria',
-//         responseType: 'json',
-//         data: {
-//             correo: pcorreo,
-//             cantidad: pcantidad
-//         }
-//     });
-// }
+        return response.data.libreria;
+    } catch (error) {
+        console.log(error);
+    }
+};
 
-let actualizarLibrosLibreria = (pArrayLibros, pcorreo)=> {
+let obtenerSucursalPorCorreo = async (correo) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-sucursal-por-correo/${correo}`,
+            responseType: 'json'
+        });
+
+        return response.data.libreria[0].sucursales;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
+let actualizarLibrosLibreria = (pArrayLibros, pcorreo) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/actualizar-libros-libreria',
@@ -131,3 +167,37 @@ let actualizarLibrosLibreria = (pArrayLibros, pcorreo)=> {
         }
     });
 }
+
+let modificaLibreria = (_id, pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitudpavatar, pcorreo, pcontrasena, pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha, pedad, ptipo_usuario) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar_libreria',
+        responseType: 'json',
+        data: {
+            //Info de la librería
+            imagen: pimagen,
+            usuario: pusuario,
+            correo: pcorreo,
+            empresa: pempresa,
+            telefono: ptelefono,
+            descripcion: pdescripcion,
+            provincia: pprovincia,
+            canton: pcanton,
+            distrito: pdistrito,
+            direccion_exacta: pdireccion_exacta,
+            direccion_latitud: pdireccion_latitud,
+            direccion_longitud: pdireccion_longitud,
+            //Info del administrador
+            avatar: pavatar,
+            correo: pcorreo,
+            contrasena: pcontrasena,
+            nombre: pnombre,
+            primer_apellido: pprimer_apellido,
+            segundo_apellido: psegundo_apellido,
+            id: pid,
+            fecha: pfecha,
+            edad: pedad,
+            tipo_usuario: ptipo_usuario
+        }
+    });
+};

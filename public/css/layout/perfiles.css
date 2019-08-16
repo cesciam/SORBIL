@@ -159,6 +159,8 @@ Inicio de estilos de ver
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 3rem;
     padding-top: 1rem;
+    justify-items: center;
+    text-align: center;
 }
 
 .section-ver .ver-cards {

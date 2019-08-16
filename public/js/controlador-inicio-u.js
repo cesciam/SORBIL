@@ -13,7 +13,6 @@ const btn_listar_notificaciones = document.querySelector('#u-listar-notificacion
 const btn_seguridad = document.querySelector('#u-seguridad');
 const btn_intercambios = document.querySelector('#u-intercambios');
 const btn_quienes_somos = document.querySelector('#u-quienes-somos');
-const btn_biblioteca = document.querySelector('#u-biblioteca');
 const btn_carrito = document.querySelector('#u-carrito');
 
 
@@ -58,10 +57,6 @@ btn_intercambios.addEventListener('click', function () {
 
 btn_quienes_somos.addEventListener('click', function () {
     window.location.href = `p-quienes-somos.html?_id=${_id2}`
-});
-
-btn_biblioteca.addEventListener('click', function () {
-    window.location.href = `p-biblioteca.html?_id=${_id2}`
 });
 
 btn_carrito.addEventListener('click', function () {

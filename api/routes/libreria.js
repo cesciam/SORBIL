@@ -44,6 +44,7 @@ router.post('/registrar-libreria', function (req, res) {
         direccion_exacta: body.direccion_exacta,
         direccion_latitud: body.direccion_latitud,
         direccion_longitud: body.direccion_longitud,
+        estado: 'habilitado'
     });
 
 
@@ -1112,6 +1113,121 @@ router.get('/listar-sucursales/:correo', function (req, res) {
     })
 });
 
+router.post('/modificar-libreria', function (req, res) {
+    let body = req.body;
+// Estado de la sucursal
+router.post('/deshabilitar-sucursal', function (req, res) {
+    let body = req.body;
 
+    libreria.findByIdAndUpdate(body._id, {
+        $set: {
+            estadoSucursal: 'Deshabilitado'
+        }
+    },
+        function (error) {
+            if (error) {
+                console.log("error")
+                console.log(error)
+                res.json({ success: false, msg: 'No se pudo deshabilitar la sucursal' });
+            } else {
+                console.log("sirve")
+                res.json({ success: true, msg: 'La sucursal se deshabilitó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/habilitar-sucursal', function (req, res) {
+    let body = req.body;
+
+    libreria.findByIdAndUpdate(body._id, {
+        $set: {
+            estadoSucursal: req.body.estadoSucursal
+        }
+    },
+        function (error) {
+
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo habilitar la sucursal' });
+            } else {
+                res.json({ success: true, msg: 'La sucursal se habilitó con éxito' });
+            }
+        }
+    )
+});
+// Fin Estado de la sucursal
+
+    Libreria.findByIdAndUpdate(body._id, {
+        $set: req.body
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la información' });
+            } else {
+                res.json({ success: true, msg: 'La información se modificó con éxito' });
+            }
+        }
+    )
+});
+// MODIFICAR SUCURSAL
+
+router.post('/modificar-sucursal', function(req, res){
+    
+    libreria.findOneAndUpdate({ correo: req.body.correo }, {
+            $set: {
+                'sucursales': req.body
+            }
+            
+        },
+        function(error){
+            if (error) {
+                return res.json({
+                    success: false,
+                    msj: 'No se pudo modificar la sucursal',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La sucursal se modificó con éxito'
+                });
+            }
+        }
+    )
+});
+
+
+router.get('/buscar-libreria-por-correo/:correo', function(req, res) {
+    libreria.find({ correo: req.body.correo }, function(err, libreriaDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontró ningún libreria con ese correo',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                libreria: libreriaDB
+            });
+        }
+    })
+});
+
+router.post('/modificar-libreria', function (req, res) {
+    let body = req.body;
+
+    libreria.findByIdAndUpdate(body._id, {
+        $set: req.body
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la información' });
+            } else {
+                res.json({ success: true, msg: 'La información se modificó con éxito' });
+            }
+        }
+    )
+});
 
 module.exports = router;

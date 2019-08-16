@@ -27,3 +27,51 @@ let obtenerGeneros = async () => {
         alert(error);
     }
 };
+
+let obtenerGeneroid = async (_id) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-genero/${_id}`,
+            responseType: 'json'
+        });
+
+        return response.data.genero;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+let habilitar = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/habilitar-genero',
+        responseType: 'json',
+        data: {
+            _id: pid
+        }
+    });
+};
+let deshabilitar = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/deshabilitar-genero',
+        responseType: 'json',
+        data: {
+            _id: pid
+        }
+    });
+};
+
+let modificarGenero = (pid, pgenero) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-genero',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            genero: pgenero
+        }
+    });
+};

@@ -27,3 +27,28 @@ let obtenerCategorias = async () => {
         alert(error);
     }
 };
+
+let cambiarEstadoCatergorias = (pid, pestado) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-estado-categorias',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            estado: pestado
+        }
+    });
+}
+
+let modificarCategorias =(pid, pcategoria)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-categorias',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            categoria: pcategoria
+        }
+    });
+
+}
