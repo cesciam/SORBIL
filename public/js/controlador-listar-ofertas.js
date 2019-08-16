@@ -28,23 +28,23 @@ let mostrar_tabla = async () => {
 
             // Botón modificar oferta
             let celdaModificarOferta = fila.insertCell();
-            let btn_modificarOferta = document.createElement('button');
-            btn_modificarOferta.type = 'button';
+            let btn_modificarOferta = document.createElement('a');
+            btn_modificarOferta.type = 'a';
             btn_modificarOferta.innerText = 'Modificar';
             btn_modificarOferta.dataset._id = lista_libros[i]['_id'];
             celdaModificarOferta.appendChild(btn_modificarOferta);
 
             // Botón modificar oferta
             let celdaEliminarOferta = fila.insertCell();
-            let btn_eliminarOferta = document.createElement('button');
-            btn_eliminarOferta.type = 'button';
+            let btn_eliminarOferta = document.createElement('a');
+            btn_eliminarOferta.type = 'a';
             btn_eliminarOferta.innerText = 'Eliminar';
             btn_eliminarOferta.dataset._id = lista_libros[i]['_id'];
             celdaEliminarOferta.appendChild(btn_eliminarOferta);
 
             // Botón estado oferta
             let celda_estado = fila.insertCell();
-            let enlace_habilitado = document.createElement('button');
+            let enlace_habilitado = document.createElement('a');
             if (lista_ofertas[j]["estadoOferta"] == "Habilitado") {
                 enlace_habilitado.innerText = "Habilitar";
             } else {
@@ -87,23 +87,23 @@ let filtrar_tabla = async () => {
                 // Botón modificar oferta
 
                 let celdaModificarOferta = fila.insertCell();
-                let btn_modificarOferta = document.createElement('button');
-                btn_modificarOferta.type = 'button';
+                let btn_modificarOferta = document.createElement('a');
+                btn_modificarOferta.type = 'a';
                 btn_modificarOferta.innerText = 'Modificar';
                 btn_modificarOferta.dataset._id = lista_libros[i]['_id'];
                 celdaModificarOferta.appendChild(btn_modificarOferta);
 
                 // Botón eliminar oferta
                 let celdaEliminarOferta = fila.insertCell();
-                let btn_eliminarOferta = document.createElement('button');
-                btn_eliminarOferta.type = 'button';
+                let btn_eliminarOferta = document.createElement('a');
+                btn_eliminarOferta.type = 'a';
                 btn_eliminarOferta.innerText = 'Eliminar';
                 btn_eliminarOferta.dataset._id = lista_libros[i]['_id'];
                 celdaEliminarOferta.appendChild(btn_eliminarOferta);
 
                 // Botón estado oferta
                 let celda_estado = fila.insertCell();
-                let enlace_habilitado = document.createElement('button');
+                let enlace_habilitado = document.createElement('a');
                 if (lista_ofertas[j]["estadoOferta"] == "Habilitado") {
                     enlace_habilitado.innerText = "Habilitar";
                 } else {

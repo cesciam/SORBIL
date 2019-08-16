@@ -418,6 +418,7 @@ Inicio de estilos del header de usuario
     font-size: 2.4rem;
     color: var(--color-primary-light);
     transition: .2s;
+    cursor: pointer;
 }
 
 .header-icon i:hover {

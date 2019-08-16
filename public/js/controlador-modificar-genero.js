@@ -6,6 +6,19 @@ const genero = document.querySelector('#txt-genero');
 const urlParams = new URLSearchParams(window.location.search);
 let _id = urlParams.get('_id');
 
+let validar = (pgenero) => {
+
+    let error = false;
+
+    if (pgenero == '') {
+        error = true;
+        genero.classList.add('input_error');
+    } else {
+        genero.classList.remove('input_error');
+    }
+
+    return error;
+};
 
 let cargar_formulario = async () => {
 
