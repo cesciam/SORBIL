@@ -35,7 +35,8 @@ let libreria_schema = new mongoose.Schema({
     libros: [{
         idlibro: {type: String, required: false, unique: true},
         cantidad: { type: String, required: false, unique: false }
-    }]
+    }],
+    estado: { type: String, required: true, unique: false }
 });
 
 module.exports = mongoose.model('Libreria', libreria_schema);
