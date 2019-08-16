@@ -9,10 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/layout/formularios.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar sucursales</title>
+    <title>Sorbil -- Librería -- Registrar sucursal</title>
 </head>
 
 <body id="grid-admin">
@@ -51,32 +52,56 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listado de Sucursales</h1>
+            <h1>Modificar información sucursal</h1>
         </div>
 
-        <div id="barra-busqueda">
-            <input id="txt-filtro" type="text" placeholder="Buscar por nombre, correo electrónico"
-                aria-label="Buscar por nombre, correo electrónico">
+        <form id="form" action="#">
 
-                <a href="#" id="registrar_adminal_sucursal" class="btn-registrar" aria-label="Registrar" type="button"><i
-                        class='bx bx-plus-circle'></i>
-                    <spans>Registrar</spans>
-                </a>
-        </div>
+            <div>
+                <label for="#">Nombre</label>
+                <input id="txt-nombre-sucursal" type="text" placeholder="Ingresar nombre de la sucursal"
+                    aria-label="Ingresar nombre de la sucursal">
+            </div>
+            <div id="form-container">
+                
+                <div>
+                    <label for="#">Teléfono</label>
+                    <input id="txt-telefono" type="tel" placeholder="Formato: 00-00-00-00"
+                        aria-label="Ingresar el número de teléfono">
+                </div>
+                <div>
+                    <label for="#">Provincia</label>
+                    <select id="txt-provincia">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar
+                            Provincia</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="#">Cantón</label>
+                    <select id="txt-canton">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar Cantón
+                        </option>
+                    </select>
+                </div>
 
-        <table id="tabla-filtrado">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Teléfono</th>
-                    <th>Provincia</th>
-                    <th>Cantón</th>
-                    <th>Distrito</th>                    
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+                <div class="input-group">
+                    <label for="#">Distrito</label>
+                    <select id="txt-distrito">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar
+                            Distrito</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <div>
+                        <h2>Seleccioná la ubicación de la sucursal en el mapa</h2>
+                    </div>
+                    <div id="map"></div>
+                </div>
+
+            </div>
+            <button id="btn-enviar" type="button">Guardar</button>
+        </form>
 
     </main>
 
@@ -214,6 +239,7 @@
     </div>
 
 </aside>
+
     <!--Footer-->
     <footer id="footer-admin">
         <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
@@ -221,15 +247,22 @@
     </footer>
 
     <!--Scripts-->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnj4Pk6sSOX5m4uxn8jO9VN2YjMUR7iO4&callback=initMap"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/componentes/controlador-select.js"></script>
+    <script src="../js/componentes/controlador-map.js"></script>
     <script src="../js/servicio-sucursal.js"></script>
     <script src="../js/servicio-libreria.js"></script>
-    <script src="../js/controlador-listar-sucursales-al.js"></script>
+    <script src="../js/controlador-modificar-sucursal.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-inicio-al.js"></script>
     <script src="../js/controlador-avatar.js"></script>
+    
+
 </body>
 
 </html>
