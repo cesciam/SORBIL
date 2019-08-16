@@ -92,6 +92,24 @@ let obtenerSucursales = async (correo) => {
     }
 };
 
+let modificarSucursal = (pcorreo, pnombre, ptelefono, pprovincia, pcanton, pdistrito, pdireccion_latitud, pdireccion_longitud) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-sucursal',
+        responseType: 'json',
+        data: {        
+            correo: pcorreo,    
+            nombre: pnombre,
+            telefono: ptelefono,
+            provincia: pprovincia,
+            canton: pcanton,
+            distrito: pdistrito,
+            direccion_latitud: pdireccion_latitud,
+            direccion_longitud: pdireccion_longitud
+        }
+    });
+};
+
 let obtenerDatosCorreo = async (correo) => {
     try {
         // fetch data from an url endpoint
@@ -107,6 +125,35 @@ let obtenerDatosCorreo = async (correo) => {
     }
 };
 
+let obtenerLibreriaPorCorreo = async (correo) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-libreria-por-correo/${correo}`,
+            responseType: 'json'
+        });
+
+        return response.data.libreria;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+let obtenerSucursalPorCorreo = async (correo) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-sucursal-por-correo/${correo}`,
+            responseType: 'json'
+        });
+
+        return response.data.libreria[0].sucursales;
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 
 let actualizarLibrosLibreria = (pArrayLibros, pcorreo) => {

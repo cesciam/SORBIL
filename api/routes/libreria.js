@@ -1168,5 +1168,49 @@ router.post('/habilitar-sucursal', function (req, res) {
         }
     )
 });
+// MODIFICAR SUCURSAL
+
+router.post('/modificar-sucursal', function(req, res){
+    
+    libreria.findOneAndUpdate({ correo: req.body.correo }, {
+            $set: {
+                'sucursales': req.body
+            }
+            
+        },
+        function(error){
+            if (error) {
+                return res.json({
+                    success: false,
+                    msj: 'No se pudo modificar la sucursal',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'La sucursal se modificó con éxito'
+                });
+            }
+        }
+    )
+});
+
+
+router.get('/buscar-libreria-por-correo/:correo', function(req, res) {
+    libreria.find({ correo: req.body.correo }, function(err, libreriaDB) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontró ningún libreria con ese correo',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                libreria: libreriaDB
+            });
+        }
+    })
+});
 
 module.exports = router;

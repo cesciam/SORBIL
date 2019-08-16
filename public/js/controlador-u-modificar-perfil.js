@@ -223,11 +223,7 @@ let modificarPerfilUsuario = async () => {
             type: 'success',
         })
           
-<<<<<<< HEAD
         window.location.href = `ver-perfil-usuario.html?_id=${_id}`;
-=======
-        //window.location.href = `ver-perfil-usuario.html?_id=${_id}`;
->>>>>>> fernanda
     }
     else {
         Swal.fire({ //formato json
