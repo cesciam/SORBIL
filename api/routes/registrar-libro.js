@@ -266,4 +266,20 @@ router.post('/modificar-estado-libros', function(req, res) {
     )
 });
 
+router.post('/modificar-libros', function(req, res) {
+    let body = req.body;
+
+    Registro_libro.findByIdAndUpdate(body._id, {
+            $set: req.body.libro
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar el libro' });
+            } else {
+                res.json({ success: true, msg: 'EL libro se modificó con éxito' });
+            }
+        }
+    )
+});
+
 module.exports = router;

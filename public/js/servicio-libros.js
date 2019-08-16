@@ -159,3 +159,16 @@ let cambiarEstadoLibros =(pid, pestado)=>{
     });
 
 }
+
+let modificarLibros =(pid, plibro)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-libros',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            libro: plibro
+        }
+    });
+
+}
