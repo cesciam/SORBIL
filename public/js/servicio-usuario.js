@@ -122,6 +122,35 @@ let deshabilitar = (pid) => {
     });
 };
 
+let modificarUsuario = (p_id, pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud, ptipo_usuario) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-usuario',
+        responseType: 'json',
+        data: {
+            _id: p_id,
+            avatar: pavatar,
+            usuario: pusuario,
+            correo: pcorreo,
+            contrasena: pcontrasena,
+            nombre: pnombre,
+            id: pid,
+            sexo: psexo,
+            primer_apellido: pprimerApellido,
+            segundo_apellido: psegundoApellido,
+            provincia: pprovincia,
+            canton: pcanton,
+            distrito: pdistrito,
+            direccion_exacta: pdireccionExacta,
+            direccion_latitud: pdireccion_latitud,
+            direccion_longitud: pdireccion_longitud,
+            tipo_usuario: ptipo_usuario
+
+        }
+    });
+};
+
+
 // Funciones para obtener coordenadas de google maps
 let corlatitud;
 let corlongitud;
@@ -173,3 +202,26 @@ let obtenerTarjetas = async(_id) => {
     }
 };
 
+let actualizarTarjetas = (pdatos, pid)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-tarjetas',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            datos: pdatos
+        }
+    });
+}
+
+let cambiarEstadoTarjetas = (pdatos, pid) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-estado-tarjetas',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            datos: pdatos
+        }
+    });
+}

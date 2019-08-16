@@ -52,11 +52,11 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de Género</h1>
+            <h1>Edición de Género</h1>
         </div>
-        
+
         <form id="form" action="#">
-        
+
             <div class="centrar-input">
                 <div>
                     <label for="#">Género</label>
@@ -64,9 +64,9 @@
                         aria-label="Ingresar el género">
                 </div>
             </div>
-        
-            <button id="btn-enviar" type="button">Registrar</button>
-        
+
+            <button id="listar_adminal_generos" type="button">Editar</button>
+
         </form>
         <!-- <div class="main-admin-titulo">
             <h1>Listados de Géneros</h1>
@@ -75,7 +75,7 @@
         <div id="barra-busqueda">
             <input type="text" id="txt-filtro" placeholder="Buscar por género" aria-label="Buscar por género">
 
-            <a class="btn-registrar" aria-label="Registrar" type="button" onclick="history.go(0)">
+            <a href="#" class="btn-registrar" aria-label="Registrar" type="button" onclick="history.go(0)">
                 <spans>Actualizar</spans>
             </a>
         </div>
@@ -242,7 +242,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/servicio-genero.js"></script>
     <script src="../js/controlador-listar-generos.js"></script>
-    <script src="../js/controlador-registrar-genero.js"></script>
+    <script src="../js/controlador-modificar-genero.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-inicio-al.js"></script>
     <script src="../js/controlador-avatar.js"></script>

@@ -16,6 +16,7 @@
 
 .book-img {
     box-shadow: var(--shadow-light);
+    height: 52rem;
 }
 
 .book-img img {
@@ -111,6 +112,7 @@
     display: grid;
     grid-template-columns: 40% 60%;
     margin-bottom: 2rem;
+    justify-items: center;
 }
 
 .book-ratings i {

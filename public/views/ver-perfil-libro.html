@@ -161,14 +161,23 @@
                 <div class="book-rating-info">
                     <div class="book-rating-container">
                         <div class="book-ratings">
-                            <i class='bx bxs-book-bookmark'></i>
-                            <i class='bx bxs-book-bookmark'></i>
-                            <i class='bx bxs-book-bookmark'></i>
-                            <i class='bx bxs-book-bookmark'></i>
-                            <i class='bx bxs-book-bookmark'></i>
+                            <form class="form-ratings">
+                                <input id="radio1" type="radio" name="calificaciones" value="5">
+                                <label class="bx bxs-book-content" for="radio1"></label>
+                                <input id="radio2" type="radio" name="calificaciones" value="4">
+                                <label class="bx bxs-book-content" for="radio2"> </label>
+                                <input id="radio3" type="radio" name="calificaciones" value="3">
+                                <label class="bx bxs-book-content" for="radio3"> </label>
+                                <input id="radio4" type="radio" name="calificaciones" value="2">
+                                <label class="bx bxs-book-content" for="radio4"> </label>
+                                <input id="radio5" type="radio" name="calificaciones" value="1">
+                                <label class="bx bxs-book-content" for="radio5"> </label>
+                                <!-- Botón para registrar calificación -->
+                                <!-- <button id="btn-enviar" type="button"></button> -->
+                            </form>
                         </div>
                         <div class="book-rating-global">
-                            <p>4,8 (4500 Calificacion)</p>
+                            <p id="rating-global">4,8 (4500 Calificacion)</p>
                         </div>
                     </div>
 

@@ -131,7 +131,7 @@ Inicio de estilos de ver
 
 .section-ver .ver-cards .ver-cards-container img {
     width: 80%;
-    height: 22rem;
+    height: 23rem;
     border-radius: 0;
     box-shadow: var(--shadow-dark-2);
     margin-bottom: 2rem;
@@ -166,7 +166,7 @@ Inicio de estilos de ver
 
 .section-ver .ver-cards .ver-cards-container .contenedor_atributo p {
     font-size: 1rem;
-    text-align: center;
+    justify-self: start;
     color: var(--color-secondary);
     padding: 1rem 0;
     height: 3rem;
@@ -176,7 +176,7 @@ Inicio de estilos de ver
     font-size: 1.8rem;
     color: var(--color-alternative-blue);
     font-weight: var(--font-semibold);
-    height: 2rem;
+    height: 4rem;
     margin-top: 2rem;
 }
 

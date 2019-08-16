@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
-    <link rel="stylesheet" href="../css/paginas/perfil-libro.css">
     <link rel="stylesheet" href="../css/layout/perfil-usuario.css">
+    <link rel="stylesheet" href="../css/paginas/registrar-tarjeta.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Perfil de libros</title>
+    <title>Sorbil -- Inicio</title>
 </head>
 
 <body>
@@ -129,7 +129,7 @@
     </header>
 
     <!--Main-->
-    <main id="main-user">
+    <main id="main-login">
 
         <!--Aside-->
         <aside id="sidenav-user">
@@ -187,110 +187,90 @@
 
         </aside>
 
-        <section class="section-book">
-            <div class="book-img">
-                <div id="div-img-portada"><img src="../imgs/book-placeholder.png" id="portada"></div>
-                <p class="conten-div-precio precio-libro">Precio: <span id="precio"></span></p>
-                <button type="button">Comprar</button>
+        <!--Content-->
+        <main id="main-profile">
+           
+
+            <div class="main-profile-titulo">
+                <h1>Registro de tarjetas de pago</h1>
+                <p>Registrá la información que se solicita</p>
             </div>
-            <div class="book-info">
-                <h2>Información del libro</h2>
-                <div class="book-info-list">
-                    <div class="book-titles">
-                        <p class="conten-div-precio">Autor: </p>
-                        <p class="conten-div-precio">Categoría: </p>
-                        <p class="conten-div-precio">Género: </p>
-                        <p class="conten-div-precio">Publicación: </p>
-                        <p class="conten-div-precio">ISBN: </p>
-                        <p class="conten-div-precio">Formato: </p>
-                        <p class="conten-div-precio">Idioma: </p>
+
+            <form id="form" class="credit-card-form" action="#">
+                <div>
+                    <label for="#">Nombre del titular</label>
+                    <input id="input_nombre" type="text" placeholder="Ingresar nombre del titular"
+                        aria-label="Ingresar nombre del titular">
+                </div>
+                <div>
+                    <label for="#">Número de tarjeta</label>
+                    <div id="div-numTarjeta">
+                        <input class="input_numero_tarjeta" type="text" placeholder="Ingresar el número de tarjeta"
+                            aria-label="Ingresar el numero de tarjeta" id="input_num_tarjeta">
+                        <i id="tipo_tarjeta"></i>
                     </div>
-                    <div class="book-atributes">
-                        <p id="autor"></p>
-                        <p id="categoria"></p>
-                        <p id="genero"></p>
-                        <p id="fecha"></p>
-                        <p id="isbn"></p>
-                        <p id="tipo"></p>
-                        <p id="idioma"></p>
+
+
+                </div>
+
+                <div id="form-container">
+                    <div>
+                        <label for="#">Fecha de vencimiento</label>
+                        <input type="text" placeholder="MM/AA" aria-label="MM/AA" id="input_fecha_ven"
+                            class="input_fecha">
+                    </div>
+                    <div>
+                        <label for="#">CVV</label>
+                        <input id="input_cvv" type="text" placeholder="CVV" aria-label="CVV" class="cvv">
                     </div>
                 </div>
+                <button id="btn_enviar" type="button">Registrar</button>
+            </form>
+
+        </main>
+
+        <footer id="footer-user">
+
+            <div id="footer-links">
+                <a href="../views/u-inicio.html"><img src="../imgs/logo-light.png" alt="Logo de Sorbil"></a>
+
+                <nav>
+                    <a href="../views/u-inicio.html"><i class='bx bx-home-circle'></i>Inicio</a>
+                    <a href="#" id="u-intercambios"><i class='bx bxs-book'></i>Intercambios</a>
+                    <a href="#" id="u-quienes-somos"><i class='bx bx-user-voice'></i>Quiénes somos</a>
+                </nav>
             </div>
-            <div class="book-rating">
-                <h1 id="title-libro"></h1>
-                <!-- <p>Best seller</p> -->
-                <div class="book-rating-info">
-                    <div class="book-rating-container">
-                        <div class="book-ratings">
-                            <form class="form-ratings">
-                                <input id="radio1" type="radio" name="calificaciones" value="5">
-                                <label class="bx bxs-book-content" for="radio1"></label>
-                                <input id="radio2" type="radio" name="calificaciones" value="4">
-                                <label class="bx bxs-book-content" for="radio2"> </label>
-                                <input id="radio3" type="radio" name="calificaciones" value="3">
-                                <label class="bx bxs-book-content" for="radio3"> </label>
-                                <input id="radio4" type="radio" name="calificaciones" value="2">
-                                <label class="bx bxs-book-content" for="radio4"> </label>
-                                <input id="radio5" type="radio" name="calificaciones" value="1">
-                                <label class="bx bxs-book-content" for="radio5"> </label>
-                                <!-- Botón para registrar calificación -->
-                                <!-- <button id="btn-enviar" type="button"></button> -->
-                            </form>
-                        </div>
-                        <div class="book-rating-global">
-                            <p>4,8 (4500 Calificacion)</p>
-                        </div>
-                    </div>
 
-                    <div class="book-ed">
-                        <p>Edicion: <span id="edicion"></span></p>
-                        <p>Editorial: <span id="editorial"></span></p>
-                    </div>
-                    <div class="book-descrip">
-                        <h3>Sinopsis</h3>
-                        <p id="descrip"></p>
-                    </div>
-                </div>
+            <div id="footer-copyright">
+                <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+                    <span>FÉNIX</span></a>
             </div>
-        </section>
-    </main>
 
-    <footer id="footer-user">
+        </footer>
 
-        <div id="footer-links">
-            <a href="../views/u-inicio.html"><img src="../imgs/logo-light.png" alt="Logo de Sorbil"></a>
-
-            <nav>
-                <a href="../views/u-inicio.html"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="#" id="u-intercambios"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="#" id="u-quienes-somos"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-            </nav>
-        </div>
-
-        <div id="footer-copyright">
-            <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
-                <span>FÉNIX</span></a>
-        </div>
-
-    </footer>
-
-
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/componentes/controlador-sidemenu.js"></script>
-    <script src="../js/servicio-libros.js"></script>
-    <script src="../js/controlador-perfil-libro.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <!-- JS para listar -->
-    <script src="../js/servicio-club.js"></script>
-    <script src="../js/servicio-libreria.js"></script>
-    <script src="../js/componentes/controlador-lista-enlaces-privados.js"></script>
-    <!-- <script src="../js/componentes/controlador-nav-inicios.js "></script> -->
-    <!-- JS para los permisos del usuario-->
-    <script src="../js/cerrar-sesion.js"></script>
-    <script src="../js/controlador-avatar.js"></script>
-    <script src="../js/controlador-inicio-u.js"></script>
+        <!--Scripts-->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="../js/componentes/controlador-sidemenu.js"></script>
+        <script src="../js/componentes/controlador-dropdowns-main.js"></script>
+        <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+        <script src="../vendors/sticky-js-master/dist/sticky.min.js"></script>
+        <script src="../js/componentes/controlador-sticky.js"></script>
+        <!-- JS para listar en el dropdown-->
+        <script src="../js/servicio-club.js"></script>
+        <script src="../js/servicio-libreria.js"></script>
+        <script src="../js/servicio-libros.js"></script>
+        <script src="../js/servicio-autor.js"></script>
+        <script src="../js/componentes/controlador-lista-enlaces-privados.js"></script>
+        <!-- JS para los perfiles-->
+        <script src="https://kit.fontawesome.com/a1b50ac28c.js"></script>
+        <script src="../vendors/cleave.js-master/dist/cleave.min.js"></script>
+        <script src="../js/servicio-usuario.js"></script>
+        <script src="../js/controlador-registro-tarjetas-2.js"></script>
+        <!-- JS para los permisos del usuario-->
+        <script src="../js/cerrar-sesion.js"></script>
+        <script src="../js/controlador-avatar.js"></script>
+        <script src="../js/controlador-inicio-u.js"></script>
 
 </body>
 

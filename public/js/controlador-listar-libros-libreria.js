@@ -9,6 +9,7 @@ let listarLibrosCards = async ()=>{
     for (let index = 0; index < libros_libreria.length; index++) {
         for (let j = 0; j < libros.length; j++) {
             if(libros[j]._id == libros_libreria[index].idlibro){
+                if(libros[j].estado == 'habilitado'){
     
                     let contenedor_card = document.createElement('div');
                     contenedor_card.classList.add('card');
@@ -76,6 +77,7 @@ let listarLibrosCards = async ()=>{
                     contenedor_card.appendChild(btn_perfil);
             
                     sct_libros.appendChild(contenedor_card);
+            }
             }    
         }   
         

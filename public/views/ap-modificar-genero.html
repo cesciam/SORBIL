@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Plataforma -- Listar libros</title>
+    <title>Sorbil -- Plataforma -- Listar géneros</title>
 </head>
 
 <body id="grid-admin">
@@ -20,26 +20,26 @@
     <!--Header-->
     <header id="header-admin">
 
-        <h3 class="header-text">Área del administrador de plataforma</h3>
+        <h3 class="header-text">Área del administrador de Plataforma</h3>
 
         <div class="header-user-icons">
             <div class="header-user-container">
-                <a class="header-icon" href="#" id="adminap_solicitudes"><i class='bx bx-mail-send'></i>
+                <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
                     <span class="user-notification">1</span>
                 </a>
             </div>
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification">1</span>
+                    <span class="user-notification">6</span>
                 </a>
             </div>
 
             <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                        class="mini-photo" id="avatar-img" src="../imgs/user.png" width="36" height="36"> <i
+                        id="avatar-img" class="mini-photo" src="" width="36" height="36"> <i
                         class='bx bx-chevron-down'></i></a>
                 <div class="menu-user-container">
                     <ul class="user-menu">
-                        <a class="user-menu-link" href="#" id="ver_perfil_admin_plataforma">Perfil</a>
+                        <a class="user-menu-link" href="#" id="ver_perfil_admin_libreria">Perfil</a>
                         <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
                     </ul>
                 </div>
@@ -52,29 +52,38 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de libros</h1>
+            <h1>Edición de Género</h1>
         </div>
 
-        <div id="barra-busqueda">
-            <input id="txt_filtro" type="text" placeholder="Buscar por, título, autor, categoría, género, ISBN"
-                aria-label="Buscar por, título, autor, categoría, género, ISBN">
+        <form id="form" action="#">
 
-                <a href="#" id="registrar_adminap_libro" class="btn-registrar" aria-label="Registrar" type="button"><i
-                        class='bx bx-plus-circle'></i>
-                    <spans>Registrar</spans>
-                </a>
-            
+            <div class="centrar-input">
+                <div>
+                    <label for="#">Género</label>
+                    <input id="txt-genero" class="effect-21" type="text" placeholder="Ingresar el género"
+                        aria-label="Ingresar el género">
+                </div>
             </div>
+
+            <button id="listar_adminap_generos" type="button">Editar</button>
+
+        </form>
+        <!-- <div class="main-admin-titulo">
+            <h1>Listados de Géneros</h1>
+        </div> -->
+
+        <div id="barra-busqueda">
+            <input type="text" id="txt-filtro" placeholder="Buscar por género" aria-label="Buscar por género">
+
+            <a href="#" class="btn-registrar" aria-label="Registrar" type="button"  onclick="history.go(0)">
+                <spans>Actualizar</spans>
+            </a>
+        </div>
 
         <table id="tabla-filtrado">
             <thead>
                 <tr>
-                    <th>Título</th>
-                    <th>Autor</th>
-   
                     <th>Género</th>
-                    <th>ISBN</th>
-                    <th>Tipo</th>
                 </tr>
             </thead>
             <tbody>
@@ -83,6 +92,7 @@
         </table>
 
     </main>
+
 <!--Aside-->
 <aside id="sidenav-admin">
 
@@ -236,8 +246,7 @@
 
     </div>
 
-</aside>
-    
+
     <!--Footer-->
     <footer id="footer-admin">
         <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
@@ -245,14 +254,17 @@
     </footer>
 
     <!--Scripts-->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/servicio-libros.js"></script>
-    <script src="../js/controlador-listar-libros.js"></script>
-    <script src="../js/controlador-inicio-ap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/servicio-genero.js"></script>
+    <script src="../js/controlador-ap-listar-generos.js"></script>
+    <script src="../js/controlador-ap-modificar-genero.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
+    <script src="../js/controlador-inicio-ap.js"></script>
     <script src="../js/controlador-avatar.js"></script>
+
 </body>
 
 </html>

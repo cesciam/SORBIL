@@ -35,7 +35,8 @@ router.post('/registrar-libro', function (req, res) {
         portada: body.portada,
         contraportada: body.contraportada,
         sinopsis: body.sinopsis,
-        cantidad: body.cantidad
+        cantidad: body.cantidad,
+        estado: 'habilitado'
     });
 
 
@@ -202,7 +203,7 @@ router.post('/habilitar-oferta', function(req, res){
     
     Registro_libro.findOneAndUpdate({ _id: req.body._id }, {
             $set: {
-                'ofertas': req.body.ofertas
+                'estadoOferta': req.body.estadoOferta
             }
             
         },
@@ -227,8 +228,7 @@ router.post('/deshabilitar-oferta', function(req, res){
     
     Registro_libro.findOneAndUpdate({ _id: req.body._id }, {
             $set: {
-                'ofertas': req.body.ofertas
-            }
+                'estadoOferta': req.body.estadoOfertas            }
             
         },
         function(error){
@@ -243,6 +243,40 @@ router.post('/deshabilitar-oferta', function(req, res){
                     success: true,
                     msj: 'La oferta se deshabilitó con éxito'
                 });
+            }
+        }
+    )
+});
+
+router.post('/modificar-estado-libros', function(req, res) {
+    let body = req.body;
+
+    Registro_libro.findByIdAndUpdate(body._id, {
+            $set: {
+                'estado': req.body.estado
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+            } else {
+                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/modificar-libros', function(req, res) {
+    let body = req.body;
+
+    Registro_libro.findByIdAndUpdate(body._id, {
+            $set: req.body.libro
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar el libro' });
+            } else {
+                res.json({ success: true, msg: 'EL libro se modificó con éxito' });
             }
         }
     )

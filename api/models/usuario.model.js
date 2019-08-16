@@ -27,8 +27,9 @@ let usuario_schema = new mongoose.Schema({
         num_tarjeta: { type: String, required: true, unique: false },
         fecha_ven: { type: String, required: true, unique: false },
         cvv: { type: String, required: true, unique: false },
+        estado: { type: String, required: true, unique: false }
     }],
-    estado: {type: String, required: true, unique: false}
+    estado: { type: String, required: true, unique: false }
 });
 
 module.exports = mongoose.model('Usuario', usuario_schema);

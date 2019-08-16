@@ -9,79 +9,99 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/layout/formularios.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar clubes</title>
+    <title>Sorbil -- Librería -- Registrar sucursal</title>
 </head>
 
 <body id="grid-admin">
 
     <!--Header-->
-    <header id="header-admin">
+<header id="header-admin">
 
-        <h3 class="header-text">Área del administrador de librería</h3>
+    <h3 class="header-text">Área del administrador de librería</h3>
 
-        <div class="header-user-icons">
-            <div class="header-user-container">
-                <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
-                    <span class="user-notification" >1</span>
-                </a>
-            </div>
-            <div class="header-user-container">
-                <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification">6</span>
-                </a>
-            </div>
-
-            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                        id="avatar-img" class="mini-photo" src="" width="36" height="36"> <i
-                        class='bx bx-chevron-down'></i></a>
-                <div class="menu-user-container">
-                    <ul class="user-menu">
-                        <a class="user-menu-link" href="#" id="ver_perfil_admin_libreria">Perfil</a>
-                        <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
-                    </ul>
-                </div>
-            </div>
-
+    <div class="header-user-icons">
+        <div class="header-user-container">
+            <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
+                <span class="user-notification">1</span>
+            </a>
+        </div>
+        <div class="header-user-container">
+            <a class="header-icon" href="#"><i class='bx bx-bell'></i>
+                <span class="user-notification">6</span>
+            </a>
         </div>
 
-    </header>
+        <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img id="avatar-img"
+                    class="mini-photo" src="" width="36" height="36"> <i class='bx bx-chevron-down'></i></a>
+            <div class="menu-user-container">
+                <ul class="user-menu">
+                    <a class="user-menu-link" href="#" id="ver_perfil_admin_libreria">Perfil</a>
+                    <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</header>
+
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de Clubes</h1>
+            <h1>Modificar información sucursal</h1>
         </div>
 
-        <div id="barra-busqueda">
-            <input type="text" id="txt-filtro" placeholder="Buscar por nombre, tema, categoría, género"
-                aria-label="Buscar por nombre, tema, categoría, género">
+        <form id="form" action="#">
 
-            <div class="dropdown-btns">
-                <a href="#" class="btn-registrar-dropdown"><i class='bx bx-plus-circle'></i>Registrar</a>
-                <div class="dropdown-btns-content">
-                    <a id="registrar_adminal_club_virtual" class="btn-registrar" href="#">Club virtual</a>
-                    <a id="registrar_adminal_club_presencial" class="btn-registrar" href="#">Club presencial</a>
-                </div>
+            <div>
+                <label for="#">Nombre</label>
+                <input id="txt-nombre-sucursal" type="text" placeholder="Ingresar nombre de la sucursal"
+                    aria-label="Ingresar nombre de la sucursal">
             </div>
+            <div id="form-container">
+                
+                <div>
+                    <label for="#">Teléfono</label>
+                    <input id="txt-telefono" type="tel" placeholder="Formato: 00-00-00-00"
+                        aria-label="Ingresar el número de teléfono">
+                </div>
+                <div>
+                    <label for="#">Provincia</label>
+                    <select id="txt-provincia">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar
+                            Provincia</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="#">Cantón</label>
+                    <select id="txt-canton">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar Cantón
+                        </option>
+                    </select>
+                </div>
 
-        </div>
+                <div class="input-group">
+                    <label for="#">Distrito</label>
+                    <select id="txt-distrito">
+                        <option value="" selected="selected" disabled="disabled">Seleccionar
+                            Distrito</option>
+                    </select>
+                </div>
 
-        <table id="tabla-filtrado">
-            <thead>
-                <tr>
-                    <th>Tipo</th>
-                    <th>Administrador</th>
-                    <th>Tema</th>
-                    <th>Categoría</th>
-                    <th>Género</th>
-                </tr>
-            </thead>
-            <tbody>
+                <div class="input-group">
+                    <div>
+                        <h2>Seleccioná la ubicación de la sucursal en el mapa</h2>
+                    </div>
+                    <div id="map"></div>
+                </div>
 
-            </tbody>
-        </table>
+            </div>
+            <button id="btn-enviar" type="button">Guardar</button>
+        </form>
 
     </main>
 
@@ -91,7 +111,7 @@
     <div class="sidebar">
 
         <div class="sidenav-menu">
-            <a class="logo" href="#" id="ver_perfil_admin_libreria"><img src="../imgs/logo.png" alt="logo de Sorbil"></a>
+            <a class="logo" href="" id="ver_perfil_admin_libreria"><img src="../imgs/logo.png" alt="logo de Sorbil"></a>
         </div>
 
         <ul class="sidenav-list">
@@ -219,21 +239,30 @@
     </div>
 
 </aside>
+
     <!--Footer-->
     <footer id="footer-admin">
-        <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+        <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
             <span>FÉNIX</span></a>
     </footer>
 
     <!--Scripts-->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnj4Pk6sSOX5m4uxn8jO9VN2YjMUR7iO4&callback=initMap"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-club.js"></script>
-    <script src="../js/controlador-listar-club.js"></script>
+    <script src="../js/componentes/controlador-select.js"></script>
+    <script src="../js/componentes/controlador-map.js"></script>
+    <script src="../js/servicio-sucursal.js"></script>
+    <script src="../js/servicio-libreria.js"></script>
+    <script src="../js/controlador-modificar-sucursal.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-inicio-al.js"></script>
     <script src="../js/controlador-avatar.js"></script>
+    
+
 </body>
 
 </html>

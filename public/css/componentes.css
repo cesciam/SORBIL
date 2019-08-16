@@ -418,6 +418,7 @@ Inicio de estilos del header de usuario
     font-size: 2.4rem;
     color: var(--color-primary-light);
     transition: .2s;
+    cursor: pointer;
 }
 
 .header-icon i:hover {
@@ -814,15 +815,45 @@ Fin de estilos del header de las cartas
 Inicio de estilos de las calificaciones
 */
 
-.ratings {
-    color: var(--color-alternative-grey);
-    cursor: pointer;
+.form-ratings {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    grid-column-gap: .5rem;
 }
 
-.ratings:hover {
-    color: var(--color-primary);
-    cursor: pointer;
+.form-ratings p {
+    text-align: center;
 }
+
+.form-ratings label {
+    font-size: 2.8rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.form-ratings input[type="radio"] {
+    display: none;
+}
+
+.form-ratings label {
+    color: var(--color-alternative-grey);
+}
+
+.form-ratings label:hover, label:hover~label {
+    color: var(--color-alternative-blue);
+}
+
+.form-ratings input[type="radio"]:checked~label {
+    color: var(--color-alternative-blue);
+}
+
+/* .form-ratings button {
+    position: relative;
+    width: 10%;
+    display: none;
+} */
 
 /*
 Fin de estilos de las calificaciones
@@ -871,4 +902,14 @@ Fin de estilos del carousel
     .card-container .card {
         grid-template-columns: 1fr;
     }
+}
+
+#habilitadoIon{
+    color: var(--color-primary);
+}
+
+.header-iconDisable i {
+    font-size: 2.4rem;
+    color: var(--color-primary-light);
+    transition: .2s;
 }

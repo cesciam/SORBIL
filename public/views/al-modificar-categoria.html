@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar clubes</title>
+    <title>Sorbil -- Librería -- Registrar categorías</title>
 </head>
 
 <body id="grid-admin">
@@ -25,7 +25,7 @@
         <div class="header-user-icons">
             <div class="header-user-container">
                 <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
-                    <span class="user-notification" >1</span>
+                    <span class="user-notification">1</span>
                 </a>
             </div>
             <div class="header-user-container">
@@ -48,40 +48,26 @@
         </div>
 
     </header>
+
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de Clubes</h1>
+            <h1>Registro de Categorías</h1>
         </div>
 
-        <div id="barra-busqueda">
-            <input type="text" id="txt-filtro" placeholder="Buscar por nombre, tema, categoría, género"
-                aria-label="Buscar por nombre, tema, categoría, género">
+        <form id="form" action="#">
 
-            <div class="dropdown-btns">
-                <a href="#" class="btn-registrar-dropdown"><i class='bx bx-plus-circle'></i>Registrar</a>
-                <div class="dropdown-btns-content">
-                    <a id="registrar_adminal_club_virtual" class="btn-registrar" href="#">Club virtual</a>
-                    <a id="registrar_adminal_club_presencial" class="btn-registrar" href="#">Club presencial</a>
+            <div class="centrar-input">
+                <div>
+                    <label for="#">Categoria</label>
+                    <input id="txt-categoria" type="text" placeholder="Ingresar el categoría"
+                        aria-label="Ingresar el categoría">
                 </div>
             </div>
 
-        </div>
+            <button id="btn-enviar" type="button">Actualizar</button>
 
-        <table id="tabla-filtrado">
-            <thead>
-                <tr>
-                    <th>Tipo</th>
-                    <th>Administrador</th>
-                    <th>Tema</th>
-                    <th>Categoría</th>
-                    <th>Género</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
+        </form>
 
     </main>
 
@@ -91,7 +77,7 @@
     <div class="sidebar">
 
         <div class="sidenav-menu">
-            <a class="logo" href="#" id="ver_perfil_admin_libreria"><img src="../imgs/logo.png" alt="logo de Sorbil"></a>
+            <a class="logo" href="" id="ver_perfil_admin_libreria"><img src="../imgs/logo.png" alt="logo de Sorbil"></a>
         </div>
 
         <ul class="sidenav-list">
@@ -219,21 +205,24 @@
     </div>
 
 </aside>
+
     <!--Footer-->
     <footer id="footer-admin">
-        <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+        <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
             <span>FÉNIX</span></a>
     </footer>
 
     <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-club.js"></script>
-    <script src="../js/controlador-listar-club.js"></script>
+    <script src="../js/servicio-categoria.js"></script>
+    <script src="../js/controlador-modificar-categorias.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-inicio-al.js"></script>
     <script src="../js/controlador-avatar.js"></script>
+
 </body>
 
-</html>
+</html> 

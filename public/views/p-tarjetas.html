@@ -189,48 +189,14 @@
 
         <!--Content-->
         <main id="main-profile">
-            <div class="main-profile-titulo">
-                <h1>Registro de tarjetas de pago</h1>
-                <p>Registrá la información que se solicita</p>
-            </div>
-
-            <form id="form" class="credit-card-form" action="#">
-                <div>
-                    <label for="#">Nombre del titular</label>
-                    <input id="input_nombre" type="text" placeholder="Ingresar nombre del titular"
-                        aria-label="Ingresar nombre del titular">
-                </div>
-                <div>
-                    <label for="#">Número de tarjeta</label>
-                    <div id="div-numTarjeta">
-                        <input class="input_numero_tarjeta" type="text" placeholder="Ingresar el número de tarjeta"
-                            aria-label="Ingresar el numero de tarjeta" id="input_num_tarjeta">
-                        <i id="tipo_tarjeta"></i>
-                    </div>
-
-
-                </div>
-
-                <div id="form-container">
-                    <div>
-                        <label for="#">Fecha de vencimiento</label>
-                        <input type="text" placeholder="MM/AA" aria-label="MM/AA" id="input_fecha_ven"
-                            class="input_fecha">
-                    </div>
-                    <div>
-                        <label for="#">CVV</label>
-                        <input id="input_cvv" type="text" placeholder="CVV" aria-label="CVV" class="cvv">
-                    </div>
-                </div>
-                <button id="btn_enviar" type="button">Registrar</button>
-            </form>
+           
 
             <div id="barra-busqueda">
                 <input id="txt_filtro" type="text" placeholder="Buscar por, mombre, número de tarjeta, fecha, CVV"
                     aria-label="Buscar por, mombre, número de tarjeta, fecha, CVV">
 
-                <button aria-label="Search" type="button" value="Refresh" onclick="history.go(0)">
-                    <spans>Actualizar</spans>
+                <button aria-label="Search" type="button" id="registro-tarjetas">
+                    <spans>Registrar tarjeta</spans>
                 </button>
             </div>
 
@@ -241,6 +207,7 @@
                         <th>Fecha de vencimiento</th>
                         <th>Número de tarjeta</th>
                         <th>CVV</th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>

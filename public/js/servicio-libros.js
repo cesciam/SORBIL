@@ -110,17 +110,6 @@ let registrar_libros_libreria = (pcorreo, pidlibro, pcantidad) =>{
     });
 }
 
-let hablitarOferta = (pid, plista_ofertas)=> {
-    axios({
-        method: 'post',
-        url: 'http://localhost:4000/api/habilitar-oferta',
-        responseType: 'json',
-        data: {
-            _id: pid,
-            ofertas: plista_ofertas,
-        }
-    });
-}
 
 let actualizarCantidadLibros = (pid, pcantidad) =>{
     axios({
@@ -135,14 +124,51 @@ let actualizarCantidadLibros = (pid, pcantidad) =>{
     });
 }
 
-let deshablitarOferta = (pid, plista_ofertas)=> {
+let deshabilitarOferta = (pid, plista_ofertas)=> {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar-oferta',
         responseType: 'json',
         data: {
-            _id: pid,
-            ofertas: plista_ofertas,
+            _id: pid            
         }
     });
+}
+
+let habilitarOferta = (pid, plista_ofertas)=> {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/habilitar-oferta',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            estadoOferta: pestado,
+        }
+    });
+}
+
+let cambiarEstadoLibros =(pid, pestado)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-estado-libros',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            estado: pestado
+        }
+    });
+
+}
+
+let modificarLibros =(pid, plibro)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-libros',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            libro: plibro
+        }
+    });
+
 }

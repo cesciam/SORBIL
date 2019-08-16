@@ -6,6 +6,7 @@ let div_tarjeta = document.querySelector('#div-numTarjeta');
 let input_fecha_ven = document.querySelector('#input_fecha_ven_modi');
 let input_cvv = document.querySelector('#input_cvv_modi');
 let input_tarjeta = document.querySelector('#input_num_tarjeta_modi');
+let btn_actualizar = document.querySelector('#btn_enviar_modi');
 
 let UsuarioModificarTarjetas = JSON.parse(sessionStorage.getItem('activo'));
 let id_usuario_activo_modificar_tarjetas = UsuarioModificarTarjetas._id;
@@ -14,7 +15,7 @@ let posicion = urlParams.get('_i');
 
 let fecha_vencimiento = new Cleave('.input_fecha', {
     date: true,
-    datePattern: ['m', 'y']
+    datePattern: ['m', 'd']
 })
 
 let cvv = new Cleave('.cvv', {
@@ -94,10 +95,10 @@ let llenarDatos = async() =>{
     
 }
 
-let btn_actualizar = document.querySelector('#btn_enviar_modi');
+
 
 let registrarModificacion = async() =>{
-    let error = validar(input_nombre.value, input_tarjeta.value, input_fecha_ven.value, input_cvv.value);
+    let error = validar(input_nombre, input_tarjeta, input_fecha_ven, input_cvv);
     if(!error){
         posicion = parseInt(posicion);
         let datosUsuario = await datosFuncion();
@@ -107,13 +108,20 @@ let registrarModificacion = async() =>{
         datosUsuario.tarjetas[posicion].cvv = input_cvv.value;
         console.log(datosUsuario.tarjetas[posicion]);
 
-    }else{
+        actualizarTarjetas(datosUsuario, id_usuario_activo_modificar_tarjetas);
+        window.location.href =`p-tarjetas.html?_id=${id_usuario_activo_modificar_tarjetas}`;
+
+    }else{Swal.fire({ //formato json
+        title: 'No se ha registrado la información',
+        type: 'warning',
+        text: 'Revise los campos resaltados e inténtelo de nuevo'
+    })
 
     }
 }
 
 
-btn_actualizar.addEventListener('click', registrarModificacion());
+btn_actualizar.addEventListener('click', registrarModificacion);
 
 
 
