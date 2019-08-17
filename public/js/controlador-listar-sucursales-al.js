@@ -26,7 +26,7 @@ let mostrar_tabla = async () => {
         btn_modificar.innerText = 'Modificar';
         btn_modificar.href = `modificar-sucursal-al.html?_id=${i}`;
         celdaModificar.appendChild(btn_modificar);
- 
+
     }
 };
 
@@ -55,7 +55,7 @@ let filtrar_tabla = async () => {
             btn_modificar.href = `modificar-sucursal-al.html?_id=${i}`;
             celdaModificar.appendChild(btn_modificar);
 
-         }
+        }
     }
 };
 

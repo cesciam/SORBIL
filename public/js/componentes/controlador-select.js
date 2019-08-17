@@ -74,7 +74,6 @@ let ubicaciones = {
         "Los Chiles": ["Los Chiles"],
         "Guatuso": ["San Rafael"],
         "Río Cuarto": ["Río Cuarto"]
-
     },
     "Cartago": {
         "Cartago": ["Oriental", "Occidental", "Carmen", "San Nicolás", "Aguacaliente"],
@@ -125,7 +124,6 @@ let ubicaciones = {
         "Talamanca": ["Bratsi", "Sixaola", "Cahuita", "Telire"],
         "Matina": ["Matina", "Batán", "Carrandí"],
         "Guácimo": ["Guácimo", "Mercedes", "Pocora", "Río Jiménez", "Duacari"],
-
     }
 
 }

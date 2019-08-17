@@ -24,13 +24,13 @@ let mostrar_tabla = async () => {
 
         let celdaIconoActivar = fila.insertCell();
         let aIconoAc = document.createElement('a');
-        aIconoAc.className = 'header-icon';
+        aIconoAc.className = 'list-icon';
         let iconAc = document.createElement('i');
         iconAc.className = 'bx bxs-check-square';
         aIconoAc.appendChild(iconAc);
         if (lista_generos[i].estado == 'habilitado') {
             iconAc.id = 'habilitadoIon';
-            aIcono.className = 'header-icon';
+            aIcono.className = 'habilitadoIon';
             iconAc.addEventListener('click', function () {
                 let estado = 'desabilitado';
                 deshabilitar(lista_generos[i]._id, estado);
@@ -40,7 +40,7 @@ let mostrar_tabla = async () => {
                 window.location.href = `al-modificar-genero.html?_id=${lista_generos[i]['_id']}`;
             });
         } else {
-            aIcono.className = 'header-iconDisable';
+            aIcono.className = 'list-iconDisable';
             iconAc.addEventListener('click', function () {
                 let estado = 'habilitado';
                 habilitar(lista_generos[i]._id, estado);
@@ -74,13 +74,13 @@ let filtrar_tabla = async () => {
 
             let celdaIconoActivar = fila.insertCell();
             let aIconoAc = document.createElement('a');
-            aIconoAc.className = 'header-icon';
+            aIconoAc.className = 'list-icon';
             let iconAc = document.createElement('i');
             iconAc.className = 'bx bxs-check-square';
             aIconoAc.appendChild(iconAc);
             if (lista_generos[i].estado == 'habilitado') {
                 iconAc.id = 'habilitadoIon';
-                aIcono.className = 'header-icon';
+                aIcono.className = 'list-icon';
                 iconAc.addEventListener('click', function () {
                     let estado = 'desabilitado';
                     cambiarEstadoGeneros(lista_generos[i]._id, estado);
@@ -90,7 +90,7 @@ let filtrar_tabla = async () => {
                     window.location.href = `al-modificar-genero.html?_id=${lista_generos[i]['_id']}`;
                 });
             } else {
-                aIcono.className = 'header-iconDisable';
+                aIcono.className = 'list-iconDisable';
                 iconAc.addEventListener('click', function () {
                     let estado = 'habilitado';
                     cambiarEstadoGeneros(lista_generos[i]._id, estado);

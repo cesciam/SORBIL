@@ -117,9 +117,23 @@ router.post('/modificar-genero', function (req, res) {
     },
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo modificar la información' });
+                res.json({ success: false, msg: 'No se pudo modificar el género' });
             } else {
-                res.json({ success: true, msg: 'La información se modificó con éxito' });
+                res.json({ success: true, msg: 'El género se modificó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/eliminar-genero', function (req, res) {
+    let body = req.body;
+
+    Genero.findByIdAndRemove(body._id,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo borrar el género' });
+            } else {
+                res.json({ success: true, msg: 'El género se borró con éxito' });
             }
         }
     )
