@@ -40,6 +40,13 @@ let mostrar_tabla = async() => {
         iconAc.className  = 'bx bxs-check-square';
         aIconoAc.appendChild(iconAc);
 
+        let celdaIconoEliminar = fila.insertCell();
+        let aIconoEliminar = document.createElement('a');
+        aIconoEliminar.className = 'header-icon';
+        let iconEliminiar = document.createElement('i');
+        iconEliminiar.className  = 'bx bxs-trash';
+        aIconoEliminar.appendChild(iconEliminiar);
+
         if(lista_tarjetas[i]['estado'] == 'habilitado'){
             iconAc.id = 'habilitadoIon';
             icon.addEventListener('click', function(){
@@ -62,8 +69,13 @@ let mostrar_tabla = async() => {
             });
         }
 
+        iconEliminiar.addEventListener('click', function(){
+            eliminarTarjetas(id_usuario_activo, lista_tarjetas[i]._id);
+        })
+
         celdaIcono.appendChild(aIcono);
         celdaIconoActivar.appendChild(aIconoAc);
+        celdaIconoEliminar.appendChild(aIconoEliminar);
 
         
 
@@ -99,6 +111,14 @@ let filtrar_tabla = async() => {
             let iconAc = document.createElement('i');
             iconAc.className  = 'bx bxs-check-square';
             aIconoAc.appendChild(iconAc);
+
+            let celdaIconoEliminar = fila.insertCell();
+            let aIconoEliminar = document.createElement('a');
+            aIconoEliminar.className = 'header-icon';
+            let iconEliminiar = document.createElement('i');
+            iconEliminiar.className  = 'bx bxs-trash';
+            aIconoEliminar.appendChild(iconEliminiar);
+
     
             if(lista_tarjetas[i]['estado'] == 'habilitado'){
                 iconAc.id = 'habilitadoIon';
@@ -124,11 +144,8 @@ let filtrar_tabla = async() => {
     
             celdaIcono.appendChild(aIcono);
             celdaIconoActivar.appendChild(aIconoAc);
-    
-            
-    
-    
-    
+            celdaIconoEliminar.appendChild(aIconoEliminar);
+
         }
     }
 

@@ -268,4 +268,24 @@ router.post('/modificar-estado-tarjetas', function(req, res) {
     )
 });
 
+router.post('/eliminar-tarjetas', function(req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndUpdate(body._id, {
+            $pull: {
+                tarjetas: {
+                    _id : req.body.idlibro
+                }
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+            } else {
+                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
+            }
+        }
+    )
+});
+
 module.exports = router;
