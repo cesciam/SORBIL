@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud, ptipo_usuario) => {
+let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud, ptipo_usuario, pestado) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-usuario',
@@ -22,7 +22,8 @@ let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, p
             direccion_exacta: pdireccionExacta,
             direccion_latitud: pdireccion_latitud,
             direccion_longitud: pdireccion_longitud,
-            tipo_usuario: ptipo_usuario
+            tipo_usuario: ptipo_usuario,
+            estado: pestado
         }
     });
 };
