@@ -65,11 +65,11 @@
         "Atenas": ["Atenas", "Jesús","Mercedes"],
         "Naranjo": ["Naranjo", "San Miguel", "San José"],
         "Palmares": ["Palmares", "Zaragoza", "Buenos Aires"],
-        "Poás": ["San Pedro", "San Juan","San Rafael"],
+        "Poás": ["San Pedro", "San Juan", "San Rafael"],
         "Orotina": ["Orotina", "El Mastate"],
         "San Carlos": ["Quesada", "Florencia", "Buenavista", "Aguas Zarcas"],
         "Zarcero": ["Zarcero", "Laguna", "Tapesco"],
-        "Valverde Vega": ["Sarchí Norte","Sarchí Sur","Toro Amarillo"],
+        "Valverde Vega": ["Sarchí Norte", "Sarchí Sur", "Toro Amarillo"],
         "Upala": ["Upala", "Aguas Claras", "Bijagua"],
         "Los Chiles": ["Los Chiles", "Caño Negro", "San Jorge", "El Amparo"],
         "Guatuso": ["San Rafael", "Buena Vista", "Cote", "Katira"],
@@ -130,7 +130,6 @@
         "Talamanca": ["Bratsi", "Sixaola", "Cahuita", "Telire"],
         "Matina": ["Matina", "Batán", "Carrandí"],
         "Guácimo": ["Guácimo", "Mercedes", "Pocora", "Río Jiménez", "Duacari"],
-
     }
 
 }*/

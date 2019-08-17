@@ -904,12 +904,30 @@ Fin de estilos del carousel
     }
 }
 
-#habilitadoIon{
-    color: var(--color-primary);
+/*Desabilitar*/
+
+.list-icon i {
+    color: var(--color-alternative-blue);
+    opacity: .4;
 }
 
-.header-iconDisable i {
+.list-iconDisable {
+    color: var(--color-alternative-blue);
+    opacity: .4;
     font-size: 2.4rem;
-    color: var(--color-primary-light);
-    transition: .2s;
+    cursor: pointer;
+}
+
+/*Habilitar*/
+
+#habilitadoIon {
+    color: var(--color-alternative-blue);
+    opacity: 1;
+    cursor: pointer;
+}
+
+.habilitadoIon {
+    color: var(--color-alternative-blue);
+    font-size: 2.4rem;
+    cursor: pointer;
 }

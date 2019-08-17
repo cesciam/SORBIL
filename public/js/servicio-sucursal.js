@@ -18,7 +18,6 @@ let registrarSucursal = (pcorreo, pnombre, ptelefono, pprovincia, pcanton, pdist
     });
 }
 
-
 let corlatitud;
 let corlongitud;
 

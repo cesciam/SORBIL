@@ -54,7 +54,7 @@ let mostrar_tabla = async () => {
             aIconoEditar.className = 'header-icon';
             iconAc.addEventListener('click', function () {
                 let estado = 'desabilitado';
-                deshabilitar(lista_clubes[i]._id, estado);
+                deshabilitarClub(lista_clubes[i]._id, estado);
                 window.location.reload();
             });
 
@@ -72,7 +72,7 @@ let mostrar_tabla = async () => {
             aIconoEditar.className = 'header-iconDisable';
             iconAc.addEventListener('click', function () {
                 let estado = 'habilitado';
-                habilitar(lista_clubes[i]._id, estado);
+                habilitarClub(lista_clubes[i]._id, estado);
                 window.location.reload();
             });
         }

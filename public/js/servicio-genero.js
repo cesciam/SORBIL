@@ -43,7 +43,7 @@ let obtenerGeneroid = async (_id) => {
     }
 };
 
-let habilitar = (pid) => {
+let habilitarGenero = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/habilitar-genero',
@@ -53,7 +53,7 @@ let habilitar = (pid) => {
         }
     });
 };
-let deshabilitar = (pid) => {
+let deshabilitarGenero = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar-genero',

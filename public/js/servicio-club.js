@@ -70,7 +70,7 @@ let registrarUsuarioAlClub = (pid_club, pidusuario, pnombre, pcorreo) =>{
     });
 };
 
-let habilitar = (pid) => {
+let habilitarClub = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/habilitar-club',
@@ -80,7 +80,7 @@ let habilitar = (pid) => {
         }
     });
 };
-let deshabilitar = (pid) => {
+let deshabilitarClub = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar-club',
