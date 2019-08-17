@@ -33,7 +33,7 @@ let mostrar_tabla = async () => {
             aIcono.className = 'habilitadoIon';
             iconAc.addEventListener('click', function () {
                 let estado = 'desabilitado';
-                deshabilitar(lista_generos[i]._id, estado);
+                deshabilitarGenero(lista_generos[i]._id, estado);
                 window.location.reload();
             });
             icon.addEventListener('click', function () {
@@ -43,7 +43,7 @@ let mostrar_tabla = async () => {
             aIcono.className = 'list-iconDisable';
             iconAc.addEventListener('click', function () {
                 let estado = 'habilitado';
-                habilitar(lista_generos[i]._id, estado);
+                habilitarGenero(lista_generos[i]._id, estado);
                 window.location.reload();
             });
         }

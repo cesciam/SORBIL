@@ -58,18 +58,18 @@ let ubicaciones = {
         "Moravia": ["San Jerónimo"]
     },
     "Alajuela": {
-        "Alajuela": ["Alajuela","San José","Carrizal","San Antonio","Guácima","San Isidro","Sabanilla"],
-        "San Ramón": ["San Ramón","Santiago","San Juan","Piedades Norte","Piedades Sur","San Rafael", "San Isidro"],
-        "Grecia": ["Grecia","San Isidro", "San José","San Roque", "Tacares","Rio Cuarto"],
-        "San Mateo": ["San Mateo", "Desmonte","Jesús María", "Labrador"],
-        "Atenas": ["Atenas", "Jesús","Mercedes"],
+        "Alajuela": ["Alajuela", "San José", "Carrizal", "San Antonio", "Guácima", "San Isidro", "Sabanilla"],
+        "San Ramón": ["San Ramón", "Santiago", "San Juan", "Piedades Norte", "Piedades Sur", "San Rafael", "San Isidro"],
+        "Grecia": ["Grecia", "San Isidro", "San José", "San Roque", "Tacares", "Rio Cuarto"],
+        "San Mateo": ["San Mateo", "Desmonte", "Jesús María", "Labrador"],
+        "Atenas": ["Atenas", "Jesús", "Mercedes"],
         "Naranjo": ["Naranjo", "San Miguel", "San José"],
         "Palmares": ["Palmares", "Zaragoza", "Buenos Aires"],
-        "Poás": ["San Pedro", "San Juan","San Rafael"],
+        "Poás": ["San Pedro", "San Juan", "San Rafael"],
         "Orotina": ["Orotina", "El Mastate"],
         "San Carlos": ["Quesada", "Florencia", "Buenavista", "Aguas Zarcas"],
         "Zarcero": ["Zarcero", "Laguna", "Tapesco"],
-        "Valverde Vega": ["Sarchí Norte","Sarchí Sur","Toro Amarillo"],
+        "Valverde Vega": ["Sarchí Norte", "Sarchí Sur", "Toro Amarillo"],
         "Upala": ["Upala", "Aguas Claras", "Bijagua"],
         "Los Chiles": ["Los Chiles"],
         "Guatuso": ["San Rafael"],
@@ -83,23 +83,23 @@ let ubicaciones = {
         "Turrialba": ["Turrialba", "La Suiza", "Peralta",],
         "Alvarado": ["Pacayas", "Cervantes", "Capellades"],
         "Oreamuno": ["San Rafael", "Cot", "Potrero Cerrado"],
-        "El Guarco": ["El Tejar", "San Isidro","Tobosi"]
+        "El Guarco": ["El Tejar", "San Isidro", "Tobosi"]
     },
     "Heredia": {
         "Heredia": ["Heredia", "Mercedes", "San Francisco", "Ulloa"],
         "Barva": ["Barva", "San Pedro", "San Pablo", "San Roque"],
         "Santo Domingo": ["	Santo Domingo", "San Vicente", "San Miguel", "Paracito"],
-        "Santa Bárbara": ["Santa Bárbara","San Pedro","San Juan","Jesús"],
-        "San Rafael": ["San Rafael","San Josecito","Santiago","Los Ángeles","Concepción"],
+        "Santa Bárbara": ["Santa Bárbara", "San Pedro", "San Juan", "Jesús"],
+        "San Rafael": ["San Rafael", "San Josecito", "Santiago", "Los Ángeles", "Concepción"],
         "San Isidro": ["San Isidro", "San José", "Concepción", "San Francisco"],
         "Belén": ["San Antonio", "La Ribera", "La Asunción"],
         "Flores": ["San Joaquín", "Barrantes", "Llorente"],
-        "San Pablo": ["San Pablo", "Rincón De Sabanilla"]  
+        "San Pablo": ["San Pablo", "Rincón De Sabanilla"]
 
     },
     "Guanacaste": {
-        "Liberia": ["Liberia","Mayorga", "Cañas Dulces","Mayorga","Nacascolo"],
-        "Nicoya": ["Nicoya","Mansión", "San Antonio","Quebrada Honda"],
+        "Liberia": ["Liberia", "Mayorga", "Cañas Dulces", "Mayorga", "Nacascolo"],
+        "Nicoya": ["Nicoya", "Mansión", "San Antonio", "Quebrada Honda"],
         "Santa Cruz": ["Santa Cruz", "Bolsón", "Veintisiete de Abril", "Tempate"],
         "Bagaces": ["Bagaces", "La Fortuna", "Mogote"],
         "Carrillo": ["Filadelfia", "Palmira", "Sardinal"],
@@ -118,7 +118,7 @@ let ubicaciones = {
 
     },
     "Limón": {
-        "Limón": ["Limón","Valle La Estrella", "Río Blanco"],
+        "Limón": ["Limón", "Valle La Estrella", "Río Blanco"],
         "Pococí": ["Guápiles", "Jiménez", "Rita"],
         "Siquirres": ["Siquirres", "Pacuarito", "Florida", "Germania"],
         "Talamanca": ["Bratsi", "Sixaola", "Cahuita", "Telire"],
