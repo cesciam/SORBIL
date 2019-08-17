@@ -86,3 +86,22 @@ router.get('/buscar-autor-id/:_id', function(req, res) {
 
 
 module.exports = router;
+
+router.post('/modificar-autor', function(req, res) {
+    let body = req.body;
+
+    Autor.findByIdAndUpdate(body._id, {
+            $set: req.body
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la información del autor' });
+            } else {
+                res.json({ success: true, msg: 'El autor se modificó con éxito' });
+            }
+        }
+    )
+});
+
+
+module.exports = router;

@@ -12,7 +12,7 @@ const txt_segundo_apellido = document.querySelector('#txt-segundo-apellido');
 const txt_provincia = document.querySelector('#txt-provincia');
 const txt_canton = document.querySelector('#txt-canton');
 const txt_distrito = document.querySelector('#txt-distrito');
-const btn_modificar= document.querySelector('#btn-modificar');
+const btn_modificar = document.querySelector('#btn-modificar');
 
 
 let llenar_perfil = async () => {
@@ -28,12 +28,12 @@ let llenar_perfil = async () => {
         txt_provincia.innerHTML = usuario['provincia'];
         txt_canton.innerHTML = usuario['canton'];
         txt_distrito.innerHTML = usuario['distrito'];
-       
+
     }
 };
 
 btn_modificar.addEventListener('click', function () {
-    window.location.href = `modificar-perfil-usuario.html?_id=${_id}`;    
+    window.location.href = `modificar-perfil-usuario.html?_id=${_id}`;
 });
 
 llenar_perfil();

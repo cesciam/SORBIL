@@ -26,7 +26,12 @@ let mostrar_tabla = async () => {
         btn_modificar.innerText = 'Modificar';
         btn_modificar.href = `modificar-sucursal-al.html?_id=${i}`;
         celdaModificar.appendChild(btn_modificar);
- 
+
+        let celdaPerfil = fila.insertCell();
+        let btn_perfil = document.createElement('a');
+        btn_perfil.innerText = 'Ver perfil';
+        btn_perfil.href = `ver-perfil-sucursal.html?_id=${i}`;
+        celdaPerfil.appendChild(btn_perfil);
     }
 };
 
@@ -55,7 +60,7 @@ let filtrar_tabla = async () => {
             btn_modificar.href = `modificar-sucursal-al.html?_id=${i}`;
             celdaModificar.appendChild(btn_modificar);
 
-         }
+        }
     }
 };
 

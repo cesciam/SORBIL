@@ -282,4 +282,18 @@ router.post('/modificar-libros', function(req, res) {
     )
 });
 
+router.post('/eliminar-libros', function(req, res) {
+    let body = req.body;
+
+    Registro_libro.findByIdAndRemove(body._id,
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+            } else {
+                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
+            }
+        }
+    )
+});
+
 module.exports = router;
