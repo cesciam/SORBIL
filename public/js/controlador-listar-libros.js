@@ -40,6 +40,13 @@ let mostrar_tabla = async () => {
         iconAc.className  = 'bx bxs-check-square';
         aIconoAc.appendChild(iconAc);
 
+        let celdaIconoEliminar = fila.insertCell();
+        let aIconoEliminar = document.createElement('a');
+        aIconoEliminar.className = 'header-icon';
+        let iconEliminiar = document.createElement('i');
+        iconEliminiar.className  = 'bx bxs-trash';
+        aIconoEliminar.appendChild(iconEliminiar);
+
         if(lista_libros[i].estado == 'habilitado'){
             iconAc.id = 'habilitadoIon';
             aPerfil.addEventListener('click', function () {
@@ -68,9 +75,35 @@ let mostrar_tabla = async () => {
             });
         }
 
+        aIconoEliminar.addEventListener('click', function(){
+            Swal.fire({
+                title: '?Está seguro de eliminar la tarjeta?',
+                text: "Ésta acción no se puede revertir",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+            }).then((result) => {
+                if (result.value) {
+                    eliminarLibro(lista_libros[i]._id);
+
+                    Swal.fire(
+                        'Tarjeta eliminado!',
+                        'success'
+                    ).then((result) => {
+                        if (result.value) {
+                            window.location.reload();
+                        }
+                    });
+                }
+            })
+        });
+
         celdaIconoEditar.appendChild(aIconoEditar);
         celdaIconoActivar.appendChild(aIconoAc);
         celdaPerfil.appendChild(aPerfil);
+        celdaIconoEliminar.appendChild(aIconoEliminar);
 
         
     }

@@ -70,16 +70,33 @@ let mostrar_tabla = async() => {
         }
 
         iconEliminiar.addEventListener('click', function(){
-            eliminarTarjetas(id_usuario_activo, lista_tarjetas[i]._id);
-        })
+            Swal.fire({
+                title: '?Está seguro de eliminar la tarjeta?',
+                text: "Ésta acción no se puede revertir",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+            }).then((result) => {
+                if (result.value) {
+                    eliminarTarjetas(id_usuario_activo, lista_tarjetas[i]._id);
+
+                    Swal.fire(
+                        'Tarjeta eliminado!',
+                        'success'
+                    ).then((result) => {
+                        if (result.value) {
+                            window.location.reload();
+                        }
+                    });
+                }
+            })
+        });
 
         celdaIcono.appendChild(aIcono);
         celdaIconoActivar.appendChild(aIconoAc);
         celdaIconoEliminar.appendChild(aIconoEliminar);
-
-        
-
-
 
     }
 };
@@ -111,14 +128,13 @@ let filtrar_tabla = async() => {
             let iconAc = document.createElement('i');
             iconAc.className  = 'bx bxs-check-square';
             aIconoAc.appendChild(iconAc);
-
+    
             let celdaIconoEliminar = fila.insertCell();
             let aIconoEliminar = document.createElement('a');
             aIconoEliminar.className = 'header-icon';
             let iconEliminiar = document.createElement('i');
             iconEliminiar.className  = 'bx bxs-trash';
             aIconoEliminar.appendChild(iconEliminiar);
-
     
             if(lista_tarjetas[i]['estado'] == 'habilitado'){
                 iconAc.id = 'habilitadoIon';
@@ -142,10 +158,35 @@ let filtrar_tabla = async() => {
                 });
             }
     
+            iconEliminiar.addEventListener('click', function(){
+                Swal.fire({
+                    title: '?Está seguro de eliminar la tarjeta?',
+                    text: "Ésta acción no se puede revertir",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sí, estoy seguro'
+                }).then((result) => {
+                    if (result.value) {
+                        eliminarTarjetas(id_usuario_activo, lista_tarjetas[i]._id);
+    
+                        Swal.fire(
+                            'Tarjeta eliminado!',
+                            'success'
+                        ).then((result) => {
+                            if (result.value) {
+                                window.location.reload();
+                            }
+                        });
+                    }
+                })
+            });
+    
             celdaIcono.appendChild(aIcono);
             celdaIconoActivar.appendChild(aIconoAc);
             celdaIconoEliminar.appendChild(aIconoEliminar);
-
+    
         }
     }
 
