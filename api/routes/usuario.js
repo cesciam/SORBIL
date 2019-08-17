@@ -27,6 +27,7 @@ router.post('/registrar-usuario', function(req, res) {
         primer_apellido: body.primer_apellido,
         segundo_apellido: body.segundo_apellido,
         sexo: body.sexo,
+        cedulas: body.cedulas,
         provincia: body.provincia,
         canton: body.canton,
         distrito: body.distrito,
@@ -256,6 +257,26 @@ router.post('/modificar-estado-tarjetas', function(req, res) {
     Usuario.findByIdAndUpdate(body._id, {
             $set: {
                 'tarjetas': req.body.datos
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+            } else {
+                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/eliminar-tarjetas', function(req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndUpdate(body._id, {
+            $pull: {
+                tarjetas: {
+                    _id : req.body.idlibro
+                }
             }
         },
         function(error) {

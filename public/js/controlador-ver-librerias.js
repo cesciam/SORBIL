@@ -17,7 +17,7 @@ let mostrar_cards = async () => {
         let h2 = document.createElement('h2');
         h2.innerText = lista_librerias[i]['empresa'];
 
-        header.appendChild(h2);
+        header.appendChild(h2); 
 
         let contenedor_imagen = document.createElement('div');
         contenedor_imagen.classList.add('contenedor_imagen');

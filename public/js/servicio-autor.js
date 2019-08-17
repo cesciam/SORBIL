@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarAutor = (pimagen, pautor, pbiografia, pfechaNacimiento, pfechaDefuncion, pNacionalidad) => {
+let registrarAutor = (pimagen, pautor, pNacionalidad, pfechaNacimiento, pfechaDefuncion, pbiografia ) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-autor',
@@ -8,10 +8,10 @@ let registrarAutor = (pimagen, pautor, pbiografia, pfechaNacimiento, pfechaDefun
         data: {
             imagen: pimagen,
             autor: pautor,
-            biografia: pbiografia,
+            nacionalidad: pNacionalidad,
             fecha_nacimiento: pfechaNacimiento,
             fecha_defuncion: pfechaDefuncion,
-            nacionalidad: pNacionalidad
+            biografia: pbiografia,
         }
     });
 };
@@ -46,4 +46,21 @@ let obtenerAutorid = async (_id) => {
     } catch (error) {
         console.log(error);
     }
+};
+
+let modificar = (pid, pautor, pnacionalidad, pfechaNacimiento, pfechaDefuncion, pbiografia) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-contacto',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            autor: pautor,
+            nacionalidad: pnacionalidad,
+            fecha_nacimiento: pfechaNacimiento,
+            fecha_defuncion: pfechaDefuncion,
+            biografia: pbiografia,
+
+        }
+    });
 };

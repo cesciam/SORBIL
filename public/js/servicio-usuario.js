@@ -15,6 +15,7 @@ let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, p
             sexo: psexo,
             primer_apellido: pprimerApellido,
             segundo_apellido: psegundoApellido,
+            cedulas: pcedulas,
             provincia: pprovincia,
             canton: pcanton,
             distrito: pdistrito,
@@ -97,7 +98,7 @@ let obtenerUsuarioId = async(_id) => {
     }
 };
 // Modificar el estado
-let habilitar = (pid, pestado) => {
+let habilitarUsuario = (pid, pestado) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/habilitar-usuario',
@@ -110,7 +111,7 @@ let habilitar = (pid, pestado) => {
 };
 
 // Modificar el estado
-let deshabilitar = (pid) => {
+let deshabilitarUsuario = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar-usuario',
@@ -225,3 +226,16 @@ let cambiarEstadoTarjetas = (pdatos, pid) =>{
         }
     });
 }
+
+let eliminarTarjetas = (pid, pidtarjeta) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-tarjetas',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            idlibro: pidtarjeta
+        }
+    });
+}
+

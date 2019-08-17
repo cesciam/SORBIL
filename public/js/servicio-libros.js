@@ -172,3 +172,15 @@ let modificarLibros =(pid, plibro)=>{
     });
 
 }
+
+let eliminarLibro =(pid)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-libros',
+        responseType: 'json',
+        data: {
+            _id: pid
+        }
+    });
+
+}
