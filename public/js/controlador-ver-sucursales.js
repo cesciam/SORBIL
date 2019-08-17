@@ -1,7 +1,7 @@
 'use strict';
 
-const sct_librerias = document.querySelector('#lista_sucursales');
-let txt_filtro = document.querySelector('#txt-filtro');
+
+
 let lista_sucursales = [];
 
 let usuarioActivoLibreria = JSON.parse(sessionStorage.getItem('activo'));
