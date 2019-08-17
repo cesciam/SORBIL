@@ -1,3 +1,5 @@
+
+
 const sct_libros = document.querySelector('#lista_libros');
 
 let listarLibrosCards = async ()=>{
@@ -5,6 +7,8 @@ let listarLibrosCards = async ()=>{
     let correoUserActivo = usuarioActivoEnListarLibros.correo;
     let libros = await obtenerLibros();
     let libros_libreria = await obtenerDatosCorreo(correoUserActivo);
+    let datosLibreria = await obtenerLibreriaPorCorreo(correoUserActivo);
+    let librosLibreria = datosLibreria[0].sucursales;
 
     for (let index = 0; index < libros_libreria.length; index++) {
         for (let j = 0; j < libros.length; j++) {
@@ -55,13 +59,13 @@ let listarLibrosCards = async ()=>{
                     contenedor_cantidad.appendChild(texto_cantidad);
                     contenedor_cantidad.appendChild(cantidad);
             
-                    let btn_agregar = document.createElement('button');
-                    btn_agregar.innerText = 'Agregar a sucursal';
-                    btn_agregar.addEventListener('click', function () {
-                        agregar_libros_libreria(libros[j]['_id'], libros[i].cantidad, libros[j]._id);
+                    let btn_agregar_Sucursal = document.createElement('button');
+                    btn_agregar_Sucursal.innerText = 'Agregar a sucursal';
+                    btn_agregar_Sucursal.addEventListener('click', function () {
+                        
                     });
             
-                    let btn_perfil = document.createElement('a');
+                    let btn_perfil = document.createElement('a');Z
                     btn_perfil.innerText = 'Ver libro';
                     btn_perfil.dataset._id = libros[j]['_id'];
                     btn_perfil.addEventListener('click', function () {
@@ -73,7 +77,7 @@ let listarLibrosCards = async ()=>{
                     contenedor_card.appendChild(contenedor_atributo);
                     contenedor_card.appendChild(contenedor_cantidad);
                     contenedor_card.appendChild(contenedor_precio);
-                    contenedor_card.appendChild(btn_agregar);
+                    contenedor_card.appendChild(btn_agregar_Sucursal);
                     contenedor_card.appendChild(btn_perfil);
             
                     sct_libros.appendChild(contenedor_card);
