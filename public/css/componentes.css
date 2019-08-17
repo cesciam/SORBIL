@@ -904,10 +904,7 @@ Fin de estilos del carousel
     }
 }
 
-.list-icon {
-    color: var(--color-alternative-blue);
-    float: right;
-}
+/*Desabilitar*/
 
 .list-icon i {
     color: var(--color-alternative-blue);
@@ -921,6 +918,8 @@ Fin de estilos del carousel
     cursor: pointer;
 }
 
+/*Habilitar*/
+
 #habilitadoIon {
     color: var(--color-alternative-blue);
     opacity: 1;
@@ -931,10 +930,4 @@ Fin de estilos del carousel
     color: var(--color-alternative-blue);
     font-size: 2.4rem;
     cursor: pointer;
-}
-
-.header-iconDisable i {
-    font-size: 2.4rem;
-    transition: .2s;
-    opacity: .6;
 }
