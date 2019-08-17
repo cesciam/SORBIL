@@ -194,6 +194,10 @@ Inicio de estilos de ver
     color: var(--color-alternative-green);
 }
 
+.section-ver .ver-cards .ver-cards-container .contenedor_cantidad button {
+    display: block;
+}
+
 @media (max-width: 100rem) {
     .section-ver .ver-cards .ver-cards-container {
         grid-template-columns: repeat(4, 1fr);
