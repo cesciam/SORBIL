@@ -218,7 +218,7 @@ let cargar_formulario = async () => {
 
 let editar = () => {
 
-    modificarClub(_id, src_imagen.src, input_administrador_club.value, input_tema.value, input_telefono.value, input_correo.value, input_categoria.value, input_genero.value, input_fecha.value, input_hora.value, input_frecuencia.value, input_descripcion.value);
+    modificarClub(_id, img_uploader_imagen.src, input_administrador_club.value, input_tema.value, input_telefono.value, input_correo.value, input_categoria.value, input_genero.value, input_fecha.value, input_hora.value, input_frecuencia.value, input_descripcion.value);
 
 }
 
