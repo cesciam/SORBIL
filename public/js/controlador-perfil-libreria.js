@@ -33,6 +33,7 @@ let llenar_perfil_libreria = async () => {
         direccion_exacta.innerHTML = libreriaid['direccion_exacta'];
     }
 };
+
 let mostrar_cards = async () => {
 
 
@@ -62,10 +63,10 @@ let mostrar_cards = async () => {
         contenedor_atributo.appendChild(telefono);
         
         let btn_perfil = document.createElement('button');
-        btn_perfil.innerText = 'Ver librería';
+        btn_perfil.innerText = 'Ver sucursal';
         btn_perfil.dataset._id = lista_sucursales[i]['_id'];
         btn_perfil.addEventListener('click', function () {
-            window.location.href = `ver-perfil-libreria.html?_id=${this.dataset._id}`;
+            window.location.href = `ver-perfil-sucursal.html?_id=${this.dataset._id}`;
         });
 
         contenedor_card.appendChild(header);
@@ -84,22 +85,15 @@ let filtrar_cards = async () => {
 
     for (let i = 0; i < lista_sucursales.length; i++) {
 
-        if (lista_sucursales[i]['empresa'].toLowerCase().includes(filtro) || lista_sucursales[i]['correo'].toLowerCase().includes(filtro) || lista_sucursales[i]['telefono'].toLowerCase().includes(filtro)) {
+        if (lista_sucursales[i]['nombre'].toLowerCase().includes(filtro) || lista_sucursales[i]['correo'].toLowerCase().includes(filtro) || lista_sucursales[i]['telefono'].toLowerCase().includes(filtro)) {
             let contenedor_card = document.createElement('div');
             contenedor_card.classList.add('card');
 
             let header = document.createElement('header');
             let h2 = document.createElement('h2');
-            h2.innerText = lista_sucursales[i]['empresa'];
+            h2.innerText = lista_sucursales[i]['nombre'];
 
             header.appendChild(h2);
-
-            let contenedor_imagen = document.createElement('div');
-            contenedor_imagen.classList.add('contenedor_imagen');
-            let foto = document.createElement('img');
-            foto.src = lista_sucursales[i]['imagen'];
-
-            contenedor_imagen.appendChild(foto);
 
             let contenedor_atributo = document.createElement('div');
             contenedor_atributo.classList.add('contenedor_atributo');
@@ -111,23 +105,15 @@ let filtrar_cards = async () => {
             contenedor_atributo.appendChild(correo);
             contenedor_atributo.appendChild(telefono);
 
-            let contenedor_descripcion = document.createElement('div');
-            let descripcion = document.createElement('p');
-            descripcion.innerText = lista_sucursales[i]['descripcion'];
-
-            contenedor_descripcion.appendChild(descripcion);
-
             let btn_perfil = document.createElement('button');
-            btn_perfil.innerText = 'Ver Sucursal';
+            btn_perfil.innerText = 'Ver sucursal';
             btn_perfil.dataset._id = lista_sucursales[i]['_id'];
             btn_perfil.addEventListener('click', function () {
-                window.location.href = `ver-perfil-libreria.html?_id=${this.dataset._id}`;
+                window.location.href = `ver-perfil-sucursal.html?_id=${this.dataset._id}`;
             });
 
             contenedor_card.appendChild(header);
-            contenedor_card.appendChild(contenedor_imagen);
             contenedor_card.appendChild(contenedor_atributo);
-            contenedor_card.appendChild(contenedor_descripcion);
             contenedor_card.appendChild(btn_perfil);
 
             sct_librerias.appendChild(contenedor_card);

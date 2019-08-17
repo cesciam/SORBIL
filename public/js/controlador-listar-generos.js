@@ -28,6 +28,14 @@ let mostrar_tabla = async () => {
         let iconAc = document.createElement('i');
         iconAc.className = 'bx bxs-check-square';
         aIconoAc.appendChild(iconAc);
+
+        let celdaIconoEliminar = fila.insertCell();
+        let aIconoEliminar = document.createElement('a');
+        aIconoEliminar.className = 'habilitadoIon list-icon';
+        let iconEliminiar = document.createElement('i');
+        iconEliminiar.className = 'bx bxs-trash';
+        aIconoEliminar.appendChild(iconEliminiar);
+
         if (lista_generos[i].estado == 'habilitado') {
             iconAc.id = 'habilitadoIon';
             aIcono.className = 'habilitadoIon';
@@ -48,8 +56,34 @@ let mostrar_tabla = async () => {
             });
         }
 
+        iconEliminiar.addEventListener('click', function () {
+            Swal.fire({
+                title: '¿Está seguro de eliminar el género?',
+                text: "Ésta acción no se puede revertir",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+            }).then((result) => {
+                if (result.value) {
+                    eliminarGenero(lista_generos[i]._id);
+
+                    Swal.fire(
+                        'Genero eliminado!',
+                        'success'
+                    ).then((result) => {
+                        if (result.value) {
+                            window.location.reload();
+                        }
+                    });
+                }
+            })
+        });
+
         celdaIcono.appendChild(aIcono);
         celdaIconoActivar.appendChild(aIconoAc);
+        celdaIconoEliminar.appendChild(aIconoEliminar);
     }
 };
 

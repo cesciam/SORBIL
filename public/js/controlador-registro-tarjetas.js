@@ -71,7 +71,7 @@ let mostrar_tabla = async() => {
 
         iconEliminiar.addEventListener('click', function(){
             Swal.fire({
-                title: '?Está seguro de eliminar la tarjeta?',
+                title: '¿Está seguro de eliminar la tarjeta?',
                 text: "Ésta acción no se puede revertir",
                 type: 'warning',
                 showCancelButton: true,
