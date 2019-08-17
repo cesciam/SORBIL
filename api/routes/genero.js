@@ -131,9 +131,9 @@ router.post('/eliminar-genero', function (req, res) {
     Genero.findByIdAndRemove(body._id,
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo borrar el género' });
+                res.json({ success: false, msg: 'No se pudo eliminar el género' });
             } else {
-                res.json({ success: true, msg: 'El género se borró con éxito' });
+                res.json({ success: true, msg: 'El género se eliminó con éxito' });
             }
         }
     )

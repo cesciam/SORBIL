@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/paginas/icon-small.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
     <title>Sorbil -- Librería -- Listar géneros</title>
 </head>
@@ -52,31 +53,14 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Registro de Género</h1>
-        </div>
-        
-        <form id="form" action="#">
-        
-            <div class="centrar-input">
-                <div>
-                    <label for="#">Género</label>
-                    <input id="txt-genero" class="effect-21" type="text" placeholder="Ingresar el género"
-                        aria-label="Ingresar el género">
-                </div>
-            </div>
-        
-            <button id="btn-enviar" type="button">Registrar</button>
-        
-        </form>
-        <!-- <div class="main-admin-titulo">
             <h1>Listados de Géneros</h1>
-        </div> -->
+        </div>
 
         <div id="barra-busqueda">
             <input type="text" id="txt-filtro" placeholder="Buscar por género" aria-label="Buscar por género">
 
-            <a class="btn-registrar" aria-label="Registrar" type="button" onclick="history.go(0)">
-                <spans>Actualizar</spans>
+            <a href="#" id="registrar_adminal_genero" class="btn-registrar" aria-label="Registrar" type="button">
+                <spans>Registrar</spans>
             </a>
         </div>
 
@@ -242,7 +226,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/servicio-genero.js"></script>
     <script src="../js/controlador-listar-generos.js"></script>
-    <script src="../js/controlador-registrar-genero.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-inicio-al.js"></script>
     <script src="../js/controlador-avatar.js"></script>

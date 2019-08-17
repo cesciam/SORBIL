@@ -792,21 +792,6 @@ Inicio de estilos del header de las cartas
     margin-bottom: 1rem;
 }
 
-.list-icon {
-    float: right;
-}
-
-.list-icon i {
-    color: var(--color-alternative-blue);
-    cursor: pointer;
-    transition: .2s;
-    font-size: 2.5rem;
-}
-
-.list-icon i:hover {
-    opacity: .8;
-}
-
 /*
 Fin de estilos del header de las cartas
 */
@@ -906,10 +891,23 @@ Fin de estilos del carousel
 
 /*Desabilitar*/
 
+.list-icon {
+    float: right;
+}
+
 .list-icon i {
     color: var(--color-alternative-blue);
+    cursor: pointer;
+    transition: .2s;
+    font-size: 2.5rem;
     opacity: .4;
 }
+
+.list-icon i:hover {
+    opacity: .8;
+}
+
+/*Solamente al ícono de modificar*/
 
 .list-iconDisable {
     color: var(--color-alternative-blue);
@@ -918,16 +916,25 @@ Fin de estilos del carousel
     cursor: pointer;
 }
 
+.bxs-trash:before {
+    color: var(--color-alternative-red);
+}
+
+.bxs-check-square:before {
+    color: var(--color-alternative-red);
+}
+
 /*Habilitar*/
 
 #habilitadoIon {
     color: var(--color-alternative-blue);
-    opacity: 1;
     cursor: pointer;
+    opacity: 1;
 }
 
 .habilitadoIon {
     color: var(--color-alternative-blue);
     font-size: 2.4rem;
     cursor: pointer;
+    opacity: 1;
 }

@@ -1038,4 +1038,18 @@ router.post('/modificar-club', function (req, res) {
     )
 });
 
+router.post('/eliminar-club', function (req, res) {
+    let body = req.body;
+
+    Club.findByIdAndRemove(body._id,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el club' });
+            } else {
+                res.json({ success: true, msg: 'El club se eliminó con éxito' });
+            }
+        }
+    )
+});
+
 module.exports = router;
