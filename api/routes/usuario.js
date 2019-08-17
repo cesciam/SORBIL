@@ -36,7 +36,8 @@ router.post('/registrar-usuario', function(req, res) {
         direccion_longitud: body.direccion_longitud,
         tipo_usuario: body.tipo_usuario,
         edad: body.edad,
-        fecha: body.fecha
+        fecha: body.fecha,
+        estado: body.estado
     });
 
     nuevo_usuario.save(
