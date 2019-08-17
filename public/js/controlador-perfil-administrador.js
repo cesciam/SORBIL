@@ -17,7 +17,7 @@ const empresa = document.querySelector('#empresa');
 let llenar_perfil = async () => {
     
     let usuario = await obtenerUsuarioId(_id);
-    let libreria = await obtenerLibreriaid(_id);
+    // let libreria = await obtenerLibreriaid(_id);
 
     if (usuario) {
         avatar.src = usuario['avatar'];
