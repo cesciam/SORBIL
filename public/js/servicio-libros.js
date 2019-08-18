@@ -147,6 +147,18 @@ let habilitarOferta = (pid, plista_ofertas)=> {
     });
 }
 
+let eliminarOferta = (pid, pidOferta) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-oferta',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            idOferta: pidOferta
+        }
+    });
+}
+
 let cambiarEstadoLibros =(pid, pestado)=>{
     axios({
         method: 'post',

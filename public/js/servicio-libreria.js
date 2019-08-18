@@ -92,20 +92,14 @@ let obtenerSucursales = async (correo) => {
     }
 };
 
-let modificarSucursal = (pcorreo, pnombre, ptelefono, pprovincia, pcanton, pdistrito, pdireccion_latitud, pdireccion_longitud) => {
+let modificarSucursal = (pcorreo, pdatos) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-sucursal',
         responseType: 'json',
-        data: {        
-            correo: pcorreo,    
-            nombre: pnombre,
-            telefono: ptelefono,
-            provincia: pprovincia,
-            canton: pcanton,
-            distrito: pdistrito,
-            direccion_latitud: pdireccion_latitud,
-            direccion_longitud: pdireccion_longitud
+        data: {
+            correo: pcorreo,
+            datos: pdatos
         }
     });
 };

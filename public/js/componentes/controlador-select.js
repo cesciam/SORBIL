@@ -41,7 +41,7 @@
 // valoresCanton();
 // valoresDistrito();
 
-/*let ubicaciones = {
+let ubicaciones = {
     "San José": {
         "Central": ["Carmen", "Catedral", "Hatillo", "Hospital", "La Uruca", "Mata Redonda", "Merced", "Pavas", "San Francisco de Dos Ríos", "San Sebastián", "Zapote"],
         "Acosta": ["Cangrejal", "Guaitil", "Palmichal", "Sabanillas", "San Ignacio"],
@@ -132,14 +132,14 @@
         "Guácimo": ["Guácimo", "Mercedes", "Pocora", "Río Jiménez", "Duacari"],
     }
 
-}*/
+}
 
 
 
 let provincia = document.querySelector("#txt-provincia"),
     canton = document.querySelector("#txt-canton"),
     distrito = document.querySelector("#txt-distrito");
-    cedulas = document.querySelector("txt-cedulas");
+let  cedulas = document.querySelector("txt-cedulas");
 
 for (let opt_provincia in ubicaciones) {
     provincia.options[provincia.options.length] = new Option(opt_provincia, opt_provincia);

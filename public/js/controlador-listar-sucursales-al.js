@@ -24,7 +24,7 @@ let mostrar_tabla = async () => {
         let celdaModificar = fila.insertCell();
         let btn_modificar = document.createElement('a');
         btn_modificar.innerText = 'Modificar';
-        btn_modificar.href = `modificar-sucursal-al.html?_id=${i}`;
+        btn_modificar.href = `modificar-sucursal-al.html?_i=${i}`;
         celdaModificar.appendChild(btn_modificar);
 
         let celdaPerfil = fila.insertCell();

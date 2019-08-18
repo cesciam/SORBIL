@@ -247,6 +247,29 @@ router.post('/deshabilitar-oferta', function(req, res){
         }
     )
 });
+// elimianr oferta 
+// _id : id del libro
+// idOferta: id de la oferta dentro del array de ofertas
+router.post('/eliminar-oferta', function(req, res) {
+    let body = req.body;
+
+    Registro_libro.findByIdAndUpdate(body._id, {
+            $pull: {
+                ofertas: {
+                    _id : req.body.idOferta
+                }
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar la oferta' });
+            } else {
+                res.json({ success: true, msg: 'La oferta se eliminó con éxito' });
+            }
+        }
+    )
+});
+
 
 router.post('/modificar-estado-libros', function(req, res) {
     let body = req.body;
