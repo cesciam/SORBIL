@@ -87,6 +87,8 @@ router.get('/buscar-autor-id/:_id', function(req, res) {
 
 module.exports = router;
 
+/*ver/modificar/estado/eliminar autor*/
+
 router.post('/modificar-autor', function(req, res) {
     let body = req.body;
 
@@ -102,6 +104,27 @@ router.post('/modificar-autor', function(req, res) {
         }
     )
 });
+
+
+router.post('/modificar-estado-autor', function(req, res) {
+    let body = req.body;
+
+    Autor.findOneAndUpdate(body._id, {
+            $set: {
+                'estado': body.estado
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar el estado del autor' });
+            } else {
+                res.json({ success: true, msg: 'La sucursal se modificó con éxito' });
+            }
+        }
+    )
+});
+
+
 
 
 module.exports = router;

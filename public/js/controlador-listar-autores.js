@@ -2,6 +2,7 @@
 
 const tbody = document.querySelector('#tabla-filtrado tbody');
 let lista_autores = [];
+const txt_filtro = document.querySelector('#txt-filtro');
 
 /*boton modificar autor-habilitar/dehabilitar*/
 const btn_modificar = document.querySelector('#btn-modificar');
@@ -10,7 +11,6 @@ const btn_estado = document.querySelector('#btn-estado');
 const btn_eliminar = document.querySelector('#btn-eliminar');
 
 let mostrar_tabla = async () => {
-
     lista_autores = await obtenerAutor();
     tbody.innerHTML = '';
 
@@ -18,74 +18,200 @@ let mostrar_tabla = async () => {
     for (let i = 0; i < lista_autores.length; i++) {
         let fila = tbody.insertRow();
         fila.insertCell().innerHTML = lista_autores[i]['autor'];
-
+    
         let celdaPerfil = fila.insertCell();
-        let btn_perfil = document.createElement('button');
-        btn_perfil.type = 'button';
-        btn_perfil.innerText = 'Ver perfil';
-        btn_perfil.dataset._id = lista_autores[i]['_id'];
+        let aPerfil = document.createElement('a');
+        let iPerfil = document.createElement('i');
+        iPerfil.className  = 'bx bx-show';
+        aPerfil.dataset._id = lista_autores[i]['_id'];
+        aPerfil.appendChild(iPerfil);
 
-        celdaPerfil.appendChild(btn_perfil);
+        let celdaIconoEditar = fila.insertCell();
+        let aIconoEditar = document.createElement('a');
+        let iconeditar = document.createElement('i');
+        iconeditar.className  = 'bx bxs-edit-alt';
+        aIconoEditar.appendChild(iconeditar);
 
-        btn_perfil.addEventListener('click', function(){
-            window.location.href = `ver-perfil-autor.html?_id=${this.dataset._id}`;
 
-        /*boton icon edit*/
-
-        let celdaIcono = fila.insertCell();
-        let aIcono = document.createElement('a');
-
-        let icon = document.createElement('i');
-        icon.className = 'bx bxs-edit-alt';
-        aIcono.appendChild(icon);
-        
-        /*or this?*/
-        btn_modificar.addEventListener('click', function(){
-        window.location.href = `ap-editar-autor.html?_id=${this.dataset._id}`;
-
-        /*boton eliminar*/
+        let celdaIconoActivar = fila.insertCell();
+        let aIconoAc = document.createElement('a');
+        aIconoAc.className = 'header-icon';
+        let iconAc = document.createElement('i');
+        iconAc.className  = 'bx bxs-check-square';
+        aIconoAc.appendChild(iconAc);
 
         let celdaIconoEliminar = fila.insertCell();
         let aIconoEliminar = document.createElement('a');
-        aIconoEliminar.className = 'habilitadoIon list-icon';
+        aIconoEliminar.className = 'header-icon';
         let iconEliminiar = document.createElement('i');
-        iconEliminiar.className = 'bx bxs-trash';
+        iconEliminiar.className  = 'bx bxs-trash';
         aIconoEliminar.appendChild(iconEliminiar);
 
-        /*boton-habilitar/deshabilitar*/
-        let celdaIconoEliminar = fila.insertCell();
-            let aIconoEliminar = document.createElement('a');
-            aIconoEliminar.className = 'habilitadoIon list-icon';
-            let iconEliminiar = document.createElement('i');
-            iconEliminiar.className = 'bx bxs-trash';
-            aIconoEliminar.appendChild(iconEliminiar);
+        if(lista_autores[i].estado == 'habilitado'){
+            iconAc.id = 'habilitadoIon';
+            aPerfil.addEventListener('click', function () {
+                window.location.href = `ver-perfil-autor?_id=${this.dataset._id}`;
+            });
+            aPerfil.className = 'header-icon';
+            aIconoEditar.className = 'header-icon';
+            iconAc.addEventListener('click', function(){
+                let estado = 'desabilitado';
+                cambiarEstadoAutor(lista_autores[i]._id, estado);
+                window.location.reload();
+            });
 
-            if( lista_autores[i].autor[j].estado == 'habilitado'){
-                iconActivar.id = 'habilitadoIon';
-                icon.addEventListener('click', function(){
-                    Swal.fire({
-                        title: 'Modificar información del autor',
-                        html: '<input type="number" id="txt-autor" '
-                    }).then(() => {
-                        let input_autor = document.querySelector('#txt-autor').value;
-                        if(input_autor) {
+            iconeditar.addEventListener('click', function(){
+                window.location.href = `ap-editar-autor.html?_i=${i}`;
+            });
 
-                            lista_autores[i].autor[j].porcentaje = input_porcentaje;
-                            modificarAutor(lista_autores[i], lista_autores[i]._id);
-                            Swal.fire({
-                                title: 'Se modificó la información del autor',
-                                text:'Se modificó la información del autor',
-                                type: 'success'
-                            })
+
+        }else{
+            aPerfil.className = 'header-iconDisable';
+            aIconoEditar.className = 'header-iconDisable';
+            iconAc.addEventListener('click', function(){
+                let estado = 'habilitado';
+                cambiarEstadoAutor(lista_autores[i]._id, estado);
+                window.location.reload();
+            });
+        }
+
+        aIconoEliminar.addEventListener('click', function(){
+            Swal.fire({
+                title: 'Está seguro de eliminar el autor?',
+                text: "Ésta acción no se puede revertir",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+            }).then((result) => {
+                if (result.value) {
+                    eliminarAutor(lista_autores[i]._id);
+
+                    Swal.fire(
+                        'Autor eliminado!',
+                        'success'
+                    ).then((result) => {
+                        if (result.value) {
                             window.location.reload();
-                        } else {
-                            Swal.fire({ 
-                                title: 'No se modificó la información del autor',
-                                type: 'warning',
-                                text: 'Revisá los campos resaltados e intentalo de nuevo'
-                            })
                         }
-                    })
+                    });
+                }
+            })
+        });
+
+        celdaIconoEditar.appendChild(aIconoEditar);
+        celdaIconoActivar.appendChild(aIconoAc);
+        celdaPerfil.appendChild(aPerfil);
+        celdaIconoEliminar.appendChild(aIconoEliminar);       
+    }
+}
+
+let filtrar_tabla = async () => {
+
+    let filtro = txt_filtro.value.toLowerCase();
+    lista_autores = await obtenerAutor();
+    tbody.innerHTML = '';
+    tbody.innerHTML = '';
+
+
+    for (let i = 0; i < lista_autores.length; i++) {
+        if (lista_autores[i]["autor"].toLowerCase().includes(filtro)) {
+            let fila = tbody.insertRow();
+            fila.insertCell().innerHTML = lista_autores[i]['autor'];
+        
+            let celdaPerfil = fila.insertCell();
+            let aPerfil = document.createElement('a');
+            let iPerfil = document.createElement('i');
+            iPerfil.className  = 'bx bx-show';
+            aPerfil.dataset._id = lista_autores[i]['_id'];
+            aPerfil.appendChild(iPerfil);
+    
+            let celdaIconoEditar = fila.insertCell();
+            let aIconoEditar = document.createElement('a');
+            let iconeditar = document.createElement('i');
+            iconeditar.className  = 'bx bxs-edit-alt';
+            aIconoEditar.appendChild(iconeditar);
+    
+    
+            let celdaIconoActivar = fila.insertCell();
+            let aIconoAc = document.createElement('a');
+            aIconoAc.className = 'header-icon';
+            let iconAc = document.createElement('i');
+            iconAc.className  = 'bx bxs-check-square';
+            aIconoAc.appendChild(iconAc);
+    
+            let celdaIconoEliminar = fila.insertCell();
+            let aIconoEliminar = document.createElement('a');
+            aIconoEliminar.className = 'header-icon';
+            let iconEliminiar = document.createElement('i');
+            iconEliminiar.className  = 'bx bxs-trash';
+            aIconoEliminar.appendChild(iconEliminiar);
+    
+            if(lista_autores[i].estado == 'habilitado'){
+                iconAc.id = 'habilitadoIon';
+                aPerfil.addEventListener('click', function () {
+                    
+                    window.location.href = `ap-editar-autor.html?_id=${this.dataset._id}`;
                 });
+                aPerfil.className = 'header-icon';
+                aIconoEditar.className = 'header-icon';
+                iconAc.addEventListener('click', function(){
+                    let estado = 'desabilitado';
+                    cambiarEstadoAutor(lista_autores[i]._id, estado);
+                    window.location.reload();
+                });
+    
+                iconeditar.addEventListener('click', function(){
+                    window.location.href = `ap-editar-autor.html?_i=${i}`;
+                });
+    
+    
+            }else{
+                aPerfil.className = 'header-iconDisable';
+                aIconoEditar.className = 'header-iconDisable';
+                iconAc.addEventListener('click', function(){
+                    let estado = 'habilitado';
+                    cambiarEstadoAutor(lista_autores[i]._id, estado);
+                    window.location.reload();
+                });
+            }
+    
+            aIconoEliminar.addEventListener('click', function(){
+                Swal.fire({
+                    title: 'Está seguro de eliminar el autor?',
+                    text: "Ésta acción no se puede revertir",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sí, estoy seguro'
+                }).then((result) => {
+                    if (result.value) {
+                        eliminarAutor(lista_autores[i]._id);
+    
+                        Swal.fire(
+                            'Autor eliminado!',
+                            'success'
+                        ).then((result) => {
+                            if (result.value) {
+                                window.location.reload();
+                            }
+                        });
+                    }
+                })
+            });
+    
+            celdaIconoEditar.appendChild(aIconoEditar);
+            celdaIconoActivar.appendChild(aIconoAc);
+            celdaPerfil.appendChild(aPerfil);
+            celdaIconoEliminar.appendChild(aIconoEliminar);
+        }
+
+    }
 
 
+};
+
+mostrar_tabla();
+txt_filtro.addEventListener('keyup', filtrar_tabla);

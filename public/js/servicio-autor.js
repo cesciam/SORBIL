@@ -48,6 +48,8 @@ let obtenerAutorid = async (_id) => {
     }
 };
 
+/*/ver/editar/cambiar estado/eliminar/*/
+
 let modificar = (pid, pautor, pnacionalidad, pfechaNacimiento, pfechaDefuncion, pbiografia) => {
     axios({
         method: 'post',
@@ -64,3 +66,27 @@ let modificar = (pid, pautor, pnacionalidad, pfechaNacimiento, pfechaDefuncion, 
         }
     });
 };
+
+let cambiarEstadoAutor = (pid, pEstado) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-estado-autor',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            estado: pEstado
+        }
+    });
+}
+
+let eliminarAutor = (pid, pidAutor) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-oferta',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            idAutor: pidAutor
+        }
+    });
+}

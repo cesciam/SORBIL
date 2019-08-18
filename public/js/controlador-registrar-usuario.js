@@ -164,19 +164,6 @@ let validarCedula = (pidentificacion) => {
 
 /*switch case cedulas*/
 
-let cedulas = 'Digita cédula';
-switch (cedulas) {
-  case 'Cédula de identidad':
-  case 'Cédula de residencia':
-  case 'Carné refugiado':
-  case 'Pasaporte':
-    console.log('La cédula fue registrada');
-    break;
-  case 'Cédulas':
-  default:
-    console.log('La cédula es inválida, intenta de nuevo');
-}
-    
 let validarCorreo = (pcorreo) => {
 
     let errorCorreo = false;
