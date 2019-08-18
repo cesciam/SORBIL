@@ -25,7 +25,7 @@ let mostrar_tabla = async () => {
         let celdaPerfil = fila.insertCell();
         let btn_perfil = document.createElement('a');
         btn_perfil.innerText = 'Ver perfil';
-        btn_perfil.href = `ver-perfil-sucursal.html?_id=${i}`;
+        btn_perfil.href = `ver-perfil-sucursal.html?_i=${i}`;
         celdaPerfil.appendChild(btn_perfil);
 
         let celdaIcono = fila.insertCell();
@@ -52,7 +52,7 @@ let mostrar_tabla = async () => {
         if (lista_sucursales[i]['estado'] == 'habilitado') {
             iconAc.id = 'habilitadoIon';
             icon.addEventListener('click', function () {
-                window.location.href = `modificar-sucursal-al.html?_id=${i}`;
+                window.location.href = `modificar-sucursal-al.html?_i=${i}`;
             });
             aIcono.className = 'header-icon';
             iconAc.addEventListener('click', function () {

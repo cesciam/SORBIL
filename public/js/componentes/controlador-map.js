@@ -1,5 +1,5 @@
 'use strict';
-
+var map;
 function initMap() {
     // Map options
     // var options = {
@@ -50,7 +50,7 @@ function initMap() {
 
     //++++++++++++++++++++++++ NUEVO CÓDIGO DE PRUEBA ++++++++++++++++++++++++++++++++++++++++
 
-    let map;
+    map;
     let latitude = 9.934739; // YOUR LATITUDE VALUE
     let longitude = -84.087502; // YOUR LONGITUDE VALUE
 
