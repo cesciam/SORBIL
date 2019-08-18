@@ -11,7 +11,6 @@ let tipoUserlis = usuarioActivo.tipo_usuario;
 let mostrar_tabla = async () => {
 
     lista_categoria = await obtenerCategorias();
-    console.log(lista_categoria);
     tbody.innerHTML = '';
 
     for (let i = 0; i < lista_categoria.length; i++) {
@@ -31,6 +30,14 @@ let mostrar_tabla = async () => {
         let iconAc = document.createElement('i');
         iconAc.className  = 'bx bxs-check-square';
         aIconoAc.appendChild(iconAc);
+
+        let celdaIconoEliminar = fila.insertCell();
+        let aIconoEliminar = document.createElement('a');
+        aIconoEliminar.className = 'header-icon';
+        let iconEliminiar = document.createElement('i');
+        iconEliminiar.className  = 'bx bxs-trash';
+        aIconoEliminar.appendChild(iconEliminiar);
+
         if(lista_categoria[i].estado == 'habilitado'){
             iconAc.id = 'habilitadoIon';
             aIcono.className = 'header-icon';
@@ -56,9 +63,33 @@ let mostrar_tabla = async () => {
                 window.location.reload();
             });
         }
+        aIconoEliminar.addEventListener('click', function(){
+            Swal.fire({
+                title: '¿Está seguro de eliminar la categoría?',
+                text: "Ésta acción no se puede revertir",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+            }).then((result) => {
+                if (result.value) {
+                    eliminarcategoria(lista_categoria[i]._id);
+
+                    Swal.fire(
+                        'Categoría eliminada!'
+                    ).then((result) => {
+                        if (result.value) {
+                            window.location.reload();
+                        }
+                    });
+                }
+            })
+        });
 
         celdaIcono.appendChild(aIcono);
         celdaIconoActivar.appendChild(aIconoAc);
+        celdaIconoEliminar.appendChild(aIconoEliminar);
     }
 };
 

@@ -52,3 +52,15 @@ let modificarCategorias =(pid, pcategoria)=>{
     });
 
 }
+
+let eliminarcategoria =(pid)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-categorias',
+        responseType: 'json',
+        data: {
+            _id: pid
+        }
+    });
+
+}

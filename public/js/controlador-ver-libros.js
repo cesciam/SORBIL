@@ -13,7 +13,7 @@ let mostrar_cards = async () => {
     for (let i = 0; i < lista_libros.length; i++) {
         if(lista_libros[i].estado == 'habilitado'){
         
-            let autor = lista_autores[i]['autor'];
+            let autor = lista_libros[i]['autor'];
             let contenedor_card = document.createElement('div');
             contenedor_card.classList.add('card');
     
@@ -25,7 +25,11 @@ let mostrar_cards = async () => {
     
             let btn_autor = document.createElement('a');
             btn_autor.innerText = `${autor}`;
-            btn_autor.dataset._id = lista_autores[i]['_id'];
+            for(let x =0; x < lista_autores.length; x++){
+                if(lista_autores[x].autor == lista_libros[i]['autor']){
+                    btn_autor.dataset._id = lista_autores[x]['_id'];
+                }
+            }
             btn_autor.addEventListener('click', function () {
                 window.location.href = `ver-perfil-autor.html?_id=${this.dataset._id}`;
             });
@@ -87,7 +91,7 @@ let filtrar_cards = async () => {
         if (lista_libros[i]['titulo'].toLowerCase().includes(filtro) || lista_libros[i]['categoria'].toLowerCase().includes(filtro) || lista_libros[i]['genero'].toLowerCase().includes(filtro) || lista_libros[i]['autor'].toLowerCase().includes(filtro))  {
             if(lista_libros[i].estado == 'habilitado'){
         
-                let autor = lista_autores[i]['autor'];
+                let autor = lista_libros[i]['autor'];
                 let contenedor_card = document.createElement('div');
                 contenedor_card.classList.add('card');
         
