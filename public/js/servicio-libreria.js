@@ -94,7 +94,7 @@ let obtenerSucursales = async (correo) => {
     }
 };
 
-let modificarSucursal = (pcorreo, pdatos) => {
+let modificarSucursal = (pdatos, pcorreo) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-sucursal',
@@ -105,6 +105,30 @@ let modificarSucursal = (pcorreo, pdatos) => {
         }
     });
 };
+
+let cambiarEstadoSucursal = (pdatos, pcorreo) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-estado-sucursal',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            datos: pdatos
+        }
+    });
+}
+
+let eliminarSucursal = (pcorreo, pidSucursal) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-sucursal',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            idSucursal: pidSucursal
+        }
+    });
+}
 
 let obtenerDatosCorreo = async (correo) => {
     try {
