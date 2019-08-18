@@ -54,9 +54,9 @@ let mostrar_cards = async () => {
             aIconoActivar.href = 'ap-listar-usuarios.html';
             aIconoActivar.addEventListener('click', function () {
                 if (lista_usuarios[i]["estado"] == "Habilitado") {
-                    habilitarUsuario(lista_usuarios[i]['_id'], "Desabilitado");
+                    habilitarUsuario(lista_usuarios[i]['_id'], "desabilitado");
                 } else {
-                    habilitarUsuario(lista_usuarios[i]['_id'], "Habilitado");
+                    habilitarUsuario(lista_usuarios[i]['_id'], "habilitado");
                 }
                 mostrar_cards();
             });

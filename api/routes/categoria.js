@@ -84,5 +84,19 @@ router.post('/modificar-categorias', function(req, res) {
     )
 });
 
+router.post('/eliminar-categorias', function(req, res) {
+    let body = req.body;
+
+    Categoria.findByIdAndRemove(body._id,
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+            } else {
+                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
+            }
+        }
+    )
+});
+
 module.exports = router;
 
