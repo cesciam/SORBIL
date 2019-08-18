@@ -17,9 +17,9 @@ const input_correo = document.querySelector('#txt-correo');
 const input_empresa = document.querySelector('#txt-empresa');
 const input_telefono = document.querySelector('#txt-telefono');
 const input_descripcion = document.querySelector('#txt-descripcion');
-// const input_provincia = document.querySelector('#txt-provincia');
-// const input_canton = document.querySelector('#txt-canton');
-// const input_distrito = document.querySelector('#txt-distrito');
+const input_provincia = document.querySelector('#txt-provincia');
+const input_canton = document.querySelector('#txt-canton');
+const input_distrito = document.querySelector('#txt-distrito');
 const input_direccion_exacta = document.querySelector('#txt-direccion-exacta');
 
 const btn_guardar = document.querySelector('#btn-enviar');
@@ -27,18 +27,24 @@ const btn_guardar = document.querySelector('#btn-enviar');
 const urlParams = new URLSearchParams(window.location.search);
 let _id = urlParams.get('_id');
 
+
+let correoLib = JSON.parse(sessionStorage.getItem('activo'));
+let correoActivo = correoLib.correo;
+
 let cargarFormulario = async () => {
 
-    let libreria = await obtenerLibreriaid(_id);
+    let libreriaid = await obtenerLibreriaPorCorreo(correoActivo);
 
-    if (libreria) {
-        img_uploader_imagen.src = libreria['imagen'];
-        input_usuario.value = libreria['usuario'];
-        input_correo.value = libreria['correo'];
-        input_empresa.value = libreria['empresa'];
-        input_telefono.value = libreria['telefono'];
-        input_descripcion.value = libreria['descripcion'];
-        input_direccion_exacta.value = libreria['direccion_exacta'];
+    if (libreriaid) {
+        img_uploader_imagen.src = libreriaid[0].imagen;
+        input_empresa.value = libreriaid[0].empresa;
+        descripcion.value = libreriaid[0].descripcion;
+        telefono.value = libreriaid[0].telefono;
+        correo.value = libreriaid[0].correo;
+        provincia.value = libreriaid[0].provincia;
+        canton.value = libreriaid[0].canton;
+        distrito.value = libreriaid[0].distrito;
+        direccion_exacta.value = libreriaid[0].direccion_exacta;
     }
 };
 
@@ -90,26 +96,26 @@ let validar = (pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pdireccion_
         input_descripcion.classList.remove('input_error');
     }
 
-    // if (pprovincia == '') {
-    //     error = true;
-    //     input_provincia.classList.add('input_error');
-    // } else {
-    //     input_provincia.classList.remove('input_error');
-    // }
+    if (pprovincia == '') {
+        error = true;
+        input_provincia.classList.add('input_error');
+    } else {
+        input_provincia.classList.remove('input_error');
+    }
 
-    // if (pcanton == '') {
-    //     error = true;
-    //     input_canton.classList.add('input_error');
-    // } else {
-    //     input_canton.classList.remove('input_error');
-    // }
+    if (pcanton == '') {
+        error = true;
+        input_canton.classList.add('input_error');
+    } else {
+        input_canton.classList.remove('input_error');
+    }
 
-    // if (pdistrito == '') {
-    //     error = true;
-    //     input_distrito.classList.add('input_error');
-    // } else {
-    //     input_distrito.classList.remove('input_error');
-    // }
+    if (pdistrito == '') {
+        error = true;
+        input_distrito.classList.add('input_error');
+    } else {
+        input_distrito.classList.remove('input_error');
+    }
 
     if (pdireccion_exacta == '') {
         error = true;

@@ -44,7 +44,7 @@ router.post('/registrar-libreria', function (req, res) {
         direccion_exacta: body.direccion_exacta,
         direccion_latitud: body.direccion_latitud,
         direccion_longitud: body.direccion_longitud,
-        estado: 'habilitado'
+        estado: 'pendiente'
     });
 
 
@@ -976,6 +976,8 @@ router.get('/listar-librerias', function (req, res) {
 });
 
 router.get('/buscar-libreria-id/:_id', function (req, res) {
+    // console.log("aqui");
+    // console.log(req.body);
     libreria.findById(req.body._id, function (err, libreriaDB) {
         if (err) {
             return res.status(400).json({
