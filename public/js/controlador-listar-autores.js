@@ -1,5 +1,3 @@
-'use strict';
-
 const tbody = document.querySelector('#tabla-filtrado tbody');
 let lista_autores = [];
 const txt_filtro = document.querySelector('#txt-filtro');
@@ -50,7 +48,7 @@ let mostrar_tabla = async () => {
         if(lista_autores[i].estado == 'habilitado'){
             iconAc.id = 'habilitadoIon';
             aPerfil.addEventListener('click', function () {
-                window.location.href = `ver-perfil-autor?_id=${this.dataset._id}`;
+                window.location.href = `ver-perfil-autor.html?_id=${this.dataset._id}`;
             });
             aPerfil.className = 'header-icon';
             aIconoEditar.className = 'header-icon';
@@ -152,14 +150,14 @@ let filtrar_tabla = async () => {
                 iconAc.id = 'habilitadoIon';
                 aPerfil.addEventListener('click', function () {
                     
-                    window.location.href = `ap-editar-autor.html?_id=${this.dataset._id}`;
+                    window.location.href = `ver-perfil-autor.html?_id=${this.dataset._id}`;
                 });
                 aPerfil.className = 'header-icon';
                 aIconoEditar.className = 'header-icon';
                 iconAc.addEventListener('click', function(){
                     let estado = 'desabilitado';
                     cambiarEstadoAutor(lista_autores[i]._id, estado);
-                    window.location.reload();
+                    mostrar_tabla();
                 });
     
                 iconeditar.addEventListener('click', function(){
@@ -173,7 +171,7 @@ let filtrar_tabla = async () => {
                 iconAc.addEventListener('click', function(){
                     let estado = 'habilitado';
                     cambiarEstadoAutor(lista_autores[i]._id, estado);
-                    window.location.reload();
+                    mostrar_tabla();
                 });
             }
     

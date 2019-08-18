@@ -53,7 +53,7 @@ let obtenerAutorid = async (_id) => {
 let modificar = (pid, pautor, pnacionalidad, pfechaNacimiento, pfechaDefuncion, pbiografia) => {
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/modificar-contacto',
+        url: 'http://localhost:4000/api/modificar-autor',
         responseType: 'json',
         data: {
             _id: pid,
@@ -67,14 +67,14 @@ let modificar = (pid, pautor, pnacionalidad, pfechaNacimiento, pfechaDefuncion, 
     });
 };
 
-let cambiarEstadoAutor = (pid, pEstado) =>{
+let cambiarEstadoAutor = (pid, pEstadoAutor) =>{
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-estado-autor',
         responseType: 'json',
         data: {
             _id: pid,
-            estado: pEstado
+            estado: pEstadoAutor
         }
     });
 }
@@ -82,7 +82,7 @@ let cambiarEstadoAutor = (pid, pEstado) =>{
 let eliminarAutor = (pid, pidAutor) =>{
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/eliminar-oferta',
+        url: 'http://localhost:4000/api/eliminar-autor',
         responseType: 'json',
         data: {
             _id: pid,

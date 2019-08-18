@@ -108,7 +108,8 @@ router.post('/modificar-autor', function(req, res) {
 
 router.post('/modificar-estado-autor', function(req, res) {
     let body = req.body;
-
+    console.log("modificar estado activado");
+    console.log(body);
     Autor.findOneAndUpdate(body._id, {
             $set: {
                 'estado': body.estado
@@ -116,9 +117,13 @@ router.post('/modificar-estado-autor', function(req, res) {
         },
         function(error) {
             if (error) {
+                console.log("error estado");
+                console.log(error);
                 res.json({ success: false, msg: 'No se pudo modificar el estado del autor' });
             } else {
                 res.json({ success: true, msg: 'La sucursal se modificó con éxito' });
+                console.log("listo ");
+                console.log(res);
             }
         }
     )
