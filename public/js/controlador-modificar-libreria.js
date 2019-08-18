@@ -153,7 +153,7 @@ let validarTelefono = (ptelefono) => {
     return errorTelefono;
 };
 
-let modificarAdminlibreria = async () => {
+let modificarlib = async () => {
 
     //variables de la librería
     let src_imagen = img_uploader_imagen.src;
@@ -173,9 +173,9 @@ let modificarAdminlibreria = async () => {
     let errorTelefono = validarTelefono(telefono);
     let errorCorreo = validarCorreo(correo);
 
-    if (error == false, errorCorreo == false && errorTelefono == false ) {
+    if (error == false, errorCorreo == false && errorTelefono == false) {
         // let estado = 'habilitado';
-        modificarLibreria(_id, src_imagen, usuario, correo, empresa, telefono, descripcion, direccion_exacta, latitud, longitud);
+        modificarlib(_id, src_imagen, usuario, correo, empresa, telefono, descripcion, direccion_exacta, latitud, longitud);
         Swal.fire({ //formato json
             title: 'Se ha modificado la información exitosamente',
             type: 'success',
@@ -196,4 +196,4 @@ let modificarAdminlibreria = async () => {
 };
 
 cargarFormulario();
-btn_guardar.addEventListener('click', modificarAdminlibreria);
+btn_guardar.addEventListener('click', modificarlib);
