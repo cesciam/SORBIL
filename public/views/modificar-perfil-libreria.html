@@ -56,70 +56,9 @@
             <h1>Editá la información de la librería</h1>
         </div>
 
-        <!-- <section class="ocultar">
-            <div>
-                <form id="form" action="#">
-                    <div class="upload-img">
-                        <img class="img_registro_libro" id="contraportada" src="../imgs/avatar-placeholder.png"></img>
-                        <label for="file">Editar avatar</label>
-                        <button id="btnSeleccionarImagen2" type="button" id="img-uploader-portada"
-                            class="upload-msg"></button>
-                    </div>
-                    <div id="form-container">
-                        <div class="input-dos-columnas">
-                            <div class="input-group">
-                                <label for="#">Nombre</label>
-                                <input id="txt-nombre" type="text" placeholder="Nombre" aria-label="Nombre">
-                            </div>
-
-                            <div class="input-group">
-                                <label for="#">Identificación</label>
-                                <input id="txt-id" type="text" placeholder="Formato: 0-0000-0000"
-                                    aria-label="Identificación">
-                            </div>
-                        </div>
-
-                        <div class="input-dos-columnas">
-                            <div class="input-group">
-                                <label for="#">Primer apellido</label>
-                                <input id="txt-primer-apellido" type="text" placeholder="Primer apellido"
-                                    aria-label="Primer apellido">
-                            </div>
-
-                            <div class="input-group">
-                                <label for="#">Segundo apellido</label>
-                                <input id="txt-segundo-apellido" type="text" placeholder="Segundo apellido"
-                                    aria-label="Segundo apellido">
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="txt-group">
-                            <div>
-                                <label for="#">Fecha de nacimiento</label>
-                                <input id="txt-fecha" type="date" placeholder="Ingresar su fecha de nacimiento"
-                                    aria-label="Ingresar su fecha de nacimiento">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-btns">
-                        <div class="submit-btn">
-                            <button id="btn-enviar" type="button">
-                                Registrar
-                                <i class='bx bx-plus'></i>
-                            </button>
-                        </div>
-                    </div>
-
-            </div>
-
-            </form>
-        </section> -->
-
         <section id="section-form">
             <div>
                 <form id="form" action="#">
-                    <!--Paso 4 del formulario-->
                     <div>
                         <div>
                             <div class="upload-img">
@@ -144,20 +83,8 @@
                                         aria-label="Ingresar el correo electrónico">
                                 </div>
                             </div>
-                            <div class="input-group">
-                                <label for="#">Contraseña</label>
-                                <input id="txt-contrasena" type="password" placeholder="Ingresar la contaseña"
-                                    aria-label="Ingresar la contaseña">
-                            </div>
-
-                            <div class="input-group">
-                                <label for="#">Verificación de contraseña</label>
-                                <input id="txt-verificacion-contrasena" type="password"
-                                    placeholder="Ingresar la contaseña" aria-label="Ingresar la contaseña">
-                            </div>
                         </div>
                     </div>
-                    <!--Paso 2 del formulario-->
                     <div id="form-container">
                         <div class="input-group">
                             <label for="#">Nombre comercial</label>
@@ -179,7 +106,7 @@
                         </div>
                     </div>
 
-                    <div class="input-group">
+                    <!-- <div class="input-group">
                         <div>
                             <label for="#">Provincia</label>
                             <select id="txt-provincia">
@@ -204,7 +131,7 @@
                                 </option>
                             </select>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="input-group">
                         <label for="#">Dirección exacta</label>
                         <textarea id="txt-direccion-exacta"></textarea>
@@ -220,7 +147,6 @@
                                 <i class='bx bx-plus'></i>
                             </button>
                         </div>
-
                     </div>
 
             </div>
@@ -378,7 +304,7 @@
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/componentes/controlador-select.js"></script>
+    <!-- <script src="../js/componentes/controlador-ubicaciones.js"></script> -->
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnj4Pk6sSOX5m4uxn8jO9VN2YjMUR7iO4&callback=initMap"></script>
     <script src="../js/componentes/controlador-map.js"></script>
@@ -390,7 +316,6 @@
     <script src="../js/servicio-imagen.js"></script>
     <script src="../js/servicio-libreria.js"></script>
     <script src="../js/controlador-modificar-libreria.js"></script>
-    <!-- <script src="../js/controlador-perfil-libreria.js"></script> -->
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-avatar.js"></script>
     <script src="../js/controlador-inicio-al.js"></script>

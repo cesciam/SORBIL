@@ -53,7 +53,7 @@ router.post('/registrar-club', function (req, res) {
             } else {
                 let mailOptions = {
                     from: 'fenixsorbil@gmail.com',
-                    to: nueva_libreria.correo,
+                    to: nuevo_club.correo,
                     subject: 'Bienvenido a Sorbil',
                     html: `
                     <!DOCTYPE html
@@ -1022,7 +1022,7 @@ router.post('/habilitar-club', function (req, res) {
     )
 });
 
-router.post('/modificar-club', function (req, res) {
+router.post('/modificar-club-virtual', function (req, res) {
     let body = req.body;
 
     Club.findByIdAndUpdate(body._id, {
@@ -1038,14 +1038,14 @@ router.post('/modificar-club', function (req, res) {
             fecha: body.fecha,
             hora: body.hora,
             frecuencia: body.frecuencia,
-            descripcion: body.descripcion
+            descripcion: body.descripcion,
         }
     },
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo modificar la información' });
+                res.json({ success: false, msg: 'No se pudo modificar el club' });
             } else {
-                res.json({ success: true, msg: 'La información se modificó con éxito' });
+                res.json({ success: true, msg: 'El club se modificó con éxito' });
             }
         }
     )
