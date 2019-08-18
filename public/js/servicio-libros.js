@@ -124,25 +124,38 @@ let actualizarCantidadLibros = (pid, pcantidad) =>{
     });
 }
 
-let deshabilitarOferta = (pid, plista_ofertas)=> {
+let modificarOferta = (pdatos, pid)=>{
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/deshabilitar-oferta',
+        url: 'http://localhost:4000/api/modificar-oferta',
         responseType: 'json',
         data: {
-            _id: pid            
+            _id: pid,
+            datos: pdatos
         }
     });
 }
 
-let habilitarOferta = (pid, plista_ofertas)=> {
+let eliminarOferta = (pid, pidOferta) =>{
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/habilitar-oferta',
+        url: 'http://localhost:4000/api/eliminar-oferta',
         responseType: 'json',
         data: {
             _id: pid,
-            estadoOferta: pestado,
+            idOferta: pidOferta
+        }
+    });
+}
+
+let cambiarEstadoOferta = (pdatos, pid) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-estado-oferta',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            datos: pdatos
         }
     });
 }
@@ -168,6 +181,18 @@ let modificarLibros =(pid, plibro)=>{
         data: {
             _id: pid,
             libro: plibro
+        }
+    });
+
+}
+
+let eliminarLibro =(pid)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-libros',
+        responseType: 'json',
+        data: {
+            _id: pid
         }
     });
 

@@ -41,7 +41,7 @@
 // valoresCanton();
 // valoresDistrito();
 
-/*let ubicaciones = {
+let ubicaciones = {
     "San José": {
         "Central": ["Carmen", "Catedral", "Hatillo", "Hospital", "La Uruca", "Mata Redonda", "Merced", "Pavas", "San Francisco de Dos Ríos", "San Sebastián", "Zapote"],
         "Acosta": ["Cangrejal", "Guaitil", "Palmichal", "Sabanillas", "San Ignacio"],
@@ -65,11 +65,11 @@
         "Atenas": ["Atenas", "Jesús","Mercedes"],
         "Naranjo": ["Naranjo", "San Miguel", "San José"],
         "Palmares": ["Palmares", "Zaragoza", "Buenos Aires"],
-        "Poás": ["San Pedro", "San Juan","San Rafael"],
+        "Poás": ["San Pedro", "San Juan", "San Rafael"],
         "Orotina": ["Orotina", "El Mastate"],
         "San Carlos": ["Quesada", "Florencia", "Buenavista", "Aguas Zarcas"],
         "Zarcero": ["Zarcero", "Laguna", "Tapesco"],
-        "Valverde Vega": ["Sarchí Norte","Sarchí Sur","Toro Amarillo"],
+        "Valverde Vega": ["Sarchí Norte", "Sarchí Sur", "Toro Amarillo"],
         "Upala": ["Upala", "Aguas Claras", "Bijagua"],
         "Los Chiles": ["Los Chiles", "Caño Negro", "San Jorge", "El Amparo"],
         "Guatuso": ["San Rafael", "Buena Vista", "Cote", "Katira"],
@@ -130,17 +130,16 @@
         "Talamanca": ["Bratsi", "Sixaola", "Cahuita", "Telire"],
         "Matina": ["Matina", "Batán", "Carrandí"],
         "Guácimo": ["Guácimo", "Mercedes", "Pocora", "Río Jiménez", "Duacari"],
-
     }
 
-}*/
+}
 
 
 
 let provincia = document.querySelector("#txt-provincia"),
     canton = document.querySelector("#txt-canton"),
     distrito = document.querySelector("#txt-distrito");
-    cedulas = document.querySelector("txt-cedulas");
+let  cedulas = document.querySelector("txt-cedulas");
 
 for (let opt_provincia in ubicaciones) {
     provincia.options[provincia.options.length] = new Option(opt_provincia, opt_provincia);

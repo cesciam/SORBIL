@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
-    <link rel="stylesheet" href="../css/paginas/icon-small.css">
+    <link rel="stylesheet" href="../css/paginas/ver-libross-al.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar categorías</title>
+    <title>Sorbil -- Librería -- Listar libros</title>
 </head>
 
 <body id="grid-admin">
@@ -49,33 +49,15 @@
         </div>
 
     </header>
-
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de Categorías</h1>
+            <h1>Agregar libros a sucursales</h1>
         </div>
 
-        <div id="barra-busqueda">
-            <input type="text" id="txt-filtro" placeholder="Buscar por categoría" aria-label="Buscar por categoría">
-
-            <a href="#" id="registrar_adminal_categoria" class="btn-registrar" aria-label="Registrar" type="button"><i
-                    class='bx bx-plus-circle'></i>
-                <spans>Registrar</spans>
-            </a>
-
+        <div>
+            
         </div>
-
-        <table id="tabla-filtrado">
-            <thead>
-                <tr>
-                    <th>Categoría</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
 
     </main>
 
@@ -214,6 +196,7 @@
         </div>
 
     </aside>
+
     <!--Footer-->
     <footer id="footer-admin">
         <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
@@ -221,15 +204,17 @@
     </footer>
 
     <!--Scripts-->
-    <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
-    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-categoria.js"></script>
-    <script src="../js/controlador-listar-categorias.js"></script>
+    <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
+    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+    <script src="../js/servicio-libros.js"></script>
+    <script src="../js/servicio-libreria.js"></script>
+    <script src="../js/controlador-listar-libros-libreria.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-inicio-al.js"></script>
     <script src="../js/controlador-avatar.js"></script>
+
 
 
 </body>

@@ -43,9 +43,9 @@ let mostrar_cards = async () => {
             enlace_habilitado.href = 'al-listar-usuarios.html';
             enlace_habilitado.addEventListener('click', function () {
                 if (lista_usuarios[i]["estado"] == "Habilitado") {
-                    habilitar(lista_usuarios[i]['_id'], "Desabilitado");
+                    habilitarUsuario(lista_usuarios[i]['_id'], "Desabilitado");
                 } else {
-                    habilitar(lista_usuarios[i]['_id'], "Habilitado");
+                    habilitarUsuario(lista_usuarios[i]['_id'], "Habilitado");
                 }
                 mostrar_cards();
             });
@@ -102,7 +102,7 @@ let filtrar_cards = async () => {
                 } else {
                     enlace_habilitado.innerText = "Deshabilitado";
                 }
-                enlace_habilitado.href = 'al-listar-usuarios.html';
+                enlace_habilitado.href = 'ap-listar-usuarios.html';
                 enlace_habilitado.addEventListener('click', function () {
                     if (lista_usuarios[i]["estado"] == "Habilitado") {
                         habilitar(lista_usuarios[i]['_id'], "Desabilitado");

@@ -21,10 +21,7 @@ let cargarFormulario = async() => {
 
     let datosLibreria =  await obtenerLibreriaPorCorreo(sesion_libreria);
     posicion = parseInt(posicion);
-    console.log("Print de  datoslibreria");
-    console.log(datosLibreria);
-    console.log("Print de  datoslibreria.sucursales");
-    console.log(datosLibreria[0].sucursales);
+ 
     
     if (datosLibreria) {
 
@@ -40,14 +37,14 @@ let validar = (pnombre, ptelefono, pprovincia, pcanton, pdistrito) => {
 
     let error = false;
 
-    if (pnombre == '') {
+    if (pnombre.value == '') {
         error = true;
         input_nombre.classList.add('input_error');
     } else {
         input_nombre.classList.remove('input_error');
     }
 
-    if (ptelefono == '') {
+    if (ptelefono.value == '') {
         error = true;
         input_telefono.classList.add('input_error');
     } else {
@@ -55,21 +52,21 @@ let validar = (pnombre, ptelefono, pprovincia, pcanton, pdistrito) => {
     }
 
 
-    if (pprovincia == '') {
+    if (pprovincia.value == '') {
         error = true;
         input_provincia.classList.add('input_error');
     } else {
         input_provincia.classList.remove('input_error');
     }
 
-    if (pcanton == '') {
+    if (pcanton.value == '') {
         error = true;
         input_canton.classList.add('input_error');
     } else {
         input_canton.classList.remove('input_error');
     }
 
-    if (pdistrito == '') {
+    if (pdistrito.value == '') {
         error = true;
         input_distrito.classList.add('input_error');
     } else {
@@ -95,19 +92,21 @@ let validarTelefono = (ptelefono) => {
 };
 
 let modificar = async () => {
-    let nombre = input_nombre.value;
-    let telefono = input_telefono.value;
-    let provincia = input_provincia.value;
-    let canton = input_canton.value;
-    let distrito = input_distrito.value;
-    let latitud =  await enviarLat();
-    let longitud = await enviarLon();
-    
-    let error = validar(nombre, telefono, provincia, canton, distrito);
-    let errorTelefono = validarTelefono(telefono);
 
+    let error = validar(input_nombre, input_telefono, input_provincia, input_canton, input_distrito);
+    let errorTelefono = validarTelefono(input_telefono.value);
+    
     if (error == false && errorTelefono == false) {
-        modificarSucursal(sesion_libreria, nombre, telefono, provincia, canton, distrito, latitud, longitud);
+        posicion = parseInt(posicion);
+        let datosLibreria =  await obtenerLibreriaPorCorreo(sesion_libreria);
+        datosLibreria[0].sucursales[posicion].nombre = input_nombre.value;
+        datosLibreria[0].sucursales[posicion].telefono = input_telefono.value;
+        datosLibreria[0].sucursales[posicion].provincia = input_provincia.value;
+        datosLibreria[0].sucursales[posicion].canton = input_canton.value;
+        datosLibreria[0].sucursales[posicion].distrito = input_distrito.value;
+
+
+        modificarSucursal(sesion_libreria, datosLibreria);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

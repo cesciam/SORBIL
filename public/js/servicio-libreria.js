@@ -1,7 +1,7 @@
 'use strict';
 
 
-let registrarLibreria = (pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud) => {
+let registrarLibreria = (pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud, pestado) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libreria',
@@ -19,13 +19,14 @@ let registrarLibreria = (pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescr
             distrito: pdistrito,
             direccion_exacta: pdireccion_exacta,
             direccion_latitud: pdireccion_latitud,
-            direccion_longitud: pdireccion_longitud
+            direccion_longitud: pdireccion_longitud,
+            estado: pestado
         }
     });
 };
 
 
-let registrarAdminLibreria = (pavatar, pcorreo, pcontrasena, pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha, pedad, ptipo_usuario) => {
+let registrarAdminLibreria = (pavatar, pcorreo, pcontrasena, pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha, pedad, ptipo_usuario, pestado) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-usuario',
@@ -41,7 +42,8 @@ let registrarAdminLibreria = (pavatar, pcorreo, pcontrasena, pnombre, pprimer_ap
             id: pid,
             fecha: pfecha,
             edad: pedad,
-            tipo_usuario: ptipo_usuario
+            tipo_usuario: ptipo_usuario,
+            estado: pestado
         }
     });
 };
@@ -92,23 +94,41 @@ let obtenerSucursales = async (correo) => {
     }
 };
 
-let modificarSucursal = (pcorreo, pnombre, ptelefono, pprovincia, pcanton, pdistrito, pdireccion_latitud, pdireccion_longitud) => {
+let modificarSucursal = (pdatos, pcorreo) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-sucursal',
         responseType: 'json',
-        data: {        
-            correo: pcorreo,    
-            nombre: pnombre,
-            telefono: ptelefono,
-            provincia: pprovincia,
-            canton: pcanton,
-            distrito: pdistrito,
-            direccion_latitud: pdireccion_latitud,
-            direccion_longitud: pdireccion_longitud
+        data: {
+            correo: pcorreo,
+            datos: pdatos
         }
     });
 };
+
+let cambiarEstadoSucursal = (pdatos, pcorreo) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-estado-sucursal',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            datos: pdatos
+        }
+    });
+}
+
+let eliminarSucursal = (pcorreo, pidSucursal) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-sucursal',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            idSucursal: pidSucursal
+        }
+    });
+}
 
 let obtenerDatosCorreo = async (correo) => {
     try {
@@ -168,13 +188,14 @@ let actualizarLibrosLibreria = (pArrayLibros, pcorreo) => {
     });
 }
 
-let modificaLibreria = (_id, pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitudpavatar, pcorreo, pcontrasena, pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha, pedad, ptipo_usuario) => {
+let modificarLibreria = (_id, pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud, pavatar, pnombre, pprimer_apellido, psegundo_apellido, pfecha) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar_libreria',
         responseType: 'json',
         data: {
             //Info de la librería
+            _id: pid,
             imagen: pimagen,
             usuario: pusuario,
             correo: pcorreo,
@@ -189,15 +210,10 @@ let modificaLibreria = (_id, pimagen, pusuario, pcorreo, pempresa, ptelefono, pd
             direccion_longitud: pdireccion_longitud,
             //Info del administrador
             avatar: pavatar,
-            correo: pcorreo,
-            contrasena: pcontrasena,
             nombre: pnombre,
             primer_apellido: pprimer_apellido,
             segundo_apellido: psegundo_apellido,
-            id: pid,
-            fecha: pfecha,
-            edad: pedad,
-            tipo_usuario: ptipo_usuario
+            fecha: pfecha
         }
     });
 };

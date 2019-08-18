@@ -12,7 +12,6 @@ let usuario_schema = new mongoose.Schema({
     id: { type: String, required: true, unique: false },
     primer_apellido: { type: String, required: true, unique: false },
     segundo_apellido: { type: String, required: true, unique: false },
-    cedulas: {type: Number, required: true, unique:true },
     sexo: { type: String, required: false, unique: false },
     provincia: { type: String, required: false, unique: false },
     canton: { type: String, required: false, unique: false },

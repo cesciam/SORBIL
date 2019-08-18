@@ -199,50 +199,109 @@ router.post('/actualizar-cantidad-libros', function(req, res){
 
 });
 
-router.post('/habilitar-oferta', function(req, res){
+// router.post('/habilitar-oferta', function(req, res){
     
-    Registro_libro.findOneAndUpdate({ _id: req.body._id }, {
-            $set: {
-                'estadoOferta': req.body.estadoOferta
-            }
+//     Registro_libro.findOneAndUpdate({ _id: req.body._id }, {
+//             $set: {
+//                 'estadoOferta': req.body.estadoOferta
+//             }
             
+//         },
+//         function(error){
+//             if (error) {
+//                 return res.json({
+//                     success: false,
+//                     msj: 'No se pudo habilitar la oferta',
+//                     error
+//                 });
+//             } else{
+//                 res.json({
+//                     success: true,
+//                     msj: 'La oferta se habilitó con éxito'
+//                 });
+//             }
+//         }
+//     )
+// });
+
+// router.post('/deshabilitar-oferta', function(req, res){
+    
+//     Registro_libro.findOneAndUpdate({ _id: req.body._id }, {
+//             $set: {
+//                 'estadoOferta': req.body.estadoOfertas            }
+            
+//         },
+//         function(error){
+//             if (error) {
+//                 return res.json({
+//                     success: false,
+//                     msj: 'No se pudo deshabilitar la oferta',
+//                     error
+//                 });
+//             } else{
+//                 res.json({
+//                     success: true,
+//                     msj: 'La oferta se deshabilitó con éxito'
+//                 });
+//             }
+//         }
+//     )
+// });
+// eliminar oferta 
+// _id : id del libro
+// idOferta: id de la oferta dentro del array de ofertas
+router.post('/eliminar-oferta', function(req, res) {
+    let body = req.body;
+
+    Registro_libro.findByIdAndUpdate(body._id, {
+            $pull: {
+                ofertas: {
+                    _id : req.body.idOferta
+                }
+            }
         },
-        function(error){
+        function(error) {
             if (error) {
-                return res.json({
-                    success: false,
-                    msj: 'No se pudo habilitar la oferta',
-                    error
-                });
-            } else{
-                res.json({
-                    success: true,
-                    msj: 'La oferta se habilitó con éxito'
-                });
+                res.json({ success: false, msg: 'No se pudo eliminar la oferta' });
+            } else {
+                res.json({ success: true, msg: 'La oferta se eliminó con éxito' });
             }
         }
     )
 });
 
-router.post('/deshabilitar-oferta', function(req, res){
-    
-    Registro_libro.findOneAndUpdate({ _id: req.body._id }, {
-            $set: {
-                'estadoOferta': req.body.estadoOfertas            }
-            
+// modificar la información de la oferta
+router.post('/modificar-oferta', function(req, res) {
+    let body = req.body;
+
+    Registro_libro.findByIdAndUpdate(body._id, {
+            $set: body.datos
         },
-        function(error){
+        function(error) {
             if (error) {
-                return res.json({
-                    success: false,
-                    msj: 'No se pudo deshabilitar la oferta',
-                    error
-                });
-            } else{
-                res.json({
-                    success: true,
-                    msj: 'La oferta se deshabilitó con éxito'
-                });
+                res.json({ success: false, msg: 'No se pudo modificar la oferta' });
+            } else {
+                res.json({ success: true, msg: 'La oferta se modificó con éxito' });
+            }
+        }
+    )
+});
+
+// modificar el estado de la oferta
+
+router.post('/modificar-estado-oferta', function(req, res) {
+    let body = req.body;
+
+    Registro_libro.findByIdAndUpdate(body._id, {
+            $set: {
+                'ofertas': req.body.datos
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la oferta' });
+            } else {
+                res.json({ success: true, msg: 'La oferta se modificó con éxito' });
             }
         }
     )
@@ -277,6 +336,20 @@ router.post('/modificar-libros', function(req, res) {
                 res.json({ success: false, msg: 'No se pudo modificar el libro' });
             } else {
                 res.json({ success: true, msg: 'EL libro se modificó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/eliminar-libros', function(req, res) {
+    let body = req.body;
+
+    Registro_libro.findByIdAndRemove(body._id,
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+            } else {
+                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
             }
         }
     )

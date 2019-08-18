@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud, ptipo_usuario) => {
+let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud, ptipo_usuario, pestado) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-usuario',
@@ -22,7 +22,8 @@ let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, p
             direccion_exacta: pdireccionExacta,
             direccion_latitud: pdireccion_latitud,
             direccion_longitud: pdireccion_longitud,
-            tipo_usuario: ptipo_usuario
+            tipo_usuario: ptipo_usuario,
+            estado: pestado
         }
     });
 };
@@ -98,7 +99,7 @@ let obtenerUsuarioId = async(_id) => {
     }
 };
 // Modificar el estado
-let habilitar = (pid, pestado) => {
+let habilitarUsuario = (pid, pestado) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/habilitar-usuario',
@@ -111,7 +112,7 @@ let habilitar = (pid, pestado) => {
 };
 
 // Modificar el estado
-let deshabilitar = (pid) => {
+let deshabilitarUsuario = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar-usuario',
@@ -151,6 +152,17 @@ let modificarUsuario = (p_id, pavatar, pusuario, pcorreo, pcontrasena, pnombre, 
     });
 };
 
+let eliminarUsuario = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-usuario',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};
 
 // Funciones para obtener coordenadas de google maps
 let corlatitud;
@@ -226,3 +238,16 @@ let cambiarEstadoTarjetas = (pdatos, pid) =>{
         }
     });
 }
+
+let eliminarTarjetas = (pid, pidtarjeta) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-tarjetas',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            idlibro: pidtarjeta
+        }
+    });
+}
+

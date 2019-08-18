@@ -36,7 +36,8 @@ router.post('/registrar-usuario', function(req, res) {
         direccion_longitud: body.direccion_longitud,
         tipo_usuario: body.tipo_usuario,
         edad: body.edad,
-        fecha: body.fecha
+        fecha: body.fecha,
+        estado: body.estado
     });
 
     nuevo_usuario.save(
@@ -235,6 +236,20 @@ router.post('/modificar-usuario', function(req, res) {
     )
 });
 
+router.post('/eliminar-usuario', function(req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndRemove(body._id,
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo borrar el usuario' });
+            } else {
+                res.json({ success: true, msg: 'El usuario se borró con éxito' });
+            }
+        }
+    )
+});
+
 router.post('/modificar-tarjetas', function(req, res) {
     let body = req.body;
 
@@ -257,6 +272,26 @@ router.post('/modificar-estado-tarjetas', function(req, res) {
     Usuario.findByIdAndUpdate(body._id, {
             $set: {
                 'tarjetas': req.body.datos
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+            } else {
+                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/eliminar-tarjetas', function(req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndUpdate(body._id, {
+            $pull: {
+                tarjetas: {
+                    _id : req.body.idlibro
+                }
             }
         },
         function(error) {

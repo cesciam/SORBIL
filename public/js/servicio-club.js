@@ -70,7 +70,7 @@ let registrarUsuarioAlClub = (pid_club, pidusuario, pnombre, pcorreo) =>{
     });
 };
 
-let habilitar = (pid) => {
+let habilitarClub = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/habilitar-club',
@@ -80,7 +80,7 @@ let habilitar = (pid) => {
         }
     });
 };
-let deshabilitar = (pid) => {
+let deshabilitarClub = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar-club',
@@ -118,3 +118,31 @@ let modificarClub = (pid, pimagen, ptipo, pnombre, ptema, pcorreo, ptelefono, pc
     });
 };
 
+let eliminarClub = (pid, pimagen, ptipo, pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, phora, pfrecuencia, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-libros',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            _id: pid,
+            imagen: pimagen,
+            tipo: ptipo,
+            nombre: pnombre,
+            tema: ptema,
+            correo: pcorreo,
+            telefono: ptelefono,
+            categoria: pcategoria,
+            genero: pgenero,
+            fecha: pfecha,
+            hora: phora,
+            frecuencia: pfrecuencia,
+            descripcion: pdescripcion,
+            provincia: pprovincia,
+            canton: pcanton,
+            distrito: pdistrito,
+            direccion_exacta: pdireccion_exacta
+        }
+    });
+
+}
