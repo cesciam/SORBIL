@@ -129,7 +129,7 @@ let saludar = () => {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',
-            text: 'Revise los campos resaltados e inténtelo de nuevo'
+            text: 'Revise la fecha e inténtelo de nuevo'
         })
     }
 
