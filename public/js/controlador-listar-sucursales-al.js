@@ -30,40 +30,40 @@ let mostrar_tabla = async () => {
 
         let celdaIcono = fila.insertCell();
         let aIcono = document.createElement('a');
-        
+
         let icon = document.createElement('i');
-        icon.className  = 'bx bxs-edit-alt';
+        icon.className = 'bx bxs-edit-alt';
         aIcono.appendChild(icon);
 
         let celdaIconoActivar = fila.insertCell();
         let aIconoAc = document.createElement('a');
         aIconoAc.className = 'header-icon';
         let iconAc = document.createElement('i');
-        iconAc.className  = 'bx bxs-check-square';
+        iconAc.className = 'bx bxs-check-square';
         aIconoAc.appendChild(iconAc);
 
         let celdaIconoEliminar = fila.insertCell();
         let aIconoEliminar = document.createElement('a');
         aIconoEliminar.className = 'header-icon';
         let iconEliminiar = document.createElement('i');
-        iconEliminiar.className  = 'bx bxs-trash';
+        iconEliminiar.className = 'bx bxs-trash';
         aIconoEliminar.appendChild(iconEliminiar);
 
-        if(lista_sucursales[i]['estado'] == 'habilitado'){
+        if (lista_sucursales[i]['estado'] == 'habilitado') {
             iconAc.id = 'habilitadoIon';
-            icon.addEventListener('click', function(){
+            icon.addEventListener('click', function () {
                 window.location.href = `modificar-sucursal-al.html?_id=${i}`;
             });
             aIcono.className = 'header-icon';
-            iconAc.addEventListener('click', function(){
+            iconAc.addEventListener('click', function () {
                 lista_sucursales[i]['estado'] = 'desabilitado';
 
                 cambiarEstadoSucursal(lista_sucursales, correo_activo_libreria);
                 window.location.reload();
             });
-        }else{
+        } else {
             aIcono.className = 'header-iconDisable';
-            iconAc.addEventListener('click', function(){
+            iconAc.addEventListener('click', function () {
                 lista_sucursales[i]['estado'] = 'habilitado';
 
                 cambiarEstadoSucursal(lista_sucursales, correo_activo_libreria);
@@ -71,7 +71,7 @@ let mostrar_tabla = async () => {
             });
         }
 
-        iconEliminiar.addEventListener('click', function(){
+        iconEliminiar.addEventListener('click', function () {
             Swal.fire({
                 title: '¿Está seguro de eliminar la sucursal?',
                 text: "Ésta acción no se puede revertir",
@@ -86,7 +86,7 @@ let mostrar_tabla = async () => {
 
                     Swal.fire(
                         'Sucursal eliminada!',
-                        'success'
+
                     ).then((result) => {
                         if (result.value) {
                             window.location.reload();
