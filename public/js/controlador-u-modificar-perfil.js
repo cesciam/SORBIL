@@ -30,11 +30,11 @@ const btn_guardar = document.querySelector('#btn-enviar');
 const urlParams = new URLSearchParams(window.location.search);
 let _id = urlParams.get('_id');
 
-let cargarFormulario = async() => {
+let cargarFormulario = async () => {
     let usuario = await obtenerUsuarioId(_id);
     if (usuario) {
         img_uploader_avatar.src = usuario['avatar'];
-        input_usuario.value = usuario['usuario'];        
+        input_usuario.value = usuario['usuario'];
         input_correo.value = usuario['correo'];
         input_nombre.value = usuario['nombre'];
         input_id.value = usuario['id'];
@@ -44,7 +44,7 @@ let cargarFormulario = async() => {
         input_provincia.value = usuario['provincia'];
         input_canton.value = usuario['canton'];
         input_distrito.value = usuario['distrito'];
-        input_direccion_exacta.value = usuario['direccion_exacta'];        
+        input_direccion_exacta.value = usuario['direccion_exacta'];
     }
 };
 
@@ -222,7 +222,7 @@ let modificarPerfilUsuario = async () => {
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
         })
-          
+
         window.location.href = `ver-perfil-usuario.html?_id=${_id}`;
     }
     else {

@@ -994,28 +994,28 @@ router.get('/buscar-libreria-id/:_id', function (req, res) {
 
 
 
-router.post('/agregar-sucursal', function(req, res) {
+router.post('/agregar-sucursal', function (req, res) {
     libreria.update({ correo: req.body.correo }, {
-            $push:{ 
-                'sucursales': {
-                    nombre: req.body.nombre,
-                    telefono: req.body.telefono,
-                    provincia: req.body.provincia,
-                    canton: req.body.canton,
-                    distrito: req.body.distrito,
-                    direccion_latitud: req.body.direccion_latitud,
-                    direccion_longitud: req.body.direccion_longitud                
-                }
+        $push: {
+            'sucursales': {
+                nombre: req.body.nombre,
+                telefono: req.body.telefono,
+                provincia: req.body.provincia,
+                canton: req.body.canton,
+                distrito: req.body.distrito,
+                direccion_latitud: req.body.direccion_latitud,
+                direccion_longitud: req.body.direccion_longitud
             }
-        },
-        function(error){
+        }
+    },
+        function (error) {
             if (error) {
                 return res.status(400).json({
                     success: false,
                     msj: 'No se pudo agregar la sucursal',
                     error
                 });
-            } else{
+            } else {
                 res.json({
                     success: true,
                     msj: 'La sucursal se agregó con éxito'
@@ -1025,23 +1025,23 @@ router.post('/agregar-sucursal', function(req, res) {
     )
 });
 
-router.post('/agregar-libros-sucursal', function(req, res) {
+router.post('/agregar-libros-sucursal', function (req, res) {
     libreria.update({ correo: req.body.correo }, {
-            $push:{ 
-                'libros': {
-                    idlibro: req.body.idlibro,
-                    cantidad: req.body.cantidad              
-                }
+        $push: {
+            'libros': {
+                idlibro: req.body.idlibro,
+                cantidad: req.body.cantidad
             }
-        },
-        function(error){
+        }
+    },
+        function (error) {
             if (error) {
                 return res.status(400).json({
                     success: false,
                     msj: 'No se pudo agregar los libros a la librería.',
                     error
                 });
-            } else{
+            } else {
                 res.json({
                     success: true,
                     msj: 'Los libros se agregaron con exito a la librería.'
@@ -1053,7 +1053,7 @@ router.post('/agregar-libros-sucursal', function(req, res) {
 
 
 router.get('/buscar-libros-libreria/:correo', function (req, res) {
-    libreria.find({correo: req.body.correo}, function (err, librobd) {
+    libreria.find({ correo: req.body.correo }, function (err, librobd) {
         if (err) {
             return res.json({
                 success: false,
@@ -1069,22 +1069,22 @@ router.get('/buscar-libros-libreria/:correo', function (req, res) {
     })
 });
 
-router.post('/actualizar-libros-libreria', function(req, res){
-    
+router.post('/actualizar-libros-libreria', function (req, res) {
+
     libreria.findOneAndUpdate({ correo: req.body.correo }, {
-            $set: {
-                'libros': req.body.libros
-            }
-            
-        },
-        function(error){
+        $set: {
+            'libros': req.body.libros
+        }
+
+    },
+        function (error) {
             if (error) {
                 return res.json({
                     success: false,
                     msj: 'No se pudo agregar la sucursal',
                     error
                 });
-            } else{
+            } else {
                 res.json({
                     success: true,
                     msj: 'La sucursal se agregó con éxito'
@@ -1130,15 +1130,15 @@ router.post('/modificar-libreria', function (req, res) {
 });
 
 // modificar estado de la sucursal
-router.post('/modificar-estado-sucursal', function(req, res) {
+router.post('/modificar-estado-sucursal', function (req, res) {
     let body = req.body;
 
     libreria.findOneAndUpdate({ correo: req.body.correo }, {
-            $set: {
-                'sucursales': body.datos
-            }
-        },
-        function(error) {
+        $set: {
+            'sucursales': body.datos
+        }
+    },
+        function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo modificar la sucursal' });
             } else {
@@ -1152,17 +1152,17 @@ router.post('/modificar-estado-sucursal', function(req, res) {
 // correo : correo de la libreria
 // idSucursal: id de la sucursal dentro del array de ofertas
 
-router.post('/eliminar-sucursal', function(req, res) {
+router.post('/eliminar-sucursal', function (req, res) {
     let body = req.body;
 
     Libreria.findOneAndUpdate({ correo: req.body.correo }, {
-            $pull: {
-                sucursales: {
-                    correo: req.body.idSucursal
-                }
+        $pull: {
+            sucursales: {
+                correo: req.body.idSucursal
             }
-        },
-        function(error) {
+        }
+    },
+        function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo modificar la sucursal' });
             } else {
@@ -1174,21 +1174,21 @@ router.post('/eliminar-sucursal', function(req, res) {
 
 // MODIFICAR SUCURSAL
 
-router.post('/modificar-sucursal', function(req, res){
-     let body = req.body;
-    
+router.post('/modificar-sucursal', function (req, res) {
+    let body = req.body;
+
     libreria.findOneAndUpdate({ correo: req.body.correo }, {
-            $set: body.datos
-            
-        },
-        function(error){
+        $set: body.datos
+
+    },
+        function (error) {
             if (error) {
                 return res.json({
                     success: false,
                     msj: 'No se pudo modificar la sucursal',
                     error
                 });
-            } else{
+            } else {
                 res.json({
                     success: true,
                     msj: 'La sucursal se modificó con éxito'
@@ -1198,8 +1198,8 @@ router.post('/modificar-sucursal', function(req, res){
     )
 });
 
-router.get('/buscar-libreria-por-correo/:correo', function(req, res) {
-    libreria.find({ correo: req.body.correo }, function(err, libreriaDB) {
+router.get('/buscar-libreria-por-correo/:correo', function (req, res) {
+    libreria.find({ correo: req.body.correo }, function (err, libreriaDB) {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -1214,6 +1214,8 @@ router.get('/buscar-libreria-por-correo/:correo', function(req, res) {
         }
     })
 });
+
+// MODIFICAR LIBRERIA
 
 router.post('/modificar-libreria', function (req, res) {
     let body = req.body;

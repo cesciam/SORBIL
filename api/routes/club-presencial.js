@@ -58,7 +58,7 @@ router.post('/registrar-club', function (req, res) {
             } else {
                 let mailOptions = {
                     from: 'fenixsorbil@gmail.com',
-                    to: nueva_libreria.correo,
+                    to: nuevo_club.correo,
                     subject: 'Bienvenido a Sorbil',
                     html: `
                     <!DOCTYPE html
@@ -1054,17 +1054,31 @@ router.post('/habilitar-club', function (req, res) {
     )
 });
 
-router.post('/modificar-club', function (req, res) {
+router.post('/modificar-club-presencial', function (req, res) {
     let body = req.body;
 
     Club.findByIdAndUpdate(body._id, {
-        $set: req.body
+        $set: {
+            imagen: body.imagen,
+            tipo: body.tipo,
+            nombre: body.nombre,
+            tema: body.tema,
+            correo: body.correo,
+            telefono: body.telefono,
+            categoria: body.categoria,
+            genero: body.genero,
+            fecha: body.fecha,
+            hora: body.hora,
+            frecuencia: body.frecuencia,
+            descripcion: body.descripcion,
+            direccion_exacta: body.direccion_exacta,
+        }
     },
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo modificar la información' });
+                res.json({ success: false, msg: 'No se pudo modificar el club' });
             } else {
-                res.json({ success: true, msg: 'La información se modificó con éxito' });
+                res.json({ success: true, msg: 'El club se modificó con éxito' });
             }
         }
     )

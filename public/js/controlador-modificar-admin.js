@@ -146,8 +146,8 @@ let modificarPerfilAdmin = async () => {
     let errorFecha = validarFecha(fecha);
 
     if (error == false && errorCedula == false && errorFecha == false) {
-        let estado = 'habilitado';
-        modificarAdminLibreria(src_avatar, nombre, primer_apellido, segundo_apellido, id, fecha);
+        // let estado = 'habilitado';
+        modificarAdminLibreria(_id, src_avatar, nombre, primer_apellido, segundo_apellido, id, fecha);
         Swal.fire({ //formato json
             title: 'Se ha modificado la información exitosamente',
             type: 'success',

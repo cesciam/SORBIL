@@ -40,10 +40,6 @@ let llenar_perfil = async () => {
     }
 };
 
-btn_modificarAdm.addEventListener('click', function () {
-    window.location.href = `modificar-perfil-admin-libreria.html?_id=${_idAdm}`;
-});
-
 let llenar_perfil_lib= async () => {
 
     let libreriaid = await obtenerLibreriaid(_idLib);
@@ -60,6 +56,10 @@ let llenar_perfil_lib= async () => {
         direccion_exacta.innerHTML = libreriaid['direccion_exacta'];
     }
 };
+
+btn_modificarAdm.addEventListener('click', function () {
+    window.location.href = `modificar-perfil-admin-libreria.html?_id=${_idAdm}`;
+});
 
 btn_modificarLib.addEventListener('click', function () {
     window.location.href = `modificar-perfil-libreria.html?_id=${_idLib}`;
