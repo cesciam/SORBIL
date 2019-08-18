@@ -247,7 +247,7 @@ router.post('/actualizar-cantidad-libros', function(req, res){
 //         }
 //     )
 // });
-// elimianr oferta 
+// eliminar oferta 
 // _id : id del libro
 // idOferta: id de la oferta dentro del array de ofertas
 router.post('/eliminar-oferta', function(req, res) {
