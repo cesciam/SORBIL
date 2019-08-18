@@ -142,7 +142,7 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
     return error;
 };
 
-
+let validarCedula = (pidentificacion) => {
     if (!cedulaValida.test(pidentificacion)) {
         errorCedula = true;
         input_id.classList.add('input_error');
@@ -195,7 +195,8 @@ let llamar = async () => {
     let errorCorreo = validarCorreo(correo);
 
     if (error == false && errorCedula == false && errorCorreo == false) {
-        registrarUsuario(src_avatar, usuario, correo, contrasena, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta, latitud, longitud, tipo_usuario);
+        let estado = 'habilitado';
+        registrarUsuario(src_avatar, usuario, correo, contrasena, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta, latitud, longitud, tipo_usuario, estado);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

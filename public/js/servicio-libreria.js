@@ -1,7 +1,7 @@
 'use strict';
 
 
-let registrarLibreria = (pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud) => {
+let registrarLibreria = (pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud, pestado) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libreria',
@@ -19,13 +19,14 @@ let registrarLibreria = (pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescr
             distrito: pdistrito,
             direccion_exacta: pdireccion_exacta,
             direccion_latitud: pdireccion_latitud,
-            direccion_longitud: pdireccion_longitud
+            direccion_longitud: pdireccion_longitud,
+            estado: pestado
         }
     });
 };
 
 
-let registrarAdminLibreria = (pavatar, pcorreo, pcontrasena, pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha, pedad, ptipo_usuario) => {
+let registrarAdminLibreria = (pavatar, pcorreo, pcontrasena, pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha, pedad, ptipo_usuario, pestado) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-usuario',
@@ -41,7 +42,8 @@ let registrarAdminLibreria = (pavatar, pcorreo, pcontrasena, pnombre, pprimer_ap
             id: pid,
             fecha: pfecha,
             edad: pedad,
-            tipo_usuario: ptipo_usuario
+            tipo_usuario: ptipo_usuario,
+            estado: pestado
         }
     });
 };

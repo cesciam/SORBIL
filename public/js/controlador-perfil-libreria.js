@@ -38,7 +38,6 @@ let mostrar_cards = async () => {
 
 
     let libreria = await obtenerLibreriaid(id);
-    console.log(libreria);
     let lista_sucursales = libreria.sucursales;
 
     for (let i = 0; i < lista_sucursales.length; i++) {
@@ -54,12 +53,12 @@ let mostrar_cards = async () => {
 
         let contenedor_atributo = document.createElement('div');
         contenedor_atributo.classList.add('contenedor_atributo');
-        let correo = document.createElement('p');
+        let provincia = document.createElement('p');
         let telefono = document.createElement('p');
-        correo.innerText = lista_sucursales[i]['correo'];
+        provincia.innerText = lista_sucursales[i]['provincia'];
         telefono.innerText = lista_sucursales[i]['telefono'];
 
-        contenedor_atributo.appendChild(correo);
+        contenedor_atributo.appendChild(provincia);
         contenedor_atributo.appendChild(telefono);
         
         let btn_perfil = document.createElement('button');

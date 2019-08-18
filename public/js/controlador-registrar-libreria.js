@@ -284,15 +284,21 @@ let saludar = async () => {
 
 
     if (error == false && errorCedula == false && errorCorreo == false && errorTelefono == false && errorFecha == false) {
-        registrarLibreria(src_imagen, usuario, correo, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, latitud, longitud);
-        registrarAdminLibreria(src_avatar, correo, contrasena, nombre, primer_apellido, segundo_apellido, id, fecha, edad, tipo_usuario);
+        let estado = 'habilitado';
+        registrarLibreria(src_imagen, usuario, correo, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, latitud, longitud, estado);
+        
+        registrarAdminLibreria(src_avatar, correo, contrasena, nombre, primer_apellido, segundo_apellido, id, fecha, edad, tipo_usuario, estado);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
-        })
+        }).then((result) => {
+            if (result.value) {
+                
+                window.location.href = 'u-iniciar-sesion.html';
+            }
+        });
         //Se llama a la función para limpiar el formulario
-        limpiarFormulario();
-        window.location.href = 'u-iniciar-sesion.html';
+        
     } else {        
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
