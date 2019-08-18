@@ -125,7 +125,6 @@ let eliminarClub = (pid, pimagen, ptipo, pnombre, ptema, pcorreo, ptelefono, pca
         responseType: 'json',
         data: {
             _id: pid,
-            _id: pid,
             imagen: pimagen,
             tipo: ptipo,
             nombre: pnombre,

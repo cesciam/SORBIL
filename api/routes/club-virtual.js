@@ -1026,7 +1026,20 @@ router.post('/modificar-club', function (req, res) {
     let body = req.body;
 
     Club.findByIdAndUpdate(body._id, {
-        $set: req.body
+        $set: {
+            imagen: body.imagen,
+            tipo: body.tipo,
+            nombre: body.nombre,
+            tema: body.tema,
+            correo: body.correo,
+            telefono: body.telefono,
+            categoria: body.categoria,
+            genero: body.genero,
+            fecha: body.fecha,
+            hora: body.hora,
+            frecuencia: body.frecuencia,
+            descripcion: body.descripcion
+        }
     },
         function (error) {
             if (error) {
