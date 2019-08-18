@@ -94,7 +94,7 @@ let obtenerSucursales = async (correo) => {
     }
 };
 
-let modificarSucursal = (pcorreo, pdatos) => {
+let modificarSucursal = (pdatos, pcorreo) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-sucursal',
@@ -105,6 +105,30 @@ let modificarSucursal = (pcorreo, pdatos) => {
         }
     });
 };
+
+let cambiarEstadoSucursal = (pdatos, pcorreo) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-estado-sucursal',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            datos: pdatos
+        }
+    });
+}
+
+let eliminarSucursal = (pcorreo, pidSucursal) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-sucursal',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            idSucursal: pidSucursal
+        }
+    });
+}
 
 let obtenerDatosCorreo = async (correo) => {
     try {
@@ -164,10 +188,10 @@ let actualizarLibrosLibreria = (pArrayLibros, pcorreo) => {
     });
 }
 
-let modificarLibreria = (_id, pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud, pavatar, pnombre, pprimer_apellido, psegundo_apellido, pfecha) => {
+let modificarLibreria = (_id, pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud) => {
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/modificar_libreria',
+        url: 'http://localhost:4000/api/modificar-libreria',
         responseType: 'json',
         data: {
             //Info de la librería
@@ -184,11 +208,24 @@ let modificarLibreria = (_id, pimagen, pusuario, pcorreo, pempresa, ptelefono, p
             direccion_exacta: pdireccion_exacta,
             direccion_latitud: pdireccion_latitud,
             direccion_longitud: pdireccion_longitud,
+        }
+    });
+};
+
+
+let modificarAdminLibreria = (_id, pavatar, pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-usuario',
+        responseType: 'json',
+        data: {
             //Info del administrador
+            _id: pid,
             avatar: pavatar,
             nombre: pnombre,
             primer_apellido: pprimer_apellido,
             segundo_apellido: psegundo_apellido,
+            id: pid,
             fecha: pfecha
         }
     });

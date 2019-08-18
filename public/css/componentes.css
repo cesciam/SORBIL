@@ -783,6 +783,11 @@ Inicio de estilos del header de las cartas
     text-align: start;
 }
 
+.user-profile-container button {
+    margin-top: 2rem;
+    background-color: var(--color-alternative-blue) !important;
+}
+
 .user-profile-container .profile-titles p {
     font-weight: var(--font-semibold);
     color: var(--color-secondary);
