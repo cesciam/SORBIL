@@ -1155,7 +1155,7 @@ router.post('/modificar-estado-sucursal', function(req, res) {
 router.post('/eliminar-sucursal', function(req, res) {
     let body = req.body;
 
-    Libreria.findOneAndUpdate({ correo: req.body.correo }, {
+    libreria.findOneAndUpdate({ correo: req.body.correo }, {
             $pull: {
                 sucursales: {
                     correo: req.body.idSucursal

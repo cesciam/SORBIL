@@ -236,6 +236,20 @@ router.post('/modificar-usuario', function(req, res) {
     )
 });
 
+router.post('/eliminar-usuario', function(req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndRemove(body._id,
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo borrar el usuario' });
+            } else {
+                res.json({ success: true, msg: 'El usuario se borró con éxito' });
+            }
+        }
+    )
+});
+
 router.post('/modificar-tarjetas', function(req, res) {
     let body = req.body;
 
