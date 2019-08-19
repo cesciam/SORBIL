@@ -7,6 +7,7 @@ const input_canton = document.querySelector('#txt-canton');
 const input_distrito = document.querySelector('#txt-distrito');
 const btn_crear_sucursal = document.querySelector('#btn-enviar');
 
+
 let validar = (pnombre, ptelefono, pprovincia, pcanton, pdistrito) => {
 
     let error = false;
@@ -100,6 +101,8 @@ let llamar = async () => {
             text: 'Revisá los campos resaltados e intentalo de nuevo'
         })
     }
+
+    initMap();
 };
 
 const limpiarFormulario = () => {

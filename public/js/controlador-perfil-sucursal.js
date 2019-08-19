@@ -1,29 +1,34 @@
 'use strict';
 
+
+let sesionLibreria = JSON.parse(sessionStorage.getItem('activo'));
+let sesion_libreria = sesionLibreria.correo;
+
 const urlParams = new URLSearchParams(window.location.search);
+let _i = urlParams.get('_i');
+let posicion = urlParams.get('_i');
 
 let _id = urlParams.get('_id');
 
-let nombre = document.querySelector('#nombre');
-let imagen = document.querySelector('#imagen');
-let telefono = document.querySelector('#telefono');
-let correo = document.querySelector('#correo');
-let provincia = document.querySelector('#provincia');
-let canton = document.querySelector('#canton');
-let distrito = document.querySelector('#distrito');
+let input_nombre = document.querySelector('#nombre');
+let input_telefono = document.querySelector('#telefono');
+let input_provincia = document.querySelector('#provincia');
+let input_canton = document.querySelector('#canton');
+let input_distrito = document.querySelector('#distrito');
 
 let llenar_perfil = async () => {
 
-    let sucursal = await obtenerLibreriaid(_id);
+    let datosLibreria =  await obtenerLibreriaPorCorreo(sesion_libreria);
+    posicion = parseInt(posicion);
+ 
+    
+    if (datosLibreria) {
 
-    if (sucursal) {
-        nombre.innerHTML = sucursal['nombre'];
-        imagen.src = sucursal['imagen'];
-        telefono.innerHTML = sucursal['telefono'];
-        correo.innerHTML = sucursal['correo'];
-        provincia.innerHTML = sucursal['provincia'];
-        canton.innerHTML = sucursal['canton'];
-        distrito.innerHTML = sucursal['distrito'];
+        input_nombre.innerHTML = datosLibreria[0].sucursales[posicion].nombre;
+        input_telefono.innerHTML = datosLibreria[0].sucursales[posicion].telefono;
+        input_provincia.innerHTML = datosLibreria[0].sucursales[posicion].provincia;
+        input_canton.innerHTML = datosLibreria[0].sucursales[posicion].canton;
+        input_distrito.innerHTML = datosLibreria[0].sucursales[posicion].distrito;
     }
 };
 
