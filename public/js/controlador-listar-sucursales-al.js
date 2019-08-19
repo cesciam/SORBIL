@@ -37,24 +37,25 @@ let mostrar_tabla = async () => {
 
         let celdaIconoActivar = fila.insertCell();
         let aIconoAc = document.createElement('a');
-        aIconoAc.className = 'header-icon';
+        aIconoAc.className = 'list-icon';
         let iconAc = document.createElement('i');
         iconAc.className = 'bx bxs-check-square';
         aIconoAc.appendChild(iconAc);
 
         let celdaIconoEliminar = fila.insertCell();
         let aIconoEliminar = document.createElement('a');
-        aIconoEliminar.className = 'header-icon';
+        aIconoEliminar.className = 'list-icon';
         let iconEliminiar = document.createElement('i');
         iconEliminiar.className = 'bx bxs-trash';
         aIconoEliminar.appendChild(iconEliminiar);
 
         if (lista_sucursales[i]['estado'] == 'habilitado') {
             iconAc.id = 'habilitadoIon';
+            aIcono.id = 'list-icon';
             icon.addEventListener('click', function () {
                 window.location.href = `modificar-sucursal-al.html?_i=${i}`;
             });
-            aIcono.className = 'header-icon';
+            aIcono.className = 'list-icon';
             iconAc.addEventListener('click', function () {
                 lista_sucursales[i]['estado'] = 'desabilitado';
 
@@ -62,7 +63,7 @@ let mostrar_tabla = async () => {
                 window.location.reload();
             });
         } else {
-            aIcono.className = 'header-iconDisable';
+            aIcono.className = 'list-iconDisable';
             iconAc.addEventListener('click', function () {
                 lista_sucursales[i]['estado'] = 'habilitado';
 
@@ -121,12 +122,85 @@ let filtrar_tabla = async () => {
             fila.insertCell().innerHTML = lista_sucursales[i]['provincia'];
             fila.insertCell().innerHTML = lista_sucursales[i]['canton'];
             fila.insertCell().innerHTML = lista_sucursales[i]['distrito'];
+            let celdaPerfil = fila.insertCell();
+            let btn_perfil = document.createElement('a');
+            btn_perfil.innerText = 'Ver perfil';
+            btn_perfil.href = `ver-perfil-sucursal.html?_i=${i}`;
+            celdaPerfil.appendChild(btn_perfil);
 
-            let celdaModificar = fila.insertCell();
-            let btn_modificar = document.createElement('a');
-            btn_modificar.innerText = 'Modificar';
-            btn_modificar.href = `modificar-sucursal-al.html?_id=${i}`;
-            celdaModificar.appendChild(btn_modificar);
+            let celdaIcono = fila.insertCell();
+            let aIcono = document.createElement('a');
+
+            let icon = document.createElement('i');
+            icon.className = 'bx bxs-edit-alt';
+            aIcono.appendChild(icon);
+
+            let celdaIconoActivar = fila.insertCell();
+            let aIconoAc = document.createElement('a');
+            aIconoAc.className = 'list-icon';
+            let iconAc = document.createElement('i');
+            iconAc.className = 'bx bxs-check-square';
+            aIconoAc.appendChild(iconAc);
+
+            let celdaIconoEliminar = fila.insertCell();
+            let aIconoEliminar = document.createElement('a');
+            aIconoEliminar.className = 'list-icon';
+            let iconEliminiar = document.createElement('i');
+            iconEliminiar.className = 'bx bxs-trash';
+            aIconoEliminar.appendChild(iconEliminiar);
+
+            if (lista_sucursales[i]['estado'] == 'habilitado') {
+                iconAc.id = 'habilitadoIon';
+                aIcono.id = 'list-icon';
+                icon.addEventListener('click', function () {
+                    window.location.href = `modificar-sucursal-al.html?_i=${i}`;
+                });
+                aIcono.className = 'list-icon';
+                iconAc.addEventListener('click', function () {
+                    lista_sucursales[i]['estado'] = 'desabilitado';
+
+                    cambiarEstadoSucursal(lista_sucursales, correo_activo_libreria);
+                    window.location.reload();
+                });
+            } else {
+                aIcono.className = 'list-iconDisable';
+                iconAc.addEventListener('click', function () {
+                    lista_sucursales[i]['estado'] = 'habilitado';
+
+                    cambiarEstadoSucursal(lista_sucursales, correo_activo_libreria);
+                    window.location.reload();
+                });
+            }
+
+            iconEliminiar.addEventListener('click', function () {
+                Swal.fire({
+                    title: '¿Está seguro de eliminar la sucursal?',
+                    text: "Ésta acción no se puede revertir",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sí, estoy seguro'
+                }).then((result) => {
+                    if (result.value) {
+                        eliminarSucursal(correo_activo_libreria, lista_sucursales[i]._id);
+
+                        Swal.fire(
+                            'Sucursal eliminada!',
+
+                        ).then((result) => {
+                            if (result.value) {
+                                window.location.reload();
+                            }
+                        });
+                    }
+                })
+            });
+
+            celdaIcono.appendChild(aIcono);
+            celdaIconoActivar.appendChild(aIconoAc);
+            celdaIconoEliminar.appendChild(aIconoEliminar);
+
 
         }
     }

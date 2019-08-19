@@ -1161,7 +1161,7 @@ router.post('/eliminar-sucursal', function (req, res) {
 
 router.post('/modificar-sucursal', function (req, res) {
     let body = req.body;
-    console.log(req.body.datos);
+
 
     libreria.findOneAndUpdate({ correo: req.body.correo }, {
 
