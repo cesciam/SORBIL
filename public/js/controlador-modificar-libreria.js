@@ -78,9 +78,9 @@ let cargarFormulario = async () => {
         input_telefono.value = libreriaid[0].telefono;
         input_descripcion.value = libreriaid[0].descripcion;
         input_provincia.value = libreriaid[0].provincia;
-        llenarCantones(libreriaid[0].provincia);        
-        llenarDistritos(libreriaid[0].canton);  
-        input_canton.value = libreriaid[0].canton;      
+        llenarCantones(libreriaid[0].provincia);
+        llenarDistritos(libreriaid[0].canton);
+        input_canton.value = libreriaid[0].canton;
         input_distrito.value = libreriaid[0].distrito;
         input_direccion_exacta.value = libreriaid[0].direccion_exacta;
         location = { lat: libreriaid[0].direccion_latitud, lng: libreriaid[0].direccion_longitud };
@@ -263,7 +263,7 @@ let modificarlib = async () => {
             type: 'success',
         }).then((result) => {
             if (result.value) {
-              window.location.href = `ver-perfil-administrador-libreria.html?_id=${_id}`;
+                window.location.href = `ver-perfil-administrador-libreria.html?_id=${_id}`;
             }
         });
         //Se llama a la función para limpiar el formulario
