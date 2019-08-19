@@ -1164,10 +1164,10 @@ router.post('/eliminar-sucursal', function (req, res) {
 router.post('/modificar-sucursal', function (req, res) {
     let body = req.body;
 
+
     libreria.findOneAndUpdate({ correo: req.body.correo }, {
-        $set: {
-            'sucursales': req.body.sucursales
-        }
+
+        $set: body.datos
             
         },
         function(error){
@@ -1182,6 +1182,7 @@ router.post('/modificar-sucursal', function (req, res) {
                     success: true,
                     msj: 'La sucursal se modificó con éxito'
                 });
+                
             }
         }
     )

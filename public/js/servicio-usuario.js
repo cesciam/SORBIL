@@ -124,7 +124,7 @@ let deshabilitarUsuario = (pid) => {
     });
 };
 
-let modificarUsuario = (p_id, pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud, ptipo_usuario) => {
+let modificarUsuario = (p_id, pavatar, pusuario, pcorreo, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud, ptipo_usuario) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-usuario',
@@ -134,7 +134,6 @@ let modificarUsuario = (p_id, pavatar, pusuario, pcorreo, pcontrasena, pnombre, 
             avatar: pavatar,
             usuario: pusuario,
             correo: pcorreo,
-            contrasena: pcontrasena,
             nombre: pnombre,
             id: pid,
             sexo: psexo,

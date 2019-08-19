@@ -43,13 +43,14 @@ let mostrar_tabla = async () => {
 
             let celdaIconoEliminar = fila.insertCell();
             let aIconoEliminar = document.createElement('a');
-            aIconoEliminar.className = 'habilitadoIon list-icon';
+            aIconoEliminar.className = 'list-icon';
             let iconEliminiar = document.createElement('i');
             iconEliminiar.className = 'bx bxs-trash';
             aIconoEliminar.appendChild(iconEliminiar);
 
             if( lista_libros[i].ofertas[j].estado == 'habilitado'){
                 iconActivar.id = 'habilitadoIon';
+                aIcono.id = 'list-icon';
                 icon.addEventListener('click', function(){
                     Swal.fire({
                         title: 'Modificar oferta de este libro',
@@ -75,7 +76,7 @@ let mostrar_tabla = async () => {
                         }
                     })
                 });
-                aIcono.className = 'header-icon';
+                aIcono.className = 'list-icon';
                 iconActivar.addEventListener('click', function(){
                     lista_libros[i].ofertas[j].estado = 'deshabilitado'
                        
@@ -83,7 +84,7 @@ let mostrar_tabla = async () => {
                     window.location.reload();
                 });
             }else{
-                aIcono.className = 'header-iconDisable';
+                aIcono.className = 'list-iconDisable';
                 iconActivar.addEventListener('click', function(){
                     lista_libros[i].ofertas[j].estado = 'habilitado';
     
