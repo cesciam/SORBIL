@@ -1178,7 +1178,9 @@ router.post('/modificar-sucursal', function(req, res){
      let body = req.body;
     
     libreria.findOneAndUpdate({ correo: req.body.correo }, {
-            $set: body.datos
+        $set: {
+            'sucursales': req.body.sucursales
+        }
             
         },
         function(error){

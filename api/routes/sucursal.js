@@ -9,6 +9,8 @@ const express = require('express'),
 router.post('/registrar-sucursal', function (req, res) {
     let body = req.body;
 
+    console.log(body);
+
     let nuevo_sucursal = new Sucursal({
         nombre: body.nombre,
         telefono: body.telefono,
@@ -33,6 +35,8 @@ router.post('/registrar-sucursal', function (req, res) {
                     success: true,
                     msj: 'La sucursal se guardó con éxito'
                 });
+                console.log("resouesta");
+                console.log(res);
             }
         }
     );
