@@ -37,14 +37,14 @@ let mostrar_tabla = async () => {
 
         let celdaIconoActivar = fila.insertCell();
         let aIconoAc = document.createElement('a');
-        aIconoAc.className = 'header-icon';
+        aIconoAc.className = 'list-icon';
         let iconAc = document.createElement('i');
         iconAc.className = 'bx bxs-check-square';
         aIconoAc.appendChild(iconAc);
 
         let celdaIconoEliminar = fila.insertCell();
         let aIconoEliminar = document.createElement('a');
-        aIconoEliminar.className = 'header-icon';
+        aIconoEliminar.className = 'list-icon';
         let iconEliminiar = document.createElement('i');
         iconEliminiar.className = 'bx bxs-trash';
         aIconoEliminar.appendChild(iconEliminiar);
@@ -54,7 +54,7 @@ let mostrar_tabla = async () => {
             icon.addEventListener('click', function () {
                 window.location.href = `modificar-sucursal-al.html?_i=${i}`;
             });
-            aIcono.className = 'header-icon';
+            aIcono.className = 'list-icon';
             iconAc.addEventListener('click', function () {
                 lista_sucursales[i]['estado'] = 'desabilitado';
 

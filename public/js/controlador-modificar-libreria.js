@@ -27,28 +27,104 @@ const btn_guardar = document.querySelector('#btn-enviar');
 const urlParams = new URLSearchParams(window.location.search);
 let _id = urlParams.get('_id');
 
-
 let correoLib = JSON.parse(sessionStorage.getItem('activo'));
 let correoActivo = correoLib.correo;
+
+var map;
+function initMapSucursal(plocation) {
+
+
+    map;
+    let latitude = plocation.lat; // YOUR LATITUDE VALUE
+    let longitude = plocation.lng; // YOUR LONGITUDE VALUE
+
+    let myLatLng = { lat: latitude, lng: longitude };
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: myLatLng,
+        zoom: 14,
+        disableDoubleClickZoom: true, // disable the default map zoom on double click
+    });
+
+}
+
+let addMarker = (plocation) => {
+    let marker = new google.maps.Marker({
+        map: map,
+        position: plocation,
+        draggable: true
+    });
+
+    google.maps.event.addListener(marker, 'dragend', function () {
+
+        let valuelatitud = marker.getPosition().lat();
+        let valuelongitud = marker.getPosition().lng();
+        longitud(valuelongitud);
+        latitud(valuelatitud);
+
+    });
+}
 
 let cargarFormulario = async () => {
 
     let libreriaid = await obtenerLibreriaPorCorreo(correoActivo);
+    let location
 
     if (libreriaid) {
         img_uploader_imagen.src = libreriaid[0].imagen;
+        input_usuario.value = libreriaid[0].usuario;
+        input_correo.value = libreriaid[0].correo;
         input_empresa.value = libreriaid[0].empresa;
-        descripcion.value = libreriaid[0].descripcion;
-        telefono.value = libreriaid[0].telefono;
-        correo.value = libreriaid[0].correo;
-        provincia.value = libreriaid[0].provincia;
-        canton.value = libreriaid[0].canton;
-        distrito.value = libreriaid[0].distrito;
-        direccion_exacta.value = libreriaid[0].direccion_exacta;
+        input_telefono.value = libreriaid[0].telefono;
+        input_descripcion.value = libreriaid[0].descripcion;
+        input_provincia.value = libreriaid[0].provincia;
+        llenarCantones(libreriaid[0].provincia);        
+        llenarDistritos(libreriaid[0].canton);  
+        input_canton.value = libreriaid[0].canton;      
+        input_distrito.value = libreriaid[0].distrito;
+        input_direccion_exacta.value = libreriaid[0].direccion_exacta;
+        location = { lat: libreriaid[0].direccion_latitud, lng: libreriaid[0].direccion_longitud };
+
     }
+
+    initMapSucursal(location);
+    addMarker(location);
 };
 
-let validar = (pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pdireccion_exacta) => {
+
+let llenarCantones = (pNombreProvincia) => {
+    canton.length = 1;
+    distrito.length = 1;
+    if (this.selectedIndex < 1) return;
+    let i = 0;
+    for (let opt_canton in ubicaciones[pNombreProvincia]) {
+
+        if (i == 0) {
+            canton.options[canton.options.length] = new Option("--Seleccione una opción--", "--Seleccione una opción--");
+        } else {
+            canton.options[canton.options.length] = new Option(opt_canton, opt_canton);
+        }
+        i++;
+    }
+}
+
+let llenarDistritos = (pNombreCanton) => {
+
+    distrito.length = 1;
+    if (this.selectedIndex < 1) return;
+    let opt_distritos = ubicaciones[input_provincia.value][pNombreCanton];
+
+    for (let i = 0; i < opt_distritos.length - 1; i++) {
+        if (i == 0) {
+            distrito.options[distrito.options.length] = new Option("--Seleccione una opción--", "--Seleccione una opción--");
+        } else {
+            distrito.options[distrito.options.length] = new Option(opt_distritos[i], opt_distritos[i]);
+        }
+    }
+
+}
+
+let validar = (pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
 
     let error = false;
 
@@ -168,26 +244,26 @@ let modificarlib = async () => {
     let empresa = input_empresa.value;
     let telefono = input_telefono.value;
     let descripcion = input_descripcion.value;
-    // let provincia = input_provincia.value;
-    // let canton = input_canton.value;
-    // let distrito = input_distrito.value;
+    let provincia = input_provincia.value;
+    let canton = input_canton.value;
+    let distrito = input_distrito.value;
     let direccion_exacta = input_direccion_exacta.value;
     let latitud = enviarLat();
     let longitud = enviarLon();
 
-    let error = validar(usuario, correo, empresa, telefono, descripcion, direccion_exacta);
+    let error = validar(usuario, correo, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta);
     let errorTelefono = validarTelefono(telefono);
     let errorCorreo = validarCorreo(correo);
 
-    if (error == false, errorCorreo == false && errorTelefono == false) {
+    if (error == false && errorCorreo == false && errorTelefono == false) {
         // let estado = 'habilitado';
-        modificarlib(_id, src_imagen, usuario, correo, empresa, telefono, descripcion, direccion_exacta, latitud, longitud);
+        modificarLibreria(correoActivo, src_imagen, usuario, correo, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, latitud, longitud);
         Swal.fire({ //formato json
             title: 'Se ha modificado la información exitosamente',
             type: 'success',
         }).then((result) => {
             if (result.value) {
-                window.location.href = `ver-perfil-administrador-libreria.html?_id=${_id}`;
+              window.location.href = `ver-perfil-administrador-libreria.html?_id=${_id}`;
             }
         });
         //Se llama a la función para limpiar el formulario

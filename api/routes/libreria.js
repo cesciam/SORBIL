@@ -1209,27 +1209,25 @@ router.get('/buscar-libreria-por-correo/:correo', function (req, res) {
 router.post('/modificar-libreria', function (req, res) {
     let body = req.body;
 
-    Libreria.findByIdAndUpdate(body._id, {
-        $set: {
-            imagen: body.imagen,
-            usuario: body.usuario,
-            correo: body.correo,
-            empresa: body.empresa,
-            telefono: body.telefono,
-            descripcion: body.descripcion,
-            direccion_exacta: body.direccion_exacta,
-            direccion_latitud: body.direccion_latitud,
-            direccion_longitud: body.direccion_longitud,
-        }
+    libreria.findOneAndUpdate({ correo: req.body.correo }, {
+        $set: req.body
     },
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo modificar la información' });
+                return res.json({
+                    success: false,
+                    msj: 'No se pudo modificar la sucursal',
+                    error
+                });
             } else {
-                res.json({ success: true, msg: 'La información se modificó con éxito' });
+                res.json({
+                    success: true,
+                    msj: 'La sucursal se modificó con éxito'
+                });
             }
         }
     )
 });
+
 
 module.exports = router;

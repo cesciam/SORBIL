@@ -188,23 +188,23 @@ let actualizarLibrosLibreria = (pArrayLibros, pcorreo) => {
     });
 }
 
-let modificarLibreria = (p_id, pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud) => {
+let modificarLibreria = (pidcorreo, pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-libreria',
         responseType: 'json',
         data: {
             //Info de la librería
-            _id: p_id,
+            correo: pidcorreo,
             imagen: pimagen,
             usuario: pusuario,
             correo: pcorreo,
             empresa: pempresa,
             telefono: ptelefono,
             descripcion: pdescripcion,
-            // provincia: pprovincia,
-            // canton: pcanton,
-            // distrito: pdistrito,
+            provincia: pprovincia,
+            canton: pcanton,
+            distrito: pdistrito,
             direccion_exacta: pdireccion_exacta,
             direccion_latitud: pdireccion_latitud,
             direccion_longitud: pdireccion_longitud

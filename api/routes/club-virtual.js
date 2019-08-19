@@ -24,7 +24,6 @@ const transporter = nodeMailer.createTransport({
 
 router.post('/registrar-club', function (req, res) {
     let body = req.body;
-    console.log(req.body)
 
     let nuevo_club = new Club({
         imagen: body.imagen,
