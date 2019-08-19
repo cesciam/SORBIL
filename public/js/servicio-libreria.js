@@ -94,7 +94,7 @@ let obtenerSucursales = async (correo) => {
     }
 };
 
-let modificarSucursal = (pdatos, pcorreo) => {
+let modificarSucursal = (pcorreo, pdatos) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-sucursal',

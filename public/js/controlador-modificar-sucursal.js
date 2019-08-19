@@ -11,7 +11,7 @@ let sesionLibreria = JSON.parse(sessionStorage.getItem('activo'));
 let sesion_libreria = sesionLibreria.correo;
 
 var map;
-function initMapSucursal(plocation) {
+function initMap(plocation) {
 
 
     map;
@@ -69,7 +69,7 @@ let cargarFormulario = async () => {
 
     }
 
-    initMapSucursal(location);
+    initMap(location);
     addMarker(location);
 
 };
@@ -179,7 +179,7 @@ let modificar = async () => {
         datosLibreria[0].sucursales[posicion].distrito = input_distrito.value;
 
 
-        modificarSucursal(sesion_libreria, datosLibreria);
+        modificarSucursal(sesion_libreria, datosLibreria[0]);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
