@@ -1,0 +1,92 @@
+'use strict';
+
+
+const input_contrasena_actual = document.querySelector('#txt-contrasena-actual');
+const input_contrasena_nueva = document.querySelector('#txt-contrasena-nueva');
+const input_verf_contrasena_nueva = document.querySelector('#txt-verf-contrasena-nueva');
+const btn_guardar = document.querySelector('#btn-enviar');
+
+const urlParams = new URLSearchParams(window.location.search);
+let _id = urlParams.get('_id');
+
+let contrasenaSesionActiva = JSON.parse(sessionStorage.getItem('activo'));
+let contrasenaBD = contrasenaSesionActiva.contrasena;
+
+
+let validarContrasenas = (pContrasenaBD, pContrasenaActual) => {
+
+    let error = false;
+
+    if (pContrasenaActual == '') {
+        error = true;
+        input_contrasena_actual.classList.add('input_error');
+    } else {
+        input_contrasena_actual.classList.remove('input_error');
+    }
+
+    if (pContrasenaBD != pContrasenaActual) {
+        error = true;
+        input_contrasena_actual.classList.add('input_error');        
+    } else {
+        input_contrasena_actual.classList.remove('input_error');
+    }
+
+    return error;
+
+}
+let validar = (pContrasenaNueva, pVerfContrasenaActual) => {
+
+    let error = false;
+
+    if (pContrasenaNueva == '') {
+        error = true;
+        input_contrasena_nueva.classList.add('input_error');
+    } else if (pContrasenaNueva != pVerfContrasenaActual) {
+        error = true;
+        input_contrasena_nueva.classList.add('input_error');
+        input_verf_contrasena_nueva.classList.add('input_error');
+    } else {
+        input_contrasena_nueva.classList.remove('input_error');
+    }
+
+    if (pVerfContrasenaActual == '') {
+        error = true;
+        input_verf_contrasena_nueva.classList.add('input_error');
+    } else if (pContrasenaNueva != pVerfContrasenaActual) {
+        error = true;
+        input_contrasena_nueva.classList.add('input_error');
+        input_verf_contrasena_nueva.classList.add('input_error');
+    } else {
+        input_verf_contrasena_nueva.classList.remove('input_error');
+    }
+
+    return error;
+};
+
+
+let modificarContrasenaUsuario = async () => {
+
+    let contrasenaNueva = input_contrasena_nueva.value;
+    let verfContrasenaNueva = input_verf_contrasena_nueva.value;
+    let error = validar(contrasenaNueva, verfContrasenaNueva);
+    let errorContrasenas = validarContrasenas(contrasenaBD, input_contrasena_actual.value);
+
+
+    if (!error && !errorContrasenas) {
+        modificarContrasenaUsuario(_id, contrasenaNueva);
+        Swal.fire({ //formato json
+            title: 'Se ha registrado la información exitosamente',
+            type: 'success',
+        })
+        window.location.href = `ver-perfil-usuario.html?_id=${_id}`;
+    }
+    else {
+        Swal.fire({ //formato json
+            title: 'No se ha registrado la información',
+            type: 'warning',
+            text: 'Revisá los campos resaltados e intentalo de nuevo'
+        })
+    }
+};
+
+btn_guardar.addEventListener('click', modificarContrasenaUsuario);
