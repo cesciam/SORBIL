@@ -11,7 +11,7 @@ let sesionLibreria = JSON.parse(sessionStorage.getItem('activo'));
 let sesion_libreria = sesionLibreria.correo;
 
 var map;
-function initMap(plocation) {
+function initMapSucursal(plocation) {
 
 
     map;
@@ -69,7 +69,7 @@ let cargarFormulario = async () => {
 
     }
 
-    initMap(location);
+    initMapSucursal(location);
     addMarker(location);
 
 };
@@ -168,6 +168,8 @@ let modificar = async () => {
 
     let error = validar(input_nombre, input_telefono, input_provincia, input_canton, input_distrito);
     let errorTelefono = validarTelefono(input_telefono.value);
+    let latitud =  await enviarLat();
+    let longitud = await enviarLon();
 
     if (error == false && errorTelefono == false) {
         posicion = parseInt(posicion);
@@ -177,6 +179,9 @@ let modificar = async () => {
         datosLibreria[0].sucursales[posicion].provincia = input_provincia.value;
         datosLibreria[0].sucursales[posicion].canton = input_canton.value;
         datosLibreria[0].sucursales[posicion].distrito = input_distrito.value;
+        datosLibreria[0].sucursales[posicion].direccion_latitud = latitud;
+        datosLibreria[0].sucursales[posicion].direccion_longitud = longitud;
+
 
 
         modificarSucursal(sesion_libreria, datosLibreria[0]);
