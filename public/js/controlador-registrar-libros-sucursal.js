@@ -7,6 +7,7 @@ let cantidad_disponible = document.querySelector('#cantidad_libros_disponible');
 let libreria = [];
 let correoLibrosSucursal;
 
+
 const urlParams = new URLSearchParams(window.location.search);
 let id = urlParams.get('_id');
 
@@ -25,7 +26,7 @@ let agregar_sucursales = async () => {
 
     for (let x = 0; x < libreria[0].libros.length; x++) {
         if(libreria[0].libros[x].idlibro == id){
-            cantidad_disponible.innerHTML = libreria[0].libros[i].cantidad;
+            cantidad_disponible.innerHTML = libreria[0].libros[x].cantidad;
         }
         
     }
@@ -53,6 +54,16 @@ let validar = (pselect, pcantidad)=>{
     }
 
     return error;
+}
+
+let obteneridsuc =(psucursal)=>{
+    let id;
+    for (let i = 0; i < libreria[0].sucursales.length; i++) {
+        if(psucursal == libreria[0].sucursales[i].nombre){
+            id =libreria[0].sucursales[i]._id;
+        }
+    }
+    return id;
 }
 
 let posicionSucursal=(psucursal)=>{
@@ -89,19 +100,22 @@ let validarSiYaExisteLibro = (pid, libreria) =>{
 
 let llamar =()=>{
 let error = validar(selectSucursales.value, cantidad.value);
-
-if(!error){
-    let existe = validarSiYaExisteLibro(id, libreria);
-    if( typeof(existe)== 'number'){
-        console.log('Existe');
-        
-    }else{
-        console.log('No existe');
-    }
-
-
-    agregar_libros_sucursal(id, libreria[0].libros[i].cantidad, correoLibrosSucursal)
+let idSuc = obteneridsuc(selectSucursales.value);
+if (!error){
+    registrarLibrosSuc(id, idSuc, cantidad.value, correoLibrosSucursal);
 }
+
+
+// if(!error){
+//     let existe = validarSiYaExisteLibro(id, libreria);
+//     if( typeof(existe)== 'number'){
+//         console.log('Existe');
+        
+//     }else{
+//         console.log('No existe');
+
+//     }
+
 
 }
 

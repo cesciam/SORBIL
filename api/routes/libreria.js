@@ -1238,4 +1238,33 @@ router.post('/modificar-libreria_correo', function(req, res){
     })
 
 });
+
+router.post('/agregar-libros-sucursal_correo', function(req, res) {
+    libreria.update({ correo: req.body.correo }, {
+            $push:{ 
+                librosSuc: {
+                    idlibro: req.body.idlibro,
+                    idSuc: req.body.idSuc,
+                    cantidad: req.body.cantidad
+                    
+                }
+            }
+        },
+        function(error){
+            if (error) {
+                return res.status(400).json({
+                    success: false,
+                    msj: 'No se pudo agregar el libro a la sucursal',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'El libro se guardó con éxito en la sucursal'
+                });
+            }
+        }
+    )
+});
+
 module.exports = router;

@@ -241,3 +241,17 @@ let modificaTodaLalibreriaPorCorreo = (pcorreo, plibreria) =>{
         }
     })
 }
+
+let registrarLibrosSuc = (pidlibro, pidsuc, pcantidad, pcorreo) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar-libros-sucursal_correo',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            idlibro: pidlibro,
+            idSuc: pidsuc,
+            cantidad: pcantidad
+        }
+    });
+};

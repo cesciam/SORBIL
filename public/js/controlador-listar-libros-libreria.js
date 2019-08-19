@@ -8,7 +8,7 @@ let listarLibrosCards = async () => {
     let libros = await obtenerLibros();
     let libros_libreria = await obtenerDatosCorreo(correoUserActivo);
     let datosLibreria = await obtenerLibreriaPorCorreo(correoUserActivo);
-    let librosLibreria = datosLibreria[0].sucursales;
+    
 
     for (let index = 0; index < libros_libreria.length; index++) {
         for (let j = 0; j < libros.length; j++) {
