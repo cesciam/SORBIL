@@ -62,10 +62,11 @@ let listarLibrosCards = async () => {
                     let btn_agregar_Sucursal = document.createElement('button');
                     btn_agregar_Sucursal.innerText = 'Agregar a sucursal';
                     btn_agregar_Sucursal.addEventListener('click', function () {
+                        window.location.href = `al-registrar-libros-sucursal.html?_id=${libros[j]._id}`;
                         
                     });
 
-                    let btn_perfil = document.createElement('a'); Z
+                    let btn_perfil = document.createElement('a');
                     btn_perfil.innerText = 'Ver libro';
                     btn_perfil.dataset._id = libros[j]['_id'];
                     btn_perfil.addEventListener('click', function () {

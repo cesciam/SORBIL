@@ -230,3 +230,14 @@ let modificarAdminLibreria = (p_id, pavatar, pnombre, pprimer_apellido, psegundo
         }
     });
 };
+
+let modificaTodaLalibreriaPorCorreo = (pcorreo, plibreria) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-libreria_correo',
+        data: {
+            correo: pcorreo,
+            libreriaDatos: plibreria
+        }
+    })
+}

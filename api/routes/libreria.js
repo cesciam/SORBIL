@@ -1061,6 +1061,7 @@ router.get('/buscar-libros-libreria/:correo', function (req, res) {
                 err
             });
         } else {
+            
             return res.json({
                 success: true,
                 libreria: librobd
@@ -1228,4 +1229,10 @@ router.post('/modificar-libreria', function (req, res) {
     )
 });
 
+router.post('/modificar-libreria_correo', function(req, res){
+    Libreria.findOneAndUpdate({ correo: req.body.correo }, {
+        $set: req.body.libreriaDatos
+    })
+
+});
 module.exports = router;

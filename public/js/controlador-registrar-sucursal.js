@@ -82,15 +82,20 @@ let llamar = async () => {
 
     if (error == false && errorTelefono == false) {
         registrarSucursal(correo_sucursal, nombre, telefono, provincia, canton, distrito, latitud, longitud);
-        Swal.fire({ //formato json
-            title: 'Se ha registrado la información exitosamente',
-            type: 'success',
-        })
-        //Se llama a la fun ción para limpiar el formulario
         limpiarFormulario();
+        Swal.fire({ //formato json
+            title: 'Se ha registrado la sucursal exitosamente',
+            type: 'success',
+        }).then((result) => {
+            if (result.value) {
+                window.location.href = `al-listar-sucursales.html?_id=${idAl}`;
+            }
+        });
+        //Se llama a la fun ción para limpiar el formulario
+        
     } else {
         Swal.fire({ //formato json
-            title: 'No se ha registrado la información',
+            title: 'No se ha registrado la sucursal',
             type: 'warning',
             text: 'Revisá los campos resaltados e intentalo de nuevo'
         })
