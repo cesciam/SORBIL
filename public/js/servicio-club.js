@@ -91,10 +91,10 @@ let deshabilitarClub = (pid) => {
     });
 };
 
-let modificarClub = (pid, pimagen, ptipo, pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, phora, pfrecuencia, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
+let modificarClubPresencial = (pid, pimagen, ptipo, pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, phora, pfrecuencia, pdescripcion, pdireccion_exacta) => {
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/modificar-club',
+        url: 'http://localhost:4000/api/modificar-club-presencial',
         responseType: 'json',
         data: {
             _id: pid,
@@ -110,21 +110,20 @@ let modificarClub = (pid, pimagen, ptipo, pnombre, ptema, pcorreo, ptelefono, pc
             hora: phora,
             frecuencia: pfrecuencia,
             descripcion: pdescripcion,
-            provincia: pprovincia,
-            canton: pcanton,
-            distrito: pdistrito,
+            // provincia: pprovincia,
+            // canton: pcanton,
+            // distrito: pdistrito,
             direccion_exacta: pdireccion_exacta
         }
     });
 };
 
-let eliminarClub = (pid, pimagen, ptipo, pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, phora, pfrecuencia, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
+let modificarClubVirtual = (pid, pimagen, ptipo, pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, phora, pfrecuencia, pdescripcion) => {
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/eliminar-libros',
+        url: 'http://localhost:4000/api/modificar-club-virtual',
         responseType: 'json',
         data: {
-            _id: pid,
             _id: pid,
             imagen: pimagen,
             tipo: ptipo,
@@ -137,12 +136,19 @@ let eliminarClub = (pid, pimagen, ptipo, pnombre, ptema, pcorreo, ptelefono, pca
             fecha: pfecha,
             hora: phora,
             frecuencia: pfrecuencia,
-            descripcion: pdescripcion,
-            provincia: pprovincia,
-            canton: pcanton,
-            distrito: pdistrito,
-            direccion_exacta: pdireccion_exacta
+            descripcion: pdescripcion
         }
     });
+};
 
+let eliminarClub = (pid, pidclub) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-club',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            club: pidclub
+        }
+    });
 }

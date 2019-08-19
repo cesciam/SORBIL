@@ -18,9 +18,9 @@ let club_schema = new mongoose.Schema({
     frecuencia: { type: String, required: true, unique: false },
     descripcion: { type: String, required: true, unique: false },
     usuarios: [{
-        usuario_id: { type: String, required: true, unique: false },
-        nombre: { type: String, required: true, unique: false },
-        correo: { type: String, required: true, unique: false }
+        usuario_id: { type: String, required: false, unique: false },
+        nombre: { type: String, required: false, unique: false },
+        correo: { type: String, required: false, unique: false }
     }],
     //Solamente para el club presencial
     provincia: { type: String, required: false, unique: false },

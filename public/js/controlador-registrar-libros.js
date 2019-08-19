@@ -107,7 +107,7 @@ let validar = (ptitulo, pautor, pedicion, peditorial, pfecha, pcategorias, pgene
         input_idioma.classList.remove('input_error');
     }
 
-    if (pprecio.value < 0 || pprecio.value == '') {
+    if (pprecio.value.includes('-') || pprecio.value == '') {
         error = true;
         input_precio.classList.add('input_error');
     } else {
@@ -218,11 +218,15 @@ let llamar = () =>{
 
     if(!resultado_validaciones && !resultadoFuncionISBN){
         registrarLibro(titulo, autor, edicion, editorial, fecha, categorias, generos, idioma, precio, tipo_libro, isbn, src_portada, src_contraportada, sinopsis, cantidad);
+        limpiarFormulario();
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
+        }).then((result) => {
+            if (result.value) {
+                window.location.href = `ap-listar-libros.html?_id=${_id3}`;
+            }
         })
-        limpiarFormulario();
     }else{
         
         Swal.fire({ //formato json

@@ -49,15 +49,15 @@ router.get('/listar-categorias', async function (req, res) {
     })
 });
 
-router.post('/modificar-estado-categorias', function(req, res) {
+router.post('/modificar-estado-categorias', function (req, res) {
     let body = req.body;
 
     Categoria.findByIdAndUpdate(body._id, {
-            $set: {
-                'estado': req.body.estado
-            }
-        },
-        function(error) {
+        $set: {
+            'estado': req.body.estado
+        }
+    },
+        function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
             } else {
@@ -67,18 +67,32 @@ router.post('/modificar-estado-categorias', function(req, res) {
     )
 });
 
-router.post('/modificar-categorias', function(req, res) {
+router.post('/modificar-categorias', function (req, res) {
     let body = req.body;
 
     Categoria.findByIdAndUpdate(body._id, {
-            $set: req.body.categoria
-        },
-        function(error) {
+        $set: req.body.categoria
+    },
+        function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo modificar el libro' });
-               
+
             } else {
                 res.json({ success: true, msg: 'EL libro se modificó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/eliminar-categorias', function(req, res) {
+    let body = req.body;
+
+    Categoria.findByIdAndRemove(body._id,
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+            } else {
+                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
             }
         }
     )

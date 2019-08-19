@@ -33,6 +33,7 @@ let obtenerDatos = async () => {
                     type: 'warning',
                     text: 'Su cuenta está desabilitada'
                 });
+                sessionStorage.clear();
             }
             
         }else{
@@ -43,6 +44,7 @@ let obtenerDatos = async () => {
             });
             input_correo.classList.add('input_error');
             input_contrasena.classList.add('input_error');
+            sessionStorage.clear();
         }
     }
 };
