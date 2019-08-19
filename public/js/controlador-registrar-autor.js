@@ -9,10 +9,11 @@ const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
 // Constantes 
 const img_uploader_imagen = document.querySelector('#portada');
 const input_autor = document.querySelector('#txt-autor');
-const input_biografia = document.querySelector('#txt-biografia');
+const input_nacionalidad= document.querySelector('#txt-nacionalidad'); 
 const input_fecha_nacimiento = document.querySelector('#txt-fecha-nacimiento'); 
 const input_fecha_defuncion = document.querySelector('#txt-fecha-defuncion'); 
-const input_nacionalidad= document.querySelector('#txt-nacionalidad'); 
+const input_biografia = document.querySelector('#txt-biografia');
+
 const btn_enviar = document.querySelector('#btn-enviar');
 
 
@@ -58,12 +59,12 @@ let validar = (pautor, pbiografia, pfechaNacimiento, pnacionalidad) => {
     return error;
 };
 
-let validarFechaNacimiento= (pfechaNacimiento) => {
+let validarFechaNacimiento= (pfecha_nacimiento) => {
     
     let hoy = new Date();
     let errorFechaNacimiento = false;
     
-    if(pfechaNacimiento > hoy  || pfechaNacimiento == 'Invalid Date') {
+    if(pfecha_nacimiento > hoy  || pfecha_nacimiento == 'Invalid Date') {
         errorFechaNacimiento = true;
         input_fecha_nacimiento.classList.add('input_error');
     } 
@@ -74,12 +75,12 @@ let validarFechaNacimiento= (pfechaNacimiento) => {
     return errorFechaNacimiento;    
 };
 
-let validarFechaDefuncion= (pfechaDefuncion) => {
+let validarFechaDefuncion= (pfecha_defuncion) => {
     
     let hoy = new Date();
     let errorFechaDefuncion = false;
     
-    if(pfechaDefuncion > hoy) {
+    if(pfecha_defuncion > hoy) {
         errorFechaDefuncion = true;
         input_fecha_defuncion.classList.add('input_error');
     }  
@@ -89,11 +90,11 @@ let validarFechaDefuncion= (pfechaDefuncion) => {
     return errorFechaDefuncion;    
 };
 
-let validarEdad= (pfechaNacimiento,pfechaDefuncion) => {
+let validarEdad= (pfecha_nacimiento,pfecha_defuncion) => {
 
     let errorEdad = false;
     
-    if(pfechaNacimiento > pfechaDefuncion) {
+    if(pfecha_nacimiento > pfecha_defuncion) {
         errorEdad = true;        
         input_fecha_defuncion.classList.add('input_error');
     }  
@@ -107,10 +108,10 @@ let validarEdad= (pfechaNacimiento,pfechaDefuncion) => {
 let saludar = () => {
     let src_imagen = img_uploader_imagen.src;
     let autor = input_autor.value;
-    let biografia = input_biografia.value;
+    let nacionalidad = input_nacionalidad.value;
     let fecha_nacimiento = new Date(input_fecha_nacimiento.value);
     let fecha_defuncion = new Date(input_fecha_defuncion.value);
-    let nacionalidad = input_nacionalidad.value;
+    let biografia = input_biografia.value;
 
     let error = validar(autor, biografia, fecha_nacimiento, nacionalidad);
     let errorFechaNacimiento = validarFechaNacimiento(fecha_nacimiento);
@@ -118,7 +119,7 @@ let saludar = () => {
     let errorEdad = validarEdad(fecha_nacimiento,fecha_defuncion);
 
     if (error == false && errorFechaNacimiento == false && errorFechaDefuncion == false && errorEdad == false) {
-        registrarAutor(src_imagen, autor, biografia, fecha_nacimiento, fecha_defuncion, nacionalidad);
+        registrarAutor(src_imagen, autor, nacionalidad, fecha_nacimiento, fecha_defuncion, biografia);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
@@ -129,7 +130,7 @@ let saludar = () => {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',
-            text: 'Revise la fecha e inténtelo de nuevo'
+            text: 'Revise los campos resaltados e inténtelo de nuevo'
         })
     }
 
