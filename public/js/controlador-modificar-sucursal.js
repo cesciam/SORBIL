@@ -25,7 +25,6 @@ function initMapSucursal(plocation) {
         zoom: 14,
         disableDoubleClickZoom: true, // disable the default map zoom on double click
     });
-
 }
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -64,9 +63,7 @@ let cargarFormulario = async () => {
         llenarDistritos(datosLibreria[0].sucursales[posicion].canton);
         input_canton.value = datosLibreria[0].sucursales[posicion].canton;
         input_distrito.value = datosLibreria[0].sucursales[posicion].distrito;
-        location = { lat: datosLibreria[0].sucursales[posicion].direccion_latitud, lng: datosLibreria[0].sucursales[posicion].direccion_longitud };
-
-
+        location = { lat: datosLibreria[0].sucursales[posicion].direccion_latitud, lng: datosLibreria[0].sucursales[posicion].direccion_longitud};
     }
 
     initMapSucursal(location);
@@ -103,7 +100,6 @@ let llenarDistritos = (pNombreCanton) => {
             distrito.options[distrito.options.length] = new Option(opt_distritos[i], opt_distritos[i]);
         }
     }
-
 }
 
 let validar = (pnombre, ptelefono, pprovincia, pcanton, pdistrito) => {
@@ -168,7 +164,7 @@ let modificar = async () => {
 
     let error = validar(input_nombre, input_telefono, input_provincia, input_canton, input_distrito);
     let errorTelefono = validarTelefono(input_telefono.value);
-    let latitud =  await enviarLat();
+    let latitud = await enviarLat();
     let longitud = await enviarLon();
 
     if (error == false && errorTelefono == false) {
