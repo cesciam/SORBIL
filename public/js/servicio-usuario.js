@@ -163,6 +163,19 @@ let eliminarUsuario = (pid) => {
     });
 };
 
+ 
+let modificarContrasenaUsuario = (p_id, pContrasenaNueva) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-contrasena-usuario',
+        responseType: 'json',
+        data: {
+            _id: p_id,
+            contrasena: pContrasenaNueva
+        }
+    });
+};
+
 // Funciones para obtener coordenadas de google maps
 let corlatitud;
 let corlongitud;
