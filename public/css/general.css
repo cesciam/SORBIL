@@ -83,6 +83,7 @@ a {
     font-weight: var(--font-semibold);
     text-decoration: none;
     color: var(--color-black);
+    cursor: pointer;
 }
 
 button, select, input {
