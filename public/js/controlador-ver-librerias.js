@@ -36,11 +36,11 @@ let mostrar_cards = async () => {
         contenedor_atributo.appendChild(correo);
         contenedor_atributo.appendChild(telefono);
 
-        // let contenedor_descripcion = document.createElement('div');
-        // let descripcion = document.createElement('p');
-        // descripcion.innerText = lista_librerias[i]['descripcion'];
+        let contenedor_descripcion = document.createElement('div');
+        let descripcion = document.createElement('p');
+        descripcion.innerText = lista_librerias[i]['descripcion'];
 
-        // contenedor_descripcion.appendChild(descripcion);
+        contenedor_descripcion.appendChild(descripcion);
 
         let btn_perfil = document.createElement('button');
         btn_perfil.innerText = 'Ver librería';
@@ -52,7 +52,7 @@ let mostrar_cards = async () => {
         contenedor_card.appendChild(header);
         contenedor_card.appendChild(contenedor_imagen);
         contenedor_card.appendChild(contenedor_atributo);
-        // contenedor_card.appendChild(contenedor_descripcion);
+        contenedor_card.appendChild(contenedor_descripcion);
         contenedor_card.appendChild(btn_perfil);
 
         sct_librerias.appendChild(contenedor_card);
