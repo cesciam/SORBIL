@@ -5,7 +5,6 @@ let lista_usuarios = [];
 let txt_filtro = document.querySelector('#txt-filtro');
 const sct_usuarios = document.querySelector('#lista-usuarios');
 
-
 let mostrar_cards = async () => {
 
     lista_usuarios = await obtenerUsuarios();
@@ -48,12 +47,12 @@ let mostrar_cards = async () => {
             aIconoEliminar.appendChild(iconEliminiar);
 
 
-            if (lista_usuarios[i]["estado"] == "Habilitado") {
+            if (lista_usuarios[i]["estado"] == "habilitado") {
                 iconActivar.id = 'habilitadoIon';
             }
             aIconoActivar.href = 'ap-listar-usuarios.html';
             aIconoActivar.addEventListener('click', function () {
-                if (lista_usuarios[i]["estado"] == "Habilitado") {
+                if (lista_usuarios[i]["estado"] == "habilitado") {
                     habilitarUsuario(lista_usuarios[i]['_id'], "desabilitado");
                 } else {
                     habilitarUsuario(lista_usuarios[i]['_id'], "habilitado");
@@ -87,7 +86,6 @@ let mostrar_cards = async () => {
                 })
             });
 
-
             contenedor_card.appendChild(header);
             contenedor_card.appendChild(contenedor_imagen);
             contenedor_card.appendChild(p_correo);
@@ -111,6 +109,10 @@ let filtrar_cards = async () => {
             let contenedor_card = document.createElement('div');
             contenedor_card.classList.add('card');
             if (tipoUsuario == 'u') {
+                let contenedor_card = document.createElement('div');
+                let contenedor_iconos = document.createElement('div');
+                contenedor_card.classList.add('card');
+
                 let header = document.createElement('header');
                 let h2 = document.createElement('h2');
                 h2.innerText = lista_usuarios[i]['nombre'];
@@ -128,34 +130,63 @@ let filtrar_cards = async () => {
                 p_correo.innerText = lista_usuarios[i]['correo'];
 
                 let aIconoActivar = document.createElement('a');
+                aIconoActivar.className = 'list-icon';
+                let iconActivar = document.createElement('i');
+                iconActivar.className = 'bx bxs-check-square';
+                aIconoActivar.appendChild(iconActivar);
+
+                let aIconoEliminar = document.createElement('a');
+                aIconoEliminar.className = 'habilitadoIon list-icon';
+                let iconEliminiar = document.createElement('i');
+                iconEliminiar.className = 'bx bxs-trash';
+                aIconoEliminar.appendChild(iconEliminiar);
+
+
                 if (lista_usuarios[i]["estado"] == "Habilitado") {
-                    aIconoActivar.innerText = "Habilitado";
-                } else {
-                    aIconoActivar.innerText = "Deshabilitado";
+                    iconActivar.id = 'habilitadoIon';
                 }
                 aIconoActivar.href = 'ap-listar-usuarios.html';
                 aIconoActivar.addEventListener('click', function () {
                     if (lista_usuarios[i]["estado"] == "Habilitado") {
-                        habilitar(lista_usuarios[i]['_id'], "Desabilitado");
+                        habilitarUsuario(lista_usuarios[i]['_id'], "desabilitado");
                     } else {
-                        habilitar(lista_usuarios[i]['_id'], "Habilitado");
+                        habilitarUsuario(lista_usuarios[i]['_id'], "habilitado");
                     }
                     mostrar_cards();
                 });
 
-                // let btn_perfil = document.createElement('button');
-                // btn_perfil.innerText = 'Ver perfil';
-                // btn_perfil.dataset._id = lista_usuarios[i]['_id'];
-                // btn_perfil.addEventListener('click', function () {
-                //     console.log(this.dataset._id);
-                //     window.location.href = `ver-perfil-usuario.html?_id=${this.dataset._id}`
-                // });
+                // ELIMINAR OFERTAS
+                iconEliminiar.addEventListener('click', function () {
+                    Swal.fire({
+                        title: '¿Estás seguro de eliminar este usuario?',
+                        text: "Ésta acción no se puede revertir",
+                        type: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Sí, estoy seguro'
+                    }).then((result) => {
+                        if (result.value) {
+                            eliminarUsuario(lista_usuarios[i]['_id']);
+
+                            Swal.fire(
+                                '¡Usuario eliminado!',
+
+                            ).then((result) => {
+                                if (result.value) {
+                                    window.location.reload();
+                                }
+                            });
+                        }
+                    })
+                });
 
                 contenedor_card.appendChild(header);
                 contenedor_card.appendChild(contenedor_imagen);
                 contenedor_card.appendChild(p_correo);
-                contenedor_card.appendChild(aIconoActivar);
-
+                contenedor_iconos.appendChild(aIconoActivar);
+                contenedor_iconos.appendChild(aIconoEliminar);
+                contenedor_card.appendChild(contenedor_iconos);
                 sct_usuarios.appendChild(contenedor_card);
             }
         }
