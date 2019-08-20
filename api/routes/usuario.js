@@ -236,6 +236,26 @@ router.post('/modificar-usuario', function(req, res) {
     )
 });
 
+router.post('/modificar-contrasena-usuario', function (req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndUpdate(body._id, {
+        $set: {
+            contrasena: req.body.contrasena
+        }
+    },
+        function (error) {
+
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la contraseña' });
+            } else {
+                res.json({ success: true, msg: 'La contraseña se modificó con éxito' });
+            }
+        }
+    )
+});
+
+
 router.post('/eliminar-usuario', function(req, res) {
     let body = req.body;
 

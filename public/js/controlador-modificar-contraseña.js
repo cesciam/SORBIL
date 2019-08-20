@@ -26,7 +26,7 @@ let validarContrasenas = (pContrasenaBD, pContrasenaActual) => {
 
     if (pContrasenaBD != pContrasenaActual) {
         error = true;
-        input_contrasena_actual.classList.add('input_error');        
+        input_contrasena_actual.classList.add('input_error');
     } else {
         input_contrasena_actual.classList.remove('input_error');
     }
@@ -64,7 +64,7 @@ let validar = (pContrasenaNueva, pVerfContrasenaActual) => {
 };
 
 
-let modificarContrasenaUsuario = async () => {
+let modificacionContrasena = async () => {
 
     let contrasenaNueva = input_contrasena_nueva.value;
     let verfContrasenaNueva = input_verf_contrasena_nueva.value;
@@ -75,18 +75,24 @@ let modificarContrasenaUsuario = async () => {
     if (!error && !errorContrasenas) {
         modificarContrasenaUsuario(_id, contrasenaNueva);
         Swal.fire({ //formato json
-            title: 'Se ha registrado la información exitosamente',
+            title: 'Se ha modificado la contraseña exitosamente',
             type: 'success',
+            text: 'Iniciá sesión nuevamente con la nueva contraseña'
+        }).then((result) => {
+            if (result.value) {
+                sessionStorage.clear();
+                window.location.href = '../index.html';
+            }
         })
-        window.location.href = `ver-perfil-usuario.html?_id=${_id}`;
+
     }
     else {
         Swal.fire({ //formato json
-            title: 'No se ha registrado la información',
+            title: 'No se ha modificado la contraseña',
             type: 'warning',
             text: 'Revisá los campos resaltados e intentalo de nuevo'
         })
     }
 };
 
-btn_guardar.addEventListener('click', modificarContrasenaUsuario);
+btn_guardar.addEventListener('click', modificacionContrasena);
