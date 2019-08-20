@@ -29,14 +29,13 @@ let obtenerCarrito = async () => {
     }
 };
 
-let eliminarProductoCarrito = (pid, pidcarrito) => {
+let eliminarProductoCarrito = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/eliminar-carrito',
         responseType: 'json',
         data: {
-            _id: pid,
-            club: pidcarrito
+            _id: pid
         }
     });
 }
