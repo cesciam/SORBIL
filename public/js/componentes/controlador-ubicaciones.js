@@ -80,8 +80,8 @@ let ubicaciones = {
         "Parrita": ["Parrita"],
         "Garabito": ["Jacó", "Tárcoles"],
 
-
     },
+    
     "Limón": {
         "Limón": ["Limón", "Valle La Estrella", "Río Blanco", "Matama"],
         "Pococí": ["Guápiles", "Jiménez", "Rita", "Roxana", "Cariari", "Colorado", "La Colonia", "Siquirres"],

@@ -45,6 +45,7 @@ router.post('/registrar-club', function (req, res) {
     nuevo_club.save(
         function (err, clubDB) {
             if (err) {
+                console.log(err);
                 return res.status(400).json({
                     success: false,
                     msj: 'El club de lectura no se pudo registrar',

@@ -1,10 +1,8 @@
 'use strict';
 
-const urlParamsAdm = new URLSearchParams(window.location.search);
-const urlParamsLib = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(window.location.search);
 
-let _idAdm = urlParamsAdm.get('_id');
-let _idLib = urlParamsLib.get('_id');
+let _id = urlParams.get('_id');
 //Admin
 const avatar = document.querySelector('#avatar');
 const txt_nombre = document.querySelector('#txt-nombre');
@@ -26,9 +24,12 @@ const direccion_exacta = document.querySelector('#direccion-exacta');
 const btn_modificarAdm = document.querySelector('#btn-modificarAdm');
 const btn_modificarLib = document.querySelector('#btn-modificarLib');
 
+let correoLib = JSON.parse(sessionStorage.getItem('activo'));
+let correoActivo = correoLib.correo;
+
 let llenar_perfil = async () => {
     
-    let usuario = await obtenerUsuarioId(_idAdm);
+    let usuario = await obtenerUsuarioId(_id);
 
     if (usuario) {
         avatar.src = usuario['avatar'];
@@ -42,27 +43,27 @@ let llenar_perfil = async () => {
 
 let llenar_perfil_lib= async () => {
 
-    let libreriaid = await obtenerLibreriaid(_idLib);
+    let libreriaid = await obtenerLibreriaPorCorreo(correoActivo);
 
     if (libreriaid) {
-        imagen.src = libreriaid['imagen'];
-        empresa.innerHTML = libreriaid['empresa'];
-        descripcion.innerHTML = libreriaid['descripcion'];
-        telefono.innerHTML = libreriaid['telefono'];
-        correo.innerHTML = libreriaid['correo'];
-        provincia.innerHTML = libreriaid['provincia'];
-        canton.innerHTML = libreriaid['canton'];
-        distrito.innerHTML = libreriaid['distrito'];
-        direccion_exacta.innerHTML = libreriaid['direccion_exacta'];
+        imagen.src = libreriaid[0].imagen;
+        empresa.innerHTML = libreriaid[0].empresa;
+        descripcion.innerHTML = libreriaid[0].descripcion;
+        telefono.innerHTML = libreriaid[0].telefono;
+        correo.innerHTML = libreriaid[0].correo;
+        provincia.innerHTML = libreriaid[0].provincia;
+        canton.innerHTML = libreriaid[0].canton;
+        distrito.innerHTML = libreriaid[0].distrito;
+        direccion_exacta.innerHTML = libreriaid[0].direccion_exacta;
     }
 };
 
 btn_modificarAdm.addEventListener('click', function () {
-    window.location.href = `modificar-perfil-admin-libreria.html?_id=${_idAdm}`;
+    window.location.href = `modificar-perfil-admin-libreria.html?_id=${_id}`;
 });
 
 btn_modificarLib.addEventListener('click', function () {
-    window.location.href = `modificar-perfil-libreria.html?_id=${_idLib}`;
+    window.location.href = `modificar-perfil-libreria.html?_id=${_id}`;
 });
 
 llenar_perfil();

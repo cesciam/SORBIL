@@ -95,6 +95,7 @@ Inicio de estilos de ver
     height: 6rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    overflow: hidden;
 }
 
 .section-ver .ver-cards .ver-cards-container h2 {
@@ -138,6 +139,8 @@ Inicio de estilos de ver
     text-align: center;
     color: var(--color-secondary);
     padding-top: 2rem;
+    position: relative;
+    left: 2rem;
 }
 
 @media (max-width: 100rem) {
