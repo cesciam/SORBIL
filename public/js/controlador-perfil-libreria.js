@@ -20,6 +20,7 @@ const sct_librerias = document.querySelector('#lista_sucursales');
 let llenar_perfil_libreria = async () => {
 
     let libreriaid = await obtenerLibreriaid(id);
+    console.log(libreriaid);
 
     if (libreriaid) {
         imagen.src = libreriaid['imagen'];
@@ -65,7 +66,7 @@ let mostrar_cards = async () => {
         btn_perfil.innerText = 'Ver sucursal';
         btn_perfil.dataset._id = lista_sucursales[i]['_id'];
         btn_perfil.addEventListener('click', function () {
-            window.location.href = `ver-perfil-sucursal.html?_id=${this.dataset._id}`;
+            window.location.href = `ver-perfil-sucursal-publico.html?_id=${this.dataset._id}`;
         });
 
         contenedor_card.appendChild(header);
