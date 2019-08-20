@@ -82,11 +82,6 @@ router.get('/buscar-autor-id/:_id', function(req, res) {
 });
 
 
-
-
-
-module.exports = router;
-
 router.post('/modificar-autor', function(req, res) {
     let body = req.body;
 

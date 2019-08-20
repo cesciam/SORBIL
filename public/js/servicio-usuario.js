@@ -263,3 +263,6 @@ let eliminarTarjetas = (pid, pidtarjeta) =>{
     });
 }
 
+let registraEnCarritoDeCompras = ()=>{
+    
+}
