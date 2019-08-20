@@ -230,3 +230,28 @@ let modificarAdminLibreria = (p_id, pavatar, pnombre, pprimer_apellido, psegundo
         }
     });
 };
+
+let modificaTodaLalibreriaPorCorreo = (pcorreo, plibreria) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-libreria_correo',
+        data: {
+            correo: pcorreo,
+            libreriaDatos: plibreria
+        }
+    })
+}
+
+let registrarLibrosSuc = (pidlibro, pidsuc, pcantidad, pcorreo) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar-libros-sucursal_correo',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            idlibro: pidlibro,
+            idSuc: pidsuc,
+            cantidad: pcantidad
+        }
+    });
+};

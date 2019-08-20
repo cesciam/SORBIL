@@ -8,7 +8,7 @@ let listarLibrosCards = async () => {
     let libros = await obtenerLibros();
     let libros_libreria = await obtenerDatosCorreo(correoUserActivo);
     let datosLibreria = await obtenerLibreriaPorCorreo(correoUserActivo);
-    let librosLibreria = datosLibreria[0].sucursales;
+    
 
     for (let index = 0; index < libros_libreria.length; index++) {
         for (let j = 0; j < libros.length; j++) {
@@ -62,6 +62,7 @@ let listarLibrosCards = async () => {
                     let btn_agregar_Sucursal = document.createElement('button');
                     btn_agregar_Sucursal.innerText = 'Agregar a sucursal';
                     btn_agregar_Sucursal.addEventListener('click', function () {
+                        window.location.href = `al-registrar-libros-sucursal.html?_id=${libros[j]._id}`;
                         
                     });
 
