@@ -28,7 +28,7 @@ let mostrar_tabla = async () => {
                             //Une los listados duplicados en un solo array
                             lista_libros[j]._id = lista_libros[j]._id.concat(lista_libros[j]._id);
 
-                            //Sacar el total del precio
+                            //Sacar el total del precio (falta pasarlo a string y formatearlo)
                             let precio = lista_libros[j]['precio'];
                             precio = precio.substr(1)
                             let precioInt = parseFloat(precio, 10);
