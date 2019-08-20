@@ -4,6 +4,9 @@
 const urlParams = new URLSearchParams(window.location.search);
 let idSuc = urlParams.get('_id');
 
+let UsuarioEnSesionPriv = JSON.parse(sessionStorage.getItem('activo'));
+let UsuarioIdSucursalPriv = UsuarioEnSesionPriv._id;
+
 
 let input_nombre = document.querySelector('#nombre');
 let input_telefono = document.querySelector('#telefono');
@@ -95,9 +98,13 @@ let llenar_perfil = async() => {
                 
                         let btn_perfil = document.createElement('button');
                         btn_perfil.innerText = 'Agregar a carrito';
-                        btn_perfil.dataset._id = libros[j]['_id'];
+                        let idlibro = libros[j]['_id'];
                         btn_perfil.addEventListener('click', function () {
-                            window.location.href = `u-iniciar-sesion.html`;
+                            registrarCarrito(UsuarioIdSucursalPriv, idlibro, datosLibreria[posicionLib]._id,datosLibreria[posicionLib].librosSuc[x]._id);
+                            Swal.fire({ //formato json
+                                title: 'Se ha agregado el libro al carrito de compras',
+                                type: 'success'
+                            })
                         });
                 
                         contenedor_card.appendChild(contenedor_imagen);

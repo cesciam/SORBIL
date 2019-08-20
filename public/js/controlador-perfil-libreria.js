@@ -66,7 +66,7 @@ let mostrar_cards = async () => {
         btn_perfil.innerText = 'Ver sucursal';
         btn_perfil.dataset._id = lista_sucursales[i]['_id'];
         btn_perfil.addEventListener('click', function () {
-            window.location.href = `ver-perfil-sucursal-publico.html?_id=${this.dataset._id}`;
+            window.location.href = `p-ver-perfil-sucursal-privada.html?_id=${this.dataset._id}`;
         });
 
         contenedor_card.appendChild(header);
