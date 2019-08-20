@@ -18,6 +18,14 @@ Inicio de estilos generales del perfil del usuario
     padding: 5rem 0;
 }
 
+.libreria-profile-container {
+    display: grid;
+}
+
+.libreria-profile-container #logo {
+    margin: 0 auto;
+}
+
 .sidebar {
     display: grid;
     grid-template-columns: 25rem;

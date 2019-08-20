@@ -5,11 +5,6 @@
     margin-bottom: 0;
 }
 
-.section-ver .ver-cards .ver-cards-container {
-    padding-bottom: 5rem;
-    padding-top: 0;
-}
-
 .list-icon i {
     opacity: 1;
     font-size: 3rem !important;
@@ -20,7 +15,7 @@
     align-self: center;
 }
 
-.contenedor_precio{
+.contenedor_precio {
     color: blue;
     opacity: 1;
 }

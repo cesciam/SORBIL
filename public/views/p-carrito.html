@@ -196,14 +196,20 @@
                     <h1>Carrito de compras</h1>
                     <a href="" class="btn-color" id="p-formulario-compra"><i class='bx bxs-book'></i>Comprar</a>
                 </div>
-                <div class="ver-cards">
-                    <!-- <input id="txt-filtro" type="text" placeholder="Buscar por título, categoría, género, autor"
-                        aria-label="Buscar por título, categoría, género, autor"> -->
+                <table id="tabla-filtrado">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio Unitario</th>
+                            <th>Librería</th>
+                            <!-- <th>Sucursal</th> -->
+                            <th>Precio Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                    <div id="lista_librosCompra" class="ver-cards-container">
-
-                    </div>
-                </div>
+                    </tbody>
+                </table>
 
             </section>
 
@@ -241,11 +247,11 @@
     <script src="../js/servicio-club.js"></script>
     <script src="../js/servicio-libreria.js"></script>
     <script src="../js/servicio-libros.js"></script>
-    <script src="../js/servicio-autor.js"></script>
+    <script src="../js/servicio-carrito.js"></script>
+    <script src="../js/controlador-listar-carrito.js"></script>
     <script src="../js/componentes/controlador-lista-enlaces-privados.js"></script>
     <script src="../js/componentes/controlador-dropdowns-main.js"></script>
     <!-- JS para los perfiles-->
-    <script src="../js/controlador-carrito.js"></script>
     <!-- JS para los permisos del usuario-->
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-avatar.js"></script>
