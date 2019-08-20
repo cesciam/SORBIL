@@ -34,12 +34,12 @@ Inicio de estilos de ver
 
 .section-ver .ver-cards .ver-cards-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     justify-items: center;
     align-items: center;
     width: 100%;
     padding: 10rem;
-    grid-gap: 5rem;
+    grid-gap: 1rem;
 }
 
 .section-ver .ver-cards .ver-cards-container .card {
@@ -173,6 +173,7 @@ Inicio de estilos de ver
 @media (max-width: 100rem) {
     .section-ver .ver-cards .ver-cards-container {
         grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
     }
 }
 
