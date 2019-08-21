@@ -24,23 +24,25 @@ let mostrar_tabla = async () => {
                 if (lista_libros[j]._id == lista_carrito[i].idLibro) {
                     for (let k = 0; k < lista_librerias.length; k++) {
                         if (lista_librerias[k]._id == lista_carrito[i].idLib) {
-
                             //Une los listados duplicados en un solo array
                             lista_libros[j]._id = lista_libros[j]._id.concat(lista_libros[j]._id);
 
                             //Sacar el total del precio (falta pasarlo a string y formatearlo)
+                            let cant = lista_libros[i]._id;
+                            let cantidadCompra = parseInt(cant.concat(cant));
+
                             let precio = lista_libros[j]['precio'];
                             precio = precio.substr(1);
                             precio = precio.replace('.', '');
                             let precioInt = parseInt(precio);
-                            let numeros = [precioInt, precioInt, precioInt];
+                            let numeros = [precioInt, precioInt, precioInt, precioInt, precioInt];
                             let sumatoria = numeros.reduce(function (a, b) { return a + b; }, 0);
-
                                 
                             let fila = tbody.insertRow();
                             fila.insertCell().innerHTML = lista_libros[j]['titulo'];
                             fila.insertCell().innerHTML = lista_libros[j]['precio'];
                             fila.insertCell().innerHTML = lista_librerias[k]['empresa'];
+                            fila.insertCell().innerHTML = [cantidadCompra];
                             fila.insertCell().innerHTML = ('₡'+[sumatoria]+',00');
                             sumatotalAPagar = sumatotalAPagar +sumatoria;
                             
