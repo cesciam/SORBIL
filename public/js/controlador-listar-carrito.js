@@ -1,14 +1,25 @@
 'use strict';
-
 const tbody = document.querySelector('#tabla-filtrado tbody');
+const totalPagar = document.querySelector('#precio-total');
 let lista_carrito = [];
 let lista_libros = [];
 let lista_librerias = [];
 let sumatotalAPagar = 0;
-
+let ultimoLibro = [];
 let UsuarioEnSesionPriv = JSON.parse(sessionStorage.getItem('activo'));
 let UsuarioIdSucursalPriv = UsuarioEnSesionPriv._id;
 
+let encontrarLib = async (pidLib) => {
+    lista_librerias = await obtenerLibrerias();
+    let posicionLib;
+    for (let i = 0; i < lista_librerias.length; i++) {
+        if (lista_librerias[i]._id == pidLib) {
+            posicionLib = i;
+        }
+    }
+
+    return posicionLib;
+}
 
 let mostrar_tabla = async () => {
 
@@ -22,64 +33,60 @@ let mostrar_tabla = async () => {
         if (lista_carrito[i].idUsuario == UsuarioIdSucursalPriv) {
             for (let j = 0; j < lista_libros.length; j++) {
                 if (lista_libros[j]._id == lista_carrito[i].idLibro) {
-                    for (let k = 0; k < lista_librerias.length; k++) {
-                        if (lista_librerias[k]._id == lista_carrito[i].idLib) {
-                            //Une los listados duplicados en un solo array
-                            lista_libros[j]._id = lista_libros[j]._id.concat(lista_libros[j]._id);
 
-                            //Sacar el total del precio (falta pasarlo a string y formatearlo)
-                            let cant = lista_libros[i]._id;
-                            let cantidadCompra = parseInt(cant.concat(cant));
+                    let lib = await encontrarLib(lista_carrito[i].idLib);
+                    //Sacar el total del precio (falta pasarlo a string y formatearlo)
+                    let cant = lista_libros[i]._id;
+                    // let cantidadCompra = parseInt(cant.concat(cant));
 
-                            let precio = lista_libros[j]['precio'];
-                            precio = precio.substr(1);
-                            precio = precio.replace('.', '');
-                            let precioInt = parseInt(precio);
-                            let numeros = [precioInt, precioInt, precioInt, precioInt, precioInt];
-                            let sumatoria = numeros.reduce(function (a, b) { return a + b; }, 0);
-                                
-                            let fila = tbody.insertRow();
-                            fila.insertCell().innerHTML = lista_libros[j]['titulo'];
-                            fila.insertCell().innerHTML = lista_libros[j]['precio'];
-                            fila.insertCell().innerHTML = lista_librerias[k]['empresa'];
-                            fila.insertCell().innerHTML = [cantidadCompra];
-                            fila.insertCell().innerHTML = ('₡'+[sumatoria]+',00');
-                            sumatotalAPagar = sumatotalAPagar +sumatoria;
-                            
-                            let celdaIconoEliminar = fila.insertCell();
-                            let aIconoEliminar = document.createElement('a');
-                            aIconoEliminar.className = 'list-icon';
-                            let iconEliminiar = document.createElement('i');
-                            iconEliminiar.className = 'bx bxs-trash';
-                            aIconoEliminar.appendChild(iconEliminiar);
+                    let precio = lista_libros[j]['precio'];
+                    precio = precio.substr(1);
+                    precio = precio.replace('.', '');
+                    sumatotalAPagar = precio = precio.replace('.', '');
+                    let precioInt = parseInt(precio);
 
-                            iconEliminiar.addEventListener('click', function () {
-                                Swal.fire({
-                                    title: '¿Está seguro de eliminar el carrito?',
-                                    // text: "Ésta acción no se puede revertir",
-                                    type: 'warning',
-                                    showCancelButton: true,
-                                    confirmButtonColor: '#3085d6',
-                                    cancelButtonColor: '#d33',
-                                    confirmButtonText: 'Sí, estoy seguro'
-                                }).then((result) => {
+                    let fila = tbody.insertRow();
+                    fila.insertCell().innerHTML = lista_libros[j]['titulo'];
+                    fila.insertCell().innerHTML = lista_librerias[lib].empresa;
+                    fila.insertCell().innerHTML = '1';
+                    fila.insertCell().innerHTML = lista_libros[j]['precio'];
+                    sumatotalAPagar = sumatotalAPagar + precioInt;
+
+                    let celdaIconoEliminar = fila.insertCell();
+                    let aIconoEliminar = document.createElement('a');
+                    aIconoEliminar.className = 'list-icon';
+                    let iconEliminiar = document.createElement('i');
+                    iconEliminiar.className = 'bx bxs-trash';
+                    aIconoEliminar.appendChild(iconEliminiar);
+
+                    iconEliminiar.addEventListener('click', function () {
+                        Swal.fire({
+                            title: '¿Está seguro de eliminar el carrito?',
+                            // text: "Ésta acción no se puede revertir",
+                            type: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Sí, estoy seguro'
+                        }).then((result) => {
+                            if (result.value) {
+                                eliminarProductoCarrito(lista_carrito[i]._id);
+                                Swal.fire(
+                                    'Carrito eliminado!',
+                                    'success'
+                                ).then((result) => {
                                     if (result.value) {
-                                        eliminarProductoCarrito(lista_carrito[i]._id);
-                                        Swal.fire(
-                                            'Carrito eliminado!',
-                                            'success'
-                                        ).then((result) => {
-                                            if (result.value) {
-                                                window.location.reload();
-                                            }
-                                        });
+                                        window.location.reload();
                                     }
-                                })
-                            });
+                                });
+                            }
+                        })
+                    });
 
-                            celdaIconoEliminar.appendChild(aIconoEliminar);
-                        }
-                    }
+                    celdaIconoEliminar.appendChild(aIconoEliminar);
+                    ultimoLibro = lista_libros[j]._id;
+
+                    totalPagar.innerHTML = [sumatotalAPagar]
                 }
             }
         }

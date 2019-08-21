@@ -197,3 +197,15 @@ let eliminarLibro =(pid)=>{
     });
 
 }
+
+let RegistrarComentario = (pcomentario, p)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-oferta',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            datos: pdatos
+        }
+    });
+}

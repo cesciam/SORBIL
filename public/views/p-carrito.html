@@ -194,16 +194,15 @@
             <section class="section-ver">
                 <div class="ver-title-compras">
                     <h1>Carrito de compras</h1>
-                    <a href="" class="btn-color" id="p-formulario-compra"><i class='bx bxs-book'></i>Comprar</a>
                 </div>
                 <table id="tabla-filtrado">
                     <thead>
                         <tr>
                             <th>Producto</th>
-                            <th>Precio Unitario</th>
                             <th>Librería</th>
                             <th>Cantidad</th>
                             <th>Precio Total</th>
+                            <th>Total a pagar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -212,7 +211,11 @@
                 </table>
 
             </section>
-
+            <div class="total-pagar">
+                <p class="total-titulo">Total a pagar:<span>₡</span></p>
+                <p id="precio-total"></p>
+                <a href="#" class="btn-color" id="p-formulario-compra"><i class='bx bxs-book'></i>Comprar</a>
+            </div>
         </main>
 
     </main>
