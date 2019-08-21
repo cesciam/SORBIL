@@ -28,7 +28,7 @@ const tipo_usuario = 'u';
 
 const btn_crear_cuenta = document.querySelector('#btn-enviar');
 
-let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pprimerApellido, psegundoApellido, pcedulas, pcedidentidad, pcedresidencia, pcarnerefugiado, ppasaporte, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
+let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pprimerApellido, psegundoApellido, pcedulas, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
 
     let error = false;
 
@@ -104,6 +104,15 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
         input_segundo_apellido.classList.remove('input_error');
     }
 
+    /*cedulas*/
+
+    if (pcedulas == '') {
+        error = true;
+        input_segundo_apellido.classList.add('input_error');
+    } else {
+        input_segundo_apellido.classList.remove('input_error');
+    }
+
     if (psexo == '') {
         error = true;
         input_sexo.classList.add('input_error');
@@ -152,7 +161,9 @@ let validarCedula = (pidentificacion) => {
     }
     return errorCedula;
 };
-    
+
+/*switch case cedulas*/
+
 let validarCorreo = (pcorreo) => {
 
     let errorCorreo = false;

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Plataforma -- Listar ofertas</title>
+    <title>Sorbil -- Plataforma -- Solicitud libros para intercambio</title>
 </head>
 
 <body id="grid-admin">
@@ -35,7 +35,7 @@
             </div>
 
             <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                        class="mini-photo" id="avatar-img" src="../imgs/user.png" width="36" height="36"> <i
+                        class="mini-photo" src="../imgs/user.png" width="36" height="36" id="avatar-img"> <i
                         class='bx bx-chevron-down'></i></a>
                 <div class="menu-user-container">
                     <ul class="user-menu">
@@ -52,26 +52,23 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de Ofertas</h1>
+            <h1>Solicitar libros para intercambio</h1>
         </div>
 
         <div id="barra-busqueda">
-            <input id="txt_filtro" type="text" placeholder="Buscar por título, autor, categoría, género, ISBN"
-                aria-label="Buscar por título, autor, categoría, género, ISBN">
-            
-            </div>
+
+            <input type="text" placeholder="Buscar por libro" aria-label="Buscar por libro">
+
+        </div>
 
         <table id="tabla-filtrado">
             <thead>
                 <tr>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>Precio</th>
-                    <th>Tipo</th>
-                    <th>Descuento (%)</th>                    
+                    <th>Género</th>
                 </tr>
             </thead>
             <tbody>
+
             </tbody>
         </table>
 
@@ -236,17 +233,17 @@
         <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
             <span>FÉNIX</span></a>
     </footer>
+
     <!--Scripts-->
     <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-libros.js"></script>
-    <script src="../js/controlador-listar-ofertas.js"></script>
+    <script src="../js/controlador-general.js"></script>
+    <script src="../js/controlador-listar-generos.js"></script>
     <script src="../js/controlador-inicio-ap.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-avatar.js"></script>
-
+    <script src="../js/controlador-listar-intercambio-libros.js"></script>
+    <script src="../js/servicio-intercambios.js"></script>
 </body>
 
 </html>
