@@ -42,3 +42,8 @@
 .total-titulo {
     font-size: 2.5rem;
 }
+
+.total-titulo span {
+    left: 4.5rem;
+    position: relative;
+}
