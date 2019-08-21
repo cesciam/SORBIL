@@ -44,7 +44,7 @@ router.post('/registrar-libreria', function (req, res) {
         direccion_exacta: body.direccion_exacta,
         direccion_latitud: body.direccion_latitud,
         direccion_longitud: body.direccion_longitud,
-        estado: 'habilitado'
+        estado: 'pendiente'
     });
 
 
@@ -976,6 +976,8 @@ router.get('/listar-librerias', function (req, res) {
 });
 
 router.get('/buscar-libreria-id/:_id', function (req, res) {
+    // console.log("aqui");
+    // console.log(req.body);
     libreria.findById(req.body._id, function (err, libreriaDB) {
         if (err) {
             return res.status(400).json({
@@ -1061,6 +1063,7 @@ router.get('/buscar-libros-libreria/:correo', function (req, res) {
                 err
             });
         } else {
+            
             return res.json({
                 success: true,
                 libreria: librobd
@@ -1208,24 +1211,56 @@ router.get('/buscar-libreria-por-correo/:correo', function (req, res) {
 router.post('/modificar-libreria', function (req, res) {
     let body = req.body;
 
-    Libreria.findByIdAndUpdate(body._id, {
-        $set: {
-            imagen: body.imagen,
-            usuario: body.usuario,
-            correo: body.correo,
-            empresa: body.empresa,
-            telefono: body.telefono,
-            descripcion: body.descripcion,
-            direccion_exacta: body.direccion_exacta,
-            direccion_latitud: body.direccion_latitud,
-            direccion_longitud: body.direccion_longitud,
-        }
+    libreria.findOneAndUpdate({ correo: req.body.correo }, {
+        $set: req.body
     },
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo modificar la información' });
+                return res.json({
+                    success: false,
+                    msj: 'No se pudo modificar la sucursal',
+                    error
+                });
             } else {
-                res.json({ success: true, msg: 'La información se modificó con éxito' });
+                res.json({
+                    success: true,
+                    msj: 'La sucursal se modificó con éxito'
+                });
+            }
+        }
+    )
+});
+
+router.post('/modificar-libreria_correo', function(req, res){
+    Libreria.findOneAndUpdate({ correo: req.body.correo }, {
+        $set: req.body.libreriaDatos
+    })
+
+});
+
+router.post('/agregar-libros-sucursal_correo', function(req, res) {
+    libreria.update({ correo: req.body.correo }, {
+            $push:{ 
+                librosSuc: {
+                    idlibro: req.body.idlibro,
+                    idSuc: req.body.idSuc,
+                    cantidad: req.body.cantidad
+                    
+                }
+            }
+        },
+        function(error){
+            if (error) {
+                return res.status(400).json({
+                    success: false,
+                    msj: 'No se pudo agregar el libro a la sucursal',
+                    error
+                });
+            } else{
+                res.json({
+                    success: true,
+                    msj: 'El libro se guardó con éxito en la sucursal'
+                });
             }
         }
     )

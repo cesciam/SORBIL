@@ -14,6 +14,7 @@ const usuario_route = require('./routes/usuario');
 const club_presencial_route = require('./routes/club-presencial');
 const club_virtual_route = require('./routes/club-virtual');
 const autor_route = require('./routes/autor');
+const carrito_route = require('./routes/carrito');
 
 
 
@@ -69,4 +70,5 @@ app.use('/api', categoria_route);
 app.use('/api', club_presencial_route);
 app.use('/api', club_virtual_route);
 app.use('/api', autor_route);
+app.use('/api', carrito_route);
 

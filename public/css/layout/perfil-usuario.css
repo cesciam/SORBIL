@@ -18,6 +18,14 @@ Inicio de estilos generales del perfil del usuario
     padding: 5rem 0;
 }
 
+.libreria-profile-container {
+    display: grid;
+}
+
+.libreria-profile-container #logo {
+    margin: 0 auto;
+}
+
 .sidebar {
     display: grid;
     grid-template-columns: 25rem;
@@ -330,7 +338,6 @@ Inicio de estilos de registro
 
 .section-ver .ver-title {
     grid-template-columns: 1fr;
-
 }
 
 .ver-title h1 {
@@ -338,21 +345,16 @@ Inicio de estilos de registro
 }
 
 .usuario-options {
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    
 }
 
 .usuario-options i {
-
     font-size: 2.5rem;
     margin-top: 3rem;
-    
 }
 
-.usuario-options i:first-child{
-
+.usuario-options i:first-child {
     color: var(--color-alternative-blue);
 }
 

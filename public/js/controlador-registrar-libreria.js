@@ -284,7 +284,7 @@ let saludar = async () => {
 
 
     if (error == false && errorCedula == false && errorCorreo == false && errorTelefono == false && errorFecha == false) {
-        let estado = 'habilitado';
+        let estado = 'pendiente';
         registrarLibreria(src_imagen, usuario, correo, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, latitud, longitud, estado);
         
         registrarAdminLibreria(src_avatar, correo, contrasena, nombre, primer_apellido, segundo_apellido, id, fecha, edad, tipo_usuario, estado);

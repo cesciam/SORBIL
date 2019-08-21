@@ -26,17 +26,18 @@ let libreria_schema = new mongoose.Schema({
         distrito: {type: String, required: false, unique: false},
         direccion_latitud: {type: Number, required: false, unique: false},
         direccion_longitud: {type: Number, required: false, unique: false},
-        librosSuc: [{
-            id: {type: String, required: false, unique: true},
-            cantidad: { type: String, required: false, unique: false }
-        }],
         estado: {type: String, required: true, unique: false}
     }],
     libros: [{
         idlibro: {type: String, required: false, unique: true},
         cantidad: { type: String, required: false, unique: false }
     }],
-    estado: { type: String, required: true, unique: false }
+    estado: { type: String, required: true, unique: false },
+    librosSuc: [{
+        idlibro: {type: String, required: false, unique: true},
+        idSuc :{type: String, required: false, unique: false},
+        cantidad: { type: String, required: false, unique: false }
+    }],
 });
 
 module.exports = mongoose.model('Libreria', libreria_schema);

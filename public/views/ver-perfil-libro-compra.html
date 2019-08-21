@@ -10,10 +10,9 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/layout/usuarios.css">
-    <link rel="stylesheet" href="../css/layout/perfiles.css">
-    <link rel="stylesheet" href="../css/paginas/ver-perfil-libreria.css">
+    <link rel="stylesheet" href="../css/paginas/perfil-libro.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Perfil de librería</title>
+    <title>Sorbil -- Perfil de libros</title>
 </head>
 
 <body>
@@ -121,46 +120,77 @@
 
             </nav>
         </div>
+
+
     </header>
 
-
+    <!--Main-->
     <main id="main-user">
-        <section class="section-one">
-
-            <!-- <div id="logo"><img src="../imgs/book-placeholder.png" id="imagen" ></div> -->
-
-            <div class="section-container">
-                <div id="nombre"></div>
-                <div class="info">
-                    <h2>Dirección de la empresa</h2>
-                    <div class="info-2-col">
-                        <div class="info-2-col-container">
-                            <p>Provincia: <span id="provincia"></span></p>
-                            <p>Cantón: <span id="canton"></span></p>
-                            <p>Distrito: <span id="distrito"></span></p>                            
-                        </div>
+        <section class="section-book">
+            <div class="book-img">
+                <div id="div-img-portada"><img src="../imgs/book-placeholder.png" id="portada"></div>
+                <p class="conten-div-precio precio-libro">Precio: <span id="precio"></span></p>
+                <button type="button">Comprar</button>
+            </div>
+            <div class="book-info">
+                <h2>Información del libro</h2>
+                <div class="book-info-list">
+                    <div class="book-titles">
+                        <p class="conten-div-precio">Autor: </p>
+                        <p class="conten-div-precio">Categoría: </p>
+                        <p class="conten-div-precio">Género: </p>
+                        <p class="conten-div-precio">Publicación: </p>
+                        <p class="conten-div-precio">ISBN: </p>
+                        <p class="conten-div-precio">Formato: </p>
+                        <p class="conten-div-precio">Idioma: </p>
                     </div>
-
-                    <h2>Información de contacto</h2>
-                    <div class="info-3-col">
-                        <div class="info-3-col-container">
-                            <div>
-                                <i class='bx bx-phone-call'></i>
-                               
-                            </div>
-                            <div>
-                                <h4>Teléfono:</h4>
-                                
-                            </div>
-                            <div>
-                                <p id="telefono"></p>
-                                
-                            </div>
-                        </div>
+                    <div class="book-atributes">
+                        <p id="autor"></p>
+                        <p id="categoria"></p>
+                        <p id="genero"></p>
+                        <p id="fecha"></p>
+                        <p id="isbn"></p>
+                        <p id="tipo"></p>
+                        <p id="idioma"></p>
                     </div>
                 </div>
             </div>
+            <div class="book-rating">
+                <h1 id="title-libro"></h1>
+                <!-- <p>Best seller</p> -->
+                <div class="book-rating-info">
+                    <div class="book-rating-container">
+                        <div class="book-ratings">
+                            <form class="form-ratings">
+                                <input id="radio1" type="radio" name="calificaciones" value="5">
+                                <label class="bx bxs-book-content" for="radio1"></label>
+                                <input id="radio2" type="radio" name="calificaciones" value="4">
+                                <label class="bx bxs-book-content" for="radio2"> </label>
+                                <input id="radio3" type="radio" name="calificaciones" value="3">
+                                <label class="bx bxs-book-content" for="radio3"> </label>
+                                <input id="radio4" type="radio" name="calificaciones" value="2">
+                                <label class="bx bxs-book-content" for="radio4"> </label>
+                                <input id="radio5" type="radio" name="calificaciones" value="1">
+                                <label class="bx bxs-book-content" for="radio5"> </label>
+                                <!-- Botón para registrar calificación -->
+                                <!-- <button id="btn-enviar" type="button"></button> -->
+                            </form>
+                        </div>
+                        <div class="book-rating-global">
+                            <p id="rating-global">4,8 (4500 Calificacion)</p>
+                        </div>
+                    </div>
 
+                    <div class="book-ed">
+                        <p>Edicion: <span id="edicion"></span></p>
+                        <p>Editorial: <span id="editorial"></span></p>
+                    </div>
+                    <div class="book-descrip">
+                        <h3>Sinopsis</h3>
+                        <p id="descrip"></p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -177,27 +207,26 @@
         </div>
 
         <div id="footer-copyright">
-            <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i>
-                por
+            <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
                 <span>FÉNIX</span></a>
         </div>
     </footer>
 
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-libreria.js"></script>
-    <script src="../js/controlador-perfil-sucursal.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
-    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/servicio-libros.js"></script>
+    <script src="../js/controlador-perfil-libro.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-main.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-user.js"></script>
+    <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
     <!-- JS para listar -->
     <script src="../js/servicio-club.js"></script>
-    <script src="../js/servicio-libros.js"></script>
+    <script src="../js/servicio-libreria.js"></script>
     <script src="../js/componentes/controlador-lista-enlaces.js"></script>
+    <script src="../js/componentes/controlador-nav-inicios.js "></script>
     <script src="../js/cerrar-sesion.js"></script>
-    <!-- <script src="../js/controlador-avatar.js"></script> -->
-    <script src="../js/componentes/controlador-nav-inicios.js"></script>
+    <script src="../js/controlador-avatar.js"></script>
 </body>
 
 </html>
