@@ -5,7 +5,7 @@ let lista_carrito = [];
 let lista_libros = [];
 let lista_librerias = [];
 let sumatotalAPagar = 0;
-let ultimoLibro = 'ult';
+let ultimoLibro = [];
 let UsuarioEnSesionPriv = JSON.parse(sessionStorage.getItem('activo'));
 let UsuarioIdSucursalPriv = UsuarioEnSesionPriv._id;
 
@@ -33,7 +33,6 @@ let mostrar_tabla = async () => {
         if (lista_carrito[i].idUsuario == UsuarioIdSucursalPriv) {
             for (let j = 0; j < lista_libros.length; j++) {
                 if (lista_libros[j]._id == lista_carrito[i].idLibro) {
-                    if(lista_libros[j]._id != ultimoLibro){
 
                         let lib = await encontrarLib(lista_carrito[i].idLib);
                             //Sacar el total del precio (falta pasarlo a string y formatearlo)
@@ -44,14 +43,12 @@ let mostrar_tabla = async () => {
                         precio = precio.substr(1);
                         precio = precio.replace('.', '');
                         let precioInt = parseInt(precio);
-
                             
                         let fila = tbody.insertRow();
                         fila.insertCell().innerHTML = lista_libros[j]['titulo'];
-                        fila.insertCell().innerHTML = lista_libros[j]['precio'];
                         fila.insertCell().innerHTML = lista_librerias[lib].empresa;
-                        fila.insertCell().innerHTML = '10';
-                        fila.insertCell().innerHTML = ('₡'+precioInt+',00');
+                        fila.insertCell().innerHTML = '1';
+                        fila.insertCell().innerHTML = lista_libros[j]['precio'];
                         sumatotalAPagar = sumatotalAPagar +precioInt;
                         
                         let celdaIconoEliminar = fila.insertCell();
@@ -88,9 +85,7 @@ let mostrar_tabla = async () => {
                         celdaIconoEliminar.appendChild(aIconoEliminar);
                         ultimoLibro =lista_libros[j]._id;
                         
-                    }else{
-                        
-                    }
+                    
                 }
             }
         }
