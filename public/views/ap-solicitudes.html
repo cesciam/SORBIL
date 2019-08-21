@@ -25,17 +25,18 @@
         <div class="header-user-icons">
             <div class="header-user-container">
                 <a class="header-icon" href="#" id="adminap_solicitudes"><i class='bx bx-mail-send'></i>
-                    <span class="user-notification">1</span>
-                </a>
-            </div>
-            <div class="header-user-container">
-                <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification">1</span>
+                    <!-- <span class="user-notification"></span> -->
                 </a>
             </div>
 
+            <!-- <div class="header-user-container">
+                <a class="header-icon" href="#"><i class='bx bx-bell'></i>
+                    <span class="user-notification"></span>
+                </a>
+            </div> -->
+
             <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                        class="mini-photo" src="../imgs/user.png" width="36" height="36"> <i
+                        class="mini-photo" id="avatar-img" src="../imgs/user.png" width="36" height="36"> <i
                         class='bx bx-chevron-down'></i></a>
                 <div class="menu-user-container">
                     <ul class="user-menu">
@@ -112,6 +113,7 @@
                     <div class="sidenav-small-menu dropdown-menu">
                         <a href="#" id="listar_adminap_sucursales">Sucursal</a>
                         <a href="#" id="registrar_adminap_sucursal">Sucursal</a>
+                        <a href="#" id="adminap_solicitudes">Solicitud</a>
                     </div>
                 </li>
 
@@ -218,10 +220,18 @@
     </footer>
 
     <!--Scripts-->
-    <script src="../js/componentes/controlador-dropdowns-nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="../js/controlador-inicio-al.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js"
+        type="text/javascript"></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="../js/servicio-imagen.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/controlador-listar-solicitudes.js"></script>
+    <script src="../js/controlador-inicio-ap.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
+    <script src="../js/controlador-avatar.js"></script>
 </body>
 
 </html>

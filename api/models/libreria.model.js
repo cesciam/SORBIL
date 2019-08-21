@@ -32,7 +32,7 @@ let libreria_schema = new mongoose.Schema({
         idlibro: {type: String, required: false, unique: true},
         cantidad: { type: String, required: false, unique: false }
     }],
-    estado: { type: String, required: true, unique: false },
+    estado: { type: String, required: false, unique: false },
     librosSuc: [{
         idlibro: {type: String, required: false, unique: true},
         idSuc :{type: String, required: false, unique: false},

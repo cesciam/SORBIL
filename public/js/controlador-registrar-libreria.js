@@ -61,27 +61,27 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pempresa, ptelef
         input_correo.classList.remove('input_error');
     }
 
-    if (pcontrasena == '') {
-        error = true;
-        input_contrasena.classList.add('input_error');
-    } else if (pcontrasena != pverfContrasena) {
-        error = true;
-        input_contrasena.classList.add('input_error');
-        input_verf_contrasena.classList.add('input_error');
-    } else {
-        input_contrasena.classList.remove('input_error');
-    }
+    // if (pcontrasena == '') {
+    //     error = true;
+    //     input_contrasena.classList.add('input_error');
+    // } else if (pcontrasena != pverfContrasena) {
+    //     error = true;
+    //     input_contrasena.classList.add('input_error');
+    //     input_verf_contrasena.classList.add('input_error');
+    // } else {
+    //     input_contrasena.classList.remove('input_error');
+    // }
 
-    if (pverfContrasena == '') {
-        error = true;
-        input_verf_contrasena.classList.add('input_error');
-    } else if (pcontrasena != pverfContrasena) {
-        error = true;
-        input_contrasena.classList.add('input_error');
-        input_verf_contrasena.classList.add('input_error');
-    } else {
-        input_verf_contrasena.classList.remove('input_error');
-    }
+    // if (pverfContrasena == '') {
+    //     error = true;
+    //     input_verf_contrasena.classList.add('input_error');
+    // } else if (pcontrasena != pverfContrasena) {
+    //     error = true;
+    //     input_contrasena.classList.add('input_error');
+    //     input_verf_contrasena.classList.add('input_error');
+    // } else {
+    //     input_verf_contrasena.classList.remove('input_error');
+    // }
 
     if (pempresa == '') {
         error = true;
@@ -286,15 +286,16 @@ let saludar = async () => {
     if (error == false && errorCedula == false && errorCorreo == false && errorTelefono == false && errorFecha == false) {
         let estado = 'pendiente';
         registrarLibreria(src_imagen, usuario, correo, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, latitud, longitud, estado);
-        
+
         registrarAdminLibreria(src_avatar, correo, contrasena, nombre, primer_apellido, segundo_apellido, id, fecha, edad, tipo_usuario, estado);
         Swal.fire({ //formato json
-            title: 'Se ha registrado la información exitosamente',
+            title: 'Se ha enviado la información exitosamente',
+            text: 'Su solicitud está siendo revisada en este moment',
             type: 'success',
         }).then((result) => {
             if (result.value) {
                 
-                window.location.href = 'u-iniciar-sesion.html';
+                window.location.href = '../index.html';
             }
         });
         //Se llama a la función para limpiar el formulario
