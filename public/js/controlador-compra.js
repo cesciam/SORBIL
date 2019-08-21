@@ -66,8 +66,8 @@ let EjecutarCompra = async () => {
                     registrarVenta(libreria, sucursal, UsuarioIdSucursalPrivCompra, libro);
                     eliminarProductoCarrito(idCarrito);
 
-                    for (let p = 0; p < array.length; p++) {
-                        if(lista_librerias[lib].librosSuc[p].idlibro == lista_libros[j]._id){
+                    for (let p = 0; p < lista_librerias[lib].librosSuc.length; p++) {
+                        if(lista_librerias[lib].librosSuc[p].idlibro == libro && lista_librerias[lib].librosSuc[p].idSuc == sucursal){
                             let cantidad = parseInt(lista_librerias[lib].librosSuc[p].cantidad);
                             cantidad = cantidad - 1;
                             let canString = cantidad.toString();
@@ -75,7 +75,7 @@ let EjecutarCompra = async () => {
                         }
                     }
                     let correo_libreria = lista_librerias[lib].correo;
-                    modificaTodaLalibreriaPorCorreo(correo_libreria, lista_librerias[lib]);
+                    modificarSucursal(correo_libreria, lista_librerias[lib]);
 
                     
 

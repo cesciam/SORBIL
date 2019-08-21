@@ -51,7 +51,7 @@ let llenar_perfil = async() => {
     let librosSuc = datosLibreria[posicionLib].librosSuc;
     for (let x = 0; x < librosSuc.length; x++) {
         for (let j = 0; j < libros.length; j++) {
-            if(libros[j]._id == datosLibreria[posicionLib].librosSuc[x].idlibro){
+            if(libros[j]._id == datosLibreria[posicionLib].librosSuc[x].idlibro && idSuc == datosLibreria[posicionLib].librosSuc[x].idSuc){
                     if(libros[j].estado == 'habilitado'){
             
                         let contenedor_card = document.createElement('div');
