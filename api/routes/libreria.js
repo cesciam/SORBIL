@@ -1281,7 +1281,7 @@ router.post('/habilitar-libreria', function (req, res) {
 });
 
 router.post('/modificar-libreria_correo', function(req, res){
-    Libreria.findOneAndUpdate({ correo: req.body.correo }, {
+    libreria.findOneAndUpdate({ correo: req.body.correo }, {
         $set: req.body.libreriaDatos
     })
 
