@@ -11,9 +11,8 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
-    <link rel="stylesheet" href="../css/paginas/card-solicitudes.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Plataforma -- Solicitudes</title>
+    <title>Sorbil -- Plataforma -- Solicitud libros para intercambio</title>
 </head>
 
 <body id="grid-admin">
@@ -54,20 +53,27 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Solicitudes de librerías</h1>
+            <h1>Solicitar libros para intercambio</h1>
         </div>
 
         <div id="barra-busqueda">
-            <input id="txt-filtro" type="text" placeholder="Buscar por empresa, correo electrónico"
-                aria-label="Buscar por empresa, correo electrónico">
+
+            <input type="text" placeholder="Buscar por libro" aria-label="Buscar por libro">
+
         </div>
 
-        <section class='card-container' id="lista-librerias">
+        <table id="tabla-filtrado">
+            <thead>
+                <tr>
+                    <th>Género</th>
+                </tr>
+            </thead>
+            <tbody>
 
-        </section>
+            </tbody>
+        </table>
 
-
-    </main>>
+    </main>
 
     <!--Aside-->
     <aside id="sidenav-admin">
@@ -231,20 +237,15 @@
     </footer>
 
     <!--Scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js"
-        type="text/javascript"></script>
-    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-    <script src="../js/servicio-imagen.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-usuario.js"></script>
-    <script src="../js/servicio-libreria.js"></script>
-    <script src="../js/controlador-listar-solicitudes.js"></script>
+    <script src="../js/controlador-general.js"></script>
+    <script src="../js/controlador-listar-generos.js"></script>
     <script src="../js/controlador-inicio-ap.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-avatar.js"></script>
+    <script src="../js/controlador-listar-intercambio-libros.js"></script>
+    <script src="../js/servicio-intercambios.js"></script>
 </body>
 
 </html>

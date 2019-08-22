@@ -11,6 +11,7 @@ let autor_schema = new mongoose.Schema({
     fecha_nacimiento: { type: String, required: true, unique: false },
     fecha_defuncion: { type: String, required: false, unique: false },
     biografia: { type: String, required: true, unique: false },
+    estado: {type: String, required: false, unique: false}
 });
 
 module.exports = mongoose.model('autor', autor_schema);

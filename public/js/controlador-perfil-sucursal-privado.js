@@ -100,7 +100,7 @@ let llenar_perfil = async() => {
                         btn_perfil.innerText = 'Agregar a carrito';
                         let idlibro = libros[j]['_id'];
                         btn_perfil.addEventListener('click', function () {
-                            registrarCarrito(UsuarioIdSucursalPriv, idlibro, datosLibreria[posicionLib]._id,datosLibreria[posicionLib].librosSuc[x]._id);
+                            registrarCarrito(UsuarioIdSucursalPriv, idlibro, datosLibreria[posicionLib]._id, idSuc);
                             Swal.fire({ //formato json
                                 title: 'Se ha agregado el libro al carrito de compras',
                                 type: 'success'
