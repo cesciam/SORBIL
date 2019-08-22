@@ -45,6 +45,10 @@ let llenar_perfil = async() => {
 
 };
 
+document.querySelector('#btn-librerias').addEventListener('click', function(){
+    window.location.href = 'p-ver-librerias.html';
+})
+
 llenar_perfil();
 
 
