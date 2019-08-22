@@ -15,7 +15,6 @@ let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, p
             sexo: psexo,
             primer_apellido: pprimerApellido,
             segundo_apellido: psegundoApellido,
-            cedulas: pcedulas,
             provincia: pprovincia,
             canton: pcanton,
             distrito: pdistrito,
