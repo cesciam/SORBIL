@@ -1266,4 +1266,18 @@ router.post('/agregar-libros-sucursal_correo', function(req, res) {
     )
 });
 
+router.post('/eliminar-libreria', function(req, res) {
+    let body = req.body;
+
+    libreria.findByIdAndRemove(body._id,
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminiar la libreria' });
+            } else {
+                res.json({ success: true, msg: 'La librería se eliminó con éxito' });
+            }
+        }
+    )
+});
+
 module.exports = router;

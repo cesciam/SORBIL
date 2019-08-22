@@ -49,11 +49,42 @@ let mostrar_cards = async () => {
             window.location.href = `ver-perfil-libreria.html?_id=${this.dataset._id}`;
         });
 
+        let aIconoEliminar = document.createElement('a');
+        aIconoEliminar.className = 'header-icon';
+        let iconEliminiar = document.createElement('i');
+        iconEliminiar.className  = 'bx bxs-trash';
+        aIconoEliminar.appendChild(iconEliminiar);
+
+        aIconoEliminar.addEventListener('click', function(){
+            Swal.fire({
+                title: '¿Está seguro de eliminar la librería?',
+                text: "Ésta acción no se puede revertir",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+            }).then((result) => {
+                if (result.value) {
+                    eliminarLibreria(lista_librerias[i]._id);
+
+                    Swal.fire(
+                        'Librería eliminada!'
+                    ).then((result) => {
+                        if (result.value) {
+                            window.location.reload();
+                        }
+                    });
+                }
+            })
+        });
+
         contenedor_card.appendChild(header);
         contenedor_card.appendChild(contenedor_imagen);
         contenedor_card.appendChild(contenedor_atributo);
         contenedor_card.appendChild(contenedor_descripcion);
         contenedor_card.appendChild(btn_perfil);
+        contenedor_card.appendChild(aIconoEliminar);
 
         sct_librerias.appendChild(contenedor_card);
     }
