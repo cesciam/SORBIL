@@ -276,6 +276,17 @@ let modificaTodaLalibreriaPorCorreo = (pcorreo, plibreria) =>{
     })
 }
 
+let eliminarTodaLalibreriaPorCorreo = (pcorreo, plibreria) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-libreria_correo',
+        data: {
+            correo: pcorreo,
+            libreriaDatos: plibreria
+        }
+    })
+}
+
 let registrarLibrosSuc = (pidlibro, pidsuc, pcantidad, pcorreo) => {
     axios({
         method: 'post',
