@@ -336,6 +336,40 @@ Inicio de estilos de registro
     margin-top: 2rem;
 }
 
+#main-profile .card {
+    width: 20rem;
+}
+
+#main-profile .card-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 3rem;
+}
+
+#main-profile .card-container img {
+    width: 80%;
+    height: 15rem;
+    display: block;
+    margin: 0 auto;
+    box-shadow: var(--shadow-dark-2);
+    border-radius: var(--box-radius);
+    margin-top: 1rem;
+}
+
+#main-profile .card-container p {
+    text-align: center;
+    font-weight: var(--font-semibold);
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+
+#main-profile .card-container .list-icon {
+    position: relative;
+    left: -9rem;
+    top: -1rem;
+    opacity: 1 !important;
+}
+
 .section-ver .ver-title {
     grid-template-columns: 1fr;
 }
@@ -356,6 +390,19 @@ Inicio de estilos de registro
 
 .usuario-options i:first-child {
     color: var(--color-alternative-blue);
+}
+
+.club-nav {
+    display: grid;
+    justify-items: center;
+}
+
+.club-nav div {
+    margin-bottom: 3rem;
+}
+
+.club-nav div a {
+    font-size: 1.2rem;
 }
 
 /*

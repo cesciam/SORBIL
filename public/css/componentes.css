@@ -925,6 +925,10 @@ Fin de estilos del carousel
     color: var(--color-alternative-red);
 }
 
+.bxs-x-circle:before {
+    color: var(--color-alternative-red);
+}
+
 .bxs-check-square:before {
     color: var(--color-alternative-red);
 }
