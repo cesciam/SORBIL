@@ -6,7 +6,7 @@ let txt_filtro = document.querySelector('#txt-filtro');
 const sct_usuarios = document.querySelector('#lista-usuarios');
 
 let usuarioActivo2 = JSON.parse(sessionStorage.getItem('activo'));
-let id_usuario_activo = usuarioActivo2.usuario;
+let id_usuario_activo = usuarioActivo2.usuario_id;
 
 let mostrar_cards = async () => {
 
