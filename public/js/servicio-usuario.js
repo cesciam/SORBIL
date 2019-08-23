@@ -1,5 +1,6 @@
 'use strict';
 
+
 let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud, ptipo_usuario, pestado) => {
     axios({
         method: 'post',
@@ -15,7 +16,6 @@ let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, p
             sexo: psexo,
             primer_apellido: pprimerApellido,
             segundo_apellido: psegundoApellido,
-            cedulas: pcedulas,
             provincia: pprovincia,
             canton: pcanton,
             distrito: pdistrito,
@@ -265,4 +265,16 @@ let eliminarTarjetas = (pid, pidtarjeta) =>{
 
 let registraEnCarritoDeCompras = ()=>{
     
+}
+
+let enviarEmailRecuperacionContrasena = async (correo) => {
+
+     axios({
+        method: 'post',
+        url: `http://localhost:4000/api/recuperar-contrasena`,
+        responseType: 'json',
+        data: {
+            correo: correo,
+        }
+    });
 }

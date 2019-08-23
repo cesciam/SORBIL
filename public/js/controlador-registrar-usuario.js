@@ -18,7 +18,6 @@ const input_nombre = document.querySelector('#txt-nombre');
 const input_id = document.querySelector('#txt-id');
 const input_primer_apellido = document.querySelector('#txt-primer-apellido');
 const input_segundo_apellido = document.querySelector('#txt-segundo-apellido');
-const input_cedulas = document.querySelector('#txt-cedulas');
 const input_sexo = document.querySelector('#txt-sexo');
 const input_provincia = document.querySelector('#txt-provincia');
 const input_canton = document.querySelector('#txt-canton');
@@ -28,7 +27,7 @@ const tipo_usuario = 'u';
 
 const btn_crear_cuenta = document.querySelector('#btn-enviar');
 
-let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pprimerApellido, psegundoApellido, pcedulas, pcedidentidad, pcedresidencia, pcarnerefugiado, ppasaporte, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
+let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
 
     let error = false;
 
@@ -143,6 +142,10 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
 };
 
 let validarCedula = (pidentificacion) => {
+
+    let errorCedula = false;
+    let cedulaValida = /^[1-9]-?\d{4}-?\d{4}$/;
+
     if (!cedulaValida.test(pidentificacion)) {
         errorCedula = true;
         input_id.classList.add('input_error');
@@ -152,7 +155,8 @@ let validarCedula = (pidentificacion) => {
     }
     return errorCedula;
 };
-    
+
+
 let validarCorreo = (pcorreo) => {
 
     let errorCorreo = false;
@@ -180,7 +184,6 @@ let llamar = async () => {
     let id = input_id.value;
     let primer_apellido = input_primer_apellido.value;
     let segundo_apellido = input_segundo_apellido.value;
-    let cedulas= input_cedulas.value
     let sexo = input_sexo.value;
     let provincia = input_provincia.value;
     let canton = input_canton.value;
@@ -190,7 +193,7 @@ let llamar = async () => {
     let longitud = enviarLon();
 
 
-    let error = validar(usuario, correo, contrasena, verfContrasena, nombre, id, primer_apellido, segundo_apellido, cedulas, sexo, provincia, canton, distrito, direccion_exacta);
+    let error = validar(usuario, correo, contrasena, verfContrasena, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta);
     let errorCedula = validarCedula(id);
     let errorCorreo = validarCorreo(correo);
 
@@ -225,7 +228,6 @@ const limpiarFormulario = () => {
     input_id.value = '';
     input_primer_apellido.value = '';
     input_segundo_apellido.value = '';
-    input_cedulas = '';
     input_sexo.value = '';
     input_provincia.value = '';
     input_canton.value = '';

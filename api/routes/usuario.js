@@ -1,20 +1,32 @@
 'use strict';
+const nodeMailer = require('nodemailer');
 
 const express = require('express'),
     router = express.Router(),
     Usuario = require('../models/usuario.model');
 
-router.param('_id', function(req, res, next, _id) {
+//Definicion de credenciales para enviar correos
+
+const transporter = nodeMailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'fenixsorbil@gmail.com',
+        pass: 'Fenix0627201'
+    }
+});
+
+
+router.param('_id', function (req, res, next, _id) {
     req.body._id = _id;
     next();
 });
 
-router.param('correo', function(req, res, next, correo) {
+router.param('correo', function (req, res, next, correo) {
     req.body.correo = correo;
     next();
 });
 
-router.post('/registrar-usuario', function(req, res) {
+router.post('/registrar-usuario', function (req, res) {
     let body = req.body;
 
     let nuevo_usuario = new Usuario({
@@ -41,7 +53,7 @@ router.post('/registrar-usuario', function(req, res) {
     });
 
     nuevo_usuario.save(
-        function(err, usuariosBD) {
+        function (err, usuariosBD) {
             if (err) {
                 return res.status(400).json({
                     success: false,
@@ -58,9 +70,9 @@ router.post('/registrar-usuario', function(req, res) {
     );
 });
 
-router.post('/validar-credenciales', function(req, res) {
+router.post('/validar-credenciales', function (req, res) {
     Usuario.findOne({ correo: req.body.correo }).then(
-        function(usuario) {
+        function (usuario) {
             if (usuario) {
                 if (usuario.contrasena == req.body.contrasena) {
                     res.json({
@@ -83,8 +95,8 @@ router.post('/validar-credenciales', function(req, res) {
     )
 });
 
-router.get('/listar-usuarios', function(req, res) {
-    Usuario.find(function(err, usuariosBD) {
+router.get('/listar-usuarios', function (req, res) {
+    Usuario.find(function (err, usuariosBD) {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -100,8 +112,8 @@ router.get('/listar-usuarios', function(req, res) {
     })
 });
 
-router.get('/buscar-usuario-id/:_id', function(req, res) {
-    Usuario.findById(req.body._id, function(err, usuarioDB) {
+router.get('/buscar-usuario-id/:_id', function (req, res) {
+    Usuario.findById(req.body._id, function (err, usuarioDB) {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -117,8 +129,8 @@ router.get('/buscar-usuario-id/:_id', function(req, res) {
     })
 });
 
-router.get('/buscar-usuario-correo/:correo', function(req, res) {
-    Usuario.find({ correo: req.body.correo }, function(err, usuarioBD) {
+router.get('/buscar-usuario-correo/:correo', function (req, res) {
+    Usuario.find({ correo: req.body.correo }, function (err, usuarioBD) {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -134,26 +146,26 @@ router.get('/buscar-usuario-correo/:correo', function(req, res) {
     })
 });
 
-router.post('/agregar-tarjeta', function(req, res) {
+router.post('/agregar-tarjeta', function (req, res) {
     Usuario.update({ _id: req.body._id }, {
-            $push:{ 
-                'tarjetas': {
-                    nombre: req.body.nombre,
-                    num_tarjeta: req.body.num_tarjeta,
-                    fecha_ven: req.body.fecha_ven,
-                    cvv: req.body.cvv,
-                    estado: 'habilitado'
-                }
+        $push: {
+            'tarjetas': {
+                nombre: req.body.nombre,
+                num_tarjeta: req.body.num_tarjeta,
+                fecha_ven: req.body.fecha_ven,
+                cvv: req.body.cvv,
+                estado: 'habilitado'
             }
-        },
-        function(error){
+        }
+    },
+        function (error) {
             if (error) {
                 return res.status(400).json({
                     success: false,
                     msj: 'No se pudo agregar la tarjeta',
                     error
                 });
-            } else{
+            } else {
                 res.json({
                     success: true,
                     msj: 'La tarjeta se guardó con éxito'
@@ -220,13 +232,13 @@ router.post('/habilitar-usuario', function (req, res) {
     )
 });
 
-router.post('/modificar-usuario', function(req, res) {
+router.post('/modificar-usuario', function (req, res) {
     let body = req.body;
 
     Usuario.findByIdAndUpdate(body._id, {
-            $set: req.body
-        },
-        function(error) {
+        $set: req.body
+    },
+        function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo modificar el usuario' });
             } else {
@@ -256,11 +268,11 @@ router.post('/modificar-contrasena-usuario', function (req, res) {
 });
 
 
-router.post('/eliminar-usuario', function(req, res) {
+router.post('/eliminar-usuario', function (req, res) {
     let body = req.body;
 
     Usuario.findByIdAndRemove(body._id,
-        function(error) {
+        function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo borrar el usuario' });
             } else {
@@ -270,13 +282,13 @@ router.post('/eliminar-usuario', function(req, res) {
     )
 });
 
-router.post('/modificar-tarjetas', function(req, res) {
+router.post('/modificar-tarjetas', function (req, res) {
     let body = req.body;
-    
+
     Usuario.findByIdAndUpdate(body._id, {
-            $set: body.datos
-        },
-        function(error) {
+        $set: body.datos
+    },
+        function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo modificar el contacto' });
             } else {
@@ -286,15 +298,15 @@ router.post('/modificar-tarjetas', function(req, res) {
     )
 });
 
-router.post('/modificar-estado-tarjetas', function(req, res) {
+router.post('/modificar-estado-tarjetas', function (req, res) {
     let body = req.body;
 
     Usuario.findByIdAndUpdate(body._id, {
-            $set: {
-                'tarjetas': req.body.datos
-            }
-        },
-        function(error) {
+        $set: {
+            'tarjetas': req.body.datos
+        }
+    },
+        function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
             } else {
@@ -304,24 +316,62 @@ router.post('/modificar-estado-tarjetas', function(req, res) {
     )
 });
 
-router.post('/eliminar-tarjetas', function(req, res) {
+router.post('/eliminar-tarjetas', function (req, res) {
     let body = req.body;
 
     Usuario.findByIdAndUpdate(body._id, {
-            $pull: {
-                tarjetas: {
-                    _id : req.body.idlibro
+        $pull: {
+            tarjetas: {
+                _id: req.body.idlibro
+            }
+        }
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+            } else {
+                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
+            }
+        }
+    )
+});
+
+
+router.post('/recuperar-contrasena/', function (req, res) {
+    Usuario.findOne({ correo: req.body.correo }).then(
+        function (usuario) {
+            if (usuario) {
+                if (usuario.correo) {
+                    res.json({
+                        success: true,
+                        usuario: usuario
+                    });
+
+                    let mailOptions = {
+                        from: 'fenixsorbil@gmail.com',
+                        to: req.body.correo,
+                        subject: 'Recuperación de contraseña',
+                        html: ``
+
+                    };
+                    transporter.sendMail(mailOptions, function (error, info) {
+                        if (error) {
+                            console.log(error);
+                        } else {
+                            console.logo('Correo enviado' + info.response);
+                        }
+                    })
                 }
-            }
-        },
-        function(error) {
-            if (error) {
-                res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
             } else {
-                res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
+                res.json({
+                    success: false,
+                    msg: 'El usuario no existe'
+                });
             }
         }
     )
 });
+
+
 
 module.exports = router;

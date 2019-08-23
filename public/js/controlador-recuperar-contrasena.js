@@ -1,15 +1,15 @@
 'use strict';
 
+
 const btn_recuperar_contrasena = document.querySelector('#btn-contrasena');
 let lista_usuarios = [];
-
 
 let comprobarCorreoExistente = async (pcorreo) => {
 
     lista_usuarios = await obtenerUsuarios();
     let error = false;
     for (let i = 0; i < lista_usuarios.length; i++) {
-        console.log(lista_usuarios[i].correo);        
+
 
         if (lista_usuarios[i].correo == pcorreo) {
             error = false;
@@ -19,7 +19,7 @@ let comprobarCorreoExistente = async (pcorreo) => {
             error = true;
         }
     }
-    return error;    
+    return error;
 };
 
 let validarCorreo = (pcorreo) => {
@@ -42,12 +42,12 @@ btn_recuperar_contrasena.addEventListener('click', async function () {
         title: 'Recuperación de contraseña',
         html: '<input type="email" id="txt-correo-recuperacion" placeholder="Ingresá tu correo electrónico">',
 
-    }).then(async ()  => {
+    }).then(async () => {
         let input_correo = document.querySelector('#txt-correo-recuperacion').value;
         let errorCorreo = validarCorreo(input_correo);
-        let errorCorreoNoExiste =  await comprobarCorreoExistente(input_correo);
-        
-        console.log(errorCorreoNoExiste);
+        let errorCorreoNoExiste = await comprobarCorreoExistente(input_correo);
+
+
         if (errorCorreo) {
             Swal.fire({ //formato json
                 title: 'Formato de correo inválido',
@@ -62,9 +62,12 @@ btn_recuperar_contrasena.addEventListener('click', async function () {
             })
         }
         else {
-            Swal.fire({
-                title: 'Se ha enviado un correo electrónico',
-                text: 'Revisa tu correo electrónico y sigue los pasos'
+            enviarEmailRecuperacionContrasena(input_correo);
+            console.log(input_correo);
+
+            Swal.fire({ //formato json
+                title: 'Se ha enviado un correo electrónico a su cuenta ',
+                type: 'success'
             })
         }
     })

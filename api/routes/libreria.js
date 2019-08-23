@@ -1206,8 +1206,6 @@ router.get('/buscar-libreria-por-correo/:correo', function (req, res) {
     })
 });
 
-// MODIFICAR LIBRERIA
-
 router.post('/modificar-libreria', function (req, res) {
     let body = req.body;
 
@@ -1226,6 +1224,57 @@ router.post('/modificar-libreria', function (req, res) {
                     success: true,
                     msj: 'La sucursal se modificó con éxito'
                 });
+            }
+        }
+    )
+});
+
+router.post('/eliminar-libreria', function (req, res) {
+    let body = req.body;
+
+    libreria.findByIdAndRemove(body._id,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar la librería' });
+            } else {
+                res.json({ success: true, msg: 'La librería se eliminó con éxito' });
+            }
+        }
+    )
+});
+
+
+router.post('/deshabilitar-libreria', function (req, res) {
+    let body = req.body;
+
+    libreria.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: 'deshabilitado'
+        }
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo deshabilitar la librería' });
+            } else {
+                res.json({ success: true, msg: 'La librería se deshabilitó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/habilitar-libreria', function (req, res) {
+    let body = req.body;
+
+    libreria.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: 'habilitado'
+        }
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo habilitar la librería' });
+            } else {
+                res.json({ success: true, msg: 'La librería se habilitó con éxito' });
             }
         }
     )

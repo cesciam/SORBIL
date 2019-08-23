@@ -943,3 +943,15 @@ Fin de estilos del carousel
     cursor: pointer;
     opacity: 1;
 }
+
+#adminap_solicitudes2 {
+    margin-top: 2rem;
+    display: inline-block;
+}
+
+#adminap_solicitudes2 i {
+    position: relative;
+    top: .4rem;
+    left: -1rem;
+    font-size: 2rem;
+}
