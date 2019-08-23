@@ -25,7 +25,20 @@ let mostrar_tabla = async () => {
         celdaPerfil.appendChild(aPerfil);
 
         aPerfil.addEventListener('click',function(){
-            window.location.href = `ver-perfil-libreria.html?_id=${lista_librerias[i]._id}`;
+            Swal.fire({
+                title: '¿Desea salir de la plataforma de administrador?',
+                text: "Para poder ver los perfiles se debe salir de la plataforma de administración",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+            }).then((result) => {
+                if (result.value) {
+                    window.location.href = `ver-perfil-libreria.html?_id=${lista_librerias[i]._id}`;
+                }
+            });
+            
         });
 
         let celdaIconoEliminar = fila.insertCell();

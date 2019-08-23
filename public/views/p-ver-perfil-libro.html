@@ -222,7 +222,7 @@
                 <div class="book-rating-info">
                     <div class="book-rating-container">
                         <div class="book-ratings">
-                            <form class="form-ratings">
+                            <form class="form-ratings" id="ratingsId">
                                 <input id="radio1" type="radio" name="calificaciones" value="5">
                                 <label class="bx bxs-book-content" for="radio1"></label>
                                 <input id="radio2" type="radio" name="calificaciones" value="4">
@@ -238,7 +238,7 @@
                             </form>
                         </div>
                         <div class="book-rating-global">
-                            <p>4,8 (4500 Calificacion)</p>
+                            <p><span id="calificacion-libro">0</span> (<span id="cantidad-calificaciones">0</span> calificaciones)</p>
                         </div>
                     </div>
 
@@ -286,6 +286,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="../js/componentes/controlador-sidemenu.js"></script>
     <script src="../js/servicio-libros.js"></script>
+    <script src="../js/servicio-resenna.js"></script>
     <script src="../js/controlador-perfil-libro.js"></script>
     <script src="../js/controlador-perfil-libros-comentarios.js"></script>
     <script src="../js/componentes/controlador-dropdowns-main.js"></script>
