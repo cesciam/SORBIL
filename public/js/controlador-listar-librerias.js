@@ -17,18 +17,50 @@ let mostrar_tabla = async () => {
         fila.insertCell().innerHTML = lista_librerias[i]['telefono'];
         fila.insertCell().innerHTML = lista_librerias[i]['provincia'];
 
+        let celdaPerfil = fila.insertCell();
+        let aPerfil = document.createElement('a');
+        let iPerfil = document.createElement('i');
+        iPerfil.className  = 'bx bx-show';
+        aPerfil.appendChild(iPerfil);
+        celdaPerfil.appendChild(aPerfil);
 
-        let celda_perfil = fila.insertCell();
-        let boton_perfil = document.createElement('button');
-        boton_perfil.type = 'button';
-        boton_perfil.innerText = 'Ver perfil';
-        boton_perfil.dataset._id = lista_librerias[i]['_id'];
-
-        celda_perfil.appendChild(boton_perfil);
-
-        boton_perfil.addEventListener('click',function(){
-            window.location.href = `ver-perfil-libreria.html?_id=${this.dataset._id}`;
+        aPerfil.addEventListener('click',function(){
+            window.location.href = `ver-perfil-libreria.html?_id=${lista_librerias[i]._id}`;
         });
+
+        let celdaIconoEliminar = fila.insertCell();
+        let aIconoEliminar = document.createElement('a');
+        aIconoEliminar.className = 'header-icon';
+        let iconEliminiar = document.createElement('i');
+        iconEliminiar.className  = 'bx bxs-trash';
+        aIconoEliminar.appendChild(iconEliminiar);
+        aIconoEliminar.addEventListener('click', function(){
+            Swal.fire({
+                title: '¿Está seguro de eliminar la categoría?',
+                text: "Ésta acción no se puede revertir",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+            }).then((result) => {
+                if (result.value) {
+                    eliminarLibreria(lista_librerias[i]._id);
+
+                    Swal.fire(
+                        'Categoría eliminada!'
+                    ).then((result) => {
+                        if (result.value) {
+                            window.location.reload();
+                        }
+                    });
+                }
+            })
+        });
+
+
+
+        celdaIconoEliminar.appendChild(aIconoEliminar);
     }
 };
 

@@ -289,3 +289,15 @@ let registrarLibrosSuc = (pidlibro, pidsuc, pcantidad, pcorreo) => {
         }
     });
 };
+
+let eliminarLibreria = (pid)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-libreria',
+        responseType: 'json',
+        data: {
+            _id: pid
+        }
+    });
+
+}

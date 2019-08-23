@@ -19,7 +19,6 @@ let mostrar_tabla = async () => {
 
         let celdaIcono = fila.insertCell();
         let aIcono = document.createElement('a');
-        
         let icon = document.createElement('i');
         icon.className  = 'bx bxs-edit-alt';
         aIcono.appendChild(icon);
