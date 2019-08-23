@@ -117,8 +117,9 @@ let llenarPuntuaciones = async()=>{
     }
 
     
-    let fila = tbody.insertRow();
+    
     if(resennas[i].idLibro == idLibro){
+      let fila = tbody.insertRow();
       fila.insertCell().innerHTML = resennas[i].idUsuario;
       fila.insertCell().innerHTML = resennas[i].comentario;
     }
