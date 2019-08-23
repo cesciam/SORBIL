@@ -211,16 +211,6 @@ let deshabilitarLibreria = (pid) => {
     });
 };
 
-let eliminarLibreria = (pid) => {
-    axios({
-        method: 'post',
-        url: 'http://localhost:4000/api/eliminar-libreria',
-        responseType: 'json',
-        data: {
-            _id: pid
-        }
-    });
-}
 
 let modificarLibreria = (pidcorreo, pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud) => {
     axios({
@@ -300,3 +290,15 @@ let registrarLibrosSuc = (pidlibro, pidsuc, pcantidad, pcorreo) => {
         }
     });
 };
+
+let eliminarLibreria = (pid)=>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-libreria',
+        responseType: 'json',
+        data: {
+            _id: pid
+        }
+    });
+
+}

@@ -49,11 +49,14 @@ let mostrar_cards = async () => {
             window.location.href = `ver-perfil-libreria.html?_id=${this.dataset._id}`;
         });
 
+    
+
         contenedor_card.appendChild(header);
         contenedor_card.appendChild(contenedor_imagen);
         contenedor_card.appendChild(contenedor_atributo);
         contenedor_card.appendChild(contenedor_descripcion);
         contenedor_card.appendChild(btn_perfil);
+
 
         sct_librerias.appendChild(contenedor_card);
     }

@@ -63,6 +63,12 @@ btn_recuperar_contrasena.addEventListener('click', async function () {
         }
         else {
             enviarEmailRecuperacionContrasena(input_correo);
+            console.log(input_correo);
+
+            Swal.fire({ //formato json
+                title: 'Se ha enviado un correo electrónico a su cuenta ',
+                type: 'success'
+            })
         }
     })
 });
