@@ -6,6 +6,7 @@ let valor3 = document.querySelector('#radio3');
 let valor4 = document.querySelector('#radio4');
 let valor5 = document.querySelector('#radio5');
 let form = document.querySelector('#ratingsId');
+const tbody = document.querySelector('#tabla-filtrado tbody');
 
 let usuarioActivoPerfiComentarios = JSON.parse(sessionStorage.getItem('activo'));
 let idusuarioActivoPerfiComentarios = usuarioActivoPerfiComentarios._id;
@@ -18,6 +19,7 @@ let llenarPuntuaciones = async()=>{
   let resennas = await obtenerResennas();
   let suma = 0;
   let cantidad = 0;
+  tbody.innerHTML = '';
   for (let i = 0; i < resennas.length; i++) {
     if(resennas[i].idLibro == idLibro){
       suma = suma + resennas[i].calificacion;
@@ -113,6 +115,14 @@ let llenarPuntuaciones = async()=>{
         }
       }
     }
+
+    
+    let fila = tbody.insertRow();
+    if(resennas[i].idLibro == idLibro){
+      fila.insertCell().innerHTML = resennas[i].idUsuario;
+      fila.insertCell().innerHTML = resennas[i].comentario;
+    }
+
     
   }
 
