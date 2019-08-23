@@ -1229,77 +1229,77 @@ router.post('/modificar-libreria', function (req, res) {
     )
 });
 
-// router.post('/eliminar-libreria', function (req, res) {
-//     let body = req.body;
+router.post('/eliminar-libreria', function (req, res) {
+    let body = req.body;
 
-//     libreria.findByIdAndRemove(body._id,
-//         function (error) {
-//             if (error) {
-//                 res.json({ success: false, msg: 'No se pudo eliminar la librería' });
-//             } else {
-//                 res.json({ success: true, msg: 'La librería se eliminó con éxito' });
-//             }
-//         }
-//     )
-// });
-
-
-// router.post('/deshabilitar-libreria', function (req, res) {
-//     let body = req.body;
-
-//     libreria.findByIdAndUpdate(body._id, {
-//         $set: {
-//             estado: 'deshabilitado'
-//         }
-//     },
-//         function (error) {
-//             if (error) {
-//                 res.json({ success: false, msg: 'No se pudo deshabilitar la librería' });
-//             } else {
-//                 res.json({ success: true, msg: 'La librería se deshabilitó con éxito' });
-//             }
-//         }
-//     )
-// });
-
-// router.post('/habilitar-libreria', function (req, res) {
-//     let body = req.body;
-
-//     libreria.findByIdAndUpdate(body._id, {
-//         $set: {
-//             estado: 'habilitado'
-//         }
-//     },
-//         function (error) {
-//             if (error) {
-//                 res.json({ success: false, msg: 'No se pudo habilitar la librería' });
-//             } else {
-//                 res.json({ success: true, msg: 'La librería se habilitó con éxito' });
-//             }
-//         }
-//     )
-// });
-
-router.post('/modificar-libreria_correo', function(req, res){
-    libreria.findOneAndUpdate({ correo: req.body.correo }, {
-        $set: req.body.libreriaDatos
-    })
-
+    libreria.findByIdAndRemove(body._id,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar la librería' });
+            } else {
+                res.json({ success: true, msg: 'La librería se eliminó con éxito' });
+            }
+        }
+    )
 });
 
-router.post('/eliminar-libreria_correo', function(req, res){
-    Libreria.findByIdAndRemove({ correo: req.body.correo }, {
-        $set: req.body.libreriaDatos
-    })
+
+router.post('/deshabilitar-libreria', function (req, res) {
+    let body = req.body;
+
+    libreria.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: 'deshabilitado'
+        }
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo deshabilitar la librería' });
+            } else {
+                res.json({ success: true, msg: 'La librería se deshabilitó con éxito' });
+            }
+        }
+    )
 });
 
-router.post('/habilitar-libreria_correo', function(req, res){
-    Libreria.findOneAndUpdate({ correo: req.body.correo }, {
+router.post('/habilitar-libreria', function (req, res) {
+    let body = req.body;
+
+    libreria.findByIdAndUpdate(body._id, {
         $set: {
             estado: 'habilitado'
         }
-    })
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo habilitar la librería' });
+            } else {
+                res.json({ success: true, msg: 'La librería se habilitó con éxito' });
+            }
+        }
+    )
 });
+
+// router.post('/modificar-libreria_correo', function(req, res){
+//     libreria.findOneAndUpdate({ correo: req.body.correo }, {
+//         $set: req.body.libreriaDatos
+//     })
+
+// });
+
+// router.post('/eliminar-libreria_correo', function(req, res){
+//     Libreria.findByIdAndRemove({ correo: req.body.correo }, {
+//         $set: req.body.libreriaDatos
+//     })
+// });
+
+// router.post('/habilitar-libreria_correo', function(req, res){
+//     Libreria.findOneAndUpdate({ correo: req.body.correo }, {
+//         $set: {
+//             estado: 'habilitado'
+//         }
+//     })
+// });
 
 router.post('/agregar-libros-sucursal_correo', function(req, res) {
     libreria.update({ correo: req.body.correo }, {

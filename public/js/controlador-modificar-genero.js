@@ -32,7 +32,7 @@ let cargar_formulario = async () => {
 let editar = () => {
 
     modificarGenero(_id, genero.value);
-
+    
 }
 
 cargar_formulario();

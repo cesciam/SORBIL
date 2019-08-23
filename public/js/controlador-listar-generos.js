@@ -3,7 +3,8 @@
 const tbody = document.querySelector('#tabla-filtrado tbody');
 let lista_generos = [];
 const txt_filtro = document.querySelector('#txt-filtro');
-
+let usuarioActivolis = JSON.parse(sessionStorage.getItem('activo'));
+let tipoUserlis = usuarioActivo.tipo_usuario;
 
 let mostrar_tabla = async () => {
 
@@ -45,7 +46,17 @@ let mostrar_tabla = async () => {
                 window.location.reload();
             });
             icon.addEventListener('click', function () {
-                window.location.href = `al-modificar-genero.html?_id=${lista_generos[i]['_id']}`;
+                // window.location.href = `al-modificar-genero.html?_id=${lista_generos[i]['_id']}`;
+                switch (tipoUserlis) {
+                    case 'al': {
+                        window.location.href = `al-modificar-genero.html?_id=${lista_generos[i]['_id']}`;
+                        break;
+                    }
+                    case 'ap': {
+                        window.location.href = `ap-modificar-genero.html?_id=${lista_generos[i]['_id']}`;
+                        break;
+                    }
+                }
             });
         } else {
             aIcono.className = 'list-iconDisable';

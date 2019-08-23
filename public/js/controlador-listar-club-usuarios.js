@@ -2,79 +2,84 @@
 
 const tbody = document.querySelector('#tabla-filtrado tbody');
 let lista_usuarios = [];
+let lista_clubes = [];
 let txt_filtro = document.querySelector('#txt-filtro');
 const sct_usuarios = document.querySelector('#lista-usuarios');
 
-let usuarioActivo2 = JSON.parse(sessionStorage.getItem('activo'));
-let id_usuario_activo = usuarioActivo2.usuario_id;
+const urlParams = new URLSearchParams(window.location.search);
+let id = urlParams.get('_id');
 
 let mostrar_cards = async () => {
 
-    lista_usuarios = await obtenerUsuarios(id_usuario_activo);
+    let clubid = await obtenerClubid(id);
+    lista_usuarios = await obtenerUsuarios();
+    lista_clubes = await obtenerClubes();
 
-    for (let i = 0; i < lista_usuarios.length; i++) {
+    for (let i = 0; i < lista_clubes.length; i++) {
+        if (lista_clubes[i]._id == clubid) {
+            for (let j = 0; j < lista_clubes[i].usuarios.length; j++) {
+                for (let k = 0; k < lista_usuarios.length; k++) {
+                    if (lista_usuarios[k]._id == clubid) {
+                        let contenedor_card = document.createElement('div');
+                        let contenedor_iconos = document.createElement('div');
+                        contenedor_card.classList.add('card');
 
-        let tipoUsuario = lista_usuarios[i]['tipo_usuario'];
-        if (tipoUsuario == 'u') {
+                        let header = document.createElement('header');
+                        let h2 = document.createElement('h2');
+                        h2.innerText = lista_usuarios[k]['nombre'];
 
-            let contenedor_card = document.createElement('div');
-            let contenedor_iconos = document.createElement('div');
-            contenedor_card.classList.add('card');
+                        header.appendChild(h2);
 
-            let header = document.createElement('header');
-            let h2 = document.createElement('h2');
-            h2.innerText = lista_usuarios[i]['nombre'];
+                        let contenedor_imagen = document.createElement('div');
+                        contenedor_imagen.classList.add('contenedor_imagen');
+                        let foto = document.createElement('img');
+                        foto.src = lista_usuarios[k]['avatar'];
 
-            header.appendChild(h2);
+                        contenedor_imagen.appendChild(foto);
 
-            let contenedor_imagen = document.createElement('div');
-            contenedor_imagen.classList.add('contenedor_imagen');
-            let foto = document.createElement('img');
-            foto.src = lista_usuarios[i]['avatar'];
+                        let p_correo = document.createElement('p');
+                        p_correo.innerText = lista_usuarios[k]['correo'];
 
-            contenedor_imagen.appendChild(foto);
+                        let aIconoEliminar = document.createElement('a');
+                        aIconoEliminar.className = 'list-icon';
+                        let iconEliminiar = document.createElement('i');
+                        iconEliminiar.className = 'bx bxs-x-circle';
+                        aIconoEliminar.appendChild(iconEliminiar);
 
-            let p_correo = document.createElement('p');
-            p_correo.innerText = lista_usuarios[i]['correo'];
+                        // ELIMINAR OFERTAS
+                        iconEliminiar.addEventListener('click', function () {
+                            Swal.fire({
+                                title: '¿Estás seguro de expulsar a este usuario?',
+                                text: "Ésta acción no se puede revertir",
+                                type: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Sí, estoy seguro'
+                            }).then((result) => {
+                                if (result.value) {
+                                    eliminarUsuario(lista_usuarios[k]['_id']);
+                                    Swal.fire(
+                                        '¡Usuario expulsado!',
 
-            let aIconoEliminar = document.createElement('a');
-            aIconoEliminar.className = 'list-icon';
-            let iconEliminiar = document.createElement('i');
-            iconEliminiar.className = 'bx bxs-x-circle';
-            aIconoEliminar.appendChild(iconEliminiar);
-
-            // ELIMINAR OFERTAS
-            iconEliminiar.addEventListener('click', function () {
-                Swal.fire({
-                    title: '¿Estás seguro de expulsar a este usuario?',
-                    text: "Ésta acción no se puede revertir",
-                    type: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Sí, estoy seguro'
-                }).then((result) => {
-                    if (result.value) {
-                        eliminarUsuario(lista_usuarios[i]['_id']);
-
-                        Swal.fire(
-                            '¡Usuario eliminado!',
-
-                        ).then((result) => {
-                            if (result.value) {
-                                window.location.reload();
-                            }
+                                    ).then((result) => {
+                                        if (result.value) {
+                                            window.location.reload();
+                                        }
+                                    });
+                                }
+                            })
                         });
-                    }
-                })
-            });
 
-            contenedor_card.appendChild(header);
-            contenedor_card.appendChild(contenedor_imagen);
-            contenedor_card.appendChild(p_correo);
-            contenedor_iconos.appendChild(aIconoEliminar);
-            contenedor_card.appendChild(contenedor_iconos);
-            sct_usuarios.appendChild(contenedor_card);
+                        contenedor_card.appendChild(header);
+                        contenedor_card.appendChild(contenedor_imagen);
+                        contenedor_card.appendChild(p_correo);
+                        contenedor_iconos.appendChild(aIconoEliminar);
+                        contenedor_card.appendChild(contenedor_iconos);
+                        sct_usuarios.appendChild(contenedor_card);
+                    }
+                }
+            }
         }
     }
 };
