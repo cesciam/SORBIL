@@ -5,9 +5,12 @@ let select = document.getElementById("txt-tarjetas");
 let lista_carrito = [];
 let lista_libros = [];
 let lista_librerias = [];
-let sumatotalAPagar = 0;
+
 let UsuarioEnSesionPrivCompra = JSON.parse(sessionStorage.getItem('activo'));
 let UsuarioIdSucursalPrivCompra = UsuarioEnSesionPrivCompra._id;
+let UsuarioCorreoSucursalPrivCompra = UsuarioEnSesionPrivCompra.correo;
+let UsuarioNombreSucursalPrivCompra = UsuarioEnSesionPrivCompra.nombre;
+let UsuarioApellidoSucursalPrivCompra = UsuarioEnSesionPrivCompra.primer_apellido;
 
 let encontrarLib = async (pidLib) => {
     lista_librerias = await obtenerLibrerias();
@@ -44,11 +47,43 @@ let agregar_tarjetas = async () => {
     
 };
 
+let PrecioApagar = async()=>{
+    lista_carrito = await obtenerCarrito();
+    lista_libros = await obtenerLibros();
+    lista_librerias = await obtenerLibrerias();
+
+    let sumatotalAPagar = 0;
+
+    for (let i = 0; i < lista_carrito.length; i++) {
+        if (lista_carrito[i].idUsuario == UsuarioIdSucursalPrivCompra) {
+            for (let j = 0; j < lista_libros.length; j++) {
+                if (lista_libros[j]._id == lista_carrito[i].idLibro) {
+
+                    let lib = await encontrarLib(lista_carrito[i].idLib);
+                    let suc = await encontrarSuc(lib, lista_carrito[i].idSuc)
+                    //Sacar el total del precio (falta pasarlo a string y formatearlo)
+
+                        let precio = lista_libros[j]['precio'];
+                        precio = precio.substr(1);
+                        precio = precio.replace('.', '');
+                        let precioInt = parseInt(precio);
+                        sumatotalAPagar = sumatotalAPagar + precioInt;
+
+                }
+            }
+        }
+    }
+    return sumatotalAPagar;
+
+};
+
 let EjecutarCompra = async () => {
 
     lista_carrito = await obtenerCarrito();
     lista_libros = await obtenerLibros();
     lista_librerias = await obtenerLibrerias();
+    let suma = await PrecioApagar();
+    
 
     for (let i = 0; i < lista_carrito.length; i++) {
         if (lista_carrito[i].idUsuario == UsuarioIdSucursalPrivCompra) {
@@ -83,6 +118,8 @@ let EjecutarCompra = async () => {
             }
         }
     }
+
+    factura(UsuarioCorreoSucursalPrivCompra, UsuarioNombreSucursalPrivCompra,UsuarioApellidoSucursalPrivCompra, suma);
 };
 agregar_tarjetas();
 

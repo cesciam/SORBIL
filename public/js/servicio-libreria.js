@@ -211,6 +211,10 @@ let deshabilitarLibreria = (pid) => {
     });
 };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> christopher
 
 let modificarLibreria = (pidcorreo, pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud) => {
     axios({
