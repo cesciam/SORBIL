@@ -297,7 +297,7 @@ let saludar = async () => {
         registrarAdminLibreria(src_avatar, correo, contrasena, nombre, primer_apellido, segundo_apellido, id, fecha, edad, tipo_usuario, estado);
         Swal.fire({ //formato json
             title: 'Se ha enviado la información exitosamente',
-            text: 'Su solicitud está siendo revisada en este moment',
+            text: 'Su solicitud está siendo revisada en este momento',
             type: 'success',
         }).then((result) => {
             if (result.value) {
