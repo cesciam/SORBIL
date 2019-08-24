@@ -18,38 +18,3 @@ let registrarSucursal = (pcorreo, pnombre, ptelefono, pprovincia, pcanton, pdist
     });
 }
 
-// let obtenerSucursales= async(_id) => {
-   
-//     try {
-//         // fetch data from an url endpoint
-//         const response = await axios({
-//             method: 'get',
-//             url: `http://localhost:4000/api/listar-sucursales/${_id}`,
-//             responseType: 'json'
-//         });
-
-//         return response.data.lista_sucursales;
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
-
-
-let corlatitud;
-let corlongitud;
-
-let latitud = (platitud) =>{
-    corlatitud = platitud;
-};
-
-let longitud = (plongitud) =>{
-    corlongitud = plongitud;
-};
-
-let enviarLat = () =>{
-    return corlatitud;
-}
-
-let enviarLon = () =>{
-    return corlongitud;
-}

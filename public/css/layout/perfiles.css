@@ -45,8 +45,8 @@ Inicio de estilos de la sección principal
 }
 
 .section-one #logo img {
-    width: 40rem;
-    height: 40rem;
+    width: 30rem;
+    height: 30rem;
     object-fit: cover;
     box-shadow: var(--shadow-dark-2);
     border-radius: 50%;
@@ -209,7 +209,6 @@ Inicio de estilos de ver
     width: 32rem;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
 }
 
 .section-ver .ver-cards .ver-cards-container header {
@@ -226,11 +225,12 @@ Inicio de estilos de ver
 }
 
 .section-ver .ver-cards .ver-cards-container p {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     padding-bottom: 2rem 0;
     height: 6rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow: hidden;
 }
 
 .section-ver .ver-cards .ver-cards-container h2 {
@@ -243,6 +243,7 @@ Inicio de estilos de ver
     height: 20rem;
     border-radius: 50%;
     margin: 2rem;
+    margin-bottom: 0;
     box-shadow: var(--shadow-dark-2);
 }
 
@@ -263,17 +264,20 @@ Inicio de estilos de ver
 
 .section-ver .ver-cards .ver-cards-container .contenedor_atributo {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 13rem);
     font-weight: var(--font-semibold);
     justify-items: center;
-    height: 5rem;
+    height: 8rem;
+    grid-gap: .5rem;
 }
 
 .section-ver .ver-cards .ver-cards-container .contenedor_atributo p {
-    font-size: 1.4rem;
-    text-align: center;
+    font-size: 1.35rem;
     color: var(--color-secondary);
     padding-top: 2rem;
+    text-align: center;
+    position: relative;
+    left: 1rem;
 }
 
 @media (max-width: 100rem) {

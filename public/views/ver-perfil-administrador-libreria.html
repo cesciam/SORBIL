@@ -24,19 +24,19 @@
         <h3 class="header-text">Área del administrador de librería</h3>
 
         <div class="header-user-icons">
-            <div class="header-user-container">
-                <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
-                    <span class="user-notification">1</span>
-                </a>
-            </div>
-            <div class="header-user-container">
-                <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification">6</span>
-                </a>
-            </div>
+            <!-- <div class="header-user-container">
+            <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
+                <span class="user-notification">1</span>
+            </a>
+        </div>
+        <div class="header-user-container">
+            <a class="header-icon" href="#"><i class='bx bx-bell'></i>
+                <span class="user-notification">6</span>
+            </a>
+        </div> -->
 
             <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                        class="mini-photo" src="" width="36" height="36" id="avatar-img"> <i
+                        class="mini-photo" id="avatar-img" src="../imgs/user.png" width="36" height="36"> <i
                         class='bx bx-chevron-down'></i></a>
                 <div class="menu-user-container">
                     <ul class="user-menu">
@@ -53,14 +53,14 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo card-title">
-            <h1>Plataforma de librería</h1>
+            <h1 id="empresa"></h1>
         </div>
 
         <div class="user-profile-container">
             <div class="profile-saludo">
                 <h2>Saludos <span id="txt-nombre"></span></h2>
                 <img src="../imgs/avatar-placeholder.png" id="avatar">
-                <!-- <img src="../imgs/book-placeholder.png" id="imagen"> -->
+                <img src="../imgs/book-placeholder.png" id="imagen">
             </div>
             <div class="profile-content">
                 <div class="profile-titles">
@@ -68,14 +68,14 @@
                     <p>Identificación:</p>
                     <p>Primer apellido:</p>
                     <p>Segundo apellido:</p>
-                    <!-- <p>Empresa</p> -->
+                    <button id="btn-modificarAdm" type="button">Editar Información</button>
                 </div>
                 <div class="profile-info">
                     <p id="txt-correo"></p>
                     <p id="txt-id"></p>
                     <p id="txt-primer-apellido"></p>
                     <p id="txt-segundo-apellido"></p>
-                    <!-- <p id="empresa"></p> -->
+                    <button id="btn-modificarLib" type="button">Editar Librería</button>
                 </div>
             </div>
         </div>

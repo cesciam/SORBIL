@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/paginas/icon-small.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
     <title>Sorbil -- Plataforma -- Listar autores</title>
 </head>
@@ -19,23 +20,24 @@
 
     <!--Header-->
     <header id="header-admin">
-
+    
         <h3 class="header-text">Área del administrador de plataforma</h3>
-
+    
         <div class="header-user-icons">
             <div class="header-user-container">
                 <a class="header-icon" href="#" id="adminap_solicitudes"><i class='bx bx-mail-send'></i>
-                    <span class="user-notification">1</span>
+                    <!-- <span class="user-notification"></span> -->
                 </a>
             </div>
-            <div class="header-user-container">
-                <a class="header-icon" href="#"><i class='bx bx-bell'></i>
-                    <span class="user-notification">6</span>
-                </a>
-            </div>
-
-            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                        class="mini-photo" src="../imgs/user.png" width="36" id="avatar-img" height="36"> <i
+    
+            <!-- <div class="header-user-container">
+                        <a class="header-icon" href="#"><i class='bx bx-bell'></i>
+                            <span class="user-notification"></span>
+                        </a>
+                    </div> -->
+    
+            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img class="mini-photo"
+                        id="avatar-img" src="../imgs/user.png" width="36" height="36"> <i
                         class='bx bx-chevron-down'></i></a>
                 <div class="menu-user-container">
                     <ul class="user-menu">
@@ -44,9 +46,9 @@
                     </ul>
                 </div>
             </div>
-
+    
         </div>
-
+    
     </header>
 
     <!--Main-->
@@ -59,8 +61,8 @@
             <input id="txt-filtro" type="text" placeholder="Buscar por nombre de autor, apellido de autor"
                 aria-label="Buscar por, nombre de autor, apellido de autor">
 
-            <a href="#" id="registrar_adminap_autor" class="btn-registrar" aria-label="Registrar" type="button"><i
-                    class='bx bx-plus-circle'></i>
+            <a href="ap-registrar-autores.html" id="registrar_adminap_autor" class="btn-registrar"
+                aria-label="Registrar" type="button"><i class='bx bx-plus-circle'></i>
                 <spans>Registrar</spans>
             </a>
         </div>
@@ -138,6 +140,7 @@
                     <div class="sidenav-small-menu dropdown-menu">
                         <a href="#" id="listar_adminap_sucursales">Sucursal</a>
                         <a href="#" id="registrar_adminap_sucursal">Sucursal</a>
+                        <a href="#" id="adminap_solicitudes2">Solicitud</a>
                     </div>
                 </li>
 
@@ -246,6 +249,7 @@
 
     <!--Scripts-->
     <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/servicio-autor.js"></script>
@@ -253,6 +257,8 @@
     <script src="../js/controlador-inicio-ap.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-avatar.js"></script>
+    <script src="../js/servicio-autor.js"></script>
+
 
 </body>
 

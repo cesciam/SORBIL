@@ -12,8 +12,6 @@ const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
 const img_uploader_avatar = document.querySelector('#portada');
 const input_usuario = document.querySelector('#txt-usuario');
 const input_correo = document.querySelector('#txt-correo');
-const input_contrasena = document.querySelector('#txt-contrasena');
-const input_verf_contrasena = document.querySelector('#txt-verf-contrasena');
 const input_nombre = document.querySelector('#txt-nombre');
 const input_id = document.querySelector('#txt-id');
 const input_primer_apellido = document.querySelector('#txt-primer-apellido');
@@ -30,11 +28,47 @@ const btn_guardar = document.querySelector('#btn-enviar');
 const urlParams = new URLSearchParams(window.location.search);
 let _id = urlParams.get('_id');
 
-let cargarFormulario = async() => {
+var map;
+function initMapSucursal(plocation) {
+
+
+    map;
+    let latitude = plocation.lat; // YOUR LATITUDE VALUE
+    let longitude = plocation.lng; // YOUR LONGITUDE VALUE
+
+    let myLatLng = { lat: latitude, lng: longitude };
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: myLatLng,
+        zoom: 14,
+        disableDoubleClickZoom: true, // disable the default map zoom on double click
+    });
+}
+
+let addMarker = (plocation) => {
+    let marker = new google.maps.Marker({
+        map: map,
+        position: plocation,
+        draggable: true
+    });
+
+    google.maps.event.addListener(marker, 'dragend', function () {
+
+        let valuelatitud = marker.getPosition().lat();
+        let valuelongitud = marker.getPosition().lng();
+        longitud(valuelongitud);
+        latitud(valuelatitud);
+
+    });
+}
+
+
+let cargarFormulario = async () => {
     let usuario = await obtenerUsuarioId(_id);
+    let location
     if (usuario) {
         img_uploader_avatar.src = usuario['avatar'];
-        input_usuario.value = usuario['usuario'];        
+        input_usuario.value = usuario['usuario'];
         input_correo.value = usuario['correo'];
         input_nombre.value = usuario['nombre'];
         input_id.value = usuario['id'];
@@ -42,13 +76,50 @@ let cargarFormulario = async() => {
         input_segundo_apellido.value = usuario['segundo_apellido'];
         input_sexo.value = usuario['sexo'];
         input_provincia.value = usuario['provincia'];
+        llenarCantones(usuario.provincia);
+        llenarDistritos(usuario.canton);
         input_canton.value = usuario['canton'];
         input_distrito.value = usuario['distrito'];
-        input_direccion_exacta.value = usuario['direccion_exacta'];        
+        input_direccion_exacta.value = usuario['direccion_exacta'];
+        location = { lat: usuario.direccion_latitud, lng: usuario.direccion_longitud };
     }
+    initMapSucursal(location);
+    addMarker(location);
 };
 
-let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
+let llenarCantones = (pNombreProvincia) => {
+    canton.length = 1;
+    distrito.length = 1;
+    if (this.selectedIndex < 1) return;
+    let i = 0;
+    for (let opt_canton in ubicaciones[pNombreProvincia]) {
+
+        if (i == 0) {
+            canton.options[canton.options.length] = new Option("--Seleccione una opción--", "--Seleccione una opción--");
+        } else {
+            canton.options[canton.options.length] = new Option(opt_canton, opt_canton);
+        }
+        i++;
+    }
+}
+
+let llenarDistritos = (pNombreCanton) => {
+
+    distrito.length = 1;
+    if (this.selectedIndex < 1) return;
+    let opt_distritos = ubicaciones[input_provincia.value][pNombreCanton];
+
+    for (let i = 0; i < opt_distritos.length - 1; i++) {
+        if (i == 0) {
+            distrito.options[distrito.options.length] = new Option("--Seleccione una opción--", "--Seleccione una opción--");
+        } else {
+            distrito.options[distrito.options.length] = new Option(opt_distritos[i], opt_distritos[i]);
+        }
+    }
+}
+
+
+let validar = (pusuario, pcorreo, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta) => {
 
     let error = false;
 
@@ -73,29 +144,6 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pnombre, pid, pp
     } else {
         input_correo.classList.remove('input_error');
     }
-
-    if (pcontrasena == '') {
-        error = true;
-        input_contrasena.classList.add('input_error');
-    } else if (pcontrasena != pverfContrasena) {
-        error = true;
-        input_contrasena.classList.add('input_error');
-        input_verf_contrasena.classList.add('input_error');
-    } else {
-        input_contrasena.classList.remove('input_error');
-    }
-
-    if (pverfContrasena == '') {
-        error = true;
-        input_verf_contrasena.classList.add('input_error');
-    } else if (pcontrasena != pverfContrasena) {
-        error = true;
-        input_contrasena.classList.add('input_error');
-        input_verf_contrasena.classList.add('input_error');
-    } else {
-        input_verf_contrasena.classList.remove('input_error');
-    }
-
     if (pnombre == '') {
         error = true;
         input_nombre.classList.add('input_error');
@@ -197,8 +245,6 @@ let modificarPerfilUsuario = async () => {
     let src_avatar = img_uploader_avatar.src;
     let usuario = input_usuario.value;
     let correo = input_correo.value;
-    let contrasena = input_contrasena.value;
-    let verfContrasena = input_verf_contrasena.value;
     let nombre = input_nombre.value;
     let id = input_id.value;
     let primer_apellido = input_primer_apellido.value;
@@ -212,17 +258,17 @@ let modificarPerfilUsuario = async () => {
     let longitud = enviarLon();
 
 
-    let error = validar(usuario, correo, contrasena, verfContrasena, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta);
+    let error = validar(usuario, correo, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta);
     let errorCedula = validarCedula(id);
     let errorCorreo = validarCorreo(correo);
 
     if (error == false && errorCedula == false && errorCorreo == false) {
-        modificarUsuario(_id, src_avatar, usuario, correo, contrasena, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta, latitud, longitud, tipo_usuario);
+        modificarUsuario(_id, src_avatar, usuario, correo, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta, latitud, longitud, tipo_usuario);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
         })
-          
+
         window.location.href = `ver-perfil-usuario.html?_id=${_id}`;
     }
     else {

@@ -19,23 +19,24 @@
 
     <!--Header-->
     <header id="header-admin">
-
+    
         <h3 class="header-text">Área del administrador de plataforma</h3>
-
+    
         <div class="header-user-icons">
             <div class="header-user-container">
-                <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
-                    <span class="user-notification">1</span>
+                <a class="header-icon" href="#" id="adminap_solicitudes"><i class='bx bx-mail-send'></i>
+                    <!-- <span class="user-notification"></span> -->
                 </a>
             </div>
-            <div class="header-user-container">
-                <a class="header-icon" href="#" id="adminap_solicitudes"><i class='bx bx-bell'></i>
-                    <span class="user-notification">6</span>
-                </a>
-            </div>
-
-            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
-                        class="mini-photo" id="avatar-img" src="../imgs/user.png" width="36" height="36"> <i
+    
+            <!-- <div class="header-user-container">
+                        <a class="header-icon" href="#"><i class='bx bx-bell'></i>
+                            <span class="user-notification"></span>
+                        </a>
+                    </div> -->
+    
+            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img class="mini-photo"
+                        id="avatar-img" src="../imgs/user.png" width="36" height="36"> <i
                         class='bx bx-chevron-down'></i></a>
                 <div class="menu-user-container">
                     <ul class="user-menu">
@@ -44,9 +45,9 @@
                     </ul>
                 </div>
             </div>
-
+    
         </div>
-
+    
     </header>
 
     <!--Main-->
@@ -109,19 +110,19 @@
 
     </main>
 
-<!--Aside-->
-<aside id="sidenav-admin">
+    <!--Aside-->
+    <aside id="sidenav-admin">
 
-    <div class="sidebar">
+        <div class="sidebar">
 
-        <div class="sidenav-menu">
-            <a class="logo" href="" id="ver_perfil_admin_plataforma"><img src="../imgs/logo.png"
-                    alt="logo de Sorbil"></a>
-        </div>
+            <div class="sidenav-menu">
+                <a class="logo" href="" id="ver_perfil_admin_plataforma"><img src="../imgs/logo.png"
+                        alt="logo de Sorbil"></a>
+            </div>
 
-        <ul class="sidenav-list">
+            <ul class="sidenav-list">
 
-            <!-- <li class="sidenav-list-item">
+                <!-- <li class="sidenav-list-item">
                             <a href="#" class="sidenav-btn dropdown-toggle">
                                 <i class='bx bx-plus'></i>
                                 Registros
@@ -155,114 +156,115 @@
                             </div>
                         </li> -->
 
-            <li class="sidenav-list-item">
-                <a id="listar_adminap_librerias" href="#" class="sidenav-btn dropdown-toggle">
-                    <i class='bx bxs-store'></i>
-                    Librerías
-                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                </a>
-                <div class="sidenav-small-menu dropdown-menu">
-                    <a href="#" id="listar_adminap_sucursales">Sucursal</a>
-                    <a href="#" id="registrar_adminap_sucursal">Sucursal</a>
-                </div>
-            </li>
+                <li class="sidenav-list-item">
+                    <a id="listar_adminap_librerias" href="#" class="sidenav-btn dropdown-toggle">
+                        <i class='bx bxs-store'></i>
+                        Librerías
+                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <div class="sidenav-small-menu dropdown-menu">
+                        <a href="#" id="listar_adminap_sucursales">Sucursal</a>
+                        <a href="#" id="registrar_adminap_sucursal">Sucursal</a>
+                        <a href="#" id="adminap_solicitudes2">Solicitud</a>
+                    </div>
+                </li>
 
-            <li class="sidenav-list-item"><a href="#" id="listar_adminap_usuarios"><i
-                        class='bx bxs-user-plus sidenav-i'></i>Usuarios</a>
-            </li>
+                <li class="sidenav-list-item"><a href="#" id="listar_adminap_usuarios"><i
+                            class='bx bxs-user-plus sidenav-i'></i>Usuarios</a>
+                </li>
 
-            <li class="sidenav-list-item">
-                <a id="listar_adminap_libros" href="#" class="sidenav-btn dropdown-toggle">
-                    <i class='bx bxs-book'></i>
-                    Libros
-                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                </a>
-                <div class="sidenav-small-menu dropdown-menu">
-                    <a href="#" id="registrar_adminap_libro">Libros</a>
-                </div>
-            </li>
+                <li class="sidenav-list-item">
+                    <a id="listar_adminap_libros" href="#" class="sidenav-btn dropdown-toggle">
+                        <i class='bx bxs-book'></i>
+                        Libros
+                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <div class="sidenav-small-menu dropdown-menu">
+                        <a href="#" id="registrar_adminap_libro">Libros</a>
+                    </div>
+                </li>
 
-            <li class="sidenav-list-item">
-                <a id="listar_adminap_autores" href="#" class="sidenav-btn dropdown-toggle">
-                    <i class='bx bxs-pencil'></i>
-                    Autores
-                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                </a>
-                <div class="sidenav-small-menu dropdown-menu">
-                    <a href="#" id="registrar_adminap_autor">Autores</a>
-                </div>
-            </li>
+                <li class="sidenav-list-item">
+                    <a id="listar_adminap_autores" href="#" class="sidenav-btn dropdown-toggle">
+                        <i class='bx bxs-pencil'></i>
+                        Autores
+                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <div class="sidenav-small-menu dropdown-menu">
+                        <a href="#" id="registrar_adminap_autor">Autores</a>
+                    </div>
+                </li>
 
-            <li class="sidenav-list-item"><a href="#" id="listar_adminap_intercambios"><i
-                        class='bx bxs-group sidenav-i'></i>Intercambios</a>
-            </li>
+                <li class="sidenav-list-item"><a href="#" id="listar_adminap_intercambios"><i
+                            class='bx bxs-group sidenav-i'></i>Intercambios</a>
+                </li>
 
-            <li class="sidenav-list-item"><a href="#" id="listar_adminap_compras"><i
-                        class='bx bxs-shopping-bag sidenav-i'></i>Compras</a>
-            </li>
+                <li class="sidenav-list-item"><a href="#" id="listar_adminap_compras"><i
+                            class='bx bxs-shopping-bag sidenav-i'></i>Compras</a>
+                </li>
 
-            <li class="sidenav-list-item">
-                <a id="listar_adminap_ofertas" href="#" class="sidenav-btn dropdown-toggle">
-                    <i class='bx bxs-discount'></i>
-                    Ofertas
-                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                </a>
-                <div class="sidenav-small-menu dropdown-menu">
-                    <a href="#" id="registrar_adminap_oferta">Ofertas</a>
-                </div>
-            </li>
+                <li class="sidenav-list-item">
+                    <a id="listar_adminap_ofertas" href="#" class="sidenav-btn dropdown-toggle">
+                        <i class='bx bxs-discount'></i>
+                        Ofertas
+                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <div class="sidenav-small-menu dropdown-menu">
+                        <a href="#" id="registrar_adminap_oferta">Ofertas</a>
+                    </div>
+                </li>
 
-            <li class="sidenav-list-item">
-                <a id="listar_adminap_categorias" href="#" class="sidenav-btn dropdown-toggle">
-                    <i class='bx bxs-bookmarks'></i>
-                    Categorías
-                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                </a>
-                <div class="sidenav-small-menu dropdown-menu">
-                    <a href="#" id="registrar_adminap_categoria">Categorías</a>
-                </div>
-            </li>
+                <li class="sidenav-list-item">
+                    <a id="listar_adminap_categorias" href="#" class="sidenav-btn dropdown-toggle">
+                        <i class='bx bxs-bookmarks'></i>
+                        Categorías
+                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <div class="sidenav-small-menu dropdown-menu">
+                        <a href="#" id="registrar_adminap_categoria">Categorías</a>
+                    </div>
+                </li>
 
-            <li class="sidenav-list-item">
-                <a id="listar_adminap_generos" href="#" class="sidenav-btn dropdown-toggle">
-                    <i class='bx bxs-bookmarks'></i>
-                    Géneros
-                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                </a>
-                <div class="sidenav-small-menu dropdown-menu">
-                    <a href="#" id="registrar_adminap_genero">Géneros</a>
-                </div>
-            </li>
+                <li class="sidenav-list-item">
+                    <a id="listar_adminap_generos" href="#" class="sidenav-btn dropdown-toggle">
+                        <i class='bx bxs-bookmarks'></i>
+                        Géneros
+                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <div class="sidenav-small-menu dropdown-menu">
+                        <a href="#" id="registrar_adminap_genero">Géneros</a>
+                    </div>
+                </li>
 
-            <li class="sidenav-list-item">
-                <a id="listar_adminap_clubes" href="#" class="sidenav-btn dropdown-toggle">
-                    <i class='bx bxs-book-open'></i>
-                    Clubes de lectura
-                    <div class="chevron"><i class='bx bx-chevron-down'></i></div>
-                </a>
-                <div class="sidenav-small-menu dropdown-menu">
-                    <a href="#" id="registrar_adminap_club_virtual">Club virtual</a>
-                    <a href="#" id="registrar_adminap_club_presencial">Club presencial</a>
-                </div>
-            </li>
+                <li class="sidenav-list-item">
+                    <a id="listar_adminap_clubes" href="#" class="sidenav-btn dropdown-toggle">
+                        <i class='bx bxs-book-open'></i>
+                        Clubes de lectura
+                        <div class="chevron"><i class='bx bx-chevron-down'></i></div>
+                    </a>
+                    <div class="sidenav-small-menu dropdown-menu">
+                        <a href="#" id="registrar_adminap_club_virtual">Club virtual</a>
+                        <a href="#" id="registrar_adminap_club_presencial">Club presencial</a>
+                    </div>
+                </li>
 
-            <li class="sidenav-list-item"><a href="#" id="adminap_reportes_libreria"><i class='bx bxs-report sidenav-i'
-                        id="adminap_reportes_libreria"></i>Reportes de librería</a>
-            </li>
+                <li class="sidenav-list-item"><a href="#" id="adminap_reportes_libreria"><i
+                            class='bx bxs-report sidenav-i' id="adminap_reportes_libreria"></i>Reportes de librería</a>
+                </li>
 
-            <li class="sidenav-list-item"><a href="#" id="adminap_reportes_generales"><i class='bx bxs-report sidenav-i'
-                        id="adminap_reportes_generales"></i>Reportes generales</a>
-            </li>
+                <li class="sidenav-list-item"><a href="#" id="adminap_reportes_generales"><i
+                            class='bx bxs-report sidenav-i' id="adminap_reportes_generales"></i>Reportes generales</a>
+                </li>
 
-            <li class="sidenav-list-item"><a href="#" id="adminap_bitacora"><i class='bx bx-loader-alt sidenav-i'
-                        id="adminap_bitacora"></i>Bitácora</a>
-            </li>
+                <li class="sidenav-list-item"><a href="#" id="adminap_bitacora"><i class='bx bx-loader-alt sidenav-i'
+                            id="adminap_bitacora"></i>Bitácora</a>
+                </li>
 
-        </ul>
+            </ul>
 
-    </div>
+        </div>
 
-</aside>
+    </aside>
     <!--Footer-->
     <footer id="footer-admin">
         <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por

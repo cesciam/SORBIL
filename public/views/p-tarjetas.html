@@ -18,115 +18,115 @@
 </head>
 
 <body>
-    <!--Header-->
-    <header id="header-user">
+<!--Header-->
+<header id="header-user">
 
-        <div id="header-nav-1">
-            <a class="logo" href="../views/u-inicio.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
+    <div id="header-nav-1">
+        <a class="logo" href="../views/u-inicio.html"><img src="../imgs/logo.png" alt="Logo de Sorbil"></a>
 
-            <nav>
-                <a href="../views/u-inicio.html"><i class='bx bx-home-circle'></i>Inicio</a>
-                <a href="#" id="u-intercambios"><i class='bx bxs-book'></i>Intercambios</a>
-                <a href="#" id="u-quienes-somos"><i class='bx bx-user-voice'></i>Quiénes somos</a>
-            </nav>
+        <nav>
+            <a href="../views/u-inicio.html"><i class='bx bx-home-circle'></i>Inicio</a>
+            <a href="#" id="u-intercambios"><i class='bx bxs-book'></i>Intercambios</a>
+            <a href="#" id="u-quienes-somos"><i class='bx bx-user-voice'></i>Quiénes somos</a>
+        </nav>
 
-            <div id="nav-inicio" class="header-user-icons">
-                <div class="header-user-container">
-                    <a class="header-icon" href="#" id="u-carrito"><i class='bx bx-cart-alt'></i>
-                        <span class="user-notification">1</span>
-                    </a>
-                </div>
-                <!-- <div class="header-user-container">
+        <div id="nav-inicio" class="header-user-icons">
+            <div class="header-user-container">
+                <a class="header-icon" href="#" id="u-carrito"><i class='bx bx-cart-alt'></i>
+                    <!-- <span class="user-notification">1</span> -->
+                </a>
+            </div>
+            <!-- <div class="header-user-container">
                     <a class="header-icon" href="#" id="u-biblioteca"><i class='bx bx-book-bookmark'></i>
                     </a>
                 </div> -->
-                <div class="header-user-container user-menu-wrap"><b class="mini-photo-wrapper" href="#"><img
-                            class="mini-photo" src="" width="36" height="36" id="avatar-img"> <i
-                            class='bx bx-chevron-down'></i></b>
-                    <div class="menu-user-container">
-                        <ul class="user-menu">
-                            <a class="user-menu-link" href="#" id="ver_perfil_usuario">Perfil</a>
-                            <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
-                        </ul>
-                    </div>
+            <div class="header-user-container user-menu-wrap"><b class="mini-photo-wrapper" href="#"><img
+                        class="mini-photo" src="" width="36" height="36" id="avatar-img"> <i
+                        class='bx bx-chevron-down'></i></b>
+                <div class="menu-user-container">
+                    <ul class="user-menu">
+                        <a class="user-menu-link" href="#" id="ver_perfil_usuario">Perfil</a>
+                        <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
+                    </ul>
                 </div>
             </div>
-
         </div>
 
-        <div id="header-nav-2" class="sticky">
-            <nav class="top">
+    </div>
 
-                <div class="dropdownBackground">
-                    <span class="arrow"></span>
+    <div id="header-nav-2" class="sticky">
+        <nav class="top">
+
+            <div class="dropdownBackground">
+                <span class="arrow"></span>
+            </div>
+
+            <ul class="cool header-nav-2-content">
+
+                <div class="menu_toggler">
+                    <span class="menu_icon"></span>
                 </div>
 
-                <ul class="cool header-nav-2-content">
+                <li>
+                    <a href="p-ver-libros.html">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
+                    <ul class="dropdown dropdown1">
+                        <div class="dropdown-content">
+                            <table id="tabla-libros" class="tabla-links">
+                                <thead>
+                                    <tr>
+                                        <th><i class='bx bxs-book'></i>Lista de libros</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <div><a href="p-ver-libros.html" class="btn-white">Más libros</a></div>
+                        </div>
+                    </ul>
+                </li>
 
-                    <div class="menu_toggler">
-                        <span class="menu_icon"></span>
-                    </div>
+                <li>
+                    <a href="p-ver-librerias.html">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
+                    <ul class="dropdown dropdown1">
+                        <div class="dropdown-content">
+                            <table id="tabla-librerias" class="tabla-links">
+                                <thead>
+                                    <tr>
+                                        <th><i class='bx bxs-store'></i>Lista de librerías</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <div><a href="p-ver-librerias.html" class="btn-white">Más librerías</a></div>
+                        </div>
+                    </ul>
+                </li>
 
-                    <li>
-                        <a href="p-ver-libros.html">Catálogo de libros<i class='bx bx-chevron-down'></i></a>
-                        <ul class="dropdown dropdown1">
-                            <div class="dropdown-content">
-                                <table id="tabla-libros" class="tabla-links">
-                                    <thead>
-                                        <tr>
-                                            <th><i class='bx bxs-book'></i>Lista de libros</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                                <div><a href="p-ver-libros.html" class="btn-white">Más libros</a></div>
-                            </div>
-                        </ul>
-                    </li>
+                <li>
+                    <a href="p-ver-clubes.html">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
+                    <ul class="dropdown dropdown1">
+                        <div class="dropdown-content">
+                            <table id="tabla-clubes" class="tabla-links">
+                                <thead>
+                                    <tr>
+                                        <th><i class='bx bxs-group'></i>Lista de clubes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <div><a href="p-ver-clubes.html" class="btn-white">Más clubes</a></div>
+                        </div>
+                    </ul>
+                </li>
 
-                    <li>
-                        <a href="p-ver-librerias.html">Librerías asociadas<i class='bx bx-chevron-down'></i></a>
-                        <ul class="dropdown dropdown1">
-                            <div class="dropdown-content">
-                                <table id="tabla-librerias" class="tabla-links">
-                                    <thead>
-                                        <tr>
-                                            <th><i class='bx bxs-store'></i>Lista de librerías</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                                <div><a href="p-ver-librerias.html" class="btn-white">Más librerías</a></div>
-                            </div>
-                        </ul>
-                    </li>
+            </ul>
 
-                    <li>
-                        <a href="p-ver-clubes.html">Clubes de lectura<i class='bx bx-chevron-down'></i></a>
-                        <ul class="dropdown dropdown1">
-                            <div class="dropdown-content">
-                                <table id="tabla-clubes" class="tabla-links">
-                                    <thead>
-                                        <tr>
-                                            <th><i class='bx bxs-group'></i>Lista de clubes</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                                <div><a href="p-ver-clubes.html" class="btn-white">Más clubes</a></div>
-                            </div>
-                        </ul>
-                    </li>
+        </nav>
+    </div>
 
-                </ul>
-
-            </nav>
-        </div>
-
-    </header>
+</header>
 
     <!--Main-->
     <main id="main-login">
@@ -189,7 +189,9 @@
 
         <!--Content-->
         <main id="main-profile">
-           
+            <div class="main-profile-titulo">
+                <h1>Tarjetas de pago</h1>
+            </div>
 
             <div id="barra-busqueda">
                 <input id="txt_filtro" type="text" placeholder="Buscar por, mombre, número de tarjeta, fecha, CVV"
@@ -244,7 +246,7 @@
         <script src="../js/componentes/controlador-dropdowns-main.js"></script>
         <script src="../js/componentes/controlador-dropdowns-user.js"></script>
         <script src="../vendors/sticky-js-master/dist/sticky.min.js"></script>
-        <script src="../js/componentes/controlador-sticky.js"></script>
+        <!-- <script src="../js/componentes/controlador-sticky.js"></script> -->
         <!-- JS para listar en el dropdown-->
         <script src="../js/servicio-club.js"></script>
         <script src="../js/servicio-libreria.js"></script>

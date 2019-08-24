@@ -14,6 +14,7 @@ const btn_seguridad = document.querySelector('#u-seguridad');
 const btn_intercambios = document.querySelector('#u-intercambios');
 const btn_quienes_somos = document.querySelector('#u-quienes-somos');
 const btn_carrito = document.querySelector('#u-carrito');
+const btn_clubes_asociados= document.querySelector('#u-listar-clubes-asociados');
 
 
 usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
@@ -67,6 +68,10 @@ btn_seguridad.addEventListener('click', function () {
     window.location.href = `p-seguridad.html?_id=${_id2}`
 });
 
+btn_clubes_asociados.addEventListener('click', function () {
+    window.location.href = `p-listar-clubes-asociados.html?_id=${_id2}`
+});
+
 btn_registrar_club_virtual.addEventListener('click', function () {
     window.location.href = `p-registrar-club-virtual.html?_id=${_id2}`
 });
@@ -74,3 +79,4 @@ btn_registrar_club_virtual.addEventListener('click', function () {
 btn_registrar_club_presencial.addEventListener('click', function () {
     window.location.href = `p-registrar-club-presencial.html?_id=${_id2}`
 });
+

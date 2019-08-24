@@ -17,7 +17,7 @@ let mostrar_cards = async () => {
         let h2 = document.createElement('h2');
         h2.innerText = lista_librerias[i]['empresa'];
 
-        header.appendChild(h2);
+        header.appendChild(h2); 
 
         let contenedor_imagen = document.createElement('div');
         contenedor_imagen.classList.add('contenedor_imagen');
@@ -49,11 +49,14 @@ let mostrar_cards = async () => {
             window.location.href = `ver-perfil-libreria.html?_id=${this.dataset._id}`;
         });
 
+    
+
         contenedor_card.appendChild(header);
         contenedor_card.appendChild(contenedor_imagen);
         contenedor_card.appendChild(contenedor_atributo);
         contenedor_card.appendChild(contenedor_descripcion);
         contenedor_card.appendChild(btn_perfil);
+
 
         sct_librerias.appendChild(contenedor_card);
     }
@@ -94,11 +97,11 @@ let filtrar_cards = async () => {
             contenedor_atributo.appendChild(correo);
             contenedor_atributo.appendChild(telefono);
 
-            let contenedor_descripcion = document.createElement('div');
-            let descripcion = document.createElement('p');
-            descripcion.innerText = lista_librerias[i]['descripcion'];
+            // let contenedor_descripcion = document.createElement('div');
+            // let descripcion = document.createElement('p');
+            // descripcion.innerText = lista_librerias[i]['descripcion'];
 
-            contenedor_descripcion.appendChild(descripcion);
+            // contenedor_descripcion.appendChild(descripcion);
 
             let btn_perfil = document.createElement('button');
             btn_perfil.innerText = 'Ver librería';
@@ -110,7 +113,7 @@ let filtrar_cards = async () => {
             contenedor_card.appendChild(header);
             contenedor_card.appendChild(contenedor_imagen);
             contenedor_card.appendChild(contenedor_atributo);
-            contenedor_card.appendChild(contenedor_descripcion);
+            // contenedor_card.appendChild(contenedor_descripcion);
             contenedor_card.appendChild(btn_perfil);
 
             sct_librerias.appendChild(contenedor_card);

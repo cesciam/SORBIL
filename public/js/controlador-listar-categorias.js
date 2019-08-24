@@ -11,7 +11,6 @@ let tipoUserlis = usuarioActivo.tipo_usuario;
 let mostrar_tabla = async () => {
 
     lista_categoria = await obtenerCategorias();
-    console.log(lista_categoria);
     tbody.innerHTML = '';
 
     for (let i = 0; i < lista_categoria.length; i++) {
@@ -20,20 +19,27 @@ let mostrar_tabla = async () => {
 
         let celdaIcono = fila.insertCell();
         let aIcono = document.createElement('a');
-        
         let icon = document.createElement('i');
         icon.className  = 'bx bxs-edit-alt';
         aIcono.appendChild(icon);
 
         let celdaIconoActivar = fila.insertCell();
         let aIconoAc = document.createElement('a');
-        aIconoAc.className = 'header-icon';
+        aIconoAc.className = 'list-icon';
         let iconAc = document.createElement('i');
         iconAc.className  = 'bx bxs-check-square';
         aIconoAc.appendChild(iconAc);
+
+        let celdaIconoEliminar = fila.insertCell();
+        let aIconoEliminar = document.createElement('a');
+        aIconoEliminar.className = 'list-icon';
+        let iconEliminiar = document.createElement('i');
+        iconEliminiar.className  = 'bx bxs-trash';
+        aIconoEliminar.appendChild(iconEliminiar);
+
         if(lista_categoria[i].estado == 'habilitado'){
             iconAc.id = 'habilitadoIon';
-            aIcono.className = 'header-icon';
+            aIcono.className = 'habilitadoIon';
             iconAc.addEventListener('click', function(){
                 let estado = 'desabilitado';
                 cambiarEstadoCatergorias(lista_categoria[i]._id, estado);
@@ -49,16 +55,40 @@ let mostrar_tabla = async () => {
                 
             });
         }else{
-            aIcono.className = 'header-iconDisable';
+            aIcono.className = 'list-iconDisable';
             iconAc.addEventListener('click', function(){
                 let estado = 'habilitado';
                 cambiarEstadoCatergorias(lista_categoria[i]._id, estado);
                 window.location.reload();
             });
         }
+        aIconoEliminar.addEventListener('click', function(){
+            Swal.fire({
+                title: '¿Está seguro de eliminar la categoría?',
+                text: "Ésta acción no se puede revertir",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+            }).then((result) => {
+                if (result.value) {
+                    eliminarcategoria(lista_categoria[i]._id);
+
+                    Swal.fire(
+                        'Categoría eliminada!'
+                    ).then((result) => {
+                        if (result.value) {
+                            window.location.reload();
+                        }
+                    });
+                }
+            })
+        });
 
         celdaIcono.appendChild(aIcono);
         celdaIconoActivar.appendChild(aIconoAc);
+        celdaIconoEliminar.appendChild(aIconoEliminar);
     }
 };
 

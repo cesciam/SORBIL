@@ -1,6 +1,7 @@
 'use strict';
 
-let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud, ptipo_usuario) => {
+
+let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud, ptipo_usuario, pestado) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-usuario',
@@ -21,7 +22,8 @@ let registrarUsuario = (pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, p
             direccion_exacta: pdireccionExacta,
             direccion_latitud: pdireccion_latitud,
             direccion_longitud: pdireccion_longitud,
-            tipo_usuario: ptipo_usuario
+            tipo_usuario: ptipo_usuario,
+            estado: pestado
         }
     });
 };
@@ -42,9 +44,9 @@ let validar_credenciales = async (pcorreo, pcontrasena) => {
     console.log(peticion);
     respuesta = peticion.data.success;
 
-    if(respuesta){
+    if (respuesta) {
         sessionStorage.setItem('activo', JSON.stringify(peticion.data.usuario));
-    }else{
+    } else {
         sessionStorage.clear();
     }
 
@@ -67,9 +69,9 @@ let obtenerUsuarios = async () => {
     }
 };
 
-let obtenerUsuarioCorreo = async(correo) => {
+let obtenerUsuarioCorreo = async (correo) => {
     try {
-        
+
         const response = await axios({
             method: 'get',
             url: `http://localhost:4000/api/buscar-usuario-correo/${correo}`,
@@ -82,7 +84,7 @@ let obtenerUsuarioCorreo = async(correo) => {
     }
 };
 
-let obtenerUsuarioId = async(_id) => {
+let obtenerUsuarioId = async (_id) => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -97,7 +99,7 @@ let obtenerUsuarioId = async(_id) => {
     }
 };
 // Modificar el estado
-let habilitar = (pid, pestado) => {
+let habilitarUsuario = (pid, pestado) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/habilitar-usuario',
@@ -110,19 +112,19 @@ let habilitar = (pid, pestado) => {
 };
 
 // Modificar el estado
-let deshabilitar = (pid) => {
+let deshabilitarUsuario = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar-usuario',
         responseType: 'json',
-        data: {  
+        data: {
             _id: pid
 
         }
     });
 };
 
-let modificarUsuario = (p_id, pavatar, pusuario, pcorreo, pcontrasena, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud, ptipo_usuario) => {
+let modificarUsuario = (p_id, pavatar, pusuario, pcorreo, pnombre, pid, pprimerApellido, psegundoApellido, psexo, pprovincia, pcanton, pdistrito, pdireccionExacta, pdireccion_longitud, pdireccion_latitud, ptipo_usuario) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-usuario',
@@ -132,7 +134,6 @@ let modificarUsuario = (p_id, pavatar, pusuario, pcorreo, pcontrasena, pnombre, 
             avatar: pavatar,
             usuario: pusuario,
             correo: pcorreo,
-            contrasena: pcontrasena,
             nombre: pnombre,
             id: pid,
             sexo: psexo,
@@ -150,28 +151,52 @@ let modificarUsuario = (p_id, pavatar, pusuario, pcorreo, pcontrasena, pnombre, 
     });
 };
 
+let eliminarUsuario = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-usuario',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};
+
+
+let modificarContrasenaUsuario = (p_id, pContrasenaNueva) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-contrasena-usuario',
+        responseType: 'json',
+        data: {
+            _id: p_id,
+            contrasena: pContrasenaNueva
+        }
+    });
+};
 
 // Funciones para obtener coordenadas de google maps
 let corlatitud;
 let corlongitud;
 
-let latitud = (platitud) =>{
+let latitud = (platitud) => {
     corlatitud = platitud;
 };
 
-let longitud = (plongitud) =>{
+let longitud = (plongitud) => {
     corlongitud = plongitud;
 };
 
-let enviarLat = () =>{
+let enviarLat = () => {
     return corlatitud;
 }
 
-let enviarLon = () =>{
+let enviarLon = () => {
     return corlongitud;
 }
 
-let registrarTarjetas = (pid, pnombre, pnum_tarjeta, pfecha_ven, pcvv) =>{
+let registrarTarjetas = (pid, pnombre, pnum_tarjeta, pfecha_ven, pcvv) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/agregar-tarjeta',
@@ -187,7 +212,7 @@ let registrarTarjetas = (pid, pnombre, pnum_tarjeta, pfecha_ven, pcvv) =>{
 }
 
 
-let obtenerTarjetas = async(_id) => {
+let obtenerTarjetas = async (_id) => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -202,7 +227,7 @@ let obtenerTarjetas = async(_id) => {
     }
 };
 
-let actualizarTarjetas = (pdatos, pid)=>{
+let actualizarTarjetas = (pdatos, pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-tarjetas',
@@ -214,7 +239,7 @@ let actualizarTarjetas = (pdatos, pid)=>{
     });
 }
 
-let cambiarEstadoTarjetas = (pdatos, pid) =>{
+let cambiarEstadoTarjetas = (pdatos, pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-estado-tarjetas',
@@ -222,6 +247,34 @@ let cambiarEstadoTarjetas = (pdatos, pid) =>{
         data: {
             _id: pid,
             datos: pdatos
+        }
+    });
+}
+
+let eliminarTarjetas = (pid, pidtarjeta) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-tarjetas',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            idlibro: pidtarjeta
+        }
+    });
+}
+
+let registraEnCarritoDeCompras = () => {
+
+}
+
+let enviarEmailRecuperacionContrasena = async (correo) => {
+
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/recuperar-contrasena',
+        responseType: 'json',
+        data: {
+            correo: correo
         }
     });
 }

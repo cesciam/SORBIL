@@ -13,8 +13,8 @@ const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
 const img_uploader_imagen = document.querySelector('#portada');
 const input_usuario = document.querySelector('#txt-usuario');
 const input_correo = document.querySelector('#txt-correo');
-const input_contrasena = document.querySelector('#txt-contrasena');
-const input_verf_contrasena = document.querySelector('#txt-verificacion-contrasena');
+// const input_contrasena = document.querySelector('#txt-contrasena');
+// const input_verf_contrasena = document.querySelector('#txt-verificacion-contrasena');
 const input_empresa = document.querySelector('#txt-empresa');
 const input_telefono = document.querySelector('#txt-telefono');
 const input_descripcion = document.querySelector('#txt-descripcion');
@@ -33,7 +33,7 @@ const tipo_usuario = 'al';
 
 const btn_enviar = document.querySelector('#btn-enviar');
 
-let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha) => {
+let validar = (pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pnombre, pprimer_apellido, psegundo_apellido, pid, pfecha) => {
 
     let error = false;
 
@@ -61,27 +61,27 @@ let validar = (pusuario, pcorreo, pcontrasena, pverfContrasena, pempresa, ptelef
         input_correo.classList.remove('input_error');
     }
 
-    if (pcontrasena == '') {
-        error = true;
-        input_contrasena.classList.add('input_error');
-    } else if (pcontrasena != pverfContrasena) {
-        error = true;
-        input_contrasena.classList.add('input_error');
-        input_verf_contrasena.classList.add('input_error');
-    } else {
-        input_contrasena.classList.remove('input_error');
-    }
+    // if (pcontrasena == '') {
+    //     error = true;
+    //     input_contrasena.classList.add('input_error');
+    // } else if (pcontrasena != pverfContrasena) {
+    //     error = true;
+    //     input_contrasena.classList.add('input_error');
+    //     input_verf_contrasena.classList.add('input_error');
+    // } else {
+    //     input_contrasena.classList.remove('input_error');
+    // }
 
-    if (pverfContrasena == '') {
-        error = true;
-        input_verf_contrasena.classList.add('input_error');
-    } else if (pcontrasena != pverfContrasena) {
-        error = true;
-        input_contrasena.classList.add('input_error');
-        input_verf_contrasena.classList.add('input_error');
-    } else {
-        input_verf_contrasena.classList.remove('input_error');
-    }
+    // if (pverfContrasena == '') {
+    //     error = true;
+    //     input_verf_contrasena.classList.add('input_error');
+    // } else if (pcontrasena != pverfContrasena) {
+    //     error = true;
+    //     input_contrasena.classList.add('input_error');
+    //     input_verf_contrasena.classList.add('input_error');
+    // } else {
+    //     input_verf_contrasena.classList.remove('input_error');
+    // }
 
     if (pempresa == '') {
         error = true;
@@ -237,18 +237,25 @@ function calcularEdad(pfecha) {
 }
 
 let validarFecha = (pfecha) => {
-    
+
     let hoy = new Date();
     let errorFecha = false;
-    
-    if(pfecha > hoy || pfecha == 'Invalid Date') {
+
+    if (pfecha > hoy || pfecha == 'Invalid Date') {
         errorFecha = true;
         input_fecha.classList.add('input_error');
-    } 
+    }
     else {
         input_fecha.classList.remove('input_error');
     }
-    return errorFecha;    
+    return errorFecha;
+};
+
+let generarContrasena = () => {
+    //Se genera la contraseña
+    let randomPassword = Math.random().toString(36).slice(-8);
+
+    return randomPassword;
 };
 
 let saludar = async () => {
@@ -256,8 +263,9 @@ let saludar = async () => {
     let src_imagen = img_uploader_imagen.src;
     let usuario = input_usuario.value;
     let correo = input_correo.value;
-    let contrasena = input_contrasena.value;
-    let verfContrasena = input_verf_contrasena.value;
+    let contrasena = generarContrasena();
+    // let verfContrasena = input_verf_contrasena.value;
+    // let contrasena = input_contrasena.value;
     let empresa = input_empresa.value;
     let telefono = input_telefono.value;
     let descripcion = input_descripcion.value;
@@ -275,25 +283,31 @@ let saludar = async () => {
     let id = input_id.value;
     let fecha = new Date(input_fecha.value);
 
-    let error = validar(usuario, correo, contrasena, verfContrasena, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, nombre, primer_apellido, segundo_apellido, id, fecha);
+    let error = validar(usuario, correo, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, nombre, primer_apellido, segundo_apellido, id, fecha);
     let errorCedula = validarCedula(id);
     let errorTelefono = validarTelefono(telefono);
     let errorCorreo = validarCorreo(correo);
     let edad = calcularEdad(fecha);
     let errorFecha = validarFecha(fecha);
 
-
     if (error == false && errorCedula == false && errorCorreo == false && errorTelefono == false && errorFecha == false) {
-        registrarLibreria(src_imagen, usuario, correo, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, latitud, longitud);
-        registrarAdminLibreria(src_avatar, correo, contrasena, nombre, primer_apellido, segundo_apellido, id, fecha, edad, tipo_usuario);
+        let estado = 'pendiente';
+        registrarLibreria(src_imagen, usuario, correo, empresa, telefono, descripcion, provincia, canton, distrito, direccion_exacta, latitud, longitud, estado);
+
+        registrarAdminLibreria(src_avatar, correo, contrasena, nombre, primer_apellido, segundo_apellido, id, fecha, edad, tipo_usuario, estado);
         Swal.fire({ //formato json
-            title: 'Se ha registrado la información exitosamente',
+            title: 'Se ha enviado la información exitosamente',
+            text: 'Su solicitud está siendo revisada en este momento',
             type: 'success',
-        })
+        }).then((result) => {
+            if (result.value) {
+
+                window.location.href = '../index.html';
+            }
+        });
         //Se llama a la función para limpiar el formulario
-        limpiarFormulario();
-        window.location.href = 'u-iniciar-sesion.html';
-    } else {        
+
+    } else {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',
@@ -306,8 +320,8 @@ let saludar = async () => {
 const limpiarFormulario = () => {
     input_usuario.value = '';
     input_correo.value = '';
-    input_contrasena.value = '';
-    input_verf_contrasena.value = '';
+    // input_contrasena.value = '';
+    // input_verf_contrasena.value = '';
     input_empresa.value = '';
     input_telefono.value = '';
     input_fecha.value = '';

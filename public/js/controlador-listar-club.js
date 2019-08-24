@@ -3,6 +3,8 @@
 const tbody = document.querySelector('#tabla-filtrado tbody');
 let lista_clubes = [];
 let txt_filtro = document.querySelector('#txt-filtro');
+let usuarioActivolis = JSON.parse(sessionStorage.getItem('activo'));
+let tipoUserlis = usuarioActivo.tipo_usuario;
 
 let mostrar_tabla = async () => {
 
@@ -36,10 +38,17 @@ let mostrar_tabla = async () => {
 
         let celdaIconoActivar = fila.insertCell();
         let aIconoAc = document.createElement('a');
-        aIconoAc.className = 'header-icon';
+        aIconoAc.className = 'list-icon';
         let iconAc = document.createElement('i');
         iconAc.className = 'bx bxs-check-square';
         aIconoAc.appendChild(iconAc);
+
+        let celdaIconoEliminar = fila.insertCell();
+        let aIconoEliminar = document.createElement('a');
+        aIconoEliminar.className = 'habilitadoIon list-icon';
+        let iconEliminiar = document.createElement('i');
+        iconEliminiar.className = 'bx bxs-trash';
+        aIconoEliminar.appendChild(iconEliminiar);
 
         if (lista_clubes[i].estado == 'habilitado') {
             iconAc.id = 'habilitadoIon';
@@ -50,36 +59,83 @@ let mostrar_tabla = async () => {
                     window.location.href = `ver-perfil-club-virtual.html?_id=${this.dataset._id}`;
                 }
             });
-            aPerfil.className = 'header-icon';
-            aIconoEditar.className = 'header-icon';
+            aPerfil.className = 'list-icon';
+            aIconoEditar.className = 'list-icon';
             iconAc.addEventListener('click', function () {
                 let estado = 'desabilitado';
-                deshabilitar(lista_clubes[i]._id, estado);
+                deshabilitarClub(lista_clubes[i]._id, estado);
                 window.location.reload();
             });
 
             iconeditar.addEventListener('click', function () {
-                if (tipo == 'Club Presencial') {
-                    window.location.href = `al-modificar-club-presencial.html?_id=${lista_clubes[i]['_id']}`;
-                } else if (tipo == 'Club Virtual') {
-                    window.location.href = `al-modificar-club-virtual.html?_id=${lista_clubes[i]['_id']}`;
+                switch (tipoUserlis) {
+                    case 'al': {
+                        if (tipo == 'Club Presencial') {
+                            window.location.href = `al-modificar-club-presencial.html?_id=${lista_clubes[i]['_id']}`;
+                        } else if (tipo == 'Club Virtual') {
+                            window.location.href = `al-modificar-club-virtual.html?_id=${lista_clubes[i]['_id']}`;
+                        }
+                        break;
+                    }
+                    case 'ap': {
+                        if (tipo == 'Club Presencial') {
+                            window.location.href = `ap-modificar-club-presencial.html?_id=${lista_clubes[i]['_id']}`;
+                        } else if (tipo == 'Club Virtual') {
+                            window.location.href = `ap-modificar-club-virtual.html?_id=${lista_clubes[i]['_id']}`;
+                        }
+                        break;
+                    }
+                    case 'u': {
+                        if (tipo == 'Club Presencial') {
+                            window.location.href = `p-modificar-club-presencial.html?_id=${lista_clubes[i]['_id']}`;
+                        } else if (tipo == 'Club Virtual') {
+                            window.location.href = `p-modificar-club-virtual.html?_id=${lista_clubes[i]['_id']}`;
+                        }
+                        break;
+                    }
                 }
             });
 
 
         } else {
-            aPerfil.className = 'header-iconDisable';
-            aIconoEditar.className = 'header-iconDisable';
+            aPerfil.className = 'list-iconDisable';
+            aIconoEditar.className = 'list-iconDisable';
             iconAc.addEventListener('click', function () {
                 let estado = 'habilitado';
-                habilitar(lista_clubes[i]._id, estado);
+                habilitarClub(lista_clubes[i]._id, estado);
                 window.location.reload();
             });
         }
 
+        iconEliminiar.addEventListener('click', function () {
+            Swal.fire({
+                title: '¿Está seguro de eliminar el club?',
+                text: "Ésta acción no se puede revertir",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+            }).then((result) => {
+                if (result.value) {
+                    eliminarClub(lista_clubes[i]._id);
+
+                    Swal.fire(
+                        'Club eliminado!',
+                        'success'
+                    ).then((result) => {
+                        if (result.value) {
+                            window.location.reload();
+                        }
+                    });
+                }
+            })
+        });
+
         celdaIconoEditar.appendChild(aIconoEditar);
         celdaIconoActivar.appendChild(aIconoAc);
         celdaPerfil.appendChild(aPerfil);
+        celdaIconoEliminar.appendChild(aIconoEliminar);
 
     }
 
@@ -118,7 +174,7 @@ let filtrar_tabla = async () => {
 
             let celdaIconoActivar = fila.insertCell();
             let aIconoAc = document.createElement('a');
-            aIconoAc.className = 'header-icon';
+            aIconoAc.className = 'list-icon';
             let iconAc = document.createElement('i');
             iconAc.className = 'bx bxs-check-square';
             aIconoAc.appendChild(iconAc);
@@ -132,8 +188,8 @@ let filtrar_tabla = async () => {
                         window.location.href = `ver-perfil-club-virtual.html?_id=${this.dataset._id}`;
                     }
                 });
-                aPerfil.className = 'header-icon';
-                aIconoEditar.className = 'header-icon';
+                aPerfil.className = 'list-icon';
+                aIconoEditar.className = 'list-icon';
                 iconAc.addEventListener('click', function () {
                     let estado = 'desabilitado';
                     deshabilitar(lista_clubes[i]._id, estado);
@@ -150,8 +206,8 @@ let filtrar_tabla = async () => {
 
 
             } else {
-                aPerfil.className = 'header-iconDisable';
-                aIconoEditar.className = 'header-iconDisable';
+                aPerfil.className = 'list-iconDisable';
+                aIconoEditar.className = 'list-iconDisable';
                 iconAc.addEventListener('click', function () {
                     let estado = 'habilitado';
                     habilitar(lista_clubes[i]._id, estado);

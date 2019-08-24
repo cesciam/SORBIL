@@ -8,7 +8,7 @@ const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/fenixsorbil/image/upload
 const CLOUDINARY_UPLOAD_PRESET = 'gmqflv3u';
 
 // Constantes
-const boton_enviar = document.querySelector('#listar_adminal_clubes');
+const boton_enviar = document.querySelector('#boton-enviar');
 const img_uploader_imagen = document.querySelector('#portada');
 const input_administrador_club = document.querySelector('#txt-administrador-club');
 const input_tema = document.querySelector('#txt-tema-club');
@@ -22,8 +22,41 @@ const input_frecuencia = document.querySelector('#txt-frecuencia');
 const input_descripcion = document.querySelector('#txt-descripcion');
 const tipo = 'Club Virtual';
 
+let usuarioActivoMod = JSON.parse(sessionStorage.getItem('activo'));
+let tipoUserMod = usuarioActivoMod.tipo_usuario;
 const urlParams = new URLSearchParams(window.location.search);
 let _id = urlParams.get('_id');
+
+let cargar_formulario = async () => {
+
+    let clubid = await obtenerClubid(_id);
+
+    if (clubid) {
+        img_uploader_imagen.src = clubid['imagen'];
+        input_administrador_club.value = clubid['nombre'];
+        input_tema.value = clubid['tema'];
+        input_telefono.value = clubid['telefono'];
+        input_correo.value = clubid['correo'];
+        input_categoria.value = clubid['categoria'];
+        input_genero.value = clubid['genero'];
+        let fecha_original = new Date(clubid['fecha']);
+
+        let mes = fecha_original.getUTCMonth() + 1;
+        if (mes < 10) {
+            mes = '0' + mes;
+        }
+
+        let dia = fecha_original.getDate();
+        if (dia < 10) {
+            dia = '0' + dia;
+        }
+
+        input_fecha.value = fecha_original.getFullYear() + '-' + mes + '-' + dia;
+        input_hora.value = clubid['hora'];
+        input_frecuencia.value = clubid['frecuencia'];
+        input_descripcion.value = clubid['descripcion'];
+    }
+};
 
 let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, phora, pfrecuencia, pdescripcion) => {
 
@@ -156,42 +189,61 @@ let validarFecha = (pfecha) => {
     return errorFecha;
 };
 
-let cargar_formulario = async () => {
+let modificarClub = async () => {
 
-    let clubid = await obtenerClubid(_id);
+    //variables del administrador
+    let src_imagen = img_uploader_imagen.src;;
+    let nombre = input_administrador_club.value;
+    let tema = input_tema.value;
+    let correo = input_correo.value;
+    let telefono = input_telefono.value;
+    let categoria = input_categoria.value;
+    let genero = input_genero.value;
+    let fecha = new Date(input_fecha.value);
+    let hora = input_hora.value;
+    let frecuencia = input_frecuencia.value;
+    let descripcion = input_descripcion.value;
 
-    if (clubid) {
-        img_uploader_imagen.src = clubid['imagen'];
-        input_administrador_club.value = clubid['nombre'];
-        input_tema.value = clubid['tema'];
-        input_telefono.value = clubid['telefono'];
-        input_correo.value = clubid['correo'];
-        input_categoria.value = clubid['categoria'];
-        input_genero.value = clubid['genero'];
-        let fecha_original = new Date(clubid['fecha']);
 
-        let mes = fecha_original.getUTCMonth() + 1;
-        if (mes < 10) {
-            mes = '0' + mes;
-        }
+    let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, hora, frecuencia, descripcion);
+    let errorCorreo = validarCorreo(correo);
+    let errorTelefono = validarTelefono(telefono);
+    let errorFecha = validarFecha(fecha);
 
-        let dia = fecha_original.getDate();
-        if (dia < 10) {
-            dia = '0' + dia;
-        }
+    if (error == false && errorCorreo == false && errorTelefono == false && errorFecha == false) {
+        // let estado = 'habilitado';
+        modificarClubVirtual(_id, src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, hora, frecuencia, descripcion);
+        Swal.fire({ //formato json
+            title: 'Se ha modificado la información exitosamente',
+            type: 'success',
+        }).then((result) => {
+            if (result.value) {
+                switch (tipoUserMod) {
+                    case 'al': {
+                        window.location.href = `al-listar-clubes.html?_id=${_id}`;
+                        break;
+                    }
+                    case 'ap': {
+                        window.location.href = `ap-listar-clubes.html?_id=${_id}`;
+                        break;
+                    }
+                    case 'u': {
+                        window.location.href = `p-listar-clubes.html?_id=${_id}`;
+                        break;
+                    }
+                }
+            }
+        });
+        //Se llama a la función para limpiar el formulario
 
-        input_fecha.value = fecha_original.getFullYear() + '-' + mes + '-' + dia;
-        input_hora.value = clubid['hora'];
-        input_frecuencia.value = clubid['frecuencia'];
-        input_descripcion.value = clubid['descripcion'];
+    } else {
+        Swal.fire({ //formato json
+            title: 'No se ha modificado la información',
+            type: 'warning',
+            text: 'Revise los campos resaltados e inténtelo de nuevo'
+        })
     }
 };
 
-let editar = () => {
-
-    modificarClub(_id, img_uploader_imagen.src, input_administrador_club.value, input_tema.value, input_telefono.value, input_correo.value, input_categoria.value, input_genero.value, input_fecha.value, input_hora.value, input_frecuencia.value, input_descripcion.value);
-
-}
-
 cargar_formulario();
-boton_enviar.addEventListener('click', editar);
+boton_enviar.addEventListener('click', modificarClub);

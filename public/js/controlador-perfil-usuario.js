@@ -12,7 +12,8 @@ const txt_segundo_apellido = document.querySelector('#txt-segundo-apellido');
 const txt_provincia = document.querySelector('#txt-provincia');
 const txt_canton = document.querySelector('#txt-canton');
 const txt_distrito = document.querySelector('#txt-distrito');
-const btn_modificar= document.querySelector('#btn-modificar');
+const btn_modificar = document.querySelector('#btn-modificar');
+const btn_eliminar = document.querySelector('#btn-eliminar');
 
 
 let llenar_perfil = async () => {
@@ -28,12 +29,38 @@ let llenar_perfil = async () => {
         txt_provincia.innerHTML = usuario['provincia'];
         txt_canton.innerHTML = usuario['canton'];
         txt_distrito.innerHTML = usuario['distrito'];
-       
+
     }
 };
 
 btn_modificar.addEventListener('click', function () {
-    window.location.href = `modificar-perfil-usuario.html?_id=${_id}`;    
+    window.location.href = `modificar-perfil-usuario.html?_id=${_id}`;
 });
+
+
+btn_eliminar.addEventListener('click', function () {
+    Swal.fire({
+        title: '¿Estás seguro que querés eliminar tu cuenta?',
+        text: "Ésta acción no se puede revertir",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, estoy seguro'
+    }).then((result) => {
+        if (result.value) {
+            eliminarUsuario(_id);
+            Swal.fire(
+                '¡Usuario eliminado!',
+
+            ).then((result) => {
+                if (result.value) {
+                    window.location.href = '../index.html';
+                }
+            });
+        }
+    })
+});
+
 
 llenar_perfil();

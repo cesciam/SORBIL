@@ -20,38 +20,38 @@ let validar = (pcategoria) => {
     return error;
 };
 
-let datosCat = async()=>{
+let datosCat = async () => {
     let categorias = await obtenerCategorias();
     return categorias[posicion];
 }
 
-let llenarFormulario = async()=>{
+let llenarFormulario = async () => {
     let categoriaA = await datosCat();
-    input_categoria.value  = categoriaA.categoria;
+    input_categoria.value = categoriaA.categoria;
 }
 
-let modificarCatt = async() =>{
+let modificarCatt = async () => {
     let categoriaA = await datosCat();
     let categoria = input_categoria.value;
     categoriaA.categoria = categoria;
     let error = validar(categoria);
 
-    if (!error){
+    if (!error) {
         modificarCategorias(categoriaA._id, categoriaA);
-        switch(tipoUserMod){
-            case 'al' :  {
+        switch (tipoUserMod) {
+            case 'al': {
                 window.location.href = `al-listar-categorias.html?_id=${idAl}`;
                 break;
             }
 
-            case 'ap' : { 
+            case 'ap': {
                 window.location.href = `ap-listar-categorias.html?_id=${_id3}`;
                 break;
             }
         }
-       
-        
-    }else{
+
+
+    } else {
         Swal.fire({ //formato json
             title: 'No se ha registrado la información',
             type: 'warning',

@@ -156,6 +156,7 @@ let validarCedula = (pidentificacion) => {
     return errorCedula;
 };
 
+
 let validarCorreo = (pcorreo) => {
 
     let errorCorreo = false;
@@ -170,6 +171,7 @@ let validarCorreo = (pcorreo) => {
     }
     return errorCorreo;
 };
+
 
 let llamar = async () => {
 
@@ -196,7 +198,8 @@ let llamar = async () => {
     let errorCorreo = validarCorreo(correo);
 
     if (error == false && errorCedula == false && errorCorreo == false) {
-        registrarUsuario(src_avatar, usuario, correo, contrasena, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta, latitud, longitud, tipo_usuario);
+        let estado = 'habilitado';
+        registrarUsuario(src_avatar, usuario, correo, contrasena, nombre, id, primer_apellido, segundo_apellido, sexo, provincia, canton, distrito, direccion_exacta, latitud, longitud, tipo_usuario, estado);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',

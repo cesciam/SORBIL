@@ -29,6 +29,7 @@ const btn_reportes_libreria = document.querySelector('#adminap_reportes_libreria
 const btn_reportes_generales = document.querySelector('#adminap_reportes_generales');
 const btn_bitacora = document.querySelector('#adminap_bitacora');
 const btn_solicitudes = document.querySelector('#adminap_solicitudes');
+const btn_solicitudes2 = document.querySelector('#adminap_solicitudes2');
 
 usuarioActivo = JSON.parse(sessionStorage.getItem('activo'));
 let _id3 = usuarioActivo._id;
@@ -40,7 +41,7 @@ btn_perfil.addEventListener('click', function () {
 //Permisos de usuario para registrar
 
 btn_registrar_sucursal.addEventListener('click', function () {
-    window.location.href = `ap-registrar-sucursal.html?_id=${idAl}`
+    window.location.href = `ap-registrar-sucursal.html?_id=${_id3}`
 });
 
 btn_registrar_libro.addEventListener('click', function () {
@@ -115,23 +116,27 @@ btn_listar_clubes.addEventListener('click', function () {
 });
 
 btn_listar_compras.addEventListener('click', function () {
-    window.location.href = `ap-listar-compras.html?_id=${idAl}`
+    window.location.href = `ap-listar-compras.html?_id=${_id3}`
 });
 
 //Permisos para bitácora y compras
 
 btn_reportes_libreria.addEventListener('click', function () {
-    window.location.href = `ap-reportes-libreria.html?_id=${idAl}`
+    window.location.href = `ap-reportes-libreria.html?_id=${_id3}`
 });
 
 btn_reportes_generales.addEventListener('click', function () {
-    window.location.href = `ap-reportes-generales.html?_id=${idAl}`
+    window.location.href = `ap-reportes-generales.html?_id=${_id3}`
 });
 
 btn_bitacora.addEventListener('click', function () {
-    window.location.href = `ap-bitacora.html?_id=${idAl}`
+    window.location.href = `ap-bitacora.html?_id=${_id3}`
 });
 
 btn_solicitudes.addEventListener('click', function () {
-    window.location.href = `ap-solicitudes.html?_id=${idAl}`
+    window.location.href = `ap-solicitudes.html?_id=${_id3}`
+});
+
+btn_solicitudes2.addEventListener('click', function () {
+    window.location.href = `ap-solicitudes.html?_id=${_id3}`
 });

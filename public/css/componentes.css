@@ -783,6 +783,11 @@ Inicio de estilos del header de las cartas
     text-align: start;
 }
 
+.user-profile-container button {
+    margin-top: 2rem;
+    background-color: var(--color-alternative-blue) !important;
+}
+
 .user-profile-container .profile-titles p {
     font-weight: var(--font-semibold);
     color: var(--color-secondary);
@@ -790,21 +795,6 @@ Inicio de estilos del header de las cartas
 
 #main-admin p {
     margin-bottom: 1rem;
-}
-
-.list-icon {
-    float: right;
-}
-
-.list-icon i {
-    color: var(--color-alternative-blue);
-    cursor: pointer;
-    transition: .2s;
-    font-size: 2.5rem;
-}
-
-.list-icon i:hover {
-    opacity: .8;
 }
 
 /*
@@ -904,12 +894,102 @@ Fin de estilos del carousel
     }
 }
 
-#habilitadoIon{
-    color: var(--color-primary);
+/*Desabilitar*/
+
+.list-icon {
+    float: right;
 }
 
-.header-iconDisable i {
-    font-size: 2.4rem;
-    color: var(--color-primary-light);
+.list-icon i {
+    color: var(--color-alternative-blue);
+    cursor: pointer;
     transition: .2s;
+    font-size: 2.5rem;
+    opacity: .4;
+}
+
+.list-icon i:hover {
+    opacity: .8;
+}
+
+/*Solamente al ícono de modificar*/
+
+.list-iconDisable {
+    color: var(--color-alternative-blue);
+    opacity: .4;
+    font-size: 2.4rem;
+    cursor: pointer;
+}
+
+.bxs-trash:before {
+    color: var(--color-alternative-red);
+}
+
+.bxs-x-circle:before {
+    color: var(--color-alternative-red);
+}
+
+.bxs-check-square:before {
+    color: var(--color-alternative-red);
+}
+
+/*Habilitar*/
+
+#habilitadoIon {
+    color: var(--color-alternative-blue);
+    cursor: pointer;
+    opacity: 1;
+}
+
+.habilitadoIon {
+    color: var(--color-alternative-blue);
+    font-size: 2.4rem;
+    cursor: pointer;
+    opacity: 1;
+}
+
+#adminap_solicitudes2 {
+    margin-top: 2rem;
+    display: inline-block;
+}
+
+#adminap_solicitudes2 i {
+    position: relative;
+    top: .4rem;
+    left: -1rem;
+    font-size: 2rem;
+}
+
+/* Clase cuando el usuario ya hizo una reseña y no puede hacer otra*/
+
+.form-userwithratings {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    grid-column-gap: .5rem;
+}
+
+.form-userwithratings p {
+    text-align: center;
+}
+
+.form-userwithratings label {
+    font-size: 2.8rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.form-userwithratings input[type="radio"] {
+    display: none;
+}
+
+.form-userwithratings label {
+    color: var(--color-alternative-grey);
+}
+
+
+
+.form-userwithratings input[type="radio"]:checked~label {
+    color: var(--color-alternative-blue);
 }

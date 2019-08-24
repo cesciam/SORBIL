@@ -45,6 +45,7 @@ router.post('/registrar-club', function (req, res) {
     nuevo_club.save(
         function (err, clubDB) {
             if (err) {
+                console.log(err);
                 return res.status(400).json({
                     success: false,
                     msj: 'El club de lectura no se pudo registrar',
@@ -53,7 +54,7 @@ router.post('/registrar-club', function (req, res) {
             } else {
                 let mailOptions = {
                     from: 'fenixsorbil@gmail.com',
-                    to: nueva_libreria.correo,
+                    to: nuevo_club.correo,
                     subject: 'Bienvenido a Sorbil',
                     html: `
                     <!DOCTYPE html
@@ -1022,20 +1023,65 @@ router.post('/habilitar-club', function (req, res) {
     )
 });
 
-router.post('/modificar-club', function (req, res) {
+router.post('/modificar-club-virtual', function (req, res) {
     let body = req.body;
 
     Club.findByIdAndUpdate(body._id, {
-        $set: req.body
+        $set: {
+            imagen: body.imagen,
+            tipo: body.tipo,
+            nombre: body.nombre,
+            tema: body.tema,
+            correo: body.correo,
+            telefono: body.telefono,
+            categoria: body.categoria,
+            genero: body.genero,
+            fecha: body.fecha,
+            hora: body.hora,
+            frecuencia: body.frecuencia,
+            descripcion: body.descripcion,
+        }
     },
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo modificar la información' });
+                res.json({ success: false, msg: 'No se pudo modificar el club' });
             } else {
-                res.json({ success: true, msg: 'La información se modificó con éxito' });
+                res.json({ success: true, msg: 'El club se modificó con éxito' });
             }
         }
     )
+});
+
+router.post('/eliminar-club', function (req, res) {
+    let body = req.body;
+
+    Club.findByIdAndRemove(body._id,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el club' });
+            } else {
+                res.json({ success: true, msg: 'El club se eliminó con éxito' });
+            }
+        }
+    )
+});
+
+router.get('/listar-usuarios/:correo', function (req, res) {
+    libreria.find({ correo: req.body.correo }, function (err, libreriaDB) {
+
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontró ninguna sucursal con ese id.',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                libreria: libreriaDB
+            });
+        }
+    })
 });
 
 module.exports = router;
