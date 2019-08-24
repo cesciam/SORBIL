@@ -26,7 +26,7 @@ let validar = (pContrasenaNueva, pVerfContrasenaNueva) => {
     if (pVerfContrasenaNueva == '') {
         error = true;
         input_verf_contrasena_nueva.classList.add('input_error');
-    } else if (pContrasenaNueva != pVerfContrasenaActual) {
+    } else if (pContrasenaNueva != pVerfContrasenaNueva) {
         error = true;
         input_contrasena_nueva.classList.add('input_error');
         input_verf_contrasena_nueva.classList.add('input_error');
