@@ -887,7 +887,6 @@ router.post('/eliminar-tarjetas', function (req, res) {
 
 
 router.post('/recuperar-contrasena/', function (req, res) {
-<<<<<<< HEAD
     Usuario.findOne({ correo: req.body.correo }).then(
         function (usuario) {
             if (usuario) {
@@ -919,39 +918,6 @@ router.post('/recuperar-contrasena/', function (req, res) {
             }
         }
     )
-=======
-  Usuario.findOne({ correo: req.body.correo }).then(
-      function (usuario) {
-          if (usuario) {
-              if (usuario.correo) {
-                  res.json({
-                      success: true,
-                      usuario: usuario
-                  });
-
-                  let mailOptions = {
-                      from: 'fenixsorbil@gmail.com',
-                      to: req.body.correo,
-                      subject: 'Recuperación de contraseña',
-                      html: ``
-                  };
-                  transporter.sendMail(mailOptions, function (error, info) {
-                      if (error) {
-                          console.log(error);
-                      } else {
-                          console.logo('Correo enviado' + info.response);
-                      }
-                  })
-              }
-          } else {
-              res.json({
-                  success: false,
-                  msg: 'El usuario no existe'
-              });
-          }
-      }
-  )
->>>>>>> christopher
 });
 
 
