@@ -1280,12 +1280,26 @@ router.post('/habilitar-libreria', function (req, res) {
     )
 });
 
-router.post('/modificar-libreria_correo', function(req, res){
-    libreria.findOneAndUpdate({ correo: req.body.correo }, {
-        $set: req.body.libreriaDatos
-    })
+// router.post('/modificar-libreria_correo', function(req, res){
+//     libreria.findOneAndUpdate({ correo: req.body.correo }, {
+//         $set: req.body.libreriaDatos
+//     })
 
-});
+// });
+
+// router.post('/eliminar-libreria_correo', function(req, res){
+//     Libreria.findByIdAndRemove({ correo: req.body.correo }, {
+//         $set: req.body.libreriaDatos
+//     })
+// });
+
+// router.post('/habilitar-libreria_correo', function(req, res){
+//     Libreria.findOneAndUpdate({ correo: req.body.correo }, {
+//         $set: {
+//             estado: 'habilitado'
+//         }
+//     })
+// });
 
 router.post('/agregar-libros-sucursal_correo', function(req, res) {
     libreria.update({ correo: req.body.correo }, {

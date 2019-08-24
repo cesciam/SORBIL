@@ -925,6 +925,10 @@ Fin de estilos del carousel
     color: var(--color-alternative-red);
 }
 
+.bxs-x-circle:before {
+    color: var(--color-alternative-red);
+}
+
 .bxs-check-square:before {
     color: var(--color-alternative-red);
 }
@@ -954,4 +958,38 @@ Fin de estilos del carousel
     top: .4rem;
     left: -1rem;
     font-size: 2rem;
+}
+
+/* Clase cuando el usuario ya hizo una reseña y no puede hacer otra*/
+
+.form-userwithratings {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    grid-column-gap: .5rem;
+}
+
+.form-userwithratings p {
+    text-align: center;
+}
+
+.form-userwithratings label {
+    font-size: 2.8rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.form-userwithratings input[type="radio"] {
+    display: none;
+}
+
+.form-userwithratings label {
+    color: var(--color-alternative-grey);
+}
+
+
+
+.form-userwithratings input[type="radio"]:checked~label {
+    color: var(--color-alternative-blue);
 }

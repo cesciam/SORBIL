@@ -106,7 +106,7 @@ let modificarSucursal = (pcorreo, pdatos) => {
     });
 };
 
-let cambiarEstadoSucursal = (pdatos, pcorreo) =>{
+let cambiarEstadoSucursal = (pdatos, pcorreo) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-estado-sucursal',
@@ -118,7 +118,7 @@ let cambiarEstadoSucursal = (pdatos, pcorreo) =>{
     });
 }
 
-let eliminarSucursal = (pcorreo, pidSucursal) =>{
+let eliminarSucursal = (pcorreo, pidSucursal) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/eliminar-sucursal',
@@ -188,13 +188,14 @@ let actualizarLibrosLibreria = (pArrayLibros, pcorreo) => {
     });
 }
 
-let habilitarLibreria = (pid) => {
+let habilitarLibreria = (pid, pestado) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/habilitar-libreria',
         responseType: 'json',
         data: {
-            _id: pid
+            _id: pid,
+            estado: pestado
         }
     });
 };
@@ -210,17 +211,10 @@ let deshabilitarLibreria = (pid) => {
     });
 };
 
-let eliminarLibreria = (pid) => {
-    axios({
-        method: 'post',
-        url: 'http://localhost:4000/api/eliminar-libreria',
-        responseType: 'json',
-        data: {
-            _id: pid
-        }
-    });
+<<<<<<< HEAD
+=======
 
-}
+>>>>>>> christopher
 
 let modificarLibreria = (pidcorreo, pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud) => {
     axios({
@@ -265,10 +259,21 @@ let modificarAdminLibreria = (p_id, pavatar, pnombre, pprimer_apellido, psegundo
     });
 };
 
-let modificaTodaLalibreriaPorCorreo = (pcorreo, plibreria) =>{
+let modificaTodaLalibreriaPorCorreo = (pcorreo, plibreria) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-libreria_correo',
+        data: {
+            correo: pcorreo,
+            libreriaDatos: plibreria
+        }
+    })
+}
+
+let eliminarTodaLalibreriaPorCorreo = (pcorreo, plibreria) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-libreria_correo',
         data: {
             correo: pcorreo,
             libreriaDatos: plibreria
