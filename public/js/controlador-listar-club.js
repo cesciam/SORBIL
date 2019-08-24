@@ -3,6 +3,8 @@
 const tbody = document.querySelector('#tabla-filtrado tbody');
 let lista_clubes = [];
 let txt_filtro = document.querySelector('#txt-filtro');
+let usuarioActivolis = JSON.parse(sessionStorage.getItem('activo'));
+let tipoUserlis = usuarioActivo.tipo_usuario;
 
 let mostrar_tabla = async () => {
 
@@ -66,10 +68,31 @@ let mostrar_tabla = async () => {
             });
 
             iconeditar.addEventListener('click', function () {
-                if (tipo == 'Club Presencial') {
-                    window.location.href = `al-modificar-club-presencial.html?_id=${lista_clubes[i]['_id']}`;
-                } else if (tipo == 'Club Virtual') {
-                    window.location.href = `al-modificar-club-virtual.html?_id=${lista_clubes[i]['_id']}`;
+                switch (tipoUserlis) {
+                    case 'al': {
+                        if (tipo == 'Club Presencial') {
+                            window.location.href = `al-modificar-club-presencial.html?_id=${lista_clubes[i]['_id']}`;
+                        } else if (tipo == 'Club Virtual') {
+                            window.location.href = `al-modificar-club-virtual.html?_id=${lista_clubes[i]['_id']}`;
+                        }
+                        break;
+                    }
+                    case 'ap': {
+                        if (tipo == 'Club Presencial') {
+                            window.location.href = `ap-modificar-club-presencial.html?_id=${lista_clubes[i]['_id']}`;
+                        } else if (tipo == 'Club Virtual') {
+                            window.location.href = `ap-modificar-club-virtual.html?_id=${lista_clubes[i]['_id']}`;
+                        }
+                        break;
+                    }
+                    case 'u': {
+                        if (tipo == 'Club Presencial') {
+                            window.location.href = `p-modificar-club-presencial.html?_id=${lista_clubes[i]['_id']}`;
+                        } else if (tipo == 'Club Virtual') {
+                            window.location.href = `p-modificar-club-virtual.html?_id=${lista_clubes[i]['_id']}`;
+                        }
+                        break;
+                    }
                 }
             });
 

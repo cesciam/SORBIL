@@ -22,6 +22,8 @@ const input_frecuencia = document.querySelector('#txt-frecuencia');
 const input_descripcion = document.querySelector('#txt-descripcion');
 const tipo = 'Club Virtual';
 
+let usuarioActivoMod = JSON.parse(sessionStorage.getItem('activo'));
+let tipoUserMod = usuarioActivoMod.tipo_usuario;
 const urlParams = new URLSearchParams(window.location.search);
 let _id = urlParams.get('_id');
 
@@ -216,7 +218,20 @@ let modificarClub = async () => {
             type: 'success',
         }).then((result) => {
             if (result.value) {
-                window.location.href = `al-listar-clubes.html?_id=${_id}`;
+                switch (tipoUserMod) {
+                    case 'al': {
+                        window.location.href = `al-listar-clubes.html?_id=${_id}`;
+                        break;
+                    }
+                    case 'ap': {
+                        window.location.href = `ap-listar-clubes.html?_id=${_id}`;
+                        break;
+                    }
+                    case 'u': {
+                        window.location.href = `p-listar-clubes.html?_id=${_id}`;
+                        break;
+                    }
+                }
             }
         });
         //Se llama a la función para limpiar el formulario
