@@ -1,7 +1,9 @@
 'use strict';
 
-const boton_enviar = document.querySelector('#listar_adminal_generos');
-const genero = document.querySelector('#txt-genero');
+const input_genero = document.querySelector('#txt-genero');
+const boton_enviar = document.querySelector('#btn-enviar');
+let usuarioActivoMod = JSON.parse(sessionStorage.getItem('activo'));
+let tipoUserMod = usuarioActivoMod.tipo_usuario;
 
 const urlParams = new URLSearchParams(window.location.search);
 let _id = urlParams.get('_id');
@@ -12,9 +14,9 @@ let validar = (pgenero) => {
 
     if (pgenero == '') {
         error = true;
-        genero.classList.add('input_error');
+        input_genero.classList.add('input_error');
     } else {
-        genero.classList.remove('input_error');
+        input_genero.classList.remove('input_error');
     }
 
     return error;
@@ -25,14 +27,36 @@ let cargar_formulario = async () => {
     let generoid = await obtenerGeneroid(_id);
 
     if (generoid) {
-        genero.value = generoid['genero'];
+        input_genero.value = generoid['genero'];
     }
 };
 
 let editar = () => {
+    let genero = input_genero.value;
 
-    modificarGenero(_id, genero.value);
-    
+    let error = validar(genero);
+
+    if (!error) {
+    modificarGenero(_id, genero);
+    switch (tipoUserMod) {
+        case 'al': {
+            window.location.href = `al-listar-generos.html?_id=${_id}`;
+            break;
+        }
+
+        case 'ap': {
+            window.location.href = `ap-listar-generos.html?_id=${_id}`;
+            break;
+            }
+        }
+
+    } else {
+        Swal.fire({ //formato json
+            title: 'No se ha registrado la información',
+            type: 'warning',
+            text: 'Revise los campos resaltados e inténtelo de nuevo'
+        })
+    }
 }
 
 cargar_formulario();
