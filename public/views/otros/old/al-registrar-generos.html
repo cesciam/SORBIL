@@ -4,27 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/validar-usuario-adminLib.js"></script>
     <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/validar-usuario-adminLib.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/layout/administradores.css">
     <link rel="stylesheet" href="../css/componentes.css">
-    <link rel="stylesheet" href="../css/paginas/icon-small.css">
     <link rel="shortcut icon" type="image/png" href="../imgs/favicon.png">
-    <title>Sorbil -- Librería -- Listar autores</title>
+    <title>Sorbil -- Librería -- Registrar géneros</title>
 </head>
 
 <body id="grid-admin">
 
-<!--Header-->
+    <!--Header-->
 <header id="header-admin">
 
     <h3 class="header-text">Área del administrador de librería</h3>
 
     <div class="header-user-icons">
-        <!-- <div class="header-user-container">
+        <div class="header-user-container">
             <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
                 <span class="user-notification">1</span>
             </a>
@@ -33,11 +32,10 @@
             <a class="header-icon" href="#"><i class='bx bx-bell'></i>
                 <span class="user-notification">6</span>
             </a>
-        </div> -->
+        </div>
 
-        <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img class="mini-photo"
-                    id="avatar-img" src="../imgs/user.png" width="36" height="36"> <i
-                    class='bx bx-chevron-down'></i></a>
+        <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img id="avatar-img"
+                    class="mini-photo" src="" width="36" height="36"> <i class='bx bx-chevron-down'></i></a>
             <div class="menu-user-container">
                 <ul class="user-menu">
                     <a class="user-menu-link" href="#" id="ver_perfil_admin_libreria">Perfil</a>
@@ -53,25 +51,25 @@
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo">
-            <h1>Listados de Autores</h1>
+            <h1>Registro de Género</h1>
         </div>
 
-        <div id="barra-busqueda">
-            <input type="text" id="txt-filtro" placeholder="Buscar por autor" aria-label="Buscar por autor">
-        </div>
+        <form id="form" action="#">
 
-        <table id="tabla-filtrado">
-            <thead>
-                <tr>
-                    <th>Autor</th>
-                </tr>
-            </thead>
-            <tbody>
+            <div class="centrar-input">
+                <div>
+                    <label for="#">Género</label>
+                    <input id="txt-genero" class="effect-21" type="text" placeholder="Ingresar el género"
+                        aria-label="Ingresar el género">
+                </div>
+            </div>
 
-            </tbody>
-        </table>
+            <button id="btn-enviar" type="button">Registrar</button>
+
+        </form>
 
     </main>
+
 <!--Aside-->
 <aside id="sidenav-admin">
 
@@ -211,17 +209,21 @@
         <a class="copyright" href="../views/fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
             <span>FÉNIX</span></a>
     </footer>
+    <footer id="footer-admin">
+        <a class="copyright" href="fenix.html">©2019 - Desarrollado con mucho <i class='bx bxs-coffee'></i> por
+            <span>FÉNIX</span></a>
+    </footer>
 
     <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- <script src="../js/componentes/controlador-dropdowns-nav.js"></script> -->
     <script src="../js/componentes/controlador-dropdowns-user.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/servicio-autor.js"></script>
-    <script src="../js/controlador-listar-autores-al.js"></script>
+    <script src="../js/servicio-genero.js"></script>
+    <script src="../js/controlador-registrar-genero.js"></script>
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-inicio-al.js"></script>
     <script src="../js/controlador-avatar.js"></script>
-    <script src="../js/cerrar-sesion.js"></script>
 
 </body>
 

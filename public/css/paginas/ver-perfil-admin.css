@@ -1,5 +1,5 @@
 .main-card img {
-    width: 50%;
+    width: 10rem;
     margin: 0 auto;
     margin-top: 5rem;
     border-radius: 50%;
@@ -48,4 +48,31 @@
 .card-row-title {
     text-align: left;
     margin-left: 5rem;
+}
+
+#descripcion {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#avatar {
+    width: 20rem;
+    margin-left: 2rem;
+}
+
+#imagen {
+    width: 22rem;
+    margin-left: 2rem;
+}
+
+#main-admin>* {
+    margin-bottom: 2rem;
+}
+
+.user-profile-container .profile-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    text-align: start;
 }
