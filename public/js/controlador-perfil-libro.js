@@ -18,6 +18,39 @@ let portada = document.querySelector('#portada');
 let fecha = document.querySelector('#fecha');
 let sinopsis = document.querySelector('#descrip');
 
+
+let llenarPuntuaciones = async()=>{
+    let resennas = await obtenerResennas();
+    let suma = 0;
+    let cantidad = 0;
+    tbody.innerHTML = '';
+    for (let i = 0; i < resennas.length; i++) {
+      if(resennas[i].idLibro == idLibro){
+        suma = suma + resennas[i].calificacion;
+        cantidad= cantidad + 1;
+      }
+      
+      let promedio = suma / cantidad;
+  
+      document.querySelector('#calificacion-libro').innerHTML = promedio.toFixed(2);
+      document.querySelector('#cantidad-calificaciones').innerHTML= cantidad;
+  
+  
+      
+      
+      if(resennas[i].idLibro == idLibro){
+        let fila = tbody.insertRow();
+        fila.insertCell().innerHTML = resennas[i].idUsuario;
+        fila.insertCell().innerHTML = resennas[i].comentario;
+      }
+  
+      
+    }
+  
+  
+  }
+  llenarPuntuaciones();
+
 let llenar_perfil = async() => {
 
     let libroid = await obtenerLibroid(id);

@@ -135,8 +135,9 @@ if (!error){
         modificarSucursal(correoLibrosSucursal ,libreria[0]);
     }else{
         restarLibros(cantidad.value);
-        registrarLibrosSuc(id, idSuc, cantidad.value, correoLibrosSucursal);
         modificarSucursal(correoLibrosSucursal ,libreria[0]);
+        registrarLibrosSuc(id, idSuc, cantidad.value, correoLibrosSucursal);
+        
     }
 
     Swal.fire({ //formato json

@@ -897,7 +897,6 @@ router.post('/recuperar-contrasena', function (req, res) {
 						msg: 'El usuario existe',
 						usuario: usuario,										
 					});
-
 					let mailOptions = {
 						from: 'fenixsorbil@gmail.com',
 						to: usuario.correo,
