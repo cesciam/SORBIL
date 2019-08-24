@@ -44,9 +44,9 @@ let validar_credenciales = async (pcorreo, pcontrasena) => {
     console.log(peticion);
     respuesta = peticion.data.success;
 
-    if(respuesta){
+    if (respuesta) {
         sessionStorage.setItem('activo', JSON.stringify(peticion.data.usuario));
-    }else{
+    } else {
         sessionStorage.clear();
     }
 
@@ -69,9 +69,9 @@ let obtenerUsuarios = async () => {
     }
 };
 
-let obtenerUsuarioCorreo = async(correo) => {
+let obtenerUsuarioCorreo = async (correo) => {
     try {
-        
+
         const response = await axios({
             method: 'get',
             url: `http://localhost:4000/api/buscar-usuario-correo/${correo}`,
@@ -84,7 +84,7 @@ let obtenerUsuarioCorreo = async(correo) => {
     }
 };
 
-let obtenerUsuarioId = async(_id) => {
+let obtenerUsuarioId = async (_id) => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -117,7 +117,7 @@ let deshabilitarUsuario = (pid) => {
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar-usuario',
         responseType: 'json',
-        data: {  
+        data: {
             _id: pid
 
         }
@@ -163,7 +163,7 @@ let eliminarUsuario = (pid) => {
     });
 };
 
- 
+
 let modificarContrasenaUsuario = (p_id, pContrasenaNueva) => {
     axios({
         method: 'post',
@@ -180,23 +180,23 @@ let modificarContrasenaUsuario = (p_id, pContrasenaNueva) => {
 let corlatitud;
 let corlongitud;
 
-let latitud = (platitud) =>{
+let latitud = (platitud) => {
     corlatitud = platitud;
 };
 
-let longitud = (plongitud) =>{
+let longitud = (plongitud) => {
     corlongitud = plongitud;
 };
 
-let enviarLat = () =>{
+let enviarLat = () => {
     return corlatitud;
 }
 
-let enviarLon = () =>{
+let enviarLon = () => {
     return corlongitud;
 }
 
-let registrarTarjetas = (pid, pnombre, pnum_tarjeta, pfecha_ven, pcvv) =>{
+let registrarTarjetas = (pid, pnombre, pnum_tarjeta, pfecha_ven, pcvv) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/agregar-tarjeta',
@@ -212,7 +212,7 @@ let registrarTarjetas = (pid, pnombre, pnum_tarjeta, pfecha_ven, pcvv) =>{
 }
 
 
-let obtenerTarjetas = async(_id) => {
+let obtenerTarjetas = async (_id) => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -227,7 +227,7 @@ let obtenerTarjetas = async(_id) => {
     }
 };
 
-let actualizarTarjetas = (pdatos, pid)=>{
+let actualizarTarjetas = (pdatos, pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-tarjetas',
@@ -239,7 +239,7 @@ let actualizarTarjetas = (pdatos, pid)=>{
     });
 }
 
-let cambiarEstadoTarjetas = (pdatos, pid) =>{
+let cambiarEstadoTarjetas = (pdatos, pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar-estado-tarjetas',
@@ -251,7 +251,7 @@ let cambiarEstadoTarjetas = (pdatos, pid) =>{
     });
 }
 
-let eliminarTarjetas = (pid, pidtarjeta) =>{
+let eliminarTarjetas = (pid, pidtarjeta) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/eliminar-tarjetas',
@@ -263,8 +263,8 @@ let eliminarTarjetas = (pid, pidtarjeta) =>{
     });
 }
 
-let registraEnCarritoDeCompras = ()=>{
-    
+let registraEnCarritoDeCompras = () => {
+
 }
 
 let enviarEmailRecuperacionContrasena = async (correo) => {
@@ -278,3 +278,4 @@ let enviarEmailRecuperacionContrasena = async (correo) => {
         }
     });
 }
+

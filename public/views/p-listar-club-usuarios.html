@@ -140,7 +140,7 @@
                 </li>
 
                 <li class="sidenav-list-item">
-                    <a href="#" class="sidenav-btn dropdown-toggle" id="u-listar-clubes">
+                    <a href="#" class="sidenav-btn dropdown-toggle">
                         <i class='bx bxs-book-open'></i>
                         Clubes de lectura
                         <div class="chevron"><i class='bx bx-chevron-down'></i></div>
@@ -178,48 +178,27 @@
 
     </aside>
 
-    <!--Content-->
+    <!--Main-->
     <main id="main-profile">
         <div class="main-profile-titulo">
-            <h1>Listados de Clubes</h1>
+            <h1>Listados de usuarios de clubes</h1>
         </div>
+
         <div class="club-nav">
             <div>
-                <a class="btn-color" href="#" id="u-listar-clubes">Mis clubes</a>
+                <a class="btn-white" href="#" id="u-listar-clubes">Mis clubes</a>
                 <a class="btn-white" href="#" id="u-listar-clubes-asociados">Clubes asociados</a>
             </div>
         </div>
 
         <div id="barra-busqueda">
-            <input type="text" id="txt-filtro" placeholder="Buscar por nombre, tema, categoría, género"
-                aria-label="Buscar por nombre, tema, categoría, género">
-
-            <div class="dropdown-btns">
-                <a href="#" class="btn-registrar-dropdown"><i class='bx bx-plus-circle'></i>Registrar</a>
-                <div class="dropdown-btns-content">
-                    <a href="#" id="registrar-club-virtual">Club virtual</a>
-                    <a href="#" id="registrar-club-presencial">Club presencial</a>
-                </div>
-            </div>
-
+            <input id="txt-filtro" type="text" placeholder="Buscar por nombre, correo electrónico"
+                aria-label="Buscar por nombre, correo electrónico">
         </div>
 
-        <table id="tabla-filtrado">
-            <thead>
-                <tr>
-                    <th>Tipo</th>
-                    <th>Administrador</th>
-                    <th>Tema</th>
-                    <th>Categoría</th>
-                    <th>Género</th>
-                    <th>Opciones</th>
-                </tr>
-            </thead>
-            <tbody>
+        <section class='card-container' id="lista-usuarios">
 
-            </tbody>
-        </table>
-
+        </section>
     </main>
 
     <footer id="footer-user">
@@ -253,9 +232,10 @@
     <script src="../js/servicio-club.js"></script>
     <script src="../js/servicio-libreria.js"></script>
     <script src="../js/servicio-libros.js"></script>
+    <script src="../js/servicio-usuario.js"></script>
     <script src="../js/componentes/controlador-lista-enlaces-privados.js"></script>
     <!-- JS para los perfiles-->
-    <script src="../js/controlador-listar-club-privado.js"></script>
+    <script src="../js/controlador-listar-club-usuarios.js"></script>
     <!-- JS para los permisos del usuario-->
     <script src="../js/cerrar-sesion.js"></script>
     <script src="../js/controlador-avatar.js"></script>
