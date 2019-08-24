@@ -886,149 +886,38 @@ router.post('/eliminar-tarjetas', function (req, res) {
 });
 
 
-router.get('/recuperar-contrasena/:correo', function (req, res) {
-    Usuario.find({ correo: req.body.correo }, function (err, usuarioBD) {
-        if (err) {
-            return res.status(400).json({
-                success: false,
-                msj: 'No se encontró ningún usuario con ese correo',
-                err
-            });
-        } else {
-            let mailOptions = {
-                from: 'fenixsorbil@gmail.com',
-                to: req.body.correo,
-                subject: 'Bienvenido a Sorbil',
-                html: `<!DOCTYPE html
-                PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-            <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
-                xmlns:o="urn:schemas-microsoft-com:office:office">
-            
-            <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-                <meta name="format-detection" content="date=no">
-                <meta name="format-detection" content="telephone=no" />
-                <meta name="x-apple-disable-message-reformatting">
-                <title>Sorbil</title>
-            
-                <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300&subset=latin,cyrillic,greek"
-                    rel="stylesheet" type="text/css">
-            
-            
-                <style type="text/css">
-                    .ReadMsgBody {
-                        width: 100%;
-                        background-color: #ffffff;
-                    }
-            
-                    .ExternalClass {
-                        width: 100%;
-                        background-color: #ffffff;
-                    }
-            
-                    .ExternalClass,
-                    .ExternalClass p,
-                    .ExternalClass span,
-                    .ExternalClass font,
-                    .ExternalClass td,
-                    .ExternalClass tbody {
-                        line-height: 100%;
-                    }
-            
-                    #outlook a {
-                        padding: 0;
-                    }
-            
-                    html,
-                    body {
-                        margin: 0 auto !important;
-                        padding: 0 !important;
-                        height: 100% !important;
-                        width: 100% !important;
-                    }
-            
-                    * {
-                        -ms-text-size-adjust: 100%;
-                        -webkit-text-size-adjust: 100%;
-                    }
-            
-                    table,
-                    td {
-                        mso-table-lspace: 0pt !important;
-                        mso-table-rspace: 0pt !important;
-                    }
-            
-                    table {
-                        border-spacing: 0 !important;
-                    }
-            
-                    table table table {
-                        table-layout: auto;
-                    }
-            
-                    a,
-                    span a {
-                        text-decoration: none !important;
-                        
-                    }
-            
-                    span a:hover{
-                        color:#333399;         
-                    }
-            
-                    .yshortcuts,
-                    .yshortcuts a,
-                    .yshortcuts a:link,
-                    .yshortcuts a:visited,
-                    .yshortcuts a:hover,
-                    .yshortcuts a span {
-                        text-decoration: none !important;
-                        border-bottom: none !important;
-                        
-                    }
-            
-                    /*mailChimp class*/
-                    ul {
-                        padding-left: 10px;
-                        margin: 0;
-                    }
-            
-                    .default-edit-image {
-                        height: 20px;
-                    }
-            
-                    .tpl-repeatblock {
-                        padding: 0px !important;
-                        border: 1px dotted rgba(0, 0, 0, 0.2);
-                    }
-            
-                    .tpl-content {
-                        padding: 0px !important;
-                    }
-            
-                    /* Start Old CSS */
-                    @media only screen and (max-width: 640px) {
-                        .container {
-                            width: 95% !important;
-                            max-width: 95% !important;
-                            min-width: 95% !important;
-                            padding-left: 15px !important;
-                            padding-right: 15px !important;
-                            text-align: center !important;
-                            clear: both;
-                        }
-                    })
-                }
-            } else {
-                res.json({
-                    success: false,
-                    msg: 'El usuario no existe'
-                });
-            }
-        }
-    )
+router.post('/recuperar-contrasena/', function (req, res) {
+  Usuario.findOne({ correo: req.body.correo }).then(
+      function (usuario) {
+          if (usuario) {
+              if (usuario.correo) {
+                  res.json({
+                      success: true,
+                      usuario: usuario
+                  });
+
+                  let mailOptions = {
+                      from: 'fenixsorbil@gmail.com',
+                      to: req.body.correo,
+                      subject: 'Recuperación de contraseña',
+                      html: ``
+                  };
+                  transporter.sendMail(mailOptions, function (error, info) {
+                      if (error) {
+                          console.log(error);
+                      } else {
+                          console.logo('Correo enviado' + info.response);
+                      }
+                  })
+              }
+          } else {
+              res.json({
+                  success: false,
+                  msg: 'El usuario no existe'
+              });
+          }
+      }
+  )
 });
 
 
