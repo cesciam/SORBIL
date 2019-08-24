@@ -221,7 +221,7 @@ router.post('/habilitar-usuario', function (req, res) {
 			estado: req.body.estado,
 		}
 	},
-		function (error, correo) {
+    function (error, correo, nombre, contrasena) {
 			if (error) {
 				res.json({ success: false, msg: 'No se pudo habilitar el usuario' });
 			} else {
@@ -238,7 +238,7 @@ router.post('/habilitar-usuario', function (req, res) {
 <meta name="format-detection" content="date=no">
 <meta name="format-detection" content="telephone=no"/>
 <meta name="x-apple-disable-message-reformatting">
-<title>Pendiente</title>
+<title>Sorbil</title>
 
 	<!--[if mso]>
 
@@ -250,7 +250,7 @@ router.post('/habilitar-usuario', function (req, res) {
 
 	<![endif]-->
 
-	 <!--[if !mso]><!-->
+	<!--[if !mso]><!-->
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300&subset=latin,cyrillic,greek" rel="stylesheet" type="text/css">
 
@@ -476,7 +476,7 @@ router.post('/habilitar-usuario', function (req, res) {
                             <td align="center" valign="top" width="200" style="width: 200px; line-height: 0px;"> <a href="http://localhost:3000/public/index.html" style="font-size: inherit; border-style: none; text-decoration: none !important;" border="0"><img src="https://res.cloudinary.com/fenixsorbil/image/upload/v1564173689/Assets/logo_u1mpzc.png" width="200" style="max-width: 200px; display: block !important; width: 200px; height: auto;" alt="icon-logo" border="0" hspace="0" vspace="0" height="auto"></a></td>
                           </tr><!-- start space -->
                           <tr>
-                            <td valign="top" height="25" style="height: 25px; font-size: 0px; line-height: 0;" aria-hidden="true">&nbsp;</td>
+                            <td valign="top" height="20" style="height: 20px; font-size: 0px; line-height: 0;" aria-hidden="true">&nbsp;</td>
                           </tr><!-- end space -->
                         </table>
                       </td>
@@ -485,7 +485,7 @@ router.post('/habilitar-usuario', function (req, res) {
                       <td valign="top" align="center">
                         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0" style="margin: 0px auto; min-width: 100%;" role="presentation">
                           <tr>
-                            <td align="center" style="font-size: 28px; color: #333333; font-weight: normal; font-family: 'Open Sans', Arial, Helvetica, sans-serif; word-break: break-word; line-height: 1;"><span style="color: #333333; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">¡Gracias por tu solicitud!<br><span style="color: #ff900e; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><br></span></span></td>
+                            // <td align="center" style="font-size: 28px; color: #333333; font-weight: normal; font-family: 'Open Sans', Arial, Helvetica, sans-serif; word-break: break-word; line-height: 1;"><span style="color: #333333; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">¡Bienvenido ${correo.nombre}!<br><span style="color: #ff900e; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><br></span></span></td>
                           </tr><!-- start space -->
                           <tr>
                             <td valign="top" height="1" style="height: 1px; font-size: 0px; line-height: 0;" aria-hidden="true">&nbsp;</td>
@@ -497,7 +497,21 @@ router.post('/habilitar-usuario', function (req, res) {
                       <td valign="top" align="center">
                         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0" style="margin: 0px auto; min-width: 100%;" role="presentation">
                           <tr>
-                            <td align="center" style="font-size: 28px; color: #333333; font-weight: normal; font-family: 'Open Sans', Arial, Helvetica, sans-serif; word-break: break-word; line-height: 1;"><span style="color: #333333; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #333333; font-style: normal; text-align: center; line-height: 24px; font-size: 15px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #333333; line-height: 24px; font-size: 15px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">Tu solicitud está siendo revisada en este momento por uno de nuestros agentes</span></span><br><span style="color: #ff900e; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><br></span></span></td>
+                            <td align="center" style="font-size: 28px; color: #333333; font-weight: normal; font-family: 'Open Sans', Arial, Helvetica, sans-serif; word-break: break-word; line-height: 1;"><span style="color: #333333; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #ff900e; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #333399; font-style: normal; text-align: center; line-height: 44px; font-size: 40px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #333399; line-height: 44px; font-size: 40px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">Tu librería digital</span></span><br></span></span></td>
+                          </tr><!-- start space -->
+                          <tr>
+                            <td valign="top" height="25" style="height: 25px; font-size: 0px; line-height: 0;" aria-hidden="true">&nbsp;</td>
+                          </tr><!-- end space -->
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td valign="top" align="center">
+                        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0" style="margin: 0px auto; min-width: 100%;" role="presentation">
+                          <tr>
+                            <td align="center" style="font-size: 28px; color: #333333; font-weight: normal; font-family: 'Open Sans', Arial, Helvetica, sans-serif; word-break: break-word; line-height: 1;">
+                              <div style="text-align: justify; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #333333; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #ff900e; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #808080; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #808080; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">Tu&nbsp;contraseña es:&nbsp;</span>${correo.contrasena}</span><br><span style="color: #000080; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #808080; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #808080; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">El&nbsp;correo asociado es:</span>${correo.correo}</span><br><span style="color: #000000; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #000000; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">Por favor ingresá al siguiente enlace:</span></span><br><span style="color: #0000ff; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><a href="http://localhost:3000/public/views/u-iniciar-sesion.html" data-mce-href="http://localhost:3000/public/views/u-iniciar-sesion.html" style="border-style: none; text-decoration: none !important; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;" border="0"><span style="color: #0000ff; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #0000ff; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">http://localhost:3000/public/views/u-iniciar-sesion.html</span></span></a></span><br></span></span></span></div>
+                            </td>
                           </tr><!-- start space -->
                           <tr>
                             <td valign="top" height="1" style="height: 1px; font-size: 0px; line-height: 0;" aria-hidden="true">&nbsp;</td>
