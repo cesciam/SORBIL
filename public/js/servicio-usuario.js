@@ -269,13 +269,12 @@ let registraEnCarritoDeCompras = () => {
 
 let enviarEmailRecuperacionContrasena = async (correo) => {
 
-     axios({
+    axios({
         method: 'post',
-        url: `http://localhost:4000/api/recuperar-contrasena`,
+        url: 'http://localhost:4000/api/recuperar-contrasena',
         responseType: 'json',
         data: {
-            correo: correo,
+            correo: correo
         }
     });
 }
-
