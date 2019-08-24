@@ -212,7 +212,6 @@ let deshabilitarLibreria = (pid) => {
 };
 
 
-
 let modificarLibreria = (pidcorreo, pimagen, pusuario, pcorreo, pempresa, ptelefono, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta, pdireccion_latitud, pdireccion_longitud) => {
     axios({
         method: 'post',

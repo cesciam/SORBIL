@@ -14,13 +14,16 @@ let registrarVenta = (pidlibreria, pidSuc, pidUser, pidLibro ) => {
     });
 };
 
-let factura =(pcorrreo, pnombre, papellido, psuma)=>{
+let factura =(pcorreo, pnombre, papellido, psuma)=>{
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/',
+        url: 'http://localhost:4000/api/enviar-factura',
         responseType: 'json',
         data: {
-            
+            correo: pcorreo,
+            nombre: pnombre,
+            apellido: papellido,
+            suma: psuma
         }
     });
 }
