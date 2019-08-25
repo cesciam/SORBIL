@@ -55,6 +55,7 @@ btn_eliminar.addEventListener('click', function () {
 
             ).then((result) => {
                 if (result.value) {
+                    sessionStorage.clear();
                     window.location.href = '../index.html';
                 }
             });
