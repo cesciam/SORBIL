@@ -43,19 +43,21 @@ let mostrar_librerias = async () => {
 
 
     for (let i = 0; i < lista_librerias_links.length; i++) {
-        let fila = tbodyLibrerias.insertRow();
-        let empresa = lista_librerias_links[i]['empresa'];
-        let celda_perfil = fila.insertCell();
-        let boton_perfil = document.createElement('button');
-        boton_perfil.type = 'button';
-        boton_perfil.innerText = `${empresa}`;
-        boton_perfil.dataset._id = lista_librerias_links[i]['_id'];
-
-        celda_perfil.appendChild(boton_perfil);
-
-        boton_perfil.addEventListener('click', function () {
-            window.location.href = `p-ver-perfil-libreria.html?_id=${this.dataset._id}`;
-        });
+        if(lista_librerias_links[i].estado != 'pendiente'){
+            let fila = tbodyLibrerias.insertRow();
+            let empresa = lista_librerias_links[i]['empresa'];
+            let celda_perfil = fila.insertCell();
+            let boton_perfil = document.createElement('button');
+            boton_perfil.type = 'button';
+            boton_perfil.innerText = `${empresa}`;
+            boton_perfil.dataset._id = lista_librerias_links[i]['_id'];
+    
+            celda_perfil.appendChild(boton_perfil);
+    
+            boton_perfil.addEventListener('click', function () {
+                window.location.href = `p-ver-perfil-libreria.html?_id=${this.dataset._id}`;
+            });
+        }
     }
 };
 
