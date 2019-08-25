@@ -10,7 +10,6 @@ let mostrar_cards = async () => {
 
     listar_usuarios = await obtenerUsuarios();
     lista_librerias = await obtenerLibrerias();
-    console.log(listar_usuarios);
 
     for (let i = 0; i < listar_usuarios.length; i++) {
         if (listar_usuarios[i].estado == 'pendiente') {
