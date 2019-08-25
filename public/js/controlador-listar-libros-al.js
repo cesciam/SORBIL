@@ -137,7 +137,11 @@ let agregar_libros_libreria = async (pid, pcantidad, pidLibro) => {
                     'Libros registados',
                     'Los libros se han registrado con éxito.',
                     'success'
-                )
+                ).then((result) => {
+                    if (result.value) {
+                        window.location.reload();
+                    }
+                });
                 let existe = validarSiYaExisteLibro(pid, librosEnLibreria, cantidad);
                 if (existe) {
                     actualizarLibrosLibreria(existe, correoUserActivo);

@@ -31,7 +31,7 @@ let encontrarDatos = async()=>{
     return datosLibreria;
 }
 
-
+encontrarDatos();
 let llenar_perfil = async() => {
     let datosLibreria =  await obtenerLibrerias();
  
@@ -119,7 +119,7 @@ let llenar_perfil = async() => {
     
 };
 
-encontrarDatos();
+
 llenar_perfil();
 
 

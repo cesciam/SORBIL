@@ -50,7 +50,20 @@ let mostrar_tabla = async () => {
         if(lista_libros[i].estado == 'habilitado'){
             iconAc.id = 'habilitadoIon';
             aPerfil.addEventListener('click', function () {
-                window.location.href = `ver-perfil-libro.html?_id=${this.dataset._id}`;
+                Swal.fire({
+                    title: '¿Desea salir de la plataforma de administrador?',
+                    text: "Para poder ver los perfiles se debe salir de la plataforma de administración",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sí, estoy seguro'
+                }).then((result) => {
+                    if (result.value) {
+                        window.location.href = `ver-perfil-libro.html?_id=${this.dataset._id}`;
+                    }
+                });
+                
             });
             aPerfil.className = 'list-icon';
             aIconoEditar.className = 'habilitadoIon list-icon';
