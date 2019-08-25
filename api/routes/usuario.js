@@ -221,7 +221,7 @@ router.post('/habilitar-usuario', function (req, res) {
 			estado: req.body.estado,
 		}
 	},
-		function (error, correo) {
+    function (error, correo) {
 			if (error) {
 				res.json({ success: false, msg: 'No se pudo habilitar el usuario' });
 			} else {
@@ -229,7 +229,7 @@ router.post('/habilitar-usuario', function (req, res) {
 					from: 'fenixsorbil@gmail.com',
 					to: correo.correo,
 					subject: 'Bienvenido a Sorbil',
-					html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+          html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -250,7 +250,7 @@ router.post('/habilitar-usuario', function (req, res) {
 
 	<![endif]-->
 
-	 <!--[if !mso]><!-->
+	<!--[if !mso]><!-->
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300&subset=latin,cyrillic,greek" rel="stylesheet" type="text/css">
 
@@ -485,7 +485,7 @@ router.post('/habilitar-usuario', function (req, res) {
                       <td valign="top" align="center">
                         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0" style="margin: 0px auto; min-width: 100%;" role="presentation">
                           <tr>
-                            <td align="center" style="font-size: 28px; color: #333333; font-weight: normal; font-family: 'Open Sans', Arial, Helvetica, sans-serif; word-break: break-word; line-height: 1;"><span style="color: #333333; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">¡Bienvenido ${Usuario.nombre}!<br><span style="color: #ff900e; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><br></span></span></td>
+                            <td align="center" style="font-size: 28px; color: #333333; font-weight: normal; font-family: 'Open Sans', Arial, Helvetica, sans-serif; word-break: break-word; line-height: 1;"><span style="color: #333333; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">¡Bienvenido a Sorbil <span style="color: #333399; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">${correo.nombre}</span>!<br><span style="color: #ff900e; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><br></span></span></td>
                           </tr><!-- start space -->
                           <tr>
                             <td valign="top" height="1" style="height: 1px; font-size: 0px; line-height: 0;" aria-hidden="true">&nbsp;</td>
@@ -497,7 +497,7 @@ router.post('/habilitar-usuario', function (req, res) {
                       <td valign="top" align="center">
                         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0" style="margin: 0px auto; min-width: 100%;" role="presentation">
                           <tr>
-                            <td align="center" style="font-size: 28px; color: #333333; font-weight: normal; font-family: 'Open Sans', Arial, Helvetica, sans-serif; word-break: break-word; line-height: 1;"><span style="color: #333333; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #ff900e; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #333399; font-style: normal; text-align: center; line-height: 44px; font-size: 40px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #333399; line-height: 44px; font-size: 40px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">Tu librería digital</span></span><br></span></span></td>
+                            <td align="center" style="font-size: 28px; color: #333333; font-weight: normal; font-family: 'Open Sans', Arial, Helvetica, sans-serif; word-break: break-word; line-height: 1;"><span style="color: #333333; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #ff900e; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #333399; font-style: normal; text-align: center; line-height: 39px; font-size: 34px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #333399; line-height: 39px; font-size: 34px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">Tu librería digital</span></span><br></span></span></td>
                           </tr><!-- start space -->
                           <tr>
                             <td valign="top" height="25" style="height: 25px; font-size: 0px; line-height: 0;" aria-hidden="true">&nbsp;</td>
@@ -510,7 +510,7 @@ router.post('/habilitar-usuario', function (req, res) {
                         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0" style="margin: 0px auto; min-width: 100%;" role="presentation">
                           <tr>
                             <td align="center" style="font-size: 28px; color: #333333; font-weight: normal; font-family: 'Open Sans', Arial, Helvetica, sans-serif; word-break: break-word; line-height: 1;">
-                              <div style="text-align: justify; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #333333; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #ff900e; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #808080; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #808080; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">Tu&nbsp;contraseña es:&nbsp;</span>${contrasena.contrasena}</span><br><span style="color: #000080; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #808080; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #808080; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">El&nbsp;correo asociado es:</span>${correo.correo}</span><br><span style="color: #000000; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #000000; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">Por favor ingresá al siguiente enlace:</span></span><br><span style="color: #0000ff; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><a href="http://localhost:3000/public/views/u-iniciar-sesion.html" data-mce-href="http://localhost:3000/public/views/u-iniciar-sesion.html" style="border-style: none; text-decoration: none !important; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;" border="0"><span style="color: #0000ff; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #0000ff; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">http://localhost:3000/public/views/u-iniciar-sesion.html</span></span></a></span><br></span></span></span></div>
+                              <div style="text-align: left; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #333333; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #ff900e; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #808080; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">Tu&nbsp;contraseña temporal es: <span style="color: #333399; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #333399; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">${correo.contrasena}</span></span></span><br><span style="color: #000080; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="color: #808080; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">El&nbsp;correo asociado es: <span style="color: #333399; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #333399; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">${correo.correo}</span></span></span><br><span style="color: #000000; font-style: normal; text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #000000; line-height: 24px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">Por favor ingresá al siguiente enlace:</span></span><br><span style="color: #3366ff; font-style: normal; text-align: center; line-height: 24px; font-size: 15px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><a href="http://localhost:3000/public/views/u-iniciar-sesion-temporal.html" data-mce-href="http://localhost:3000/public/views/u-iniciar-sesion-temporal.html" style="border-style: none; text-decoration: none !important; line-height: 24px; font-size: 15px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;" border="0"><span style="color: #3366ff; font-style: normal; text-align: center; line-height: 24px; font-size: 15px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span style="font-style: normal; text-align: center; color: #3366ff; line-height: 24px; font-size: 15px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">Iniciá sesión</span></span></a></span><br></span></span></span></div>
                             </td>
                           </tr><!-- start space -->
                           <tr>
@@ -567,7 +567,7 @@ router.post('/habilitar-usuario', function (req, res) {
             <table width="560" align="center" border="0" cellspacing="0" cellpadding="0" style="margin: 0px auto; width: 560px; min-width: 280px; max-width: 90%;" class="full-width" role="presentation">
               <!-- start space -->
               <tr>
-                <td valign="top" height="1" style="height: 1px; font-size: 0px; line-height: 0;" aria-hidden="true">&nbsp;</td>
+                <td valign="top" height="2" style="height: 2px; font-size: 0px; line-height: 0;" aria-hidden="true">&nbsp;</td>
               </tr><!-- end space -->
               <!-- start content -->
               <tr>
@@ -886,7 +886,9 @@ router.post('/eliminar-tarjetas', function (req, res) {
 });
 
 router.post('/recuperar-contrasena', function (req, res) {
+  
 	Usuario.findOne({ correo: req.body.correo }).then(
+
 		function (usuario) {
 			if (usuario) {
 				if (usuario) {

@@ -68,6 +68,10 @@ btn_seguridad.addEventListener('click', function () {
     window.location.href = `p-seguridad.html?_id=${_id2}`
 });
 
+btn_clubes_asociados.addEventListener('click', function () {
+    window.location.href = `p-listar-clubes-asociados.html?_id=${_id2}`
+});
+
 btn_registrar_club_virtual.addEventListener('click', function () {
     window.location.href = `p-registrar-club-virtual.html?_id=${_id2}`
 });
@@ -76,6 +80,3 @@ btn_registrar_club_presencial.addEventListener('click', function () {
     window.location.href = `p-registrar-club-presencial.html?_id=${_id2}`
 });
 
-btn_clubes_asociados.addEventListener('click', function () {
-    window.location.href = `p-listar-clubes-asociados.html?_id=${_id2}`
-});

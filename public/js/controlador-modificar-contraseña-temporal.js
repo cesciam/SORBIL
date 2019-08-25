@@ -77,7 +77,7 @@ let modificacionContrasena = async () => {
         Swal.fire({ //formato json
             title: 'Se ha modificado la contraseña exitosamente',
             type: 'success',
-            text: 'Iniciá sesión nuevamente con la nueva contraseña'
+            text: 'Iniciá sesión con la nueva contraseña'
         }).then((result) => {
             if (result.value) {
                 sessionStorage.clear();
