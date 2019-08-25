@@ -118,6 +118,7 @@ let modificarClubPresencial = (pid, pimagen, ptipo, pnombre, ptema, pcorreo, pte
     });
 };
 
+
 let modificarClubVirtual = (pid, pimagen, ptipo, pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, phora, pfrecuencia, pdescripcion) => {
     axios({
         method: 'post',
