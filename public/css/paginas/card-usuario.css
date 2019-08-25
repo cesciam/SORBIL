@@ -1,8 +1,11 @@
 .card-container {
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(4, 1fr);
-    grid-row-gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card-container .card {
@@ -97,5 +100,19 @@
     height: 20rem;
     background-position: center;
     border-radius: .4rem .4rem 0 0;
-    clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
+}
+
+.card-container img {
+    border-radius: var(--box-radius);
+    box-shadow: var(--box-shadow-2)
+}
+
+#main-admin p {
+    font-weight: var(--font-semibold);
+}
+
+.habilitadoIon {
+    position: relative;
+    top: -.5rem;
+    left: -.5rem;
 }

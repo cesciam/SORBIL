@@ -25,21 +25,21 @@ let mostrar_tabla = async () => {
 
         let celdaIconoActivar = fila.insertCell();
         let aIconoAc = document.createElement('a');
-        aIconoAc.className = 'header-icon';
+        aIconoAc.className = 'list-icon';
         let iconAc = document.createElement('i');
         iconAc.className  = 'bx bxs-check-square';
         aIconoAc.appendChild(iconAc);
 
         let celdaIconoEliminar = fila.insertCell();
         let aIconoEliminar = document.createElement('a');
-        aIconoEliminar.className = 'header-icon';
+        aIconoEliminar.className = 'list-icon';
         let iconEliminiar = document.createElement('i');
         iconEliminiar.className  = 'bx bxs-trash';
         aIconoEliminar.appendChild(iconEliminiar);
 
         if(lista_categoria[i].estado == 'habilitado'){
             iconAc.id = 'habilitadoIon';
-            aIcono.className = 'header-icon';
+            aIcono.className = 'habilitadoIon';
             iconAc.addEventListener('click', function(){
                 let estado = 'desabilitado';
                 cambiarEstadoCatergorias(lista_categoria[i]._id, estado);
@@ -55,7 +55,7 @@ let mostrar_tabla = async () => {
                 
             });
         }else{
-            aIcono.className = 'header-iconDisable';
+            aIcono.className = 'list-iconDisable';
             iconAc.addEventListener('click', function(){
                 let estado = 'habilitado';
                 cambiarEstadoCatergorias(lista_categoria[i]._id, estado);

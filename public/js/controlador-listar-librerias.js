@@ -21,6 +21,7 @@ let mostrar_tabla = async () => {
         let aPerfil = document.createElement('a');
         let iPerfil = document.createElement('i');
         iPerfil.className  = 'bx bx-show';
+        aPerfil.className = 'list-icon';
         aPerfil.appendChild(iPerfil);
         celdaPerfil.appendChild(aPerfil);
 
@@ -43,7 +44,7 @@ let mostrar_tabla = async () => {
 
         let celdaIconoEliminar = fila.insertCell();
         let aIconoEliminar = document.createElement('a');
-        aIconoEliminar.className = 'header-icon';
+        aIconoEliminar.className = 'list-icon';
         let iconEliminiar = document.createElement('i');
         iconEliminiar.className  = 'bx bxs-trash';
         aIconoEliminar.appendChild(iconEliminiar);
