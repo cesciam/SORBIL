@@ -7,7 +7,6 @@ let txt_filtro = document.querySelector('#txt-filtro');
 let mostrar_tabla = async () => {
 
     lista_autores = await obtenerAutor();
-    console.log(lista_autores)
     tbody.innerHTML = '';
 
     for (let i = 0; i < lista_autores.length; i++) {
@@ -45,7 +44,20 @@ let mostrar_tabla = async () => {
         if (lista_autores[i].estado == 'habilitado') {
             iconAc.id = 'habilitadoIon';
             aPerfil.addEventListener('click', function () {
-                window.location.href = `ver-perfil-autor.html?_id=${this.dataset._id}`;
+                Swal.fire({
+                    title: '¿Desea salir de la plataforma de administrador?',
+                    text: "Para poder ver los perfiles se debe salir de la plataforma de administración",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sí, estoy seguro'
+                }).then((result) => {
+                    if (result.value) {
+                        window.location.href = `ver-perfil-autor.html?_id=${this.dataset._id}`;
+                    }
+                });
+                
             });
             aPerfil.className = 'list-icon';
             aIconoEditar.className = 'list-icon';
