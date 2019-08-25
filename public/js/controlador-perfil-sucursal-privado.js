@@ -41,10 +41,10 @@ let llenar_perfil = async() => {
     if (datosLibreria) {
 
         input_nombre.innerHTML = datosLibreria[posicionLib].sucursales[posicionSuc].nombre;
-        input_telefono.innerHTML = datosLibreria[posicionLib].sucursales[posicionSuc].telefono;
-        input_provincia.innerHTML = datosLibreria[posicionLib].sucursales[posicionSuc].provincia;
-        input_canton.innerHTML = datosLibreria[posicionLib].sucursales[posicionSuc].canton;
-        input_distrito.innerHTML = datosLibreria[posicionLib].sucursales[posicionSuc].distrito;
+        // input_telefono.innerHTML = datosLibreria[posicionLib].sucursales[posicionSuc].telefono;
+        // input_provincia.innerHTML = datosLibreria[posicionLib].sucursales[posicionSuc].provincia;
+        // input_canton.innerHTML = datosLibreria[posicionLib].sucursales[posicionSuc].canton;
+        // input_distrito.innerHTML = datosLibreria[posicionLib].sucursales[posicionSuc].distrito;
     }
 
     let libros = await obtenerLibros();
@@ -89,7 +89,7 @@ let llenar_perfil = async() => {
                         precio.innerText = libros[j]['precio'];
 
                         let contenedor_cantidad = document.createElement('div');
-                        contenedor_cantidad.classList.add('contenedor_precio');
+                        contenedor_cantidad.classList.add('contenedor_precio_cant');
                         let cantidad = document.createElement('p');
                         cantidad.innerText = datosLibreria[posicionLib].librosSuc[x].cantidad;
                         contenedor_cantidad.appendChild(cantidad);
