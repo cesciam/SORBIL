@@ -22,6 +22,7 @@
     width: 20rem;
     box-shadow: var(--shadow-dark-1);
     border-radius: var(--box-radius);
+    margin-left: 1rem;
 }
 
 .card-container .card .contenedor_imagen img:last-child {

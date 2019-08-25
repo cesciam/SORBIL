@@ -48,13 +48,13 @@ let llenar_perfil_lib= async () => {
     if (libreriaid) {
         imagen.src = libreriaid[0].imagen;
         empresa.innerHTML = libreriaid[0].empresa;
-        descripcion.innerHTML = libreriaid[0].descripcion;
+        // descripcion.innerHTML = libreriaid[0].descripcion;
         telefono.innerHTML = libreriaid[0].telefono;
         correo.innerHTML = libreriaid[0].correo;
-        provincia.innerHTML = libreriaid[0].provincia;
-        canton.innerHTML = libreriaid[0].canton;
-        distrito.innerHTML = libreriaid[0].distrito;
-        direccion_exacta.innerHTML = libreriaid[0].direccion_exacta;
+        // provincia.innerHTML = libreriaid[0].provincia;
+        // canton.innerHTML = libreriaid[0].canton;
+        // distrito.innerHTML = libreriaid[0].distrito;
+        // direccion_exacta.innerHTML = libreriaid[0].direccion_exacta;
     }
 };
 

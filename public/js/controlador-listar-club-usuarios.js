@@ -40,7 +40,7 @@ let mostrar_cards = async () => {
                 p_correo.innerText = lista_usuarios[j]['correo'];
 
                 let aIconoEliminar = document.createElement('a');
-                aIconoEliminar.className = 'list-icon';
+                aIconoEliminar.className = 'habilitadoIon list-icon';
                 let iconEliminiar = document.createElement('i');
                 iconEliminiar.className = 'bx bxs-x-circle';
                 aIconoEliminar.appendChild(iconEliminiar);

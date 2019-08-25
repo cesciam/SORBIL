@@ -18,13 +18,13 @@
 
 <body id="grid-admin">
 
-<!--Header-->
-<header id="header-admin">
+    <!--Header-->
+    <header id="header-admin">
 
-    <h3 class="header-text">Área del administrador de librería</h3>
+        <h3 class="header-text">Área del administrador de librería</h3>
 
-    <div class="header-user-icons">
-        <!-- <div class="header-user-container">
+        <div class="header-user-icons">
+            <!-- <div class="header-user-container">
             <a class="header-icon" href="#"><i class='bx bx-mail-send'></i>
                 <span class="user-notification">1</span>
             </a>
@@ -35,32 +35,32 @@
             </a>
         </div> -->
 
-        <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img class="mini-photo"
-                    id="avatar-img" src="../imgs/user.png" width="36" height="36"> <i
-                    class='bx bx-chevron-down'></i></a>
-            <div class="menu-user-container">
-                <ul class="user-menu">
-                    <a class="user-menu-link" href="#" id="ver_perfil_admin_libreria">Perfil</a>
-                    <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
-                </ul>
+            <div class="header-user-container user-menu-wrap"><a class="mini-photo-wrapper" href="#"><img
+                        class="mini-photo" id="avatar-img" src="../imgs/user.png" width="36" height="36"> <i
+                        class='bx bx-chevron-down'></i></a>
+                <div class="menu-user-container">
+                    <ul class="user-menu">
+                        <a class="user-menu-link" href="#" id="ver_perfil_admin_libreria">Perfil</a>
+                        <a id="btn-cerrar-sesion" class="user-menu-link" href="#">Cerrar sesión</a>
+                    </ul>
+                </div>
             </div>
+
         </div>
 
-    </div>
-
-</header>
+    </header>
 
     <!--Main-->
     <main id="main-admin">
         <div class="main-admin-titulo card-title">
-            <h1>Plataforma de librería</h1>
+            <h1 id="empresa"></h1>
         </div>
 
         <div class="user-profile-container">
             <div class="profile-saludo">
                 <h2>Saludos <span id="txt-nombre"></span></h2>
                 <img src="../imgs/avatar-placeholder.png" id="avatar">
-                <!-- <img src="../imgs/book-placeholder.png" id="imagen"> -->
+                <img src="../imgs/book-placeholder.png" id="imagen">
             </div>
             <div class="profile-content">
                 <div class="profile-titles">
@@ -76,49 +76,6 @@
                     <p id="txt-primer-apellido"></p>
                     <p id="txt-segundo-apellido"></p>
                     <button id="btn-modificarLib" type="button">Editar Librería</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="libreria-profile-container">
-
-            <div id="logo"><img src="../imgs/book-placeholder.png" id="imagen"></div>
-
-            <div class="section-container">
-                <div class="title">
-                    <h1 id="empresa"></h1>
-                    <p id="descripcion"></p>
-                </div>
-                <div class="info">
-                    <h2>Dirección de la empresa</h2>
-                    <div class="info-2-col">
-                        <div class="info-2-col-container">
-                            <p>Provincia: <span id="provincia"></span></p>
-                            <p>Cantón: <span id="canton"></span></p>
-                            <p>Distrito: <span id="distrito"></span></p>
-                        </div>
-                        <div>
-                            <p id="direccion-exacta"></p>
-                        </div>
-                    </div>
-
-                    <h2>Información de contacto</h2>
-                    <div class="info-3-col">
-                        <div class="info-3-col-container">
-                            <div>
-                                <i class='bx bx-phone-call'></i>
-                                <i class='bx bx-mail-send'></i>
-                            </div>
-                            <div>
-                                <h4>Teléfono:</h4>
-                                <h4>Correo electrónico:</h4>
-                            </div>
-                            <div>
-                                <p id="telefono"></p>
-                                <p id="correo"></p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
