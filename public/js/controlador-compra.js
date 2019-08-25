@@ -149,7 +149,7 @@ btn_confirmar_Compra.addEventListener('click', function(){
                     'Compra realizada!'
                 ).then((result) => {
                     if (result.value) {
-                        console.log('Se hizo la compra');
+                        window.location.href = `ver-perfil-usuario.html?_id=${_id2}`;
                     }
                 });
             }
