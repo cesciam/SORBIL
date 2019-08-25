@@ -203,10 +203,15 @@ let llamar = async () => {
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
             type: 'success',
-        })
-        //Se llama a la función para limpiar el formulario
-        limpiarFormulario();
-        window.location.href = 'u-iniciar-sesion.html';
+        }).then((result) => {
+            if (result.value) {
+                //Se llama a la función para limpiar el formulario
+                window.location.href = 'u-iniciar-sesion.html';
+                limpiarFormulario();
+            }
+        });
+          
+       
     }
     else {
         Swal.fire({ //formato json
