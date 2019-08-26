@@ -50,8 +50,8 @@ let mostrar_tabla = async () => {
         aIconoEliminar.appendChild(iconEliminiar);
         aIconoEliminar.addEventListener('click', function(){
             Swal.fire({
-                title: '¿Está seguro de eliminar la categoría?',
-                text: "Ésta acción no se puede revertir",
+                title: '¿Está seguro de eliminar la librería?',
+                text: "Esta acción no se puede revertir",
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -62,7 +62,7 @@ let mostrar_tabla = async () => {
                     eliminarLibreria(lista_librerias[i]._id);
 
                     Swal.fire(
-                        'Categoría eliminada!'
+                        'Librería eliminada!'
                     ).then((result) => {
                         if (result.value) {
                             window.location.reload();
