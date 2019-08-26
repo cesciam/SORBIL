@@ -15,7 +15,7 @@ const urlParametrosss = new URLSearchParams(window.location.search);
 
 let idLibro = urlParametrosss.get('_id');
 
-let llenarPuntuaciones = async()=>{
+let llenarPuntuacionesss = async()=>{
   let resennas = await obtenerResennas();
   let suma = 0;
   let cantidad = 0;
@@ -129,7 +129,7 @@ let llenarPuntuaciones = async()=>{
 
 
 }
-llenarPuntuaciones();
+llenarPuntuacionesss();
 
 let registrarComentario5 = async () =>{
     const { value: text } = await Swal.fire({
