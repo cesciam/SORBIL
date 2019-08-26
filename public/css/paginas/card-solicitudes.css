@@ -1,3 +1,7 @@
+.card-container {
+    grid-gap: .5rem;
+}
+
 .card-container .card {
     width: 95%;
     grid-template-columns: repeat(3, 1fr);
@@ -27,6 +31,7 @@
 
 .card-container .card .contenedor_imagen img:last-child {
     width: 16rem;
+    height: 16rem;
     box-shadow: var(--shadow-dark-1);
     border-radius: 60%;
 }

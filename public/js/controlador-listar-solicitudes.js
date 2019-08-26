@@ -171,8 +171,8 @@ let mostrar_cards = async () => {
                     contenedor_card2.appendChild(div_nombre);
                     contenedor_card2.appendChild(div_ubicaciones);
                     contenedor_card2.appendChild(contenedor_atributo);
-                    contenedor_iconos.appendChild(aIconoEliminar);
                     contenedor_iconos.appendChild(aIconoActivar);
+                    contenedor_iconos.appendChild(aIconoEliminar);
                     contenedor_card.appendChild(contenedor_card1);
                     contenedor_card.appendChild(contenedor_card2);
                     contenedor_card.appendChild(contenedor_iconos);
@@ -195,36 +195,39 @@ let filtrar_cards = async () => {
                     if (lista_librerias[j]['empresa'].toLowerCase().includes(filtro) || lista_librerias[j]['correo'].toLowerCase().includes(filtro)) {
                         //////////////////////////////////////////////////////
                         let contenedor_card = document.createElement('div');
+                        let contenedor_card1 = document.createElement('div');
+                        let contenedor_card2 = document.createElement('div');
                         let contenedor_iconos = document.createElement('div');
                         contenedor_card.classList.add('card');
+                        contenedor_card1.classList.add('card1');
+                        contenedor_card2.classList.add('card2');
+                        contenedor_iconos.classList.add('cardIconos');
 
                         let contenedor_imagen = document.createElement('div');
                         contenedor_imagen.classList.add('contenedor_imagen');
                         let foto = document.createElement('img');
                         foto.src = lista_librerias[j]['imagen'];
+                        let foto_avatar = document.createElement('img');
+                        foto_avatar.src = listar_usuarios[i]['avatar'];
 
                         contenedor_imagen.appendChild(foto);
+                        contenedor_imagen.appendChild(foto_avatar);
 
+                        // let contenedor_avatar = document.createElement('div');
+                        // contenedor_avatar.classList.add('contenedor_avatar');
+                        // let foto_avatar = document.createElement('img');
+                        // foto_avatar.src = listar_usuarios[i]['avatar'];
+
+                        // contenedor_avatar.appendChild(foto_avatar);
                         let header = document.createElement('header');
+                        let icon_header = document.createElement('i');
+                        icon_header.className = 'bx bxs-business';
                         header.classList.add('header');
                         let h2 = document.createElement('h2');
                         h2.innerText = lista_librerias[j]['empresa'];
 
+                        header.appendChild(icon_header);
                         header.appendChild(h2);
-
-                        let contenedor_descripcion = document.createElement('div');
-                        contenedor_descripcion.classList.add('contenedor_descripcion');
-                        let descripcion = document.createElement('p');
-                        descripcion.innerText = lista_librerias[j]['descripcion'];
-
-                        contenedor_descripcion.appendChild(descripcion);
-
-                        let contenedor_avatar = document.createElement('div');
-                        contenedor_avatar.classList.add('contenedor_avatar');
-                        let foto_avatar = document.createElement('img');
-                        foto_avatar.src = listar_usuarios[i]['avatar'];
-
-                        contenedor_avatar.appendChild(foto_avatar);
 
                         let div_nombre = document.createElement('p');
                         div_nombre.classList.add('div_nombre');
@@ -239,41 +242,46 @@ let filtrar_cards = async () => {
                         div_nombre.appendChild(p_apellido1);
                         div_nombre.appendChild(p_apellido2);
 
-                        let div_edad = document.createElement('p');
-                        div_edad.classList.add('div_edad');
-                        let p_edad = document.createElement('p');
-                        p_edad.innerText = listar_usuarios[i]['edad'];
+                        let div_ubicaciones = document.createElement('p');
+                        div_ubicaciones.classList.add('div_ubicaciones');
+                        let provincia = document.createElement('p');
+                        let cantón = document.createElement('p');
+                        let distrito = document.createElement('p');
+                        provincia.innerText = lista_librerias[j]['provincia'];
+                        cantón.innerText = lista_librerias[j]['canton'];
+                        distrito.innerText = lista_librerias[j]['distrito'];
 
-                        div_edad.appendChild(p_edad);
-
-                        let div_provincia = document.createElement('p');
-                        div_provincia.classList.add('div_provincia');
-                        let p_provincia = document.createElement('p');
-                        p_provincia.innerText = lista_librerias[j]['provincia'];
-
-                        div_provincia.appendChild(p_provincia);
+                        div_ubicaciones.appendChild(provincia);
+                        div_ubicaciones.appendChild(cantón);
+                        div_ubicaciones.appendChild(distrito);
 
                         let contenedor_atributo = document.createElement('div');
                         contenedor_atributo.classList.add('contenedor_atributo');
+                        let icon_mail = document.createElement('i');
+                        icon_mail.className = 'bx bx-mail-send';
+                        let icon_tel = document.createElement('i');
+                        icon_tel.className = 'bx bxs-phone-call';
                         let correo = document.createElement('p');
                         let telefono = document.createElement('p');
                         correo.innerText = lista_librerias[j]['correo'];
                         telefono.innerText = lista_librerias[j]['telefono'];
 
+                        contenedor_atributo.appendChild(icon_mail);
                         contenedor_atributo.appendChild(correo);
+                        contenedor_atributo.appendChild(icon_tel);
                         contenedor_atributo.appendChild(telefono);
 
                         //////////////////////////////////////////////////////
                         let aIconoActivar = document.createElement('a');
                         aIconoActivar.classList.add('aIconoActivar');
-                        aIconoActivar.className = 'list-icon';
+                        aIconoActivar.className = 'card-icon';
                         let iconActivar = document.createElement('i');
                         iconActivar.className = 'bx bxs-check-square';
                         aIconoActivar.appendChild(iconActivar);
 
                         let aIconoEliminar = document.createElement('a');
                         aIconoEliminar.classList.add('aIconoEliminar');
-                        aIconoEliminar.className = 'list-icon';
+                        aIconoEliminar.className = 'card-icon';
                         let iconEliminiar = document.createElement('i');
                         iconEliminiar.className = 'bx bxs-x-square';
                         aIconoEliminar.appendChild(iconEliminiar);
@@ -291,7 +299,7 @@ let filtrar_cards = async () => {
                             Swal.fire({
                                 title: '¿Estás seguro deseas aceptar la solicitud?',
                                 text: "Ésta acción no se puede revertir",
-                                type: 'warning',
+                                type: 'info',
                                 showCancelButton: true,
                                 confirmButtonColor: '#3085d6',
                                 cancelButtonColor: '#d33',
@@ -315,7 +323,7 @@ let filtrar_cards = async () => {
                             Swal.fire({
                                 title: '¿Estás seguro deseas rechazar la solicitud?',
                                 text: "Ésta acción no se puede revertir",
-                                type: 'warning',
+                                type: 'info',
                                 showCancelButton: true,
                                 confirmButtonColor: '#3085d6',
                                 cancelButtonColor: '#d33',
@@ -335,16 +343,16 @@ let filtrar_cards = async () => {
                             })
                         });
                         //////////////////////////////////////////////////////
-                        contenedor_card.appendChild(contenedor_imagen);
-                        contenedor_card.appendChild(header);
-                        contenedor_card.appendChild(contenedor_descripcion);
-                        contenedor_card.appendChild(contenedor_avatar);
-                        contenedor_card.appendChild(div_nombre);
-                        contenedor_card.appendChild(div_provincia);
-                        contenedor_card.appendChild(div_edad);
-                        contenedor_card.appendChild(contenedor_atributo);
+                        contenedor_card1.appendChild(contenedor_imagen);
+                        // contenedor_card1.appendChild(contenedor_avatar);
+                        contenedor_card2.appendChild(header);
+                        contenedor_card2.appendChild(div_nombre);
+                        contenedor_card2.appendChild(div_ubicaciones);
+                        contenedor_card2.appendChild(contenedor_atributo);
                         contenedor_iconos.appendChild(aIconoActivar);
                         contenedor_iconos.appendChild(aIconoEliminar);
+                        contenedor_card.appendChild(contenedor_card1);
+                        contenedor_card.appendChild(contenedor_card2);
                         contenedor_card.appendChild(contenedor_iconos);
                         sct_librerias.appendChild(contenedor_card);
                     }

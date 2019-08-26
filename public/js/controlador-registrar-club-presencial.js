@@ -26,6 +26,10 @@ const tipo = 'Club Presencial';
 
 const btn_enviar = document.querySelector('#btn-enviar');
 
+let usuarioActivoClub = JSON.parse(sessionStorage.getItem('activo'));
+let usuario_activo_nombre = usuarioActivoClub.nombre;
+let usuario_activo_correo = usuarioActivoClub.correo;
+
 let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, phora, pfrecuencia, pdescripcion, pprovincia, pcanton, pdistrito, pdireccion_exacta) => {
 
     let error = false;
@@ -38,12 +42,12 @@ let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, 
         img_uploader_imagen.classList.remove('input_error');
     }
 
-    if (pnombre == '') {
-        error = true;
-        input_administrador_club.classList.add('input_error');
-    } else {
-        input_administrador_club.classList.remove('input_error');
-    }
+    // if (pnombre == '') {
+    //     error = true;
+    //     input_administrador_club.classList.add('input_error');
+    // } else {
+    //     input_administrador_club.classList.remove('input_error');
+    // }
 
     if (ptema == '') {
         error = true;
@@ -52,12 +56,12 @@ let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, 
         input_tema.classList.remove('input_error');
     }
 
-    if (pcorreo == '') {
-        error = true;
-        input_correo.classList.add('input_error');
-    } else {
-        input_correo.classList.remove('input_error');
-    }
+    // if (pcorreo == '') {
+    //     error = true;
+    //     input_correo.classList.add('input_error');
+    // } else {
+    //     input_correo.classList.remove('input_error');
+    // }
 
     if (ptelefono == '') {
         error = true;
@@ -139,19 +143,18 @@ let validar = (pnombre, ptema, pcorreo, ptelefono, pcategoria, pgenero, pfecha, 
     return error;
 };
 
-let validarCorreo = (pcorreo) => {
+let registrarNombre = () => {
 
-    let errorCorreo = false;
-    let correoValido = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+    let registroNombre = usuario_activo_nombre;
+    
+    return registroNombre;
+}
+;
+let registraCorreo = () => {
 
-    if (!correoValido.test(pcorreo)) {
-        errorCorreo = true;
-        input_correo.classList.add('input_error');
-    }
-    else {
-        input_correo.classList.remove('input_error');
-    }
-    return errorCorreo;
+    let registroCorreo = usuario_activo_correo;
+    
+    return registroCorreo;
 };
 
 let validarTelefono = (ptelefono) => {
@@ -187,9 +190,9 @@ let validarFecha = (pfecha) => {
 
 let llamar = () => {
     let src_imagen = img_uploader_imagen.src;;
-    let nombre = input_administrador_club.value;
+    let nombre = registrarNombre();
     let tema = input_tema.value;
-    let correo = input_correo.value;
+    let correo = registraCorreo();
     let telefono = input_telefono.value;
     let categoria = input_categoria.value;
     let genero = input_genero.value;
@@ -203,11 +206,10 @@ let llamar = () => {
     let descripcion = input_descripcion.value;
 
     let error = validar(nombre, tema, correo, telefono, categoria, genero, fecha, hora, frecuencia, descripcion, provincia, canton, distrito, direccion_exacta);
-    let errorCorreo = validarCorreo(correo);
     let errorTelefono = validarTelefono(telefono);
     let errorFecha = validarFecha(fecha);
 
-    if (error == false && errorCorreo == false && errorTelefono == false && errorFecha == false) {
+    if (error == false && errorTelefono == false && errorFecha == false) {
         registrarClub(src_imagen, tipo, nombre, tema, correo, telefono, categoria, genero, fecha, hora, frecuencia, descripcion, provincia, canton, distrito, direccion_exacta);
         Swal.fire({ //formato json
             title: 'Se ha registrado la información exitosamente',
@@ -226,9 +228,9 @@ let llamar = () => {
 
 //Función para limpiar el formulario
 const limpiarFormulario = () => {
-    input_administrador_club.value = '';
+    // input_administrador_club.value = '';
     input_tema.value = '';
-    input_correo.value = '';
+    // input_correo.value = '';
     input_telefono.value = '';
     input_categoria.value = '';
     input_genero.value = '';
