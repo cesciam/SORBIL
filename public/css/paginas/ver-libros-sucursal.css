@@ -31,3 +31,8 @@
     margin-right: 1rem;
     color: var(--color-black);
 }
+
+.section-ver h3 {
+    position: relative;
+    left: 13rem;
+}

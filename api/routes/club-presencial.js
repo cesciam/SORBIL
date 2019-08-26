@@ -866,7 +866,7 @@ router.post('/registrar-club', function (req, res) {
                                                                 style="font-size: 28px; color: #333333; font-weight: normal; font-family: 'Open Sans', Arial, Helvetica, sans-serif; word-break: break-word; line-height: 1;">
                                                                 <span
                                                                     style="color: #333333; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 400; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">¡Bienvenido
-                                                                    a Sorbil!<br><span
+                                                                    al Club!<br><span
                                                                         style="color: #ff900e; font-style: normal; text-align: center; line-height: 34px; font-size: 28px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span
                                                                             style="color: #333399; font-style: normal; text-align: center; line-height: 44px; font-size: 40px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;"><span
                                                                                 style="font-style: normal; text-align: center; color: #333399; line-height: 44px; font-size: 40px; font-weight: 700; font-family: 'Open Sans', Arial, Helvetica, sans-serif;">Tu

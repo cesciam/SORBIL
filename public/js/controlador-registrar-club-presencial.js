@@ -157,21 +157,6 @@ let registraCorreo = () => {
     return registroCorreo;
 };
 
-let validarCorreo = (pcorreo) => {
-
-    let errorCorreo = false;
-    let correoValido = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-
-    if (!correoValido.test(pcorreo)) {
-        errorCorreo = true;
-        input_correo.classList.add('input_error');
-    }
-    else {
-        input_correo.classList.remove('input_error');
-    }
-    return errorCorreo;
-};
-
 let validarTelefono = (ptelefono) => {
 
     let errorTelefono = false;
