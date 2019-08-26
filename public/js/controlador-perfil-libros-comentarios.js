@@ -6,7 +6,7 @@ let valor3 = document.querySelector('#radio3');
 let valor4 = document.querySelector('#radio4');
 let valor5 = document.querySelector('#radio5');
 let form = document.querySelector('#ratingsId');
-const tbody = document.querySelector('#tabla-filtrado tbody');
+let tbody = document.querySelector('#tabla-filtrado tbody');
 
 let usuarioActivoPerfiComentarios = JSON.parse(sessionStorage.getItem('activo'));
 let idusuarioActivoPerfiComentarios = usuarioActivoPerfiComentarios._id;

@@ -17,6 +17,7 @@ let isbn = document.querySelector('#isbn');
 let portada = document.querySelector('#portada');
 let fecha = document.querySelector('#fecha');
 let sinopsis = document.querySelector('#descrip');
+let tbody = document.querySelector('#tabla-filtrado tbody');
 
 
 let llenarPuntuaciones = async()=>{
