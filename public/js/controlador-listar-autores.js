@@ -95,8 +95,7 @@ let mostrar_tabla = async () => {
                     eliminarAutor(lista_autores[i]._id);
 
                     Swal.fire(
-                        'Autor eliminado!',
-                        'success'
+                        'Autor eliminado!'
                     ).then((result) => {
                         if (result.value) {
                             window.location.reload();
