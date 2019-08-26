@@ -102,8 +102,7 @@ let mostrar_tabla = async () => {
                     eliminarLibro(lista_libros[i]._id);
 
                     Swal.fire(
-                        'Tarjeta eliminado!',
-                        'success'
+                        'Libro eliminado!'
                     ).then((result) => {
                         if (result.value) {
                             window.location.reload();
@@ -160,13 +159,33 @@ let filtrar_tabla = async () => {
             iconAc.className  = 'bx bxs-check-square';
             aIconoAc.appendChild(iconAc);
     
+            let celdaIconoEliminar = fila.insertCell();
+            let aIconoEliminar = document.createElement('a');
+            aIconoEliminar.className = 'habilitadoIon list-icon';
+            let iconEliminiar = document.createElement('i');
+            iconEliminiar.className  = 'bx bxs-trash';
+            aIconoEliminar.appendChild(iconEliminiar);
+    
             if(lista_libros[i].estado == 'habilitado'){
                 iconAc.id = 'habilitadoIon';
                 aPerfil.addEventListener('click', function () {
-                    window.location.href = `ver-perfil-libro.html?_id=${this.dataset._id}`;
+                    Swal.fire({
+                        title: '¿Desea salir de la plataforma de administrador?',
+                        text: "Para poder ver los perfiles se debe salir de la plataforma de administración",
+                        type: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Sí, estoy seguro'
+                    }).then((result) => {
+                        if (result.value) {
+                            window.location.href = `ver-perfil-libro.html?_id=${this.dataset._id}`;
+                        }
+                    });
+                    
                 });
                 aPerfil.className = 'list-icon';
-                aIconoEditar.className = 'list-icon';
+                aIconoEditar.className = 'habilitadoIon list-icon';
                 iconAc.addEventListener('click', function(){
                     let estado = 'desabilitado';
                     cambiarEstadoLibros(lista_libros[i]._id, estado);
@@ -179,8 +198,8 @@ let filtrar_tabla = async () => {
     
     
             }else{
-                aPerfil.className = 'header-iconDisable';
-                aIconoEditar.className = 'header-iconDisable';
+                aPerfil.className = 'list-iconDisable';
+                aIconoEditar.className = 'list-iconDisable';
                 iconAc.addEventListener('click', function(){
                     let estado = 'habilitado';
                     cambiarEstadoLibros(lista_libros[i]._id, estado);
@@ -188,9 +207,34 @@ let filtrar_tabla = async () => {
                 });
             }
     
+            aIconoEliminar.addEventListener('click', function(){
+                Swal.fire({
+                    title: '¿Está seguro de eliminar el libro?',
+                    text: "Ésta acción no se puede revertir",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sí, estoy seguro'
+                }).then((result) => {
+                    if (result.value) {
+                        eliminarLibro(lista_libros[i]._id);
+    
+                        Swal.fire(
+                            'Libro eliminado!'
+                        ).then((result) => {
+                            if (result.value) {
+                                window.location.reload();
+                            }
+                        });
+                    }
+                })
+            });
+    
             celdaIconoEditar.appendChild(aIconoEditar);
             celdaIconoActivar.appendChild(aIconoAc);
             celdaPerfil.appendChild(aPerfil);
+            celdaIconoEliminar.appendChild(aIconoEliminar);
     
             
         }
