@@ -22,11 +22,11 @@ let mostrar_tabla = async () => {
         fila.insertCell().innerHTML = lista_sucursales[i]['distrito'];
 
 
-        let celdaPerfil = fila.insertCell();
-        let aPerfil = document.createElement('a');
-        let iPerfil = document.createElement('i');
-        iPerfil.className = 'bx bx-show';
-        aPerfil.appendChild(iPerfil);   
+        // let celdaPerfil = fila.insertCell();
+        // let aPerfil = document.createElement('a');
+        // let iPerfil = document.createElement('i');
+        // iPerfil.className = 'bx bx-show';
+        // aPerfil.appendChild(iPerfil);   
 
         let celdaIcono = fila.insertCell();
         let aIcono = document.createElement('a');
@@ -53,10 +53,10 @@ let mostrar_tabla = async () => {
             iconAc.id = 'habilitadoIon';
             aIcono.id = 'list-icon';
             
-            aPerfil.addEventListener('click', function () {
-                window.location.href =  `ver-perfil-sucursal.html?_i=${i}`;
-            });
-            aPerfil.className = 'list-icon';
+            // aPerfil.addEventListener('click', function () {
+            //     window.location.href =  `ver-perfil-sucursal.html?_i=${i}`;
+            // });
+            // aPerfil.className = 'list-icon';
 
             icon.addEventListener('click', function () {
                 window.location.href = `modificar-sucursal-al.html?_i=${i}`;
@@ -69,7 +69,7 @@ let mostrar_tabla = async () => {
                 window.location.reload();
             });
         } else {
-            aPerfil.className = 'list-iconDisable';
+           // aPerfil.className = 'list-iconDisable';
             aIcono.className = 'list-iconDisable';
             iconAc.addEventListener('click', function () {
                 lista_sucursales[i]['estado'] = 'habilitado';
@@ -106,7 +106,7 @@ let mostrar_tabla = async () => {
 
         celdaIcono.appendChild(aIcono);
         celdaIconoActivar.appendChild(aIconoAc);
-        celdaPerfil.appendChild(aPerfil);
+        // celdaPerfil.appendChild(aPerfil);
         celdaIconoEliminar.appendChild(aIconoEliminar);
 
     }
